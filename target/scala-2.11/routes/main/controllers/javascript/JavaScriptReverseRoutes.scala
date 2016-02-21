@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paulovss/CaronaUFCG20152/conf/routes
-// @DATE:Sun Feb 21 11:45:01 BRT 2016
+// @DATE:Sun Feb 21 14:40:46 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:9
+  // @LINE:10
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:9
+    // @LINE:10
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -49,6 +49,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+    // @LINE:7
+    def submit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Application.submit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "signup/"})
         }
       """
     )

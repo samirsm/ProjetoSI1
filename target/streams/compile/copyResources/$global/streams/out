@@ -2,3 +2,6 @@
 [0m[[0mdebug[0m] [0m	(/home/paulovss/CaronaUFCG20152/conf/routes,/home/paulovss/CaronaUFCG20152/target/scala-2.11/classes/routes)[0m
 [0m[[0mdebug[0m] [0m	(/home/paulovss/CaronaUFCG20152/conf/application.conf,/home/paulovss/CaronaUFCG20152/target/scala-2.11/classes/application.conf)[0m
 [0m[[0mdebug[0m] [0m	(/home/paulovss/CaronaUFCG20152/conf/logback.xml,/home/paulovss/CaronaUFCG20152/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/paulovss/CaronaUFCG20152/conf/evolutions,/home/paulovss/CaronaUFCG20152/target/scala-2.11/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/home/paulovss/CaronaUFCG20152/conf/evolutions/default,/home/paulovss/CaronaUFCG20152/target/scala-2.11/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/home/paulovss/CaronaUFCG20152/conf/evolutions/default/1.sql,/home/paulovss/CaronaUFCG20152/target/scala-2.11/classes/evolutions/default/1.sql)[0m

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paulovss/CaronaUFCG20152/conf/routes
-// @DATE:Sun Feb 21 11:45:01 BRT 2016
+// @DATE:Sun Feb 21 14:40:46 BRT 2016
 
 package router
 
@@ -18,7 +18,7 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   Application_1: controllers.Application,
-  // @LINE:9
+  // @LINE:10
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -27,7 +27,7 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     Application_1: controllers.Application,
-    // @LINE:9
+    // @LINE:10
     Assets_0: controllers.Assets
   ) = this(errorHandler, Application_1, Assets_0, "/")
 
@@ -44,6 +44,7 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.Application.index()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """signup/""", """controllers.Application.submit()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -69,11 +70,28 @@ class Routes(
     )
   )
 
-  // @LINE:9
-  private[this] lazy val controllers_Assets_versioned1_route = Route("GET",
+  // @LINE:7
+  private[this] lazy val controllers_Application_submit1_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("signup/")))
+  )
+  private[this] lazy val controllers_Application_submit1_invoker = createInvoker(
+    Application_1.submit(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "submit",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """signup/"""
+    )
+  )
+
+  // @LINE:10
+  private[this] lazy val controllers_Assets_versioned2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned1_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned2_invoker = createInvoker(
     Assets_0.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -95,10 +113,16 @@ class Routes(
         controllers_Application_index0_invoker.call(Application_1.index())
       }
   
-    // @LINE:9
-    case controllers_Assets_versioned1_route(params) =>
+    // @LINE:7
+    case controllers_Application_submit1_route(params) =>
+      call { 
+        controllers_Application_submit1_invoker.call(Application_1.submit())
+      }
+  
+    // @LINE:10
+    case controllers_Assets_versioned2_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned1_invoker.call(Assets_0.versioned(path, file))
+        controllers_Assets_versioned2_invoker.call(Assets_0.versioned(path, file))
       }
   }
 }
