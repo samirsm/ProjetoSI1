@@ -1,0 +1,7 @@
+eclipse
+eclipse with-source=true
+help run
+CaronaUFCG20152 $ eclipse
+compile
+eclipse
+compile
