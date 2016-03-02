@@ -1,29 +1,106 @@
 <!DOCTYPE html> 
 <html>
 	<head>
-		<meta charset=UTF-8>
-		<title>Me chama que eu vou</title>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+
+    	<title>Me chama que eu vou</title>
+
+	    <!-- Bootstrap Core CSS -->
+	    <link rel="stylesheet" href="testePaginaElaborada/css/bootstrap.min.css" type="text/css">
+
+	    <!-- Custom Fonts -->
+	    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+	    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	    <link rel="stylesheet" href="testePaginaElaborada/font-awesome/css/font-awesome.min.css" type="text/css">
+
+	    <!-- Plugin CSS -->
+	    <link rel="stylesheet" href="testePaginaElaborada/css/animate.min.css" type="text/css">
+
+	    <!-- Custom CSS -->
+	    <link rel="stylesheet" href="testePaginaElaborada/css/creative.css" type="text/css">
+	    <style type="text/css">
+	    	body{
+	    		background-image: url("testePaginaElaborada/img/carona.jpg");
+	    		background-size: cover;
+	    	}
+
+	    </style>
+
+	    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+
+	    <script type="text/javascript">
+	    	function alertaCadastroEfetuado(){
+	    		alert("Cadastro efetuado com sucesso!");
+	    	}
+	    </script>
 	</head>
 	<body>
-		<h1>Cadastro</h1><br/>
-		<br/>
-		<b>Nome:</b>
-		<br/>
-		<input type = "text">
-		<br/>
-		<b>Matrícula:</b>
-		<br/>
-		<input type = "text">
-		<br/>
-		<b>Nº Telefone:</b>
-		<br/>
-		<input type = "text">		
-		<br/>
-		<b>Email:</b>
-		<br/>
-		<input type = "text">		
-		<br/>
-		<b>Foto:</b>
-		<br/>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="text-faded">Cadastro</h1>
+			</div>	
+		</div>
+		<div class="row">
+			<div class="col-md-6 text-faded">
+				<b>Nome:</b>
+				<br/>
+				<input type = "text">
+				<br/>
+				<b>Matrícula:</b>
+				<br/>
+				<input type = "text">
+				<br/>
+				<b>Nº Telefone:</b>
+				<br/>
+				<input type = "text">		
+				<br/>
+				<b>Email:</b>
+				<br/>
+				<input type = "text">		
+				<br/>
+				<b>Foto:</b>
+				<br/>
+				<input type = "text">
+				<br/>
+				<br/>
+				<a href="#" class="btn btn-default btn-xl wow tada" onclick="alertaCadastroEfetuado()">Cadastrar</a>
+				<br/>
+				<br/>
+				<br/>
+			</div>
+
+			<div class="col-md-12">
+				<h1 class="text-faded">
+        			Busque ou ofereça caronas com segurança e facilidade
+        		</h1>
+        		<br/>
+        		<h2 class="text-faded">Caronas de ida e volta para a UFCG</h2>
+			</div>
+		</div>
+	</div>
+
+		<!-- jQuery -->
+	    <script src="testePaginaElaborada/js/jquery.js"></script>
+
+	    <!-- Bootstrap Core JavaScript -->
+	    <script src="testePaginaElaborada/js/bootstrap.min.js"></script>
+
+	    <!-- Plugin JavaScript -->
+	    <script src="testePaginaElaborada/js/jquery.easing.min.js"></script>
+	    <script src="testePaginaElaborada/js/jquery.fittext.js"></script>
+	    <script src="testePaginaElaborada/js/wow.min.js"></script>
+
+	    <!-- Custom Theme JavaScript -->
+	    <script src="testePaginaElaborada/js/creative.js"></script>
 	</body>
 </html>

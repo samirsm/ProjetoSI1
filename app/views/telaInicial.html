@@ -1,6 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script type="text/javascript">
+function alertaCliqueBuscarCaronas(){
+    alert("Buscando caronas......");    
+}
+</script>
+<script type="text/javascript">
+function alertaCliqueOferecerCaronas(){
+    alert("Uau, existem muitas pessoas em busca de caronas perto de você.......");    
+}
+</script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>design do botao</title>
  
@@ -48,8 +58,8 @@ body {
 <body>
  
 <div class="links">
-<a href="#" class="btnLaranja">BUSCAR CARONAS</a>
-<a href="#" class="btnTransparente">OFERECER UMA CARONA</a>
+<a href="#" class="btnLaranja" onclick="alertaCliqueBuscarCaronas()">BUSCAR CARONAS</a>
+<a href="#" class="btnTransparente" onclick="alertaCliqueOferecerCaronas()">OFERECER UMA CARONA</a>
 </div>
  
 </body>
