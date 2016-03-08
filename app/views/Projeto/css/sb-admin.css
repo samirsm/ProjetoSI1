@@ -121,7 +121,7 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 120px;
+        top: 70px;
         left: 225px;
         width: 130px;
         margin-left: -225px;
@@ -129,13 +129,17 @@ ul.alert-dropdown {
         border-radius: 0;
         overflow-y: auto;
         background-color: #FF3D00;
-        bottom: 70px;
+        bottom: 0px;
         overflow-x: hidden;
         padding-bottom: 40px;
     }
 
     .side-nav>li>a {
-        width: 225px;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        width: 130px;
+        height: 150px;
     }
 
     .side-nav li a:hover,
@@ -333,5 +337,5 @@ ul.alert-dropdown {
 
 .jumbotron {
     background-color: #3a3a3a;
-    color: #FFFFFF;
+    color: #FFF;
 }
