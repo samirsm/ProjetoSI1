@@ -9,9 +9,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Bootstrap Admin Template</title>
+    <title>Vumbora</title>
 
-    <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Core CSS' -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -34,24 +34,30 @@
 
 <body>
 
-    <div id="wrapper">
+<div class="container-fluid">
+        <div class="nav navbar-nav top-information">
+                <!-- Main jumbotron for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <h1>Bem vindo ao Vumbora</h1>
+                </div><div class="page-header">
+                </div>
+            </div>
+        </div>
 
+    <div id="wrapper">
+        
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
-            </div>
+           
+                
+                <a class="navbar-brand" href="index.html"><img src="img/logo vumbora.png" height="40px" width="180px"></a>
+            
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
+            <!-- Notification -->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell fa-2x"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
                         <li class="message-preview">
                             <a href="#">
@@ -60,10 +66,10 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        <h5 class="media-heading"><strong>José</strong>
                                         </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> ontem as 4:32</p>
+                                        <p>José aceitou sua solicitação de carona</p>
                                     </div>
                                 </div>
                             </a>
@@ -75,122 +81,151 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        <h5 class="media-heading"><strong>Maria</strong>
                                         </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> ontem as 4:32</p>
+                                        <p>Maria aceitou sua solicitação de carona</p>
                                     </div>
                                 </div>
                             </a>
                         </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
                         </li>
                         <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
+                            <a href="#">Ver todas</a>
                         </li>
                     </ul>
                 </li>
+                <!-- end Notification -->
+
+                <!-- User options -->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x"></i> Fulano <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Configurações</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Sair</a>
                         </li>
                     </ul>
                 </li>
+                <!-- end User options -->
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard fa-5x"></i> Vumbora</a>
+                    <li>
+                        <a href="index.html"><i class="fa fa-fw fa-home fa-5x"></i> <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Home</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-home fa-5x"></i> Home</a>
+                        <a href="#"><i class="fa fa-fw fa-paper-plane fa-5x"></i> <p>&nbsp&nbsp&nbsp&nbsp&nbsp   Solicitações</a>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-paper-plane fa-5x"></i> Solicitações</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-calendar fa-5x"></i> Agendamentos</a>
+                        <a href="#"><i class="fa fa-fw fa-calendar fa-5x"></i> <p>&nbsp&nbsp&nbsp&nbsp  Agendamentos</a>
                     </li>
                     
                     <li>
-                        <a href="blank-page.html"><i class="fa fa-fw fa-user fa-5x"></i> Meu Perfil</a>
+                        <a href=""><i class="fa fa-fw fa-user fa-5x"></i> <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspMeu  Perfil</a>
                     </li>
         
                 </ul>
             </div>
+    
+            <!-- A BARRA DO OUTRO LADO -->
+
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side2-nav">
+                    
+                    <li>
+                        <div class="container-fluid">
+                            <div class="row-xs-12">
+                        <!-- Page Heading -->
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h1 class="page-header"> Minhas caronas</h1>
+                                        <ol class="breadcrumb">
+                                            <li class="active">
+                                            <i class="fa fa-calendar"></i> Hoje
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                        </div>
+
+                    <div class="row-sm-7">
+                        <div class="panel panel-blue-ida">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">
+                                            <i class="fa fa-car fa-4x "></i> Ida&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    
+                                            <i class="fa fa-clock-o fa-4x"></i>08:00
+
+                                </h1>
+                            </div>
+                            <div class="panel-body">
+                                Detalhes
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-sm-7">
+                        <div class="panel panel-blue-ida">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">
+                                            <i class="fa fa-car fa-4x "></i> Ida&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+                                            <i class="fa fa-clock-o fa-4x"></i>08:00
+
+                                </h1>
+                            </div>
+                            <div class="panel-body">
+                                Detalhes
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-sm-7">
+                        <div class="panel panel-blue-volta">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">
+                                            <i class="fa fa-car fa-4x "></i> Volta&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+                                            <i class="fa fa-clock-o fa-4x"></i>08:00
+
+                                </h1>
+                            </div>
+                            <div class="panel-body">
+                                Detalhes
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-sm-7">
+                        <div class="panel panel-blue-volta">
+                            <div class="panel-heading">
+                                <h1 class="panel-title">
+                                            <i class="fa fa-car fa-4x "></i> Volta&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    
+                                            <i class="fa fa-clock-o fa-4x"></i>08:00
+
+                                </h1>
+                            </div>
+                            <div class="panel-body">
+                                Detalhes
+                            </div>
+                        </div>
+                    </div>
+        
+                </ul>
+            </div>            
+            
             <!-- /.navbar-collapse -->
         </nav>
+
 
         <div id="page-wrapper">
 
             <div class="container-fluid">
 				<div class="row-xs-12">
                 <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Bem-vindos ao Vumbora <small>tm</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
-                            </li>
-                        </ol>
-                    </div>
-                </div>
                 <!-- /.row -->
 
                
