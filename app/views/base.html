@@ -8,7 +8,7 @@
     	<meta name="author" content="">
 
     	<title>Me chama que eu vou</title>
-
+		
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="testePaginaElaborada/css/bootstrap.min.css" type="text/css">
 		<link href="testePaginaElaborada/js/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
@@ -23,11 +23,15 @@
 
 	    <!-- Custom CSS -->
 	    <link rel="stylesheet" href="testePaginaElaborada/css/creative.css" type="text/css">
+	    
 	    <style type="text/css">
 	    	body{
 	    		background-image: url("testePaginaElaborada/img/carona.jpg");
 	    		background-size: cover;
 	    	}
+	    	input{
+				color: black;
+			}
 
 	    </style>
 
@@ -43,25 +47,33 @@
 	    		alert("Cadastro efetuado com sucesso!");
 	    	}
 	    </script>
+	    <script>
+			function loginEfetuadoComSucesso(){
+	    		alert("Login efetuado com sucesso!");
+			}
+	    </script>
+	    
 	    <script type="text/javascript">
        function passageiro(){
-       	infoMotorista.style.visibility = 'hidden';
-       }
-       function motorista(){
-       	infoMotorista.style.visibility = 'visible';
-       }
+		   document.getElementById('infoMotorista').style.visibility = 'hidden';
+		}
+	   function motorista(){
+		   document.getElementById('infoMotorista').style.visibility = 'visible';
+		}
+					
        function cadastro(){
-       	document.getElementById('loginCadastroBox').innerHTML = document.getElementById('divCadastro').innerHTML;
+			document.getElementById('loginCadastroBox').innerHTML = document.getElementById('divCadastro').innerHTML;
        }
+       
        function login(){
-       	document.getElementById('loginCadastroBox').innerHTML = document.getElementById('divLogin').innerHTML;
+		document.getElementById('loginCadastroBox').innerHTML = document.getElementById('divLogin').innerHTML;
        }
 
        function start(){
        	login();
        }
-
-      window.onload = start;
+       
+       window.onload = start;
     </script>
 	</head>
 	<body>
@@ -70,7 +82,7 @@
 	<img src="testePaginaElaborada/img/logo_curso.png" style="margin-left: 20px;">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-5" align="right">
+			<div class="col-lg-5" align="left" style="margin-left: 20px;">
 				<h1 class="text-faded">
 					<br/>
 					<br/>
@@ -78,14 +90,21 @@
 		       	</h1>
 		        <br/>
 		        <h2 class="text-faded">Caronas de ida e volta para a UFCG</h2>
+		        <br/>
+		        <br/>
+				<h4 class="text-faded">Notificações em tempo real</h4>
+		        <h4 class="text-faded">Recomendações de caronistas e passageiros</h4>
+		        <h4 class="text-faded">Usuários cadastrados de confiança</h4>
 			</div>
 		
 		<div class="col-lg-2">
 			<div class="container-fluid">
 			</div>
 		</div>
-		<div id="loginCadastroBox" class="col-lg-4" style="border: 1px solid #888; border-radius: 20px; vertical-align: center; background: #000; filter:alpha(opacity=80); opacity: 0.8; margin-left: 80px; text-align: center;">
-			<div id="divLogin" class="text-faded">
+		<div id="loginCadastroBox" class="col-lg-4" style="border: 1px solid #888; border-radius: 20px; vertical-align: center; background: #000; filter:alpha(opacity=80); opacity: 0.8; margin-left: 80px; text-align: center; color: white;">
+	    </div>
+	
+	<div id="divLogin" style="display: none">
 				<img src="testePaginaElaborada/img/logo_vumbora.png" width="300">
 				<br/>
 				<b>Usuário</b>
@@ -94,17 +113,18 @@
 				<br/>
 				<b>Senha</b>
 				<br/>
-				<input type = "text">
+				<input type = "password">
 				<br/>
 				<br/>
-				<a href="#" class="btn btn-default btn-xl wow tada" onclick="login()">Login</a>
-				<a href="#" class="btn btn-default btn-xl wow tada" onclick="cadastro()">Cadastro</a>
+				<a id="botaoLogin" href="#" class="btn btn-default btn-xl" onclick="loginEfetuadoComSucesso()">Login</a>
 				<br/>
+				<a href="#" class="btn" onclick="cadastro()">Não é cadastrado? Cadastre-se</a>
 				<br/>
 			</div>
-
+	</div>
+	
+		<div id="divCadastro" style="display: none">
 			
-			<div id="divCadastro" class="text-faded">
 				<img src="testePaginaElaborada/img/logo_vumbora.png" width="300">
 				<label class="radio-inline"><input type="radio" name="optradio" onclick="motorista();" checked>Oferecer caronas</label>
 				<label class="radio-inline"><input type="radio" name="optradio" onclick="passageiro();">Buscar caronas</label>
@@ -115,7 +135,7 @@
 				<br/>
 				<b>Email:</b>
 				<br/>
-				<input type = "text">
+				<input type = "email">
 				<br/>
 				<b>Endereço:</b>
 				<br/>
@@ -142,21 +162,14 @@
 					<br/>
 					<br/>
 				</div>
-					<a href="#" class="btn btn-default btn-xl wow tada" onclick="alertaCadastroEfetuado()">Vumbora</a>
-					<a href="#" class="btn btn-default btn-xl wow tada" onclick="login()">Login</a>
-					<a href="#" class="btn btn-default btn-xl wow tada" onclick="cadastro()">Cadastro</a>
-
+					<a href="#" class="btn btn-default btn-xl" onclick="alertaCadastroEfetuado()">Vumbora</a>
+					<br/>
+					<a href="#" class="btn" onclick="login()">Já é cadastrado? Faça login!</a>
 				<br/>
 				<br/>
 				<br/>
 			</div>
 		</div>
-
-		
-		
-
-	</div>
-	</div>
 
 		<!-- jQuery -->
 	    <script src="testePaginaElaborada/js/jquery.js"></script>
