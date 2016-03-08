@@ -210,10 +210,6 @@ ul.alert-dropdown {
 }
 
 
-
-
-
-
 .side-nav>li>ul>li>a {
     display: block;
     padding: 10px 15px 10px 38px;
@@ -322,4 +318,20 @@ ul.alert-dropdown {
 }
 .panel-blue-volta > a:hover {
     color: #2962Ff;
+}
+.panel-pendente {
+    background-color: #FAFF73;
+}
+
+.panel-confirmado {
+    background-color: #9CCC65;
+}
+
+.panel-negado {
+    background-color: #FA7F52;
+}
+
+.jumbotron {
+    background-color: #3a3a3a;
+    color: #FFFFFF;
 }
