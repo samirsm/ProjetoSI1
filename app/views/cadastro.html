@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Vumbora</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="testePaginaElaborada/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="testePaginaElaborada/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="testePaginaElaborada/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="testePaginaElaborada/css/creative.css" type="text/css">
+    <style type="text/css">
+		body {
+    		background: #036;
+		}
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]--></head>
+<body>
+	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Vumbora</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#nome">Nome</a>
+                    </li>
+                    <li>
+                        <a href="#notificacao">Notificações</a>
+                    </li>
+                    <li>
+                        <a href="#perfil">Perfil</a>
+                    </li>
+                    <li>
+                        <a href="#solicitacao">Solicitações</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-2">
+				<ul class="nav nav-pills nav-stacked">
+				  <li><a href="#nome">Nome</a></li>
+				  <li><a href="#notificacao">Notificações</a></li>
+				  <li><a href="#perfil">Perfil</a></li>
+				  <li><a href="#solicitacao">Solicitações</a></li>
+				</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+			<div style="overflow: auto;height: 500px;"> <!-- ajuste de altura aqui -->
+				<div class="container text-center col-md-7">
+					<!-- carona ida -->
+					<div class ="list-group" style="font-size: x-large;">
+						<a href="#" class="list-group-item">
+							<table>
+								<tr>
+									<td width="80">
+										<img src="testePaginaElaborada/img/userIcon.png" height="50" width="50" align="center">
+									</td>
+									<td>Motorista</td>
+									<td width="30"></td>
+									<td width="60">
+										<img src="testePaginaElaborada/img/grayRelogio.png" height="25" width="25" align="center">
+									</td>
+									<td align="left">Horários de Ida</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									
+									<td width="30"></td>
+
+									<td width="40">
+										<img src="testePaginaElaborada/img/grayRelogio.png" height="25" width="25" align="center">
+									</td>
+									<td align="left">
+										<form>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="oito"> 08:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="dez"> 10:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="doze"> 12:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="quatorze"> 14:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="dezesseis"> 16:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="dezoito"> 18:00 </br>
+										</form>
+									</td>
+									<td width="150"></td>
+									<td align="rigth"><button class="btn btn-warning btn-l" style="float: right">Cadastrar</button></td>
+
+
+								</tr>
+							</table>
+						</a>
+						</br>
+					</div>
+					
+					<!-- escolher endereço de ida -->
+					
+					<div class ="list-group" style="font-size: x-large;">
+						<a href="#" class="list-group-item">
+							<table>
+								<tr>
+									
+									<td width="30"></td>
+									
+									<td align="left">Endereço</td>
+								</tr>
+								<tr>
+									
+									<td></td>
+									<td></td>
+									
+									<td width="30"></td>
+
+									</br><td align = "center"><input type="text" name="Endereço" value="Novo Endereço"></td>
+									<td width="150"></td>
+									
+									<td align="rigth"><button class="btn btn-warning btn-l" style="float: right">Escolher</button></td>
+									
+									
+									
+									
+									<td align = "center"><SELECT NAME="LISTA" SIZE="3" MULTIPLE>
+									 <OPTION SELECTED>Endereço Atual
+									 <OPTION>Endereço 1
+									 <OPTION>Endereço 2
+									 <OPTION>Endereço 3
+									</SELECT></td>
+								</td>
+
+
+								</tr>
+							</table>
+						</a>
+						</br>
+					</div>
+					
+					
+					<!-- oferecer carona de volta -->
+					<div class ="list-group" style="font-size: x-large;">
+						<a href="#" class="list-group-item">
+							<table>
+								<tr>
+									<td width="80">
+										<img src="testePaginaElaborada/img/userIcon.png" height="50" width="50" align="center">
+									</td>
+									<td>Motorista</td>
+									<td width="30"></td>
+									<td width="60">
+										<img src="testePaginaElaborada/img/grayRelogio.png" height="25" width="25" align="center">
+									</td>
+									<td align="left">Horários de Volta</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									
+									<td width="30"></td>
+
+									<td width="40">
+										<img src="testePaginaElaborada/img/grayRelogio.png" height="25" width="25" align="center">
+									</td>
+									
+									<td align="left">
+										<form>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="oito"> 08:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="dez"> 10:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="doze"> 12:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="quatorze"> 14:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="dezesseis"> 16:00 </br>
+										<INPUT TYPE="checkbox" NAME="Horario" VALUE="dezoito"> 18:00 </br>
+										</form>
+									</td>
+									
+									<td width="150"></td>
+									<td align="rigth"><button class="btn btn-warning btn-l" style="float: right">Cadastrar</button></td>
+
+
+								</tr>
+
+							</table>
+						</a>
+						</br>
+					</div>   
+					
+					
+					</div>
+            </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+</body>
+</html>
