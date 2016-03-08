@@ -1,0 +1,325 @@
+/*!
+ * 
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+body {
+    margin-top: 100px;
+    background-color: #222;
+}
+
+@media(min-width:768px) {
+    body {
+        margin-top: 200px;
+    }
+}
+
+#wrapper {
+    padding-left: 0;
+}
+
+#page-wrapper {
+    width: 55%;
+    padding: 0;
+    position: relative;
+    position: absolute;
+    background-color: #212121;
+}
+
+.fa {
+    font-size: 20px;
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #FF3D00;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+ul.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li.message-preview {
+    width: 275px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+li.message-preview>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+li.message-footer {
+    margin: 5px 0;
+}
+
+ul.alert-dropdown {
+    width: 200px;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 120px;
+        left: 225px;
+        width: 130px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #FF3D00;
+        bottom: 70px;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+    }
+
+    .side-nav li a:hover,
+
+
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #FF6 !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+}
+
+
+/* 
+ * 
+ * 
+ * 
+ * other Side Navigation 
+ * 
+ * 
+ * 
+ * 
+ * */
+
+@media(min-width:768px) {
+    .side2-nav {
+        position: fixed;
+        top: 100px;
+        left: 1080px;
+        width: 325px;
+        margin-left: -25px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side2-nav>li>a {
+        width: 950px;
+    }
+
+    .side2-nav li a:hover,
+    .side2-nav li a:focus {
+        outline: none;
+        background-color: #ffa500 !important;
+    }
+}
+
+@media(min-width:768px) {
+    .top-information {
+        position: absolute;
+        position: relative;
+        top: 0;
+        left: 100;
+        width: 800px;
+        margin-left: 200px;
+        border: none;
+        border-radius: 0;
+        overflow-y: fixed;
+        bottom: 300;
+        overflow-x: fixed;
+        padding-bottom: 40px;
+        color: #000;
+        background-origin: #000;
+    }
+}
+
+
+
+
+
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: line-through;;
+    color: #ff6;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+    display: block;
+    height: 400px;
+}
+
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Colored Panels */
+
+.huge {
+    font-size: 40px;
+}
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green > .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green > a {
+    color: #5cb85c;
+}
+
+.panel-green > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red > a {
+    color: #d9534f;
+}
+
+.panel-red > a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow > .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow > a {
+    color: #f0ad4e;
+}
+
+.panel-yellow > a:hover {
+    color: #df8a13;
+}
+
+.panel-blue-ida > .panel-heading {
+    border-color: #82b1ff;
+    color: #fff;
+    background-color: #82b1ff;
+}
+
+.panel-blue-ida > a {
+    color: #fff;
+}
+
+.panel-blue-ida > a:hover {
+    color: #82b1ff;
+}
+
+.panel-blue-volta > .panel-heading {
+    border-color: #2962Ff;
+    color: #fff;
+    background-color: #2962Ff;
+}
+
+.panel-blue-volta > a {
+    color: #fff;
+}
+.panel-blue-volta > a:hover {
+    color: #2962Ff;
+}
