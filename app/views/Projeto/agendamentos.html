@@ -10,6 +10,7 @@
     <meta name="author" content="">
 
     <title>Vumbora</title>
+	<link rel="icon" type="img/ico" href="img/favicon.ico">
 
     <!-- Bootstrap Core CSS' -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,18 +30,19 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="icon" type="img/ico" href="img/favicon.ico">
 
 </head>
 
 <body>
 
 <div class="container-fluid">
-        <div class="nav navbar-nav top-information" >
+        <div class="nav navbar-nav top-information">
                 <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
-            	 <h1 align="center";>
-                	<img src="img/icones/agendamentos.png" align="left">Agendamentos</h1>
+                <h2 align="center";>
+                	<img src="img/icones/agendamentos.png" align="left">Agendamentos</h2>
+                </div>
+                <div class="page-header">
                 </div>
             </div>
         </div>
@@ -48,11 +50,11 @@
     <div id="wrapper">
         
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
            
                 
-                <a class="navbar-brand" href="index.html" ><img src="img/logo vumbora.png" height="40px" width="180px" ></a>
+                <a class="navbar-brand" href="index.html"><img src="img/logo vumbora.png" height="40px" width="180px"></a>
             
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -121,7 +123,7 @@
                 <ul class="nav navbar-nav side-nav">
                 </br>
                 </br>
-
+                
                     <li>
                         <a href="index.html"><i class="fa fa-fw fa-home fa-5x"></i></br>Home</a>
                     </li>
@@ -138,7 +140,6 @@
         
                 </ul>
             </div>
-    
             <!-- A BARRA DO OUTRO LADO -->
 
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -149,12 +150,14 @@
                         <div class="container-fluid">
                             <div class="row-xs-12">
                         <!-- Page Heading -->
-                                <div class="row">
+                                <div class="row"> 
                                     <div class="col-lg-12">
-                                        <h1 class="page-header"> Minhas caronas</h1>
+                                        <h3 class="page-header" style="color: #FFF"> Minhas caronas</h3>
                                         <ol class="breadcrumb">
                                             <li class="active">
-                                            <i class="fa fa-calendar"></i> Hoje
+                                            <i class="fa fa-calendar"></i>
+                                            	<label for="date">Dia:</label>
+      											<input type="date" name="date" id="date">
                                             </li>
                                         </ol>
                                     </div>
@@ -165,8 +168,9 @@
                         <div class="panel panel-blue-ida">
                             <div class="panel-heading">
                                 <h1 class="panel-title">
-                                            <i class="fa fa-car fa-4x "></i> Ida&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    
-                                            <i class="fa fa-clock-o fa-4x"></i>08:00
+                                            <i class="fa fa-car fa-2x "></i> Ida&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    
+                                            <i class="fa fa-clock-o fa-2x"></i> 08:00
+
 
                                 </h1>
                             </div>
@@ -179,8 +183,8 @@
                         <div class="panel panel-blue-ida">
                             <div class="panel-heading">
                                 <h1 class="panel-title">
-                                            <i class="fa fa-car fa-4x "></i> Ida&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
-                                            <i class="fa fa-clock-o fa-4x"></i>08:00
+                                            <i class="fa fa-car fa-2x "></i> Ida&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+                                            <i class="fa fa-clock-o fa-2x"></i> 08:00
 
                                 </h1>
                             </div>
@@ -193,9 +197,9 @@
                         <div class="panel panel-blue-volta">
                             <div class="panel-heading">
                                 <h1 class="panel-title">
-                                            <i class="fa fa-car fa-4x "></i> Volta&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
-                                            <i class="fa fa-clock-o fa-4x"></i>08:00
-
+                                            <i class="fa fa-car fa-2x "></i> Volta&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+                                            <i class="fa fa-clock-o fa-2x"></i> 08:00
+ 
                                 </h1>
                             </div>
                             <div class="panel-body">
@@ -207,8 +211,8 @@
                         <div class="panel panel-blue-volta">
                             <div class="panel-heading">
                                 <h1 class="panel-title">
-                                            <i class="fa fa-car fa-4x "></i> Volta&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    
-                                            <i class="fa fa-clock-o fa-4x"></i>08:00
+                                            <i class="fa fa-car fa-2x "></i> Volta&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp    
+                                            <i class="fa fa-clock-o fa-2x"></i> 08:00
 
                                 </h1>
                             </div>
@@ -225,18 +229,26 @@
         </nav>
 
 
+
+
         <div id="page-wrapper">
 
-            <div class="container-fluid">
+            <div class="container-fluid" style="background-color: #696969;">
 				<div class="row-xs-12">
                 <!-- Page Heading -->
                 <!-- /.row -->
 
                
-                <!-- /.row -->
-                <div style="text-align: center; color: #FFF; font-family: 'Calibri Light';" >
+               <!-- /.row -->
 
-                <div style="font-size: 36px;"><p style="font-size: 36px;">Marcar uma carona com Beltrano<br><br></p></div>
+               
+                <!-- /.row -->
+
+                                <!-- /.row -->
+
+                 <div style="text-align: center; color: #FFF; font-family: 'Calibri Light';" >
+
+                <div style="font-size: 36px;"><p style="font-size: 34px;"><br>Marcar uma carona com Beltrano<br><br></p></div>
         
                 <p><img src="img/trajeto carona ilustracao.png" width="500" height="95"  alt=""/></p>
                 
@@ -247,14 +259,11 @@
                 
                 
                 <td colspan="3" style="font-family: 'Calibri Light'">&nbsp;</td>
-                <td align="rigth"><button class="btn btn-warning btn-l" style="float: center; font-size: 26px;												font-family: 'Calibri Light';"><b>Voltar às Caronas</button> </td><td></td>
-                <td align="rigth"><button class="btn btn-warning btn'l" style="float: center; font-size: 26px; font-family: 'Calibri Light';"><b>Solicitar Carona</button>
+                <td align="rigth"><button class="btn btn-warning btn-l" style="float: center; font-size: 22px;												font-family: 'Calibri Light';"><b>Voltar às Caronas</button> </td><td></td>
+                <td align="rigth"><button class="btn btn-warning btn'l" style="float: center; font-size: 22px; font-family: 'Calibri Light';"><b>Solicitar Carona</button>
                 <p>&nbsp;</p></td>
                 </div>
-
                 <!-- /.row -->
-
-                
                     
                 <!-- /.row -->
 				</div>
