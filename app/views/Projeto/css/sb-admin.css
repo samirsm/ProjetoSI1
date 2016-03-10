@@ -13,7 +13,7 @@ body {
 
 @media(min-width:768px) {
     body {
-        margin-top: 200px;
+        margin-top: 10%;
     }
 }
 
@@ -170,8 +170,8 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side2-nav {
         position: fixed;
-        top: 100px;
-        left: 1080px;
+        top: 10%;
+        left: 77%;
         width: 325px;
         margin-left: -25px;
         border: none;
