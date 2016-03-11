@@ -25,6 +25,7 @@ OBS.: As telas a seguir partilham de um layout em comum.
 Tela principal do Motorista <viewMotorista.html>
 	Essa tela contempla as US 03 e US 04;
 	O motorista consegue ver todos os pedidos de carona através de uma lista; A partir dela, ele consegue recusar ou aceitar os pedidos. Os pedidos recusados saem da lista principal e deixam de ser exibidos na tela.
+	É possível verificar o seu perfil a partir do ícone no canto superior direito e acessar as configurações.
 	
 	Legenda dos ícones:
 		- Pendente: A carona solicitada pelo passageiro ainda não foi respondida.
@@ -40,6 +41,8 @@ Tela principal do Passageiro <viewPassageiro.html>
 	Essa tela contempla as US 06 e US 07;
 	O passageiro consegue ver todas as ofertas de carona através de uma lista; A lista é gerada a partir de uma busca, essa busca pode ocorrer por data ou horário e tipo de carona (ida ou volta);
 	O passageiro pode solicitar a carona clicando no botão "pedir" e será encaminhado para a tela de agendamento.
+	O passageiro recebe notificações quando alguém aceita ou recusa sua carona, essas notificações ficam no canto superior esquerdo, no símbolo do sino.
+	De forma similar à tela do motorista, o passageiro também pode verificar as configurações a partir do ícone ao lado do sino.
 
 Tela de agendamento de carona <telaAgendamentosCaronaPassageiro.html>
 	Essa tela contempla a US08;
