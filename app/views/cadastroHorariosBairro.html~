@@ -1,0 +1,243 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Vumbora</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="../../public/CreativeTemplate/css/bootstrap.min.css" type="text/css">
+
+        <!-- Custom Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../../public/CreativeTemplate/font-awesome/css/font-awesome.min.css" type="text/css">
+
+        <!-- Plugin CSS -->
+        <link rel="stylesheet" href="../../public/CreativeTemplate/css/animate.min.css" type="text/css">
+
+        <!-- Custom CSS-->
+        <link rel="stylesheet" href="../../public/CreativeTemplate/css/creative.css" type="text/css">
+        <style type="text/css">
+            body {
+                background-image: url(../../public/CreativeTemplate/img/fundoCarro.png);
+                overflow-x: hidden;
+
+            }
+
+        </style>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container-fluid" style="color: orange">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                        <img src="../../public/CreativeTemplate/img/logo.png" height="50" width="150">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#nome">Nome</a>
+                        </li>
+                        <li>
+                            <a href="#notificacao">Notificações</a>
+                        </li>
+                        <li>
+                            <a href="#perfil">Perfil</a>
+                        </li>
+                        <li>
+                            <a href="#solicitacao">Solicitações</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+
+    <div class="nav navbar-nav side-nav navbar-fixed-side">
+        <div class="containerfluid" style="margin-top: 100px">
+            <div class="row">
+                    <div class="wrapper">
+                        <nav class="vertical">
+                            <div class="col-md-10" style="background-color: #FFA500;">
+                                <ul class="nav navbar side-nav">
+                                    <li><a href="#home" style="align-items: center;">
+                                        <img src="../../public/CreativeTemplate/img/home.png" height="60" width="60" align="center">
+                                    </a></li>
+
+                                    <li><a href="#solicitacao">
+                                        <img src="../../public/CreativeTemplate/img/solicitacoes.png" height="50" width="77" align="center">
+                                    </a></li>
+
+                                    <li><a href="#notificacao">
+                                         <img src="../../public/CreativeTemplate/img/agendamentos.png" height="62" width="63" align="center">
+                                    </a></li>                           
+                                    <li><a href="#perfil">
+                                    <img src="../../public/CreativeTemplate/img/iconePerfil.png" height="62" width="63" align="center">
+                                    </a></li>
+                                      <li><a href="#solicitacao">Cadastro de Carona</a></li>
+                                </ul>
+                            </div>  
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                <div class="col-lg-7" style="margin-top: 100px; margin-left: 100px; overflow: auto;">
+                    <div class ="list-group">
+                        <a href="#" class="list-group-item">
+                            <table style= "width:100%">
+                                <tr>
+                                    <td width="30%">
+                                        <img src="../../public/CreativeTemplate/img/userIcon.png" height="200" width="200" align="center">
+                                    </td>
+                                    <td width = "70%" align = "center"> NOME COMPLETO DO MOTORISTA </br> 
+										<img src = "../../public/CreativeTemplate/img/graylocation.png" height = "25" width = "25"> BAIRRO </br> TELEFONE</td>    
+                                </tr>
+                            </table>   
+                        </a>
+
+                         <!---->
+                         <a href="#" class="list-group-item">
+							<table style= "width:100%">
+								<td align = "center">Ida à UFCG</td>
+							</table>
+                         </a>
+						
+						 <!---->
+                         <a href="#" class="list-group-item">
+							<table style= "width:100%">
+								<tr>
+									<td width = 25% align = "center"> SEG</td>
+									<td width = 25% align = "center"> TER</td>
+									<td width = 25% align = "center"> QUA</td>
+									<td width = 25% align = "center"> QUI</td>
+									<td width = 25% align = "center"> SEX</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 08:00</td>
+									<td width = 25% align = "center"> 08:00</td>
+									<td width = 25% align = "center"> 08:00</td>
+									<td width = 25% align = "center"> 08:00</td>
+									<td width = 25% align = "center"> 08:00</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 10:00</td>
+									<td width = 25% align = "center"> 10:00</td>
+									<td width = 25% align = "center"> 10:00</td>
+									<td width = 25% align = "center"> 10:00</td>
+									<td width = 25% align = "center"> 10:00</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 14:00</td>
+									<td width = 25% align = "center"> 14:00</td>
+									<td width = 25% align = "center"> 14:00</td>
+									<td width = 25% align = "center"> 14:00</td>
+									<td width = 25% align = "center"> 14:00</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 16:00</td>
+									<td width = 25% align = "center"> 16:00</td>
+									<td width = 25% align = "center"> 16:00</td>
+									<td width = 25% align = "center"> 16:00</td>
+									<td width = 25% align = "center"> 16:00</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 18:00</td>
+									<td width = 25% align = "center"> 18:00</td>
+									<td width = 25% align = "center"> 18:00</td>
+									<td width = 25% align = "center"> 18:00</td>
+									<td width = 25% align = "center"> 18:00</td>
+								</tr>
+							</table>
+                         </a>
+							 
+                         </br>
+                         
+                         <!---->
+						 <!---->
+                         <a href="#" class="list-group-item">
+							<table style= "width:100%">
+								<td align = "center">Volta da UFCG</td>
+							</table>
+                         </a>
+						
+						 <!---->
+                         <a href="#" class="list-group-item">
+							<table style= "width:100%">
+								<tr>
+									<td width = 25% align = "center"> SEG</td>
+									<td width = 25% align = "center"> TER</td>
+									<td width = 25% align = "center"> QUA</td>
+									<td width = 25% align = "center"> QUI</td>
+									<td width = 25% align = "center"> SEX</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 08:00</td>
+									<td width = 25% align = "center"> 08:00</td>
+									<td width = 25% align = "center"> 08:00</td>
+									<td width = 25% align = "center"> 08:00</td>
+									<td width = 25% align = "center"> 08:00</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 10:00</td>
+									<td width = 25% align = "center"> 10:00</td>
+									<td width = 25% align = "center"> 10:00</td>
+									<td width = 25% align = "center"> 10:00</td>
+									<td width = 25% align = "center"> 10:00</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 14:00</td>
+									<td width = 25% align = "center"> 14:00</td>
+									<td width = 25% align = "center"> 14:00</td>
+									<td width = 25% align = "center"> 14:00</td>
+									<td width = 25% align = "center"> 14:00</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 16:00</td>
+									<td width = 25% align = "center"> 16:00</td>
+									<td width = 25% align = "center"> 16:00</td>
+									<td width = 25% align = "center"> 16:00</td>
+									<td width = 25% align = "center"> 16:00</td>
+								</tr>
+								<tr>
+									<td width = 25% align = "center"> 18:00</td>
+									<td width = 25% align = "center"> 18:00</td>
+									<td width = 25% align = "center"> 18:00</td>
+									<td width = 25% align = "center"> 18:00</td>
+									<td width = 25% align = "center"> 18:00</td>
+								</tr>
+							</table>
+                         </a>
+							 
+                         </br>
+                         
+                 
+                        </br>
+                    </div>
+                </div>
+            </div>
+    </body>
+    </html>
