@@ -1,4 +1,4 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/home/paulovss/Área de Trabalho/ProjetoSI1/caronaUFCG20152/conf/routes,/home/paulovss/Área de Trabalho/ProjetoSI1/caronaUFCG20152/target/scala-2.11/classes/routes)[0m
-[0m[[0mdebug[0m] [0m	(/home/paulovss/Área de Trabalho/ProjetoSI1/caronaUFCG20152/conf/application.conf,/home/paulovss/Área de Trabalho/ProjetoSI1/caronaUFCG20152/target/scala-2.11/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/home/paulovss/Área de Trabalho/ProjetoSI1/caronaUFCG20152/conf/logback.xml,/home/paulovss/Área de Trabalho/ProjetoSI1/caronaUFCG20152/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/routes,/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/application.conf,/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/logback.xml,/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes/logback.xml)[0m

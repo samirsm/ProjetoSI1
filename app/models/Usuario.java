@@ -14,10 +14,11 @@ public class Usuario extends Model implements TipoUsuario {
 	private String foto;
 	private int numeroVagas;
 	private TipoUsuario tipo;
+	
 	@Id
 	private Long id;
 
-	public Usuario(String nome, String matricula, String numeroDeTelefone,
+	public Usuario(Long id, String nome, String matricula, String numeroDeTelefone,
 			String email, String foto, int numeroVagas, TipoUsuario tipo) {
 		this.nome = nome;
 		this.matricula = matricula;
@@ -25,6 +26,7 @@ public class Usuario extends Model implements TipoUsuario {
 		this.email = email;
 		this.foto = foto;
 		this.numeroVagas = numeroVagas;
+		this.id = id;
 	}
 
 	public Usuario(String nome, String matricula, String numeroDeTelefone,

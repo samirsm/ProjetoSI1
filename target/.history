@@ -56,3 +56,11 @@ compile
 run
 compile
 run
+clean
+compile
+run
+eclipse
+compile
+run
+compile
+run
