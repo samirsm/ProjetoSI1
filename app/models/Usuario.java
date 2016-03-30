@@ -1,8 +1,12 @@
-package classes;
+package models;
 
-import tiposUsuarios.TipoUsuario;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-public class Usuario {
+import com.avaje.ebean.Model;
+
+@Entity
+public class Usuario extends Model implements TipoUsuario {
 	private String nome;
 	private String matricula;
 	private String numeroDeTelefone;
@@ -10,6 +14,8 @@ public class Usuario {
 	private String foto;
 	private int numeroVagas;
 	private TipoUsuario tipo;
+	@Id
+	private Long id;
 
 	public Usuario(String nome, String matricula, String numeroDeTelefone,
 			String email, String foto, int numeroVagas, TipoUsuario tipo) {
@@ -86,6 +92,12 @@ public class Usuario {
 
 	public void setTipo(TipoUsuario tipo) {
 		this.tipo = tipo;
+	}
+
+	@Override
+	public boolean oferecePedeCarona() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	// Vai receber uns parâmetros que irão definir o que esta acontecendo

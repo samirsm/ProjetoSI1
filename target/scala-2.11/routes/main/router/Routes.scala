@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/routes
-// @DATE:Sat Mar 26 08:18:36 BRT 2016
+// @SOURCE:/home/paulovss/Área de Trabalho/ProjetoSI1/caronaUFCG20152/conf/routes
+// @DATE:Wed Mar 30 00:51:29 BRT 2016
 
 package router
 
@@ -17,7 +17,7 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  Application_1: controllers.Application,
+  AutenticacaoController_1: controllers.AutenticacaoController,
   // @LINE:10
   Assets_0: controllers.Assets,
   val prefix: String
@@ -26,16 +26,16 @@ class Routes(
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    Application_1: controllers.Application,
+    AutenticacaoController_1: controllers.AutenticacaoController,
     // @LINE:10
     Assets_0: controllers.Assets
-  ) = this(errorHandler, Application_1, Assets_0, "/")
+  ) = this(errorHandler, AutenticacaoController_1, Assets_0, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, Application_1, Assets_0, prefix)
+    new Routes(errorHandler, AutenticacaoController_1, Assets_0, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -43,9 +43,9 @@ class Routes(
   }
 
   def documentation = List(
-    ("""GET""", this.prefix, """controllers.Application.index()"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """signup/""", """controllers.Application.submit()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
+    ("""GET""", this.prefix, """controllers.AutenticacaoController.index"""),
+    ("""GET""", this.prefix, """controllers.AutenticacaoController.efetuaLogin"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -54,36 +54,36 @@ class Routes(
 
 
   // @LINE:6
-  private[this] lazy val controllers_Application_index0_route = Route("GET",
+  private[this] lazy val controllers_AutenticacaoController_index0_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix)))
   )
-  private[this] lazy val controllers_Application_index0_invoker = createInvoker(
-    Application_1.index(),
+  private[this] lazy val controllers_AutenticacaoController_index0_invoker = createInvoker(
+    AutenticacaoController_1.index,
     HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.Application",
+      "controllers.AutenticacaoController",
       "index",
       Nil,
       "GET",
-      """ Home page""",
+      """ Faz a chamada do Index de Autenticacao do Usuario""",
       this.prefix + """"""
     )
   )
 
   // @LINE:7
-  private[this] lazy val controllers_Application_submit1_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("signup/")))
+  private[this] lazy val controllers_AutenticacaoController_efetuaLogin1_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix)))
   )
-  private[this] lazy val controllers_Application_submit1_invoker = createInvoker(
-    Application_1.submit(),
+  private[this] lazy val controllers_AutenticacaoController_efetuaLogin1_invoker = createInvoker(
+    AutenticacaoController_1.efetuaLogin,
     HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.Application",
-      "submit",
+      "controllers.AutenticacaoController",
+      "efetuaLogin",
       Nil,
-      "POST",
+      "GET",
       """""",
-      this.prefix + """signup/"""
+      this.prefix + """"""
     )
   )
 
@@ -100,7 +100,7 @@ class Routes(
       Seq(classOf[String], classOf[Asset]),
       "GET",
       """ Map static resources from the /public folder to the /assets URL path""",
-      this.prefix + """assets/$file<.+>"""
+      this.prefix + """assets/""" + "$" + """file<.+>"""
     )
   )
 
@@ -108,15 +108,15 @@ class Routes(
   def routes: PartialFunction[RequestHeader, Handler] = {
   
     // @LINE:6
-    case controllers_Application_index0_route(params) =>
+    case controllers_AutenticacaoController_index0_route(params) =>
       call { 
-        controllers_Application_index0_invoker.call(Application_1.index())
+        controllers_AutenticacaoController_index0_invoker.call(AutenticacaoController_1.index)
       }
   
     // @LINE:7
-    case controllers_Application_submit1_route(params) =>
+    case controllers_AutenticacaoController_efetuaLogin1_route(params) =>
       call { 
-        controllers_Application_submit1_invoker.call(Application_1.submit())
+        controllers_AutenticacaoController_efetuaLogin1_invoker.call(AutenticacaoController_1.efetuaLogin)
       }
   
     // @LINE:10

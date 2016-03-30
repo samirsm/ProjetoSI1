@@ -1,4 +1,4 @@
-package tiposUsuarios;
+package models;
 
 public interface TipoUsuario {
 	

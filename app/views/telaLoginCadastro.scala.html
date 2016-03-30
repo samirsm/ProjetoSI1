@@ -1,4 +1,5 @@
-<!DOCTYPE html> 
+@main("Vumbora") {
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -7,26 +8,34 @@
     	<meta name="description" content="">
     	<meta name="author" content="">
 
-    	<title>Vumbora!</title>
-		
+    	<!-- <title>Vumbora</title> -->
+
+			<script
+				src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script
+				src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+			<script
+				src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+			<linkrel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+
 	    <!-- Bootstrap Core CSS -->
-	    <link rel="stylesheet" href="../../public/CreativeTemplate/css/bootstrap.min.css" type="text/css">
-		<link href="../../public/CreativeTemplate/js/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+	    <link rel="stylesheet" href="assets/CreativeTemplate/css/bootstrap.min.css" type="text/css">
+			<link href="assets/CreativeTemplate/js/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
 
 	    <!-- Custom Fonts -->
 	    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 	    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-	    <link rel="stylesheet" href="../../public/CreativeTemplate/font-awesome/css/font-awesome.min.css" type="text/css">
+	    <link rel="stylesheet" href="assets/CreativeTemplate/font-awesome/css/font-awesome.min.css" type="text/css">
 
 	    <!-- Plugin CSS -->
-	    <link rel="stylesheet" href="../../public/CreativeTemplate/css/animate.min.css" type="text/css">
+	    <link rel="stylesheet" href="assets/CreativeTemplate/css/animate.min.css" type="text/css">
 
 	    <!-- Custom CSS -->
-	    <link rel="stylesheet" href="../../public/CreativeTemplate/css/creative.css" type="text/css">
-	    
+	    <link rel="stylesheet" href="assets/CreativeTemplate/css/creative.css" type="text/css">
+
 	    <style type="text/css">
 	    	body{
-	    		background-image: url("../../public/CreativeTemplate/img/fundoCarro.png");
+	    		background-image: url("assets/CreativeTemplate/img/fundoCarro.png");
 	    		background-size: cover;
 	    	}
 	    	input{
@@ -52,7 +61,7 @@
 	    		alert("Login efetuado com sucesso!");
 			}
 	    </script>
-	    
+
 	    <script type="text/javascript">
        function passageiro(){
 		   document.getElementById('infoMotorista').style.visibility = 'hidden';
@@ -60,11 +69,11 @@
 	   function motorista(){
 		   document.getElementById('infoMotorista').style.visibility = 'visible';
 		}
-					
+
        function cadastro(){
 			document.getElementById('loginCadastroBox').innerHTML = document.getElementById('divCadastro').innerHTML;
        }
-       
+
        function login(){
 		document.getElementById('loginCadastroBox').innerHTML = document.getElementById('divLogin').innerHTML;
        }
@@ -72,15 +81,15 @@
        function start(){
        	login();
        }
-       
+
        window.onload = start;
     </script>
-	<link rel="icon" type="img/ico" href="../../public/SBAdminTemplate/img/favicon.ico">
+	<link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
 	</head>
 	<body>
 
 	<br/>
-	<img src="../../public/CreativeTemplate/img/logo_curso.png" style="margin-left: 20px;">
+	<img src="assets/CreativeTemplate/img/logo_curso.png" style="margin-left: 20px;">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-5" align="left" style="margin-left: 20px;">
@@ -92,22 +101,22 @@
 		        <h2 class="text-faded">Caronas de ida e volta para a UFCG</h2>
 		        <br/>
 		        <br/>
-				<img src="../../public/CreativeTemplate/img/checkmark.png" align="left" width="30"><h4 class="text-faded">Notificações em tempo real</h4>
+				<img src="assets/CreativeTemplate/img/checkmark.png" align="left" width="30"><h4 class="text-faded">Notificações em tempo real</h4>
 				<br/>
-		        <img src="../../public/CreativeTemplate/img/checkmark.png" align="left" width="30"><h4 class="text-faded">Recomendações de caronistas e passageiros</h4>
+		        <img src="assets/CreativeTemplate/img/checkmark.png" align="left" width="30"><h4 class="text-faded">Recomendações de caronistas e passageiros</h4>
 		        <br/>
-		        <img src="../../public/CreativeTemplate/img/checkmark.png" align="left" width="30"><h4 class="text-faded">Usuários cadastrados de confiança</h4>
+		        <img src="assets/CreativeTemplate/img/checkmark.png" align="left" width="30"><h4 class="text-faded">Usuários cadastrados de confiança</h4>
 			</div>
-		
+
 		<div class="col-lg-2">
 			<div class="container-fluid">
 			</div>
 		</div>
 		<div id="loginCadastroBox" class="col-lg-4" style="border: 1px solid #888; border-radius: 20px; vertical-align: center; background: #000; filter:alpha(opacity=80); opacity: 0.8; margin-left: 80px; text-align: center; color: white;">
 	    </div>
-	
+
 	<div id="divLogin" style="display: none">
-				<img src="../../public/CreativeTemplate/img/logo_vumbora.png" width="300">
+				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
 				<br/>
 				<b>Usuário</b>
 				<br/>
@@ -124,10 +133,10 @@
 				<br/>
 			</div>
 	</div>
-	
+
 		<div id="divCadastro" style="display: none">
-			
-				<img src="../../public/CreativeTemplate/img/logo_vumbora.png" width="300">
+
+				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
 				<br/>
 				<label class="radio-inline"><input type="radio" name="optradio" onclick="motorista();" checked>Motorista</label>
 				<label class="radio-inline"><input type="radio" name="optradio" onclick="passageiro();">Passageiro</label>
@@ -184,19 +193,20 @@
 		</div>
 
 		<!-- jQuery -->
-	    <script src="../../public/CreativeTemplate/js/jquery.js"></script>
+	    <script src="assets/CreativeTemplate/js/jquery.js"></script>
 
 	    <!-- Bootstrap Core JavaScript -->
-	    <script src="../../public/CreativeTemplate/js/bootstrap.min.js"></script>
-	    <script src="../../public/CreativeTemplate/js/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
-	    <script src="../../public/CreativeTemplate/js/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+	    <script src="assets/CreativeTemplate/js/bootstrap.min.js"></script>
+	    <script src="assets/CreativeTemplate/js/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+	    <script src="assets/CreativeTemplate/js/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
 
 	    <!-- Plugin JavaScript -->
-	    <script src="../../public/CreativeTemplate/js/jquery.easing.min.js"></script>
-	    <script src="../../public/CreativeTemplate/js/jquery.fittext.js"></script>
-	    <script src="../../public/CreativeTemplate/js/wow.min.js"></script>
+	    <script src="assets/CreativeTemplate/js/jquery.easing.min.js"></script>
+	    <script src="assets/CreativeTemplate/js/jquery.fittext.js"></script>
+	    <script src="assets/CreativeTemplate/js/wow.min.js"></script>
 
 	    <!-- Custom Theme JavaScript -->
-	    <script src="../../public/CreativeTemplate/js/creative.js"></script>
+	    <script src="assets/CreativeTemplate/js/creative.js"></script>
 	</body>
 </html>
+}

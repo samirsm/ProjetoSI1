@@ -1,1 +1,2 @@
-2016-03-26 08:18:56,108 [INFO] from play.core.server.NettyServer in pool-7-thread-7 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-03-30 00:53:49,560 [INFO] from play.core.server.NettyServer in pool-35-thread-2 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-03-30 00:53:56,264 [INFO] from play.api.Play in ForkJoinPool-4-worker-1 - Application started (Dev)

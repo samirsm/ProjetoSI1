@@ -1,5 +1,10 @@
-package classes;
+package models;
 
-public class Carro {
+import javax.persistence.Entity;
+
+import com.avaje.ebean.Model;
+
+@Entity
+public class Carro extends Model{
 
 }

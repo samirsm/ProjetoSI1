@@ -1,9 +1,13 @@
-package classes;
+package models;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Sistema {
+import javax.persistence.Entity;
+
+import com.avaje.ebean.Model;
+
+@Entity
+public class Sistema extends Model {
 	
 	private Usuario usuarioLogado;
 	List<Usuario> usuariosSistema;
