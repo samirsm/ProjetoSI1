@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/routes
-// @DATE:Wed Mar 30 12:05:18 BRT 2016
+// @DATE:Thu Mar 31 16:51:44 BRT 2016
 
 package router
 
@@ -44,7 +44,7 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.AutenticacaoController.index"""),
-    ("""GET""", this.prefix, """controllers.AutenticacaoController.efetuaLogin"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.AutenticacaoController.efetuaLogin"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -71,8 +71,8 @@ class Routes(
   )
 
   // @LINE:7
-  private[this] lazy val controllers_AutenticacaoController_efetuaLogin1_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix)))
+  private[this] lazy val controllers_AutenticacaoController_efetuaLogin1_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
   private[this] lazy val controllers_AutenticacaoController_efetuaLogin1_invoker = createInvoker(
     AutenticacaoController_1.efetuaLogin,
@@ -81,9 +81,9 @@ class Routes(
       "controllers.AutenticacaoController",
       "efetuaLogin",
       Nil,
-      "GET",
+      "POST",
       """""",
-      this.prefix + """"""
+      this.prefix + """login"""
     )
   )
 

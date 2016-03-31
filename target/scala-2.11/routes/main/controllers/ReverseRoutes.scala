@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/routes
-// @DATE:Wed Mar 30 12:05:18 BRT 2016
+// @DATE:Thu Mar 31 16:51:44 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -23,7 +23,7 @@ package controllers {
     // @LINE:7
     def efetuaLogin(): Call = {
       import ReverseRouteContext.empty
-      Call("GET", _prefix)
+      Call("POST", _prefix + { _defaultPrefix } + "login")
     }
   
     // @LINE:6

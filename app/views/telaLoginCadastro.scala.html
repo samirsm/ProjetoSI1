@@ -117,25 +117,18 @@
 		<div id="loginCadastroBox" class="col-lg-4" style="border: 1px solid #888; border-radius: 20px; vertical-align: center; background: #000; filter:alpha(opacity=80); opacity: 0.8; margin-left: 80px; text-align: center; color: white;">
 	    </div>
 
-	<div id="divLogin" style="display: none">
-				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				<br/>
-				<b>Usuário</b>
-				<br/>
-				<input type = "text">
-				<br/>
-				<b>Senha</b>
-				<br/>
-				<input type = "password">
-				<br/>
-				<br/>
-				<a id="botaoLogin" href="#" class="btn btn-default btn-xl" onclick="loginEfetuadoComSucesso()">Login</a>
-				<br/>
-				<a href="#" class="btn" onclick="cadastro()">Não é cadastrado? Cadastre-se</a>
-				<br/>
-			</div>
-	</div>
 
+	<div id="divLogin" style="display: none">
+		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
+				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
+				@helper.inputText(formularioLogin("Usuário"), 'name -> "nome")
+				@helper.inputPassword(formularioLogin("Senha"), 'name -> "senha")
+				<input type="submit" value="Login" id="login" class="btn btn-default btn-xl"></input>
+			}
+				<a class="btn" onclick="cadastro()">Não é cadastrado? Cadastre-se</a>
+				<br/>
+		</div>
+</div>
 		<div id="divCadastro" style="display: none">
 
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">

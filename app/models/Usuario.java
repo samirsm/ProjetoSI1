@@ -29,17 +29,6 @@ public class Usuario extends Model implements TipoUsuario {
 		this.id = id;
 	}
 
-	public Usuario(String nome, String matricula, String numeroDeTelefone,
-			String email, String foto, TipoUsuario tipo) {
-		super();
-		this.nome = nome;
-		this.matricula = matricula;
-		this.numeroDeTelefone = numeroDeTelefone;
-		this.email = email;
-		this.foto = foto;
-		this.tipo = tipo;
-	}
-
 	public String getNome() {
 		return nome;
 	}
