@@ -1,5 +1,8 @@
 package controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 
 import exceptions.LoginInvalidoException;
@@ -13,33 +16,55 @@ import views.html.*;
 
 public class AutenticacaoController extends Controller {
 	private FormFactory formFactory;
-	private Form<Usuario> formularioLogin;
+	private Form<Usuario> formularioAutenticacao;
+	private List<Usuario> usuariosCadastrados;
 	
 	@Inject
 	public AutenticacaoController (FormFactory formFactory){
 		this.formFactory = formFactory;
-		formularioLogin = formFactory.form(Usuario.class);
+		usuariosCadastrados = new ArrayList<Usuario>();
+		formularioAutenticacao = this.formFactory.form(Usuario.class);
 	}
 	
 	public Result index(){
-		// TODO
-
-		//return ok(telaLoginCadastro.render());
-		return ok(telaLoginCadastro.render(formularioLogin));
+		String x = "";
+		for (Usuario usuario : usuariosCadastrados) {
+			x+= usuario.toString();
+		}
+		return ok(telaLoginCadastro.render(formularioAutenticacao, x));
 	}
 
 	public Result efetuaLogin () throws LoginInvalidoException {
-		DynamicForm requestData = formFactory.form().bindFromRequest();
-		Usuario user = formularioLogin.bindFromRequest().get();
-		String userName = user.getNome();
+		Usuario user = formularioAutenticacao.bindFromRequest().get();
 		
-		return ok(exceptions.render("oi " + userName + " "));
+		return validaLogin(user);
 	}
 
 	public Result cadastraUsuario(){
-		//TODO
-		Form<Usuario> formularioLogin = formFactory.form(Usuario.class);
-		Usuario user = formularioLogin.bindFromRequest().get();
+		Usuario user = formularioAutenticacao.bindFromRequest().get();
+		
+		String x = "";
+		usuariosCadastrados.add(user);
+		for (Usuario usuario : usuariosCadastrados) {
+			x+= usuario.toString();
+		}
+		return ok(index.render(x));
+		
+	}
+
+	private Result validaLogin(Usuario user) {
+		Usuario usuarioLogado = validaUsuario(user);
+		if (usuarioLogado == null)
+			return ok(exceptions.render(new LoginInvalidoException().getMessage()));
+		else
+			return ok(index.render("Bem-vindo " + usuarioLogado.getNome()));
+	}
+
+	private Usuario validaUsuario(Usuario usuarioPesquisado) {
+		for (Usuario usuario : usuariosCadastrados)
+			if (usuario.equals(usuarioPesquisado))
+				return usuario;
+			
 		return null;
 	}
 }

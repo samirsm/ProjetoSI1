@@ -5,29 +5,22 @@ import javax.persistence.Id;
 
 import com.avaje.ebean.Model;
 
+import play.data.validation.Constraints.Required;
+
 @Entity
-public class Usuario extends Model implements TipoUsuario {
+public class Usuario extends Model {
+	
 	private String nome;
 	private String matricula;
 	private String numeroDeTelefone;
 	private String email;
 	private String foto;
+	private String senha;
 	private int numeroVagas;
-	private TipoUsuario tipo;
+	private Endereco endereco;
 	
 	@Id
 	private Long id;
-
-	public Usuario(Long id, String nome, String matricula, String numeroDeTelefone,
-			String email, String foto, int numeroVagas, TipoUsuario tipo) {
-		this.nome = nome;
-		this.matricula = matricula;
-		this.numeroDeTelefone = numeroDeTelefone;
-		this.email = email;
-		this.foto = foto;
-		this.numeroVagas = numeroVagas;
-		this.id = id;
-	}
 
 	public String getNome() {
 		return nome;
@@ -35,6 +28,14 @@ public class Usuario extends Model implements TipoUsuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getMatricula() {
@@ -53,14 +54,6 @@ public class Usuario extends Model implements TipoUsuario {
 		this.numeroDeTelefone = numeroDeTelefone;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getFoto() {
 		return foto;
 	}
@@ -76,25 +69,31 @@ public class Usuario extends Model implements TipoUsuario {
 	public void setNumeroVagas(int numeroVagas) {
 		this.numeroVagas = numeroVagas;
 	}
-
-	public TipoUsuario getTipo() {
-		return tipo;
+	
+	public void setSenha(String novaSenha){
+		this.senha = novaSenha;
 	}
-
-	public void setTipo(TipoUsuario tipo) {
-		this.tipo = tipo;
+	
+	public String getSenha(){
+		return senha;
 	}
-
+	
+	public Long getId(){
+		return id;
+	}
+	
 	@Override
-	public boolean oferecePedeCarona() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Usuario))
+			return false;
+		
+		Usuario outroUsuario = (Usuario) obj;
+		
+		return matricula.equals(outroUsuario.getMatricula()) && senha.equals(outroUsuario.getSenha());
 	}
 	
-	// Vai receber uns parâmetros que irão definir o que esta acontecendo
-	
-//	public boolean pedeRecebeCarona(){
-//		return tipo.oferecePedeCarona();
-//	}
-	
+	@Override
+	public String toString() {
+		return nome + " " + matricula + " " + numeroDeTelefone + " " + " " + foto + " " + " " + senha + " " + numeroVagas + " ";
+	}
 }

@@ -1,6 +1,7 @@
-@(formularioLogin: Form[Usuario]) 
+@(formularioAutenticacao: Form[Usuario], listaUsuariosCadastrados: String)
 
 @main("Vumbora") {
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -89,7 +90,7 @@
 	<link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
 	</head>
 	<body>
-
+		@listaUsuariosCadastrados
 	<br/>
 	<img src="assets/CreativeTemplate/img/logo_curso.png" style="margin-left: 20px;">
 	<div class="container-fluid">
@@ -119,11 +120,12 @@
 
 
 	<div id="divLogin" style="display: none">
+
 		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				@helper.inputText(formularioLogin("Usuário"), 'name -> "nome")
-				@helper.inputPassword(formularioLogin("Senha"), 'name -> "senha")
-				<input type="submit" value="Login" id="login" class="btn btn-default btn-xl"></input>
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Matrícula")
+				@helper.inputText(formularioAutenticacao("senha"), '_label -> "Senha")
+				<input type="submit" value="Login" class="btn btn-default btn-xl"></input>
 			}
 				<a class="btn" onclick="cadastro()">Não é cadastrado? Cadastre-se</a>
 				<br/>
@@ -131,56 +133,21 @@
 </div>
 		<div id="divCadastro" style="display: none">
 
+				@helper.form(action = routes.AutenticacaoController.cadastraUsuario()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
+				@helper.inputText(formularioAutenticacao("nome"), '_label -> "Nome")
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Matrícula")
+				@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> "Número de Telefone")
+				@helper.inputText(formularioAutenticacao("email"), '_label -> "Email")
+				@helper.inputText(formularioAutenticacao("foto"), '_label -> "Foto")
+				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
+				@helper.inputText(formularioAutenticacao("numeroVagas"), '_label -> "Número de vagas no carro:")
+
+				<input type="submit" value="Cadastrar" class="btn btn-default btn-xl"></input>
 				<br/>
-				<label class="radio-inline"><input type="radio" name="optradio" onclick="motorista();" checked>Motorista</label>
-				<label class="radio-inline"><input type="radio" name="optradio" onclick="passageiro();">Passageiro</label>
-				<br/>
-				<b>Nome:</b>
-				<br/>
-				<input type = "text">
-				<br/>
-				<b>Email:</b>
-				<br/>
-				<input type = "email">
-				<br/>
-				<b>Senha:</b>
-				<br/>
-				<input type = "password">
-				<br/>
-				<b>Endereço:</b>
-				<br/>
-				<input type = "text">
-				<br/>
-				<b>Matrícula:</b>
-				<br/>
-				<input type = "text">
-				<br/>
-				<b>Nº Telefone:</b>
-				<br/>
-				<input type = "text">
-				<br/>
-				<br/>
-				<b>Foto do perfil</b>
-				<br/>
-				<!--<a href="#" class="btn btn-primary" onclick="">Selecionar arquivo</a>-->
-				<input type="file" style="margin-left: 35%;">
-				<br/>
-				<div id="infoMotorista">
-					<h3>Informações do seu veículo</h3>
-					<b>Vagas oferecidas</b>
-					<br/>
-					<input type = "text">
-					<br/>
-					<b>Modelo e placa</b>
-					<br/>
-					<input type = "text">
-					<br/>
-					<br/>
+				<a class="btn" onclick="login()">Já é cadastrado? Faça login!</a>
 				</div>
-					<a href="#" class="btn btn-default btn-xl" onclick="alertaCadastroEfetuado()">Vumbora</a>
-					<br/>
-					<a href="#" class="btn" onclick="login()">Já é cadastrado? Faça login!</a>
+				}
 				<br/>
 				<br/>
 				<br/>
