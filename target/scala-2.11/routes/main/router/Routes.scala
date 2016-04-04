@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/routes
-// @DATE:Sun Apr 03 19:03:52 BRT 2016
+// @DATE:Sun Apr 03 20:58:02 BRT 2016
 
 package router
 
@@ -17,25 +17,29 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  AutenticacaoController_1: controllers.AutenticacaoController,
-  // @LINE:11
-  Assets_0: controllers.Assets,
+  AutenticacaoController_2: controllers.AutenticacaoController,
+  // @LINE:9
+  HorariosController_0: controllers.HorariosController,
+  // @LINE:12
+  Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    AutenticacaoController_1: controllers.AutenticacaoController,
-    // @LINE:11
-    Assets_0: controllers.Assets
-  ) = this(errorHandler, AutenticacaoController_1, Assets_0, "/")
+    AutenticacaoController_2: controllers.AutenticacaoController,
+    // @LINE:9
+    HorariosController_0: controllers.HorariosController,
+    // @LINE:12
+    Assets_1: controllers.Assets
+  ) = this(errorHandler, AutenticacaoController_2, HorariosController_0, Assets_1, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, AutenticacaoController_1, Assets_0, prefix)
+    new Routes(errorHandler, AutenticacaoController_2, HorariosController_0, Assets_1, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -44,8 +48,9 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.AutenticacaoController.index"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.AutenticacaoController.efetuaLogin"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastro""", """controllers.AutenticacaoController.cadastraUsuario"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastroRealizado""", """controllers.AutenticacaoController.cadastraUsuario"""),
+    ("""POST""", this.prefix, """controllers.AutenticacaoController.efetuaLogin"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastroHorarios""", """controllers.HorariosController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -59,7 +64,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_AutenticacaoController_index0_invoker = createInvoker(
-    AutenticacaoController_1.index,
+    AutenticacaoController_2.index,
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AutenticacaoController",
@@ -72,28 +77,11 @@ class Routes(
   )
 
   // @LINE:7
-  private[this] lazy val controllers_AutenticacaoController_efetuaLogin1_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
+  private[this] lazy val controllers_AutenticacaoController_cadastraUsuario1_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastroRealizado")))
   )
-  private[this] lazy val controllers_AutenticacaoController_efetuaLogin1_invoker = createInvoker(
-    AutenticacaoController_1.efetuaLogin,
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.AutenticacaoController",
-      "efetuaLogin",
-      Nil,
-      "POST",
-      """""",
-      this.prefix + """login"""
-    )
-  )
-
-  // @LINE:8
-  private[this] lazy val controllers_AutenticacaoController_cadastraUsuario2_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastro")))
-  )
-  private[this] lazy val controllers_AutenticacaoController_cadastraUsuario2_invoker = createInvoker(
-    AutenticacaoController_1.cadastraUsuario,
+  private[this] lazy val controllers_AutenticacaoController_cadastraUsuario1_invoker = createInvoker(
+    AutenticacaoController_2.cadastraUsuario,
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AutenticacaoController",
@@ -101,16 +89,50 @@ class Routes(
       Nil,
       "POST",
       """""",
-      this.prefix + """cadastro"""
+      this.prefix + """cadastroRealizado"""
     )
   )
 
-  // @LINE:11
-  private[this] lazy val controllers_Assets_versioned3_route = Route("GET",
+  // @LINE:8
+  private[this] lazy val controllers_AutenticacaoController_efetuaLogin2_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix)))
+  )
+  private[this] lazy val controllers_AutenticacaoController_efetuaLogin2_invoker = createInvoker(
+    AutenticacaoController_2.efetuaLogin,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AutenticacaoController",
+      "efetuaLogin",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """"""
+    )
+  )
+
+  // @LINE:9
+  private[this] lazy val controllers_HorariosController_index3_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastroHorarios")))
+  )
+  private[this] lazy val controllers_HorariosController_index3_invoker = createInvoker(
+    HorariosController_0.index,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HorariosController",
+      "index",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """cadastroHorarios"""
+    )
+  )
+
+  // @LINE:12
+  private[this] lazy val controllers_Assets_versioned4_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
-    Assets_0.versioned(fakeValue[String], fakeValue[Asset]),
+  private[this] lazy val controllers_Assets_versioned4_invoker = createInvoker(
+    Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -128,25 +150,31 @@ class Routes(
     // @LINE:6
     case controllers_AutenticacaoController_index0_route(params) =>
       call { 
-        controllers_AutenticacaoController_index0_invoker.call(AutenticacaoController_1.index)
+        controllers_AutenticacaoController_index0_invoker.call(AutenticacaoController_2.index)
       }
   
     // @LINE:7
-    case controllers_AutenticacaoController_efetuaLogin1_route(params) =>
+    case controllers_AutenticacaoController_cadastraUsuario1_route(params) =>
       call { 
-        controllers_AutenticacaoController_efetuaLogin1_invoker.call(AutenticacaoController_1.efetuaLogin)
+        controllers_AutenticacaoController_cadastraUsuario1_invoker.call(AutenticacaoController_2.cadastraUsuario)
       }
   
     // @LINE:8
-    case controllers_AutenticacaoController_cadastraUsuario2_route(params) =>
+    case controllers_AutenticacaoController_efetuaLogin2_route(params) =>
       call { 
-        controllers_AutenticacaoController_cadastraUsuario2_invoker.call(AutenticacaoController_1.cadastraUsuario)
+        controllers_AutenticacaoController_efetuaLogin2_invoker.call(AutenticacaoController_2.efetuaLogin)
       }
   
-    // @LINE:11
-    case controllers_Assets_versioned3_route(params) =>
+    // @LINE:9
+    case controllers_HorariosController_index3_route(params) =>
+      call { 
+        controllers_HorariosController_index3_invoker.call(HorariosController_0.index)
+      }
+  
+    // @LINE:12
+    case controllers_Assets_versioned4_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned3_invoker.call(Assets_0.versioned(path, file))
+        controllers_Assets_versioned4_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

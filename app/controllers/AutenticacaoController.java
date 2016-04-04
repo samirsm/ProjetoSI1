@@ -48,16 +48,17 @@ public class AutenticacaoController extends Controller {
 		for (Usuario usuario : usuariosCadastrados) {
 			x+= usuario.toString();
 		}
-		return ok(index.render(x));
+		return ok(index.render("Cadastro realizado com sucesso!"));
 		
 	}
 
 	private Result validaLogin(Usuario user) {
 		Usuario usuarioLogado = validaUsuario(user);
+		Form<String> formularioHorarios = formFactory.form(String.class);;
 		if (usuarioLogado == null)
 			return ok(exceptions.render(new LoginInvalidoException().getMessage()));
 		else
-			return ok(index.render("Bem-vindo " + usuarioLogado.getNome()));
+			return new HorariosController(formFactory, usuarioLogado).index();
 	}
 
 	private Usuario validaUsuario(Usuario usuarioPesquisado) {

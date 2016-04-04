@@ -15,7 +15,11 @@
      * Get an `Html` object by calling the built-in Play welcome
      * template and passing a `String` message.
      *@
-     
+
      @message
+
+     @helper.form(action = routes.AutenticacaoController.index()) {
+ 				<input type="submit" value="Voltar à tela principal" class="btn btn-default btn-xl"></input>
+ 			}
 
 }
