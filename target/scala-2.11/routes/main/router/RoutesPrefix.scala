@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/routes
-// @DATE:Sat Apr 09 00:50:08 BRT 2016
+// @DATE:Sat Apr 09 02:44:46 BRT 2016
 
 
 package router {

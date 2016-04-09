@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/routes
-// @DATE:Sat Apr 09 00:50:08 BRT 2016
+// @DATE:Sat Apr 09 02:44:46 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -16,6 +16,26 @@ package controllers.javascript {
   import ReverseRouteContext.empty
 
   // @LINE:6
+  class ReverseHomeController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:6
+    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.index",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:7
   class ReverseAutenticacaoController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -33,7 +53,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:9
+    // @LINE:8
     def efetuaLogin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AutenticacaoController.efetuaLogin",
       """
@@ -43,17 +63,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:6
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AutenticacaoController.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
-        }
-      """
-    )
-  
-    // @LINE:8
+    // @LINE:7
     def cadastraUsuario: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AutenticacaoController.cadastraUsuario",
       """
@@ -85,7 +95,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:7
+  // @LINE:9
   class ReverseHorariosController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -93,9 +103,9 @@ package controllers.javascript {
     }
 
   
-    // @LINE:7
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HorariosController.index",
+    // @LINE:9
+    def cadastraHorarios: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HorariosController.cadastraHorarios",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "home"})

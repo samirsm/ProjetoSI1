@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/routes
-// @DATE:Sat Apr 09 00:50:08 BRT 2016
+// @DATE:Sat Apr 09 02:44:46 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -14,6 +14,21 @@ import _root_.play.libs.F
 package controllers {
 
   // @LINE:6
+  class ReverseHomeController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:6
+    def index(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix)
+    }
+  
+  }
+
+  // @LINE:7
   class ReverseAutenticacaoController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
@@ -26,19 +41,13 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "logout")
     }
   
-    // @LINE:9
+    // @LINE:8
     def efetuaLogin(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "cadastroHorarios")
     }
   
-    // @LINE:6
-    def index(): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix)
-    }
-  
-    // @LINE:8
+    // @LINE:7
     def cadastraUsuario(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "cadastroRealizado")
@@ -61,15 +70,15 @@ package controllers {
   
   }
 
-  // @LINE:7
+  // @LINE:9
   class ReverseHorariosController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:7
-    def index(): Call = {
+    // @LINE:9
+    def cadastraHorarios(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "home")
     }

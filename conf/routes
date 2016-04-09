@@ -3,10 +3,10 @@
 # ~~~~
 
 # Faz a chamada do Index de Autenticacao do Usuario
-GET     /                           controllers.AutenticacaoController.index
-GET     /home                       controllers.HorariosController.index
+GET     /                           controllers.HomeController.index
 POST    /cadastroRealizado	        controllers.AutenticacaoController.cadastraUsuario
 POST    /cadastroHorarios         	controllers.AutenticacaoController.efetuaLogin
+GET     /home       				controllers.HorariosController.cadastraHorarios
 #POST   /uploadFotoUsuario          controllers.AutenticacaoController.uploadFotoUsuario
 GET     /logout                     controllers.AutenticacaoController.efetuaLogout
 

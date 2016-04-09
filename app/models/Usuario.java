@@ -13,6 +13,7 @@ public class Usuario extends Model {
 	private ArrayList<Horario> horarios;
 	private Dados dadosUsuario;
 	private Carro carro;
+	private boolean horariosCadastrados;
 	
 	public Usuario(Dados dadosPessoais, Carro carro){
 		this.dadosUsuario = dadosPessoais;
@@ -31,6 +32,18 @@ public class Usuario extends Model {
 	@Id
 	private Long id;
 	
+	public boolean isHorariosCadastrados() {
+		return horariosCadastrados;
+	}
+	
+	public void cadastrouHorarios(){
+		setHorariosCadastrados(true);
+	}
+	
+	private void setHorariosCadastrados(boolean cadastrouHorarios){
+		horariosCadastrados = cadastrouHorarios;
+	}
+
 	public ArrayList<Horario> getHorarios() {
 		return horarios;
 	}

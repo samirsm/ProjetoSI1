@@ -14,7 +14,7 @@ import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import views.html.*;
 
-public class HorariosController extends Controller {
+public class HomeController extends Controller {
 	private FormFactory formFactory;
 	private Usuario usuarioLogado;
 	
@@ -23,27 +23,24 @@ public class HorariosController extends Controller {
 	private Form<Endereco> formularioEndereco;
 	
 	@Inject
-	public HorariosController (FormFactory formFactory){
+	public HomeController (FormFactory formFactory){
 		this.formFactory = formFactory;
 		formularioDadosPessoaisUsuario = this.formFactory.form(Dados.class);
 		formularioCarro = this.formFactory.form(Carro.class);
 		formularioEndereco = this.formFactory.form(Endereco.class);
 	}
 	
-	public Result cadastraHorarios(){
-		/*
-		 * Deve salvar os horarios no usuario, mas para isso tem que pegar
-		 * os atributos lá de alguma forma. Nao sei como fazer isso ainda.
-		 * 
-		 * Por enquanto ele vai so redirecionar para a pagina principal e
-		 * mudar o atributo do usuario.
-		 */
-		
-		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-		usuarioLogado.cadastrouHorarios();
-		
-		return ok(viewMotorista.render(usuarioLogado));
-		
+	public Result index(){
+		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+		return exibePagina();
 	}
 	
+	private Result exibePagina(){
+		if (usuarioLogado == null)
+			return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioCarro, formularioEndereco));
+		else if(!usuarioLogado.isHorariosCadastrados())
+			return ok(telaCadastroHorario.render(usuarioLogado));
+		else
+			return ok(viewMotorista.render(usuarioLogado)); 
+	}
 }

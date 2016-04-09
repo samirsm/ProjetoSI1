@@ -115,3 +115,12 @@ compile
 run
 compile
 run
+compile
+run
+compile
+clean
+compile
+run
+clean
+compile
+run

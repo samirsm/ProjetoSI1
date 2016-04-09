@@ -27,18 +27,12 @@ public class AutenticacaoController extends Controller {
 	private Form<Carro> formularioCarro;
 	private Form<Endereco> formularioEndereco;
 	
-	// Session
-	
 	@Inject
 	public AutenticacaoController (FormFactory formFactory){
 		this.formFactory = formFactory;
 		formularioDadosPessoaisUsuario = this.formFactory.form(Dados.class);
 		formularioCarro = this.formFactory.form(Carro.class);
 		formularioEndereco = this.formFactory.form(Endereco.class);
-	}
-	
-	public Result index(){
-		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioCarro, formularioEndereco));
 	}
 
 	public Result efetuaLogin() {
@@ -53,7 +47,9 @@ public class AutenticacaoController extends Controller {
 		
 		SistemaUsuarioLogin.getInstance().efetuaLogin(matricula, email, senha);
 		
-		return cadastraHorariosPrimeiraVez();
+		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+		
+		return ok(telaCadastroHorario.render(usuarioLogado));
 	}
 
 	public Result cadastraUsuario() {
@@ -66,13 +62,9 @@ public class AutenticacaoController extends Controller {
 		return ok(index.render("Cadastro realizado com sucesso!"));
 	}
 	
-	public Result cadastraHorariosPrimeiraVez() {
-		return ok(telaCadastroHorario.render(SistemaUsuarioLogin.getInstance().getUsuarioLogado()));
-	}
-	
 	public Result efetuaLogout(){
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
 		
-		return index();
+		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioCarro, formularioEndereco));
 	}
 }
