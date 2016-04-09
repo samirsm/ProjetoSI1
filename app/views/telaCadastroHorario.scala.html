@@ -1,4 +1,4 @@
-@(formularioHorario: Form[String], usuario: Usuario)
+@(usuario: Usuario)
 @main("Vumbora"){
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +108,7 @@
 	                        </li>
 	                        <li class="divider"></li>
 	                        <li>
-	                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Sair</a>
+															<a href="logout">Disconnect</a>
 	                        </li>
 	                    </ul>
 	                </li>
@@ -231,7 +231,7 @@
 	                            <table style= "width:100%">
 	                                <tr>
 	                                    <td width="20%">
-											<i class="fa fa-user fa-5x"></i>
+											<img src="assets/"+@usuario.getFoto()></i>
 	                                    </td>
 	                                    <td width = "70%" align = "left">
 	                                        <i class="fa fa-info fa-1x"></i>&nbsp @usuario.getNome()</br>
@@ -266,9 +266,7 @@
 								<!---->
 								 <a class="list-group-item" style="background-color: #D3D3D3; color: #000000">
 									<table style= "width:100%">
-										@helper.form(action = routes.HorariosController.index()){
 											<td align = "right"><input type = "submit" value = "Cadastrar" id = "cadastroIndividual" class="btn btn-warning btn'l" style="float: center; font-size: 12px; font-family: 'Calibri Light';"></input></td>
-										}
 
 									</table>
 								 </a>
@@ -303,9 +301,7 @@
 								<!---->
 								 <a class="list-group-item" style="background-color: #D3D3D3; color: #000000">
 									<table style= "width:100%">
-										@helper.form(action = routes.HorariosController.index()){
 											<td align = "right"><input type = "submit" value = "Cadastrar" id = "cadastroIndividual" class="btn btn-warning btn'l" style="float: center; font-size: 12px; font-family: 'Calibri Light';"></input></td>
-										}
 
 									</table>
 								 </a>

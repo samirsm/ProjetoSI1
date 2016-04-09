@@ -1,4 +1,4 @@
-@(formularioAutenticacao: Form[Usuario], listaUsuariosCadastrados: String)
+@(formularioAutenticacao: Form[Dados], formularioCarro: Form[Carro], formularioEndereco: Form[Endereco])
 
 @main("Vumbora") {
 
@@ -11,7 +11,7 @@
     	<meta name="description" content="">
     	<meta name="author" content="">
 
-    	<!-- <title>Vumbora</title> -->
+    	<!-- <title>Vumbora</title> Pesquisar DAO Pattern -->
 
 			<script
 				src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -43,6 +43,11 @@
 	    	}
 	    	input{
 				color: black;
+			}
+
+			input[type=file]{
+				margin-left: 35%;
+				margin-right: 35%;
 			}
 
 	    </style>
@@ -85,12 +90,15 @@
        	login();
        }
 
+			 function redirect(){
+
+			 }
+
        window.onload = start;
     </script>
 	<link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
 	</head>
 	<body>
-		@listaUsuariosCadastrados
 	<br/>
 	<img src="assets/CreativeTemplate/img/logo_curso.png" style="margin-left: 20px;">
 	<div class="container-fluid">
@@ -124,7 +132,7 @@
 		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
 				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Matrícula")
-				@helper.inputText(formularioAutenticacao("senha"), '_label -> "Senha")
+				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
 				<input type="submit" value="Login" class="btn btn-default btn-xl"></input>
 			}
 				<a class="btn" onclick="cadastro()">Não é cadastrado? Cadastre-se</a>
@@ -139,9 +147,12 @@
 				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Matrícula")
 				@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> "Número de Telefone")
 				@helper.inputText(formularioAutenticacao("email"), '_label -> "Email")
-				@helper.inputText(formularioAutenticacao("foto"), '_label -> "Foto")
 				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
-				@helper.inputText(formularioAutenticacao("numeroVagas"), '_label -> "Número de vagas no carro:")
+				@helper.inputText(formularioEndereco("rua"), '_label -> "Rua")
+				@helper.inputText(formularioEndereco("bairro"), '_label -> "Bairro")
+				@helper.inputText(formularioCarro("numeroVagas"), '_label -> "Número de vagas no carro (Caso possua):")
+				@helper.inputText(formularioCarro("placaCarro"), '_label -> "Placa do carro (Caso possua):")
+				@helper.inputFile(formularioAutenticacao("foto"), '_label -> "Foto")
 
 				<input type="submit" value="Cadastrar" class="btn btn-default btn-xl"></input>
 				<br/>

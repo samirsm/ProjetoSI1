@@ -6,9 +6,4 @@ import javax.persistence.Entity;
 public class Endereco {
 	private String bairro;
 	private String rua;
-	
-	public Endereco (){
-		this.bairro = bairro;
-		this.rua = rua;
-	}
 }

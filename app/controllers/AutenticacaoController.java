@@ -1,71 +1,78 @@
 package controllers;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import exceptions.LoginInvalidoException;
+import models.Carro;
+import models.Dados;
+import models.Endereco;
 import models.Usuario;
-import play.data.DynamicForm;
+import play.api.inject.Binding;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
+import sistemas.SistemaUsuarioCRUD;
+import sistemas.SistemaUsuarioLogin;
 import views.html.*;
 
 public class AutenticacaoController extends Controller {
 	private FormFactory formFactory;
-	private Form<Usuario> formularioAutenticacao;
-	private List<Usuario> usuariosCadastrados;
+	private Form<Dados> formularioDadosPessoaisUsuario;
+	private Form<Carro> formularioCarro;
+	private Form<Endereco> formularioEndereco;
+	
+	// Session
 	
 	@Inject
 	public AutenticacaoController (FormFactory formFactory){
 		this.formFactory = formFactory;
-		usuariosCadastrados = new ArrayList<Usuario>();
-		formularioAutenticacao = this.formFactory.form(Usuario.class);
+		formularioDadosPessoaisUsuario = this.formFactory.form(Dados.class);
+		formularioCarro = this.formFactory.form(Carro.class);
+		formularioEndereco = this.formFactory.form(Endereco.class);
 	}
 	
 	public Result index(){
-		String x = "";
-		for (Usuario usuario : usuariosCadastrados) {
-			x+= usuario.toString();
-		}
-		return ok(telaLoginCadastro.render(formularioAutenticacao, x));
+		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioCarro, formularioEndereco));
 	}
 
-	public Result efetuaLogin () throws LoginInvalidoException {
-		Usuario user = formularioAutenticacao.bindFromRequest().get();
+	public Result efetuaLogin() {
+		Dados dadosUsuario = formularioDadosPessoaisUsuario.bindFromRequest().get();
 		
-		return validaLogin(user);
+		String matricula = dadosUsuario.getMatricula();
+		String email = dadosUsuario.getEmail();
+		String senha = dadosUsuario.getSenha();
+		
+//		HttpSession sessaoUsuario = request.
+//		sessaoUsuario.setAttribute("MySessionVariable", new Object());
+		
+		SistemaUsuarioLogin.getInstance().efetuaLogin(matricula, email, senha);
+		
+		return cadastraHorariosPrimeiraVez();
 	}
 
-	public Result cadastraUsuario(){
-		Usuario user = formularioAutenticacao.bindFromRequest().get();
+	public Result cadastraUsuario() {
+		Dados dadosPessoais = formularioDadosPessoaisUsuario.bindFromRequest().get();
+		Carro carro = formularioCarro.bindFromRequest().get();
+		Endereco endereco = formularioEndereco.bindFromRequest().get();
 		
-		String x = "";
-		usuariosCadastrados.add(user);
-		for (Usuario usuario : usuariosCadastrados) {
-			x+= usuario.toString();
-		}
+		SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, carro);
+		
 		return ok(index.render("Cadastro realizado com sucesso!"));
+	}
+	
+	public Result cadastraHorariosPrimeiraVez() {
+		return ok(telaCadastroHorario.render(SistemaUsuarioLogin.getInstance().getUsuarioLogado()));
+	}
+	
+	public Result efetuaLogout(){
+		SistemaUsuarioLogin.getInstance().efetuaLogout();
 		
-	}
-
-	private Result validaLogin(Usuario user) {
-		Usuario usuarioLogado = validaUsuario(user);
-		Form<String> formularioHorarios = formFactory.form(String.class);;
-		if (usuarioLogado == null)
-			return ok(exceptions.render(new LoginInvalidoException().getMessage()));
-		else
-			return new HorariosController(formFactory, usuarioLogado).index();
-	}
-
-	private Usuario validaUsuario(Usuario usuarioPesquisado) {
-		for (Usuario usuario : usuariosCadastrados)
-			if (usuario.equals(usuarioPesquisado))
-				return usuario;
-			
-		return null;
+		return index();
 	}
 }

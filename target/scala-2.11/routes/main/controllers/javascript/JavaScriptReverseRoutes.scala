@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/routes
-// @DATE:Sun Apr 03 20:58:02 BRT 2016
+// @DATE:Sat Apr 09 00:50:08 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -23,12 +23,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:8
+    // @LINE:11
+    def efetuaLogout: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AutenticacaoController.efetuaLogout",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "logout"})
+        }
+      """
+    )
+  
+    // @LINE:9
     def efetuaLogin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AutenticacaoController.efetuaLogin",
       """
         function() {
-          return _wA({method:"POST", url:"""" + _prefix + """"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "cadastroHorarios"})
         }
       """
     )
@@ -43,7 +53,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:7
+    // @LINE:8
     def cadastraUsuario: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AutenticacaoController.cadastraUsuario",
       """
@@ -55,7 +65,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:12
+  // @LINE:15
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -63,7 +73,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
+    // @LINE:15
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -75,7 +85,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:9
+  // @LINE:7
   class ReverseHorariosController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -83,12 +93,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:9
+    // @LINE:7
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HorariosController.index",
       """
         function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "cadastroHorarios"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "home"})
         }
       """
     )

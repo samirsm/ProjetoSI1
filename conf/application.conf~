@@ -341,5 +341,5 @@ db {
   #ebean.default = ["models.*"]
   # You can turn on SQL logging for any datasource
   # https://www.playframework.com/documentation/latest/Highlights25#Logging-SQL-statements
-  #default.logSql=true
+  default.logSql=true
 }
