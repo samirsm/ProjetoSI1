@@ -1,39 +1,109 @@
 package models;
 
+import javax.persistence.*;
+import com.avaje.ebean.Model;
+
 import java.io.File;
 import java.util.ArrayList;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-import com.avaje.ebean.Model;
+import java.util.List;
 
 @Entity
 public class Usuario extends Model {
-	private ArrayList<Horario> horarios;
-	private Dados dadosUsuario;
+	private Dados dadosPessoais;
 	private Carro carro;
+	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
+	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
+	private List<Carona> caronasPassageiro = new ArrayList<>();
+	private List<Carona> caronasMotorista = new ArrayList<>();
 	private boolean horariosCadastrados;
-	
-	public Usuario(Dados dadosPessoais, Carro carro){
-		this.dadosUsuario = dadosPessoais;
+
+	@Id
+	private Long id;
+
+	public Usuario(Dados dados, Carro carro) {
+		this.dadosPessoais = dados;
 		this.carro = carro;
-		horarios = new ArrayList<Horario>();
+		this.id = id;
 	}
 	
-	public Carro getCarro() {
-		return carro;
+	public boolean addNotificacaoPassageiro(Notificacao notificacao){
+		return notificacoesPassageiro.add(notificacao);
+	}
+	
+	public boolean addNotificacaoMotorista(Notificacao notificacao){
+		return notificacoesMotorista.add(notificacao);
+	}
+	
+	public boolean hasCar() {
+		return carro != null;
 	}
 
 	public void setCarro(Carro carro) {
 		this.carro = carro;
 	}
+	
+	public Carro getCarro() {
+		return carro;
+	}
+	
+	public List<Notificacao> getNotificacaoMotorista() {
+		return notificacoesMotorista;
+	}
+	
+	public List<Notificacao> getNotificacaoPassageiro() {
+		return notificacoesPassageiro;
+	}
 
-	@Id
-	private Long id;
+	public String getNome() {
+		return dadosPessoais.getNome();
+	}
+
+	public void setNome(String nome) {
+		dadosPessoais.setNome(nome);
+	}
+
+	public String getNumeroDeTelefone() {
+		return dadosPessoais.getNumeroDeTelefone();
+	}
+
+	public void setNumeroDeTelefone(String numeroDeTelefone) {
+		dadosPessoais.setNumeroDeTelefone(numeroDeTelefone);
+	}
+
+	public String getEmail() {
+		return dadosPessoais.getEmail();
+	}
+
+	public void setEmail(String email) {
+		dadosPessoais.setEmail(email);
+	}
+
+	public void setFoto(File foto) {
+		dadosPessoais.setFoto(foto);
+	}
+
+	public List<Carona> getCaronasPassageiro() {
+		return caronasPassageiro;
+	}
+
+	public List<Carona> getCaronasMotorista() {
+		return caronasMotorista;
+	}
+	
+	public void addCaronaPassageiro(Carona carona){
+		caronasPassageiro.add(carona);
+	}
+	
+	public void addCaronaMotorista(Carona carona) {
+		caronasMotorista.add(carona);
+	}
 	
 	public boolean isHorariosCadastrados() {
 		return horariosCadastrados;
+	}
+	
+	public File getFoto() {
+		return dadosPessoais.getFoto();
 	}
 	
 	public void cadastrouHorarios(){
@@ -43,42 +113,6 @@ public class Usuario extends Model {
 	private void setHorariosCadastrados(boolean cadastrouHorarios){
 		horariosCadastrados = cadastrouHorarios;
 	}
-
-	public ArrayList<Horario> getHorarios() {
-		return horarios;
-	}
-
-	public void setHorarios(ArrayList<Horario> horarios) {
-		this.horarios = horarios;
-	}
-
-	public Dados getDadosUsuario() {
-		return dadosUsuario;
-	}
-
-	public void setDadosUsuario(Dados dadosUsuario) {
-		this.dadosUsuario = dadosUsuario;
-	}
-
-	public Long getId(){
-		return id;
-	}
-	
-	public String getEmail(){
-		return dadosUsuario.getEmail();
-	}
-	
-	public String getNome(){
-		return dadosUsuario.getNome();
-	}
-	
-	public String getNumeroDeTelefone(){
-		return dadosUsuario.getNumeroDeTelefone();
-	}
-	
-	public File getFoto() {
-		return dadosUsuario.getFoto();
-	}
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -87,7 +121,12 @@ public class Usuario extends Model {
 		
 		Usuario outroUsuario = (Usuario) obj;
 		
-		return outroUsuario.equals(dadosUsuario);
+		return outroUsuario.equals(dadosPessoais);
 
 	}
+
+	public Dados getDadosUsuario() {
+		return dadosPessoais;
+	}
+
 }
