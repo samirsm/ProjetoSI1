@@ -9,13 +9,13 @@ import models.Usuario;
 
 public class SistemaNotificacao {
 	
-	private static final SistemaNotificacao SISTEMA_NOTIFICACAO = new SistemaNotificacao();
+	private static final SistemaNotificacao INSTANCIA = new SistemaNotificacao();
 
 	private SistemaNotificacao() {}
 	
 	
-	public static SistemaNotificacao getImstance() {
-		return SISTEMA_NOTIFICACAO;
+	public static SistemaNotificacao getInstance() {
+		return INSTANCIA;
 	}
 	
 	

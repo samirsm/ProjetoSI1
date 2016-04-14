@@ -10,7 +10,8 @@ import java.util.List;
 @Entity
 public class Usuario extends Model {
 	private Dados dadosPessoais;
-	private Carro carro;
+	private Endereco endereco;
+	private Integer numeroVagas;
 	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
 	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
 	private List<Carona> caronasPassageiro = new ArrayList<>();
@@ -20,10 +21,9 @@ public class Usuario extends Model {
 	@Id
 	private Long id;
 
-	public Usuario(Dados dados, Carro carro) {
+	public Usuario(Dados dados, Endereco endereco) {
 		this.dadosPessoais = dados;
-		this.carro = carro;
-		this.id = id;
+		this.setEndereco(endereco);
 	}
 	
 	public boolean addNotificacaoPassageiro(Notificacao notificacao){
@@ -32,18 +32,6 @@ public class Usuario extends Model {
 	
 	public boolean addNotificacaoMotorista(Notificacao notificacao){
 		return notificacoesMotorista.add(notificacao);
-	}
-	
-	public boolean hasCar() {
-		return carro != null;
-	}
-
-	public void setCarro(Carro carro) {
-		this.carro = carro;
-	}
-	
-	public Carro getCarro() {
-		return carro;
 	}
 	
 	public List<Notificacao> getNotificacaoMotorista() {
@@ -129,4 +117,15 @@ public class Usuario extends Model {
 		return dadosPessoais;
 	}
 
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+	public Integer getNumeroVagas() {
+		return numeroVagas;
+	}
 }

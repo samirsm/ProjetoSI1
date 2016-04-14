@@ -5,7 +5,8 @@
 # Faz a chamada do Index de Autenticacao do Usuario
 GET     /                           controllers.HomeController.index
 POST    /cadastroRealizado	        controllers.AutenticacaoController.cadastraUsuario
-POST    /cadastroHorarios         	controllers.AutenticacaoController.efetuaLogin
+POST    /index			         	controllers.AutenticacaoController.efetuaLogin
+POST    /home						controllers.CaronasController.cadastraNovaCarona
 GET     /home       				controllers.HorariosController.cadastraHorarios
 #POST   /uploadFotoUsuario          controllers.AutenticacaoController.uploadFotoUsuario
 GET     /logout                     controllers.AutenticacaoController.efetuaLogout

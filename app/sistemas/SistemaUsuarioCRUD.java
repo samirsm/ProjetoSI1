@@ -2,9 +2,8 @@ package sistemas;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import models.Carro;
 import models.Dados;
+import models.Endereco;
 import models.Usuario;
 
 public final class SistemaUsuarioCRUD {
@@ -22,8 +21,8 @@ public final class SistemaUsuarioCRUD {
 		return INSTANCIA;
 	}
 	
-	public boolean cadastraUsuario(Dados dadosPessoais, Carro carro){
-		Usuario novoUsuario = new Usuario(dadosPessoais, carro);
+	public boolean cadastraUsuario(Dados dadosPessoais, Endereco endereco){
+		Usuario novoUsuario = new Usuario(dadosPessoais, endereco);
 		return usuariosAtivados.add(novoUsuario);
 	}
 	

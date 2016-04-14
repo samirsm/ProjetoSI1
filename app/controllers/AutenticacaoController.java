@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import exceptions.LoginInvalidoException;
-import models.Carro;
+import models.Carona;
 import models.Dados;
 import models.Endereco;
 import models.Usuario;
@@ -17,6 +17,7 @@ import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
+import sistemas.SistemaCarona;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import views.html.*;
@@ -24,40 +25,46 @@ import views.html.*;
 public class AutenticacaoController extends Controller {
 	private FormFactory formFactory;
 	private Form<Dados> formularioDadosPessoaisUsuario;
-	private Form<Carro> formularioCarro;
 	private Form<Endereco> formularioEndereco;
+	private Form<Carona> formularioCarona;
 	
 	@Inject
 	public AutenticacaoController (FormFactory formFactory){
 		this.formFactory = formFactory;
 		formularioDadosPessoaisUsuario = this.formFactory.form(Dados.class);
-		formularioCarro = this.formFactory.form(Carro.class);
 		formularioEndereco = this.formFactory.form(Endereco.class);
+		formularioCarona = this.formFactory.form(Carona.class);
 	}
 
-	public Result efetuaLogin() {
+	private Result verificaPrimeiroAcessoUsuario(Usuario usuario) {
+		List<Carona> caronas = SistemaCarona.getInstance().buscarCaronas();
+		if (!usuario.isHorariosCadastrados())
+			return ok(telaCadastroHorario.render(usuario));
+		return ok(viewMotorista.render(usuario, formularioCarona, caronas));
+	}
+	
+	public Result efetuaLogin(){
+		Usuario usuarioLogado = autenticaUsuario();
+		return verificaPrimeiroAcessoUsuario(usuarioLogado);
+	}
+	
+	private Usuario autenticaUsuario(){
 		Dados dadosUsuario = formularioDadosPessoaisUsuario.bindFromRequest().get();
 		
 		String matricula = dadosUsuario.getMatricula();
-		String email = dadosUsuario.getEmail();
+		String email = matricula; // O usuário pode digitar um dos dois no mesmo campo
 		String senha = dadosUsuario.getSenha();
-		
-//		HttpSession sessaoUsuario = request.
-//		sessaoUsuario.setAttribute("MySessionVariable", new Object());
 		
 		SistemaUsuarioLogin.getInstance().efetuaLogin(matricula, email, senha);
 		
-		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-		
-		return ok(telaCadastroHorario.render(usuarioLogado));
+		return SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 	}
 
 	public Result cadastraUsuario() {
 		Dados dadosPessoais = formularioDadosPessoaisUsuario.bindFromRequest().get();
-		Carro carro = formularioCarro.bindFromRequest().get();
 		Endereco endereco = formularioEndereco.bindFromRequest().get();
 		
-		SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, carro);
+		SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco);
 		
 		return ok(index.render("Cadastro realizado com sucesso!"));
 	}
@@ -65,6 +72,6 @@ public class AutenticacaoController extends Controller {
 	public Result efetuaLogout(){
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
 		
-		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioCarro, formularioEndereco));
+		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco));
 	}
 }

@@ -16,35 +16,42 @@ import models.Usuario;
 
 @Entity
 public class SistemaCarona extends Model {
-	private static final SistemaCarona SISTEMA_CARONA = new SistemaCarona();
-	private ArrayList<Carona> caronas = new ArrayList();
-	private SistemaNotificacao notificacao = SistemaNotificacao.getImstance();
+	private static final SistemaCarona INSTANCIA = new SistemaCarona();
+	private ArrayList<Carona> caronas;
+	private SistemaNotificacao sistemaNotificacoes = SistemaNotificacao.getInstance();
 
 	private SistemaCarona() {
+		 caronas = new ArrayList<>();
 	}
 	public static SistemaCarona getInstance() {
-		return SISTEMA_CARONA;
+		return INSTANCIA;
 	}
 	
     public List<Carona> buscarCaronas(){
 		return caronas;
     }
     
-    public void adicionaCarona(Carona carona) {
+    private void adicionaCarona(Carona carona) {
 		caronas.add(carona);
 	}
     
     public boolean removeCarona(String id) {
-    	int pos  = buscarCaronaPorId(id);
+    	int pos = buscarCaronaPorId(id);
     	if (pos == -1)
     		return false;
-    	notificacao.geraNotificacaoCancelamento(caronas.get(pos));
+    	sistemaNotificacoes.geraNotificacaoCancelamento(caronas.get(pos));
     	caronas.remove(pos);
     	return true;
 	}
     
     public void criaCarona(Usuario motorista, Horario horario, TipoCarona tipo, int numeroDeVagas) {
 		Carona carona = new Carona(motorista, horario, tipo, numeroDeVagas);
+		adicionaCarona(carona);
+		motorista.addCaronaMotorista(carona);
+    }
+    
+    public void criaCarona(Usuario motorista, int numeroVagas){
+    	Carona carona = new Carona(motorista, null, TipoCarona.IDA, numeroVagas);
 		adicionaCarona(carona);
 		motorista.addCaronaMotorista(carona);
     }
@@ -61,7 +68,7 @@ public class SistemaCarona extends Model {
     	if (!carona.isFull()) {
 			carona.adicionaPassageiro(passageiro);
 			passageiro.addCaronaPassageiro(carona);
-			notificacao.geraNotificacaoAceitacao(passageiro, carona);
+			sistemaNotificacoes.geraNotificacaoAceitacao(passageiro, carona);
 			return true;
     	}
     	return false;

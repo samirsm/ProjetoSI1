@@ -1,0 +1,4 @@
+[0m[[31merror[0m] [0m/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/views/viewMotorista.scala.html:444: Expected '}' but found 'EOF'[0m
+[0m[[31merror[0m] [0m}[0m
+[0m[[31merror[0m] [0m ^[0m
+[0m[[31merror[0m] [0m(compile:[31mtwirlCompileTemplates[0m) Twirl compilation failed[0m

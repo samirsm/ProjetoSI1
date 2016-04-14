@@ -1,4 +1,4 @@
-@(formularioAutenticacao: Form[Dados], formularioCarro: Form[Carro], formularioEndereco: Form[Endereco])
+@(formularioAutenticacao: Form[Dados], formularioEndereco: Form[Endereco])
 
 @main("Vumbora") {
 
@@ -42,6 +42,9 @@
 	    		background-size: cover;
 	    	}
 	    	input{
+				color: black;
+			}
+			select{
 				color: black;
 			}
 
@@ -131,7 +134,7 @@
 
 		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Matrícula")
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Email/Matrícula")
 				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
 				<input type="submit" value="Login" class="btn btn-default btn-xl"></input>
 			}
@@ -150,8 +153,8 @@
 				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
 				@helper.inputText(formularioEndereco("rua"), '_label -> "Rua")
 				@helper.inputText(formularioEndereco("bairro"), '_label -> "Bairro")
-				@helper.inputText(formularioCarro("numeroVagas"), '_label -> "Número de vagas no carro (Caso possua):")
-				@helper.inputText(formularioCarro("placaCarro"), '_label -> "Placa do carro (Caso possua):")
+				<!-- Falta mapear os valores mostrados aqui com o número de vagas-->
+				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq("1","2","3","4")), '_label -> "Número de vagas no carro (Caso possua):", '_default -> "Selecione o número de vagas:")
 				@helper.inputFile(formularioAutenticacao("foto"), '_label -> "Foto")
 
 				<input type="submit" value="Cadastrar" class="btn btn-default btn-xl"></input>
