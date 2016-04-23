@@ -24,7 +24,6 @@ import sistemas.SistemaDeBairros;
 import sistemas.SistemaNotificacao;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
-import sistemas.SistemaUsuariosDefault;
 import views.html.*;
 
 public class HomeController extends Controller {
