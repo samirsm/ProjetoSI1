@@ -2,24 +2,23 @@
  * This template takes a single argument, a String containing a
  * message to display.
  *@
-@(message: String)
+@(message: String)(content: Html)
 
 @*
  * Call the the `main` template with two arguments. The first
  * argument is a `String` with the title of the page, the second
  * argument is an `Html` object containing the body of the page.
  *@
-@main("Welcome to Play") {
 
     @*
      * Get an `Html` object by calling the built-in Play welcome
      * template and passing a `String` message.
      *@
-
-     @message
-
-     @helper.form(action = routes.HomeController.index()) {
- 				<input type="submit" value="Voltar à tela principal" class="btn btn-default btn-xl"></input>
- 			}
-
-}
+    <head>
+     <link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
+     <title>@message</title>
+   </head>
+   
+   <body>
+     @content
+   </body>

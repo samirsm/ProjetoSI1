@@ -2,8 +2,16 @@ package sistemas;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import exceptions.BairroJaCadastradoException;
+import exceptions.DadosInvalidosException;
+import exceptions.HorarioJaCadastradoException;
+import exceptions.LoginInvalidoException;
+import exceptions.UsuarioCadastradoException;
 import models.Dados;
 import models.Endereco;
+import models.Horario;
+import models.TipoCarona;
 import models.Usuario;
 
 public final class SistemaUsuarioCRUD {
@@ -21,29 +29,37 @@ public final class SistemaUsuarioCRUD {
 		return INSTANCIA;
 	}
 	
-	public boolean cadastraUsuario(Dados dadosPessoais, Endereco endereco){
-		Usuario novoUsuario = new Usuario(dadosPessoais, endereco);
-		return usuariosAtivados.add(novoUsuario);
+	// Cadastro com foto de usuario default
+	public Usuario cadastraUsuario(Dados dadosPessoais, Endereco endereco, Integer numeroVagas) throws UsuarioCadastradoException{
+		Usuario novoUsuario = new Usuario(dadosPessoais, endereco, numeroVagas);
+		if (!isUsuarioExistente(novoUsuario))
+			usuariosAtivados.add(novoUsuario);
+
+		return novoUsuario;
 	}
 	
-	public boolean desativaUsuario(String matricula, String email, String senha){
+	public Usuario desativaUsuario(String matricula, String email, String senha) throws DadosInvalidosException, LoginInvalidoException{
 		Usuario usuarioASerDesativado = removeUsuario(matricula, email, senha);
-		
-		return usuariosDesativados.add(usuarioASerDesativado);
+		usuariosDesativados.add(usuarioASerDesativado);
+		return usuarioASerDesativado;
 	}
 	
-	public Usuario consultaUsuario(String matricula, String email, String senha){
+	public Usuario consultaUsuario(String matricula, String email, String senha) throws DadosInvalidosException, LoginInvalidoException{
 		return usuariosAtivados.get(buscaIndexUsuario(matricula, email, senha));
 	}
 	
-	private Usuario removeUsuario(String matricula, String email, String senha){
+	List<Usuario> getListaUsuariosAtivados(){
+		return usuariosAtivados;
+	}
+	
+	private Usuario removeUsuario(String matricula, String email, String senha) throws DadosInvalidosException, LoginInvalidoException{
 		int indexUsuarioASerRemovido = buscaIndexUsuario(matricula, email, senha);
 		
 		return usuariosAtivados.remove(indexUsuarioASerRemovido);
 	}
 	
 	
-	private int buscaIndexUsuario(String matricula, String email, String senha){
+	private int buscaIndexUsuario(String matricula, String email, String senha) throws DadosInvalidosException, LoginInvalidoException{
 		Dados matriculaSenhaUsuario = new Dados(matricula, email, senha);
 		
 		for (int i = 0; i < usuariosAtivados.size(); i++) {
@@ -51,19 +67,30 @@ public final class SistemaUsuarioCRUD {
 				return i;
 		}
 		
-		return -1;
+		throw new LoginInvalidoException();
 	}
 	
-	public void atualizaEmail(String usuario, String novoEmail){
-		
+	public void cadastraHorario(Usuario usuario,TipoCarona tipo, Horario horario) throws HorarioJaCadastradoException{
+		if(tipo == TipoCarona.IDA)
+			usuario.adicionarHorarioIda(horario);
+		else
+			usuario.adicionarHorarioVolta(horario);
 	}
 	
-	public void atualizaSenha(String usuario, String senha){
-		
+	public void cadastraHorario(Usuario usuario,TipoCarona tipo, String dia, int hora) throws HorarioJaCadastradoException{
+		Horario horario = new Horario(dia,hora);
+		cadastraHorario(usuario,tipo,horario);
 	}
 	
-	public void atualizaDados(String usuario, Dados dados){
-		
+	private boolean isUsuarioExistente(Usuario novoUsuario) throws UsuarioCadastradoException {
+		for (Usuario usuario : usuariosAtivados) {
+			if(usuario.getEmail().equals(novoUsuario.getEmail()) ||
+				usuario.getDadosUsuario().getMatricula().equals(novoUsuario.getDadosUsuario().getMatricula()))
+				throw new UsuarioCadastradoException();
+		}
+		return false;
 	}
-	
+	public void cadastraNovoEndereco(Usuario usuario,String rua, String bairro) throws BairroJaCadastradoException{
+      usuario.addEnderecoAlternativo(new Endereco(rua, bairro));
+  }
 }

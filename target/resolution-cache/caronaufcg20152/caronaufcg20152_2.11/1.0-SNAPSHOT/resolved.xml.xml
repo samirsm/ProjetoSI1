@@ -4,7 +4,7 @@
 		module="caronaufcg20152_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20160414144850"
+		publication="20160421164031"
 	>
 		<description>
 		caronaUFCG20152
@@ -46,5 +46,6 @@
 		<dependency org="com.typesafe.play" name="play-java-jdbc_2.11" rev="2.5.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.5.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.5.1" conf="compile->default(compile)"/>
+		<dependency org="commons-io" name="commons-io" rev="2.4" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

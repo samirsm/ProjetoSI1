@@ -1,6 +1,6 @@
-@(formularioAutenticacao: Form[Dados], formularioEndereco: Form[Endereco])
+@(formularioAutenticacao: Form[Dados], formularioEndereco: Form[Endereco], bairros: List[String])
 
-@main("Vumbora") {
+@index("Sistema de Caronas: Vumbora"){
 
 <!DOCTYPE html>
 <html>
@@ -55,13 +55,6 @@
 
 	    </style>
 
-	    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	    <!--[if lt IE 9]>
-	        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	    <![endif]-->
-
 	    <script type="text/javascript">
 	    	function alertaCadastroEfetuado(){
 	    		alert("Cadastro efetuado com sucesso!");
@@ -93,10 +86,6 @@
        	login();
        }
 
-			 function redirect(){
-
-			 }
-
        window.onload = start;
     </script>
 	<link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
@@ -104,17 +93,14 @@
 	<body>
 	<br/>
 	<img src="assets/CreativeTemplate/img/logo_curso.png" style="margin-left: 20px;">
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-5" align="left" style="margin-left: 20px;">
 				<h1 class="text-faded">
-					<br/>
 					<span style="color: #F33"><br/>
        		      <span style="color: #F63">Busque o</span></span><span style="color: #F63">u ofereça caronas com segurança e facilidade</span><span style="color: rgba(255,102,51,0.7)"><span style="color: rgba(255,51,51,0.7)"> </span></span></h1>
-		        <br/>
 		        <h2 class="text-faded">Caronas de ida e volta para a UFCG</h2>
-		        <br/>
-		        <br/>
 				<img src="assets/CreativeTemplate/img/checkmark.png" align="left" width="30"><h4 class="text-faded">Notificações em tempo real</h4>
 				<br/>
 		        <img src="assets/CreativeTemplate/img/checkmark.png" align="left" width="30"><h4 class="text-faded">Recomendações de caronistas e passageiros</h4>
@@ -129,8 +115,7 @@
 		<div id="loginCadastroBox" class="col-lg-4" style="border: 1px solid #888; border-radius: 20px; vertical-align: center; background: #000; filter:alpha(opacity=80); opacity: 0.8; margin-left: 80px; text-align: center; color: white;">
 	    </div>
 
-
-	<div id="divLogin" style="display: none">
+			<div id="divLogin" style="display: none">
 
 		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
@@ -139,11 +124,9 @@
 				<input type="submit" value="Login" class="btn btn-default btn-xl"></input>
 			}
 				<a class="btn" onclick="cadastro()">Não é cadastrado? Cadastre-se</a>
-				<br/>
-		</div>
+			</div>
 </div>
 		<div id="divCadastro" style="display: none">
-
 				@helper.form(action = routes.AutenticacaoController.cadastraUsuario()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
 				@helper.inputText(formularioAutenticacao("nome"), '_label -> "Nome")
@@ -152,19 +135,13 @@
 				@helper.inputText(formularioAutenticacao("email"), '_label -> "Email")
 				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
 				@helper.inputText(formularioEndereco("rua"), '_label -> "Rua")
-				@helper.inputText(formularioEndereco("bairro"), '_label -> "Bairro")
-				<!-- Falta mapear os valores mostrados aqui com o número de vagas-->
-				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq("1","2","3","4")), '_label -> "Número de vagas no carro (Caso possua):", '_default -> "Selecione o número de vagas:")
-				@helper.inputFile(formularioAutenticacao("foto"), '_label -> "Foto")
-
+				@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> "Bairro")
+				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq("Não possuo carro","1","2","3","4","5","6","7","8")), '_label -> "Número de vagas no carro:")
 				<input type="submit" value="Cadastrar" class="btn btn-default btn-xl"></input>
-				<br/>
+			</br>
 				<a class="btn" onclick="login()">Já é cadastrado? Faça login!</a>
 				</div>
 				}
-				<br/>
-				<br/>
-				<br/>
 			</div>
 		</div>
 
