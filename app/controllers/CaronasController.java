@@ -1,27 +1,18 @@
 package controllers;
 
-import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import com.avaje.ebean.annotation.Transactional;
-
-import akka.event.LoggerMessageQueueSemantics;
 import exceptions.CaronaJaCadastradoException;
 import exceptions.NumeroDeVagasExcedenteException;
 import exceptions.NumeroDeVagasInsuficienteException;
 import models.Carona;
-import models.Dados;
-import models.Endereco;
 import models.Horario;
 import models.Notificacao;
 import models.TipoCarona;
 import models.Usuario;
-import play.Logger;
-import play.Logger.ALogger;
 import play.data.DynamicForm;
-import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -29,7 +20,7 @@ import sistemas.SistemaCarona;
 import sistemas.SistemaNotificacao;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
-import sistemas.registrosAcoes.Acao;
+import sistemas.logger.registrosAcoes.Acao;
 import views.html.*;
 
 public class CaronasController extends Controller {
@@ -58,12 +49,9 @@ public class CaronasController extends Controller {
             loggerCaronas.registraAcao(Acao.CADASTROU_CARONA, horario.toString(), tipo.toString(), vagasDisponiveisCarona.toString());
             SistemaCarona.getInstance().getListaPesquisaAtualizada();
             loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS);
-        } catch (NumeroDeVagasExcedenteException e){
+        } catch (NumeroDeVagasExcedenteException | CaronaJaCadastradoException e){
             loggerCaronas.registraAcao(Acao.ERRO, e.getMessage());
             return badRequest(e.getMessage());
-        }catch (CaronaJaCadastradoException e){
-          loggerCaronas.registraAcao(Acao.ERRO, e.getMessage());
-          return badRequest(e.getMessage());
       }
         
         return redirect(routes.HomeController.index());
@@ -144,7 +132,7 @@ public class CaronasController extends Controller {
     }
 
     private TipoCarona getTipo(String tipo){
-        if (tipo.equals("ida")) return TipoCarona.IDA;
+        if ("ida".equals(tipo)) return TipoCarona.IDA;
         else return TipoCarona.VOLTA;
     }
 }

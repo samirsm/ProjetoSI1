@@ -1,28 +1,21 @@
 package controllers;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import exceptions.DadosInvalidosException;
-import exceptions.UsuarioCadastradoException;
 import models.Carona;
 import models.Dados;
 import models.Endereco;
 import models.Horario;
 import models.Notificacao;
 import models.Usuario;
-import play.Logger;
-import play.Logger.ALogger;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 import sistemas.SistemaCarona;
 import sistemas.SistemaDeBairros;
-import sistemas.SistemaNotificacao;
-import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import views.html.*;
 

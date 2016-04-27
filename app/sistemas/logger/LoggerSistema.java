@@ -5,17 +5,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 
-import controllers.AutenticacaoController;
 import play.Logger;
 import play.Logger.ALogger;
 import play.api.mvc.Controller;
-import sistemas.registrosAcoes.Acao;
+import sistemas.logger.registrosAcoes.Acao;
 
 public class LoggerSistema {
 	
 	private static final ALogger loggerAdministrador = Logger.of(Controller.class);
-	private static String log = "";
+	private final int MAX_TAM_LOG = 10000;
+	private String log = "";
 	
+	// Construtor default
 	public LoggerSistema(){
 	}
 	
@@ -30,12 +31,15 @@ public class LoggerSistema {
 		
 		loggerAdministrador.info("["+horaSistema+"] " + acao.getMensagemAcao() + detalhesUsuario);
         log += "\n"+"["+horaSistema+"] " + acao.getMensagemAcao() + detalhesUsuario;
-		if(log.length() > 10000){
-		  salvaLog();
-		  log ="";
-		}
+		verificaTamanhoLog();
 		
-		
+	}
+	
+	private void verificaTamanhoLog(){
+		if(log.length() > MAX_TAM_LOG){
+			  salvaLog();
+			  log ="";
+			}
 	}
 	
 	private void salvaLog(){

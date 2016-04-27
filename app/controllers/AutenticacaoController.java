@@ -1,45 +1,21 @@
 package controllers;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
-import javax.validation.Validation;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-
-import play.data.validation.*;
 
 import exceptions.DadosInvalidosException;
 import exceptions.LoginInvalidoException;
 import exceptions.UsuarioCadastradoException;
-import models.Carona;
 import models.Dados;
 import models.Endereco;
 import models.Usuario;
-import play.Logger;
-import play.Logger.ALogger;
-import play.api.data.validation.ValidationError;
-import play.api.inject.Binding;
 import play.data.DynamicForm;
-import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
-import play.mvc.Http.MultipartFormData;
-import play.mvc.Http.MultipartFormData.FilePart;
-import play.mvc.Http.Request;
 import play.mvc.Result;
-import sistemas.SistemaCarona;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
-import sistemas.registrosAcoes.Acao;
+import sistemas.logger.registrosAcoes.Acao;
 import views.html.*;
 
 public class AutenticacaoController extends Controller {
@@ -57,7 +33,8 @@ public class AutenticacaoController extends Controller {
 		
 		try {
 			usuarioLogado = autenticaUsuario();
-			if (usuarioLogado == null) throw new LoginInvalidoException();
+			if (usuarioLogado == null) 
+				throw new LoginInvalidoException();
 		} catch (DadosInvalidosException | LoginInvalidoException e) {
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			return badRequest(e.getMessage());

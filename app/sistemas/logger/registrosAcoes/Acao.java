@@ -1,4 +1,4 @@
-package sistemas.registrosAcoes;
+package sistemas.logger.registrosAcoes;
 
 public enum Acao {
 	CADASTROU_CARONA("O usuário adicionou uma carona ao sistema: "), 

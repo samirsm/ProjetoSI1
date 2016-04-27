@@ -163,3 +163,5 @@ compile
 run
 clean
 run
+clean
+compile

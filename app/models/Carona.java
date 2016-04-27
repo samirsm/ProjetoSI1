@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import com.avaje.ebean.Model;
 
 import exceptions.NumeroDeVagasInsuficienteException;
+import tratamentoStrings.Strings;
 
 @Entity
 public class Carona extends Model {
@@ -87,6 +88,13 @@ public class Carona extends Model {
 		return motorista.equals(outraCarona.getMotorista())
 				&& tipo.equals(outraCarona.getTipo()) &&
 				horario.equals(outraCarona.getHorario());
+	}
+	
+	@Override
+	public String toString() {
+		return "Motorista: " + motorista + Strings.LINE_SEPARATOR
+				+ " Horario: " + horario.toString();
+
 	}
 
 	private void setId(){

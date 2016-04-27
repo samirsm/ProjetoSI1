@@ -5,28 +5,19 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-
 import models.Carona;
 import models.Notificacao;
 import models.TipoNotificacao;
 import models.Usuario;
-import play.data.Form;
-import play.data.FormFactory;
 import play.mvc.Controller;
-import sistemas.SistemaCarona;
 import sistemas.SistemaNotificacao;
 import sistemas.SistemaUsuarioLogin;
 import views.html.*;
 
 public class NotificacoesController extends Controller{
-    private FormFactory formFactory;
-    private Form<Notificacao> formularioNotificao;
     
     @Inject
-    private NotificacoesController(FormFactory formFactory) {
-        this.formFactory = formFactory;
-        formularioNotificao = this.formFactory.form(Notificacao.class);
-
+    private NotificacoesController() {
     }
 
     

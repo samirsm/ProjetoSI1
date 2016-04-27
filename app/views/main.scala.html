@@ -77,7 +77,7 @@
                   </li>
 
                   <li class="message-footer">
-                      <a href="#">Ver todas</a>
+                      <a href="#" >Ver todas</a>
                   </li>
               </ul>
           </li>
@@ -87,11 +87,11 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x"></i> @usuarioLogado.getNome() <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        
+
                         <li>
                             <h5 class="media-heading" style="color: #888;"> Bairro 1: @usuarioLogado.getEndereco().getBairro()</h5>
                         </li>
-                     @if(usuarioLogado.getEnderecoAlternativo().getBairro() != usuarioLogado.getEndereco().getBairro()){ 
+                     @if(usuarioLogado.getEnderecoAlternativo().getBairro() != usuarioLogado.getEndereco().getBairro()){
                         <li>
                            	<h5 class="media-heading" style="color: #888;"> Bairro 2: @usuarioLogado.getEnderecoAlternativo().getBairro()</h5>
                         </li>
@@ -100,9 +100,9 @@
                            	<h5 class="media-heading" style="color: #888;"> Telefone: @usuarioLogado.getDadosUsuario().getNumeroDeTelefone()</h5>
                         </li>
                       @if(usuarioLogado.getNumeroVagas() > 0){
-                        
+
                         <li>
-                            <h5 class="media-heading"style="color: #888;"> Vagas disponíveis: @usuarioLogado.getNumeroVagas()</h5> 
+                            <h5 class="media-heading"style="color: #888;"> Vagas disponíveis: @usuarioLogado.getNumeroVagas()</h5>
                         </li>
                       }
                         <li class="divider"></li>
@@ -176,7 +176,7 @@
     										</tr>
 									    </tbody>
 									</table>
-                                           
+
                                 </h1>
                             </div>
                             <div class="panel-body">

@@ -1,8 +1,6 @@
 package models;
 
 public class Horario {
-	public static final String[] DIAS_DA_SEMANA = { "Segunda", "Terça", "Quarta", "Quinta", "Sexta" };
-	public static final int[] HORAS = {8, 10, 12, 14, 16, 18};
 	private String dia;
 	private int hora;
 

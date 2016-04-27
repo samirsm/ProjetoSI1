@@ -1,12 +1,9 @@
 package models;
 
-import java.io.File;
-
 import com.avaje.ebean.Model;
 
-import play.data.validation.Constraints;
-
 import exceptions.DadosInvalidosException;
+import play.data.validation.Constraints;
 
 public class Dados extends Model{
 	@Constraints.Required(message = "Insira um nome válido.")
@@ -31,7 +28,8 @@ public class Dados extends Model{
 		this.email = email;
 		this.senha = senha;
 	}
-
+	
+	// Construtor default
 	public Dados () {
 	}
 	
@@ -66,6 +64,7 @@ public class Dados extends Model{
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -78,7 +77,7 @@ public class Dados extends Model{
 	
 	private void checaExcecoes(String...dadosPessoais) throws DadosInvalidosException {
 		for (int i = 0; i < dadosPessoais.length; i++) {
-			if (dadosPessoais[i] == null || dadosPessoais[i].equals(""))
+			if (dadosPessoais[i] == null || dadosPessoais[i].isEmpty())
 				throw new DadosInvalidosException();
 		}
 	}

@@ -1,13 +1,49 @@
-Projeto da Disciplina Sistemas da Informação I - Sistema de Caronas - 2015.2
+This is your new Play application
+=================================
 
-Descrição inicial
+This file will be packaged with your application when using `activator dist`.
 
-Muitos estudantes da UFCG possuem carro (estacionamentos estão sempre cheios em dias de aula). No entanto, muitos outros estudantes que dependem de transporte público poderiam ocupar estas vagas ociosas nos carros, caso tenham a mesma origem (na ida para a UFCG) ou o mesmo destino (na volta). Em geral, os carros possuem vagas ociosas, mas os motoristas e potenciais passageiros não se conhecem. Dar carona para desconhecidos é considerado perigoso para muitos, por isso as vagas permanecem ociosas. Uma sistema de confiança, no entanto, pode ser estabelecido, através da garantia de que os provedores e usuários do serviço sejam matriculados na UFCG, como alunos ou funcionários. Para isso, um sistema Web para gerenciar um sistema de carona para usuários da UFCG será desenvolvido O sistema deve gerenciar horários e origem/destino de possíveis caronas, oferecidas por motoristas a potenciais passageiros da mesma região.
+There are several demonstration files available in this template.
 
-Equipe: 
-Dandara Maria (@dandaramcsousa)
-Hugo Gabriel (@hugogbs)
-Paulo Vinícius Soares (@paul0vinicius)
-Pedro Paulo Freire (@pedropaulofo)
-Samir Silva (@samirsm)
+Controllers
+===========
 
+- HomeController.java:
+
+  Shows how to handle simple HTTP requests.
+
+- AsyncController.java:
+
+  Shows how to do asynchronous programming when handling a request.
+
+- CountController.java:
+
+  Shows how to inject a component into a controller and use the component when
+  handling requests.
+
+Components
+==========
+
+- Module.java:
+
+  Shows how to use Guice to bind all the components needed by your application.
+
+- Counter.java:
+
+  An example of a component that contains state, in this case a simple counter.
+
+- ApplicationTimer.java:
+
+  An example of a component that starts when the application starts and stops
+  when the application stops.
+
+Filters
+=======
+
+- Filters.java:
+
+  Creates the list of HTTP filters used by your application.
+
+- ExampleFilter.java
+
+  A simple filter that adds a header to every response.

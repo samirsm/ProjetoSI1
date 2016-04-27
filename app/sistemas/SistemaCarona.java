@@ -17,7 +17,7 @@ import models.Horario;
 import models.TipoCarona;
 import models.Usuario;
 import sistemas.logger.LoggerSistema;
-import sistemas.registrosAcoes.Acao;
+import sistemas.logger.registrosAcoes.Acao;
 import sistemas.tiposBuscas.BuscaDefault;
 import sistemas.tiposBuscas.BuscaPorBairro;
 import sistemas.tiposBuscas.BuscaPorHorario;

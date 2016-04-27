@@ -1,8 +1,10 @@
 package models;
  
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import com.avaje.ebean.Model;
-import scala.annotation.meta.getter;
+import tratamentoStrings.Strings;
+import models.Carona;
  
 @Entity
 public class Notificacao extends Model{
@@ -53,29 +55,8 @@ public class Notificacao extends Model{
     }
  
     private void geraMensagem(TipoNotificacao tipo) {
-        if (tipo == TipoNotificacao.ACEITACAO)
-            gerarMensagemAceitacao();
-        else if (tipo == TipoNotificacao.CANCELAMENTO)
-            gerarMensagemCancelamento();
-        else if (tipo == TipoNotificacao.PEDIDO)
-            gerarMensagemPedido();
-        else
-            gerarMensagemRejeicao();
-    }
-    private void gerarMensagemPedido(){
-        mensagem = usuarioOrigem.getNome() + " solicita uma vaga na sua carona.";
-    }
-   
-    private void gerarMensagemAceitacao(){
-        mensagem = usuarioOrigem.getNome() + " aceitou o seu pedido de carona.";
-    }
-   
-    private void gerarMensagemRejeicao(){
-        mensagem = usuarioOrigem.getNome() + " não aceitou p seu pedido de carona.";
-    }
-   
-    private void gerarMensagemCancelamento(){
-        mensagem = usuarioOrigem.getNome() + " cancelou uma carona na qual você estava cadastrado";
+        mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR + "Detalhes da carona: " +
+    carona.toString();
     }
  
     private void setId(){
