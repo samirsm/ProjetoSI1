@@ -1,0 +1,77 @@
+#
+# Mensagens (Inglês)
+#
+
+# globais 
+global.home=Home
+global.solicitacoes=Requests
+global.caronas=Rides
+global.ajustes=Settings
+global.minhas_caronas=My rides
+global.sem_caronas=You have no registered rides.
+global.ida=Going
+global.volta=Returning
+global.nome=Name
+global.matricula=Matriculation
+global.email=E-mail
+global.telefone=Phone 
+global.senha=Password
+global.rua=Street
+global.bairro=Neighborhood
+global.vagas=Car seats available
+
+
+# menu_superior (Barra de menu superior da tela e dropdowns)
+menu_superior.exibir_todas=See all
+menu_superior.logout=Logout account
+
+# tela_login (Tela de Login e Cadastro)
+tela_login.cabecalho=Search or offer rides safely and easily
+tela_login.subtitulo=Going and returning rides to UFCG
+tela_login.listagem1=Real time notifications
+tela_login.listagem2=Drivers and passenger recommendations
+tela_login.listagem3=Registered trustful users
+tela_login.login=Email/Matriculation
+tela_login.sem_carro=I do not own a car.
+tela_login.cadastrar=Register
+tela_login.sou_cadastrado=Already registered? Sign in here
+
+# cadastro_horarios (Tela de cadastro de horários)
+cadastro_horarios.cadastre=Register your schedules
+cadastro_horarios.hora=Choose the time
+cadastro_horarios.dia=Choose the day
+cadastro_horarios.bairro=Choose the neighborhood
+cadastro_horarios.novo_endereco=Register new address
+cadastro_horarios.cadastre_endereco=Please register a new address
+cadastro_horarios.bairros=Neighborhoods
+cadastro_horarios.cadastrar_endereco=Register
+cadastro_horarios.horarios=Return to schedules
+cadastro_horarios.cadastrados=Registered schedules
+cadastro_horarios.ida_horarios= Going schedules
+cadastro_horarios.volta_horarios= Returning schedules
+cadastro_horarios.concluir=Done
+
+# view_usuario
+view_usuario.oferecer=Offer ride
+view_usuario.publicar=Publish here your ride
+view_usuario.hora=Choose the time
+view_usuario.dia=Choose the day
+view_usuario.bairro=Choose the neighborhood
+view_usuario.publicar=Publish
+view_usuario.buscar=Search
+view_usuario.recentes=Recent publications
+view_usuario.sem_caronas=There are no available rides at this moment :(
+
+# agendamento
+agendamento.tipo=Type: 
+agendamento.dia=Day: 
+agendamento.hora=Time: 
+agendamento.voltar=Return to Rides
+agendamento.solicitar=Ask for this Ride
+
+# solicitacoes
+solicitacoes.nenhuma=You have no requests at this time.
+solicitacoes.negar=Deny
+solicitacoes.aceitar=Accept
+
+

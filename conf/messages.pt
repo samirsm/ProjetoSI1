@@ -1,0 +1,77 @@
+#
+# Mensagens (Português)
+#
+
+# globais 
+global.home=Home
+global.solicitacoes=Solicitações
+global.caronas=Caronas
+global.ajustes=Ajustes
+global.minhas_caronas=Minhas caronas
+global.sem_caronas=Você não possui nenhuma carona cadastrada.
+global.ida=Ida
+global.volta=Volta
+global.nome=Nome
+global.matricula=Matrícula
+global.email=E-mail
+global.telefone=Telefone
+global.senha=Senha
+global.rua=Rua
+global.bairro=Bairro
+global.vagas=Vagas disponíveis
+
+
+# menu_superior (Barra de menu superior da tela e dropdowns)
+menu_superior.exibir_todas=Ver todas
+menu_superior.logout=Sair desta conta
+
+# tela_login (Tela de Login e Cadastro)
+tela_login.cabecalho=Busque ou ofereça caronas com segurança e facilidade
+tela_login.subtitulo=Caronas de ida e volta para a UFCG
+tela_login.listagem1=Notificaçõs em tempo real
+tela_login.listagem2=Recomendaçõs de caronistas e passageiros
+tela_login.listagem3=Usuários cadastrados de confiança
+tela_login.login=Email/Matrícula
+tela_login.sem_carro=Não possuo carro.
+tela_login.cadastrar=Cadastrar
+tela_login.sou_cadastrado=Já é cadastardo? Efetue seu login
+
+# cadastro_horarios (Tela de cadastro de horários)
+cadastro_horarios.cadastre=Cadastre seus horários
+cadastro_horarios.hora=Escolha a hora
+cadastro_horarios.dia=Escolha o dia
+cadastro_horarios.bairro=Escolha o bairro
+cadastro_horarios.novo_endereco=Cadastrar novo endereço
+cadastro_horarios.cadastre_endereco=Cadastre um novo endereço
+cadastro_horarios.bairros=Bairros
+cadastro_horarios.cadastrar_endereco=Cadastrar
+cadastro_horarios.horarios=Voltar para horários
+cadastro_horarios.cadastrados=Horários cadastrados
+cadastro_horarios.ida_horarios= Horarios de ida
+cadastro_horarios.volta_horarios= Horarios de volta
+cadastro_horarios.concluir=Concluir
+
+# view_usuario
+view_usuario.oferecer=Oferecer carona
+view_usuario.publicar=Publicar aqui sua carona
+view_usuario.hora=Escolha a hora
+view_usuario.dia=Escolha o dia
+view_usuario.bairro=Escolha o bairro
+view_usuario.publicar=Publicar
+view_usuario.buscar=Buscar
+view_usuario.recentes=Publicacoes recentes
+view_usuario.sem_caronas=Não há caronas disponíveis no momento :(
+
+# agendamento
+agendamento.tipo=Tipo: 
+agendamento.dia=Dia: 
+agendamento.hora=Hora: 
+agendamento.voltar=Voltar às Caronas
+agendamento.solicitar=Solicitar Carona
+
+# solicitacoes
+solicitacoes.nenhuma=Você não possui nenhuma solicitação no momento.
+solicitacoes.negar=Negar
+solicitacoes.aceitar=Vumbora
+
+
