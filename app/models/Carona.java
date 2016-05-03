@@ -20,6 +20,7 @@ public class Carona extends Model {
 	private int vagasDisponiveis;
 	private Usuario motorista;
 	private List<Usuario> passageiros;
+	private List<Usuario> solicitantes;
 	private Horario horario;
 	private TipoCarona tipo;
 
@@ -29,6 +30,7 @@ public class Carona extends Model {
 		this.tipo = tipo;
 		this.vagasDisponiveis = numeroDeVagas;
 		this.passageiros = new ArrayList<>();
+		this.solicitantes = new ArrayList<>();
 		setId();
 	}
 	
@@ -54,6 +56,14 @@ public class Carona extends Model {
 	
 	public boolean hasPassageiro(Usuario passageiro){
 		return passageiros.contains(passageiro);
+	}
+
+	public void adicionaSolicitante(Usuario solicitante){
+		solicitantes.add(solicitante);
+	}
+
+	public boolean hasSolicitante(Usuario solicitante){
+		return solicitantes.contains(solicitante);
 	}
 	
 	public Long getId() {

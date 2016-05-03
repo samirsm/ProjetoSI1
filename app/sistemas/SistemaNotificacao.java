@@ -107,6 +107,7 @@ public class SistemaNotificacao {
       Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
       Notificacao solicitacao = new Notificacao(usuarioLogado, carona, TipoNotificacao.PEDIDO);
       carona.getMotorista().recebeSolicitacao(solicitacao);
+      carona.adicionaSolicitante(usuarioLogado);
   }
   
   private void notificaPassageiro(Carona carona, TipoNotificacao tipo, Usuario passageiro) {

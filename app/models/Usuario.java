@@ -12,8 +12,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
 public class Usuario extends Model {
+
 	private Dados dadosPessoais;
 	private Endereco enderecoAlternativo;
 	private Endereco endereco;

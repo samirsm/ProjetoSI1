@@ -4,7 +4,7 @@
 		module="caronaufcg20152_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20160427173541"
+		publication="20160503163525"
 	>
 		<description>
 		caronaUFCG20152
@@ -47,5 +47,9 @@
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.5.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.5.1" conf="compile->default(compile)"/>
 		<dependency org="commons-io" name="commons-io" rev="2.4" conf="compile->default(compile)"/>
+		<dependency org="org.apache.directory.api" name="api-all" rev="1.0.0-M14" conf="compile->default(compile)"/>
+		<dependency org="postgresql" name="postgresql" rev="9.1-901-1.jdbc4" conf="compile->default(compile)"/>
+		<dependency org="org.hibernate" name="hibernate-core" rev="4.2.3.Final" conf="compile->default(compile)"/>
+		<dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.2.3.Final" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

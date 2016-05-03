@@ -89,7 +89,7 @@ public class CaronasController extends Controller {
       public Result solicitaAgendamento(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
         SistemaNotificacao.getInstance().geraNotificacaoPedido(carona);
-  
+        buscarCaronas();
         return redirect(routes.HomeController.index());
     }
     

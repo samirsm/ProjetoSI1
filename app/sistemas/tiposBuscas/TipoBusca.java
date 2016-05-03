@@ -12,7 +12,7 @@ public interface TipoBusca {
 	
 	public default boolean checaCondicaoBaseCarona (Carona carona, Usuario usuarioLogado){
 		return !(carona.getMotorista().equals(usuarioLogado)) && !carona.isFull()
-		&& !carona.hasPassageiro(usuarioLogado);
+		&& !carona.hasPassageiro(usuarioLogado) && !carona.hasSolicitante(usuarioLogado);
 	}
 	
 }
