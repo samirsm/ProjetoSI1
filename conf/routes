@@ -4,12 +4,13 @@
 
 # Faz a chamada do Index de Autenticacao do Usuario
 GET     /                           controllers.HomeController.index
+GET     /auth 			       	 	controllers.AutenticacaoController.auth()
 POST    /cadastroRealizado	        controllers.AutenticacaoController.cadastraUsuario
 POST    /index			         	controllers.AutenticacaoController.efetuaLogin
 POST    /cadastra		         	controllers.HorariosController.cadastra
 POST    /home						controllers.CaronasController.cadastraNovaCarona
 GET     /cadastraHorarios       	controllers.HorariosController.cadastraHorarios
-GET    /cadastraNovoEndereco       controllers.HorariosController.cadastraNovoEndereco
+GET     /cadastraNovoEndereco       controllers.HorariosController.cadastraNovoEndereco
 GET     /logout                     controllers.AutenticacaoController.efetuaLogout
 GET 	/exibeDetalhes				controllers.CaronasController.exibeDetalhes(id: Long)
 POST	/atualizaCaronas			controllers.CaronasController.buscarCaronas()

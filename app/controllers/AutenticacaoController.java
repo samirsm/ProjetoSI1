@@ -10,8 +10,20 @@ import models.Endereco;
 import models.Usuario;
 import play.data.DynamicForm;
 import play.data.FormFactory;
+import play.libs.oauth.OAuth;
+import play.libs.oauth.OAuth.ConsumerKey;
+import play.libs.oauth.OAuth.ServiceInfo;
+import play.libs.oauth.OAuth.OAuthCalculator;
+import play.libs.oauth.OAuth.RequestToken;
+import play.libs.ws.WSClient;
 import play.mvc.Controller;
 import play.mvc.Result;
+
+import com.google.common.base.Strings;
+
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
@@ -21,10 +33,21 @@ import views.html.*;
 public class AutenticacaoController extends Controller {
 	private FormFactory formFactory;
 	private LoggerSistema loggerAutenticacao;
+	static final ConsumerKey KEY = new ConsumerKey("...", "...");
+	
+	private static final ServiceInfo SERVICE_INFO =
+	        new ServiceInfo("https://api.twitter.com/oauth/request_token",
+	            "https://api.twitter.com/oauth/access_token",
+	            "https://api.twitter.com/oauth/authorize",
+	            KEY);
+	
+	private static final OAuth TWITTER = new OAuth(SERVICE_INFO);
+	private final WSClient ws;
 	
 	@Inject
-	public AutenticacaoController (FormFactory formFactory){
+	public AutenticacaoController (FormFactory formFactory, WSClient ws){
 		this.formFactory = formFactory;
+		this.ws = ws;
 		loggerAutenticacao = new LoggerSistema();
 	}
 
@@ -116,4 +139,31 @@ public class AutenticacaoController extends Controller {
 		loggerAutenticacao.registraAcao(Acao.VERIFICA_PRIMEIRO_ACESSO, usuario.toString());
 		return redirect(routes.HomeController.index());
 	}
+	
+	public Result auth() {
+        String verifier = request().getQueryString("oauth_verifier");
+        if (Strings.isNullOrEmpty(verifier)) {
+            String url = routes.AutenticacaoController.auth().absoluteURL(request());
+            RequestToken requestToken = TWITTER.retrieveRequestToken(url);
+            saveSessionTokenPair(requestToken);
+            return redirect(TWITTER.redirectUrl(requestToken.token));
+        } else {
+            RequestToken requestToken = getSessionTokenPair().get();
+            RequestToken accessToken = TWITTER.retrieveAccessToken(requestToken, verifier);
+            saveSessionTokenPair(accessToken);
+            return redirect(routes.HomeController.index());
+        }
+    }
+	
+	private void saveSessionTokenPair(RequestToken requestToken) {
+        session("token", requestToken.token);
+        session("secret", requestToken.secret);
+    }
+	
+	private Optional<RequestToken> getSessionTokenPair() {
+        if (session().containsKey("token")) {
+            return Optional.ofNullable(new RequestToken(session("token"), session("secret")));
+        }
+        return Optional.empty();
+    }
 }

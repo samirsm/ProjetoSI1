@@ -3,6 +3,21 @@ package sistemas;
 import exceptions.DadosInvalidosException;
 import exceptions.LoginInvalidoException;
 import models.Usuario;
+import play.libs.oauth.OAuth;
+import play.libs.oauth.OAuth.ConsumerKey;
+import play.libs.oauth.OAuth.OAuthCalculator;
+import play.libs.oauth.OAuth.RequestToken;
+import play.libs.oauth.OAuth.ServiceInfo;
+import play.libs.ws.WSClient;
+import play.mvc.Controller;
+import play.mvc.Result;
+
+import com.google.common.base.Strings;
+
+import javax.inject.Inject;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 
 public class SistemaUsuarioLogin {
     private static final SistemaCarona SISTEMA_CARONA = SistemaCarona.getInstance();

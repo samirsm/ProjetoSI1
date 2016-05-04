@@ -183,3 +183,9 @@ clean
 compile
 run
 global 
+clean
+compile
+run
+clean
+compile
+run
