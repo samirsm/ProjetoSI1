@@ -14,6 +14,7 @@ import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
+
 import sistemas.SistemaCarona;
 import sistemas.SistemaDeBairros;
 import sistemas.SistemaUsuarioLogin;
@@ -40,8 +41,22 @@ public class HomeController extends Controller {
 	}
 	
 	public Result index(){
+
+		ctx().changeLang("pt");
 		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 		
+		return exibePagina();
+	}
+
+	public Result redefineIdioma() {
+		if (usuarioLogado.getIdioma() == "en"){
+			ctx().changeLang("pt");
+			usuarioLogado.setIdioma("pt");
+		}
+		else{
+			ctx().changeLang("en");
+			usuarioLogado.setIdioma("en");
+		}
 		return exibePagina();
 	}
 	
@@ -58,4 +73,6 @@ public class HomeController extends Controller {
 			return ok(viewUsuario.render(usuarioLogado, formularioCarona, caronas, bairros, usuarioLogado.getNotificacoesNaoLidas()));
 		}
 	}
+
+
 }

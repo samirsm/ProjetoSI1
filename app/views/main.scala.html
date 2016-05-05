@@ -23,6 +23,8 @@
     <!-- Custom Fonts -->
     <link href="assets/SBAdminTemplate/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <html lang="pt-br">
+
 </head>
 
 <style type="text/css">
@@ -52,7 +54,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
 
 
-            <a class="navbar-brand" href="/"><img src="assets/SBAdminTemplate/img/logo vumbora.png" height="40px" width="180px"></a>
+            <a class="navbar-brand" href="redefineIdioma"><img src="assets/SBAdminTemplate/img/logo vumbora.png" height="40px" width="180px"></a>
 
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -77,7 +79,7 @@
                   </li>
 
                   <li class="message-footer">
-                      <a href="#" >Ver todas</a>
+                      <a href="#" >@Messages("global.exibir_todas")</a>
                   </li>
               </ul>
           </li>
@@ -89,25 +91,25 @@
                     <ul class="dropdown-menu">
 
                         <li>
-                            <h5 class="media-heading" style="color: #888;"> Bairro 1: @usuarioLogado.getEndereco().getBairro()</h5>
+                            <h5 class="media-heading" style="color: #888;"> @Messages("global.bairro") 1: @usuarioLogado.getEndereco().getBairro()</h5>
                         </li>
                      @if(usuarioLogado.getEnderecoAlternativo().getBairro() != usuarioLogado.getEndereco().getBairro()){
                         <li>
-                           	<h5 class="media-heading" style="color: #888;"> Bairro 2: @usuarioLogado.getEnderecoAlternativo().getBairro()</h5>
+                           	<h5 class="media-heading" style="color: #888;"> @Messages("global.bairro") 2: @usuarioLogado.getEnderecoAlternativo().getBairro()</h5>
                         </li>
                        }
                          <li>
-                           	<h5 class="media-heading" style="color: #888;"> Telefone: @usuarioLogado.getDadosUsuario().getNumeroDeTelefone()</h5>
+                           	<h5 class="media-heading" style="color: #888;"> @Messages("global.idioma"): @usuarioLogado.getNome()</h5>
                         </li>
                       @if(usuarioLogado.getNumeroVagas() > 0){
 
                         <li>
-                            <h5 class="media-heading"style="color: #888;"> Vagas disponíveis: @usuarioLogado.getNumeroVagas()</h5>
+                            <h5 class="media-heading"style="color: #888;"> @Messages("global.vagas"): @usuarioLogado.getNumeroVagas()</h5>
                         </li>
                       }
                         <li class="divider"></li>
                         <li>
-                        	<a href="logout"> Sair desta conta</a>
+                        	<a href="logout"> @Messages("global.sair")</a>
                         </li>
                     </ul>
                 </li>
@@ -129,7 +131,7 @@
                         <a href="/"><i class="fa fa-fw fa-home fa-3x"></i></br>Home</a>
                     </li>
                     <li>
-                        <a href="solicitacoes"><i class="fa fa-fw fa-paper-plane fa-3x"></i> </br>Solicitações</a>
+                        <a href="solicitacoes"><i class="fa fa-fw fa-paper-plane fa-3x"></i> </br>@Messages("global.solicitacoes")</a>
                     </li>
                 </ul>
             </div>
@@ -147,11 +149,11 @@
                         <!-- Page Heading -->
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h3 class="page-header" style="color: #FFF">Minhas caronas</h3>
+                                        <h3 class="page-header" style="color: #FFF">@Messages("global.minhas_caronas")</h3>
                                         <ol class="breadcrumb">
                                           @if(usuarioLogado.getCaronasMotorista().size() == 0){
                                             <li class="active">
-                                              Você não possui nenhuma carona cadastrada.
+                                                @Messages("global.sem_caronas")
                                             </li>
                                           }
                                         </ol>

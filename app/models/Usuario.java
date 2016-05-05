@@ -6,9 +6,7 @@ import com.avaje.ebean.Model;
 import exceptions.BairroJaCadastradoException;
 import exceptions.HorarioJaCadastradoException;
 import exceptions.NumeroDeVagasExcedenteException;
-import exceptions.NumeroDeVagasInsuficienteException;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +17,8 @@ public class Usuario extends Model {
 	private Endereco endereco;
 	private final Integer numeroVagas;
 	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
-    private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
-    private List<Notificacao> solicitacoesDeCarona = new ArrayList<Notificacao>();
+	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
+	private List<Notificacao> solicitacoesDeCarona = new ArrayList<Notificacao>();
 	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
 	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
 	private List<Carona> caronasPassageiro = new ArrayList<>();
@@ -28,6 +26,7 @@ public class Usuario extends Model {
 	private List<Horario> horariosIda = new ArrayList<>();
 	private List<Horario> horariosVolta = new ArrayList<>();
 	private boolean horariosCadastrados;
+	private String idioma = "pt";
 
 	@Id
 	private Long id;
@@ -38,47 +37,49 @@ public class Usuario extends Model {
 		this.setEndereco(endereco);
 		this.setEnderecoAlternativo(endereco);
 	}
-	
-	public boolean notifica(Notificacao notificacao){
-      return notificacoesNaoLidas.add(notificacao);
-  }
 
-  public boolean recebeSolicitacao(Notificacao notificacao){
-      return solicitacoesDeCarona.add(notificacao);
-  }
+	public boolean notifica(Notificacao notificacao) {
+		return notificacoesNaoLidas.add(notificacao);
+	}
 
-  public boolean removeSolicitacao(Notificacao notificacao){
-      return solicitacoesDeCarona.remove(notificacao);
-  }
+	public boolean recebeSolicitacao(Notificacao notificacao) {
+		return solicitacoesDeCarona.add(notificacao);
+	}
 
-  public void leNotificacao(Notificacao naoLida){
-      naoLida.setStatus(true);
-      notificacoesLidas.add(naoLida);
-      notificacoesNaoLidas.remove(naoLida);
-  }
-  
-  public List<Notificacao> getNotificacoesLidas() {
-      return notificacoesLidas;
-  }
+	public boolean removeSolicitacao(Notificacao notificacao) {
+		return solicitacoesDeCarona.remove(notificacao);
+	}
 
-  public List<Notificacao> getNotificacoesNaoLidas() {
-      return notificacoesNaoLidas;
-  }
+	public void leNotificacao(Notificacao naoLida) {
+		naoLida.setStatus(true);
+		notificacoesLidas.add(naoLida);
+		notificacoesNaoLidas.remove(naoLida);
+	}
 
-  public List<Notificacao> getSolicitacoesDeCarona() { return solicitacoesDeCarona; }
-	
-	public boolean addNotificacaoPassageiro(Notificacao notificacao){
+	public List<Notificacao> getNotificacoesLidas() {
+		return notificacoesLidas;
+	}
+
+	public List<Notificacao> getNotificacoesNaoLidas() {
+		return notificacoesNaoLidas;
+	}
+
+	public List<Notificacao> getSolicitacoesDeCarona() {
+		return solicitacoesDeCarona;
+	}
+
+	public boolean addNotificacaoPassageiro(Notificacao notificacao) {
 		return notificacoesPassageiro.add(notificacao);
 	}
-	
-	public boolean addNotificacaoMotorista(Notificacao notificacao){
+
+	public boolean addNotificacaoMotorista(Notificacao notificacao) {
 		return notificacoesMotorista.add(notificacao);
 	}
-	
+
 	public List<Notificacao> getNotificacaoMotorista() {
 		return notificacoesMotorista;
 	}
-	
+
 	public List<Notificacao> getNotificacaoPassageiro() {
 		return notificacoesPassageiro;
 	}
@@ -122,37 +123,37 @@ public class Usuario extends Model {
 	public List<Carona> getCaronasMotorista() {
 		return caronasMotorista;
 	}
-	
-	public void adicionaCaronaPassageiro(Carona carona){
+
+	public void adicionaCaronaPassageiro(Carona carona) {
 		caronasPassageiro.add(carona);
 	}
-	
+
 	public void adicionaCaronaMotorista(Carona carona) throws NumeroDeVagasExcedenteException {
 		verificacaoVagasDisponiveis(carona);
 		caronasMotorista.add(carona);
 	}
 
 	private void verificacaoVagasDisponiveis(Carona carona) throws NumeroDeVagasExcedenteException {
-		if (!isPossivelDarCarona(carona))	
+		if (!isPossivelDarCarona(carona))
 			throw new NumeroDeVagasExcedenteException();
 	}
-	
+
 	private boolean isPossivelDarCarona(Carona carona) {
 		return numeroVagas >= carona.getVagasDisponiveis();
 	}
-	
+
 	public boolean isHorariosCadastrados() {
 		return horariosCadastrados;
 	}
-	
-	public void cadastrouHorarios(){
+
+	public void cadastrouHorarios() {
 		setHorariosCadastrados(true);
 	}
-	
-	private void setHorariosCadastrados(boolean cadastrouHorarios){
+
+	private void setHorariosCadastrados(boolean cadastrouHorarios) {
 		horariosCadastrados = cadastrouHorarios;
 	}
-	
+
 	public Dados getDadosUsuario() {
 		return dadosPessoais;
 	}
@@ -164,80 +165,87 @@ public class Usuario extends Model {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
-	public Endereco getEnderecoAlternativo() {
-      return enderecoAlternativo;
-    }
 
-    public void setEnderecoAlternativo(Endereco endereco) {
-      this.enderecoAlternativo = endereco;
-    }
+	public Endereco getEnderecoAlternativo() {
+		return enderecoAlternativo;
+	}
+
+	public void setEnderecoAlternativo(Endereco endereco) {
+		this.enderecoAlternativo = endereco;
+	}
 
 	public Integer getNumeroVagas() {
 		return numeroVagas;
 	}
-	
-	public boolean adicionarHorarioIda(String dia, int hora) throws HorarioJaCadastradoException{
-		Horario novoHorario = new Horario(dia,hora);
-		if(isHorarioLivre(novoHorario))
+
+	public boolean adicionarHorarioIda(String dia, int hora) throws HorarioJaCadastradoException {
+		Horario novoHorario = new Horario(dia, hora);
+		if (isHorarioLivre(novoHorario))
 			return horariosIda.add(novoHorario);
 		return false;
-		
+
 	}
 
-	public boolean adicionarHorarioVolta(String dia, int hora) throws HorarioJaCadastradoException{
-		Horario novoHorario = new Horario(dia,hora);
-		if(isHorarioLivre(novoHorario))
+	public boolean adicionarHorarioVolta(String dia, int hora) throws HorarioJaCadastradoException {
+		Horario novoHorario = new Horario(dia, hora);
+		if (isHorarioLivre(novoHorario))
 			return horariosIda.add(novoHorario);
 		return false;
-    }
-	
-	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException{	 
-		if(isHorarioLivre(horario))
+	}
+
+	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException {
+		if (isHorarioLivre(horario))
 			return horariosIda.add(horario);
 		return false;
 	}
-	
-	public boolean adicionarHorarioVolta(Horario horario) throws HorarioJaCadastradoException{
-		if(isHorarioLivre(horario))
+
+	public boolean adicionarHorarioVolta(Horario horario) throws HorarioJaCadastradoException {
+		if (isHorarioLivre(horario))
 			return horariosVolta.add(horario);
 		return false;
-  }
-	
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (!(obj instanceof Usuario))
 			return false;
-		
+
 		Usuario outroUsuario = (Usuario) obj;
-		
+
 		return outroUsuario.getDadosUsuario().equals(dadosPessoais);
-	
+
 	}
 
-	private boolean isHorarioLivre(Horario novoHorario) throws HorarioJaCadastradoException{
+	private boolean isHorarioLivre(Horario novoHorario) throws HorarioJaCadastradoException {
 		for (Horario horario : horariosIda) {
-			if(horario.equals(novoHorario))
+			if (horario.equals(novoHorario))
 				throw new HorarioJaCadastradoException();
 		}
 		for (Horario horario : horariosVolta) {
-			if(horario.equals(novoHorario))
+			if (horario.equals(novoHorario))
 				throw new HorarioJaCadastradoException();
 		}
 		return true;
 	}
-	
-	public String toString(){
-		return getNome() + "["+dadosPessoais.toString()+"]";
+
+	public String toString() {
+		return getNome() + "[" + dadosPessoais.toString() + "]";
 	}
 
-  public void addEnderecoAlternativo(Endereco enderecoNovo) throws BairroJaCadastradoException {
-    if(enderecoNovo.getBairro().equals(endereco.getBairro())){
-      throw new BairroJaCadastradoException();
-    }else
-      setEnderecoAlternativo(enderecoNovo);
-    
-    
-  }
+	public void addEnderecoAlternativo(Endereco enderecoNovo) throws BairroJaCadastradoException {
+		if (enderecoNovo.getBairro().equals(endereco.getBairro())) {
+			throw new BairroJaCadastradoException();
+		} else
+			setEnderecoAlternativo(enderecoNovo);
 
+
+	}
+
+	public String getIdioma() {
+		return idioma;
+	}
+
+	public void setIdioma(String idi){
+		idioma = idi;
+	}
 }
