@@ -10,6 +10,9 @@ import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Security;
+import play.mvc.With;
+import play.mvc.Http.Context;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
@@ -26,7 +29,8 @@ public class HorariosController extends Controller {
 		this.formFactory = formFactory;
 		loggerHorarios = new LoggerSistema();
 	}
-
+	
+	@Security.Authenticated(Secured.class)
 	public Result cadastraHorarios(){
        SistemaUsuarioLogin.getInstance().cadastrouHorarios();
        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
@@ -35,6 +39,7 @@ public class HorariosController extends Controller {
 		
 	}
 	
+	@Security.Authenticated(Secured.class)
 	public Result cadastra() {
 	  Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
       DynamicForm requestData = formFactory.form().bindFromRequest();
@@ -53,6 +58,7 @@ public class HorariosController extends Controller {
       
   }
 	
+	@Security.Authenticated(Secured.class)
 	public Result cadastraNovoEndereco() {
       Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
       DynamicForm requestData = formFactory.form().bindFromRequest();

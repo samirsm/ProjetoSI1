@@ -18,8 +18,11 @@ import play.libs.oauth.OAuth.RequestToken;
 import play.libs.ws.WSClient;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Security;
 
 import com.google.common.base.Strings;
+import play.mvc.Http.Context;
+import play.mvc.Http.Session;
 
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -33,21 +36,10 @@ import views.html.*;
 public class AutenticacaoController extends Controller {
 	private FormFactory formFactory;
 	private LoggerSistema loggerAutenticacao;
-	static final ConsumerKey KEY = new ConsumerKey("...", "...");
-	
-	private static final ServiceInfo SERVICE_INFO =
-	        new ServiceInfo("https://api.twitter.com/oauth/request_token",
-	            "https://api.twitter.com/oauth/access_token",
-	            "https://api.twitter.com/oauth/authorize",
-	            KEY);
-	
-	private static final OAuth TWITTER = new OAuth(SERVICE_INFO);
-	private final WSClient ws;
 	
 	@Inject
-	public AutenticacaoController (FormFactory formFactory, WSClient ws){
+	public AutenticacaoController (FormFactory formFactory){
 		this.formFactory = formFactory;
-		this.ws = ws;
 		loggerAutenticacao = new LoggerSistema();
 	}
 
@@ -63,7 +55,11 @@ public class AutenticacaoController extends Controller {
 			return badRequest(e.getMessage());
 		}
 		
+		loggerAutenticacao.registraAcao(Acao.ERRO, session().get("matricula"));
+		loggerAutenticacao.registraAcao(Acao.ERRO, session().get("email"));
+		
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
+		
 		return verificaPrimeiroAcessoUsuario(usuarioLogado);
 	}
 	
@@ -115,6 +111,8 @@ public class AutenticacaoController extends Controller {
 	
 	public Result efetuaLogout(){
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado().toString());
+		
+		session().clear();
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
 		
 		return redirect(routes.HomeController.index());
@@ -126,44 +124,25 @@ public class AutenticacaoController extends Controller {
 		String email = matricula; // O usuário pode digitar um dos dois no mesmo campo
 		String senha = requestData.get("senha");
 		
+		if (requestData.hasErrors())
+			throw new DadosInvalidosException();
+		
 		SistemaUsuarioLogin.getInstance().efetuaLogin(matricula, email, senha);
 		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+		
+		session().put("matricula", requestData.get("matricula"));
+		session().put("email", usuarioLogado.getEmail());
+		//session("matricula", requestData.get("matricula"));
+		//session("email", usuarioLogado.getEmail());
 		
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
 		
 		return usuarioLogado;
-		
 	}
-
+	
+	@Security.Authenticated(Secured.class)
 	private Result verificaPrimeiroAcessoUsuario(Usuario usuario) {
 		loggerAutenticacao.registraAcao(Acao.VERIFICA_PRIMEIRO_ACESSO, usuario.toString());
 		return redirect(routes.HomeController.index());
 	}
-	
-	public Result auth() {
-        String verifier = request().getQueryString("oauth_verifier");
-        if (Strings.isNullOrEmpty(verifier)) {
-            String url = routes.AutenticacaoController.auth().absoluteURL(request());
-            RequestToken requestToken = TWITTER.retrieveRequestToken(url);
-            saveSessionTokenPair(requestToken);
-            return redirect(TWITTER.redirectUrl(requestToken.token));
-        } else {
-            RequestToken requestToken = getSessionTokenPair().get();
-            RequestToken accessToken = TWITTER.retrieveAccessToken(requestToken, verifier);
-            saveSessionTokenPair(accessToken);
-            return redirect(routes.HomeController.index());
-        }
-    }
-	
-	private void saveSessionTokenPair(RequestToken requestToken) {
-        session("token", requestToken.token);
-        session("secret", requestToken.secret);
-    }
-	
-	private Optional<RequestToken> getSessionTokenPair() {
-        if (session().containsKey("token")) {
-            return Optional.ofNullable(new RequestToken(session("token"), session("secret")));
-        }
-        return Optional.empty();
-    }
 }

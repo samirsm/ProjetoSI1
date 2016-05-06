@@ -14,9 +14,13 @@ import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Security;
 import sistemas.SistemaCarona;
 import sistemas.SistemaDeBairros;
 import sistemas.SistemaUsuarioLogin;
+import sistemas.logger.LoggerSistema;
+import sistemas.logger.registrosAcoes.Acao;
+import play.mvc.Http.Context;
 import views.html.*;
 
 public class HomeController extends Controller {
@@ -41,6 +45,16 @@ public class HomeController extends Controller {
 	
 	public Result index(){
 		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+		
+		String email = session().get("email");
+		String matricula = session().get("matricula");
+		
+		LoggerSistema loggerAutenticacao = new LoggerSistema();
+		
+		loggerAutenticacao.registraAcao(Acao.ERRO,"====COMECA AQUI===");
+		
+		loggerAutenticacao.registraAcao(Acao.ERRO, email);
+		loggerAutenticacao.registraAcao(Acao.ERRO, matricula);
 		
 		return exibePagina();
 	}

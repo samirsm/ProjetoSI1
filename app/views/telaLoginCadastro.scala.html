@@ -119,8 +119,8 @@
 
 		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Email/Matrícula")
-				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Email/Matrícula", '_showConstraints -> false)
+				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha", '_showConstraints -> false)
 				<input type="submit" value="Login" class="btn btn-default btn-xl"></input>
 			}
 				<a class="btn" onclick="cadastro()">@Messages("tela_login.nao_cadastrado")</a>
@@ -129,14 +129,14 @@
 		<div id="divCadastro" style="display: none">
 				@helper.form(action = routes.AutenticacaoController.cadastraUsuario()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				@helper.inputText(formularioAutenticacao("nome"), '_label -> Messages("global.nome"))
-				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Matrícula")
-				@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> "Número de Telefone")
-				@helper.inputText(formularioAutenticacao("email"), '_label -> "Email")
-				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
-				@helper.inputText(formularioEndereco("rua"), '_label -> "Rua")
-				@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> "Bairro")
-				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq("Não possuo carro","1","2","3","4","5","6","7","8")), '_label -> "Número de vagas no carro:")
+				@helper.inputText(formularioAutenticacao("nome"), '_label -> Messages("global.nome"), '_showConstraints -> false)
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Matrícula", '_showConstraints -> false)
+				@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> "Número de Telefone", '_showConstraints -> false)
+				@helper.inputText(formularioAutenticacao("email"), '_label -> "Email", '_showConstraints -> false)
+				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha", '_showConstraints -> false)
+				@helper.inputText(formularioEndereco("rua"), '_label -> "Rua", '_showConstraints -> false)
+				@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> "Bairro", '_showConstraints -> false)
+				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq("Não possuo carro","1","2","3","4","5","6","7","8")), '_label -> "Número de vagas no carro:", '_showConstraints -> false)
 				<input type="submit" value="Cadastrar" class="btn btn-default btn-xl"></input>
 			</br>
 				<a class="btn" onclick="login()">@Messages("tela_login.sou_cadastrado")</a>

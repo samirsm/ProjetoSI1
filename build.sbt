@@ -12,7 +12,6 @@ libraryDependencies ++= Seq(
   cache,
   javaWs,
   "commons-io" % "commons-io" % "2.4",
-  "com.feth" %% "play-authenticate" % "0.8.1-SNAPSHOT",
   "org.apache.directory.api" % "api-all" % "1.0.0-M14",
   "postgresql" % "postgresql" % "9.1-901-1.jdbc4",
   "org.hibernate" % "hibernate-core" % "4.2.3.Final",
