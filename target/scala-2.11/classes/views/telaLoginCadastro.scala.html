@@ -57,12 +57,12 @@
 
 	    <script type="text/javascript">
 	    	function alertaCadastroEfetuado(){
-	    		alert("Cadastro efetuado com sucesso!");
+	    		alert(@Messages("ela_login.sucesso_cadastro"));
 	    	}
 	    </script>
 	    <script>
 			function loginEfetuadoComSucesso(){
-	    		alert("Login efetuado com sucesso!");
+	    		alert(@Messages("ela_login.sucesso_login"));
 			}
 	    </script>
 
@@ -119,8 +119,8 @@
 
 		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Email/Matrícula")
-				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("tela_login.login"))
+				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"))
 				<input type="submit" value="Login" class="btn btn-default btn-xl"></input>
 			}
 				<a class="btn" onclick="cadastro()">@Messages("tela_login.nao_cadastrado")</a>
@@ -129,21 +129,23 @@
 		<div id="divCadastro" style="display: none">
 				@helper.form(action = routes.AutenticacaoController.cadastraUsuario()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				@helper.inputText(formularioAutenticacao("nome"), '_label -> Messages("global.nome"))
-				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Matrícula")
-				@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> "Número de Telefone")
+				@helper.inputText(formularioAutenticacao("nome"), '_label ->  Messages("global.nome"))
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("global.matricula"))
+				@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> Messages("global.telefone"))
 				@helper.inputText(formularioAutenticacao("email"), '_label -> "Email")
-				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha")
-				@helper.inputText(formularioEndereco("rua"), '_label -> "Rua")
-				@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> "Bairro")
-				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq("Não possuo carro","1","2","3","4","5","6","7","8")), '_label -> "Número de vagas no carro:")
-				<input type="submit" value="Cadastrar" class="btn btn-default btn-xl"></input>
+				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"))
+				@helper.inputText(formularioEndereco("rua"), '_label -> Messages("global.rua"))
+				@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> Messages("global.bairro"))
+				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq(Messages("tela_login.sem_carro"),"1","2","3","4","5","6","7","8")), '_label -> Messages("tela_login.vagas"))
+				<input type="submit" value=@Messages("tela_login.cadastrar") class="btn btn-default btn-xl"></input>
 			</br>
 				<a class="btn" onclick="login()">@Messages("tela_login.sou_cadastrado")</a>
 				</div>
 				}
 			</div>
 		</div>
+
+	<div style="position: fixed; bottom: 1%; right: 35%;  vertical-align: bottom; margin-left: 80px; text-align: center; color: lightgray; font-size: medium" >English - Português</div>
 
 		<!-- jQuery -->
 	    <script src="assets/CreativeTemplate/js/jquery.js"></script>

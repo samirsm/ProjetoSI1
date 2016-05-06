@@ -25,8 +25,8 @@ global.idioma=Idioma atual:
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Busque ou ofereça caronas com segurança e facilidade
 tela_login.subtitulo=Caronas de ida e volta para a UFCG
-tela_login.listagem1=Notificaçõs em tempo real
-tela_login.listagem2=Recomendaçõs de caronistas e passageiros
+tela_login.listagem1=Notificações em tempo real
+tela_login.listagem2=Recomendações de caronistas e passageiros
 tela_login.listagem3=Usuários cadastrados de confiança
 tela_login.sucesso_cadastro=Cadastro efetuado com sucesso!
 tela_login.sucesso_login=Login efetuado com sucesso!
@@ -50,8 +50,8 @@ horarios.rua=Digite a rua:
 horarios.cadastrar_endereco=Cadastrar
 horarios.voltar=Voltar para horários
 horarios.cadastrados=Horários cadastrados
-horarios.ida= Horarios de ida
-horarios.volta= Horarios de volta
+horarios.ida= Horários de ida
+horarios.volta= Horários de volta
 horarios.concluir=Concluir
 
 # view_usuario
@@ -64,7 +64,7 @@ view_usuario.dia=Escolha o dia
 view_usuario.bairro=Escolha o bairro
 view_usuario.publique=Publicar
 view_usuario.busque=Buscar
-view_usuario.recentes=Publicacoes recentes
+view_usuario.recentes=Publicacões recentes
 view_usuario.pedir=Pedir
 view_usuario.sem_caronas=Não há caronas disponíveis no momento :(
 

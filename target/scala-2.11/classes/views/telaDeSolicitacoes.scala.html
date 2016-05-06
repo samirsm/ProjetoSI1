@@ -86,9 +86,9 @@
                                   <div style="text-align: right;">
 
 
-                                      <a href="recusaPedido?id=@solicitacao.getId()" class="btn btn-m fa fa-thumbs-o-down">Negar</a>
+                                      <a href="recusaPedido?id=@solicitacao.getId()" class="btn btn-m fa fa-thumbs-o-down">@Messages("solicitacoes.negar")</a>
 
-                                      <a href="aceitaPedido?id=@solicitacao.getId()" class="btn btn-m fa fa-thumbs-o-up">Vumbora</a>
+                                      <a href="aceitaPedido?id=@solicitacao.getId()" class="btn btn-m fa fa-thumbs-o-up">@Messages("solicitacoes.aceitar")</a>
 
                                   </div>
                                   <div class="clearfix"></div>
@@ -101,7 +101,7 @@
 }
 
                 @if(solicitacoes.isEmpty()){
-                    <div text-align="center">Você não possui nenhuma solicitação no momento</div></br>
+                    <div text-align="center">@Messages("solicitacoes.nenhuma")</div></br>
                 }
                     <!-- /.row -->
       </div>

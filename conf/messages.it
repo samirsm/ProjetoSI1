@@ -1,0 +1,82 @@
+#
+# Mensagens (Italiano)
+#
+
+# globais
+global.home=Home
+global.solicitacoes=Richieste
+global.caronas=Passaggi
+global.ajustes=Ajustes
+global.minhas_caronas=I miei passaggi
+global.sem_caronas=Non avete passaggi registrati.
+global.ida=Andata
+global.volta=Ritorno
+global.nome=Nome
+global.matricula=RDM
+global.telefone=Telefono
+global.senha=Password
+global.rua=Via
+global.bairro=Quartiere
+global.vagas=Seggiolini disponibili
+global.exibir_todas=Vedere tutte
+global.sair=Scollegare questo account
+global.idioma=Lingua atuale:
+
+# tela_login (Tela de Login e Cadastro)
+tela_login.cabecalho=Cerca oppure offri passeggi con sicurezza e facilità
+tela_login.subtitulo=Passeggi di andata e di ritorno da UFCG
+tela_login.listagem1=Notifiche immediate sulla schermata
+tela_login.listagem2=Recommendazioni di guidatori e passeggeri
+tela_login.listagem3=Utenti registrati confiabili
+tela_login.sucesso_cadastro=Registrazione eseguita con successo!
+tela_login.sucesso_login=Login eseguito con successo!
+tela_login.login=Email/RDM
+tela_login.sem_carro=Non ho la macchina.
+tela_login.vagas=Numero di seggiolini disponibili nella macchina
+tela_login.cadastrar=Registro
+tela_login.nao_cadastrado=Non sei registrato? Registrati adesso! :)
+tela_login.sou_cadastrado=Già sei registrato? Accedi qui
+
+
+# horarios (Tela de cadastro de horários)
+horarios.cadastre=Registra i tuoi orari
+horarios.hora=Scegli l'ora
+horarios.dia=Scegli il giorno
+horarios.bairro=Scegli il quartiere
+horarios.novo_endereco=Registrare nuovo inderizzo
+horarios.cadastre_endereco=Registra un nuovo inderizzo
+horarios.bairros=Quartieri
+horarios.rua=Digita la via:
+horarios.cadastrar_endereco=Registrare
+horarios.voltar=Indietro agli orari
+horarios.cadastrados=Orari registrati
+horarios.ida= Orari di andata
+horarios.volta= Orari di ritorno
+horarios.concluir=Concludere
+
+# view_usuario
+view_usuario.buscar=Cercare passeggio
+view_usuario.oferecer=Offrire passeggio
+view_usuario.publicar=Pubblicare qui il tuo passeggio
+view_usuario.buscar_aqui=Cerca qui il tuo passeggio
+view_usuario.hora=Scegli l'ora
+view_usuario.dia=Scegli il giorno
+view_usuario.bairro=Scegli il quartiere
+view_usuario.publique=Pubblicare
+view_usuario.busque=Cercare
+view_usuario.recentes=Pubblicazioni recenti
+view_usuario.pedir=Chiedere
+view_usuario.sem_caronas=Non ci sono passeggi disponibile adesso :(
+
+# agendamento
+agendamento.marcar=Programmare un passeggio con
+agendamento.tipo=Tipo:
+agendamento.dia=Giorno:
+agendamento.hora=Ora:
+agendamento.voltar=Indietro agli Passeggi
+agendamento.solicitar=Solicitare passegio
+
+# solicitacoes
+solicitacoes.nenhuma=Non avete nessuna solicitazione adesso.
+solicitacoes.negar=Negare
+solicitacoes.aceitar=Accetare

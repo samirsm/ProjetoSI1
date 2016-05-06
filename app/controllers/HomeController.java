@@ -1,6 +1,8 @@
 package controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -28,6 +30,8 @@ public class HomeController extends Controller {
 	private Form<Carona> formularioCarona;
 	private Form<Horario> formularioHorario;
 	private List<String> bairros;
+	private String idioma = "pt"; //Default português
+	private HashMap<Integer, String> idiomas = new HashMap<Integer, String>();
 	
 	@Inject
 	public HomeController (FormFactory formFactory){
@@ -37,25 +41,25 @@ public class HomeController extends Controller {
 		formularioCarona = this.formFactory.form(Carona.class);
 		formularioHorario = this.formFactory.form(Horario.class);
 		bairros = SistemaDeBairros.getInstance().getBairrosCadastrados();
-		
+		idiomas.put(1, "pt");
+		idiomas.put(2, "en");
+		idiomas.put(3, "es");
+		idiomas.put(4, "it");
 	}
 	
 	public Result index(){
 
-		ctx().changeLang("pt");
+		ctx().changeLang(idioma);
 		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 		
 		return exibePagina();
 	}
 
-	public Result redefineIdioma() {
-		if (usuarioLogado.getIdioma() == "en"){
-			ctx().changeLang("pt");
-			usuarioLogado.setIdioma("pt");
-		}
-		else{
-			ctx().changeLang("en");
-			usuarioLogado.setIdioma("en");
+	public Result redefineIdioma(Integer id) {
+		idioma = idiomas.get(id);
+		ctx().changeLang(idioma);
+		if(usuarioLogado != null){
+			usuarioLogado.setIdioma(idioma);
 		}
 		return exibePagina();
 	}

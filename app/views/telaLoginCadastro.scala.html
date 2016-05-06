@@ -112,10 +112,10 @@
 			<div class="container-fluid">
 			</div>
 		</div>
-		<div id="loginCadastroBox" class="col-lg-4" style="border: 1px solid #888; border-radius: 20px; vertical-align: center; background: #000; filter:alpha(opacity=80); opacity: 0.8; margin-left: 80px; text-align: center; color: white;">
+		<div id="loginCadastroBox" class="col-lg-4" style="border: 1px solid #888; border-radius: 20px; width: 500px; vertical-align: center; background: #000; filter:alpha(opacity=80); opacity: 0.8;  margin-left: 15%; text-align: center; color: white;">
 	    </div>
 
-			<div id="divLogin" style="display: none">
+			<div id="divLogin" style="display: none; margin-top: 5%;" >
 
 		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
@@ -126,17 +126,35 @@
 				<a class="btn" onclick="cadastro()">@Messages("tela_login.nao_cadastrado")</a>
 			</div>
 </div>
-		<div id="divCadastro" style="display: none">
+		<div id="divCadastro" style="display: none; margin-top: 0px">
 				@helper.form(action = routes.AutenticacaoController.cadastraUsuario()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				@helper.inputText(formularioAutenticacao("nome"), '_label ->  Messages("global.nome"))
-				@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("global.matricula"))
-				@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> Messages("global.telefone"))
-				@helper.inputText(formularioAutenticacao("email"), '_label -> "Email")
-				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"))
-				@helper.inputText(formularioEndereco("rua"), '_label -> Messages("global.rua"))
+				<table border="0" style="text-align: center; color: white; vertical-align: center; margin-left: 10px; cellspacing="10">
+
+
+					<tr>
+						<td>@helper.inputText(formularioAutenticacao("nome"), 'size -> 17, '_label ->  Messages("global.nome"))</td>
+						<td>@helper.inputText(formularioAutenticacao("matricula"), 'size -> 17, '_label -> Messages("global.matricula"))</td>
+					</tr>
+
+					<tr>
+						<td>@helper.inputText(formularioAutenticacao("numeroDeTelefone"), 'size -> 17, '_label -> Messages("global.telefone"))</td>
+						<td>@helper.inputText(formularioAutenticacao("email"), 'size -> 17, '_label -> "Email")</td>
+
+					</tr>
+
+					<tr>
+						<td>@helper.inputPassword(formularioAutenticacao("senha"), 'size -> 17, '_label -> Messages("global.senha"))</td>
+						<td>@helper.inputText(formularioEndereco("rua"), 'size -> 17, '_label -> Messages("global.rua"))</td>
+					</tr>
+
+
+
+				</table>
+
 				@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> Messages("global.bairro"))
 				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq(Messages("tela_login.sem_carro"),"1","2","3","4","5","6","7","8")), '_label -> Messages("tela_login.vagas"))
+
 				<input type="submit" value=@Messages("tela_login.cadastrar") class="btn btn-default btn-xl"></input>
 			</br>
 				<a class="btn" onclick="login()">@Messages("tela_login.sou_cadastrado")</a>
@@ -144,6 +162,10 @@
 				}
 			</div>
 		</div>
+
+	<div style="position: fixed; bottom: 1%; right: 35%;  vertical-align: bottom; margin-left: 80px; text-align: center; color: lightgray; font-size: medium" >
+		<a href="redefineIdioma?id=1">Português</a>   -   <a href="redefineIdioma?id=2">English</a>   -   <a href="redefineIdioma?id=3">Español</a>   -   <a href="redefineIdioma?id=4">Italiano</a>
+	</div>
 
 		<!-- jQuery -->
 	    <script src="assets/CreativeTemplate/js/jquery.js"></script>

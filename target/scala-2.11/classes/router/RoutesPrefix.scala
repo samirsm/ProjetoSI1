@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
-// @DATE:Wed May 04 02:50:54 BRT 2016
+// @DATE:Thu May 05 02:30:48 BRT 2016
 
 
 package router {

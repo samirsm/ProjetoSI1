@@ -27,18 +27,18 @@
 
                  <div style="text-align: center; color: #FFF; font-family: 'Calibri Light';" >
 
-                <div style="font-size: 36px;"><p style="font-size: 34px;"><br>Marcar uma carona com @carona.getMotorista().getNome()<br><br></p></div>
+                <div style="font-size: 36px;"><p style="font-size: 34px;"><br>@Messages("agendamento.marcar") @carona.getMotorista().getNome()<br><br></p></div>
 
                 <p><img src="assets/SBAdminTemplate/img/trajeto carona ilustracao.png" width="500" height="95"  alt=""/></p>
 
-                <p style="font-size: 18px;"><b>Tipo: </b>@carona.getTipo()</p>
-                <p style="font-size: 18px;"><b>Dia: </b>@carona.getHorario().getDia()</p>
-                <p style="font-size: 18px;"><b>Hora: </b>@carona.getHorario().getHora()</p>
-                <p style="font-size: 18px;"><b>Vagas Disponíveis: </b>@carona.getVagasDisponiveis()</p>
+                <p style="font-size: 18px;"><b>@Messages("agendamento.tipo") </b>@carona.getTipo()</p>
+                <p style="font-size: 18px;"><b>@Messages("agendamento.dia") </b>@carona.getHorario().getDia()</p>
+                <p style="font-size: 18px;"><b>@Messages("agendamento.hora") </b>@carona.getHorario().getHora()</p>
+                <p style="font-size: 18px;"><b>@Messages("global.vagas"): </b>@carona.getVagasDisponiveis()</p>
 
                 <td colspan="3" style="font-family: 'Calibri Light'">&nbsp;</td>
-                <td align="rigth"><a href="/" class="btn btn-warning btn-l" style="float: center; font-size: 22px;												font-family: 'Calibri Light';"><b>Voltar às Caronas</a> </td><td></td>
-                <td align="rigth"><a href="solicitaCarona?id=@carona.getId()" class="btn btn-warning btn'l" style="float: center; font-size: 22px; font-family: 'Calibri Light';"><b>Solicitar Carona</a>
+                <td align="rigth"><a href="/" class="btn btn-warning btn-l" style="float: center; font-size: 22px;												font-family: 'Calibri Light';"><b>@Messages("agendamento.voltar")</a> </td><td></td>
+                <td align="rigth"><a href="solicitaCarona?id=@carona.getId()" class="btn btn-warning btn'l" style="float: center; font-size: 22px; font-family: 'Calibri Light';"><b>@Messages("agendamento.solicitar")</a>
                 <p>&nbsp;</p></td>
                 </div>
                 <!-- /.row -->

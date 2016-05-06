@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
-// @DATE:Thu May 05 02:30:48 BRT 2016
+// @DATE:Thu May 05 23:06:38 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -123,9 +123,9 @@ package controllers {
 
   
     // @LINE:20
-    def redefineIdioma(): Call = {
+    def redefineIdioma(id:Integer): Call = {
       import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "redefineIdioma")
+      Call("GET", _prefix + { _defaultPrefix } + "redefineIdioma" + queryString(List(Some(implicitly[QueryStringBindable[Integer]].unbind("id", id)))))
     }
   
     // @LINE:6

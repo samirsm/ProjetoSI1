@@ -82,7 +82,7 @@
 
 					<div class="col-sm-2">
             @helper.form(action = routes.CaronasController.buscarCaronas()){
-						<button type="submit" class="btn btn-primary btn-xl" style="margin-top: 30px; margin-left: 80px">Procurar carona</button>
+						<button type="submit" class="btn btn-primary btn-xl" style="margin-top: 30px; margin-left: 80px">@Messages("view_usuario.buscar")</button>
           }
 					</div>
 					<div class="col-sm-6">
@@ -90,9 +90,9 @@
 					</div>
 					<div class="col-sm-4">
             @if(usuarioLogado.getNumeroVagas() > 0){
-              <button onclick="publicarCaronaBox()" class="btn btn-warning btn-xl" style="margin-top: 30px; margin-right: 150px;">Oferecer carona</button>
+              <button onclick="publicarCaronaBox()" class="btn btn-warning btn-xl" style="margin-top: 30px; margin-right: 150px;">@Messages("view_usuario.oferecer")</button>
             } else {
-              <button onclick="publicarCaronaBox()" class="btn btn-warning btn-xl disabled" style="margin-top: 30px; margin-right: 150px;">Oferecer carona</button>
+              <button onclick="publicarCaronaBox()" class="btn btn-warning btn-xl disabled" style="margin-top: 30px; margin-right: 150px;">@Messages("view_usuario.oferecer")</button>
             }
           </div>
 
@@ -105,12 +105,12 @@
 
         <div id="publicarCarona" class="jumbotron" style="display: none">
   			@helper.form(action = routes.CaronasController.cadastraNovaCarona()){
-  				<h2 style="text-align: center;">Publicar aqui sua carona</h2>
+  				<h2 style="text-align: center;">@Messages("view_usuario.publicar")</h2>
 
   				<div class="row">
   					<div class="col-sm-4">
   						<div class="form-group">
-  							<label>Escolha a hora</label> <select name="hora" id="hora" class="form-control">
+  							<label>@Messages("view_usuario.hora")</label> <select name="hora" id="hora" class="form-control">
                                   <option>08</option>
                                   <option>10</option>
                                   <option>12</option>
@@ -123,7 +123,7 @@
 
   					<div class="col-sm-4">
   						<div class="form-group">
-  							<label>Escolha o dia</label> <select name="diaDaSemana" id="diasDaSemana" class="form-control">
+  							<label>@Messages("view_usuario.dia")</label> <select name="diaDaSemana" id="diasDaSemana" class="form-control">
                                   <option>Segunda</option>
                                   <option>Terça</option>
                                   <option>Quarta</option>
@@ -135,7 +135,7 @@
 
   					<div class="col-sm-4">
   						<div class="form-group">
-                              <label>Vagas disponíveis</label> <select name="vagasDisponiveis" class="form-control">
+                              <label>@Messages("global.vagas")</label> <select name="vagasDisponiveis" class="form-control">
                                 @for(a <- 1 to usuarioLogado.getNumeroVagas()){
                                   <option>
                                     @a
@@ -150,7 +150,7 @@
                           <label class="radio-inline"> </br> <input type="radio" name="tipo" value="volta">Volta</label>
                           <label class="checkbox-inline"> </br>
                           <input type="submit"
-                              value="Publicar" class="btn btn-warning btn-l"
+                              value=@Messages("view_usuario.publique") class="btn btn-warning btn-l"
                               style="float: right">
                           </input>
                          </label>
@@ -163,11 +163,11 @@
 
         <div id="buscarCarona" class="jumbotron" style="display: none">
   			@helper.form(action = routes.CaronasController.buscarCaronas()){
-  				<h2 style="text-align: center;">Buscar aqui sua carona</h2>
+  				<h2 style="text-align: center;">@Messages("view_usuario.buscar_aqui")</h2>
   				<div class="row">
   					<div class="col-sm-4">
   						<div class="form-group">
-  							<label>Escolha a hora</label> <select onchange="habilitaDias()" name="hora" id="hora" class="form-control">
+  							<label>@Messages("view_usuario.hora")</label> <select onchange="habilitaDias()" name="hora" id="hora" class="form-control">
                   <option>Não quero pesquisar por hora</option>
   								<option>08</option>
   								<option>10</option>
@@ -181,7 +181,7 @@
 
   					<div class="col-sm-4">
   						<div class="form-group">
-  							<label>Escolha o dia</label> <select onchange="estouComSorte()" name="diaDaSemanaBusca" id="diaDaSemanaBusca" class="form-control">
+  							<label>@Messages("view_usuario.dia")</label> <select onchange="estouComSorte()" name="diaDaSemanaBusca" id="diaDaSemanaBusca" class="form-control">
                     <option>Escolha uma hora primeiro</option>
     								<option>Segunda</option>
     								<option>Terça</option>
@@ -193,7 +193,7 @@
   					</div>
                       <div class="col-sm-4">
                           <div class="form-group">
-                              <label>Escolha o bairro</label> <select onchange="estouComSorte()" name="bairro" id="bairro" class="form-control">
+                              <label>@Messages("view_usuario.bairro")</label> <select onchange="estouComSorte()" name="bairro" id="bairro" class="form-control">
                                 <option>Não quero pesquisar por bairro</option>
                                 @for(bairro <- bairros){
                                   <option>
@@ -217,7 +217,7 @@
   				</div>
   			</div>
 
-			<h3 class="page-header" style="color: #FFF">Publicações Recentes</h3>
+			<h3 class="page-header" style="color: #FFF">@Messages("view_usuario.recentes")</h3>
 		</div>
 	</div>
 
@@ -233,7 +233,7 @@
                 <!-- /.row -->
         @if(caronasOfertadas.size() == 0){
           <div class="panel-heading">
-            Não há caronas disponíveis no momento :(
+              @Messages("view_usuario.sem_caronas")
           </div>
         }
  				@for(carona <- caronasOfertadas){
@@ -261,7 +261,7 @@
                             </div>
                                 <div class="panel-footer">
                                     <span class="pull-left">@carona.getTipo()</span>
-                                    <a href="exibeDetalhes?id=@carona.getId()" class="btn btn-warning btn-l" style="float: right">Pedir</a>
+                                    <a href="exibeDetalhes?id=@carona.getId()" class="btn btn-warning btn-l" style="float: right">@Messages("view_usuario.pedir")</a>
                                     <div class="clearfix"></div>
                                 </div>
                         </div>

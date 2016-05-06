@@ -1,4 +1,4 @@
-[0m[[31merror[0m] [0m/home/pedropfo/workspace/ProjetoSI1/app/views/telaCadastroHorario.scala.html:222: Expected '}' but found 'EOF'[0m
+[0m[[31merror[0m] [0m/home/pedropfo/workspace/ProjetoSI1/app/views/telaLoginCadastro.scala.html:179: Expected ')' but found 'EOF'[0m
 [0m[[31merror[0m] [0m}[0m
 [0m[[31merror[0m] [0m ^[0m
 [0m[[31merror[0m] [0m(compile:[31mtwirlCompileTemplates[0m) Twirl compilation failed[0m

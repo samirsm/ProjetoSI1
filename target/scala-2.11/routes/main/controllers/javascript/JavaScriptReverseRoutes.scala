@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
-// @DATE:Thu May 05 02:30:48 BRT 2016
+// @DATE:Thu May 05 23:06:38 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -177,8 +177,8 @@ package controllers.javascript {
     def redefineIdioma: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.redefineIdioma",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "redefineIdioma"})
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "redefineIdioma" + _qS([(""" + implicitly[QueryStringBindable[Integer]].javascriptUnbind + """)("id", id0)])})
         }
       """
     )

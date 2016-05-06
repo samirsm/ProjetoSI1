@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
-// @DATE:Wed May 04 02:50:54 BRT 2016
+// @DATE:Thu May 05 02:30:48 BRT 2016
 
 package router
 
@@ -26,7 +26,7 @@ class Routes(
   CaronasController_1: controllers.CaronasController,
   // @LINE:17
   NotificacoesController_0: controllers.NotificacoesController,
-  // @LINE:22
+  // @LINE:23
   Assets_5: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -43,7 +43,7 @@ class Routes(
     CaronasController_1: controllers.CaronasController,
     // @LINE:17
     NotificacoesController_0: controllers.NotificacoesController,
-    // @LINE:22
+    // @LINE:23
     Assets_5: controllers.Assets
   ) = this(errorHandler, HomeController_3, AutenticacaoController_4, HorariosController_2, CaronasController_1, NotificacoesController_0, Assets_5, "/")
 
@@ -73,6 +73,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """solicitacoes""", """controllers.NotificacoesController.exibeSolicitacoes()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """aceitaPedido""", """controllers.CaronasController.confirmaAgendamento(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """recusaPedido""", """controllers.CaronasController.recusaPedido(id:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """redefineIdioma""", """controllers.HomeController.redefineIdioma"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -319,11 +320,28 @@ class Routes(
     )
   )
 
-  // @LINE:22
-  private[this] lazy val controllers_Assets_versioned14_route = Route("GET",
+  // @LINE:20
+  private[this] lazy val controllers_HomeController_redefineIdioma14_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("redefineIdioma")))
+  )
+  private[this] lazy val controllers_HomeController_redefineIdioma14_invoker = createInvoker(
+    HomeController_3.redefineIdioma,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "redefineIdioma",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """redefineIdioma"""
+    )
+  )
+
+  // @LINE:23
+  private[this] lazy val controllers_Assets_versioned15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned14_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned15_invoker = createInvoker(
     Assets_5.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -423,10 +441,16 @@ class Routes(
         controllers_CaronasController_recusaPedido13_invoker.call(CaronasController_1.recusaPedido(id))
       }
   
-    // @LINE:22
-    case controllers_Assets_versioned14_route(params) =>
+    // @LINE:20
+    case controllers_HomeController_redefineIdioma14_route(params) =>
+      call { 
+        controllers_HomeController_redefineIdioma14_invoker.call(HomeController_3.redefineIdioma)
+      }
+  
+    // @LINE:23
+    case controllers_Assets_versioned15_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned14_invoker.call(Assets_5.versioned(path, file))
+        controllers_Assets_versioned15_invoker.call(Assets_5.versioned(path, file))
       }
   }
 }

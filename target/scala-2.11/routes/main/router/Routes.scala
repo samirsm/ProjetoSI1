@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
-// @DATE:Thu May 05 02:30:48 BRT 2016
+// @DATE:Thu May 05 23:06:38 BRT 2016
 
 package router
 
@@ -73,7 +73,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """solicitacoes""", """controllers.NotificacoesController.exibeSolicitacoes()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """aceitaPedido""", """controllers.CaronasController.confirmaAgendamento(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """recusaPedido""", """controllers.CaronasController.recusaPedido(id:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """redefineIdioma""", """controllers.HomeController.redefineIdioma"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """redefineIdioma""", """controllers.HomeController.redefineIdioma(id:Integer)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -325,12 +325,12 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("redefineIdioma")))
   )
   private[this] lazy val controllers_HomeController_redefineIdioma14_invoker = createInvoker(
-    HomeController_3.redefineIdioma,
+    HomeController_3.redefineIdioma(fakeValue[Integer]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "redefineIdioma",
-      Nil,
+      Seq(classOf[Integer]),
       "GET",
       """""",
       this.prefix + """redefineIdioma"""
@@ -443,8 +443,8 @@ class Routes(
   
     // @LINE:20
     case controllers_HomeController_redefineIdioma14_route(params) =>
-      call { 
-        controllers_HomeController_redefineIdioma14_invoker.call(HomeController_3.redefineIdioma)
+      call(params.fromQuery[Integer]("id", None)) { (id) =>
+        controllers_HomeController_redefineIdioma14_invoker.call(HomeController_3.redefineIdioma(id))
       }
   
     // @LINE:23

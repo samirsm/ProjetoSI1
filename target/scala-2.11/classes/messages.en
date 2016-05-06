@@ -57,7 +57,7 @@ horarios.concluir=Done
 # view_usuario
 view_usuario.buscar=Search carpool
 view_usuario.oferecer=Offer carpools
-view_usuario.publicar=Publish here your ride
+view_usuario.publicar=Publish here your carpool
 view_usuario.buscar_aqui=Search here your carpool
 view_usuario.hora=Choose the time
 view_usuario.dia=Choose the day
