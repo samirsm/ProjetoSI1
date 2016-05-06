@@ -18,7 +18,9 @@ public enum Acao {
 	CANCELOU_CARONA("O usuário cancelou a carona: "),
 	GERA_NOTIFICACAO("O sistema gerou uma notificação[From/To]: "),
 	SOLICITA_CARONA("O usuário pediu uma carona[From/To]: "),
-	ERRO("O sistema registrou um erro: ");
+	ERRO("O sistema registrou um erro: "),
+	INFO("INFO: ");
+	
 	
 	
 	private final String mensagemAcao;

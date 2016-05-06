@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.Arrays;
+
 import models.Usuario;
 import play.mvc.Controller;
 import play.mvc.Http;
@@ -14,20 +16,22 @@ public class Secured extends Security.Authenticator {
 	
 	@Override
 	public String getUsername(Context ctx) {
-		String email = ctx.session().get("email");
-		String matricula = ctx.session().get("matricula");
 		
-		LoggerSistema loggerAutenticacao = new LoggerSistema();
-		loggerAutenticacao.registraAcao(Acao.ERRO, email);
+		LoggerSistema l = new LoggerSistema();
+		l.registraAcao(Acao.INFO, ctx.toString());
+		
+		String matricula = SistemaUsuarioLogin.getInstance().getTokenAuth();
+		String email = SistemaUsuarioLogin.getInstance().getTokenAuth();
 		
 		if (email != null){
 			return email;
-		} else return matricula;
-		
+		} else if(matricula != null)
+			return matricula;
+		else return null;
     }
 	
 	@Override
-    public Result onUnauthorized(Http.Context context) {
+    public Result onUnauthorized(Context context) {
 		return redirect(routes.HomeController.index());
     }
 

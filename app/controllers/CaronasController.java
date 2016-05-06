@@ -101,22 +101,10 @@ public class CaronasController extends Controller {
     
     @Security.Authenticated(Secured.class)
     public Result buscarCaronas(){
-        //Futura atualização que oferecerá diversos tipos de busca
-        /*
-        DynamicForm requestData = formFactory.form().bindFromRequest();
-        
-        
-        String hora = requestData.get("hora");
-        String dia = requestData.get("diaDaSemanaBusca");
-        String bairro = requestData.get("bairro");
-        TipoCarona tipo = getTipo(requestData.get("tipo"));
-        
-        Horario horario = new Horario(dia, Integer.parseInt(hora));
-        
-        */
-        
         List<Carona> caronas = SistemaCarona.getInstance().buscarCaronasDefault();
+        
         loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS, caronas.toString());
+
         return redirect(routes.HomeController.index());
     }
     

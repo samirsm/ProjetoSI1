@@ -23,3 +23,6 @@ EclipseKeys.preTasks := Seq(compile in Compile)
 
 
 
+
+
+fork in run := true

@@ -43,26 +43,17 @@ public class HomeController extends Controller {
 		
 	}
 	
+	// Mudar esse método para efetuar a verificação do Usuario Logado.
 	public Result index(){
 		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-		
-		String email = session().get("email");
-		String matricula = session().get("matricula");
-		
-		LoggerSistema loggerAutenticacao = new LoggerSistema();
-		
-		loggerAutenticacao.registraAcao(Acao.ERRO,"====COMECA AQUI===");
-		
-		loggerAutenticacao.registraAcao(Acao.ERRO, email);
-		loggerAutenticacao.registraAcao(Acao.ERRO, matricula);
 		
 		return exibePagina();
 	}
 	
 	private Result exibePagina(){
-		if (usuarioLogado == null)
+		if (!SistemaUsuarioLogin.getInstance().isLogado())
 			return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
-		else if(!usuarioLogado.isHorariosCadastrados()){
+		else if(SistemaUsuarioLogin.getInstance().isLogado() && !usuarioLogado.isHorariosCadastrados()){
 			List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
 			return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 		}

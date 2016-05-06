@@ -15,6 +15,9 @@
 # HOCON will fall back to substituting environment variable:
 #mykey = ${JAVA_HOME}
 
+#application.langs="en"
+application.langs="en,pt"
+
 ## Akka
 # https://www.playframework.com/documentation/latest/ScalaAkka#Configuration
 # https://www.playframework.com/documentation/latest/JavaAkka#Configuration
@@ -124,16 +127,16 @@ play.http {
   # ~~~~~
   session {
     # Sets the cookie to be sent only over HTTPS.
-    #secure = true
+    secure = true
 
     # Sets the cookie to be accessed only by the server.
-    #httpOnly = true
+    httpOnly = true
 
     # Sets the max-age field of the cookie to 5 minutes.
     # NOTE: this only sets when the browser will discard the cookie. Play will consider any
     # cookie value with a valid signature to be a valid session forever. To implement a server side session timeout,
     # you need to put a timestamp in the session and check it at regular intervals to possibly expire it.
-    #maxAge = 300
+    maxAge = 3600
 
     # Sets the domain on the session cookie.
     #domain = "example.com"
@@ -341,5 +344,13 @@ db {
   #ebean.default = ["models.*"]
   # You can turn on SQL logging for any datasource
   # https://www.playframework.com/documentation/latest/Highlights25#Logging-SQL-statements
-  default.logSql=true
+  #default.logSql=true
 }
+
+# Banco de Dados
+
+jpa.default=h2PersistenceUnit
+db.default.driver=org.h2.Driver
+db.default.url="jdbc:h2:mem:play;MODE=MYSQL;DB_CLOSE_DELAY=-1"
+db.default.jndiName=DefaultDS
+ebean.default="models.*"

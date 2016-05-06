@@ -42,7 +42,7 @@ public class AutenticacaoController extends Controller {
 		this.formFactory = formFactory;
 		loggerAutenticacao = new LoggerSistema();
 	}
-
+	
 	public Result efetuaLogin(){
 		Usuario usuarioLogado = null;
 		
@@ -51,12 +51,14 @@ public class AutenticacaoController extends Controller {
 			if (usuarioLogado == null) 
 				throw new LoginInvalidoException();
 		} catch (DadosInvalidosException | LoginInvalidoException e) {
-			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
+			loggerAutenticacao.registraAcao(Acao.INFO, e.getMessage());
 			return badRequest(e.getMessage());
 		}
 		
-		loggerAutenticacao.registraAcao(Acao.ERRO, session().get("matricula"));
-		loggerAutenticacao.registraAcao(Acao.ERRO, session().get("email"));
+		if (session().get("matricula") == null) {
+			loggerAutenticacao.registraAcao(Acao.INFO, session().get("matricula"));
+			loggerAutenticacao.registraAcao(Acao.INFO, session().get("email"));
+		}
 		
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
 		
@@ -78,6 +80,8 @@ public class AutenticacaoController extends Controller {
 		Endereco endereco;
 		
 		try{
+			if(requestData.hasErrors())
+				throw new Exception();
 			dadosPessoais = new Dados(nome, matricula, email, senha, numeroDeTelefone);
 			endereco = new Endereco(rua, bairro);
 		}catch(Exception e){
@@ -112,35 +116,35 @@ public class AutenticacaoController extends Controller {
 	public Result efetuaLogout(){
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado().toString());
 		
-		session().clear();
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
 		
 		return redirect(routes.HomeController.index());
 	}
-
+	
+	// TODO Consertar.
 	private Usuario autenticaUsuario() throws DadosInvalidosException, LoginInvalidoException{
 		DynamicForm requestData = formFactory.form().bindFromRequest();
-		String matricula = requestData.get("matricula");
-		String email = matricula; // O usuário pode digitar um dos dois no mesmo campo
+		String login = requestData.get("matricula");
+		String email = login; // O usuário pode digitar um dos dois no mesmo campo
 		String senha = requestData.get("senha");
+		
 		
 		if (requestData.hasErrors())
 			throw new DadosInvalidosException();
+
+		session().put("matricula", login);
+		session().put("email", email);
 		
-		SistemaUsuarioLogin.getInstance().efetuaLogin(matricula, email, senha);
+		SistemaUsuarioLogin.getInstance().efetuaLogin(login, email, senha);
+
 		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-		
-		session().put("matricula", requestData.get("matricula"));
-		session().put("email", usuarioLogado.getEmail());
-		//session("matricula", requestData.get("matricula"));
-		//session("email", usuarioLogado.getEmail());
 		
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
 		
+		//Checagem		
 		return usuarioLogado;
 	}
 	
-	@Security.Authenticated(Secured.class)
 	private Result verificaPrimeiroAcessoUsuario(Usuario usuario) {
 		loggerAutenticacao.registraAcao(Acao.VERIFICA_PRIMEIRO_ACESSO, usuario.toString());
 		return redirect(routes.HomeController.index());

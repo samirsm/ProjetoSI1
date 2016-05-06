@@ -14,6 +14,8 @@ import play.mvc.Result;
 
 import com.google.common.base.Strings;
 
+import controllers.AutenticacaoController;
+
 import javax.inject.Inject;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -23,6 +25,7 @@ public class SistemaUsuarioLogin {
     private static final SistemaCarona SISTEMA_CARONA = SistemaCarona.getInstance();
     private static final SistemaUsuarioLogin INSTANCIA = new SistemaUsuarioLogin();
 	private Usuario usuarioLogado;
+	private static String tokenAuth;
 	
 	private SistemaUsuarioLogin(){
 	}
@@ -37,6 +40,11 @@ public class SistemaUsuarioLogin {
 	
 	public void efetuaLogin(String matricula, String email, String senha) throws DadosInvalidosException, LoginInvalidoException{
 		usuarioLogado = SistemaUsuarioCRUD.getInstance().consultaUsuario(matricula, email, senha);
+		tokenAuth = AutenticacaoController.session().get("matricula");
+	}
+	
+	public String getTokenAuth(){
+		return tokenAuth;
 	}
 	
 	public void efetuaLogout(){
@@ -45,7 +53,7 @@ public class SistemaUsuarioLogin {
 	}
 	
 	public boolean isLogado(){
-	  return !(usuarioLogado.equals(null));
+	  return usuarioLogado != null;
 	
 	}
 	public void cadastrouHorarios(){

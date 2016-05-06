@@ -1,77 +1,11 @@
-2016-05-05 17:22:46,150 [INFO] from play.core.server.NettyServer in pool-4-thread-6 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
-2016-05-05 17:22:59,526 [ERROR] from application in netty-event-loop-3 - 
+2016-05-06 16:08:13,473 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-7 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-05-06 16:08:37,707 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-06 16:08:38,025 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-06 16:08:38,028 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-06 16:08:39,143 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-06 16:08:40,068 [ERROR] from application in netty-event-loop-3 - 
 
-! @70262gid1 - Internal server error, for (GET) [/] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value efetuaLogin is not a member of controllers.AutenticacaoController]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2016-05-05 17:29:02,499 [ERROR] from application in netty-event-loop-8 - 
-
-! @70263b9bo - Internal server error, for (GET) [/] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value efetuaLogin is not a member of controllers.AutenticacaoController]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
-	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2016-05-05 17:30:46,815 [INFO] from application in ForkJoinPool-1-worker-3 - Creating Pool for datasource 'default'
-2016-05-05 17:30:47,045 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-3 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 17:30:47,051 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-3 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 17:30:47,378 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-3 - Bean [models.Endereco] has no unique id set
-2016-05-05 17:30:47,767 [ERROR] from application in netty-event-loop-8 - 
-
-! @70263h8mi - Internal server error, for (GET) [/] ->
+! @702cpojcd - Internal server error, for (GET) [/] ->
  
 play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
 	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:76)
@@ -123,315 +57,39 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2016-05-05 17:30:52,469 [INFO] from application in ForkJoinPool-1-worker-3 - Creating Pool for datasource 'default'
-2016-05-05 17:30:52,473 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-3 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 17:30:52,473 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-3 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 17:30:52,553 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-3 - Bean [models.Endereco] has no unique id set
-2016-05-05 17:30:52,687 [WARN] from application in ForkJoinPool-1-worker-3 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 17:30:53,108 [INFO] from play.api.Play in ForkJoinPool-1-worker-3 - Application started (Dev)
-2016-05-05 17:32:23,593 [ERROR] from application in netty-event-loop-7 - 
-
-! @70263mko6 - Internal server error, for (GET) [/] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value efetuaLogin is not a member of controllers.AutenticacaoController]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-05 17:38:02,223 [ERROR] from application in netty-event-loop-3 - 
-
-! @70264g1me - Internal server error, for (GET) [/] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value index is not a member of controllers.HomeController]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-05 17:39:58,418 [ERROR] from application in netty-event-loop-3 - 
-
-! @70264mhjc - Internal server error, for (GET) [/] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[value index is not a member of controllers.HomeController]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-05 17:45:15,498 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2016-05-05 17:45:15,677 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
-2016-05-05 17:45:15,685 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-6 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 17:45:15,686 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 17:45:15,763 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-6 - Bean [models.Endereco] has no unique id set
-2016-05-05 17:45:15,835 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 17:45:15,940 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-05-05 17:51:43,620 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
-2016-05-05 17:51:43,764 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
-2016-05-05 17:51:43,773 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-8 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 17:51:43,774 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 17:51:43,848 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-8 - Bean [models.Endereco] has no unique id set
-2016-05-05 17:51:43,916 [WARN] from application in application-akka.actor.default-dispatcher-8 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 17:51:43,978 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
-2016-05-05 17:51:53,269 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 17:51:53 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
-2016-05-05 17:51:53,269 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 17:51:53 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 17:51:53,270 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 17:51:53 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 17:52:01,530 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 17:52:01 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 17:52:01,530 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 17:52:01 BRT 2016] O sistema registrou um erro: 114110478||
-2016-05-05 17:52:01,530 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 17:52:01 BRT 2016] O sistema registrou um erro: pauloviniciusd@gmail.com||
-2016-05-05 17:52:01,530 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 17:52:01 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 17:52:01,530 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 17:52:01 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 17:52:06,900 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Thu May 05 17:52:06 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 17:52:06,901 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Thu May 05 17:52:06 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:05:29,791 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
-2016-05-05 19:05:29,928 [INFO] from application in application-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
-2016-05-05 19:05:29,934 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-7 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:05:29,935 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:05:30,397 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-7 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:05:30,486 [WARN] from application in application-akka.actor.default-dispatcher-7 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:05:30,581 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
-2016-05-05 19:05:41,443 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:05:41 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
-2016-05-05 19:05:41,443 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:05:41 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||3||
-2016-05-05 19:05:41,444 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:05:41 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||3||
-2016-05-05 19:05:48,701 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:05:48 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:05:48,705 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:05:48 BRT 2016] O sistema registrou um erro: 114110478||
-2016-05-05 19:05:48,705 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:05:48 BRT 2016] O sistema registrou um erro: pauloviniciusd@gmail.com||
-2016-05-05 19:05:48,705 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:05:48 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:05:48,705 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:05:48 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:05:53,161 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Thu May 05 19:05:53 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:05:53,161 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Thu May 05 19:05:53 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:06:47,545 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2016-05-05 19:06:47,672 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2016-05-05 19:06:47,678 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:06:47,678 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:06:47,757 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-5 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:06:47,824 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:06:47,903 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-05-05 19:06:55,970 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:06:55 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
-2016-05-05 19:06:55,971 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:06:55 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:06:55,972 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:06:55 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:06:59,958 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:06:59 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:06:59,958 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:06:59 BRT 2016] O sistema registrou um erro: 114110478||
-2016-05-05 19:06:59,958 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:06:59 BRT 2016] O sistema registrou um erro: pauloviniciusd@gmail.com||
-2016-05-05 19:06:59,958 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:06:59 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:06:59,959 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:06:59 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:07:01,988 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Thu May 05 19:07:01 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:07:01,988 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Thu May 05 19:07:01 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:12:37,145 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
-2016-05-05 19:12:37,341 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
-2016-05-05 19:12:37,349 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-8 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:12:37,350 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:12:37,425 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-8 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:12:37,497 [WARN] from application in application-akka.actor.default-dispatcher-8 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:12:37,600 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
-2016-05-05 19:13:24,673 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:13:24 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Anápolis ||
-2016-05-05 19:13:24,673 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:13:24 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Anápolis ||4||
-2016-05-05 19:13:24,675 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:13:24 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Anápolis ||4||
-2016-05-05 19:13:29,559 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Thu May 05 19:13:29 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:13:29,559 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Thu May 05 19:13:29 BRT 2016] O sistema registrou um erro: 114110478||
-2016-05-05 19:13:29,559 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Thu May 05 19:13:29 BRT 2016] O sistema registrou um erro: pauloviniciusd@gmail.com||
-2016-05-05 19:13:29,559 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Thu May 05 19:13:29 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:13:29,559 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Thu May 05 19:13:29 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:13:31,742 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Thu May 05 19:13:31 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:26:07,968 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2016-05-05 19:26:08,242 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2016-05-05 19:26:08,252 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:26:08,253 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:26:09,186 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-5 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:26:09,266 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:26:09,387 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-05-05 19:26:19,674 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-4 - [Thu May 05 19:26:19 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
-2016-05-05 19:26:19,674 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-4 - [Thu May 05 19:26:19 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:26:19,675 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-4 - [Thu May 05 19:26:19 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:26:24,708 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:26:24 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:26:24,708 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:26:24 BRT 2016] O sistema registrou um erro: 114110478||
-2016-05-05 19:26:24,708 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:26:24 BRT 2016] O sistema registrou um erro: pauloviniciusd@gmail.com||
-2016-05-05 19:26:24,708 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:26:24 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:26:24,708 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:26:24 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:26:33,867 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:26:33 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:35:13,080 [INFO] from application in application-akka.actor.default-dispatcher-13 - Shutting down connection pool.
-2016-05-05 19:35:13,202 [INFO] from application in application-akka.actor.default-dispatcher-13 - Creating Pool for datasource 'default'
-2016-05-05 19:35:13,206 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-13 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:35:13,207 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-13 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:35:13,264 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-13 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:35:13,307 [WARN] from application in application-akka.actor.default-dispatcher-13 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:35:13,355 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-13 - Application started (Dev)
-2016-05-05 19:35:13,367 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Thu May 05 19:35:13 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:35:13,367 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Thu May 05 19:35:13 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:35:13,368 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Thu May 05 19:35:13 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:35:22,311 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:35:22 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
-2016-05-05 19:35:22,312 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:35:22 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:35:22,313 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:35:22 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:35:22,335 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:35:22 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:35:22,335 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:35:22 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:35:22,335 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:35:22 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:35:38,945 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:35:38 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:35:38,945 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:35:38 BRT 2016] O sistema registrou um erro: 114110478||
-2016-05-05 19:35:38,945 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:35:38 BRT 2016] O sistema registrou um erro: pauloviniciusd@gmail.com||
-2016-05-05 19:35:38,945 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:35:38 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:35:38,945 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:35:38 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:35:38,954 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:35:38 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:35:38,954 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:35:38 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:35:38,954 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Thu May 05 19:35:38 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:36:10,249 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:36:10 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:36:10,257 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:36:10 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:36:10,257 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:36:10 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:36:10,257 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:36:10 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:39:47,772 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
-2016-05-05 19:39:47,880 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
-2016-05-05 19:39:47,888 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-8 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:39:47,888 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:39:47,955 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-8 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:39:48,010 [WARN] from application in application-akka.actor.default-dispatcher-8 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:39:48,044 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
-2016-05-05 19:39:48,081 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:39:48 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:39:48,081 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:39:48 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:39:48,081 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:39:48 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:01,059 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:40:01 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
-2016-05-05 19:40:01,062 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:40:01 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:40:01,062 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:40:01 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:40:01,069 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:40:01 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:40:01,070 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:40:01 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:01,071 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:40:01 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:05,714 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:05 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:40:05,714 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:05 BRT 2016] O sistema registrou um erro: 114110478||
-2016-05-05 19:40:05,714 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:05 BRT 2016] O sistema registrou um erro: pauloviniciusd@gmail.com||
-2016-05-05 19:40:05,714 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:05 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:40:05,714 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:05 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:40:05,727 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:05 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:40:05,727 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:05 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:05,727 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:05 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:18,743 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:18 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:18,758 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:18 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:40:18,758 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:18 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:18,759 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:18 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:37,019 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2016-05-05 19:40:37,112 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2016-05-05 19:40:37,115 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-2 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:40:37,116 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:40:37,162 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-2 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:40:37,209 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:40:37,250 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-05-05 19:40:37,265 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:40:37 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:40:37,265 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:40:37 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:37,266 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:40:37 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:44,069 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:44 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
-2016-05-05 19:40:44,069 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:44 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:40:44,071 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:44 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-05 19:40:44,079 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:44 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:40:44,079 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:44 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:44,079 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Thu May 05 19:40:44 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:55,046 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:40:55 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:40:55,046 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:40:55 BRT 2016] O sistema registrou um erro: 114110478||
-2016-05-05 19:40:55,047 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:40:55 BRT 2016] O sistema registrou um erro: pauloviniciusd@gmail.com||
-2016-05-05 19:40:55,047 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:40:55 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:40:55,047 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:40:55 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-05 19:40:55,069 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:40:55 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:40:55,070 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:40:55 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:55,070 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Thu May 05 19:40:55 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:56,944 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Thu May 05 19:40:56 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:56,953 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Thu May 05 19:40:56 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:40:56,953 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Thu May 05 19:40:56 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:40:56,953 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Thu May 05 19:40:56 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:43:15,203 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
-2016-05-05 19:43:15,321 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
-2016-05-05 19:43:15,323 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-3 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:43:15,324 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:43:15,387 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-3 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:43:15,436 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:43:15,467 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
-2016-05-05 19:43:15,481 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:43:15 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:43:15,482 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:43:15 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:43:15,482 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Thu May 05 19:43:15 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:46:28,341 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
-2016-05-05 19:46:28,448 [INFO] from application in application-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
-2016-05-05 19:46:28,450 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-7 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:46:28,451 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:46:29,001 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-7 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:46:29,144 [WARN] from application in application-akka.actor.default-dispatcher-7 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:46:29,260 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
-2016-05-05 19:46:29,280 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:46:29 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:46:29,280 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:46:29 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:46:29,280 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Thu May 05 19:46:29 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:51:44,189 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
-2016-05-05 19:51:44,299 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
-2016-05-05 19:51:44,302 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-3 - datasource [default] bound to JNDI as DefaultDS
-2016-05-05 19:51:44,303 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:h2:mem:play
-2016-05-05 19:51:44,573 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-3 - Bean [models.Endereco] has no unique id set
-2016-05-05 19:51:44,623 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-05 19:51:44,666 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
-2016-05-05 19:51:44,687 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:51:44 BRT 2016] O sistema registrou um erro: ====COMECA AQUI===||
-2016-05-05 19:51:44,687 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:51:44 BRT 2016] O sistema registrou um erro: null||
-2016-05-05 19:51:44,688 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Thu May 05 19:51:44 BRT 2016] O sistema registrou um erro: null||
+2016-05-06 16:08:44,721 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-06 16:08:44,724 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-06 16:08:44,724 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-06 16:08:44,793 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-06 16:08:45,031 [WARN] from application in ForkJoinPool-1-worker-1 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-06 16:08:45,639 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-05-06 16:08:45,803 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Fri May 06 16:08:45 BRT 2016] INFO: ====COMECA AQUI===||
+2016-05-06 16:08:45,803 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Fri May 06 16:08:45 BRT 2016] INFO: null||
+2016-05-06 16:08:45,804 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Fri May 06 16:08:45 BRT 2016] INFO: null||
+2016-05-06 16:08:54,585 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
+2016-05-06 16:08:54,585 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
+2016-05-06 16:08:54,586 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
+2016-05-06 16:08:54,616 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] INFO: ====COMECA AQUI===||
+2016-05-06 16:08:54,617 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] INFO: null||
+2016-05-06 16:08:54,617 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] INFO: null||
+2016-05-06 16:09:02,672 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-06 16:09:02,672 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-06 16:09:02,673 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-06 16:09:02,904 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] INFO: ====COMECA AQUI===||
+2016-05-06 16:09:02,904 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] INFO: null||
+2016-05-06 16:09:02,904 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] INFO: null||
+2016-05-06 16:09:11,771 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] INFO: Context attached to (POST /cadastra)||
+2016-05-06 16:09:11,774 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] O usuário adicionou um horário à lista de horários: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||IDA||Segunda||8||
+2016-05-06 16:09:11,791 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] INFO: ====COMECA AQUI===||
+2016-05-06 16:09:11,791 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] INFO: null||
+2016-05-06 16:09:11,791 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] INFO: null||
+2016-05-06 16:09:21,372 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] INFO: Context attached to (POST /cadastra)||
+2016-05-06 16:09:21,375 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] O usuário adicionou um horário à lista de horários: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||IDA||Terça||8||
+2016-05-06 16:09:21,392 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] INFO: ====COMECA AQUI===||
+2016-05-06 16:09:21,392 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] INFO: null||
+2016-05-06 16:09:21,393 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] INFO: null||
+2016-05-06 16:09:24,744 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] INFO: Context attached to (GET /cadastraHorarios?)||
+2016-05-06 16:09:24,745 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] O usuário cadastrou seus horários de ida/volta: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||[]||
+2016-05-06 16:09:24,762 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] INFO: ====COMECA AQUI===||
+2016-05-06 16:09:24,762 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] INFO: null||
+2016-05-06 16:09:24,762 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] INFO: null||

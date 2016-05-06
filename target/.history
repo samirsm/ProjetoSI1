@@ -208,3 +208,19 @@ run
 clean
 compile
 run
+clean
+compile
+run
+clean
+compile
+run
+clean
+compile
+run
+clean
+compile
+run
+help
+help run
+run debug
+run
