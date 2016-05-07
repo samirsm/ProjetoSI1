@@ -1,15 +1,22 @@
 package controllers;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import exceptions.BairroJaCadastradoException;
 import exceptions.HorarioJaCadastradoException;
+import models.Horario;
+import models.Notificacao;
 import models.TipoCarona;
 import models.Usuario;
+import play.data.Form;
+
 import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
+import sistemas.SistemaDeBairros;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
@@ -20,11 +27,17 @@ public class HorariosController extends Controller {
 	
   private FormFactory formFactory;
   private LoggerSistema loggerHorarios;
+  private Form<Horario> formularioHorario;
+  private List<String> bairros;
+
   
 	@Inject
 	public HorariosController(FormFactory formFactory) {
 		this.formFactory = formFactory;
 		loggerHorarios = new LoggerSistema();
+	    bairros = SistemaDeBairros.getInstance().getBairrosCadastrados();
+	    formularioHorario = this.formFactory.form(Horario.class);
+
 	}
 
 	public Result cadastraHorarios(){
@@ -51,7 +64,7 @@ public class HorariosController extends Controller {
       
       return redirect(routes.HomeController.editaHorarios());
       
-  }
+      }
 	
 	public Result cadastraNovoEndereco() {
       Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
@@ -67,6 +80,23 @@ public class HorariosController extends Controller {
       
       return redirect(routes.HomeController.editaHorarios());
 	}
+	
+	public Result excluiHorarioVolta(String dia, Integer hora){
+	  Horario horario = new Horario(dia, hora);
+      Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+      List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
+      usuarioLogado.removeHorarioVolta(horario);
+      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+	}
+	
+	public Result excluiHorarioIda(String dia, Integer hora){
+      Horario horario = new Horario(dia, hora);
+      Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+      List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
+      usuarioLogado.removeHorarioIda(horario);
+      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+    }
+	
 
 	private TipoCarona getTipo(String tipo){
 	      if (tipo.equals("ida")) return TipoCarona.IDA;

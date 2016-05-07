@@ -219,8 +219,8 @@ ul.alert-dropdown {
     .side2-nav li a:focus {
         outline: none;
     }
-    
-    
+
+
 }
 
 @media(min-width:768px) {
@@ -327,10 +327,22 @@ ul.alert-dropdown {
 }
 
 .panel-blue-ida > .panel-heading {
+  max-height: 70px;
+  max-width: 300px;
 	padding: 0px 0px 0px 0px;
     border-color: #82b1ff;
     color: #fff;
     background-color: #82b1ff;
+}
+
+.panel-blue-ida > .panel-body {
+  max-height: 70px;
+  max-width: 300px;
+  min-width: 300px;
+	padding: 0px 0px 0px 0px;
+  border-color: #FFF;
+  color: #000;
+  background-color: #FFF;
 }
 
 .panel-blue-ida > a {
@@ -342,7 +354,7 @@ ul.alert-dropdown {
 }
 
 .panel-blue-volta > .panel-heading {
-	padding: 0px 0px 0px 0px;
+	  padding: 0px 0px 0px 0px;
     border-color: #2962Ff;
     color: #fff;
     background-color: #2962Ff;
@@ -367,7 +379,7 @@ ul.alert-dropdown {
 }
 
 .jumbotron {
-	
+
 	padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -429,7 +441,7 @@ ul.alert-dropdown {
     color:#000;
 }
 
-		
+
 table {
     border-collapse: separate;
     border-spacing: 0 5px;

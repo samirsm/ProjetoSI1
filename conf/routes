@@ -18,6 +18,10 @@ GET     /solicitaCarona             controllers.CaronasController.solicitaAgenda
 GET     /solicitacoes				controllers.NotificacoesController.exibeSolicitacoes()
 GET     /aceitaPedido               controllers.CaronasController.confirmaAgendamento(id: Long)
 GET     /recusaPedido               controllers.CaronasController.recusaPedido(id:Long)
+GET     /excluiHorarioVolta         controllers.HorariosController.excluiHorarioVolta(dia: String ?= "", hora: Integer ?= 0)
+GET     /excluiHorarioIda         controllers.HorariosController.excluiHorarioIda(dia: String ?= "", hora: Integer ?= 0)
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

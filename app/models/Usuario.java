@@ -188,15 +188,42 @@ public class Usuario extends Model {
 	public boolean adicionarHorarioVolta(String dia, int hora) throws HorarioJaCadastradoException{
 		Horario novoHorario = new Horario(dia,hora);
 		if(isHorarioLivre(novoHorario))
-			return horariosIda.add(novoHorario);
+			return horariosVolta.add(novoHorario);
 		return false;
     }
+	
+	public boolean removeHorarioVolta(String dia, int hora){
+	     Horario horario = new Horario(dia,hora);
+	    return removeHorarioVolta(horario);
+	}
+	
+	public boolean removeHorarioVolta(Horario horario){
+      if(horariosVolta.contains(horario)){
+        return horariosVolta.remove(horario);
+      } else{
+        return false;
+      }
+ }
+	public boolean removeHorarioIda(String dia, int hora){
+      Horario horario = new Horario(dia,hora);
+     return removeHorarioIda(horario);
+ }
+ 
+ public boolean removeHorarioIda(Horario horario){
+   if(horariosIda.contains(horario)){
+     return horariosIda.remove(horario);
+   } else{
+     return false;
+   }
+}
 	
 	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException{	 
 		if(isHorarioLivre(horario))
 			return horariosIda.add(horario);
 		return false;
 	}
+	
+	
 	
 	public boolean adicionarHorarioVolta(Horario horario) throws HorarioJaCadastradoException{
 		if(isHorarioLivre(horario))

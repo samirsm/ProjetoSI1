@@ -56,8 +56,8 @@
 
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-            
-            
+
+
             <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog fa-2x"></i><b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -178,32 +178,48 @@
 
                     <!-- INICIO DO CARD -->
                     @for(carona <- usuarioLogado.getCaronasMotorista()){
-                    <div class="row-sm-4">
+                    <div>
                         <div class="panel panel-blue-ida">
                             <div class="panel-heading">
                                 <h1 class="panel-title">
                                 		<table class="table">
-									    <tbody>
-											<tr>
-												<th><i class="fa fa-car fa-1x "></i> @carona.getTipo()</th>
-												<th><div><img src="assets/SBAdminTemplate/img/vagasBranco.png" align="left" height="20" width="20"></i> @carona.getVagasDisponiveis()</div></th>
-												<th><i class="fa fa-clock-o fa-1x"></i> @carona.getHorario.getHora()</th>
-												<th><i class="fa fa-calendar fa-1x"></i> @carona.getHorario.getDia()</th>
-    										</tr>
-									    </tbody>
-									</table>
+                  									    <tbody>
+                  											<tr>
+                  												<th><div><img src="assets/images/users/default.jpg" id="show-option" title="@carona.getMotorista().getNome()" class="img-circle" style="border: 2px solid #FFF;" height="50" width="50"></i></div></th>
+                  												<th><i class="fa fa-car fa-1x "></i> @carona.getTipo()</th>
+                  												<th><div><img src="assets/SBAdminTemplate/img/vagasBranco.png" align="left" height="20" width="20"></i>@carona.getVagasDisponiveis()</div></th>
+                  												<th><i class="fa fa-clock-o fa-1x"></i> @carona.getHorario.getHora()</th>
+                      										</tr>
+                  									    </tbody>
+                  									</table>
 
                                 </h1>
                             </div>
                             <div class="panel-body">
                               @if(carona.getPassageiros().size != 0){
-                                Passageiros dessa carona:
-                                @for(passageiro <- carona.getPassageiros()){
-                                    @passageiro.getNome()
-                                }
+                                <div class="col-xs-12">
+                                  <table class="table">
+                                      <tbody>
+                                        <tr>
+                                          @for(passageiro <- carona.getPassageiros()){
+                                              <th><div><img src="assets/images/users/default.jpg" id="show-option" title="@passageiro.getNome()" class="img-circle" style="border: 2px solid #82b1ff" height="30" width="30"></i></div></th>
+                                            }
+                                        </tr>
+                                      </tbody>
+
+                                  </table>
+                                </div>
                               } else {
-                                Ainda não há passageiros cadastrados nessa carona.
-                              }
+                              <div class="col-xs-12">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                      <th>Ainda não há passageiros para esta carona</th>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                              </div>
+                            }
 
                             </div>
                         </div>
