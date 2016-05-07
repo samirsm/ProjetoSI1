@@ -6,51 +6,57 @@
 
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-<link rel="icon" type="img/ico"
-	href="assets/SBAdminTemplate/img/favicon.ico">
+	<link rel="icon" type="img/ico"
+		  href="assets/SBAdminTemplate/img/favicon.ico">
 
-<!-- Bootstrap Core CSS' -->
-<link href="assets/SBAdminTemplate/css/bootstrap.min.css"
-	rel="stylesheet">
+	<!-- Bootstrap Core CSS' -->
+	<link href="assets/SBAdminTemplate/css/bootstrap.min.css"
+		  rel="stylesheet">
 
-<!-- Custom CSS -->
-<link href="assets/SBAdminTemplate/css/sb-admin.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="assets/SBAdminTemplate/css/sb-admin.css" rel="stylesheet">
 
 <!-- Morris Charts CSS -->
 <link href="assets/SBAdminTemplate/css/plugins/morris.css"
 
 
 	rel="stylesheet">
-	
+
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-<!-- Custom Fonts -->
-<link
-	href="assets/SBAdminTemplate/font-awesome/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
+	<!-- Morris Charts CSS -->
+	<link href="assets/SBAdminTemplate/css/plugins/morris.css"
+		  rel="stylesheet">
+
+	<!-- Custom Fonts -->
+	<link
+			href="assets/SBAdminTemplate/font-awesome/css/font-awesome.min.css"
+			rel="stylesheet" type="text/css">
 
 	<script type="text/javascript">
 
-				 function cadastrarNovoEndereco(){
-						 document.getElementById('cadastraHorarioBox').innerHTML = document.getElementById('cadastraEndereco').innerHTML;
-				 }
 
-				 function cadastrarNovoHorario(){
-					 		document.getElementById('cadastraHorarioBox').innerHTML = document.getElementById('cadastraHorario').innerHTML;
-				 }
 
-				 function start(){
-					 cadastrarNovoHorario();
-				 }
-				 window.onload = start;
+		function cadastrarNovoEndereco(){
+			document.getElementById('cadastraHorarioBox').innerHTML = document.getElementById('cadastraEndereco').innerHTML;
+		}
+
+		function cadastrarNovoHorario(){
+			document.getElementById('cadastraHorarioBox').innerHTML = document.getElementById('cadastraHorario').innerHTML;
+		}
+
+		function start(){
+			cadastrarNovoHorario();
+		}
+		window.onload = start;
 	</script>
 	<script>
 	$(function() {
@@ -69,105 +75,105 @@
 
 
 
-	<div class="container-fluid">
-			<div class="nav navbar-nav top-information">
+<div class="container-fluid">
+	<div class="nav navbar-nav top-information">
 
-				<div id="cadastraHorarioBox" style=" padding-left: 20px; padding-right: 20px; width: 96%; border: 2px solid #888; border-radius: 20px; vertical-align: center; background: rgb(000, 00, 00); background: rgba(000, 00, 00, 0.5); color: white; color: white;">
-				</div>
+		<div id="cadastraHorarioBox" style=" padding-left: 20px; padding-right: 20px; width: 96%; border: 2px solid #888; border-radius: 20px; vertical-align: center; background: rgb(000, 00, 00); background: rgba(000, 00, 00, 0.5); color: white; color: white;">
+		</div>
 
 
-					<div id="cadastraHorario" style="display: none">
-						@helper.form(action = routes.HorariosController.cadastra()){
-						<h2 style="text-align: center;">Cadastre seus Horários</h2>
-						<div class="row">
-						<div class="col-sm-4">
-							<div class="form-group">
-								<label>Escolha a hora</label> <select name="hora"class="form-control">
-									<option>08</option>
-									<option>10</option>
-									<option>12</option>
-									<option>14</option>
-									<option>16</option>
-									<option>18</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="col-sm-4">
-							<div class="form-group">
-								<label>Escolha o dia</label> <select name="diaDaSemana" class="form-control">
-									<option>Segunda</option>
-									<option>Terça</option>
-									<option>Quarta</option>
-									<option>Quinta</option>
-									<option>Sexta</option>
-								</select>
-							</div>
-						</div>
-						<div class="form-group" align="left">
-							<label class="radio-inline"> </br> <input type="radio" name="tipo" value="ida" checked="checked">Ida
-							</label> <label class="radio-inline"> </br> <input type="radio" name="tipo" value="volta">Volta
-							</label> <label class="checkbox-inline"> </br> <input type="submit"
-								value="+" class="btn btn-success btn-l"
-								style="float: right" onclick="adicionaHorario()"></input>
-							</label>
-						</div>
-
-						<div class="row">
-							<div class="col-sm-6">
-								<a class="btn" onclick="cadastrarNovoEndereco()" align="left">Cadastrar novo endereço</a>
-							</div>
-						</div>
-
+		<div id="cadastraHorario" style="display: none">
+			@helper.form(action = routes.HorariosController.cadastra()){
+			<h2 style="text-align: center;">@Messages("horarios.cadastre")</h2>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="form-group">
+						<label>@Messages("horarios.hora")</label> <select name="hora"class="form-control">
+						<option>08</option>
+						<option>10</option>
+						<option>12</option>
+						<option>14</option>
+						<option>16</option>
+						<option>18</option>
+					</select>
 					</div>
 				</div>
-			}
-			
-				<div id="cadastraEndereco" style="display: none">
-					@helper.form(action = routes.HorariosController.cadastraNovoEndereco()){
-				
-						<h2 style="text-align: center;">Cadastre um novo endereço</h2>
-						<div class="row">
-							<div class="col-sm-4">
-								<div class="form-group">
-  								<label for="usr">Digite a rua:</label>
-  									<input type="text" name="Rua" class="form-control">
-									</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label>Escolha o bairro</label> <select name="Bairros" class="form-control">
-										@for(bairro <- bairros){
-											<option>
-												@bairro
-											</option>
-										}
 
-									</select>
-								</div>
-							</div>
-							<div class="col-sm-4">
-								<div class="form-group" >
-									<label class="checkbox-inline"> </br> <input type="submit"
-										value="Cadastrar" class="btn btn-warning btn-l"></input>
-									</label>
-								</div>
-							</div>
-							}
-							<div class="row">
-								<div class="col-sm-12">
-									<a class="btn" onclick="cadastrarNovoHorario()" align="left">Voltar para horários</a>
-								</div>
-							</div>
-						</div>
-			</div>
-
-				<div>
-					<h3 class="page-header" style="color: #FFF; font-size: 18px">
-						<i class="fa fa-calendar fa-2x"></i>&nbsp Horários Cadastrados
-					</h3>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<label>@Messages("horarios.dia")</label> <select name="diaDaSemana" class="form-control">
+						<option>@Messages("dias.segunda")</option>
+						<option>@Messages("dias.terca")</option>
+						<option>@Messages("dias.quarta")</option>
+						<option>@Messages("dias.quinta")</option>
+						<option>@Messages("dias.sexta")</option>
+					</select>
+					</div>
 				</div>
+				<div class="form-group" align="left">
+					<label class="radio-inline"> </br> <input type="radio" name="tipo" value="ida" checked="checked">@Messages("global.ida")
+					</label> <label class="radio-inline"> </br> <input type="radio" name="tipo" value="volta">@Messages("global.volta")
+				</label> <label class="checkbox-inline"> </br> <input type="submit"
+																	  value="+" class="btn btn-success btn-l"
+																	  style="float: right" onclick="adicionaHorario()"></input>
+				</label>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6">
+						<a class="btn" onclick="cadastrarNovoEndereco()" align="left">@Messages("horarios.novo_endereco")</a>
+					</div>
+				</div>
+
+			</div>
 		</div>
+		}
+
+		<div id="cadastraEndereco" style="display: none">
+			@helper.form(action = routes.HorariosController.cadastraNovoEndereco()){
+
+			<h2 style="text-align: center;">@Messages("horarios.cadastre_endereco")</h2>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="form-group">
+						<label for="usr">@Messages("horarios.rua")</label>
+						<input type="text" name="Rua" class="form-control">
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group">
+						<label>@Messages("horarios.bairro")</label> <select name="Bairros" class="form-control">
+						@for(bairro <- bairros){
+						<option>
+							@bairro
+						</option>
+						}
+
+					</select>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="form-group" >
+						<label class="checkbox-inline"> </br> <input type="submit"
+																	 value=@Messages("horarios.cadastrar_endereco") class="btn btn-warning btn-l"></input>
+						</label>
+					</div>
+				</div>
+				}
+				<div class="row">
+					<div class="col-sm-12">
+						<a class="btn" onclick="cadastrarNovoHorario()" align="left">@Messages("horarios.voltar")</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<h3 class="page-header" style="color: #FFF; font-size: 18px">
+					<img src="assets/CreativeTemplate/img/agendamentos.png" height="40" width="40"></i>&nbsp @Messages("horarios.cadastrados")
+			</h3>
+		</div>
+	</div>
 </div>
 
 <div id="wrapper">
@@ -178,7 +184,7 @@
 									<table class="table">
 									    <thead>
 									        <tr>
-												<th><i class="fa fa-calendar"></i> Horarios de ida</th>
+												<th><i class="fa fa-calendar"></i> @Messages("horarios.ida")</th>
 												<th>       </th>
 												<th><i class="fa fa-clock-o"></i></th>
 												<th>       </th>
@@ -200,7 +206,7 @@
 									<table class="table">
 									    <thead>
 									        <tr>
-												<th><i class="fa fa-calendar"></i> Horarios de ida</th>
+												<th><i class="fa fa-calendar"></i> @Messages("horarios.volta")</th>
 												<th>       </th>
 												<th><i class="fa fa-clock-o"></i></th>
 												<th>       </th>
@@ -234,9 +240,14 @@
 
 						</div>
 					</div>
+
+				</div>
+
 			</div>
+		</div>
 	</div>
-	<!-- /#wrapper -->
+</div>
+<!-- /#wrapper -->
 
 </body>
 

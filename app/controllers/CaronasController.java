@@ -3,10 +3,9 @@ package controllers;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.annotation.ServletSecurity;
 
-import exceptions.CaronaJaCadastradoException;
-import exceptions.NumeroDeVagasExcedenteException;
-import exceptions.NumeroDeVagasInsuficienteException;
+import exceptions.CaronaJaCadastradaException;
 import models.Carona;
 import models.Horario;
 import models.Notificacao;
@@ -21,6 +20,7 @@ import sistemas.SistemaNotificacao;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
+import play.mvc.Security;
 import views.html.*;
 
 public class CaronasController extends Controller {
@@ -32,7 +32,8 @@ public class CaronasController extends Controller {
         this.formFactory = formFactory;
         loggerCaronas = new LoggerSistema();
     }
-
+    
+    @Security.Authenticated(Secured.class)
     public Result cadastraNovaCarona(){
         DynamicForm requestData = formFactory.form().bindFromRequest();
         
@@ -49,7 +50,7 @@ public class CaronasController extends Controller {
             loggerCaronas.registraAcao(Acao.CADASTROU_CARONA, horario.toString(), tipo.toString(), vagasDisponiveisCarona.toString());
             SistemaCarona.getInstance().getListaPesquisaAtualizada();
             loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS);
-        } catch (NumeroDeVagasExcedenteException | CaronaJaCadastradoException e){
+        } catch (CaronaJaCadastradaException e){
             loggerCaronas.registraAcao(Acao.ERRO, e.getMessage());
             return badRequest(e.getMessage());
       }
@@ -57,11 +58,12 @@ public class CaronasController extends Controller {
         return redirect(routes.HomeController.index());
     }
     
+    @Security.Authenticated(Secured.class)
     public Result confirmaAgendamento(Long id){
 
       Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(id);
 
-      try {
+
           SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getUsuarioOrigem());
           loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
           SistemaNotificacao.getInstance().geraNotificacaoAceitacao(pedido);
@@ -69,12 +71,9 @@ public class CaronasController extends Controller {
 
           SistemaUsuarioLogin.getInstance().getUsuarioLogado().leNotificacao(pedido);
           return redirect(routes.NotificacoesController.exibeSolicitacoes());
-      } catch (NumeroDeVagasInsuficienteException e) {
-        loggerCaronas.registraAcao(Acao.ERRO, e.getMessage());
-        return badRequest(e.getMessage());    
-        }
       }
     
+    @Security.Authenticated(Secured.class)
     public Result recusaPedido(Long id){
       Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(id);
       loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
@@ -86,33 +85,24 @@ public class CaronasController extends Controller {
 
     }
       
-      public Result solicitaAgendamento(Long id){
+    @Security.Authenticated(Secured.class)
+    public Result solicitaAgendamento(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
         SistemaNotificacao.getInstance().geraNotificacaoPedido(carona);
         buscarCaronas();
         return redirect(routes.HomeController.index());
     }
     
+    @Security.Authenticated(Secured.class)
     public Result buscarCaronas(){
-        //Futura atualização que oferecerá diversos tipos de busca
-        /*
-        DynamicForm requestData = formFactory.form().bindFromRequest();
-        
-        
-        String hora = requestData.get("hora");
-        String dia = requestData.get("diaDaSemanaBusca");
-        String bairro = requestData.get("bairro");
-        TipoCarona tipo = getTipo(requestData.get("tipo"));
-        
-        Horario horario = new Horario(dia, Integer.parseInt(hora));
-        
-        */
-        
         List<Carona> caronas = SistemaCarona.getInstance().buscarCaronasDefault();
+        
         loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS, caronas.toString());
+
         return redirect(routes.HomeController.index());
     }
     
+    @Security.Authenticated(Secured.class)
     public Result exibeDetalhes(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
@@ -124,6 +114,7 @@ public class CaronasController extends Controller {
         return ok(telaAgendamentosCaronaPassageiro.render(usuarioLogado, caronasUsuarioLogado, notificacoesUsuarioLogado, carona));
     }
     
+    @Security.Authenticated(Secured.class)
     public void cancelaCarona(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
         

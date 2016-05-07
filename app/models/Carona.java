@@ -8,8 +8,7 @@ import javax.persistence.Id;
 
 import com.avaje.ebean.Model;
 
-import exceptions.NumeroDeVagasInsuficienteException;
-import tratamentoStrings.Strings;
+import sistemas.mensagens.Strings;
 
 @Entity
 public class Carona extends Model {
@@ -38,12 +37,8 @@ public class Carona extends Model {
 		return vagasDisponiveis <= 0;
 	}
 	
-	public void adicionaPassageiro(Usuario passageiro) throws NumeroDeVagasInsuficienteException {
-		if (isFull()) {
-			throw new NumeroDeVagasInsuficienteException();
-		}
-		
-		if (!hasPassageiro(passageiro)) {
+	public void adicionaPassageiro(Usuario passageiro){
+		if (!hasPassageiro(passageiro) && !isFull()) {
 			vagasDisponiveis--;
 			passageiros.add(passageiro);
 		}

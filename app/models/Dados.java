@@ -13,9 +13,12 @@ public class Dados extends Model{
 	private String matricula;
 	
 	@Constraints.Required(message = "Insira um email válido.")
+	@Constraints.Email
 	private String email;
 	
 	@Constraints.Required(message = "Insira uma senha válida.")
+	@Constraints.MinLength(6)
+	@Constraints.MaxLength(28)
 	private String senha;
 	
 	@Constraints.Required(message = "Insira um número de telefone válido.")

@@ -1,18 +1,24 @@
 package models;
 
-public enum TipoNotificacao {
-	ACEITACAO(" aceitou o seu pedido de carona."),
-	REJEICAO(" não aceitou o seu pedido de carona."), 
-	CANCELAMENTO(" cancelou uma carona na qual você estava cadastrado"), 
-	PEDIDO(" solicita uma vaga na sua carona.");
+import sistemas.SistemaUsuarioLogin;
+import sistemas.mensagens.*;
 
-	private String mensagemNotificacao;
+public enum TipoNotificacao {
+	ACEITACAO(MensagensSistema.ACEITACAO),
+	REJEICAO(MensagensSistema.REJEICAO),
+	CANCELAMENTO(MensagensSistema.CANCELAMENTO),
+	PEDIDO(MensagensSistema.PEDIDO);
+
+	private String[] mensagemNotificacao;
 	
-	private TipoNotificacao (String mensagem){
+	private TipoNotificacao (String[] mensagem){
 		mensagemNotificacao = mensagem;
 	}
 	
 	public String getMessage(){
-		return mensagemNotificacao;
+		Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+		return mensagemNotificacao[idioma.ordinal()];
 	}
+	
+	
 }
