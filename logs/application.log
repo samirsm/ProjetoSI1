@@ -4045,3 +4045,157 @@ Caused by: java.lang.NullPointerException: null
 2016-05-07 02:35:18,392 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-27 - [Sat May 07 02:35:18 BRT 2016] O sistema está verificando o primeiro acesso do usuário: samir[Matricula: 11210445 Email: 11210445 ]||
 2016-05-07 02:35:22,825 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-23 - [Sat May 07 02:35:22 BRT 2016] O usuário aceitou o pedido de carona [From/To]: samir[Matricula: 11210445 Email: 11210445 ]||Luiz[Matricula: 11210442 Email: 11210442 ]||
 2016-05-07 02:35:22,826 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-23 - [Sat May 07 02:35:22 BRT 2016] O sistema gerou uma notificação[From/To]: samir[Matricula: 11210445 Email: 11210445 ]||Luiz[Matricula: 11210442 Email: 11210442 ]||
+2016-05-07 03:00:25,226 [INFO] from application in application-akka.actor.default-dispatcher-24 - Creating Pool for datasource 'default'
+2016-05-07 03:00:25,232 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-24 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 03:00:25,234 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-24 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 03:00:25,480 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-24 - Bean [models.Endereco] has no unique id set
+2016-05-07 03:00:25,570 [WARN] from application in application-akka.actor.default-dispatcher-24 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-07 03:00:25,668 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-24 - Application started (Dev)
+2016-05-07 03:00:25,785 [ERROR] from application in application-akka.actor.default-dispatcher-2 - 
+
+! @702g7dj0m - Internal server error, for (GET) [/solicitacoes] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:269)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:195)
+	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:160)
+	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:188)
+	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:98)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:99)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:98)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.link(Promise.scala:304)
+	at scala.concurrent.impl.Promise$DefaultPromise.linkRootOf(Promise.scala:289)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.lang.NullPointerException: null
+	at controllers.NotificacoesController.exibeSolicitacoes(NotificacoesController.java:26)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(Routes.scala:471)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(Routes.scala:471)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:157)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:156)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:136)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:73)
+	at play.http.HttpRequestHandler$1.call(HttpRequestHandler.java:54)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
+	at scala.concurrent.impl.Future$.apply(Future.scala:31)
+	at scala.concurrent.Future$.apply(Future.scala:492)
+	at play.core.j.JavaAction.apply(JavaAction.scala:108)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:111)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:110)
+	at scala.Option.map(Option.scala:146)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:110)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:103)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
+	... 14 common frames omitted
+2016-05-07 03:00:25,785 [ERROR] from application in application-akka.actor.default-dispatcher-5 - 
+
+! @702g7dj0m - Internal server error, for (GET) [/solicitacoes] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:269)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:195)
+	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:160)
+	at play.api.DefaultGlobal$.onError(GlobalSettings.scala:188)
+	at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:98)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:99)
+	at play.core.server.netty.PlayRequestHandler$$anonfun$2$$anonfun$apply$1.applyOrElse(PlayRequestHandler.scala:98)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344)
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
+	at scala.concurrent.impl.Promise$DefaultPromise.link(Promise.scala:304)
+	at scala.concurrent.impl.Promise$DefaultPromise.linkRootOf(Promise.scala:289)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply$mcV$sp(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at akka.dispatch.BatchingExecutor$BlockableBatch$$anonfun$run$1.apply(BatchingExecutor.scala:91)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:72)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:90)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.lang.NullPointerException: null
+	at controllers.NotificacoesController.exibeSolicitacoes(NotificacoesController.java:26)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(Routes.scala:471)
+	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$13$$anonfun$apply$13.apply(Routes.scala:471)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:157)
+	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:156)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:136)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:73)
+	at play.http.HttpRequestHandler$1.call(HttpRequestHandler.java:54)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
+	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
+	at scala.concurrent.impl.Future$.apply(Future.scala:31)
+	at scala.concurrent.Future$.apply(Future.scala:492)
+	at play.core.j.JavaAction.apply(JavaAction.scala:108)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:111)
+	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5.apply(Action.scala:110)
+	at scala.Option.map(Option.scala:146)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:110)
+	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:103)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
+	... 14 common frames omitted
+2016-05-07 03:00:41,348 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 03:00:41 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210445 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||
+2016-05-07 03:00:41,349 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 03:00:41 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210445 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||3||
+2016-05-07 03:00:41,366 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 03:00:41 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 11210445 Email: 11210445 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||3||
+2016-05-07 03:00:43,813 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-10 - [Sat May 07 03:00:43 BRT 2016] O usuário efetuou login: samir[Matricula: 11210445 Email: 11210445 ]||
+2016-05-07 03:00:43,813 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-10 - [Sat May 07 03:00:43 BRT 2016] O usuário está sendo autenticado pelo sistema: samir[Matricula: 11210445 Email: 11210445 ]||
+2016-05-07 03:00:43,814 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-10 - [Sat May 07 03:00:43 BRT 2016] O sistema está verificando o primeiro acesso do usuário: samir[Matricula: 11210445 Email: 11210445 ]||
+2016-05-07 03:00:46,354 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-4 - [Sat May 07 03:00:46 BRT 2016] O usuário adicionou um horário à lista de horários: samir[Matricula: 11210445 Email: 11210445 ]||IDA||Segunda||8||
+2016-05-07 03:00:51,916 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 03:00:51 BRT 2016] O usuário adicionou um horário à lista de horários: samir[Matricula: 11210445 Email: 11210445 ]||IDA||Segunda||8||
+2016-05-07 03:00:56,475 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-11 - [Sat May 07 03:00:56 BRT 2016] O usuário adicionou um horário à lista de horários: samir[Matricula: 11210445 Email: 11210445 ]||VOLTA||Terça||8||
+2016-05-07 03:01:15,702 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-15 - [Sat May 07 03:01:15 BRT 2016] O usuário cadastrou seus horários de ida/volta: [Dia: Segunda Hora: 8]||[]||
+2016-05-07 03:01:18,179 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-15 - [Sat May 07 03:01:18 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8]||
+2016-05-07 03:01:18,179 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-15 - [Sat May 07 03:01:18 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 03:01:20,181 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-17 - [Sat May 07 03:01:20 BRT 2016] O usuário adicionou uma carona ao sistema: Dia: Segunda Hora: 8||IDA||1||
+2016-05-07 03:01:20,181 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-17 - [Sat May 07 03:01:20 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8]||
+2016-05-07 03:01:20,181 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-17 - [Sat May 07 03:01:20 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.
+2016-05-07 03:01:23,447 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-16 - [Sat May 07 03:01:23 BRT 2016] O usuário efetuou logout: samir[Matricula: 11210445 Email: 11210445 ]||
+2016-05-07 03:01:31,183 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-15 - [Sat May 07 03:01:31 BRT 2016] O usuário efetuou login: samir[Matricula: 11210445 Email: 11210445 ]||
+2016-05-07 03:01:31,183 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-15 - [Sat May 07 03:01:31 BRT 2016] O usuário está sendo autenticado pelo sistema: samir[Matricula: 11210445 Email: 11210445 ]||
+2016-05-07 03:01:31,183 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-15 - [Sat May 07 03:01:31 BRT 2016] O sistema está verificando o primeiro acesso do usuário: samir[Matricula: 11210445 Email: 11210445 ]||
+2016-05-07 03:02:20,350 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 03:02:20 BRT 2016] O usuário efetuou logout: samir[Matricula: 11210445 Email: 11210445 ]||
