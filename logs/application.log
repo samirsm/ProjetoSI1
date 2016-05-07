@@ -1,0 +1,94 @@
+<<<<<<< HEAD
+=======
+2016-05-07 01:28:15,973 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-5 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-05-07 01:29:09,848 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-07 01:29:10,244 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 01:29:10,247 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 01:29:11,647 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-07 01:29:12,322 [ERROR] from application in netty-event-loop-3 - 
+
+! @702fle80o - Internal server error, for (GET) [/] ->
+ 
+play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:76)
+	at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:98)
+	at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:149)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:96)
+	at com.google.inject.Guice.createInjector(Guice.java:84)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:181)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:123)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:158)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:155)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:155)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:126)
+	at scala.Option.map(Option.scala:146)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:126)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:124)
+	at scala.util.Success.flatMap(Try.scala:231)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:124)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2016-05-07 01:29:21,432 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-07 01:29:21,434 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 01:29:21,435 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 01:29:21,495 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-07 01:29:21,630 [WARN] from application in ForkJoinPool-1-worker-1 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-07 01:29:22,269 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-05-07 01:29:35,583 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 01:29:35 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
+2016-05-07 01:29:35,584 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 01:29:35 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
+2016-05-07 01:29:35,585 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 01:29:35 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
+2016-05-07 01:29:39,704 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:29:39,704 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] INFO: null||
+2016-05-07 01:29:39,704 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] INFO: null||
+2016-05-07 01:29:39,705 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:29:39,705 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:29:50,948 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Sat May 07 01:29:50 BRT 2016] O usuário adicionou um horário à lista de horários: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||IDA||Segunda||8||
+2016-05-07 01:29:55,602 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-15 - [Sat May 07 01:29:55 BRT 2016] O usuário adicionou um horário à lista de horários: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||VOLTA||Terça||8||
+2016-05-07 01:29:57,299 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-16 - [Sat May 07 01:29:57 BRT 2016] O usuário cadastrou seus horários de ida/volta: [Dia: Segunda Hora: 8]||[Dia: Terça Hora: 8]||
+2016-05-07 01:30:08,285 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Sat May 07 01:30:08 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||
+2016-05-07 01:30:08,285 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Sat May 07 01:30:08 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 01:30:09,447 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-17 - [Sat May 07 01:30:09 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||
+2016-05-07 01:30:09,447 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-17 - [Sat May 07 01:30:09 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 01:30:24,181 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 01:30:24 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||
+2016-05-07 01:30:24,181 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 01:30:24 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 01:30:38,648 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-21 - [Sat May 07 01:30:38 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||
+2016-05-07 01:30:38,648 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-21 - [Sat May 07 01:30:38 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 01:30:42,297 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Sat May 07 01:30:42 BRT 2016] O usuário foi deslogado porque sua seção expirou.
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] INFO: null||
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] INFO: null||
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:31:41,942 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-16 - Shutting down connection pool.
+>>>>>>> logicaLoginSeguro

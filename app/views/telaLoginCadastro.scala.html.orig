@@ -1,6 +1,6 @@
 @(formularioAutenticacao: Form[Dados], formularioEndereco: Form[Endereco], bairros: List[String])
 
-@index("Sistema de Caronas: Vumbora"){
+@index(Messages("global.titulo")){
 
 <!DOCTYPE html>
 <html>
@@ -126,10 +126,11 @@
 				<a class="btn" onclick="cadastro()">@Messages("tela_login.nao_cadastrado")</a>
 			</div>
 </div>
-		<div id="divCadastro" style="display: none; margin-top: 0px">
+		<div id="divCadastro" style="display: none; margin-top: 0px; margin: 0px auto;" >
 				@helper.form(action = routes.AutenticacaoController.cadastraUsuario()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				<table border="0" style="text-align: center; color: white; vertical-align: center; margin-left: 10px; cellspacing="10">
+<<<<<<< HEAD
+				<table border="0" style="text-align: center; color: white; margin: 0px auto; "  cellspacing="50">
 
 
 					<tr>
@@ -140,7 +141,6 @@
 					<tr>
 						<td>@helper.inputText(formularioAutenticacao("numeroDeTelefone"), 'size -> 17, '_label -> Messages("global.telefone"), '_showConstraints -> false)</td>
 						<td>@helper.inputText(formularioAutenticacao("email"), 'size -> 17, '_label -> "Email", '_showConstraints -> false)</td>
-
 					</tr>
 
 					<tr>
@@ -156,6 +156,17 @@
 				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq(Messages("tela_login.sem_carro"),"1","2","3","4","5","6","7","8"), '_showConstraints -> false), '_label -> Messages("tela_login.vagas"), '_showConstraints -> false)
 
 				<input type="submit" value=@Messages("tela_login.cadastrar") class="btn btn-default btn-xl"></input>
+=======
+				@helper.inputText(formularioAutenticacao("nome"), '_label -> Messages("global.nome"), '_showConstraints -> false)
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> "Matrícula", '_showConstraints -> false)
+				@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> "Número de Telefone", '_showConstraints -> false)
+				@helper.inputText(formularioAutenticacao("email"), '_label -> "Email", '_showConstraints -> false)
+				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> "Senha", '_showConstraints -> false)
+				@helper.inputText(formularioEndereco("rua"), '_label -> "Rua", '_showConstraints -> false)
+				@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> "Bairro", '_showConstraints -> false)
+				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq("Não possuo carro","1","2","3","4","5","6","7","8")), '_label -> "Número de vagas no carro:", '_showConstraints -> false)
+				<input type="submit" value="Cadastrar" class="btn btn-default btn-xl"></input>
+>>>>>>> logicaLoginSeguro
 			</br>
 				<a class="btn" onclick="login()">@Messages("tela_login.sou_cadastrado")</a>
 				</div>

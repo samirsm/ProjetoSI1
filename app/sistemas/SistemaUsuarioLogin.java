@@ -30,6 +30,7 @@ public class SistemaUsuarioLogin {
 		usuarioLogado = SistemaUsuarioCRUD.getInstance().consultaUsuario(matricula, email, senha);
 		tokenAuth = AutenticacaoController.session().get("login");
 		userTime = AutenticacaoController.session("userTime");
+		
 		if(usuarioLogado != null) usuarioLogado.setIdioma(SistemaUsuarioLogin.getInstance().getIdioma());
 		
 	}

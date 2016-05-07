@@ -3,11 +3,7 @@ package models;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public enum TipoNotificacao {
-	
 	ACEITACAO(MensagensSistema.ACEITACAO),
 	REJEICAO(MensagensSistema.REJEICAO),
 	CANCELAMENTO(MensagensSistema.CANCELAMENTO),
