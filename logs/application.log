@@ -4776,3 +4776,69 @@ Caused by: java.lang.NullPointerException: null
 2016-05-07 05:50:15,135 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-24 - [Sat May 07 05:50:15 BRT 2016] O usuário efetuou login: Luiz[Matricula: 11210443 Email: 11210445 ]||
 2016-05-07 05:50:15,135 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-24 - [Sat May 07 05:50:15 BRT 2016] O usuário está sendo autenticado pelo sistema: Luiz[Matricula: 11210443 Email: 11210445 ]||
 2016-05-07 05:50:15,135 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-24 - [Sat May 07 05:50:15 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Luiz[Matricula: 11210443 Email: 11210445 ]||
+2016-05-07 05:57:53,492 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-41 - [Sat May 07 05:57:53 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8]||
+2016-05-07 05:57:53,494 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-41 - [Sat May 07 05:57:53 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[Motorista: samir[Matricula: 11210445 Email: 11210441 ]
+ Horario: Dia: Segunda Hora: 8]||
+2016-05-07 05:58:13,331 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-48 - [Sat May 07 05:58:13 BRT 2016] O usuário exibiu os detalhes da carona: Motorista: samir[Matricula: 11210445 Email: 11210441 ]
+ Horario: Dia: Segunda Hora: 8||
+2016-05-07 05:58:18,095 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-53 - [Sat May 07 05:58:18 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8]||
+2016-05-07 05:58:18,095 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-53 - [Sat May 07 05:58:18 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 05:58:22,676 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-53 - [Sat May 07 05:58:22 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8]||
+2016-05-07 05:58:22,676 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-53 - [Sat May 07 05:58:22 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 05:58:24,878 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-53 - [Sat May 07 05:58:24 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8]||
+2016-05-07 05:58:24,878 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-53 - [Sat May 07 05:58:24 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 06:00:10,154 [INFO] from application in application-akka.actor.default-dispatcher-54 - Shutting down connection pool.
+2016-05-07 06:00:10,598 [INFO] from application in application-akka.actor.default-dispatcher-54 - Creating Pool for datasource 'default'
+2016-05-07 06:00:10,603 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-54 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 06:00:10,604 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-54 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 06:00:10,930 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-54 - Bean [models.Endereco] has no unique id set
+2016-05-07 06:00:11,025 [WARN] from application in application-akka.actor.default-dispatcher-54 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-07 06:00:11,141 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-54 - Application started (Dev)
+2016-05-07 06:00:21,771 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Sat May 07 06:00:21 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||
+2016-05-07 06:00:21,772 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Sat May 07 06:00:21 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||-1||
+2016-05-07 06:00:21,779 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Sat May 07 06:00:21 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||-1||
+2016-05-07 06:00:24,532 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 06:00:24 BRT 2016] O usuário efetuou login: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:00:24,532 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 06:00:24 BRT 2016] O usuário está sendo autenticado pelo sistema: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:00:24,532 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 06:00:24 BRT 2016] O sistema está verificando o primeiro acesso do usuário: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:04:03,991 [INFO] from application in application-akka.actor.default-dispatcher-11 - Shutting down connection pool.
+2016-05-07 06:04:04,508 [INFO] from application in application-akka.actor.default-dispatcher-11 - Creating Pool for datasource 'default'
+2016-05-07 06:04:04,512 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-11 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 06:04:04,516 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-11 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 06:04:04,796 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-11 - Bean [models.Endereco] has no unique id set
+2016-05-07 06:04:04,946 [WARN] from application in application-akka.actor.default-dispatcher-11 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-07 06:04:05,141 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-11 - Application started (Dev)
+2016-05-07 06:04:19,319 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Sat May 07 06:04:19 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||
+2016-05-07 06:04:19,320 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Sat May 07 06:04:19 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||-1||
+2016-05-07 06:04:19,343 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Sat May 07 06:04:19 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||-1||
+2016-05-07 06:04:21,616 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 06:04:21 BRT 2016] O usuário efetuou login: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:04:21,616 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 06:04:21 BRT 2016] O usuário está sendo autenticado pelo sistema: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:04:21,616 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 06:04:21 BRT 2016] O sistema está verificando o primeiro acesso do usuário: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:05:15,622 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2016-05-07 06:05:15,800 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2016-05-07 06:05:15,802 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-3 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 06:05:15,804 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 06:05:16,359 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-3 - Bean [models.Endereco] has no unique id set
+2016-05-07 06:05:16,489 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-07 06:05:16,663 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
+2016-05-07 06:05:29,168 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 06:05:29 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||
+2016-05-07 06:05:29,169 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 06:05:29 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||3||
+2016-05-07 06:05:29,172 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 06:05:29 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||3||
+2016-05-07 06:05:32,992 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 06:05:32 BRT 2016] O usuário efetuou login: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:05:32,992 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 06:05:32 BRT 2016] O usuário está sendo autenticado pelo sistema: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:05:32,992 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 06:05:32 BRT 2016] O sistema está verificando o primeiro acesso do usuário: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:11:11,701 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2016-05-07 06:11:12,215 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2016-05-07 06:11:12,220 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 06:11:12,222 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 06:11:12,566 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-4 - Bean [models.Endereco] has no unique id set
+2016-05-07 06:11:12,675 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-07 06:11:12,799 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
+2016-05-07 06:11:28,037 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 06:11:28 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||
+2016-05-07 06:11:28,038 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 06:11:28 BRT 2016] O sistema registrou um erro: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||4||
+2016-05-07 06:11:28,041 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 06:11:28 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 11210445 Email: 11210441 ||Rua: rua da caixa Bairro: Acácio Figueiredo ||4||
+2016-05-07 06:11:29,713 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-10 - [Sat May 07 06:11:29 BRT 2016] O usuário efetuou login: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:11:29,713 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-10 - [Sat May 07 06:11:29 BRT 2016] O usuário está sendo autenticado pelo sistema: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:11:29,713 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-10 - [Sat May 07 06:11:29 BRT 2016] O sistema está verificando o primeiro acesso do usuário: samir[Matricula: 11210445 Email: 11210441 ]||
+2016-05-07 06:11:57,286 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-11 - [Sat May 07 06:11:57 BRT 2016] O usuário adicionou um horário à lista de horários: samir[Matricula: 11210445 Email: 11210441 ]||Ida||Segunda||8||
+2016-05-07 06:12:04,417 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-15 - [Sat May 07 06:12:04 BRT 2016] O usuário adicionou um horário à lista de horários: samir[Matricula: 11210445 Email: 11210441 ]||Ida||Segunda||8||
+2016-05-07 06:12:18,694 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-17 - [Sat May 07 06:12:18 BRT 2016] O usuário cadastrou seus horários de ida/volta: []||[]||
