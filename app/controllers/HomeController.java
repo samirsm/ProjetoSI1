@@ -45,16 +45,20 @@ public class HomeController extends Controller {
 		return exibePagina();
 	}
 	
+	public Result editaHorarios(){
+      List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
+      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+
+	}
+	
 	private Result exibePagina(){
 		if (usuarioLogado == null)
 			return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
 		else if(!usuarioLogado.isHorariosCadastrados()){
-			List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
-			return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+		  return editaHorarios();
 		}
 		else{
 			List<Carona> caronas = SistemaCarona.getInstance().getListaPesquisa();
-		
 			return ok(viewUsuario.render(usuarioLogado, formularioCarona, caronas, bairros, usuarioLogado.getNotificacoesNaoLidas()));
 		}
 	}

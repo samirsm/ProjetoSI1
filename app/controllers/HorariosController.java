@@ -49,7 +49,7 @@ public class HorariosController extends Controller {
     	  return badRequest(e.getMessage());
       }
       
-      return redirect(routes.HomeController.index());
+      return redirect(routes.HomeController.editaHorarios());
       
   }
 	
@@ -65,7 +65,7 @@ public class HorariosController extends Controller {
           return badRequest(e.getMessage());
       }
       
-      return redirect(routes.HomeController.index());
+      return redirect(routes.HomeController.editaHorarios());
 	}
 
 	private TipoCarona getTipo(String tipo){
