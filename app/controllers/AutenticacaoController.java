@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import exceptions.DadosInvalidosException;
 import exceptions.LoginInvalidoException;
-import exceptions.UsuarioCadastradoException;
+import exceptions.UsuarioJaExistenteException;
 import models.Dados;
 import models.Endereco;
 import models.Usuario;
@@ -35,12 +35,14 @@ public class AutenticacaoController extends Controller {
 			usuarioLogado = autenticaUsuario();
 			if (usuarioLogado == null) 
 				throw new LoginInvalidoException();
+			ctx().changeLang(usuarioLogado.getIdioma().getId());
 		} catch (DadosInvalidosException | LoginInvalidoException e) {
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			return badRequest(e.getMessage());
 		}
-		
+
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
+		flash("sucesso", "Usuario cadastrado com sucesso.");
 		return verificaPrimeiroAcessoUsuario(usuarioLogado);
 	}
 	
@@ -81,7 +83,7 @@ public class AutenticacaoController extends Controller {
 		
 		try{
 			SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
-		} catch (UsuarioCadastradoException e){
+		} catch (UsuarioJaExistenteException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			return badRequest(e.getMessage());
 		}
@@ -107,7 +109,7 @@ public class AutenticacaoController extends Controller {
 		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 		
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
-		
+		ctx().changeLang(usuarioLogado.getIdioma().getId());
 		return usuarioLogado;
 		
 	}

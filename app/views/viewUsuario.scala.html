@@ -124,11 +124,11 @@
   					<div class="col-sm-4">
   						<div class="form-group">
   							<label>@Messages("view_usuario.dia")</label> <select name="diaDaSemana" id="diasDaSemana" class="form-control">
-                                  <option>Segunda</option>
-                                  <option>Terça</option>
-                                  <option>Quarta</option>
-                                  <option>Quinta</option>
-                                  <option>Sexta</option>
+                                  <option>@Messages("dias.segunda")</option>
+                                  <option>@Messages("dias.terca")</option>
+                                  <option>@Messages("dias.quarta")</option>
+                                  <option>@Messages("dias.quinta")</option>
+                                  <option>@Messages("dias.sexta")</option>
                               </select>
   						</div>
   					</div>
@@ -183,11 +183,11 @@
   						<div class="form-group">
   							<label>@Messages("view_usuario.dia")</label> <select onchange="estouComSorte()" name="diaDaSemanaBusca" id="diaDaSemanaBusca" class="form-control">
                     <option>Escolha uma hora primeiro</option>
-    								<option>Segunda</option>
-    								<option>Terça</option>
-    								<option>Quarta</option>
-    								<option>Quinta</option>
-    								<option>Sexta</option>
+                            <option>@Messages("dias.segunda")</option>
+                            <option>@Messages("dias.terca")</option>
+                            <option>@Messages("dias.quarta")</option>
+                            <option>@Messages("dias.quinta")</option>
+                            <option>@Messages("dias.sexta")</option>
   							</select>
   						</div>
   					</div>
@@ -208,7 +208,7 @@
                           <label class="radio-inline"> </br> <input type="radio" name="tipo" value="volta" >Volta</label>
                           <label class="checkbox-inline"> </br>
                           <input type="submit"
-                              value="Buscar" id="botaoBuscar" class="btn btn-primary btn-l"
+                              value=@Messages("view_usuario.busque") id="botaoBuscar" class="btn btn-primary btn-l"
                               style="float: right">
                           </input>
                          </label>

@@ -3,6 +3,7 @@
 #
 
 # globais
+global.titulo=Vumbora! - Sistema de Caronas
 global.home=Home
 global.solicitacoes=Solicitações
 global.caronas=Caronas
@@ -21,6 +22,7 @@ global.vagas=Vagas disponíveis
 global.exibir_todas=Ver todas
 global.sair=Sair desta conta
 global.idioma=Idioma atual:
+global.sem_passageiros=Ainda não há passageiros cadastrados nessa carona.
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Busque ou ofereça caronas com segurança e facilidade
@@ -80,3 +82,10 @@ agendamento.solicitar=Solicitar Carona
 solicitacoes.nenhuma=Você não possui nenhuma solicitação no momento.
 solicitacoes.negar=Negar
 solicitacoes.aceitar=Vumbora
+
+# dias da semana
+dias.segunda=Segunda
+dias.terca=Terça
+dias.quarta=Quarta
+dias.quinta=Quinta
+dias.sexta=Sexta

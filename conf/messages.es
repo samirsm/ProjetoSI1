@@ -3,6 +3,7 @@
 #
 
 # globais
+global.titulo=Vumbora! - Sistema de Aventones
 global.home=Home
 global.solicitacoes=Solicitaciones
 global.caronas=Aventones
@@ -22,6 +23,7 @@ global.vagas=Asientos disponibles
 global.exibir_todas=Ver todas
 global.sair=Salir de esta cuenta
 global.idioma=Idioma definido
+global.sem_passageiros=Aún no hay pasageros registrados en esto aventón.
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Busca u ofrece aventones con seguridad y facilidad
@@ -81,3 +83,10 @@ agendamento.solicitar=Solicitar Aventón
 solicitacoes.nenhuma=Você não possui nenhuma solicitação no momento.
 solicitacoes.negar=Negar
 solicitacoes.aceitar=Vumbora
+
+# dias da semana
+dias.segunda=Lunes
+dias.terca=Martes
+dias.quarta=Miercoles
+dias.quinta=Jueves
+dias.sexta=Viernes
