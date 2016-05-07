@@ -55,7 +55,7 @@ public class Notificacao extends Model{
     }
  
     private void geraMensagem(TipoNotificacao tipo) {
-        mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR + "Detalhes da carona: " +
+        mensagem = usuarioOrigem.getNome() + tipo.getMessage(Idioma.PORTUGUES) + Strings.LINE_SEPARATOR + "Detalhes da carona: " +
     carona.toString();
     }
  

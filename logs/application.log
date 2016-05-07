@@ -1,11 +1,11 @@
-2016-05-06 16:08:13,473 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-7 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
-2016-05-06 16:08:37,707 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
-2016-05-06 16:08:38,025 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 16:08:38,028 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 16:08:39,143 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
-2016-05-06 16:08:40,068 [ERROR] from application in netty-event-loop-3 - 
+2016-05-07 01:28:15,973 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-5 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-05-07 01:29:09,848 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-07 01:29:10,244 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 01:29:10,247 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 01:29:11,647 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-07 01:29:12,322 [ERROR] from application in netty-event-loop-3 - 
 
-! @702cpojcd - Internal server error, for (GET) [/] ->
+! @702fle80o - Internal server error, for (GET) [/] ->
  
 play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
 	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:76)
@@ -57,39 +57,35 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2016-05-06 16:08:44,721 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
-2016-05-06 16:08:44,724 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 16:08:44,724 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 16:08:44,793 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
-2016-05-06 16:08:45,031 [WARN] from application in ForkJoinPool-1-worker-1 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 16:08:45,639 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
-2016-05-06 16:08:45,803 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Fri May 06 16:08:45 BRT 2016] INFO: ====COMECA AQUI===||
-2016-05-06 16:08:45,803 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Fri May 06 16:08:45 BRT 2016] INFO: null||
-2016-05-06 16:08:45,804 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Fri May 06 16:08:45 BRT 2016] INFO: null||
-2016-05-06 16:08:54,585 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
-2016-05-06 16:08:54,585 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-06 16:08:54,586 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
-2016-05-06 16:08:54,616 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] INFO: ====COMECA AQUI===||
-2016-05-06 16:08:54,617 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] INFO: null||
-2016-05-06 16:08:54,617 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:08:54 BRT 2016] INFO: null||
-2016-05-06 16:09:02,672 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-06 16:09:02,672 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-06 16:09:02,673 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
-2016-05-06 16:09:02,904 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] INFO: ====COMECA AQUI===||
-2016-05-06 16:09:02,904 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] INFO: null||
-2016-05-06 16:09:02,904 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:02 BRT 2016] INFO: null||
-2016-05-06 16:09:11,771 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] INFO: Context attached to (POST /cadastra)||
-2016-05-06 16:09:11,774 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] O usuário adicionou um horário à lista de horários: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||IDA||Segunda||8||
-2016-05-06 16:09:11,791 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] INFO: ====COMECA AQUI===||
-2016-05-06 16:09:11,791 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] INFO: null||
-2016-05-06 16:09:11,791 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 16:09:11 BRT 2016] INFO: null||
-2016-05-06 16:09:21,372 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] INFO: Context attached to (POST /cadastra)||
-2016-05-06 16:09:21,375 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] O usuário adicionou um horário à lista de horários: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||IDA||Terça||8||
-2016-05-06 16:09:21,392 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] INFO: ====COMECA AQUI===||
-2016-05-06 16:09:21,392 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] INFO: null||
-2016-05-06 16:09:21,393 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Fri May 06 16:09:21 BRT 2016] INFO: null||
-2016-05-06 16:09:24,744 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] INFO: Context attached to (GET /cadastraHorarios?)||
-2016-05-06 16:09:24,745 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] O usuário cadastrou seus horários de ida/volta: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||[]||
-2016-05-06 16:09:24,762 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] INFO: ====COMECA AQUI===||
-2016-05-06 16:09:24,762 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] INFO: null||
-2016-05-06 16:09:24,762 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 16:09:24 BRT 2016] INFO: null||
+2016-05-07 01:29:21,432 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-07 01:29:21,434 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 01:29:21,435 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 01:29:21,495 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-07 01:29:21,630 [WARN] from application in ForkJoinPool-1-worker-1 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-07 01:29:22,269 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-05-07 01:29:35,583 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 01:29:35 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||
+2016-05-07 01:29:35,584 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 01:29:35 BRT 2016] O sistema registrou um erro: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
+2016-05-07 01:29:35,585 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Sat May 07 01:29:35 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110478 Email: pauloviniciusd@gmail.com ||Rua: Rua Antônio Joaquim Pequeno Bairro: Acácio Figueiredo ||-1||
+2016-05-07 01:29:39,704 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:29:39,704 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] INFO: null||
+2016-05-07 01:29:39,704 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] INFO: null||
+2016-05-07 01:29:39,705 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:29:39,705 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 01:29:39 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:29:50,948 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Sat May 07 01:29:50 BRT 2016] O usuário adicionou um horário à lista de horários: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||IDA||Segunda||8||
+2016-05-07 01:29:55,602 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-15 - [Sat May 07 01:29:55 BRT 2016] O usuário adicionou um horário à lista de horários: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||VOLTA||Terça||8||
+2016-05-07 01:29:57,299 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-16 - [Sat May 07 01:29:57 BRT 2016] O usuário cadastrou seus horários de ida/volta: [Dia: Segunda Hora: 8]||[Dia: Terça Hora: 8]||
+2016-05-07 01:30:08,285 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Sat May 07 01:30:08 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||
+2016-05-07 01:30:08,285 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Sat May 07 01:30:08 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 01:30:09,447 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-17 - [Sat May 07 01:30:09 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||
+2016-05-07 01:30:09,447 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-17 - [Sat May 07 01:30:09 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 01:30:24,181 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 01:30:24 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||
+2016-05-07 01:30:24,181 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Sat May 07 01:30:24 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 01:30:38,648 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-21 - [Sat May 07 01:30:38 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8, Dia: Terça Hora: 8]||
+2016-05-07 01:30:38,648 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-21 - [Sat May 07 01:30:38 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[]||
+2016-05-07 01:30:42,297 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Sat May 07 01:30:42 BRT 2016] O usuário foi deslogado porque sua seção expirou.
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] O usuário efetuou login: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] INFO: null||
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] INFO: null||
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] O usuário está sendo autenticado pelo sistema: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
+2016-05-07 01:31:41,942 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-16 - Shutting down connection pool.

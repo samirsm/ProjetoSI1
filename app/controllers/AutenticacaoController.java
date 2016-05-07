@@ -8,6 +8,7 @@ import exceptions.UsuarioCadastradoException;
 import models.Dados;
 import models.Endereco;
 import models.Usuario;
+import play.cache.CacheApi;
 import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.libs.oauth.OAuth;
@@ -24,6 +25,7 @@ import com.google.common.base.Strings;
 import play.mvc.Http.Context;
 import play.mvc.Http.Session;
 
+import java.util.Date;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -38,7 +40,7 @@ public class AutenticacaoController extends Controller {
 	private LoggerSistema loggerAutenticacao;
 	
 	@Inject
-	public AutenticacaoController (FormFactory formFactory){
+	public AutenticacaoController (FormFactory formFactory, CacheApi cache){
 		this.formFactory = formFactory;
 		loggerAutenticacao = new LoggerSistema();
 	}
@@ -91,7 +93,6 @@ public class AutenticacaoController extends Controller {
 		
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString());
 		
-		
 		Integer numeroVagas;
 		
 		try{
@@ -131,9 +132,9 @@ public class AutenticacaoController extends Controller {
 		
 		if (requestData.hasErrors())
 			throw new DadosInvalidosException();
-
-		session().put("matricula", login);
-		session().put("email", email);
+		
+		session().put("login", login);
+		session().put("userTime", Long.toString(new Date().getTime()));
 		
 		SistemaUsuarioLogin.getInstance().efetuaLogin(login, email, senha);
 
@@ -141,7 +142,6 @@ public class AutenticacaoController extends Controller {
 		
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
 		
-		//Checagem		
 		return usuarioLogado;
 	}
 	

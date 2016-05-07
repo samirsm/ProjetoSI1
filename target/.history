@@ -224,3 +224,14 @@ help
 help run
 run debug
 run
+clean
+compile
+clean
+compile
+run
+clean
+compile
+run
+clean
+compile
+run

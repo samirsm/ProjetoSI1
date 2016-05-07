@@ -1,1 +1,7 @@
-New log file opened at Fri May 06 16:10:48 BRT 2016 by 3107@paulovss-Inspiron-5437
+New log file opened at Sat May 07 01:30:42 BRT 2016 by 3314@paulovss-Inspiron-5437
+Taking next connection to: 36961
+New client attempting to connect on port: 58413-36961
+  Address = /127.0.1.1:36961
+This client on port 58413 has uuid e02964b8-08d9-4bb5-8188-e2df41563c96 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-e02964b8-08d9-4bb5-8188-e2df41563c96
+Taking next connection to: 36961

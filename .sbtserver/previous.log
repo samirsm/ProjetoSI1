@@ -1,4 +1,4 @@
-New log file opened at Fri May 06 16:08:08 BRT 2016 by 2848@paulovss-Inspiron-5437
+New log file opened at Sat May 07 01:28:09 BRT 2016 by 3045@paulovss-Inspiron-5437
 == resolving dependencies com.typesafe.play#play-netty-server_2.11;2.5.1->com.typesafe.netty#netty-reactive-streams-http;1.0.5 [compile->compile(*)]
 == resolving dependencies com.typesafe.netty#netty-reactive-streams-http;1.0.5->com.typesafe.netty#netty-reactive-streams;1.0.5 [compile->master(compile)]
 == resolving dependencies com.typesafe.netty#netty-reactive-streams-http;1.0.5->com.typesafe.netty#netty-reactive-streams;1.0.5 [compile->compile(*)]
@@ -4347,7 +4347,7 @@ all callers are evicted for com.typesafe#config;1.2.1: evicting too
 	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar
-:: resolution report :: resolve 4333ms :: artifacts dl 115ms
+:: resolution report :: resolve 5898ms :: artifacts dl 108ms
 	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT compile produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-compile.xml
 	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT runtime produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-runtime.xml
 	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT test produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-test.xml
@@ -4362,7 +4362,7 @@ all callers are evicted for com.typesafe#config;1.2.1: evicting too
 	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT pom produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-pom.xml
 	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT scala-tool produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-scala-tool.xml
 	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT fork-run produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-fork-run.xml
-	resolve done (4333ms resolve - 115ms download)
+	resolve done (5898ms resolve - 108ms download)
 Read from stdout: Done updating.
 Done updating.
 Read from stdout: There may be incompatibilities among your library dependencies.
@@ -4373,40 +4373,442 @@ Read from stdout: 	* com.typesafe.play:play-java-jdbc_2.11:2.4.0 -> 2.5.1
 	* com.typesafe.play:play-java-jdbc_2.11:2.4.0 -> 2.5.1
 Read from stdout: Run 'evicted' to see detailed eviction warnings
 Run 'evicted' to see detailed eviction warnings
-Total time: 5 s, completed 06/05/2016 16:08:10
+Total time: 7 s, completed 07/05/2016 01:28:12
 > server-post-command-cleanup
 > server-handle-next-server-request
 > myProject/playForkNotifyStart http://localhost:9000
 Evaluating tasks: *:playForkNotifyStart
-Running task... Cancel: sbt.server.ServerTaskCancellation@66a0236c, check cycles: false
-Total time: 0 s, completed 06/05/2016 16:08:13
+Running task... Cancel: sbt.server.ServerTaskCancellation@d9f86aa, check cycles: false
+Total time: 0 s, completed 07/05/2016 01:28:16
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/home/paulovss/CaronaUFCG20152/ProjetoSI1/}myProject/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@70f144d0, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@24ee922b, check cycles: false
 
 Initial source changes: 
 	removed:Set()
-	added: Set()
-	modified: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java)
+	added: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Idioma.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Usuario.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Carona.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasInsuficienteException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/CaronaJaCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/routes.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Dados.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaDeBairros.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoCarona.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/TipoBusca.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoNotificacao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasExcedenteException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/AutenticacaoController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/HorarioJaCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorHorario.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/DadosInvalidosException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HomeController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/CaronasController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaCarona.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/NotificacoesController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/registrosAcoes/Acao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/BairroJaCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorBairro.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/RoutesPrefix.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/exceptions.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/LoggerSistema.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/tratamentoStrings/Strings.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaNotificacao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/MensagensSistema.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Notificacao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Endereco.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/LoginInvalidoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/index.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaDefault.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/UsuarioCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioCRUD.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HorariosController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Horario.java)
+	modified: Set()
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java)
+Initial directly invalidated sources: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Idioma.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Usuario.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Carona.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasInsuficienteException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/CaronaJaCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/routes.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Dados.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaDeBairros.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoCarona.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/TipoBusca.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoNotificacao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasExcedenteException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/AutenticacaoController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/HorarioJaCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorHorario.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/DadosInvalidosException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HomeController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/CaronasController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaCarona.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/NotificacoesController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/registrosAcoes/Acao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/BairroJaCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorBairro.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/RoutesPrefix.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/exceptions.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/LoggerSistema.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/tratamentoStrings/Strings.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaNotificacao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/MensagensSistema.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Notificacao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Endereco.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/LoginInvalidoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/index.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaDefault.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/UsuarioCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioCRUD.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HorariosController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Horario.java)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java)
+All initially invalidated sources: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Idioma.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Usuario.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Carona.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasInsuficienteException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/CaronaJaCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/routes.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Dados.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaDeBairros.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoCarona.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/TipoBusca.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoNotificacao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasExcedenteException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/AutenticacaoController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/HorarioJaCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorHorario.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/DadosInvalidosException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HomeController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/CaronasController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaCarona.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/NotificacoesController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/registrosAcoes/Acao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/BairroJaCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorBairro.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/RoutesPrefix.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/exceptions.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/LoggerSistema.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/tratamentoStrings/Strings.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaNotificacao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/MensagensSistema.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Notificacao.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Endereco.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/LoginInvalidoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/index.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaDefault.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/UsuarioCadastradoException.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioCRUD.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HorariosController.java, /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Horario.java)
 
-Read from stdout: Compiling 2 Java sources to /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes...
-Compiling 2 Java sources to /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes...
-Attempting to call com.sun.tools.javac.api.JavacTool@36e0916f directly...
-Java compilation took 3.471667148 s
-Java analysis took 0.044378057 s
-Java compile + analysis took 3.584098159 s
+Recompiling all 49 sources: invalidated sources (49) exceeded 50.0% of all sources
+Read from stdout: Compiling 12 Scala sources and 37 Java sources to /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes...
+Compiling 12 Scala sources and 37 Java sources to /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes...
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.7
+Other repositories:
+Default repositories:
+Running cached compiler 4a361fb8, interfacing (CompilerInterface) with Scala compiler version 2.11.7
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes:/home/paulovss/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.7.jar
+	-classpath
+	/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes:/home/paulovss/activator-dist-1.3.7/repository/com.typesafe.play/play-enhancer/1.1.0/jars/play-enhancer.jar:/home/paulovss/activator-dist-1.3.7/repository/com.typesafe.play/twirl-api_2.11/1.1.1/jars/twirl-api_2.11.jar:/home/paulovss/activator-dist-1.3.7/repository/org.apache.commons/commons-lang3/3.4/jars/commons-lang3.jar:/home/paulovss/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-ebean_2.11/jars/play-ebean_2.11-1.0.0.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-java-jdbc_2.11/jars/play-java-jdbc_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-jdbc_2.11/jars/play-jdbc_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-jdbc-api_2.11/jars/play-jdbc-api_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play_2.11/jars/play_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/build-link/jars/build-link-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-exceptions/jars/play-exceptions-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-iteratees_2.11/jars/play-iteratees_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/org.scala-stm/scala-stm_2.11/jars/scala-stm_2.11-0.7.jar:/home/paulovss/activator-dist-1.3.7/repository/com.typesafe/config/1.3.0/bundles/config.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-json_2.11/jars/play-json_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-functional_2.11/jars/play-functional_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-datacommons_2.11/jars/play-datacommons_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/joda-time/joda-time/jars/joda-time-2.9.2.jar:/home/paulovss/.ivy2/cache/org.joda/joda-convert/jars/joda-convert-1.8.1.jar:/home/paulovss/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.7.jar:/home/paulovss/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.7.1.jar:/home/paulovss/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.7.1.jar:/home/paulovss/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.7.1.jar:/home/paulovss/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/bundles/jackson-datatype-jdk8-2.7.1.jar:/home/paulovss/.ivy2/cache/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/bundles/jackson-datatype-jsr310-2.7.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-netty-utils/jars/play-netty-utils-2.5.1.jar:/home/paulovss/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.16.jar:/home/paulovss/.ivy2/cache/org.slf4j/jul-to-slf4j/jars/jul-to-slf4j-1.7.16.jar:/home/paulovss/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.16.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-streams_2.11/jars/play-streams_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/org.reactivestreams/reactive-streams/jars/reactive-streams-1.0.0.jar:/home/paulovss/.ivy2/cache/com.typesafe.akka/akka-stream_2.11/jars/akka-stream_2.11-2.4.2.jar:/home/paulovss/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.4.2.jar:/home/paulovss/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.7.0.jar:/home/paulovss/.ivy2/cache/com.typesafe/ssl-config-akka_2.11/bundles/ssl-config-akka_2.11-0.1.3.jar:/home/paulovss/.ivy2/cache/com.typesafe/ssl-config-core_2.11/bundles/ssl-config-core_2.11-0.1.3.jar:/home/paulovss/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar:/home/paulovss/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.4.2.jar:/home/paulovss/activator-dist-1.3.7/repository/commons-codec/commons-codec/1.10/jars/commons-codec.jar:/home/paulovss/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/home/paulovss/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/home/paulovss/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar:/home/paulovss/activator-dist-1.3.7/repository/com.google.inject/guice/4.0/jars/guice.jar:/home/paulovss/activator-dist-1.3.7/repository/javax.inject/javax.inject/1/jars/javax.inject.jar:/home/paulovss/activator-dist-1.3.7/repository/aopalliance/aopalliance/1.0/jars/aopalliance.jar:/home/paulovss/activator-dist-1.3.7/repository/com.google.inject.extensions/guice-assistedinject/4.0/jars/guice-assistedinject.jar:/home/paulovss/activator-dist-1.3.7/repository/com.jolbox/bonecp/0.8.0.RELEASE/bundles/bonecp.jar:/home/paulovss/.ivy2/cache/com.zaxxer/HikariCP/bundles/HikariCP-2.4.3.jar:/home/paulovss/.ivy2/cache/com.googlecode.usc/jdbcdslog/jars/jdbcdslog-1.0.6.2.jar:/home/paulovss/.ivy2/cache/com.h2database/h2/jars/h2-1.4.191.jar:/home/paulovss/activator-dist-1.3.7/repository/tyrex/tyrex/1.0.1/jars/tyrex.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-java_2.11/jars/play-java_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.16.jar:/home/paulovss/.ivy2/cache/org.hibernate/hibernate-validator/jars/hibernate-validator-5.2.4.Final.jar:/home/paulovss/activator-dist-1.3.7/repository/javax.validation/validation-api/1.1.0.Final/jars/validation-api.jar:/home/paulovss/activator-dist-1.3.7/repository/org.jboss.logging/jboss-logging/3.2.1.Final/jars/jboss-logging.jar:/home/paulovss/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.1.0.jar:/home/paulovss/.ivy2/cache/javax.el/javax.el-api/jars/javax.el-api-3.0.0.jar:/home/paulovss/.ivy2/cache/org.springframework/spring-context/jars/spring-context-4.2.4.RELEASE.jar:/home/paulovss/.ivy2/cache/org.springframework/spring-core/jars/spring-core-4.2.4.RELEASE.jar:/home/paulovss/.ivy2/cache/org.springframework/spring-beans/jars/spring-beans-4.2.4.RELEASE.jar:/home/paulovss/.ivy2/cache/org.reflections/reflections/jars/reflections-0.9.10.jar:/home/paulovss/.ivy2/cache/com.google.guava/guava/bundles/guava-19.0.jar:/home/paulovss/.ivy2/cache/net.jodah/typetools/bundles/typetools-0.4.4.jar:/home/paulovss/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-3.0.1.jar:/home/paulovss/.ivy2/cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-8.0.32.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.11/jars/play-jdbc-evolutions_2.11-2.4.0.jar:/home/paulovss/.ivy2/cache/org.avaje.ebeanorm/avaje-ebeanorm/jars/avaje-ebeanorm-4.6.2.jar:/home/paulovss/.ivy2/cache/javax.persistence/persistence-api/jars/persistence-api-1.0.jar:/home/paulovss/.ivy2/cache/org.avaje.ebeanorm/avaje-ebeanorm-agent/jars/avaje-ebeanorm-agent-4.5.3.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-server_2.11/jars/play-server_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-netty-server_2.11/jars/play-netty-server_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.netty/netty-reactive-streams-http/jars/netty-reactive-streams-http-1.0.5.jar:/home/paulovss/.ivy2/cache/com.typesafe.netty/netty-reactive-streams/jars/netty-reactive-streams-1.0.5.jar:/home/paulovss/.ivy2/cache/io.netty/netty-handler/jars/netty-handler-4.0.34.Final.jar:/home/paulovss/.ivy2/cache/io.netty/netty-buffer/jars/netty-buffer-4.0.34.Final.jar:/home/paulovss/.ivy2/cache/io.netty/netty-common/jars/netty-common-4.0.34.Final.jar:/home/paulovss/.ivy2/cache/io.netty/netty-transport/jars/netty-transport-4.0.34.Final.jar:/home/paulovss/.ivy2/cache/io.netty/netty-codec/jars/netty-codec-4.0.34.Final.jar:/home/paulovss/.ivy2/cache/io.netty/netty-codec-http/jars/netty-codec-http-4.0.34.Final.jar:/home/paulovss/.ivy2/cache/io.netty/netty-transport-native-epoll/jars/netty-transport-native-epoll-4.0.34.Final-linux-x86_64.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-logback_2.11/jars/play-logback_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/ch.qos.logback/logback-core/jars/logback-core-1.1.4.jar:/home/paulovss/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.1.4.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-cache_2.11/jars/play-cache_2.11-2.5.1.jar:/home/paulovss/activator-dist-1.3.7/repository/net.sf.ehcache/ehcache-core/2.6.11/jars/ehcache-core.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-java-ws_2.11/jars/play-java-ws_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/com.typesafe.play/play-ws_2.11/jars/play-ws_2.11-2.5.1.jar:/home/paulovss/.ivy2/cache/org.asynchttpclient/async-http-client/jars/async-http-client-2.0.0-RC16.jar:/home/paulovss/.ivy2/cache/org.asynchttpclient/netty-resolver-dns/jars/netty-resolver-dns-2.0.0-RC16.jar:/home/paulovss/.ivy2/cache/org.asynchttpclient/netty-resolver/jars/netty-resolver-2.0.0-RC16.jar:/home/paulovss/.ivy2/cache/org.asynchttpclient/netty-codec-dns/jars/netty-codec-dns-2.0.0-RC16.jar:/home/paulovss/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.20.0-GA.jar:/home/paulovss/.ivy2/cache/oauth.signpost/signpost-core/jars/signpost-core-1.2.1.2.jar:/home/paulovss/.ivy2/cache/oauth.signpost/signpost-commonshttp4/jars/signpost-commonshttp4-1.2.1.2.jar:/home/paulovss/activator-dist-1.3.7/repository/org.apache.httpcomponents/httpcore/4.0.1/jars/httpcore.jar:/home/paulovss/activator-dist-1.3.7/repository/org.apache.httpcomponents/httpclient/4.0.1/jars/httpclient.jar:/home/paulovss/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar:/home/paulovss/activator-dist-1.3.7/repository/commons-io/commons-io/2.4/jars/commons-io.jar:/home/paulovss/.ivy2/cache/org.apache.directory.api/api-all/jars/api-all-1.0.0-M14.jar:/home/paulovss/.ivy2/cache/xpp3/xpp3/jars/xpp3-1.1.4c.jar:/home/paulovss/.ivy2/cache/dom4j/dom4j/jars/dom4j-1.6.1.jar:/home/paulovss/.ivy2/cache/commons-pool/commons-pool/jars/commons-pool-1.6.jar:/home/paulovss/.ivy2/cache/org.apache.mina/mina-core/bundles/mina-core-2.0.7.jar:/home/paulovss/.ivy2/cache/commons-lang/commons-lang/jars/commons-lang-2.6.jar:/home/paulovss/activator-dist-1.3.7/repository/commons-collections/commons-collections/3.2.1/jars/commons-collections.jar:/home/paulovss/.ivy2/cache/antlr/antlr/jars/antlr-2.7.7.jar:/home/paulovss/.ivy2/cache/postgresql/postgresql/jars/postgresql-9.1-901-1.jdbc4.jar:/home/paulovss/.ivy2/cache/org.hibernate/hibernate-core/jars/hibernate-core-4.2.3.Final.jar:/home/paulovss/.ivy2/cache/org.jboss.spec.javax.transaction/jboss-transaction-api_1.1_spec/jars/jboss-transaction-api_1.1_spec-1.0.1.Final.jar:/home/paulovss/.ivy2/cache/org.hibernate.javax.persistence/hibernate-jpa-2.0-api/jars/hibernate-jpa-2.0-api-1.0.1.Final.jar:/home/paulovss/.ivy2/cache/org.hibernate.common/hibernate-commons-annotations/jars/hibernate-commons-annotations-4.0.2.Final.jar:/home/paulovss/.ivy2/cache/org.hibernate/hibernate-entitymanager/jars/hibernate-entitymanager-4.2.3.Final.jar
+Scala compilation took 15.708304332 s
+Attempting to call com.sun.tools.javac.api.JavacTool@6e63e2e7 directly...
+Java compilation took 1.771411127 s
+Java analysis took 0.014281368 s
+Java compile + analysis took 1.796030304 s
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/BairroJaCadastradoException.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/BairroJaCadastradoException.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/BairroJaCadastradoException.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/BairroJaCadastradoException.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/BairroJaCadastradoException.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaCarona.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaCarona.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaCarona.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaCarona.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaCarona.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala source file has the following regular definitions changed:
+	notify, format, wait, viewUsuario, $asInstanceOf, productArity, equals, asInstanceOf, f, synchronized, _display_, $isInstanceOf, ref, canEqual, productPrefix, notifyAll, readResolve, isInstanceOf, <init>, apply, ==, clone, copy, toString, viewUsuario_Scope0, !=, getClass, copy$default$1, render, ne, eq, productIterator, ##, finalize, productElement, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Carona.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Carona.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Carona.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Carona.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Carona.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/RoutesPrefix.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/RoutesPrefix.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/RoutesPrefix.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/RoutesPrefix.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/RoutesPrefix.scala source file has the following regular definitions changed:
+	notify, byNamePrefix, wait, $asInstanceOf, equals, prefix, asInstanceOf, RoutesPrefix, synchronized, $isInstanceOf, _prefix, notifyAll, isInstanceOf, ==, clone, toString, !=, getClass, setPrefix, ne, eq, ##, finalize, hashCode.
+All member reference dependencies will be considered within this context.
+The following modified names cause invalidation of /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala: Set(prefix, asInstanceOf, RoutesPrefix, isInstanceOf, getClass, setPrefix)
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/index.template.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/index.template.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/index.template.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/index.template.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/index.template.scala source file has the following regular definitions changed:
+	notify, format, wait, $asInstanceOf, productArity, equals, asInstanceOf, f, synchronized, _display_, $isInstanceOf, ref, canEqual, index_Scope0, productPrefix, notifyAll, readResolve, isInstanceOf, <init>, apply, ==, clone, copy, toString, !=, getClass, copy$default$1, render, ne, eq, productIterator, ##, finalize, index, productElement, hashCode.
+All member reference dependencies will be considered within this context.
+The following modified names cause invalidation of /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala: Set(format, _display_, <init>, apply, index)
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasExcedenteException.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasExcedenteException.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasExcedenteException.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasExcedenteException.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasExcedenteException.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioLogin.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala source file has the following regular definitions changed:
+	notify, format, wait, telaAgendamentosCaronaPassageiro, $asInstanceOf, productArity, equals, asInstanceOf, f, synchronized, _display_, $isInstanceOf, ref, canEqual, productPrefix, notifyAll, readResolve, isInstanceOf, <init>, apply, telaAgendamentosCaronaPassageiro_Scope0, ==, clone, copy, toString, !=, getClass, copy$default$1, render, ne, eq, productIterator, ##, finalize, productElement, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Dados.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Dados.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Dados.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Dados.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Dados.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/DadosInvalidosException.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/DadosInvalidosException.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/DadosInvalidosException.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/DadosInvalidosException.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/DadosInvalidosException.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala source file has the following regular definitions changed:
+	notify, format, wait, $asInstanceOf, productArity, equals, asInstanceOf, f, synchronized, _display_, $isInstanceOf, ref, canEqual, productPrefix, notifyAll, readResolve, isInstanceOf, <init>, apply, ==, clone, copy, toString, !=, getClass, copy$default$1, render, telaLoginCadastro, ne, telaLoginCadastro_Scope0, eq, productIterator, ##, finalize, productElement, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaDefault.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaDefault.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaDefault.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaDefault.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaDefault.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasInsuficienteException.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasInsuficienteException.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasInsuficienteException.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasInsuficienteException.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/NumeroDeVagasInsuficienteException.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/exceptions.template.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/exceptions.template.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/exceptions.template.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/exceptions.template.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/exceptions.template.scala source file has the following regular definitions changed:
+	notify, format, wait, $asInstanceOf, productArity, equals, exceptions, asInstanceOf, exceptions_Scope0, f, synchronized, _display_, $isInstanceOf, ref, canEqual, productPrefix, notifyAll, readResolve, isInstanceOf, <init>, apply, ==, clone, copy, toString, !=, getClass, copy$default$1, render, ne, eq, productIterator, ##, finalize, productElement, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala source file has the following regular definitions changed:
+	notify, format, wait, $asInstanceOf, productArity, equals, asInstanceOf, f, synchronized, _display_, $isInstanceOf, ref, canEqual, main, productPrefix, notifyAll, readResolve, isInstanceOf, <init>, apply, ==, clone, main_Scope0, copy, toString, !=, getClass, copy$default$1, render, ne, eq, productIterator, ##, finalize, productElement, hashCode.
+All member reference dependencies will be considered within this context.
+The following modified names cause invalidation of /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala: Set(format, _display_, main, <init>, apply)
+The following modified names cause invalidation of /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala: Set(format, _display_, main, <init>, apply, ==)
+The following modified names cause invalidation of /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala: Set(format, _display_, main, <init>, apply)
+The following modified names cause invalidation of /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala: Set(format, _display_, main, <init>, apply)
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/CaronasController.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/CaronasController.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/CaronasController.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/CaronasController.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/CaronasController.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala source file has the following regular definitions changed:
+	notify, format, wait, $asInstanceOf, productArity, equals, asInstanceOf, f, telaCadastroHorario_Scope0, synchronized, _display_, $isInstanceOf, ref, canEqual, productPrefix, notifyAll, readResolve, isInstanceOf, <init>, apply, ==, clone, copy, toString, !=, getClass, copy$default$1, telaCadastroHorario, render, ne, eq, productIterator, ##, finalize, productElement, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Idioma.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Idioma.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Idioma.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Idioma.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Idioma.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoNotificacao.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoNotificacao.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoNotificacao.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoNotificacao.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoNotificacao.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/LoginInvalidoException.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/LoginInvalidoException.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/LoginInvalidoException.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/LoginInvalidoException.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/LoginInvalidoException.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HomeController.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HomeController.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HomeController.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HomeController.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HomeController.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaDeBairros.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaDeBairros.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaDeBairros.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaDeBairros.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaDeBairros.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/NotificacoesController.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/NotificacoesController.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/NotificacoesController.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/NotificacoesController.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/NotificacoesController.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorHorario.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorHorario.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorHorario.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorHorario.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorHorario.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Horario.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Horario.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Horario.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Horario.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Horario.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorBairro.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorBairro.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorBairro.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorBairro.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/BuscaPorBairro.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/Secured.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Notificacao.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Notificacao.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Notificacao.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Notificacao.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Notificacao.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/UsuarioCadastradoException.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/UsuarioCadastradoException.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/UsuarioCadastradoException.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/UsuarioCadastradoException.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/UsuarioCadastradoException.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Endereco.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Endereco.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Endereco.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Endereco.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Endereco.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/TipoBusca.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/TipoBusca.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/TipoBusca.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/TipoBusca.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/tiposBuscas/TipoBusca.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoCarona.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoCarona.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoCarona.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoCarona.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/TipoCarona.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/LoggerSistema.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/LoggerSistema.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/LoggerSistema.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/LoggerSistema.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/LoggerSistema.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala source file has the following regular definitions changed:
+	notify, controllers_CaronasController_exibeDetalhes8_invoker, badRequest, wait, $asInstanceOf, controllers_AutenticacaoController_efetuaLogout7_route, routes, createInvoker, equals, controllers_CaronasController_solicitaAgendamento10_route, prefix, controllers_CaronasController_recusaPedido13_invoker, asInstanceOf, controllers_AutenticacaoController_cadastraUsuario1_invoker, controllers_CaronasController_confirmaAgendamento12_route, documentation, controllers_NotificacoesController_exibeSolicitacoes11_route, controllers_CaronasController_exibeDetalhes8_route, synchronized, controllers_HorariosController_cadastraHorarios5_route, $isInstanceOf, handlerFor, controllers_CaronasController_buscarCaronas9_route, controllers_HorariosController_cadastraNovoEndereco6_invoker, controllers_CaronasController_solicitaAgendamento10_invoker, notifyAll, controllers_HorariosController_cadastra3_invoker, isInstanceOf, asJava, errorHandler, controllers_HorariosController_cadastraHorarios5_invoker, controllers_AutenticacaoController_efetuaLogout7_invoker, <init>, controllers_CaronasController_buscarCaronas9_invoker, controllers_CaronasController_cadastraNovaCarona4_invoker, ==, controllers_AutenticacaoController_cadastraUsuario1_route, controllers_AutenticacaoController_efetuaLogin2_invoker, clone, controllers_Assets_versioned14_route, Routes, controllers_CaronasController_cadastraNovaCarona4_route, toString, controllers_AutenticacaoController_efetuaLogin2_route, !=, controllers_Assets_versioned14_invoker, controllers_HomeController_index0_invoker, fakeValue, controllers_HorariosController_cadastraNovoEndereco6_route, controllers_HorariosController_cadastra3_route, getClass, controllers_CaronasController_recusaPedido13_route, ne, withPrefix, call, controllers_HomeController_index0_route, controllers_CaronasController_confirmaAgendamento12_invoker, controllers_NotificacoesController_exibeSolicitacoes11_invoker, eq, defaultPrefix, ##, finalize, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/HorarioJaCadastradoException.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/HorarioJaCadastradoException.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/HorarioJaCadastradoException.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/HorarioJaCadastradoException.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/HorarioJaCadastradoException.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/CaronaJaCadastradoException.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/CaronaJaCadastradoException.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/CaronaJaCadastradoException.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/CaronaJaCadastradoException.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/exceptions/CaronaJaCadastradoException.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/tratamentoStrings/Strings.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/tratamentoStrings/Strings.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/tratamentoStrings/Strings.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/tratamentoStrings/Strings.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/tratamentoStrings/Strings.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/ReverseRoutes.scala source file has the following regular definitions changed:
+	ReverseAutenticacaoController, notify, cadastraUsuario, cadastraHorarios, _defaultPrefix, wait, $asInstanceOf, equals, efetuaLogout, exibeSolicitacoes, asInstanceOf, exibeDetalhes, synchronized, ReverseHomeController, ReverseNotificacoesController, $isInstanceOf, recusaPedido, ReverseHorariosController, ReverseAssets, notifyAll, confirmaAgendamento, isInstanceOf, <init>, ==, clone, cadastraNovoEndereco, cadastra, efetuaLogin, toString, !=, buscarCaronas, getClass, ReverseCaronasController, ne, cadastraNovaCarona, versioned, eq, solicitaAgendamento, ##, finalize, index, hashCode.
+All member reference dependencies will be considered within this context.
+The following modified names cause invalidation of /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala: Set(<init>, ==, buscarCaronas, cadastraNovaCarona)
+The following modified names cause invalidation of /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala: Set(cadastraHorarios, <init>, cadastraNovoEndereco, cadastra)
+The following modified names cause invalidation of /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala: Set(cadastraUsuario, <init>, efetuaLogin, index)
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/registrosAcoes/Acao.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/registrosAcoes/Acao.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/registrosAcoes/Acao.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/registrosAcoes/Acao.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/logger/registrosAcoes/Acao.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/routes.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/routes.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/routes.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/routes.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/routes.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaLoginCadastro.template.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HorariosController.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HorariosController.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HorariosController.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HorariosController.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/HorariosController.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioCRUD.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioCRUD.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioCRUD.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioCRUD.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaUsuarioCRUD.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaNotificacao.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaNotificacao.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaNotificacao.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaNotificacao.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/sistemas/SistemaNotificacao.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/AutenticacaoController.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/AutenticacaoController.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/AutenticacaoController.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/AutenticacaoController.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/controllers/AutenticacaoController.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/router/Routes.scala. This dependency is not being considered for invalidation.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala source file has the following regular definitions changed:
+	notify, format, telaDeSolicitacoes, wait, $asInstanceOf, productArity, equals, asInstanceOf, f, synchronized, _display_, $isInstanceOf, ref, canEqual, productPrefix, notifyAll, readResolve, isInstanceOf, <init>, telaDeSolicitacoes_Scope0, apply, ==, clone, copy, toString, !=, getClass, copy$default$1, render, ne, eq, productIterator, ##, finalize, productElement, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala source file has the following regular definitions changed:
+	ReverseAutenticacaoController, notify, cadastraUsuario, cadastraHorarios, _defaultPrefix, wait, $asInstanceOf, equals, efetuaLogout, exibeSolicitacoes, asInstanceOf, exibeDetalhes, synchronized, ReverseHomeController, ReverseNotificacoesController, $isInstanceOf, recusaPedido, ReverseHorariosController, ReverseAssets, notifyAll, confirmaAgendamento, isInstanceOf, <init>, ==, clone, cadastraNovoEndereco, cadastra, efetuaLogin, toString, !=, buscarCaronas, getClass, ReverseCaronasController, ne, cadastraNovaCarona, versioned, eq, solicitaAgendamento, ##, finalize, index, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/MensagensSistema.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/MensagensSistema.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/MensagensSistema.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/MensagensSistema.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/MensagensSistema.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+Invalidating /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Usuario.java...
+Invalidating (transitively) by inheritance from /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Usuario.java...
+Initial set of included nodes: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Usuario.java)
+Invalidated by transitive inheritance dependency: Set(/home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Usuario.java)
+The /home/paulovss/CaronaUFCG20152/ProjetoSI1/app/models/Usuario.java source file has the following regular definitions changed:
+	.
+All member reference dependencies will be considered within this context.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/viewUsuario.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaAgendamentosCaronaPassageiro.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaDeSolicitacoes.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/main.template.scala. This dependency is not being considered for invalidation.
+None of the modified names appears in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/twirl/main/views/html/telaCadastroHorario.template.scala. This dependency is not being considered for invalidation.
 New invalidations:
 	Set()
 Initial set of included nodes: Set()
@@ -4425,12 +4827,12 @@ Copy resource mappings:
 	(/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/META-INF/persistence.xml,/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes/META-INF/persistence.xml)
 	(/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/evolutions/default,/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes/evolutions/default)
 	(/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/evolutions/default/1.sql,/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes/evolutions/default/1.sql)
-Total time: 6 s, completed 06/05/2016 16:08:36
+Total time: 20 s, completed 07/05/2016 01:29:08
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/home/paulovss/CaronaUFCG20152/ProjetoSI1/}myProject/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@15135c22, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@7fd16625, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -4459,7 +4861,7 @@ Copy resource mappings:
 	(/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/META-INF/persistence.xml,/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes/META-INF/persistence.xml)
 	(/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/evolutions/default,/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes/evolutions/default)
 	(/home/paulovss/CaronaUFCG20152/ProjetoSI1/conf/evolutions/default/1.sql,/home/paulovss/CaronaUFCG20152/ProjetoSI1/target/scala-2.11/classes/evolutions/default/1.sql)
-Total time: 1 s, completed 06/05/2016 16:08:44
+Total time: 1 s, completed 07/05/2016 01:29:21
 > server-post-command-cleanup
 > server-handle-next-server-request
 Done executing sbt server engine, result Right(Exit(0))
@@ -4468,4 +4870,4 @@ Waiting for socket thread
 Waiting for request processor thread
 Waiting for command engine result
 Returning control to sbt launcher with result Exit(0)
-Closing the 2848@paulovss-Inspiron-5437 logs at Fri May 06 16:10:43 BRT 2016, goodbye.
+Closing the 3045@paulovss-Inspiron-5437 logs at Sat May 07 01:30:36 BRT 2016, goodbye.

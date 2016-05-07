@@ -4,9 +4,6 @@ import com.avaje.ebean.Model;
 
 import exceptions.DadosInvalidosException;
 import play.data.validation.Constraints;
-import play.data.validation.Constraints.Email;
-import play.data.validation.Constraints.MaxLength;
-import play.data.validation.Constraints.MinLength;
 
 public class Dados extends Model{
 	@Constraints.Required(message = "Insira um nome válido.")
@@ -16,12 +13,12 @@ public class Dados extends Model{
 	private String matricula;
 	
 	@Constraints.Required(message = "Insira um email válido.")
-	@Email
+	@Constraints.Email
 	private String email;
 	
 	@Constraints.Required(message = "Insira uma senha válida.")
-	@MinLength(6)
-	@MaxLength(28)
+	@Constraints.MinLength(6)
+	@Constraints.MaxLength(28)
 	private String senha;
 	
 	@Constraints.Required(message = "Insira um número de telefone válido.")

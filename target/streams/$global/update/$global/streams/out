@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.7 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@77642b0c[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@721c1ef8[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.7] org.scala-lang#scala-library;2.11.7[0m
@@ -9902,7 +9902,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4333ms :: artifacts dl 115ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 5898ms :: artifacts dl 108ms[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT compile produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT runtime produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT test produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-test.xml[0m
@@ -9917,7 +9917,7 @@
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT pom produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT scala-tool produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-scala-tool.xml[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT fork-run produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-fork-run.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4333ms resolve - 115ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (5898ms resolve - 108ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[33mwarn[0m] [0mThere may be incompatibilities among your library dependencies.[0m
 [0m[[33mwarn[0m] [0mHere are some of the libraries that were evicted:[0m

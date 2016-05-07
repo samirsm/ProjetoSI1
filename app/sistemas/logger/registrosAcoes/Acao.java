@@ -18,6 +18,7 @@ public enum Acao {
 	CANCELOU_CARONA("O usuário cancelou a carona: "),
 	GERA_NOTIFICACAO("O sistema gerou uma notificação[From/To]: "),
 	SOLICITA_CARONA("O usuário pediu uma carona[From/To]: "),
+	SESSAO_EXPIRADA("O usuário foi deslogado porque sua seção expirou."),
 	ERRO("O sistema registrou um erro: "),
 	INFO("INFO: ");
 	

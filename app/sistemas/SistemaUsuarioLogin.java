@@ -17,6 +17,8 @@ import com.google.common.base.Strings;
 import controllers.AutenticacaoController;
 
 import javax.inject.Inject;
+
+import java.util.HashMap;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -26,6 +28,7 @@ public class SistemaUsuarioLogin {
     private static final SistemaUsuarioLogin INSTANCIA = new SistemaUsuarioLogin();
 	private Usuario usuarioLogado;
 	private static String tokenAuth;
+	private static String userTime;
 	
 	private SistemaUsuarioLogin(){
 	}
@@ -40,15 +43,22 @@ public class SistemaUsuarioLogin {
 	
 	public void efetuaLogin(String matricula, String email, String senha) throws DadosInvalidosException, LoginInvalidoException{
 		usuarioLogado = SistemaUsuarioCRUD.getInstance().consultaUsuario(matricula, email, senha);
-		tokenAuth = AutenticacaoController.session().get("matricula");
+		tokenAuth = AutenticacaoController.session().get("login");
+		userTime = AutenticacaoController.session("userTime");
+		
 	}
 	
 	public String getTokenAuth(){
 		return tokenAuth;
 	}
 	
+	public String getUserTime(){
+		return userTime;
+	}
+	
 	public void efetuaLogout(){
 	    SISTEMA_CARONA.limpaListaCaronaSolicitadas();
+	    tokenAuth = null;
 		usuarioLogado = null;
 	}
 	
