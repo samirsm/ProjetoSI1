@@ -35,7 +35,6 @@ public class AutenticacaoController extends Controller {
 			usuarioLogado = autenticaUsuario();
 			if (usuarioLogado == null) 
 				throw new LoginInvalidoException();
-			ctx().changeLang(usuarioLogado.getIdioma().getId());
 		} catch (DadosInvalidosException | LoginInvalidoException e) {
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			return badRequest(e.getMessage());
@@ -109,7 +108,6 @@ public class AutenticacaoController extends Controller {
 		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 		
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
-		ctx().changeLang(usuarioLogado.getIdioma().getId());
 		return usuarioLogado;
 		
 	}

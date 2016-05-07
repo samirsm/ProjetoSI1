@@ -55,13 +55,13 @@ public class NotificacoesController extends Controller{
     
     public play.mvc.Result notificaCancelamento(Carona carona){
         SistemaNotificacao.getInstance().geraNotificacaoCancelamento(carona);
-        return ok("A carona à qual você pertencia foi cancelada");
+        return ok();
     }
 
     public play.mvc.Result notificaRejeicao(Long idPedido){
         Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idPedido);
         SistemaNotificacao.getInstance().geraNotificacaoRejeicao(pedido);
-        return ok("Seu pedido de carona foi rejeitado");
+        return ok();
     }
 
 
