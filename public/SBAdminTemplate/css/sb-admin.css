@@ -7,13 +7,13 @@
 /* Global Styles */
 
 body {
-    margin-top: 100px;
+    margin-left: -70px;
     background-color: #222;
 }
 
 @media(min-width:768px) {
     body {
-        margin-top: 0%;
+        margin-top: -35px;
     }
 }
 
@@ -22,9 +22,8 @@ body {
 }
 
 #page-wrapper {
-    width: 55%;
+    width: 55.5%;
     padding: 0;
-    position: relative;
     position: absolute;
     background-color: #212121;
     border: 2px solid #888;
@@ -87,13 +86,16 @@ body {
 
 .top-nav>.open>.dropdown-menu {
     float: left;
+    min-width: 200px;
     position: absolute;
     margin-top: 0;
+    padding: 10px 10px 10px 10px;
     border: 1px solid rgba(0,0,0,.15);
-    color: #FFF;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    background-color: #000;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #fff;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
@@ -135,7 +137,7 @@ ul.alert-dropdown {
         position: fixed;
         top: 69px;
         width: 100px;
-        margin-left: -245px;
+        margin-left: -180px;
         border: none;
         border-radius: 0;
         overflow-y: hidden;
@@ -193,11 +195,11 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side2-nav {
         position: fixed;
-        top: 21%;
+        top: 15%;
         left: 77%;
         width: 345px;
-        height: 500px;
-        margin-left: -30px;
+        height: 550px;
+        margin-left: -50px;
         border: none;
         border-radius: 20px;
         border: 2px solid #888;
