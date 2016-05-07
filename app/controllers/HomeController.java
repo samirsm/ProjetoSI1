@@ -16,10 +16,12 @@ import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
-
 import sistemas.SistemaCarona;
 import sistemas.SistemaDeBairros;
 import sistemas.SistemaUsuarioLogin;
+import sistemas.logger.LoggerSistema;
+import sistemas.logger.registrosAcoes.Acao;
+import play.mvc.Http.Context;
 import views.html.*;
 
 public class HomeController extends Controller {
@@ -47,6 +49,7 @@ public class HomeController extends Controller {
 		idiomas.put(4, "it");
 	}
 	
+	// Mudar esse método para efetuar a verificação do Usuario Logado.
 	public Result index(){
 
 		ctx().changeLang(idioma);
@@ -65,9 +68,9 @@ public class HomeController extends Controller {
 	}
 	
 	private Result exibePagina(){
-		if (usuarioLogado == null)
+		if (!SistemaUsuarioLogin.getInstance().isLogado())
 			return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
-		else if(!usuarioLogado.isHorariosCadastrados()){
+		else if(SistemaUsuarioLogin.getInstance().isLogado() && !usuarioLogado.isHorariosCadastrados()){
 			List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
 			return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 		}

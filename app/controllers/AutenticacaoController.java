@@ -8,10 +8,27 @@ import exceptions.UsuarioCadastradoException;
 import models.Dados;
 import models.Endereco;
 import models.Usuario;
+import play.cache.CacheApi;
 import play.data.DynamicForm;
 import play.data.FormFactory;
+import play.libs.oauth.OAuth;
+import play.libs.oauth.OAuth.ConsumerKey;
+import play.libs.oauth.OAuth.ServiceInfo;
+import play.libs.oauth.OAuth.OAuthCalculator;
+import play.libs.oauth.OAuth.RequestToken;
+import play.libs.ws.WSClient;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Security;
+
+import com.google.common.base.Strings;
+import play.mvc.Http.Context;
+import play.mvc.Http.Session;
+
+import java.util.Date;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
@@ -23,11 +40,11 @@ public class AutenticacaoController extends Controller {
 	private LoggerSistema loggerAutenticacao;
 	
 	@Inject
-	public AutenticacaoController (FormFactory formFactory){
+	public AutenticacaoController (FormFactory formFactory, CacheApi cache){
 		this.formFactory = formFactory;
 		loggerAutenticacao = new LoggerSistema();
 	}
-
+	
 	public Result efetuaLogin(){
 		Usuario usuarioLogado = null;
 		
@@ -36,11 +53,17 @@ public class AutenticacaoController extends Controller {
 			if (usuarioLogado == null) 
 				throw new LoginInvalidoException();
 		} catch (DadosInvalidosException | LoginInvalidoException e) {
-			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
+			loggerAutenticacao.registraAcao(Acao.INFO, e.getMessage());
 			return badRequest(e.getMessage());
 		}
 		
+		if (session().get("matricula") == null) {
+			loggerAutenticacao.registraAcao(Acao.INFO, session().get("matricula"));
+			loggerAutenticacao.registraAcao(Acao.INFO, session().get("email"));
+		}
+		
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
+		
 		return verificaPrimeiroAcessoUsuario(usuarioLogado);
 	}
 	
@@ -59,6 +82,8 @@ public class AutenticacaoController extends Controller {
 		Endereco endereco;
 		
 		try{
+			if(requestData.hasErrors())
+				throw new Exception();
 			dadosPessoais = new Dados(nome, matricula, email, senha, numeroDeTelefone);
 			endereco = new Endereco(rua, bairro);
 		}catch(Exception e){
@@ -67,7 +92,6 @@ public class AutenticacaoController extends Controller {
 		}
 		
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString());
-		
 		
 		Integer numeroVagas;
 		
@@ -92,26 +116,35 @@ public class AutenticacaoController extends Controller {
 	
 	public Result efetuaLogout(){
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado().toString());
+		
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
 		
 		return redirect(routes.HomeController.index());
 	}
-
+	
+	// TODO Consertar.
 	private Usuario autenticaUsuario() throws DadosInvalidosException, LoginInvalidoException{
 		DynamicForm requestData = formFactory.form().bindFromRequest();
-		String matricula = requestData.get("matricula");
-		String email = matricula; // O usuário pode digitar um dos dois no mesmo campo
+		String login = requestData.get("matricula");
+		String email = login; // O usuário pode digitar um dos dois no mesmo campo
 		String senha = requestData.get("senha");
 		
-		SistemaUsuarioLogin.getInstance().efetuaLogin(matricula, email, senha);
+		
+		if (requestData.hasErrors())
+			throw new DadosInvalidosException();
+		
+		session().put("login", login);
+		session().put("userTime", Long.toString(new Date().getTime()));
+		
+		SistemaUsuarioLogin.getInstance().efetuaLogin(login, email, senha);
+
 		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 		
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
 		
 		return usuarioLogado;
-		
 	}
-
+	
 	private Result verificaPrimeiroAcessoUsuario(Usuario usuario) {
 		loggerAutenticacao.registraAcao(Acao.VERIFICA_PRIMEIRO_ACESSO, usuario.toString());
 		return redirect(routes.HomeController.index());
