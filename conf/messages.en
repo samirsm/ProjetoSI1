@@ -3,6 +3,7 @@
 #
 
 # globais
+global.titulo=Vumbora! - Carpool System
 global.home=Home
 global.solicitacoes=Requests
 global.caronas=Rides
@@ -22,13 +23,14 @@ global.vagas=Car seats available
 global.exibir_todas=See all
 global.sair=Logout account
 global.idioma=Language set:
+global.sem_passageiros=There isn't any passenger registered in this carpool yet.
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Search or offer carpools safely and easily
 tela_login.subtitulo=Going and returning carpools to UFCG
 tela_login.listagem1=Real time notifications
 tela_login.listagem2=Drivers and passenger recommendations
-tela_login.listagem3=Registered trustful users
+tela_login.listagem3=Trustful users only registered
 tela_login.sucesso_cadastro=Registration sucessful!
 tela_login.sucesso_login=Login sucessful!
 tela_login.login=Email/RDM
@@ -81,3 +83,9 @@ solicitacoes.nenhuma=You have no requests at this time.
 solicitacoes.negar=Deny
 solicitacoes.aceitar=Accept
 
+# dias da semana
+dias.segunda=Monday
+dias.terca=Tuesday
+dias.quarta=Wednesday
+dias.quinta=Thursday
+dias.sexta=Friday

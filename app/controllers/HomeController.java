@@ -22,6 +22,7 @@ import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import play.mvc.Http.Context;
+import sistemas.mensagens.Idioma;
 import views.html.*;
 
 public class HomeController extends Controller {
@@ -32,8 +33,7 @@ public class HomeController extends Controller {
 	private Form<Carona> formularioCarona;
 	private Form<Horario> formularioHorario;
 	private List<String> bairros;
-	private String idioma = "pt"; //Default português
-	private HashMap<Integer, String> idiomas = new HashMap<Integer, String>();
+	private Idioma idioma = Idioma.PORTUGUES; //Default português
 	
 	@Inject
 	public HomeController (FormFactory formFactory){
@@ -43,24 +43,21 @@ public class HomeController extends Controller {
 		formularioCarona = this.formFactory.form(Carona.class);
 		formularioHorario = this.formFactory.form(Horario.class);
 		bairros = SistemaDeBairros.getInstance().getBairrosCadastrados();
-		idiomas.put(1, "pt");
-		idiomas.put(2, "en");
-		idiomas.put(3, "es");
-		idiomas.put(4, "it");
 	}
 	
 	// Mudar esse método para efetuar a verificação do Usuario Logado.
 	public Result index(){
 
-		ctx().changeLang(idioma);
+		ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma().getId());
 		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 		
 		return exibePagina();
 	}
 
 	public Result redefineIdioma(Integer id) {
-		idioma = idiomas.get(id);
-		ctx().changeLang(idioma);
+		Idioma idioma= Idioma.values()[id - 1];
+		ctx().changeLang(idioma.getId());
+		SistemaUsuarioLogin.getInstance().setIdioma(idioma);
 		if(usuarioLogado != null){
 			usuarioLogado.setIdioma(idioma);
 		}

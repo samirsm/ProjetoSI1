@@ -7,11 +7,8 @@ import javax.persistence.Entity;
 
 import com.avaje.ebean.Model;
 
-import exceptions.CaronaJaCadastradoException;
-import exceptions.HorarioJaCadastradoException;
-import exceptions.NumeroDeVagasExcedenteException;
-import exceptions.NumeroDeVagasInsuficienteException;
-import exceptions.UsuarioCadastradoException;
+import exceptions.*;
+import exceptions.CaronaJaCadastradaException;
 import models.Carona;
 import models.Horario;
 import models.TipoCarona;
@@ -19,8 +16,6 @@ import models.Usuario;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import sistemas.tiposBuscas.BuscaDefault;
-import sistemas.tiposBuscas.BuscaPorBairro;
-import sistemas.tiposBuscas.BuscaPorHorario;
 import sistemas.tiposBuscas.TipoBusca;
 
 @Entity
@@ -77,13 +72,13 @@ public class SistemaCarona extends Model {
     	return caronasSistema;
     }
     
-    private void adicionaCarona(Carona carona) throws CaronaJaCadastradoException{
+    private void adicionaCarona(Carona carona) throws CaronaJaCadastradaException {
     	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronasMotorista();
     	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
     	      caronasSistema.add(carona);
     	      caronasUsuarioLogado.add(carona);
     	}else
-    	  throw new CaronaJaCadastradoException();
+    	  throw new CaronaJaCadastradaException();
 	}
     
    
@@ -106,7 +101,7 @@ public class SistemaCarona extends Model {
     	return caronasUsuarioLogado.remove(pos);
 	}
     
-    public Carona criaCarona(Usuario motorista, Horario horario, TipoCarona tipo, int numeroDeVagas) throws NumeroDeVagasExcedenteException, CaronaJaCadastradoException{
+    public Carona criaCarona(Usuario motorista, Horario horario, TipoCarona tipo, int numeroDeVagas) throws CaronaJaCadastradaException {
 		Carona carona = new Carona(motorista, horario, tipo, numeroDeVagas);
 		adicionaCarona(carona);
 		return carona;
@@ -131,7 +126,7 @@ public class SistemaCarona extends Model {
     	return caronasSistema.get(i);
     }
     
-    public void adicionarPassageiros(Carona carona, Usuario passageiro) throws NumeroDeVagasInsuficienteException {
+    public void adicionarPassageiros(Carona carona, Usuario passageiro) {
 			carona.adicionaPassageiro(passageiro);
 			passageiro.adicionaCaronaPassageiro(carona);
 	}

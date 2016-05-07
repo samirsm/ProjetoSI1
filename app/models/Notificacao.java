@@ -3,9 +3,8 @@ package models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import com.avaje.ebean.Model;
-import tratamentoStrings.Strings;
-import models.Carona;
- 
+import sistemas.mensagens.Strings;
+
 @Entity
 public class Notificacao extends Model{
    

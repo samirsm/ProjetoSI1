@@ -5,7 +5,7 @@ import com.avaje.ebean.Model;
 
 import exceptions.BairroJaCadastradoException;
 import exceptions.HorarioJaCadastradoException;
-import exceptions.NumeroDeVagasExcedenteException;
+import sistemas.mensagens.Idioma;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class Usuario extends Model {
 	private List<Horario> horariosIda = new ArrayList<>();
 	private List<Horario> horariosVolta = new ArrayList<>();
 	private boolean horariosCadastrados;
-	private String idioma = "pt";
+	private Idioma idioma = Idioma.PORTUGUES;
 
 	@Id
 	private Long id;
@@ -128,14 +128,8 @@ public class Usuario extends Model {
 		caronasPassageiro.add(carona);
 	}
 
-	public void adicionaCaronaMotorista(Carona carona) throws NumeroDeVagasExcedenteException {
-		verificacaoVagasDisponiveis(carona);
+	public void adicionaCaronaMotorista(Carona carona){
 		caronasMotorista.add(carona);
-	}
-
-	private void verificacaoVagasDisponiveis(Carona carona) throws NumeroDeVagasExcedenteException {
-		if (!isPossivelDarCarona(carona))
-			throw new NumeroDeVagasExcedenteException();
 	}
 
 	private boolean isPossivelDarCarona(Carona carona) {
@@ -241,11 +235,11 @@ public class Usuario extends Model {
 
 	}
 
-	public String getIdioma() {
+	public Idioma getIdioma() {
 		return idioma;
 	}
 
-	public void setIdioma(String idi){
-		idioma = idi;
+	public void setIdioma(Idioma id){
+		idioma = id;
 	}
 }

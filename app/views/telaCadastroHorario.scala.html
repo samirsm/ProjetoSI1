@@ -83,11 +83,11 @@
 				<div class="col-sm-4">
 					<div class="form-group">
 						<label>@Messages("horarios.dia")</label> <select name="diaDaSemana" class="form-control">
-						<option>Segunda</option>
-						<option>Terça</option>
-						<option>Quarta</option>
-						<option>Quinta</option>
-						<option>Sexta</option>
+						<option>@Messages("dias.segunda")</option>
+						<option>@Messages("dias.terca")</option>
+						<option>@Messages("dias.quarta")</option>
+						<option>@Messages("dias.quinta")</option>
+						<option>@Messages("dias.sexta")</option>
 					</select>
 					</div>
 				</div>
@@ -136,7 +136,7 @@
 				<div class="col-sm-4">
 					<div class="form-group" >
 						<label class="checkbox-inline"> </br> <input type="submit"
-																	 value="Cadastrar" class="btn btn-warning btn-l"></input>
+																	 value=@Messages("horarios.cadastrar_endereco") class="btn btn-warning btn-l"></input>
 						</label>
 					</div>
 				</div>
@@ -166,7 +166,7 @@
 						<thead>
 						<tr>
 							<th><i class="fa fa-calendar"></i> @Messages("horarios.ida")</th>
-							<th><i class="fa fa-clock-o"></th>
+							<th><i class="fa fa-clock-o"></i> </th>
 						</tr>
 						</thead>
 						<tbody>

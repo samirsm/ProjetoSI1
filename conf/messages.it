@@ -3,6 +3,7 @@
 #
 
 # globais
+global.titulo=Vumbora! - Sistema di Passeggi
 global.home=Home
 global.solicitacoes=Richieste
 global.caronas=Passaggi
@@ -21,6 +22,7 @@ global.vagas=Seggiolini disponibili
 global.exibir_todas=Vedere tutte
 global.sair=Scollegare questo account
 global.idioma=Lingua atuale:
+global.sem_passageiros=Non ci sono ancora passeggeri in questo passeggio.
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Cerca oppure offri passeggi con sicurezza e facilità
@@ -80,3 +82,10 @@ agendamento.solicitar=Solicitare passegio
 solicitacoes.nenhuma=Non avete nessuna solicitazione adesso.
 solicitacoes.negar=Negare
 solicitacoes.aceitar=Accetare
+
+# dias da semana
+dias.segunda=Lunedì
+dias.terca=Martedì
+dias.quarta=Mercoledì
+dias.quinta=Giovedì
+dias.sexta=Venerdì

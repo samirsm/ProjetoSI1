@@ -7,7 +7,7 @@ import exceptions.BairroJaCadastradoException;
 import exceptions.DadosInvalidosException;
 import exceptions.HorarioJaCadastradoException;
 import exceptions.LoginInvalidoException;
-import exceptions.UsuarioCadastradoException;
+import exceptions.UsuarioJaExistenteException;
 import models.Dados;
 import models.Endereco;
 import models.Horario;
@@ -30,8 +30,9 @@ public final class SistemaUsuarioCRUD {
 	}
 	
 	// Cadastro com foto de usuario default
-	public Usuario cadastraUsuario(Dados dadosPessoais, Endereco endereco, Integer numeroVagas) throws UsuarioCadastradoException{
+	public Usuario cadastraUsuario(Dados dadosPessoais, Endereco endereco, Integer numeroVagas) throws UsuarioJaExistenteException {
 		Usuario novoUsuario = new Usuario(dadosPessoais, endereco, numeroVagas);
+		novoUsuario.setIdioma(SistemaUsuarioLogin.getInstance().getIdioma());
 		if (!isUsuarioExistente(novoUsuario))
 			usuariosAtivados.add(novoUsuario);
 
@@ -82,11 +83,11 @@ public final class SistemaUsuarioCRUD {
 		cadastraHorario(usuario,tipo,horario);
 	}
 	
-	private boolean isUsuarioExistente(Usuario novoUsuario) throws UsuarioCadastradoException {
+	private boolean isUsuarioExistente(Usuario novoUsuario) throws UsuarioJaExistenteException {
 		for (Usuario usuario : usuariosAtivados) {
 			if(usuario.getEmail().equals(novoUsuario.getEmail()) ||
 				usuario.getDadosUsuario().getMatricula().equals(novoUsuario.getDadosUsuario().getMatricula()))
-				throw new UsuarioCadastradoException();
+				throw new UsuarioJaExistenteException();
 		}
 		return false;
 	}

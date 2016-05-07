@@ -1,6 +1,6 @@
 @(formularioAutenticacao: Form[Dados], formularioEndereco: Form[Endereco], bairros: List[String])
 
-@index("Sistema de Caronas: Vumbora"){
+@index(Messages("global.titulo")){
 
 <!DOCTYPE html>
 <html>
@@ -126,10 +126,10 @@
 				<a class="btn" onclick="cadastro()">@Messages("tela_login.nao_cadastrado")</a>
 			</div>
 </div>
-		<div id="divCadastro" style="display: none; margin-top: 0px">
+		<div id="divCadastro" style="display: none; margin-top: 0px; margin: 0px auto;" >
 				@helper.form(action = routes.AutenticacaoController.cadastraUsuario()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				<table border="0" style="text-align: center; color: white; vertical-align: center; margin-left: 10px; cellspacing="10">
+				<table border="0" style="text-align: center; color: white; margin: 0px auto; "  cellspacing="50">
 
 
 					<tr>
@@ -140,7 +140,6 @@
 					<tr>
 						<td>@helper.inputText(formularioAutenticacao("numeroDeTelefone"), 'size -> 17, '_label -> Messages("global.telefone"), '_showConstraints -> false)</td>
 						<td>@helper.inputText(formularioAutenticacao("email"), 'size -> 17, '_label -> "Email", '_showConstraints -> false)</td>
-
 					</tr>
 
 					<tr>

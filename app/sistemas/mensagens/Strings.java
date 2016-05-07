@@ -1,4 +1,4 @@
-package tratamentoStrings;
+package sistemas.mensagens;
 
 public class Strings {
 	

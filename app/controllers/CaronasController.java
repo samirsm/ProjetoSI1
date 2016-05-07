@@ -5,9 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.annotation.ServletSecurity;
 
-import exceptions.CaronaJaCadastradoException;
-import exceptions.NumeroDeVagasExcedenteException;
-import exceptions.NumeroDeVagasInsuficienteException;
+import exceptions.CaronaJaCadastradaException;
 import models.Carona;
 import models.Horario;
 import models.Notificacao;
@@ -52,7 +50,7 @@ public class CaronasController extends Controller {
             loggerCaronas.registraAcao(Acao.CADASTROU_CARONA, horario.toString(), tipo.toString(), vagasDisponiveisCarona.toString());
             SistemaCarona.getInstance().getListaPesquisaAtualizada();
             loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS);
-        } catch (NumeroDeVagasExcedenteException | CaronaJaCadastradoException e){
+        } catch (CaronaJaCadastradaException e){
             loggerCaronas.registraAcao(Acao.ERRO, e.getMessage());
             return badRequest(e.getMessage());
       }
@@ -65,7 +63,7 @@ public class CaronasController extends Controller {
 
       Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(id);
 
-      try {
+
           SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getUsuarioOrigem());
           loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
           SistemaNotificacao.getInstance().geraNotificacaoAceitacao(pedido);
@@ -73,10 +71,6 @@ public class CaronasController extends Controller {
 
           SistemaUsuarioLogin.getInstance().getUsuarioLogado().leNotificacao(pedido);
           return redirect(routes.NotificacoesController.exibeSolicitacoes());
-      } catch (NumeroDeVagasInsuficienteException e) {
-        loggerCaronas.registraAcao(Acao.ERRO, e.getMessage());
-        return badRequest(e.getMessage());    
-        }
       }
     
     @Security.Authenticated(Secured.class)
