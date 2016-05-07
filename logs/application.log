@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 2016-05-07 01:28:15,973 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-5 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 2016-05-07 01:29:09,848 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
 2016-05-07 01:29:10,244 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
@@ -8,6 +6,14 @@
 2016-05-07 01:29:12,322 [ERROR] from application in netty-event-loop-3 - 
 
 ! @702fle80o - Internal server error, for (GET) [/] ->
+2016-05-07 02:42:16,616 [INFO] from play.core.server.NettyServer in pool-4-thread-6 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-05-07 02:42:24,613 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-07 02:42:24,943 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 02:42:24,952 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 02:42:25,675 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-07 02:42:25,935 [ERROR] from application in netty-event-loop-3 - 
+
+! @702g547e3 - Internal server error, for (GET) [/] ->
  
 play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
 	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:76)
@@ -59,6 +65,7 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+<<<<<<< HEAD
 2016-05-07 01:29:21,432 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
 2016-05-07 01:29:21,434 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
 2016-05-07 01:29:21,435 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
@@ -92,3 +99,51 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 2016-05-07 01:30:54,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-19 - [Sat May 07 01:30:54 BRT 2016] O sistema está verificando o primeiro acesso do usuário: PAULO VINICIUS S SOARES[Matricula: 114110478 Email: pauloviniciusd@gmail.com ]||
 2016-05-07 01:31:41,942 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-16 - Shutting down connection pool.
 >>>>>>> logicaLoginSeguro
+=======
+2016-05-07 02:42:29,353 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-07 02:42:29,357 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-07 02:42:29,357 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-07 02:42:29,418 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-07 02:42:29,547 [WARN] from application in ForkJoinPool-1-worker-1 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-07 02:42:30,066 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-05-07 02:42:53,623 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 02:42:53 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||
+2016-05-07 02:42:53,623 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 02:42:53 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||3||
+2016-05-07 02:42:53,624 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Sat May 07 02:42:53 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||3||
+2016-05-07 02:42:57,430 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-11 - [Sat May 07 02:42:57 BRT 2016] O usuário efetuou login: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:42:57,430 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-11 - [Sat May 07 02:42:57 BRT 2016] O usuário está sendo autenticado pelo sistema: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:42:57,430 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-11 - [Sat May 07 02:42:57 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:43:22,689 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-10 - [Sat May 07 02:43:22 BRT 2016] O usuário efetuou logout: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:43:31,604 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 02:43:31 BRT 2016] O usuário efetuou login: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:43:31,605 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 02:43:31 BRT 2016] O usuário está sendo autenticado pelo sistema: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:43:31,605 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-7 - [Sat May 07 02:43:31 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:43:36,201 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-18 - [Sat May 07 02:43:36 BRT 2016] O usuário efetuou logout: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:47:32,878 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-16 - [Sat May 07 02:47:32 BRT 2016] O usuário efetuou login: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:47:32,879 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-16 - [Sat May 07 02:47:32 BRT 2016] O usuário está sendo autenticado pelo sistema: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:47:32,879 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-16 - [Sat May 07 02:47:32 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:48:21,223 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-27 - [Sat May 07 02:48:21 BRT 2016] O usuário cadastrou seus horários de ida/volta: []||[]||
+2016-05-07 02:48:23,752 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-33 - [Sat May 07 02:48:23 BRT 2016] O usuário adicionou uma carona ao sistema: Dia: Monday Hora: 8||Going||1||
+2016-05-07 02:48:23,752 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-33 - [Sat May 07 02:48:23 BRT 2016] O sistema registrou um erro: []||
+2016-05-07 02:48:23,752 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-33 - [Sat May 07 02:48:23 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.
+2016-05-07 02:48:33,251 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-30 - [Sat May 07 02:48:33 BRT 2016] O usuário efetuou logout: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:49:00,155 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-32 - [Sat May 07 02:49:00 BRT 2016] O sistema registrou um erro: Matricula: 1141104822 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||
+2016-05-07 02:49:00,155 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-32 - [Sat May 07 02:49:00 BRT 2016] O sistema registrou um erro: Matricula: 1141104822 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||2||
+2016-05-07 02:49:00,156 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-32 - [Sat May 07 02:49:00 BRT 2016] O sistema registrou um erro: The email or the RDM given are already in use.||
+2016-05-07 02:49:10,438 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-32 - [Sat May 07 02:49:10 BRT 2016] O sistema registrou um erro: Matricula: 1141104822edd Email: kaio@mail.com ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||
+2016-05-07 02:49:10,438 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-32 - [Sat May 07 02:49:10 BRT 2016] O sistema registrou um erro: Matricula: 1141104822edd Email: kaio@mail.com ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||2||
+2016-05-07 02:49:10,438 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-32 - [Sat May 07 02:49:10 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 1141104822edd Email: kaio@mail.com ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||2||
+2016-05-07 02:49:18,413 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-35 - [Sat May 07 02:49:18 BRT 2016] O usuário efetuou login: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:49:18,413 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-35 - [Sat May 07 02:49:18 BRT 2016] O usuário está sendo autenticado pelo sistema: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:49:18,413 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-35 - [Sat May 07 02:49:18 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:49:33,476 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-39 - [Sat May 07 02:49:33 BRT 2016] O usuário efetuou logout: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-07 02:49:36,333 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-32 - [Sat May 07 02:49:36 BRT 2016] O usuário efetuou login: Kaio[Matricula: 1141104822edd Email: kaio@mail.com ]||
+2016-05-07 02:49:36,333 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-32 - [Sat May 07 02:49:36 BRT 2016] O usuário está sendo autenticado pelo sistema: Kaio[Matricula: 1141104822edd Email: kaio@mail.com ]||
+2016-05-07 02:49:36,333 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-32 - [Sat May 07 02:49:36 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Kaio[Matricula: 1141104822edd Email: kaio@mail.com ]||
+2016-05-07 02:49:37,488 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-39 - [Sat May 07 02:49:37 BRT 2016] O usuário adicionou um horário à lista de horários: Kaio[Matricula: 1141104822edd Email: kaio@mail.com ]||Going||Monday||8||
+2016-05-07 02:49:38,734 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-45 - [Sat May 07 02:49:38 BRT 2016] O usuário cadastrou seus horários de ida/volta: [Dia: Monday Hora: 8]||[]||
+2016-05-07 02:49:39,939 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-48 - [Sat May 07 02:49:39 BRT 2016] O sistema registrou um erro: [Dia: Monday Hora: 8]||
+2016-05-07 02:49:39,940 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-48 - [Sat May 07 02:49:39 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.[Motorista: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]
+ Horario: Dia: Monday Hora: 8]||
+2016-05-07 02:49:41,342 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-43 - [Sat May 07 02:49:41 BRT 2016] O usuário exibiu os detalhes da carona: Motorista: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]
+ Horario: Dia: Monday Hora: 8||
+2016-05-07 02:57:36,368 [INFO] from application in pool-4-thread-6 - Shutting down connection pool.
+>>>>>>> 130a87a83bbccb25429b7ad5e2d8568faea869b8
