@@ -15,12 +15,13 @@ global.volta=Retorno
 global.nome=Nombre
 global.matricula=RDM
 global.email=E-mail
-global.telefone=Telefono
+global.telefone=Teléfono
 global.senha=Contraseña
 global.rua=Calle
 global.bairro=Barrio
 global.vagas=Asientos disponibles
-global.exibir_todas=Ver todas
+global.notificacoes_lidas=Definir todas como leídas
+global.sem_notificacoes=No hay notificaciones no leídas
 global.sair=Salir de esta cuenta
 global.idioma=Idioma definido
 global.sem_passageiros=Aún no hay pasageros registrados en esto aventón.
@@ -35,10 +36,10 @@ tela_login.sucesso_cadastro=Registro realizado con éxito!
 tela_login.sucesso_login=Login realizado con éxito!
 tela_login.login=Email/RDM
 tela_login.sem_carro=No poseo coche.
-tela_login.vagas=Número de asientos en el colle
+tela_login.vagas=Número de asientos en el coche
 tela_login.cadastrar=Registrar
-tela_login.nao_cadastrado=No eres registrado? Registra-te! :)
-tela_login.sou_cadastrado=Ya eres registrado? Realiza el login
+tela_login.nao_cadastrado=No eres registrado? Regístrate! :)
+tela_login.sou_cadastrado=Ya eres registrado? Haz el login
 
 
 # horarios (Tela de cadastro de horários)

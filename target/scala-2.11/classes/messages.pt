@@ -19,9 +19,10 @@ global.senha=Senha
 global.rua=Rua
 global.bairro=Bairro
 global.vagas=Vagas disponíveis
-global.exibir_todas=Ver todas
+global.notificacoes_lidas=Marcar todas como lidas
+global.sem_notificacoes=Não há notificacoes não lidas
 global.sair=Sair desta conta
-global.idioma=Idioma atual:
+global.idioma=Idioma atual
 global.sem_passageiros=Ainda não há passageiros cadastrados nessa carona.
 
 # tela_login (Tela de Login e Cadastro)

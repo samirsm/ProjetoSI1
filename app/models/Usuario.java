@@ -16,17 +16,19 @@ public class Usuario extends Model {
 	private Endereco enderecoAlternativo;
 	private Endereco endereco;
 	private final Integer numeroVagas;
-	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
+    private List<Carona> caronas = new ArrayList<>();
+    private Idioma idioma = Idioma.PORTUGUES;
+
+
+	private List<Notificacao> solicitacoes = new ArrayList<Notificacao>();
+
+    private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
-	private List<Notificacao> solicitacoesDeCarona = new ArrayList<Notificacao>();
-	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
-	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
-	private List<Carona> caronasPassageiro = new ArrayList<>();
-	private List<Carona> caronasMotorista = new ArrayList<>();
+
 	private List<Horario> horariosIda = new ArrayList<>();
 	private List<Horario> horariosVolta = new ArrayList<>();
 	private boolean horariosCadastrados;
-	private Idioma idioma = Idioma.PORTUGUES;
+
 
 	@Id
 	private Long id;
@@ -38,16 +40,10 @@ public class Usuario extends Model {
 		this.setEnderecoAlternativo(endereco);
 	}
 
-	public boolean notifica(Notificacao notificacao) {
+
+	///// Notificações /////
+	public boolean recebeNotificacao(Notificacao notificacao) {
 		return notificacoesNaoLidas.add(notificacao);
-	}
-
-	public boolean recebeSolicitacao(Notificacao notificacao) {
-		return solicitacoesDeCarona.add(notificacao);
-	}
-
-	public boolean removeSolicitacao(Notificacao notificacao) {
-		return solicitacoesDeCarona.remove(notificacao);
 	}
 
 	public void leNotificacao(Notificacao naoLida) {
@@ -64,36 +60,55 @@ public class Usuario extends Model {
 		return notificacoesNaoLidas;
 	}
 
-	public List<Notificacao> getSolicitacoesDeCarona() {
-		return solicitacoesDeCarona;
+	public void leTodasNotificacoes(){
+
+		notificacoesNaoLidas = new ArrayList<Notificacao>();
 	}
 
-	public boolean addNotificacaoPassageiro(Notificacao notificacao) {
-		return notificacoesPassageiro.add(notificacao);
+	public boolean recebeSolicitacao(Notificacao solicitacao){
+		return solicitacoes.add(solicitacao);
 	}
 
-	public boolean addNotificacaoMotorista(Notificacao notificacao) {
-		return notificacoesMotorista.add(notificacao);
+	public void removeSolicitacao(Notificacao solicitacao) {
+		solicitacao.setStatus(true);
+		solicitacoes.remove(solicitacao);
 	}
 
-	public List<Notificacao> getNotificacaoMotorista() {
-		return notificacoesMotorista;
+
+	public List<Notificacao> getSolicitacoes() {
+		return solicitacoes;
 	}
 
-	public List<Notificacao> getNotificacaoPassageiro() {
-		return notificacoesPassageiro;
+	///// FIM Notificacoes /////
+
+
+
+	///// caronas ///
+
+	public List<Carona> getCaronas() {
+		return caronas;
 	}
 
-	public List<Horario> getHorariosIda() {
-		return horariosIda;
+	public void adicionaCarona(Carona carona) {
+		caronas.add(carona);
 	}
 
-	public List<Horario> getHorariosVolta() {
-		return horariosVolta;
+	private boolean isPossivelDarCarona(Carona carona) {
+		return numeroVagas >= carona.getVagasDisponiveis();
 	}
+
+	///// FIM caronas //////
+
+
+
+	///// GETS e SETS de infos /////
 
 	public String getNome() {
 		return dadosPessoais.getNome();
+	}
+
+	public Dados getDadosUsuario() {
+		return dadosPessoais;
 	}
 
 	public void setNome(String nome) {
@@ -116,42 +131,6 @@ public class Usuario extends Model {
 		dadosPessoais.setEmail(email);
 	}
 
-	public List<Carona> getCaronasPassageiro() {
-		return caronasPassageiro;
-	}
-
-	public List<Carona> getCaronasMotorista() {
-		return caronasMotorista;
-	}
-
-	public void adicionaCaronaPassageiro(Carona carona) {
-		caronasPassageiro.add(carona);
-	}
-
-	public void adicionaCaronaMotorista(Carona carona){
-		caronasMotorista.add(carona);
-	}
-
-	private boolean isPossivelDarCarona(Carona carona) {
-		return numeroVagas >= carona.getVagasDisponiveis();
-	}
-
-	public boolean isHorariosCadastrados() {
-		return horariosCadastrados;
-	}
-
-	public void cadastrouHorarios() {
-		setHorariosCadastrados(true);
-	}
-
-	private void setHorariosCadastrados(boolean cadastrouHorarios) {
-		horariosCadastrados = cadastrouHorarios;
-	}
-
-	public Dados getDadosUsuario() {
-		return dadosPessoais;
-	}
-
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -168,8 +147,44 @@ public class Usuario extends Model {
 		this.enderecoAlternativo = endereco;
 	}
 
+	public void addEnderecoAlternativo(Endereco enderecoNovo) throws BairroJaCadastradoException {
+		if (enderecoNovo.getBairro().equals(endereco.getBairro())) {
+			throw new BairroJaCadastradoException();
+		} else
+			setEnderecoAlternativo(enderecoNovo);
+
+
+	}
+
 	public Integer getNumeroVagas() {
 		return numeroVagas;
+	}
+
+	///// FIM GETS e SETS de infos /////
+
+
+
+
+	/////  Horarios /////
+
+	public List<Horario> getHorariosIda() {
+		return horariosIda;
+	}
+
+	public List<Horario> getHorariosVolta() {
+		return horariosVolta;
+	}
+
+	public boolean isHorariosCadastrados() {
+		return horariosCadastrados;
+	}
+
+	public void cadastrouHorarios() {
+		setHorariosCadastrados(true);
+	}
+
+	private void setHorariosCadastrados(boolean cadastrouHorarios) {
+		horariosCadastrados = cadastrouHorarios;
 	}
 
 	public boolean adicionarHorarioIda(String dia, int hora) throws HorarioJaCadastradoException {
@@ -179,10 +194,9 @@ public class Usuario extends Model {
 		return false;
 
 	}
-
 	
 	public boolean removeHorarioVolta(String dia, int hora){
-	     Horario horario = new Horario(dia,hora);
+		Horario horario = new Horario(dia,hora);
 	    return removeHorarioVolta(horario);
 	}
 	
@@ -193,12 +207,13 @@ public class Usuario extends Model {
         return false;
       }
  }
+
 	public boolean removeHorarioIda(String dia, int hora){
-      Horario horario = new Horario(dia,hora);
-     return removeHorarioIda(horario);
+		Horario horario = new Horario(dia,hora);
+     	return removeHorarioIda(horario);
  }
  
- public boolean removeHorarioIda(Horario horario){
+ 	public boolean removeHorarioIda(Horario horario){
    if(horariosIda.contains(horario)){
      return horariosIda.remove(horario);
    } else{
@@ -211,8 +226,7 @@ public class Usuario extends Model {
 			return horariosIda.add(horario);
 		return false;
 	}
-	
-	
+
 	public boolean adicionarHorarioVolta(String dia, int hora) throws HorarioJaCadastradoException {
 		Horario novoHorario = new Horario(dia, hora);
 		if (isHorarioLivre(novoHorario))
@@ -220,23 +234,10 @@ public class Usuario extends Model {
 		return false;
 	}
 
-	
-
 	public boolean adicionarHorarioVolta(Horario horario) throws HorarioJaCadastradoException {
 		if (isHorarioLivre(horario))
 			return horariosVolta.add(horario);
 		return false;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (!(obj instanceof Usuario))
-			return false;
-
-		Usuario outroUsuario = (Usuario) obj;
-
-		return outroUsuario.getDadosUsuario().equals(dadosPessoais);
-
 	}
 
 	private boolean isHorarioLivre(Horario novoHorario) throws HorarioJaCadastradoException {
@@ -251,18 +252,11 @@ public class Usuario extends Model {
 		return true;
 	}
 
-	public String toString() {
-		return getNome() + "[" + dadosPessoais.toString() + "]";
-	}
-
-	public void addEnderecoAlternativo(Endereco enderecoNovo) throws BairroJaCadastradoException {
-		if (enderecoNovo.getBairro().equals(endereco.getBairro())) {
-			throw new BairroJaCadastradoException();
-		} else
-			setEnderecoAlternativo(enderecoNovo);
+	/// FIM Horarios /////
 
 
-	}
+
+	///// Idioma /////
 
 	public Idioma getIdioma() {
 		return idioma;
@@ -271,4 +265,25 @@ public class Usuario extends Model {
 	public void setIdioma(Idioma id){
 		idioma = id;
 	}
+
+	/// FIM Idioma /////
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Usuario))
+			return false;
+
+		Usuario outroUsuario = (Usuario) obj;
+
+		return outroUsuario.getDadosUsuario().equals(dadosPessoais);
+
+	}
+
+	public String toString() {
+		return getNome() + "[" + dadosPessoais.toString() + "]";
+	}
+
+
 }

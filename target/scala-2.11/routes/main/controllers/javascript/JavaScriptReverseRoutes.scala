@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/samirsmedeiros/ProjetoSI1/conf/routes
-// @DATE:Sat May 07 04:20:51 BRT 2016
+// @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
+// @DATE:Mon May 09 22:27:57 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:28
+  // @LINE:30
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:28
+    // @LINE:30
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -87,12 +87,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
-    def solicitaAgendamento: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CaronasController.solicitaAgendamento",
+    // @LINE:19
+    def aceitaPedido: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CaronasController.aceitaPedido",
       """
         function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "solicitaCarona" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "aceitaPedido" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
         }
       """
     )
@@ -127,22 +127,22 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:17
+    def solicitaCarona: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CaronasController.solicitaCarona",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "solicitaCarona" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
     // @LINE:11
     def cadastraNovaCarona: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CaronasController.cadastraNovaCarona",
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "home"})
-        }
-      """
-    )
-  
-    // @LINE:19
-    def confirmaAgendamento: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CaronasController.confirmaAgendamento",
-      """
-        function(id0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "aceitaPedido" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
         }
       """
     )
@@ -157,12 +157,32 @@ package controllers.javascript {
     }
 
   
+    // @LINE:24
+    def leNotificacao: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.NotificacoesController.leNotificacao",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "leNotificacao" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
     // @LINE:18
     def exibeSolicitacoes: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.NotificacoesController.exibeSolicitacoes",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "solicitacoes"})
+        }
+      """
+    )
+  
+    // @LINE:23
+    def leTodasNotificacoes: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.NotificacoesController.leTodasNotificacoes",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "leTodasNotificacoes"})
         }
       """
     )
@@ -187,7 +207,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:25
+    // @LINE:27
     def redefineIdioma: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.redefineIdioma",
       """

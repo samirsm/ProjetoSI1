@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 
 import com.avaje.ebean.Model;
 
-import exceptions.*;
 import exceptions.CaronaJaCadastradaException;
 import models.Carona;
 import models.Horario;
@@ -73,7 +72,7 @@ public class SistemaCarona extends Model {
     }
     
     private void adicionaCarona(Carona carona) throws CaronaJaCadastradaException {
-    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronasMotorista();
+    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
     	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
     	      caronasSistema.add(carona);
     	      caronasUsuarioLogado.add(carona);
@@ -83,8 +82,7 @@ public class SistemaCarona extends Model {
     
    
 
-    private boolean temCaronaNoMesmoHorario(Carona carona,
-        List<Carona> caronasUsuarioLogado) {
+    private boolean temCaronaNoMesmoHorario(Carona carona, List<Carona> caronasUsuarioLogado) {
         for (Carona carona2 : caronasUsuarioLogado) {
           if(carona.getHorario().equals(carona2.getHorario()))
             return true;
@@ -93,7 +91,7 @@ public class SistemaCarona extends Model {
     }
 
     public Carona removeCarona(Long id) {
-    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronasMotorista();
+    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
     	int pos = buscarIndiceCaronaPorId(id);
     	if (pos == -1)
     		return null;
@@ -128,6 +126,6 @@ public class SistemaCarona extends Model {
     
     public void adicionarPassageiros(Carona carona, Usuario passageiro) {
 			carona.adicionaPassageiro(passageiro);
-			passageiro.adicionaCaronaPassageiro(carona);
+			passageiro.adicionaCarona(carona);
 	}
 }

@@ -54,8 +54,7 @@ public class Notificacao extends Model{
     }
  
     private void geraMensagem(TipoNotificacao tipo) {
-        mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR + "Detalhes da carona: " +
-    carona.toString();
+        mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
     }
  
     private void setId(){
@@ -64,5 +63,10 @@ public class Notificacao extends Model{
         idTemp *= 100000;
         id = (long) idTemp;
  
+    }
+
+    public String getReferencia(){
+        if(tipo == TipoNotificacao.PEDIDO) return "solicitacoes";
+        else return "leNotificacao?id=" + this.getId();
     }
 }

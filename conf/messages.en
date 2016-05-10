@@ -20,9 +20,10 @@ global.senha=Password
 global.rua=Street
 global.bairro=Neighborhood
 global.vagas=Car seats available
-global.exibir_todas=See all
+global.notificacoes_lidas=Mark all as read
+global.sem_notificacoes=No unread notifications
 global.sair=Logout account
-global.idioma=Language set:
+global.idioma=Language set
 global.sem_passageiros=There isn't any passenger registered in this carpool yet.
 
 # tela_login (Tela de Login e Cadastro)

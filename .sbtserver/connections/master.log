@@ -1,7 +1,7 @@
-New log file opened at Sat May 07 01:30:42 BRT 2016 by 3314@paulovss-Inspiron-5437
-Taking next connection to: 36961
-New client attempting to connect on port: 58413-36961
-  Address = /127.0.1.1:36961
-This client on port 58413 has uuid e02964b8-08d9-4bb5-8188-e2df41563c96 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-e02964b8-08d9-4bb5-8188-e2df41563c96
-Taking next connection to: 36961
+New log file opened at Mon May 09 22:30:50 BRT 2016 by 5052@pedro-paulo
+Taking next connection to: 49622
+New client attempting to connect on port: 42743-49622
+  Address = /127.0.1.1:49622
+This client on port 42743 has uuid 171bbc8e-0615-406d-a30d-ad47e5b13010 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-171bbc8e-0615-406d-a30d-ad47e5b13010
+Taking next connection to: 49622

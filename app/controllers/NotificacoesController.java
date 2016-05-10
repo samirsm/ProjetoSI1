@@ -25,9 +25,10 @@ public class NotificacoesController extends Controller{
     @Security.Authenticated(Secured.class)
     public Result exibeSolicitacoes() {
         Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        List<Carona> caronas = user.getCaronasMotorista();
-        List<Notificacao> solicitacoes = new ArrayList<>();
+        List<Carona> caronas = user.getCaronas();
         List<Notificacao> notificacoes = user.getNotificacoesNaoLidas();
+        List<Notificacao> solicitacoes = new ArrayList<>();
+
         for(int i = 0; i< notificacoes.size(); i++){
           if(notificacoes.get(i).getTipo() == TipoNotificacao.PEDIDO)
               solicitacoes.add(notificacoes.get(i));
@@ -45,7 +46,6 @@ public class NotificacoesController extends Controller{
     public Result aceitaPedido(Long idPedido){
         Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idPedido);
         Usuario motorista = pedido.getCarona().getMotorista();
-        motorista.removeSolicitacao(pedido);
         notificaAceitacao(idPedido);
         return ok();
     }
@@ -68,6 +68,19 @@ public class NotificacoesController extends Controller{
         Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idPedido);
         SistemaNotificacao.getInstance().geraNotificacaoRejeicao(pedido);
         return ok();
+    }
+
+    @Security.Authenticated(Secured.class)
+    public Result leNotificacao(Long idNotificacao){
+        Notificacao notificacao = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idNotificacao);
+        SistemaNotificacao.getInstance().leNotificacao(notificacao);
+        return redirect(routes.HomeController.index());
+    }
+
+    @Security.Authenticated(Secured.class)
+    public Result leTodasNotificacoes(){
+        SistemaNotificacao.getInstance().leTodasNotificacoes();
+        return redirect(routes.HomeController.index());
     }
 
 

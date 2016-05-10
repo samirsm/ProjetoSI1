@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/samirsmedeiros/ProjetoSI1/conf/routes
-// @DATE:Sat May 07 04:20:51 BRT 2016
+// @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
+// @DATE:Mon May 09 22:27:57 BRT 2016
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -13,14 +13,14 @@ import _root_.play.libs.F
 // @LINE:5
 package controllers {
 
-  // @LINE:28
+  // @LINE:30
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:28
+    // @LINE:30
     def versioned(file:Asset): Call = {
       implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
@@ -70,10 +70,10 @@ package controllers {
     }
 
   
-    // @LINE:17
-    def solicitaAgendamento(id:Long): Call = {
+    // @LINE:19
+    def aceitaPedido(id:Long): Call = {
       import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "solicitaCarona" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+      Call("GET", _prefix + { _defaultPrefix } + "aceitaPedido" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
     // @LINE:20
@@ -94,16 +94,16 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "atualizaCaronas")
     }
   
+    // @LINE:17
+    def solicitaCarona(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "solicitaCarona" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+    }
+  
     // @LINE:11
     def cadastraNovaCarona(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "home")
-    }
-  
-    // @LINE:19
-    def confirmaAgendamento(id:Long): Call = {
-      import ReverseRouteContext.empty
-      Call("GET", _prefix + { _defaultPrefix } + "aceitaPedido" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
     }
   
   }
@@ -115,10 +115,22 @@ package controllers {
     }
 
   
+    // @LINE:24
+    def leNotificacao(id:Long): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "leNotificacao" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
+    }
+  
     // @LINE:18
     def exibeSolicitacoes(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "solicitacoes")
+    }
+  
+    // @LINE:23
+    def leTodasNotificacoes(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "leTodasNotificacoes")
     }
   
   }
@@ -136,7 +148,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "horarios")
     }
   
-    // @LINE:25
+    // @LINE:27
     def redefineIdioma(id:Integer): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "redefineIdioma" + queryString(List(Some(implicitly[QueryStringBindable[Integer]].unbind("id", id)))))

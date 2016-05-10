@@ -52,7 +52,7 @@ public class MensagensSistema {
 			"Lo aventón ya existe o ya existe un aventón para ese horario.",
 			"Questo passegio già esiste oppure c'e già un passegio per quest'orario."};
 
-	public static final String[] HORARIO_JA_CADASTRADO = {"O numero de vagas oferecida excede a capacidade máxima.",
+	public static final String[] HORARIO_JA_CADASTRADO = {"Este horário já foi cadastrado.",
 			"This time schedule has already been registered.",
 			"Esto horario ya fue registrado.",
 			"Quest'orario già è stato registrato."};

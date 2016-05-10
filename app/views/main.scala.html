@@ -62,12 +62,18 @@
               <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-2x"></i><b class="caret"></b></a>
                     <ul class="dropdown-menu">
-						           <li>
-                           	<h5 class="media-heading" style="color: #888;">Ingles</h5>
-                       </li>
-                       <li>
-                           	<h5 class="media-heading" style="color: #888;">Portugues</h5>
-                       </li>
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=1">Português</a></h5>
+                        </li>
+                        <li>
+                           	<h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=2">English</a></h5>
+                        </li>
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=3">Español</a></h5>
+                        </li>
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=4">Italiano</a></h5>
+                        </li>
                     </ul>
                 </li>
 
@@ -78,7 +84,7 @@
 
                   @for(notificacao <- notificacoes){
                       <li class="message-preview">
-                          <a href="solicitacoes">
+                          <a href=@notificacao.getReferencia()>
                               <div class="media">
                                   <div class="media-body">
                                       <h5 class="media-heading"><strong>@notificacao.getUsuarioOrigem().getNome()</strong>
@@ -91,7 +97,12 @@
                   </li>
 
                   <li class="message-footer">
-                      <a href="#" >@Messages("global.exibir_todas")</a>
+                      @if(notificacoes.size() != 0){
+                      <a href="leTodasNotificacoes">@Messages("global.notificacoes_lidas")</a>
+                      } else {
+                      @Messages("global.sem_notificacoes")
+                      }
+
                   </li>
               </ul>
           </li>
@@ -166,7 +177,7 @@
                                     <div class="col-lg-12">
                                         <h3 class="page-header" style="color: #FFF">@Messages("global.minhas_caronas")</h3>
                                         <ol class="breadcrumb">
-                                          @if(usuarioLogado.getCaronasMotorista().size() == 0){
+                                          @if(usuarioLogado.getCaronas().size() == 0){
                                             <li class="active">
                                                 @Messages("global.sem_caronas")
                                             </li>
@@ -178,7 +189,7 @@
                       </div>
 
                     <!-- INICIO DO CARD -->
-                    @for(carona <- usuarioLogado.getCaronasMotorista()){
+                    @for(carona <- usuarioLogado.getCaronas()){
                     <div>
                         <div class="panel panel-blue-ida">
                             <div class="panel-heading">

@@ -8,8 +8,8 @@ global.home=Home
 global.solicitacoes=Richieste
 global.caronas=Passaggi
 global.ajustes=Ajustes
-global.minhas_caronas=I miei passaggi
-global.sem_caronas=Non avete passaggi registrati.
+global.minhas_caronas=I miei passeggi
+global.sem_caronas=Non avete passeggi registrati.
 global.ida=Andata
 global.volta=Ritorno
 global.nome=Nome
@@ -19,9 +19,10 @@ global.senha=Password
 global.rua=Via
 global.bairro=Quartiere
 global.vagas=Seggiolini disponibili
-global.exibir_todas=Vedere tutte
-global.sair=Scollegare questo account
-global.idioma=Lingua atuale:
+global.notificacoes_lidas=Segna tutte come già lette
+global.sem_notificacoes=Non ci sono notifiche non lette
+global.sair=Uscire di questo account
+global.idioma=Lingua atuale
 global.sem_passageiros=Non ci sono ancora passeggeri in questo passeggio.
 
 # tela_login (Tela de Login e Cadastro)

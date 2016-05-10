@@ -5,7 +5,7 @@
 GET     /                           controllers.HomeController.index
 POST    /cadastroRealizado	        controllers.AutenticacaoController.cadastraUsuario
 POST    /index			         	controllers.AutenticacaoController.efetuaLogin
-GET     /horarios              controllers.HomeController.editaHorarios()
+GET     /horarios                   controllers.HomeController.editaHorarios()
 POST    /login			         	controllers.AutenticacaoController.efetuaLogin()
 POST    /cadastra		         	controllers.HorariosController.cadastra
 POST    /home						controllers.CaronasController.cadastraNovaCarona
@@ -14,12 +14,14 @@ GET     /cadastraNovoEndereco       controllers.HorariosController.cadastraNovoE
 GET     /logout                     controllers.AutenticacaoController.efetuaLogout
 GET 	/exibeDetalhes				controllers.CaronasController.exibeDetalhes(id: Long)
 POST	/atualizaCaronas			controllers.CaronasController.buscarCaronas()
-GET     /solicitaCarona             controllers.CaronasController.solicitaAgendamento(id: Long)
+GET     /solicitaCarona             controllers.CaronasController.solicitaCarona(id: Long)
 GET     /solicitacoes				controllers.NotificacoesController.exibeSolicitacoes()
-GET     /aceitaPedido               controllers.CaronasController.confirmaAgendamento(id: Long)
-GET     /recusaPedido               controllers.CaronasController.recusaPedido(id:Long)
+GET     /aceitaPedido               controllers.CaronasController.aceitaPedido(id: Long)
+GET     /recusaPedido               controllers.CaronasController.recusaPedido(id: Long)
 GET     /excluiHorarioVolta         controllers.HorariosController.excluiHorarioVolta(dia: String ?= "", hora: Integer ?= 0)
-GET     /excluiHorarioIda         controllers.HorariosController.excluiHorarioIda(dia: String ?= "", hora: Integer ?= 0)
+GET     /excluiHorarioIda           controllers.HorariosController.excluiHorarioIda(dia: String ?= "", hora: Integer ?= 0)
+GET     /leTodasNotificacoes        controllers.NotificacoesController.leTodasNotificacoes()
+GET     /leNotificacao              controllers.NotificacoesController.leNotificacao(id: Long)
 
 
 GET     /redefineIdioma             controllers.HomeController.redefineIdioma(id:Integer)

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/samirsmedeiros/ProjetoSI1/conf/routes
-// @DATE:Sat May 07 04:20:51 BRT 2016
+// @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
+// @DATE:Mon May 09 22:27:57 BRT 2016
 
 package controllers;
 
