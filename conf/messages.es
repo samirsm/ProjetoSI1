@@ -6,6 +6,8 @@
 global.titulo=Vumbora! - Sistema de Aventones
 global.home=Home
 global.solicitacoes=Solicitaciones
+global.pendentes=Pendientes
+global.horarios=Horarios
 global.caronas=Aventones
 global.ajustes=Ajustes
 global.minhas_caronas=Mis aventones
@@ -81,9 +83,11 @@ agendamento.voltar=Volver a los Aventones
 agendamento.solicitar=Solicitar Aventón
 
 # solicitacoes
-solicitacoes.nenhuma=Você não possui nenhuma solicitação no momento.
+solicitacoes.nenhuma=Tú no tienes ninguna solicitación en este momento.
 solicitacoes.negar=Negar
 solicitacoes.aceitar=Vumbora
+solicitacoes.pendente_cabecalho=Aventones aguardando avaliación del motorista
+solicitacoes.sem_pendentes=Ningún aventón pendiente.
 
 # dias da semana
 dias.segunda=Lunes

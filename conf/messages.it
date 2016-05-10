@@ -6,6 +6,8 @@
 global.titulo=Vumbora! - Sistema di Passeggi
 global.home=Home
 global.solicitacoes=Richieste
+global.pendentes=In Attesa
+global.horarios=Orari
 global.caronas=Passaggi
 global.ajustes=Ajustes
 global.minhas_caronas=I miei passeggi
@@ -83,6 +85,9 @@ agendamento.solicitar=Solicitare passegio
 solicitacoes.nenhuma=Non avete nessuna solicitazione adesso.
 solicitacoes.negar=Negare
 solicitacoes.aceitar=Accetare
+solicitacoes.pendente_cabecalho=Passeggi in attesa della avaliazione del guidante
+solicitacoes.sem_pendentes=Nessun passeggio in attesa.
+
 
 # dias da semana
 dias.segunda=Lunedì

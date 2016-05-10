@@ -59,24 +59,6 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
 
-              <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-2x"></i><b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=1">Português</a></h5>
-                        </li>
-                        <li>
-                           	<h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=2">English</a></h5>
-                        </li>
-                        <li>
-                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=3">Español</a></h5>
-                        </li>
-                        <li>
-                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=4">Italiano</a></h5>
-                        </li>
-                    </ul>
-                </li>
-
               <!-- Notification -->
           <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell fa-2x"></i> <b class="caret"></b></a>
@@ -107,6 +89,26 @@
               </ul>
           </li>
               <!-- end Notification -->
+
+                <!-- Linguas -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-2x"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=1">Português</a></h5>
+                        </li>
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=2">English</a></h5>
+                        </li>
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=3">Español</a></h5>
+                        </li>
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=4">Italiano</a></h5>
+                        </li>
+                    </ul>
+                </li>
+                <!-- end Linguas -->
 
                 <!-- User options -->
                 <li class="dropdown">
@@ -151,13 +153,16 @@
                         <a href="/"><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>@usuarioLogado.getNome()</a>
                     </li>
                     <li>
-                        <a href="/"><i class="fa fa-fw fa-home fa-3x"></i></br>Home</a>
+                        <a href="/"><i class="fa fa-fw fa-home fa-4x"></i></br><strong>@Messages("global.home")</strong></a>
                     </li>
                     <li>
-                        <a href="solicitacoes"><i class="fa fa-fw fa-paper-plane fa-3x"></i> </br>@Messages("global.solicitacoes")</a>
+                        <a href="solicitacoes"><i class="fa fa-fw fa-paper-plane fa-3x"></i></br><strong>@Messages("global.solicitacoes")</strong></a>
                     </li>
                     <li>
-                        <a href="horarios"><i class="fa fa-calendar fa-3x"></i></br> Horários</a>
+                        <a href="pendentes"><i class="fa fa-clock-o fa-3x"></i></br><strong>@Messages("global.pendentes")</strong></a>
+                    </li>
+                    <li>
+                        <a href="horarios"><i class="fa fa-calendar fa-3x"></i></br><strong>@Messages("global.horarios")</strong></a>
                     </li>
                 </ul>
             </div>

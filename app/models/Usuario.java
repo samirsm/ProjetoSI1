@@ -17,6 +17,8 @@ public class Usuario extends Model {
 	private Endereco endereco;
 	private final Integer numeroVagas;
     private List<Carona> caronas = new ArrayList<>();
+
+	private List<Carona> caronasPendentes = new ArrayList<>();
     private Idioma idioma = Idioma.PORTUGUES;
 
 
@@ -95,6 +97,18 @@ public class Usuario extends Model {
 
 	private boolean isPossivelDarCarona(Carona carona) {
 		return numeroVagas >= carona.getVagasDisponiveis();
+	}
+
+	public List<Carona> getCaronasPendentes() {
+		return caronasPendentes;
+	}
+
+	public boolean adicionaCaronaPendente(Carona carona){
+		return caronasPendentes.add(carona);
+	}
+
+	public boolean removeCaronaPendente(Carona carona){
+		return caronasPendentes.remove(carona);
 	}
 
 	///// FIM caronas //////

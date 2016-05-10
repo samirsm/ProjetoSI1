@@ -1,7 +1,16 @@
-New log file opened at Mon May 09 22:30:50 BRT 2016 by 5052@pedro-paulo
-Taking next connection to: 49622
-New client attempting to connect on port: 42743-49622
-  Address = /127.0.1.1:49622
-This client on port 42743 has uuid 171bbc8e-0615-406d-a30d-ad47e5b13010 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-171bbc8e-0615-406d-a30d-ad47e5b13010
-Taking next connection to: 49622
+New log file opened at Tue May 10 00:18:21 BRT 2016 by 11499@pedro-paulo
+Taking next connection to: 56777
+New client attempting to connect on port: 58196-56777
+  Address = /127.0.1.1:56777
+This client on port 58196 has uuid 36b13ee3-169a-4281-b8ee-fd12526ea7ec configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-36b13ee3-169a-4281-b8ee-fd12526ea7ec
+Taking next connection to: 56777
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 56777
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 11499@pedro-paulo logs at Tue May 10 00:24:22 BRT 2016, goodbye.

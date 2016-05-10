@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
-// @DATE:Mon May 09 22:27:57 BRT 2016
+// @DATE:Mon May 09 23:14:46 BRT 2016
 
 package router
 
@@ -20,13 +20,13 @@ class Routes(
   HomeController_3: controllers.HomeController,
   // @LINE:6
   AutenticacaoController_4: controllers.AutenticacaoController,
-  // @LINE:10
+  // @LINE:8
   HorariosController_2: controllers.HorariosController,
-  // @LINE:11
+  // @LINE:12
   CaronasController_1: controllers.CaronasController,
-  // @LINE:18
+  // @LINE:14
   NotificacoesController_0: controllers.NotificacoesController,
-  // @LINE:30
+  // @LINE:34
   Assets_5: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -37,13 +37,13 @@ class Routes(
     HomeController_3: controllers.HomeController,
     // @LINE:6
     AutenticacaoController_4: controllers.AutenticacaoController,
-    // @LINE:10
+    // @LINE:8
     HorariosController_2: controllers.HorariosController,
-    // @LINE:11
+    // @LINE:12
     CaronasController_1: controllers.CaronasController,
-    // @LINE:18
+    // @LINE:14
     NotificacoesController_0: controllers.NotificacoesController,
-    // @LINE:30
+    // @LINE:34
     Assets_5: controllers.Assets
   ) = this(errorHandler, HomeController_3, AutenticacaoController_4, HorariosController_2, CaronasController_1, NotificacoesController_0, Assets_5, "/")
 
@@ -62,21 +62,22 @@ class Routes(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastroRealizado""", """controllers.AutenticacaoController.cadastraUsuario"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """index""", """controllers.AutenticacaoController.efetuaLogin"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """horarios""", """controllers.HomeController.editaHorarios()"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.AutenticacaoController.efetuaLogin()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastra""", """controllers.HorariosController.cadastra"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """home""", """controllers.CaronasController.cadastraNovaCarona"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastraHorarios""", """controllers.HorariosController.cadastraHorarios"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastraNovoEndereco""", """controllers.HorariosController.cadastraNovoEndereco"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.AutenticacaoController.efetuaLogin()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.AutenticacaoController.efetuaLogout"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """home""", """controllers.CaronasController.cadastraNovaCarona"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """horarios""", """controllers.HomeController.editaHorarios()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """solicitacoes""", """controllers.NotificacoesController.exibeSolicitacoes()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """pendentes""", """controllers.CaronasController.exibeCaronasPendentes()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastraHorarios""", """controllers.HorariosController.cadastraHorarios"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """excluiHorarioVolta""", """controllers.HorariosController.excluiHorarioVolta(dia:String ?= "", hora:Integer ?= 0)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """excluiHorarioIda""", """controllers.HorariosController.excluiHorarioIda(dia:String ?= "", hora:Integer ?= 0)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastraNovoEndereco""", """controllers.HorariosController.cadastraNovoEndereco"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """exibeDetalhes""", """controllers.CaronasController.exibeDetalhes(id:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atualizaCaronas""", """controllers.CaronasController.buscarCaronas()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """solicitaCarona""", """controllers.CaronasController.solicitaCarona(id:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """solicitacoes""", """controllers.NotificacoesController.exibeSolicitacoes()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """aceitaPedido""", """controllers.CaronasController.aceitaPedido(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """recusaPedido""", """controllers.CaronasController.recusaPedido(id:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """excluiHorarioVolta""", """controllers.HorariosController.excluiHorarioVolta(dia:String ?= "", hora:Integer ?= 0)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """excluiHorarioIda""", """controllers.HorariosController.excluiHorarioIda(dia:String ?= "", hora:Integer ?= 0)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """leTodasNotificacoes""", """controllers.NotificacoesController.leTodasNotificacoes()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """leNotificacao""", """controllers.NotificacoesController.leNotificacao(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """redefineIdioma""", """controllers.HomeController.redefineIdioma(id:Integer)"""),
@@ -140,19 +141,19 @@ class Routes(
   )
 
   // @LINE:8
-  private[this] lazy val controllers_HomeController_editaHorarios3_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("horarios")))
+  private[this] lazy val controllers_HorariosController_cadastra3_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastra")))
   )
-  private[this] lazy val controllers_HomeController_editaHorarios3_invoker = createInvoker(
-    HomeController_3.editaHorarios(),
+  private[this] lazy val controllers_HorariosController_cadastra3_invoker = createInvoker(
+    HorariosController_2.cadastra,
     HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.HomeController",
-      "editaHorarios",
+      "controllers.HorariosController",
+      "cadastra",
       Nil,
-      "GET",
+      "POST",
       """""",
-      this.prefix + """horarios"""
+      this.prefix + """cadastra"""
     )
   )
 
@@ -174,23 +175,23 @@ class Routes(
   )
 
   // @LINE:10
-  private[this] lazy val controllers_HorariosController_cadastra5_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastra")))
+  private[this] lazy val controllers_AutenticacaoController_efetuaLogout5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
-  private[this] lazy val controllers_HorariosController_cadastra5_invoker = createInvoker(
-    HorariosController_2.cadastra,
+  private[this] lazy val controllers_AutenticacaoController_efetuaLogout5_invoker = createInvoker(
+    AutenticacaoController_4.efetuaLogout,
     HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.HorariosController",
-      "cadastra",
+      "controllers.AutenticacaoController",
+      "efetuaLogout",
       Nil,
-      "POST",
+      "GET",
       """""",
-      this.prefix + """cadastra"""
+      this.prefix + """logout"""
     )
   )
 
-  // @LINE:11
+  // @LINE:12
   private[this] lazy val controllers_CaronasController_cadastraNovaCarona6_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("home")))
   )
@@ -207,113 +208,28 @@ class Routes(
     )
   )
 
-  // @LINE:12
-  private[this] lazy val controllers_HorariosController_cadastraHorarios7_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastraHorarios")))
-  )
-  private[this] lazy val controllers_HorariosController_cadastraHorarios7_invoker = createInvoker(
-    HorariosController_2.cadastraHorarios,
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.HorariosController",
-      "cadastraHorarios",
-      Nil,
-      "GET",
-      """""",
-      this.prefix + """cadastraHorarios"""
-    )
-  )
-
   // @LINE:13
-  private[this] lazy val controllers_HorariosController_cadastraNovoEndereco8_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastraNovoEndereco")))
+  private[this] lazy val controllers_HomeController_editaHorarios7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("horarios")))
   )
-  private[this] lazy val controllers_HorariosController_cadastraNovoEndereco8_invoker = createInvoker(
-    HorariosController_2.cadastraNovoEndereco,
+  private[this] lazy val controllers_HomeController_editaHorarios7_invoker = createInvoker(
+    HomeController_3.editaHorarios(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.HorariosController",
-      "cadastraNovoEndereco",
+      "controllers.HomeController",
+      "editaHorarios",
       Nil,
       "GET",
       """""",
-      this.prefix + """cadastraNovoEndereco"""
+      this.prefix + """horarios"""
     )
   )
 
   // @LINE:14
-  private[this] lazy val controllers_AutenticacaoController_efetuaLogout9_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
-  )
-  private[this] lazy val controllers_AutenticacaoController_efetuaLogout9_invoker = createInvoker(
-    AutenticacaoController_4.efetuaLogout,
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.AutenticacaoController",
-      "efetuaLogout",
-      Nil,
-      "GET",
-      """""",
-      this.prefix + """logout"""
-    )
-  )
-
-  // @LINE:15
-  private[this] lazy val controllers_CaronasController_exibeDetalhes10_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("exibeDetalhes")))
-  )
-  private[this] lazy val controllers_CaronasController_exibeDetalhes10_invoker = createInvoker(
-    CaronasController_1.exibeDetalhes(fakeValue[Long]),
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.CaronasController",
-      "exibeDetalhes",
-      Seq(classOf[Long]),
-      "GET",
-      """""",
-      this.prefix + """exibeDetalhes"""
-    )
-  )
-
-  // @LINE:16
-  private[this] lazy val controllers_CaronasController_buscarCaronas11_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atualizaCaronas")))
-  )
-  private[this] lazy val controllers_CaronasController_buscarCaronas11_invoker = createInvoker(
-    CaronasController_1.buscarCaronas(),
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.CaronasController",
-      "buscarCaronas",
-      Nil,
-      "POST",
-      """""",
-      this.prefix + """atualizaCaronas"""
-    )
-  )
-
-  // @LINE:17
-  private[this] lazy val controllers_CaronasController_solicitaCarona12_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("solicitaCarona")))
-  )
-  private[this] lazy val controllers_CaronasController_solicitaCarona12_invoker = createInvoker(
-    CaronasController_1.solicitaCarona(fakeValue[Long]),
-    HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.CaronasController",
-      "solicitaCarona",
-      Seq(classOf[Long]),
-      "GET",
-      """""",
-      this.prefix + """solicitaCarona"""
-    )
-  )
-
-  // @LINE:18
-  private[this] lazy val controllers_NotificacoesController_exibeSolicitacoes13_route = Route("GET",
+  private[this] lazy val controllers_NotificacoesController_exibeSolicitacoes8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("solicitacoes")))
   )
-  private[this] lazy val controllers_NotificacoesController_exibeSolicitacoes13_invoker = createInvoker(
+  private[this] lazy val controllers_NotificacoesController_exibeSolicitacoes8_invoker = createInvoker(
     NotificacoesController_0.exibeSolicitacoes(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -326,45 +242,45 @@ class Routes(
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_CaronasController_aceitaPedido14_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("aceitaPedido")))
+  // @LINE:15
+  private[this] lazy val controllers_CaronasController_exibeCaronasPendentes9_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("pendentes")))
   )
-  private[this] lazy val controllers_CaronasController_aceitaPedido14_invoker = createInvoker(
-    CaronasController_1.aceitaPedido(fakeValue[Long]),
+  private[this] lazy val controllers_CaronasController_exibeCaronasPendentes9_invoker = createInvoker(
+    CaronasController_1.exibeCaronasPendentes(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.CaronasController",
-      "aceitaPedido",
-      Seq(classOf[Long]),
+      "exibeCaronasPendentes",
+      Nil,
       "GET",
       """""",
-      this.prefix + """aceitaPedido"""
+      this.prefix + """pendentes"""
     )
   )
 
-  // @LINE:20
-  private[this] lazy val controllers_CaronasController_recusaPedido15_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("recusaPedido")))
+  // @LINE:17
+  private[this] lazy val controllers_HorariosController_cadastraHorarios10_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastraHorarios")))
   )
-  private[this] lazy val controllers_CaronasController_recusaPedido15_invoker = createInvoker(
-    CaronasController_1.recusaPedido(fakeValue[Long]),
+  private[this] lazy val controllers_HorariosController_cadastraHorarios10_invoker = createInvoker(
+    HorariosController_2.cadastraHorarios,
     HandlerDef(this.getClass.getClassLoader,
       "router",
-      "controllers.CaronasController",
-      "recusaPedido",
-      Seq(classOf[Long]),
+      "controllers.HorariosController",
+      "cadastraHorarios",
+      Nil,
       "GET",
       """""",
-      this.prefix + """recusaPedido"""
+      this.prefix + """cadastraHorarios"""
     )
   )
 
-  // @LINE:21
-  private[this] lazy val controllers_HorariosController_excluiHorarioVolta16_route = Route("GET",
+  // @LINE:18
+  private[this] lazy val controllers_HorariosController_excluiHorarioVolta11_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("excluiHorarioVolta")))
   )
-  private[this] lazy val controllers_HorariosController_excluiHorarioVolta16_invoker = createInvoker(
+  private[this] lazy val controllers_HorariosController_excluiHorarioVolta11_invoker = createInvoker(
     HorariosController_2.excluiHorarioVolta(fakeValue[String], fakeValue[Integer]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -377,11 +293,11 @@ class Routes(
     )
   )
 
-  // @LINE:22
-  private[this] lazy val controllers_HorariosController_excluiHorarioIda17_route = Route("GET",
+  // @LINE:19
+  private[this] lazy val controllers_HorariosController_excluiHorarioIda12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("excluiHorarioIda")))
   )
-  private[this] lazy val controllers_HorariosController_excluiHorarioIda17_invoker = createInvoker(
+  private[this] lazy val controllers_HorariosController_excluiHorarioIda12_invoker = createInvoker(
     HorariosController_2.excluiHorarioIda(fakeValue[String], fakeValue[Integer]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -394,11 +310,113 @@ class Routes(
     )
   )
 
+  // @LINE:20
+  private[this] lazy val controllers_HorariosController_cadastraNovoEndereco13_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastraNovoEndereco")))
+  )
+  private[this] lazy val controllers_HorariosController_cadastraNovoEndereco13_invoker = createInvoker(
+    HorariosController_2.cadastraNovoEndereco,
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HorariosController",
+      "cadastraNovoEndereco",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """cadastraNovoEndereco"""
+    )
+  )
+
+  // @LINE:22
+  private[this] lazy val controllers_CaronasController_exibeDetalhes14_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("exibeDetalhes")))
+  )
+  private[this] lazy val controllers_CaronasController_exibeDetalhes14_invoker = createInvoker(
+    CaronasController_1.exibeDetalhes(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CaronasController",
+      "exibeDetalhes",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """exibeDetalhes"""
+    )
+  )
+
   // @LINE:23
-  private[this] lazy val controllers_NotificacoesController_leTodasNotificacoes18_route = Route("GET",
+  private[this] lazy val controllers_CaronasController_buscarCaronas15_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atualizaCaronas")))
+  )
+  private[this] lazy val controllers_CaronasController_buscarCaronas15_invoker = createInvoker(
+    CaronasController_1.buscarCaronas(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CaronasController",
+      "buscarCaronas",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """atualizaCaronas"""
+    )
+  )
+
+  // @LINE:24
+  private[this] lazy val controllers_CaronasController_solicitaCarona16_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("solicitaCarona")))
+  )
+  private[this] lazy val controllers_CaronasController_solicitaCarona16_invoker = createInvoker(
+    CaronasController_1.solicitaCarona(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CaronasController",
+      "solicitaCarona",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """solicitaCarona"""
+    )
+  )
+
+  // @LINE:25
+  private[this] lazy val controllers_CaronasController_aceitaPedido17_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("aceitaPedido")))
+  )
+  private[this] lazy val controllers_CaronasController_aceitaPedido17_invoker = createInvoker(
+    CaronasController_1.aceitaPedido(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CaronasController",
+      "aceitaPedido",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """aceitaPedido"""
+    )
+  )
+
+  // @LINE:26
+  private[this] lazy val controllers_CaronasController_recusaPedido18_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("recusaPedido")))
+  )
+  private[this] lazy val controllers_CaronasController_recusaPedido18_invoker = createInvoker(
+    CaronasController_1.recusaPedido(fakeValue[Long]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CaronasController",
+      "recusaPedido",
+      Seq(classOf[Long]),
+      "GET",
+      """""",
+      this.prefix + """recusaPedido"""
+    )
+  )
+
+  // @LINE:28
+  private[this] lazy val controllers_NotificacoesController_leTodasNotificacoes19_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("leTodasNotificacoes")))
   )
-  private[this] lazy val controllers_NotificacoesController_leTodasNotificacoes18_invoker = createInvoker(
+  private[this] lazy val controllers_NotificacoesController_leTodasNotificacoes19_invoker = createInvoker(
     NotificacoesController_0.leTodasNotificacoes(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -411,11 +429,11 @@ class Routes(
     )
   )
 
-  // @LINE:24
-  private[this] lazy val controllers_NotificacoesController_leNotificacao19_route = Route("GET",
+  // @LINE:29
+  private[this] lazy val controllers_NotificacoesController_leNotificacao20_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("leNotificacao")))
   )
-  private[this] lazy val controllers_NotificacoesController_leNotificacao19_invoker = createInvoker(
+  private[this] lazy val controllers_NotificacoesController_leNotificacao20_invoker = createInvoker(
     NotificacoesController_0.leNotificacao(fakeValue[Long]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -428,11 +446,11 @@ class Routes(
     )
   )
 
-  // @LINE:27
-  private[this] lazy val controllers_HomeController_redefineIdioma20_route = Route("GET",
+  // @LINE:31
+  private[this] lazy val controllers_HomeController_redefineIdioma21_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("redefineIdioma")))
   )
-  private[this] lazy val controllers_HomeController_redefineIdioma20_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_redefineIdioma21_invoker = createInvoker(
     HomeController_3.redefineIdioma(fakeValue[Integer]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -445,11 +463,11 @@ class Routes(
     )
   )
 
-  // @LINE:30
-  private[this] lazy val controllers_Assets_versioned21_route = Route("GET",
+  // @LINE:34
+  private[this] lazy val controllers_Assets_versioned22_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned21_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned22_invoker = createInvoker(
     Assets_5.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -484,9 +502,9 @@ class Routes(
       }
   
     // @LINE:8
-    case controllers_HomeController_editaHorarios3_route(params) =>
+    case controllers_HorariosController_cadastra3_route(params) =>
       call { 
-        controllers_HomeController_editaHorarios3_invoker.call(HomeController_3.editaHorarios())
+        controllers_HorariosController_cadastra3_invoker.call(HorariosController_2.cadastra)
       }
   
     // @LINE:9
@@ -496,105 +514,111 @@ class Routes(
       }
   
     // @LINE:10
-    case controllers_HorariosController_cadastra5_route(params) =>
+    case controllers_AutenticacaoController_efetuaLogout5_route(params) =>
       call { 
-        controllers_HorariosController_cadastra5_invoker.call(HorariosController_2.cadastra)
+        controllers_AutenticacaoController_efetuaLogout5_invoker.call(AutenticacaoController_4.efetuaLogout)
       }
   
-    // @LINE:11
+    // @LINE:12
     case controllers_CaronasController_cadastraNovaCarona6_route(params) =>
       call { 
         controllers_CaronasController_cadastraNovaCarona6_invoker.call(CaronasController_1.cadastraNovaCarona)
       }
   
-    // @LINE:12
-    case controllers_HorariosController_cadastraHorarios7_route(params) =>
-      call { 
-        controllers_HorariosController_cadastraHorarios7_invoker.call(HorariosController_2.cadastraHorarios)
-      }
-  
     // @LINE:13
-    case controllers_HorariosController_cadastraNovoEndereco8_route(params) =>
+    case controllers_HomeController_editaHorarios7_route(params) =>
       call { 
-        controllers_HorariosController_cadastraNovoEndereco8_invoker.call(HorariosController_2.cadastraNovoEndereco)
+        controllers_HomeController_editaHorarios7_invoker.call(HomeController_3.editaHorarios())
       }
   
     // @LINE:14
-    case controllers_AutenticacaoController_efetuaLogout9_route(params) =>
+    case controllers_NotificacoesController_exibeSolicitacoes8_route(params) =>
       call { 
-        controllers_AutenticacaoController_efetuaLogout9_invoker.call(AutenticacaoController_4.efetuaLogout)
+        controllers_NotificacoesController_exibeSolicitacoes8_invoker.call(NotificacoesController_0.exibeSolicitacoes())
       }
   
     // @LINE:15
-    case controllers_CaronasController_exibeDetalhes10_route(params) =>
-      call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_CaronasController_exibeDetalhes10_invoker.call(CaronasController_1.exibeDetalhes(id))
-      }
-  
-    // @LINE:16
-    case controllers_CaronasController_buscarCaronas11_route(params) =>
+    case controllers_CaronasController_exibeCaronasPendentes9_route(params) =>
       call { 
-        controllers_CaronasController_buscarCaronas11_invoker.call(CaronasController_1.buscarCaronas())
+        controllers_CaronasController_exibeCaronasPendentes9_invoker.call(CaronasController_1.exibeCaronasPendentes())
       }
   
     // @LINE:17
-    case controllers_CaronasController_solicitaCarona12_route(params) =>
-      call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_CaronasController_solicitaCarona12_invoker.call(CaronasController_1.solicitaCarona(id))
+    case controllers_HorariosController_cadastraHorarios10_route(params) =>
+      call { 
+        controllers_HorariosController_cadastraHorarios10_invoker.call(HorariosController_2.cadastraHorarios)
       }
   
     // @LINE:18
-    case controllers_NotificacoesController_exibeSolicitacoes13_route(params) =>
-      call { 
-        controllers_NotificacoesController_exibeSolicitacoes13_invoker.call(NotificacoesController_0.exibeSolicitacoes())
+    case controllers_HorariosController_excluiHorarioVolta11_route(params) =>
+      call(params.fromQuery[String]("dia", Some("")), params.fromQuery[Integer]("hora", Some(0))) { (dia, hora) =>
+        controllers_HorariosController_excluiHorarioVolta11_invoker.call(HorariosController_2.excluiHorarioVolta(dia, hora))
       }
   
     // @LINE:19
-    case controllers_CaronasController_aceitaPedido14_route(params) =>
-      call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_CaronasController_aceitaPedido14_invoker.call(CaronasController_1.aceitaPedido(id))
+    case controllers_HorariosController_excluiHorarioIda12_route(params) =>
+      call(params.fromQuery[String]("dia", Some("")), params.fromQuery[Integer]("hora", Some(0))) { (dia, hora) =>
+        controllers_HorariosController_excluiHorarioIda12_invoker.call(HorariosController_2.excluiHorarioIda(dia, hora))
       }
   
     // @LINE:20
-    case controllers_CaronasController_recusaPedido15_route(params) =>
-      call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_CaronasController_recusaPedido15_invoker.call(CaronasController_1.recusaPedido(id))
-      }
-  
-    // @LINE:21
-    case controllers_HorariosController_excluiHorarioVolta16_route(params) =>
-      call(params.fromQuery[String]("dia", Some("")), params.fromQuery[Integer]("hora", Some(0))) { (dia, hora) =>
-        controllers_HorariosController_excluiHorarioVolta16_invoker.call(HorariosController_2.excluiHorarioVolta(dia, hora))
+    case controllers_HorariosController_cadastraNovoEndereco13_route(params) =>
+      call { 
+        controllers_HorariosController_cadastraNovoEndereco13_invoker.call(HorariosController_2.cadastraNovoEndereco)
       }
   
     // @LINE:22
-    case controllers_HorariosController_excluiHorarioIda17_route(params) =>
-      call(params.fromQuery[String]("dia", Some("")), params.fromQuery[Integer]("hora", Some(0))) { (dia, hora) =>
-        controllers_HorariosController_excluiHorarioIda17_invoker.call(HorariosController_2.excluiHorarioIda(dia, hora))
+    case controllers_CaronasController_exibeDetalhes14_route(params) =>
+      call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_CaronasController_exibeDetalhes14_invoker.call(CaronasController_1.exibeDetalhes(id))
       }
   
     // @LINE:23
-    case controllers_NotificacoesController_leTodasNotificacoes18_route(params) =>
+    case controllers_CaronasController_buscarCaronas15_route(params) =>
       call { 
-        controllers_NotificacoesController_leTodasNotificacoes18_invoker.call(NotificacoesController_0.leTodasNotificacoes())
+        controllers_CaronasController_buscarCaronas15_invoker.call(CaronasController_1.buscarCaronas())
       }
   
     // @LINE:24
-    case controllers_NotificacoesController_leNotificacao19_route(params) =>
+    case controllers_CaronasController_solicitaCarona16_route(params) =>
       call(params.fromQuery[Long]("id", None)) { (id) =>
-        controllers_NotificacoesController_leNotificacao19_invoker.call(NotificacoesController_0.leNotificacao(id))
+        controllers_CaronasController_solicitaCarona16_invoker.call(CaronasController_1.solicitaCarona(id))
       }
   
-    // @LINE:27
-    case controllers_HomeController_redefineIdioma20_route(params) =>
+    // @LINE:25
+    case controllers_CaronasController_aceitaPedido17_route(params) =>
+      call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_CaronasController_aceitaPedido17_invoker.call(CaronasController_1.aceitaPedido(id))
+      }
+  
+    // @LINE:26
+    case controllers_CaronasController_recusaPedido18_route(params) =>
+      call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_CaronasController_recusaPedido18_invoker.call(CaronasController_1.recusaPedido(id))
+      }
+  
+    // @LINE:28
+    case controllers_NotificacoesController_leTodasNotificacoes19_route(params) =>
+      call { 
+        controllers_NotificacoesController_leTodasNotificacoes19_invoker.call(NotificacoesController_0.leTodasNotificacoes())
+      }
+  
+    // @LINE:29
+    case controllers_NotificacoesController_leNotificacao20_route(params) =>
+      call(params.fromQuery[Long]("id", None)) { (id) =>
+        controllers_NotificacoesController_leNotificacao20_invoker.call(NotificacoesController_0.leNotificacao(id))
+      }
+  
+    // @LINE:31
+    case controllers_HomeController_redefineIdioma21_route(params) =>
       call(params.fromQuery[Integer]("id", None)) { (id) =>
-        controllers_HomeController_redefineIdioma20_invoker.call(HomeController_3.redefineIdioma(id))
+        controllers_HomeController_redefineIdioma21_invoker.call(HomeController_3.redefineIdioma(id))
       }
   
-    // @LINE:30
-    case controllers_Assets_versioned21_route(params) =>
+    // @LINE:34
+    case controllers_Assets_versioned22_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned21_invoker.call(Assets_5.versioned(path, file))
+        controllers_Assets_versioned22_invoker.call(Assets_5.versioned(path, file))
       }
   }
 }

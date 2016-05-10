@@ -1,5 +1,5 @@
-New log file opened at Mon May 09 22:30:50 BRT 2016 by 5052@pedro-paulo
-jvm 5052@pedro-paulo
+New log file opened at Tue May 10 00:18:21 BRT 2016 by 11499@pedro-paulo
+jvm 11499@pedro-paulo
 jvm vmName=Java HotSpot(TM) Server VM vmVendor=Oracle Corporation vmVersion=25.91-b14
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in /home/pedropfo/workspace/ProjetoSI1/project/project, returning: (projetosi1-build-build)
 Loading project definition from /home/pedropfo/workspace/ProjetoSI1/project/project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@dee508, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@16e641d, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -59,7 +59,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in /home/pedropfo/workspace/ProjetoSI1/project, returning: (projetosi1-build)
 Loading project definition from /home/pedropfo/workspace/ProjetoSI1/project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@dee508, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@16e641d, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -99,3 +99,10 @@ Set current project to caronaUFCG20152 (in build file:/home/pedropfo/workspace/P
 > iflast shell
 > server-send-ready-for-request
 > server-handle-next-server-request
+Done executing sbt server engine, result Right(Exit(0))
+Closing listening server socket
+Waiting for socket thread
+Waiting for request processor thread
+Waiting for command engine result
+Returning control to sbt launcher with result Exit(0)
+Closing the 11499@pedro-paulo logs at Tue May 10 00:24:22 BRT 2016, goodbye.

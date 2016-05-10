@@ -6,6 +6,8 @@
 global.titulo=Vumbora! - Sistema de Caronas
 global.home=Home
 global.solicitacoes=Solicitações
+global.pendentes=Pendentes
+global.horarios=Horários
 global.caronas=Caronas
 global.ajustes=Ajustes
 global.minhas_caronas=Minhas caronas
@@ -83,6 +85,7 @@ agendamento.solicitar=Solicitar Carona
 solicitacoes.nenhuma=Você não possui nenhuma solicitação no momento.
 solicitacoes.negar=Negar
 solicitacoes.aceitar=Vumbora
+solicitacoes.pendente_cabecalho=Caronas aguardando avaliação do motorista
 
 # dias da semana
 dias.segunda=Segunda

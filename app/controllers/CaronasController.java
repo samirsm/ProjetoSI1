@@ -69,8 +69,10 @@ public class CaronasController extends Controller {
           SistemaNotificacao.getInstance().geraNotificacaoAceitacao(pedido);
           loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
 
-          SistemaUsuarioLogin.getInstance().getUsuarioLogado().leNotificacao(pedido);
-            SistemaUsuarioLogin.getInstance().getUsuarioLogado().removeSolicitacao(pedido);
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        user.leNotificacao(pedido);
+        user.removeSolicitacao(pedido);
+        pedido.getUsuarioOrigem().removeCaronaPendente(pedido.getCarona());
           return redirect(routes.NotificacoesController.exibeSolicitacoes());
       }
     
@@ -81,8 +83,10 @@ public class CaronasController extends Controller {
         SistemaNotificacao.getInstance().geraNotificacaoRejeicao(pedido);
         loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
 
-        SistemaUsuarioLogin.getInstance().getUsuarioLogado().leNotificacao(pedido);
-        SistemaUsuarioLogin.getInstance().getUsuarioLogado().removeSolicitacao(pedido);
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        user.leNotificacao(pedido);
+        user.removeSolicitacao(pedido);
+        pedido.getUsuarioOrigem().removeCaronaPendente(pedido.getCarona());
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
 
     }
@@ -92,15 +96,14 @@ public class CaronasController extends Controller {
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
         SistemaNotificacao.getInstance().geraNotificacaoPedido(carona);
         buscarCaronas();
+        SistemaUsuarioLogin.getInstance().getUsuarioLogado().adicionaCaronaPendente(carona);
         return redirect(routes.HomeController.index());
     }
     
     @Security.Authenticated(Secured.class)
     public Result buscarCaronas(){
         List<Carona> caronas = SistemaCarona.getInstance().buscarCaronasDefault();
-        
         loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS, caronas.toString());
-
         return redirect(routes.HomeController.index());
     }
     
@@ -128,5 +131,14 @@ public class CaronasController extends Controller {
     private TipoCarona getTipo(String tipo){
         if ("ida".equals(tipo)) return TipoCarona.IDA;
         else return TipoCarona.VOLTA;
+    }
+
+    @Security.Authenticated(Secured.class)
+    public Result exibeCaronasPendentes() {
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        List<Carona> caronas = user.getCaronas();
+        List<Carona> pendentes = user.getCaronasPendentes();
+        List<Notificacao> notificacoes = user.getNotificacoesNaoLidas();
+        return ok(telaCaronasPendentes.render(user, caronas, pendentes, notificacoes));
     }
 }

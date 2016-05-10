@@ -90,14 +90,46 @@ Seq[Any](format.raw/*1.121*/("""
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
 
-              <li class="dropdown">
+              <!-- Notification -->
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell fa-2x"></i> <b class="caret"></b></a>
+              <ul class="dropdown-menu message-dropdown">
+
+                  """),_display_(/*67.20*/for(notificacao <- notificacoes) yield /*67.52*/{_display_(Seq[Any](format.raw/*67.53*/("""
+                      """),format.raw/*68.23*/("""<li class="message-preview">
+                          <a href="""),_display_(/*69.36*/notificacao/*69.47*/.getReferencia()),format.raw/*69.63*/(""">
+                              <div class="media">
+                                  <div class="media-body">
+                                      <h5 class="media-heading"><strong>"""),_display_(/*72.74*/notificacao/*72.85*/.getUsuarioOrigem().getNome()),format.raw/*72.114*/("""</strong>
+                                      </h5>
+                                      <p class="small">"""),_display_(/*74.57*/notificacao/*74.68*/.getMensagem()),format.raw/*74.82*/("""</p>
+                                  </div>
+                              </div>
+                          </a>
+                      """)))}),format.raw/*78.24*/("""
+                  """),format.raw/*79.19*/("""</li>
+
+                  <li class="message-footer">
+                      """),_display_(/*82.24*/if(notificacoes.size() != 0)/*82.52*/{_display_(Seq[Any](format.raw/*82.53*/("""
+                      """),format.raw/*83.23*/("""<a href="leTodasNotificacoes">"""),_display_(/*83.54*/Messages("global.notificacoes_lidas")),format.raw/*83.91*/("""</a>
+                      """)))}/*84.25*/else/*84.30*/{_display_(Seq[Any](format.raw/*84.31*/("""
+                      """),_display_(/*85.24*/Messages("global.sem_notificacoes")),format.raw/*85.59*/("""
+                      """)))}),format.raw/*86.24*/("""
+
+                  """),format.raw/*88.19*/("""</li>
+              </ul>
+          </li>
+              <!-- end Notification -->
+
+                <!-- Linguas -->
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-2x"></i><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=1">Português</a></h5>
                         </li>
                         <li>
-                           	<h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=2">English</a></h5>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=2">English</a></h5>
                         </li>
                         <li>
                             <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=3">Español</a></h5>
@@ -107,63 +139,33 @@ Seq[Any](format.raw/*1.121*/("""
                         </li>
                     </ul>
                 </li>
-
-              <!-- Notification -->
-          <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell fa-2x"></i> <b class="caret"></b></a>
-              <ul class="dropdown-menu message-dropdown">
-
-                  """),_display_(/*85.20*/for(notificacao <- notificacoes) yield /*85.52*/{_display_(Seq[Any](format.raw/*85.53*/("""
-                      """),format.raw/*86.23*/("""<li class="message-preview">
-                          <a href="""),_display_(/*87.36*/notificacao/*87.47*/.getReferencia()),format.raw/*87.63*/(""">
-                              <div class="media">
-                                  <div class="media-body">
-                                      <h5 class="media-heading"><strong>"""),_display_(/*90.74*/notificacao/*90.85*/.getUsuarioOrigem().getNome()),format.raw/*90.114*/("""</strong>
-                                      </h5>
-                                      <p class="small">"""),_display_(/*92.57*/notificacao/*92.68*/.getMensagem()),format.raw/*92.82*/("""</p>
-                                  </div>
-                              </div>
-                          </a>
-                      """)))}),format.raw/*96.24*/("""
-                  """),format.raw/*97.19*/("""</li>
-
-                  <li class="message-footer">
-                      """),_display_(/*100.24*/if(notificacoes.size() != 0)/*100.52*/{_display_(Seq[Any](format.raw/*100.53*/("""
-                      """),format.raw/*101.23*/("""<a href="leTodasNotificacoes">"""),_display_(/*101.54*/Messages("global.notificacoes_lidas")),format.raw/*101.91*/("""</a>
-                      """)))}/*102.25*/else/*102.30*/{_display_(Seq[Any](format.raw/*102.31*/("""
-                      """),_display_(/*103.24*/Messages("global.sem_notificacoes")),format.raw/*103.59*/("""
-                      """)))}),format.raw/*104.24*/("""
-
-                  """),format.raw/*106.19*/("""</li>
-              </ul>
-          </li>
-              <!-- end Notification -->
+                <!-- end Linguas -->
 
                 <!-- User options -->
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x"></i> """),_display_(/*113.114*/usuarioLogado/*113.127*/.getNome()),format.raw/*113.137*/(""" """),format.raw/*113.138*/("""<b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-2x"></i> """),_display_(/*115.114*/usuarioLogado/*115.127*/.getNome()),format.raw/*115.137*/(""" """),format.raw/*115.138*/("""<b class="caret"></b></a>
                     <ul class="dropdown-menu">
 
                         <li>
-                            <h5 class="media-heading" style="color: #888;"> """),_display_(/*117.78*/Messages("global.bairro")),format.raw/*117.103*/(""" """),format.raw/*117.104*/("""1: """),_display_(/*117.108*/usuarioLogado/*117.121*/.getEndereco().getBairro()),format.raw/*117.147*/("""</h5>
+                            <h5 class="media-heading" style="color: #888;"> """),_display_(/*119.78*/Messages("global.bairro")),format.raw/*119.103*/(""" """),format.raw/*119.104*/("""1: """),_display_(/*119.108*/usuarioLogado/*119.121*/.getEndereco().getBairro()),format.raw/*119.147*/("""</h5>
                         </li>
-                     """),_display_(/*119.23*/if(usuarioLogado.getEnderecoAlternativo().getBairro() != usuarioLogado.getEndereco().getBairro())/*119.120*/{_display_(Seq[Any](format.raw/*119.121*/("""
-                        """),format.raw/*120.25*/("""<li>
-                           	<h5 class="media-heading" style="color: #888;"> """),_display_(/*121.78*/Messages("global.bairro")),format.raw/*121.103*/(""" """),format.raw/*121.104*/("""2: """),_display_(/*121.108*/usuarioLogado/*121.121*/.getEnderecoAlternativo().getBairro()),format.raw/*121.158*/("""</h5>
+                     """),_display_(/*121.23*/if(usuarioLogado.getEnderecoAlternativo().getBairro() != usuarioLogado.getEndereco().getBairro())/*121.120*/{_display_(Seq[Any](format.raw/*121.121*/("""
+                        """),format.raw/*122.25*/("""<li>
+                           	<h5 class="media-heading" style="color: #888;"> """),_display_(/*123.78*/Messages("global.bairro")),format.raw/*123.103*/(""" """),format.raw/*123.104*/("""2: """),_display_(/*123.108*/usuarioLogado/*123.121*/.getEnderecoAlternativo().getBairro()),format.raw/*123.158*/("""</h5>
                         </li>
-                       """)))}),format.raw/*123.25*/("""
-                         """),format.raw/*124.26*/("""<li>
-                           	<h5 class="media-heading" style="color: #888;"> """),_display_(/*125.78*/Messages("global.idioma")),format.raw/*125.103*/(""": """),_display_(/*125.106*/usuarioLogado/*125.119*/.getIdioma()),format.raw/*125.131*/("""</h5>
+                       """)))}),format.raw/*125.25*/("""
+                         """),format.raw/*126.26*/("""<li>
+                           	<h5 class="media-heading" style="color: #888;"> """),_display_(/*127.78*/Messages("global.idioma")),format.raw/*127.103*/(""": """),_display_(/*127.106*/usuarioLogado/*127.119*/.getIdioma()),format.raw/*127.131*/("""</h5>
                         </li>
-                      """),_display_(/*127.24*/if(usuarioLogado.getNumeroVagas() > 0)/*127.62*/{_display_(Seq[Any](format.raw/*127.63*/("""
+                      """),_display_(/*129.24*/if(usuarioLogado.getNumeroVagas() > 0)/*129.62*/{_display_(Seq[Any](format.raw/*129.63*/("""
 
-                        """),format.raw/*129.25*/("""<li>
-                            <h5 class="media-heading"style="color: #888;"> """),_display_(/*130.77*/Messages("global.vagas")),format.raw/*130.101*/(""": """),_display_(/*130.104*/usuarioLogado/*130.117*/.getNumeroVagas()),format.raw/*130.134*/("""</h5>
+                        """),format.raw/*131.25*/("""<li>
+                            <h5 class="media-heading"style="color: #888;"> """),_display_(/*132.77*/Messages("global.vagas")),format.raw/*132.101*/(""": """),_display_(/*132.104*/usuarioLogado/*132.117*/.getNumeroVagas()),format.raw/*132.134*/("""</h5>
                         </li>
-                      """)))}),format.raw/*132.24*/("""
-                        """),format.raw/*133.25*/("""<li class="divider"></li>
+                      """)))}),format.raw/*134.24*/("""
+                        """),format.raw/*135.25*/("""<li class="divider"></li>
                         <li>
-                        	<a href="logout" color="#FFF"> """),_display_(/*135.58*/Messages("global.sair")),format.raw/*135.81*/("""</a>
+                        	<a href="logout" color="#FFF"> """),_display_(/*137.58*/Messages("global.sair")),format.raw/*137.81*/("""</a>
                         </li>
                     </ul>
                 </li>
@@ -179,16 +181,19 @@ Seq[Any](format.raw/*1.121*/("""
                 </br>
                 </br>
                     <li>
-                        <a href="/"><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>"""),_display_(/*151.185*/usuarioLogado/*151.198*/.getNome()),format.raw/*151.208*/("""</a>
+                        <a href="/"><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>"""),_display_(/*153.185*/usuarioLogado/*153.198*/.getNome()),format.raw/*153.208*/("""</a>
                     </li>
                     <li>
-                        <a href="/"><i class="fa fa-fw fa-home fa-3x"></i></br>Home</a>
+                        <a href="/"><i class="fa fa-fw fa-home fa-4x"></i></br><strong>"""),_display_(/*156.89*/Messages("global.home")),format.raw/*156.112*/("""</strong></a>
                     </li>
                     <li>
-                        <a href="solicitacoes"><i class="fa fa-fw fa-paper-plane fa-3x"></i> </br>"""),_display_(/*157.100*/Messages("global.solicitacoes")),format.raw/*157.131*/("""</a>
+                        <a href="solicitacoes"><i class="fa fa-fw fa-paper-plane fa-3x"></i></br><strong>"""),_display_(/*159.107*/Messages("global.solicitacoes")),format.raw/*159.138*/("""</strong></a>
                     </li>
                     <li>
-                        <a href="horarios"><i class="fa fa-calendar fa-3x"></i></br> Horários</a>
+                        <a href="pendentes"><i class="fa fa-clock-o fa-3x"></i></br><strong>"""),_display_(/*162.94*/Messages("global.pendentes")),format.raw/*162.122*/("""</strong></a>
+                    </li>
+                    <li>
+                        <a href="horarios"><i class="fa fa-calendar fa-3x"></i></br><strong>"""),_display_(/*165.94*/Messages("global.horarios")),format.raw/*165.121*/("""</strong></a>
                     </li>
                 </ul>
             </div>
@@ -206,32 +211,32 @@ Seq[Any](format.raw/*1.121*/("""
                         <!-- Page Heading -->
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h3 class="page-header" style="color: #FFF">"""),_display_(/*178.86*/Messages("global.minhas_caronas")),format.raw/*178.119*/("""</h3>
+                                        <h3 class="page-header" style="color: #FFF">"""),_display_(/*183.86*/Messages("global.minhas_caronas")),format.raw/*183.119*/("""</h3>
                                         <ol class="breadcrumb">
-                                          """),_display_(/*180.44*/if(usuarioLogado.getCaronas().size() == 0)/*180.86*/{_display_(Seq[Any](format.raw/*180.87*/("""
-                                            """),format.raw/*181.45*/("""<li class="active">
-                                                """),_display_(/*182.50*/Messages("global.sem_caronas")),format.raw/*182.80*/("""
-                                            """),format.raw/*183.45*/("""</li>
-                                          """)))}),format.raw/*184.44*/("""
-                                        """),format.raw/*185.41*/("""</ol>
+                                          """),_display_(/*185.44*/if(usuarioLogado.getCaronas().size() == 0)/*185.86*/{_display_(Seq[Any](format.raw/*185.87*/("""
+                                            """),format.raw/*186.45*/("""<li class="active">
+                                                """),_display_(/*187.50*/Messages("global.sem_caronas")),format.raw/*187.80*/("""
+                                            """),format.raw/*188.45*/("""</li>
+                                          """)))}),format.raw/*189.44*/("""
+                                        """),format.raw/*190.41*/("""</ol>
                                     </div>
                                 </div>
                         </div>
                       </div>
 
                     <!-- INICIO DO CARD -->
-                    """),_display_(/*192.22*/for(carona <- usuarioLogado.getCaronas()) yield /*192.63*/{_display_(Seq[Any](format.raw/*192.64*/("""
-                    """),format.raw/*193.21*/("""<div>
+                    """),_display_(/*197.22*/for(carona <- usuarioLogado.getCaronas()) yield /*197.63*/{_display_(Seq[Any](format.raw/*197.64*/("""
+                    """),format.raw/*198.21*/("""<div>
                         <div class="panel panel-blue-ida">
                             <div class="panel-heading">
                                 <h1 class="panel-title">
                                 		<table class="table">
                   									    <tbody>
                   											<tr>
-                  												<th><div><img src="assets/images/users/default.jpg" id="show-option" title=""""),_display_(/*200.108*/carona/*200.114*/.getMotorista().getNome()),format.raw/*200.139*/("""" class="img-circle" style="border: 2px solid #FFF;" height="50" width="50"></i></div></th>
-                  												<th><i class="fa fa-car fa-1x "></i> """),_display_(/*201.69*/carona/*201.75*/.getTipo()),format.raw/*201.85*/("""</th>
-                  												<th><div><img src="assets/SBAdminTemplate/img/vagasBranco.png" align="left" height="20" width="20"></i>"""),_display_(/*202.135*/carona/*202.141*/.getVagasDisponiveis()),format.raw/*202.163*/("""</div></th>
-                  												<th><i class="fa fa-clock-o fa-1x"></i> """),_display_(/*203.72*/carona/*203.78*/.getHorario.getHora()),format.raw/*203.99*/("""</th>
+                  												<th><div><img src="assets/images/users/default.jpg" id="show-option" title=""""),_display_(/*205.108*/carona/*205.114*/.getMotorista().getNome()),format.raw/*205.139*/("""" class="img-circle" style="border: 2px solid #FFF;" height="50" width="50"></i></div></th>
+                  												<th><i class="fa fa-car fa-1x "></i> """),_display_(/*206.69*/carona/*206.75*/.getTipo()),format.raw/*206.85*/("""</th>
+                  												<th><div><img src="assets/SBAdminTemplate/img/vagasBranco.png" align="left" height="20" width="20"></i>"""),_display_(/*207.135*/carona/*207.141*/.getVagasDisponiveis()),format.raw/*207.163*/("""</div></th>
+                  												<th><i class="fa fa-clock-o fa-1x"></i> """),_display_(/*208.72*/carona/*208.78*/.getHorario.getHora()),format.raw/*208.99*/("""</th>
                       										</tr>
                   									    </tbody>
                   									</table>
@@ -239,37 +244,37 @@ Seq[Any](format.raw/*1.121*/("""
                                 </h1>
                             </div>
                             <div class="panel-body">
-                              """),_display_(/*211.32*/if(carona.getPassageiros().size != 0)/*211.69*/{_display_(Seq[Any](format.raw/*211.70*/("""
-                                """),format.raw/*212.33*/("""<div class="col-xs-12">
+                              """),_display_(/*216.32*/if(carona.getPassageiros().size != 0)/*216.69*/{_display_(Seq[Any](format.raw/*216.70*/("""
+                                """),format.raw/*217.33*/("""<div class="col-xs-12">
                                   <table class="table">
                                       <tbody>
                                         <tr>
-                                          """),_display_(/*216.44*/for(passageiro <- carona.getPassageiros()) yield /*216.86*/{_display_(Seq[Any](format.raw/*216.87*/("""
-                                              """),format.raw/*217.47*/("""<th><div><img src="assets/images/users/default.jpg" id="show-option" title=""""),_display_(/*217.124*/passageiro/*217.134*/.getNome()),format.raw/*217.144*/("""" class="img-circle" style="border: 2px solid #82b1ff" height="40" width="40"></i></div></th>
-                                            """)))}),format.raw/*218.46*/("""
-                                        """),format.raw/*219.41*/("""</tr>
+                                          """),_display_(/*221.44*/for(passageiro <- carona.getPassageiros()) yield /*221.86*/{_display_(Seq[Any](format.raw/*221.87*/("""
+                                              """),format.raw/*222.47*/("""<th><div><img src="assets/images/users/default.jpg" id="show-option" title=""""),_display_(/*222.124*/passageiro/*222.134*/.getNome()),format.raw/*222.144*/("""" class="img-circle" style="border: 2px solid #82b1ff" height="40" width="40"></i></div></th>
+                                            """)))}),format.raw/*223.46*/("""
+                                        """),format.raw/*224.41*/("""</tr>
                                       </tbody>
 
                                   </table>
                                 </div>
-                              """)))}/*224.33*/else/*224.38*/{_display_(Seq[Any](format.raw/*224.39*/("""
-                              """),format.raw/*225.31*/("""<div class="col-xs-12">
+                              """)))}/*229.33*/else/*229.38*/{_display_(Seq[Any](format.raw/*229.39*/("""
+                              """),format.raw/*230.31*/("""<div class="col-xs-12">
                                 <table class="table">
                                     <tbody>
                                     <tr>
-                                      <th> """),_display_(/*229.45*/Messages("global.sem_passageiros")),format.raw/*229.79*/("""</th>
+                                      <th> """),_display_(/*234.45*/Messages("global.sem_passageiros")),format.raw/*234.79*/("""</th>
                                       </tr>
                                     </tbody>
                                 </table>
                               </div>
-                            """)))}),format.raw/*234.30*/("""
+                            """)))}),format.raw/*239.30*/("""
 
 
-                            """),format.raw/*237.29*/("""</div>
+                            """),format.raw/*242.29*/("""</div>
                         </div>
                     </div>
-                  """)))}),format.raw/*240.20*/("""
-                """),format.raw/*241.17*/("""</li><!-- FIM DO CARD -->
+                  """)))}),format.raw/*245.20*/("""
+                """),format.raw/*246.17*/("""</li><!-- FIM DO CARD -->
                 </ul>
             </div>
 
@@ -277,8 +282,8 @@ Seq[Any](format.raw/*1.121*/("""
         </nav>
     </div>
 
-    """),_display_(/*249.6*/content),format.raw/*249.13*/("""
-    """),format.raw/*250.5*/("""<!-- /#wrapper -->
+    """),_display_(/*254.6*/content),format.raw/*254.13*/("""
+    """),format.raw/*255.5*/("""<!-- /#wrapper -->
     <!-- jQuery -->
     <script src="assets/SBAdminTemplate/js/jquery.js"></script>
 
@@ -312,11 +317,11 @@ Seq[Any](format.raw/*1.121*/("""
 object main extends main_Scope0.main
               /*
                   -- GENERATED --
-                  DATE: Mon May 09 22:14:07 BRT 2016
+                  DATE: Tue May 10 00:18:08 BRT 2016
                   SOURCE: /home/pedropfo/workspace/ProjetoSI1/app/views/main.scala.html
-                  HASH: c639b1d4f249785f3fa7399fc9e1d49fe14f693a
-                  MATRIX: 787->1|1002->120|1030->122|1270->335|1296->340|1872->888|1901->889|1941->901|2165->1097|2194->1098|2233->1109|2266->1114|2295->1115|2331->1124|2379->1145|2407->1146|2443->1155|2487->1171|2516->1172|2552->1181|2631->1233|2659->1234|2692->1240|4442->2963|4490->2995|4529->2996|4580->3019|4671->3083|4691->3094|4728->3110|4939->3294|4959->3305|5010->3334|5147->3444|5167->3455|5202->3469|5370->3606|5417->3625|5521->3701|5559->3729|5599->3730|5651->3753|5710->3784|5769->3821|5817->3850|5831->3855|5871->3856|5923->3880|5980->3915|6036->3939|6085->3959|6386->4231|6410->4244|6443->4254|6474->4255|6682->4435|6730->4460|6761->4461|6794->4465|6818->4478|6867->4504|6953->4562|7061->4659|7102->4660|7156->4685|7266->4767|7314->4792|7345->4793|7378->4797|7402->4810|7462->4847|7554->4907|7609->4933|7719->5015|7767->5040|7799->5043|7823->5056|7858->5068|7945->5127|7993->5165|8033->5166|8088->5192|8197->5273|8244->5297|8276->5300|8300->5313|8340->5330|8431->5389|8485->5414|8625->5526|8670->5549|9385->6235|9409->6248|9442->6258|9765->6552|9819->6583|10772->7508|10828->7541|10969->7654|11021->7696|11061->7697|11135->7742|11232->7811|11284->7841|11358->7886|11439->7935|11509->7976|11751->8190|11809->8231|11849->8232|11899->8253|12342->8667|12359->8673|12407->8698|12595->8858|12611->8864|12643->8874|12812->9014|12829->9020|12874->9042|12985->9125|13001->9131|13044->9152|13350->9430|13397->9467|13437->9468|13499->9501|13741->9715|13800->9757|13840->9758|13916->9805|14022->9882|14043->9892|14076->9902|14247->10041|14317->10082|14504->10250|14518->10255|14558->10256|14618->10287|14853->10494|14909->10528|15143->10730|15203->10761|15319->10845|15365->10862|15531->11001|15560->11008|15593->11013
-                  LINES: 27->1|32->1|34->3|43->12|43->12|62->31|62->31|63->32|67->36|67->36|68->37|68->37|68->37|69->38|70->39|70->39|72->41|72->41|72->41|73->42|75->44|75->44|77->46|116->85|116->85|116->85|117->86|118->87|118->87|118->87|121->90|121->90|121->90|123->92|123->92|123->92|127->96|128->97|131->100|131->100|131->100|132->101|132->101|132->101|133->102|133->102|133->102|134->103|134->103|135->104|137->106|144->113|144->113|144->113|144->113|148->117|148->117|148->117|148->117|148->117|148->117|150->119|150->119|150->119|151->120|152->121|152->121|152->121|152->121|152->121|152->121|154->123|155->124|156->125|156->125|156->125|156->125|156->125|158->127|158->127|158->127|160->129|161->130|161->130|161->130|161->130|161->130|163->132|164->133|166->135|166->135|182->151|182->151|182->151|188->157|188->157|209->178|209->178|211->180|211->180|211->180|212->181|213->182|213->182|214->183|215->184|216->185|223->192|223->192|223->192|224->193|231->200|231->200|231->200|232->201|232->201|232->201|233->202|233->202|233->202|234->203|234->203|234->203|242->211|242->211|242->211|243->212|247->216|247->216|247->216|248->217|248->217|248->217|248->217|249->218|250->219|255->224|255->224|255->224|256->225|260->229|260->229|265->234|268->237|271->240|272->241|280->249|280->249|281->250
+                  HASH: 367d1e78032b92c28b69f95676210945c8923914
+                  MATRIX: 787->1|1002->120|1030->122|1270->335|1296->340|1872->888|1901->889|1941->901|2165->1097|2194->1098|2233->1109|2266->1114|2295->1115|2331->1124|2379->1145|2407->1146|2443->1155|2487->1171|2516->1172|2552->1181|2631->1233|2659->1234|2692->1240|3442->1963|3490->1995|3529->1996|3580->2019|3671->2083|3691->2094|3728->2110|3939->2294|3959->2305|4010->2334|4147->2444|4167->2455|4202->2469|4370->2606|4417->2625|4520->2701|4557->2729|4596->2730|4647->2753|4705->2784|4763->2821|4810->2850|4823->2855|4862->2856|4913->2880|4969->2915|5024->2939|5072->2959|6445->4303|6469->4316|6502->4326|6533->4327|6741->4507|6789->4532|6820->4533|6853->4537|6877->4550|6926->4576|7012->4634|7120->4731|7161->4732|7215->4757|7325->4839|7373->4864|7404->4865|7437->4869|7461->4882|7521->4919|7613->4979|7668->5005|7778->5087|7826->5112|7858->5115|7882->5128|7917->5140|8004->5199|8052->5237|8092->5238|8147->5264|8256->5345|8303->5369|8335->5372|8359->5385|8399->5402|8490->5461|8544->5486|8684->5598|8729->5621|9444->6307|9468->6320|9501->6330|9673->6474|9719->6497|9919->6668|9973->6699|10159->6857|10210->6885|10396->7043|10446->7070|11259->7855|11315->7888|11456->8001|11508->8043|11548->8044|11622->8089|11719->8158|11771->8188|11845->8233|11926->8282|11996->8323|12238->8537|12296->8578|12336->8579|12386->8600|12829->9014|12846->9020|12894->9045|13082->9205|13098->9211|13130->9221|13299->9361|13316->9367|13361->9389|13472->9472|13488->9478|13531->9499|13837->9777|13884->9814|13924->9815|13986->9848|14228->10062|14287->10104|14327->10105|14403->10152|14509->10229|14530->10239|14563->10249|14734->10388|14804->10429|14991->10597|15005->10602|15045->10603|15105->10634|15340->10841|15396->10875|15630->11077|15690->11108|15806->11192|15852->11209|16018->11348|16047->11355|16080->11360
+                  LINES: 27->1|32->1|34->3|43->12|43->12|62->31|62->31|63->32|67->36|67->36|68->37|68->37|68->37|69->38|70->39|70->39|72->41|72->41|72->41|73->42|75->44|75->44|77->46|98->67|98->67|98->67|99->68|100->69|100->69|100->69|103->72|103->72|103->72|105->74|105->74|105->74|109->78|110->79|113->82|113->82|113->82|114->83|114->83|114->83|115->84|115->84|115->84|116->85|116->85|117->86|119->88|146->115|146->115|146->115|146->115|150->119|150->119|150->119|150->119|150->119|150->119|152->121|152->121|152->121|153->122|154->123|154->123|154->123|154->123|154->123|154->123|156->125|157->126|158->127|158->127|158->127|158->127|158->127|160->129|160->129|160->129|162->131|163->132|163->132|163->132|163->132|163->132|165->134|166->135|168->137|168->137|184->153|184->153|184->153|187->156|187->156|190->159|190->159|193->162|193->162|196->165|196->165|214->183|214->183|216->185|216->185|216->185|217->186|218->187|218->187|219->188|220->189|221->190|228->197|228->197|228->197|229->198|236->205|236->205|236->205|237->206|237->206|237->206|238->207|238->207|238->207|239->208|239->208|239->208|247->216|247->216|247->216|248->217|252->221|252->221|252->221|253->222|253->222|253->222|253->222|254->223|255->224|260->229|260->229|260->229|261->230|265->234|265->234|270->239|273->242|276->245|277->246|285->254|285->254|286->255
                   -- GENERATED --
               */
           
