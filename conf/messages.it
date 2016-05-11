@@ -12,6 +12,7 @@ global.caronas=Passaggi
 global.ajustes=Ajustes
 global.minhas_caronas=I miei passeggi
 global.sem_caronas=Non avete passeggi registrati.
+global.cheia=Pieno
 global.ida=Andata
 global.volta=Ritorno
 global.nome=Nome
@@ -21,6 +22,7 @@ global.senha=Password
 global.rua=Via
 global.bairro=Quartiere
 global.vagas=Seggiolini disponibili
+global.passageiros=Passeggeri
 global.notificacoes_lidas=Segna tutte come già lette
 global.sem_notificacoes=Non ci sono notifiche non lette
 global.sair=Uscire di questo account
@@ -71,7 +73,7 @@ view_usuario.publique=Pubblicare
 view_usuario.busque=Cercare
 view_usuario.recentes=Pubblicazioni recenti
 view_usuario.pedir=Chiedere
-view_usuario.sem_caronas=Non ci sono passeggi disponibile adesso :(
+view_usuario.sem_caronas=Non ci sono passeggi per il tuo quartiere disponibile adesso :(
 
 # agendamento
 agendamento.marcar=Programmare un passeggio con
@@ -85,6 +87,7 @@ agendamento.solicitar=Solicitare passegio
 solicitacoes.nenhuma=Non avete nessuna solicitazione adesso.
 solicitacoes.negar=Negare
 solicitacoes.aceitar=Accetare
+solicitacoes.solicitacoes_cabecalho=Richieste di passeggio in attesa della tua approvazione
 solicitacoes.pendente_cabecalho=Passeggi in attesa della avaliazione del guidante
 solicitacoes.sem_pendentes=Nessun passeggio in attesa.
 

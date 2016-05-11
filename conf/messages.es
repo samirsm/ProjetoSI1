@@ -12,6 +12,7 @@ global.caronas=Aventones
 global.ajustes=Ajustes
 global.minhas_caronas=Mis aventones
 global.sem_caronas=No tienes aventones registrados.
+global.cheia=Lleno
 global.ida=Ida
 global.volta=Retorno
 global.nome=Nombre
@@ -22,6 +23,7 @@ global.senha=Contraseña
 global.rua=Calle
 global.bairro=Barrio
 global.vagas=Asientos disponibles
+global.passageiros=Pasageros
 global.notificacoes_lidas=Definir todas como leídas
 global.sem_notificacoes=No hay notificaciones no leídas
 global.sair=Salir de esta cuenta
@@ -72,7 +74,7 @@ view_usuario.publique=Publicar
 view_usuario.busque=Buscar
 view_usuario.recentes=Publicaiones recentes
 view_usuario.pedir=Pedir
-view_usuario.sem_caronas=No hay aventones disponibles ahora :(
+view_usuario.sem_caronas=No hay aventones para tu barrio disponibles ahora :(
 
 # agendamento
 agendamento.marcar=Programar un aventón con
@@ -83,9 +85,10 @@ agendamento.voltar=Volver a los Aventones
 agendamento.solicitar=Solicitar Aventón
 
 # solicitacoes
-solicitacoes.nenhuma=Tú no tienes ninguna solicitación en este momento.
+solicitacoes.nenhuma=No tienes ninguna solicitación en este momento.
 solicitacoes.negar=Negar
 solicitacoes.aceitar=Vumbora
+solicitacoes.solicitacoes_cabecalho=Solicitacione de aventón aguardando tu aprobación
 solicitacoes.pendente_cabecalho=Aventones aguardando avaliación del motorista
 solicitacoes.sem_pendentes=Ningún aventón pendiente.
 

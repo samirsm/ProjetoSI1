@@ -60,20 +60,19 @@ public class CaronasController extends Controller {
     
     @Security.Authenticated(Secured.class)
     public Result aceitaPedido(Long id){
+        Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(id);
 
-      Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(id);
-
-
-          SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getUsuarioOrigem());
-          loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
-          SistemaNotificacao.getInstance().geraNotificacaoAceitacao(pedido);
-          loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
+        SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getUsuarioOrigem());
+        loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
+        SistemaNotificacao.getInstance().geraNotificacaoAceitacao(pedido);
+        loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
 
         Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        user.leNotificacao(pedido);
         user.removeSolicitacao(pedido);
+        pedido.getCarona().getMotorista().removeSolicitacao(pedido);
+        user.leNotificacao(pedido);
         pedido.getUsuarioOrigem().removeCaronaPendente(pedido.getCarona());
-          return redirect(routes.NotificacoesController.exibeSolicitacoes());
+        return redirect(routes.NotificacoesController.exibeSolicitacoes());
       }
     
     @Security.Authenticated(Secured.class)
@@ -84,8 +83,9 @@ public class CaronasController extends Controller {
         loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
 
         Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        user.leNotificacao(pedido);
         user.removeSolicitacao(pedido);
+        pedido.getCarona().getMotorista().removeSolicitacao(pedido);
+        user.leNotificacao(pedido);
         pedido.getUsuarioOrigem().removeCaronaPendente(pedido.getCarona());
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
 

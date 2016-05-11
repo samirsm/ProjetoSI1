@@ -1,16 +1,28 @@
-New log file opened at Tue May 10 00:18:21 BRT 2016 by 11499@pedro-paulo
-Taking next connection to: 56777
-New client attempting to connect on port: 58196-56777
-  Address = /127.0.1.1:56777
-This client on port 58196 has uuid 36b13ee3-169a-4281-b8ee-fd12526ea7ec configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-36b13ee3-169a-4281-b8ee-fd12526ea7ec
-Taking next connection to: 56777
+New log file opened at Tue May 10 21:24:34 BRT 2016 by 16489@pedro-paulo
+Taking next connection to: 47320
+New client attempting to connect on port: 42835-47320
+  Address = /127.0.1.1:47320
+This client on port 42835 has uuid 31899c29-7f58-4240-bc1c-3e697e759521 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-31899c29-7f58-4240-bc1c-3e697e759521
+Taking next connection to: 47320
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 56777
-Checking to see if clients are empty...
-No non-daemon clients connected after 3 min. Shutting down.
-Server socket thread exiting.
-0 clients open, will close them...
-All client sockets have been closed.
-Closing the 11499@pedro-paulo logs at Tue May 10 00:24:22 BRT 2016, goodbye.
+Taking next connection to: 47320
+New client attempting to connect on port: 42857-47320
+  Address = /127.0.1.1:47320
+Handshake exception on socket: 42857
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 47320
+New client attempting to connect on port: 42858-47320
+  Address = /127.0.1.1:47320
+This client on port 42858 has uuid b80ad765-286a-4846-8a35-449033787a74 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-b80ad765-286a-4846-8a35-449033787a74
+Taking next connection to: 47320

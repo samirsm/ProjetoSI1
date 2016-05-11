@@ -21,7 +21,6 @@ public class Usuario extends Model {
 	private List<Carona> caronasPendentes = new ArrayList<>();
     private Idioma idioma = Idioma.PORTUGUES;
 
-
 	private List<Notificacao> solicitacoes = new ArrayList<Notificacao>();
 
     private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
@@ -72,13 +71,16 @@ public class Usuario extends Model {
 	}
 
 	public void removeSolicitacao(Notificacao solicitacao) {
-		solicitacao.setStatus(true);
 		solicitacoes.remove(solicitacao);
 	}
 
-
 	public List<Notificacao> getSolicitacoes() {
-		return solicitacoes;
+		List<Notificacao> soli = new ArrayList<>();
+		for(int i = 0; i< notificacoesNaoLidas.size(); i++){
+			if(notificacoesNaoLidas.get(i).getTipo() == TipoNotificacao.PEDIDO)
+				soli.add(notificacoesNaoLidas.get(i));
+		}
+		return soli;
 	}
 
 	///// FIM Notificacoes /////

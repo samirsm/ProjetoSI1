@@ -1,11 +1,11 @@
-2016-05-10 00:15:27,912 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-9 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
-2016-05-10 00:15:42,890 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
-2016-05-10 00:15:43,283 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
-2016-05-10 00:15:43,291 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
-2016-05-10 00:15:43,824 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
-2016-05-10 00:15:44,518 [ERROR] from application in netty-event-loop-3 - 
+2016-05-10 21:29:24,841 [INFO] from play.core.server.NettyServer in play-fork-run-akka.actor.default-dispatcher-7 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-05-10 21:29:38,035 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-10 21:29:38,335 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-10 21:29:38,341 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-10 21:29:38,772 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-10 21:29:39,280 [ERROR] from application in netty-event-loop-3 - 
 
-! @703b72ngg - Internal server error, for (GET) [/] ->
+! @703hi9ibk - Internal server error, for (GET) [/] ->
  
 play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
 	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:76)
@@ -57,41 +57,22 @@ play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evoluti
 	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
 	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
-2016-05-10 00:16:07,367 [INFO] from application in ForkJoinPool-1-worker-2 - Creating Pool for datasource 'default'
-2016-05-10 00:16:07,371 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-2 - datasource [default] bound to JNDI as DefaultDS
-2016-05-10 00:16:07,371 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-2 - Database [default] connected at jdbc:h2:mem:play
-2016-05-10 00:16:07,436 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-2 - Bean [models.Endereco] has no unique id set
-2016-05-10 00:16:07,582 [WARN] from application in ForkJoinPool-1-worker-2 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-10 00:16:08,169 [INFO] from play.api.Play in ForkJoinPool-1-worker-2 - Application started (Dev)
-2016-05-10 00:16:45,345 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Tue May 10 00:16:45 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: kaio@mail.com ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||
-2016-05-10 00:16:45,345 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Tue May 10 00:16:45 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: kaio@mail.com ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||4||
-2016-05-10 00:16:45,346 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Tue May 10 00:16:45 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110482 Email: kaio@mail.com ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||4||
-2016-05-10 00:16:50,701 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Tue May 10 00:16:50 BRT 2016] O usuário efetuou login: Kaio[Matricula: 114110482 Email: kaio@mail.com ]||
-2016-05-10 00:16:50,702 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Tue May 10 00:16:50 BRT 2016] O usuário está sendo autenticado pelo sistema: Kaio[Matricula: 114110482 Email: kaio@mail.com ]||
-2016-05-10 00:16:50,702 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Tue May 10 00:16:50 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Kaio[Matricula: 114110482 Email: kaio@mail.com ]||
-2016-05-10 00:17:39,927 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2016-05-10 00:17:40,188 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2016-05-10 00:17:40,193 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-2 - datasource [default] bound to JNDI as DefaultDS
-2016-05-10 00:17:40,198 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:h2:mem:play
-2016-05-10 00:17:40,304 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-2 - Bean [models.Endereco] has no unique id set
-2016-05-10 00:17:40,411 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-10 00:17:40,584 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-05-10 00:18:10,074 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2016-05-10 00:18:10,260 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2016-05-10 00:18:10,262 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2016-05-10 00:18:10,263 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:h2:mem:play
-2016-05-10 00:18:10,344 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-4 - Bean [models.Endereco] has no unique id set
-2016-05-10 00:18:10,439 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-10 00:18:10,551 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-05-10 00:18:10,581 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Tue May 10 00:18:10 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||
-2016-05-10 00:18:10,582 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Tue May 10 00:18:10 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||3||
-2016-05-10 00:18:10,588 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Tue May 10 00:18:10 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||3||
-2016-05-10 00:18:14,101 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Tue May 10 00:18:14 BRT 2016] O usuário efetuou login: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
-2016-05-10 00:18:14,101 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Tue May 10 00:18:14 BRT 2016] O usuário está sendo autenticado pelo sistema: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
-2016-05-10 00:18:14,101 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-9 - [Tue May 10 00:18:14 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
-2016-05-10 00:18:30,547 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Tue May 10 00:18:30 BRT 2016] O usuário adicionou um horário à lista de horários: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||Ida||Segunda||8||
-2016-05-10 00:18:32,491 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Tue May 10 00:18:32 BRT 2016] O usuário cadastrou seus horários de ida/volta: [Dia: Segunda Hora: 8]||[]||
-2016-05-10 00:18:36,547 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Tue May 10 00:18:36 BRT 2016] O usuário adicionou uma carona ao sistema: Dia: Segunda Hora: 8||Ida||1||
-2016-05-10 00:18:36,548 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Tue May 10 00:18:36 BRT 2016] O sistema registrou um erro: [Dia: Segunda Hora: 8]||
-2016-05-10 00:18:36,548 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Tue May 10 00:18:36 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.
-2016-05-10 00:23:13,766 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2016-05-10 21:29:43,296 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-10 21:29:43,299 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-10 21:29:43,299 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-10 21:29:43,363 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-1-worker-1 - Bean [models.Endereco] has no unique id set
+2016-05-10 21:29:43,504 [WARN] from application in ForkJoinPool-1-worker-1 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-10 21:29:43,977 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-05-10 21:30:06,115 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Tue May 10 21:30:06 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||
+2016-05-10 21:30:06,116 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Tue May 10 21:30:06 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||2||
+2016-05-10 21:30:06,117 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Tue May 10 21:30:06 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||2||
+2016-05-10 21:30:10,092 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Tue May 10 21:30:10 BRT 2016] O usuário efetuou login: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-10 21:30:10,092 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Tue May 10 21:30:10 BRT 2016] O usuário está sendo autenticado pelo sistema: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-10 21:30:10,092 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Tue May 10 21:30:10 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-10 21:31:15,860 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Tue May 10 21:31:15 BRT 2016] O usuário adicionou um horário à lista de horários: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||Ida||Segunda||8||
+2016-05-10 21:31:19,957 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-21 - [Tue May 10 21:31:19 BRT 2016] O usuário cadastrou seus horários de ida/volta: []||[]||
+2016-05-10 21:31:21,711 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Tue May 10 21:31:21 BRT 2016] O usuário adicionou uma carona ao sistema: Dia: Segunda Hora: 8||Ida||1||
+2016-05-10 21:31:21,712 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Tue May 10 21:31:21 BRT 2016] O sistema registrou um erro: []||
+2016-05-10 21:31:21,712 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Tue May 10 21:31:21 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.
+2016-05-10 21:31:23,402 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Tue May 10 21:31:23 BRT 2016] O usuário efetuou logout: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+2016-05-10 21:31:28,985 [INFO] from application in play-fork-run-akka.actor.default-dispatcher-7 - Shutting down connection pool.
