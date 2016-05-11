@@ -1,0 +1,25 @@
+New log file opened at Wed May 11 15:45:17 BRT 2016 by 20601@paulovss-Inspiron-5437
+Taking next connection to: 55329
+New client attempting to connect on port: 41912-55329
+  Address = /127.0.1.1:55329
+This client on port 41912 has uuid 8ae3ceec-36f2-48f8-9977-b45cee15db28 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-8ae3ceec-36f2-48f8-9977-b45cee15db28
+Taking next connection to: 55329
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 55329
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 55329
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 55329
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 55329
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 55329
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 55329

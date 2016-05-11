@@ -46,10 +46,7 @@ public class Usuario extends Model {
 		return id;
 	}
 	private void setId(){
-		double idTemp = Integer.parseInt(dadosPessoais.getMatricula()) * Math.random() * 13;
-		idTemp %= 1;
-		idTemp *= 100000;
-		id = (long) idTemp;
+		id = (long) dadosPessoais.getMatricula().hashCode();
 	}
 	public String getEnderecoPerfil(){
 		return "perfil?id=" + this.getId();
@@ -89,12 +86,12 @@ public class Usuario extends Model {
 	}
 
 	public List<Notificacao> getSolicitacoes() {
-		List<Notificacao> soli = new ArrayList<>();
+		List<Notificacao> solicitacoes = new ArrayList<>();
 		for(int i = 0; i< notificacoesNaoLidas.size(); i++){
 			if(notificacoesNaoLidas.get(i).getTipo() == TipoNotificacao.PEDIDO)
-				soli.add(notificacoesNaoLidas.get(i));
+				solicitacoes.add(notificacoesNaoLidas.get(i));
 		}
-		return soli;
+		return solicitacoes;
 	}
 
 	///// FIM Notificacoes /////

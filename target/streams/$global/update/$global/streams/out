@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/home/pedropfo/workspace/ProjetoSI1/}myProject...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/home/paulovss/CaronaUFCG20152/ProjetoSI1/}myProject...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, fork-run][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.7 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1ed37f5[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@3614783a[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.7] org.scala-lang#scala-library;2.11.7[0m
@@ -57,7 +57,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.11;1.0.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang.modules#scala-xml_2.11;1.0.1 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->runtime(*)][0m
@@ -296,7 +296,7 @@
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.11;2.4.0->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.11;2.4.0->org.slf4j#slf4j-api;1.7.12 [compile->master(compile)][0m
@@ -664,7 +664,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-server_2.11;2.5.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-server_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-server_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-server_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-server_2.11;2.5.1->com.typesafe.play#play_2.11;2.5.1 [compile->master(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play_2.11;2.5.1 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play_2.11;2.5.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
@@ -993,8 +992,8 @@
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->runtime(*)][0m
@@ -1913,22 +1912,22 @@
 [0m[[0mdebug[0m] [0m	found org.apache.directory.api#api-all;1.0.0-M14 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving xpp3#xpp3;1.1.4c ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: xpp3#xpp3;1.1.4c {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: xpp3#xpp3;1.1.4c {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: xpp3#xpp3;1.1.4c[0m
 [0m[[0mdebug[0m] [0m	found xpp3#xpp3;1.1.4c in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving dom4j#dom4j;1.6.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: dom4j#dom4j;1.6.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: dom4j#dom4j;1.6.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: dom4j#dom4j;1.6.1[0m
 [0m[[0mdebug[0m] [0m	found dom4j#dom4j;1.6.1 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->runtime(*)][0m
@@ -1936,25 +1935,41 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving commons-pool#commons-pool;1.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-pool#commons-pool;1.6 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-pool#commons-pool;1.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: commons-pool#commons-pool;1.6[0m
 [0m[[0mdebug[0m] [0m	found commons-pool#commons-pool;1.6 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.apache.mina#mina-core;2.0.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.mina#mina-core;2.0.7 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.apache.mina#mina-core;2.0.7 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.apache.mina#mina-core;2.0.7[0m
 [0m[[0mdebug[0m] [0m	found org.apache.mina#mina-core;2.0.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->runtime(*)][0m
@@ -1962,36 +1977,36 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving commons-lang#commons-lang;2.6 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-lang#commons-lang;2.6 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-lang#commons-lang;2.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: commons-lang#commons-lang;2.6[0m
 [0m[[0mdebug[0m] [0m	found commons-lang#commons-lang;2.6 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving commons-collections#commons-collections;3.2.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-collections#commons-collections;3.2.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-collections#commons-collections;3.2.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: commons-collections#commons-collections;3.2.1[0m
 [0m[[0mdebug[0m] [0m	found commons-collections#commons-collections;3.2.1 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving antlr#antlr;2.7.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: antlr#antlr;2.7.7 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: antlr#antlr;2.7.7 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: antlr#antlr;2.7.7[0m
 [0m[[0mdebug[0m] [0m	found antlr#antlr;2.7.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [runtime->runtime(*)][0m
@@ -2032,37 +2047,37 @@
 [0m[[0mdebug[0m] [0m	found org.hibernate#hibernate-core;4.2.3.Final in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final[0m
 [0m[[0mdebug[0m] [0m	found org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final[0m
 [0m[[0mdebug[0m] [0m	found org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.hibernate.common#hibernate-commons-annotations;4.0.2.Final ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hibernate.common#hibernate-commons-annotations;4.0.2.Final {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hibernate.common#hibernate-commons-annotations;4.0.2.Final {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.hibernate.common#hibernate-commons-annotations;4.0.2.Final[0m
 [0m[[0mdebug[0m] [0m	found org.hibernate.common#hibernate-commons-annotations;4.0.2.Final in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->runtime(*)][0m
@@ -2070,8 +2085,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.2.1.Final [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.2.1.Final [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [runtime->runtime(*)][0m
@@ -2098,23 +2113,23 @@
 [0m[[0mdebug[0m] [0m	found org.hibernate#hibernate-entitymanager;4.2.3.Final in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->compile][0m
@@ -2161,7 +2176,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -2310,8 +2325,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-stream_2.11;2.4.2->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
@@ -3100,35 +3115,51 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [runtime->runtime(*)][0m
@@ -3167,25 +3198,25 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [runtime->runtime(*)][0m
@@ -3211,23 +3242,23 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [runtime->runtime(*)][0m
@@ -3273,7 +3304,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -3422,8 +3453,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-stream_2.11;2.4.2->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
@@ -4212,35 +4243,51 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [runtime->runtime(*)][0m
@@ -4279,25 +4326,25 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [runtime->runtime(*)][0m
@@ -4323,23 +4370,23 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [runtime->runtime(*)][0m
@@ -4905,7 +4952,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -5054,8 +5101,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-stream_2.11;2.4.2->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
@@ -5844,35 +5891,51 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [runtime->runtime(*)][0m
@@ -5911,25 +5974,25 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [runtime->runtime(*)][0m
@@ -5955,23 +6018,23 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [runtime->runtime(*)][0m
@@ -6019,7 +6082,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -6168,8 +6231,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-stream_2.11;2.4.2->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
@@ -6958,35 +7021,51 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [runtime->runtime(*)][0m
@@ -7025,25 +7104,25 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [runtime->runtime(*)][0m
@@ -7069,23 +7148,23 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [runtime->runtime(*)][0m
@@ -7133,7 +7212,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang#scala-library;2.11.6 [runtime->runtime(*)][0m
@@ -7282,8 +7361,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-stream_2.11;2.4.2->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
@@ -8072,35 +8151,51 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.apache.directory.api#api-all;1.0.0-M14 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies dom4j#dom4j;1.6.1->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.0.b2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xml-apis#xml-apis;1.4.01 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-pool#commons-pool;1.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.apache.mina#mina-core;2.0.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-api;1.7.2 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.slf4j#slf4j-api;1.6.6 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.slf4j#slf4j-log4j12;1.7.2 {test=[runtime(*), master(*)]} => dependency: org.slf4j#slf4j-log4j12;1.6.6 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: junit#junit;4.11 {test=[runtime(*), master(*)]} => dependency: junit#junit;4.10 {test=[runtime(*), master(*)]}[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.6.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.mina#mina-core;2.0.7->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-lang#commons-lang;2.6 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-collections#commons-collections;3.2.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->commons-io#commons-io;2.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->org.slf4j#slf4j-api;1.7.16 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.apache.directory.api#api-all;1.0.0-M14->xpp3#xpp3;1.1.4c [runtime->runtime(*)][0m
@@ -8139,25 +8234,25 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-core;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.1.0.CR2 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate.common#hibernate-commons-annotations;4.0.2.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;4.2.3.Final->antlr#antlr;2.7.7 [runtime->runtime(*)][0m
@@ -8183,23 +8278,23 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.hibernate#hibernate-entitymanager;4.2.3.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->dom4j#dom4j;1.6.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.spec.javax.transaction#jboss-transaction-api_1.1_spec;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate.common#hibernate-commons-annotations;4.0.2.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.15.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.hibernate#hibernate-core;4.2.3.Final [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.1.0.GA [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-entitymanager;4.2.3.Final->org.jboss.logging#jboss-logging;3.2.1.Final [runtime->runtime(*)][0m
@@ -8706,8 +8801,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->com.typesafe#config;1.3.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe#ssl-config-core_2.11;0.1.3->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.akka#akka-stream_2.11;2.4.2->org.reactivestreams#reactive-streams;1.0.0 [compile->master(compile)][0m
@@ -8724,7 +8819,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.apache.commons#commons-lang3;3.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#twirl-api_2.11;1.1.1->org.scala-lang.modules#scala-xml_2.11;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.0 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.11;2.5.1->org.slf4j#slf4j-api;1.7.16 [compile->master(compile)][0m
@@ -9188,8 +9283,8 @@
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.11;1.0.4[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang.modules#scala-xml_2.11;1.0.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-xml_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.4 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.4 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.4 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-xml_2.11;1.0.4 [compile->runtime(*)][0m
@@ -9199,8 +9294,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-xml_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->master(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.6 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.11.7->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
@@ -9807,22 +9902,22 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 7098ms :: artifacts dl 138ms[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT compile produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT runtime produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT test produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT provided produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT optional produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT compile-internal produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT runtime-internal produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT test-internal produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT plugin produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT sources produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT docs produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT pom produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT scala-tool produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT fork-run produced in /home/pedropfo/workspace/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-fork-run.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (7098ms resolve - 138ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 6901ms :: artifacts dl 154ms[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT compile produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT runtime produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT test produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT provided produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT optional produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT compile-internal produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT runtime-internal produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT test-internal produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT plugin produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT sources produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT docs produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT pom produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT scala-tool produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT fork-run produced in /home/paulovss/CaronaUFCG20152/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-fork-run.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (6901ms resolve - 154ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[33mwarn[0m] [0mThere may be incompatibilities among your library dependencies.[0m
 [0m[[33mwarn[0m] [0mHere are some of the libraries that were evicted:[0m
