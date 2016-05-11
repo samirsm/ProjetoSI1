@@ -6,10 +6,13 @@
 global.titulo=Vumbora! - Sistema de Caronas
 global.home=Home
 global.solicitacoes=Solicitações
+global.pendentes=Pendentes
+global.horarios=Horários
 global.caronas=Caronas
 global.ajustes=Ajustes
 global.minhas_caronas=Minhas caronas
 global.sem_caronas=Você não possui nenhuma carona cadastrada.
+global.cheia=Cheia
 global.ida=Ida
 global.volta=Volta
 global.nome=Nome
@@ -19,6 +22,7 @@ global.senha=Senha
 global.rua=Rua
 global.bairro=Bairro
 global.vagas=Vagas disponíveis
+global.passageiros=Passageiros
 global.notificacoes_lidas=Marcar todas como lidas
 global.sem_notificacoes=Não há notificacoes não lidas
 global.sair=Sair desta conta
@@ -69,7 +73,7 @@ view_usuario.publique=Publicar
 view_usuario.busque=Buscar
 view_usuario.recentes=Publicacões recentes
 view_usuario.pedir=Pedir
-view_usuario.sem_caronas=Não há caronas disponíveis no momento :(
+view_usuario.sem_caronas=Não há caronas para seu bairro disponíveis no momento :(
 
 # agendamento
 agendamento.marcar=Marcar uma carona com
@@ -83,6 +87,9 @@ agendamento.solicitar=Solicitar Carona
 solicitacoes.nenhuma=Você não possui nenhuma solicitação no momento.
 solicitacoes.negar=Negar
 solicitacoes.aceitar=Vumbora
+solicitacoes.solicitacoes_cabecalho=Solicitações de carona aguardando a sua aprovação
+solicitacoes.pendente_cabecalho=Caronas aguardando avaliação do motorista
+solicitacoes.sem_pendentes=Nenhuma carona pendente.
 
 # dias da semana
 dias.segunda=Segunda

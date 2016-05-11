@@ -6,10 +6,13 @@
 global.titulo=Vumbora! - Carpool System
 global.home=Home
 global.solicitacoes=Requests
+global.pendentes=Pending
+global.horarios=Schedule
 global.caronas=Rides
 global.ajustes=Settings
 global.minhas_caronas=My carpools
 global.sem_caronas=You have no registered carpools.
+global.cheia=Full
 global.ida=Going
 global.volta=Returning
 global.nome=Name
@@ -20,6 +23,7 @@ global.senha=Password
 global.rua=Street
 global.bairro=Neighborhood
 global.vagas=Car seats available
+global.passageiros=Passengers
 global.notificacoes_lidas=Mark all as read
 global.sem_notificacoes=No unread notifications
 global.sair=Logout account
@@ -69,7 +73,7 @@ view_usuario.publique=Publish
 view_usuario.busque=Search
 view_usuario.recentes=Recent publications
 view_usuario.pedir=Ask
-view_usuario.sem_caronas=There are no available carpools at this moment :(
+view_usuario.sem_caronas=There are no available carpools for your neighbourhood at this moment :(
 
 # agendamento
 agendamento.marcar=Schedule a carpool with
@@ -83,6 +87,10 @@ agendamento.solicitar=Ask for this Carpool
 solicitacoes.nenhuma=You have no requests at this time.
 solicitacoes.negar=Deny
 solicitacoes.aceitar=Accept
+solicitacoes.solicitacoes_cabecalho=Carpool requests waiting for your approval
+solicitacoes.pendente_cabecalho=Carpools waiting for driver/'s avaliation
+solicitacoes.sem_pendentes=No pending carpools.
+
 
 # dias da semana
 dias.segunda=Monday

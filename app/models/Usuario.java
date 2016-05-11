@@ -17,8 +17,9 @@ public class Usuario extends Model {
 	private Endereco endereco;
 	private final Integer numeroVagas;
     private List<Carona> caronas = new ArrayList<>();
-    private Idioma idioma = Idioma.PORTUGUES;
 
+	private List<Carona> caronasPendentes = new ArrayList<>();
+    private Idioma idioma = Idioma.PORTUGUES;
 
 	private List<Notificacao> solicitacoes = new ArrayList<Notificacao>();
 
@@ -38,6 +39,20 @@ public class Usuario extends Model {
 		this.dadosPessoais = dados;
 		this.setEndereco(endereco);
 		this.setEnderecoAlternativo(endereco);
+		setId();
+	}
+
+	public Long getId() {
+		return id;
+	}
+	private void setId(){
+		double idTemp = Integer.parseInt(dadosPessoais.getMatricula()) * Math.random() * 13;
+		idTemp %= 1;
+		idTemp *= 100000;
+		id = (long) idTemp;
+	}
+	public String getEnderecoPerfil(){
+		return "perfil?id=" + this.getId();
 	}
 
 
@@ -70,13 +85,16 @@ public class Usuario extends Model {
 	}
 
 	public void removeSolicitacao(Notificacao solicitacao) {
-		solicitacao.setStatus(true);
 		solicitacoes.remove(solicitacao);
 	}
 
-
 	public List<Notificacao> getSolicitacoes() {
-		return solicitacoes;
+		List<Notificacao> soli = new ArrayList<>();
+		for(int i = 0; i< notificacoesNaoLidas.size(); i++){
+			if(notificacoesNaoLidas.get(i).getTipo() == TipoNotificacao.PEDIDO)
+				soli.add(notificacoesNaoLidas.get(i));
+		}
+		return soli;
 	}
 
 	///// FIM Notificacoes /////
@@ -95,6 +113,18 @@ public class Usuario extends Model {
 
 	private boolean isPossivelDarCarona(Carona carona) {
 		return numeroVagas >= carona.getVagasDisponiveis();
+	}
+
+	public List<Carona> getCaronasPendentes() {
+		return caronasPendentes;
+	}
+
+	public boolean adicionaCaronaPendente(Carona carona){
+		return caronasPendentes.add(carona);
+	}
+
+	public boolean removeCaronaPendente(Carona carona){
+		return caronasPendentes.remove(carona);
 	}
 
 	///// FIM caronas //////

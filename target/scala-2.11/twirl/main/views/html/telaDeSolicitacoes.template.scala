@@ -21,20 +21,20 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class telaDeSolicitacoes extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template4[Usuario,List[Carona],List[Notificacao],List[Notificacao],play.twirl.api.HtmlFormat.Appendable] {
+class telaDeSolicitacoes extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[Usuario,List[Notificacao],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(usuarioLogado: Usuario, caronas: List[Carona], solicitacoes: List[Notificacao], notificacoes: List[Notificacao]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(usuarioLogado: Usuario, solicitacoes: List[Notificacao]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.115*/("""
+Seq[Any](format.raw/*1.59*/("""
 
-"""),_display_(/*3.2*/main(usuarioLogado: Usuario, caronas, notificacoes, "Vumbora")/*3.64*/{_display_(Seq[Any](format.raw/*3.65*/("""
+"""),_display_(/*3.2*/main(usuarioLogado, usuarioLogado.getCaronas(), usuarioLogado.getNotificacoesNaoLidas(), "Solicitações de Carona")/*3.116*/{_display_(Seq[Any](format.raw/*3.117*/("""
 
 """),format.raw/*5.1*/("""<!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 
@@ -86,28 +86,27 @@ Seq[Any](format.raw/*1.115*/("""
 			<div class="row-xs-12">
             <!-- Page Heading -->
             <!-- /.row -->
-
-
+                <div style="font-size: x-large; text-align: center; font: bold; color: #F33">"""),_display_(/*58.95*/Messages("solicitacoes.solicitacoes_cabecalho")),format.raw/*58.142*/("""</div>
             <!-- /.row -->
             </br>
-"""),_display_(/*62.2*/for(solicitacao <- solicitacoes) yield /*62.34*/{_display_(Seq[Any](format.raw/*62.35*/("""
-          """),format.raw/*63.11*/("""<div class="col">
+"""),_display_(/*61.2*/for(solicitacao <- solicitacoes) yield /*61.34*/{_display_(Seq[Any](format.raw/*61.35*/("""
+          """),format.raw/*62.11*/("""<div class="col">
                   <div class="col-lg-12">
                       <div class="panel panel-blue-volta">
                           <div class="panel-heading">
                               <div class="row">
                                   <div class="col-xs-3">
-                                      <i class="fa fa-user fa-5x"></i></br> """),_display_(/*69.78*/solicitacao/*69.89*/.getUsuarioOrigem().getNome()),format.raw/*69.118*/("""
-                                  """),format.raw/*70.35*/("""</div>
+                                      <i class="fa fa-user fa-5x"></i></br> """),_display_(/*68.78*/solicitacao/*68.89*/.getUsuarioOrigem().getNome()),format.raw/*68.118*/("""
+                                  """),format.raw/*69.35*/("""</div>
                                   <div class="col-xs-9 text-left">
-                                      <div class="fa fa-commenting-o"> """),_display_(/*72.73*/solicitacao/*72.84*/.getMensagem()),format.raw/*72.98*/("""</div>
-                                      <div><i class="fa fa-map-marker"></i> """),_display_(/*73.78*/solicitacao/*73.89*/.getUsuarioOrigem().getEndereco()),format.raw/*73.122*/("""</div>
-                                      <div><i class="fa fa-calendar"></i> """),_display_(/*74.76*/solicitacao/*74.87*/.getCarona().getHorario().getDia()),format.raw/*74.121*/("""</div>
+                                      <div class="fa fa-commenting-o"> """),_display_(/*71.73*/solicitacao/*71.84*/.getMensagem()),format.raw/*71.98*/("""</div>
+                                      <div><i class="fa fa-map-marker"></i> """),_display_(/*72.78*/solicitacao/*72.89*/.getUsuarioOrigem().getEndereco()),format.raw/*72.122*/("""</div>
+                                      <div><i class="fa fa-calendar"></i> """),_display_(/*73.76*/solicitacao/*73.87*/.getCarona().getHorario().getDia()),format.raw/*73.121*/("""</div>
 
                                   </div>
                                   <div class="col-xs-9 text-right">
-                                      <div><i class="fa fa-calendar"></i> """),_display_(/*78.76*/solicitacao/*78.87*/.getCarona().getHorario().getDia()),format.raw/*78.121*/("""</div>
-                                      <div><i class="fa fa-clock-o"></i> """),_display_(/*79.75*/solicitacao/*79.86*/.getCarona().getHorario().getHora()),format.raw/*79.121*/("""</div>
+                                      <div><i class="fa fa-calendar"></i> """),_display_(/*77.76*/solicitacao/*77.87*/.getCarona().getHorario().getDia()),format.raw/*77.121*/("""</div>
+                                      <div><i class="fa fa-clock-o"></i> """),_display_(/*78.75*/solicitacao/*78.86*/.getCarona().getHorario().getHora()),format.raw/*78.121*/("""</div>
                                   </div>
                               </div>
                           </div>
@@ -117,9 +116,9 @@ Seq[Any](format.raw/*1.115*/("""
                                   <div style="text-align: right;">
 
 
-                                      <a href="recusaPedido?id="""),_display_(/*89.65*/solicitacao/*89.76*/.getId()),format.raw/*89.84*/("""" class="btn btn-m fa fa-thumbs-o-down">"""),_display_(/*89.125*/Messages("solicitacoes.negar")),format.raw/*89.155*/("""</a>
+                                      <a href="recusaPedido?id="""),_display_(/*88.65*/solicitacao/*88.76*/.getId()),format.raw/*88.84*/("""" class="btn btn-m fa fa-thumbs-o-down">"""),_display_(/*88.125*/Messages("solicitacoes.negar")),format.raw/*88.155*/("""</a>
 
-                                      <a href="aceitaPedido?id="""),_display_(/*91.65*/solicitacao/*91.76*/.getId()),format.raw/*91.84*/("""" class="btn btn-m fa fa-thumbs-o-up">"""),_display_(/*91.123*/Messages("solicitacoes.aceitar")),format.raw/*91.155*/("""</a>
+                                      <a href="aceitaPedido?id="""),_display_(/*90.65*/solicitacao/*90.76*/.getId()),format.raw/*90.84*/("""" class="btn btn-m fa fa-thumbs-o-up">"""),_display_(/*90.123*/Messages("solicitacoes.aceitar")),format.raw/*90.155*/("""</a>
 
                                   </div>
                                   <div class="clearfix"></div>
@@ -129,12 +128,12 @@ Seq[Any](format.raw/*1.115*/("""
                   </div>
               </div>
               <!-- /.row -->
-""")))}),format.raw/*101.2*/("""
+""")))}),format.raw/*100.2*/("""
 
-                """),_display_(/*103.18*/if(solicitacoes.isEmpty())/*103.44*/{_display_(Seq[Any](format.raw/*103.45*/("""
-                    """),format.raw/*104.21*/("""<div text-align="center">"""),_display_(/*104.47*/Messages("solicitacoes.nenhuma")),format.raw/*104.79*/("""</div></br>
-                """)))}),format.raw/*105.18*/("""
-                    """),format.raw/*106.21*/("""<!-- /.row -->
+                """),_display_(/*102.18*/if(solicitacoes.isEmpty())/*102.44*/{_display_(Seq[Any](format.raw/*102.45*/("""
+                    """),format.raw/*103.21*/("""<div text-align="center">"""),_display_(/*103.47*/Messages("solicitacoes.nenhuma")),format.raw/*103.79*/("""</div></br>
+                """)))}),format.raw/*104.18*/("""
+                    """),format.raw/*105.21*/("""<!-- /.row -->
       </div>
       <!-- /#page-wrapper -->
 
@@ -149,9 +148,9 @@ Seq[Any](format.raw/*1.115*/("""
     }
   }
 
-  def render(usuarioLogado:Usuario,caronas:List[Carona],solicitacoes:List[Notificacao],notificacoes:List[Notificacao]): play.twirl.api.HtmlFormat.Appendable = apply(usuarioLogado,caronas,solicitacoes,notificacoes)
+  def render(usuarioLogado:Usuario,solicitacoes:List[Notificacao]): play.twirl.api.HtmlFormat.Appendable = apply(usuarioLogado,solicitacoes)
 
-  def f:((Usuario,List[Carona],List[Notificacao],List[Notificacao]) => play.twirl.api.HtmlFormat.Appendable) = (usuarioLogado,caronas,solicitacoes,notificacoes) => apply(usuarioLogado,caronas,solicitacoes,notificacoes)
+  def f:((Usuario,List[Notificacao]) => play.twirl.api.HtmlFormat.Appendable) = (usuarioLogado,solicitacoes) => apply(usuarioLogado,solicitacoes)
 
   def ref: this.type = this
 
@@ -164,11 +163,11 @@ Seq[Any](format.raw/*1.115*/("""
 object telaDeSolicitacoes extends telaDeSolicitacoes_Scope0.telaDeSolicitacoes
               /*
                   -- GENERATED --
-                  DATE: Sun May 08 03:06:23 BRT 2016
+                  DATE: Wed May 11 02:14:58 BRT 2016
                   SOURCE: /home/pedropfo/workspace/ProjetoSI1/app/views/telaDeSolicitacoes.scala.html
-                  HASH: edce537d5d1bf0082acdbe3f3ad5f01e9e675014
-                  MATRIX: 821->1|1030->114|1058->117|1128->179|1166->180|1194->182|2414->1374|2443->1375|2477->1382|2608->1486|2636->1487|2669->1493|2702->1498|2731->1499|2762->1503|2805->1519|2833->1520|2861->1521|3130->1764|3178->1796|3217->1797|3256->1808|3638->2163|3658->2174|3709->2203|3772->2238|3945->2384|3965->2395|4000->2409|4111->2493|4131->2504|4186->2537|4295->2619|4315->2630|4371->2664|4590->2856|4610->2867|4666->2901|4774->2982|4794->2993|4851->3028|5219->3369|5239->3380|5268->3388|5337->3429|5389->3459|5486->3529|5506->3540|5535->3548|5602->3587|5656->3619|5972->3904|6019->3923|6055->3949|6095->3950|6145->3971|6199->3997|6253->4029|6314->4058|6364->4079
-                  LINES: 27->1|32->1|34->3|34->3|34->3|36->5|71->40|71->40|72->41|74->43|74->43|75->44|75->44|75->44|76->45|77->46|77->46|78->47|93->62|93->62|93->62|94->63|100->69|100->69|100->69|101->70|103->72|103->72|103->72|104->73|104->73|104->73|105->74|105->74|105->74|109->78|109->78|109->78|110->79|110->79|110->79|120->89|120->89|120->89|120->89|120->89|122->91|122->91|122->91|122->91|122->91|132->101|134->103|134->103|134->103|135->104|135->104|135->104|136->105|137->106
+                  HASH: 164f13fe3f1632e30d817e5a9fbe75868a22eaef
+                  MATRIX: 790->1|942->58|970->61|1093->175|1132->176|1160->178|2380->1370|2409->1371|2443->1378|2574->1482|2602->1483|2635->1489|2668->1494|2697->1495|2728->1499|2771->1515|2799->1516|2827->1517|3143->1806|3212->1853|3291->1906|3339->1938|3378->1939|3417->1950|3799->2305|3819->2316|3870->2345|3933->2380|4106->2526|4126->2537|4161->2551|4272->2635|4292->2646|4347->2679|4456->2761|4476->2772|4532->2806|4751->2998|4771->3009|4827->3043|4935->3124|4955->3135|5012->3170|5380->3511|5400->3522|5429->3530|5498->3571|5550->3601|5647->3671|5667->3682|5696->3690|5763->3729|5817->3761|6133->4046|6180->4065|6216->4091|6256->4092|6306->4113|6360->4139|6414->4171|6475->4200|6525->4221
+                  LINES: 27->1|32->1|34->3|34->3|34->3|36->5|71->40|71->40|72->41|74->43|74->43|75->44|75->44|75->44|76->45|77->46|77->46|78->47|89->58|89->58|92->61|92->61|92->61|93->62|99->68|99->68|99->68|100->69|102->71|102->71|102->71|103->72|103->72|103->72|104->73|104->73|104->73|108->77|108->77|108->77|109->78|109->78|109->78|119->88|119->88|119->88|119->88|119->88|121->90|121->90|121->90|121->90|121->90|131->100|133->102|133->102|133->102|134->103|134->103|134->103|135->104|136->105
                   -- GENERATED --
               */
           

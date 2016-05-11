@@ -1,7 +1,7 @@
 @(usuarioLogado: Usuario, caronasOfertadas: List[Carona], notificacoes: List[Notificacao], title: String)(content: Html)
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 
@@ -59,24 +59,6 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
 
-              <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-2x"></i><b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=1">Português</a></h5>
-                        </li>
-                        <li>
-                           	<h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=2">English</a></h5>
-                        </li>
-                        <li>
-                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=3">Español</a></h5>
-                        </li>
-                        <li>
-                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=4">Italiano</a></h5>
-                        </li>
-                    </ul>
-                </li>
-
               <!-- Notification -->
           <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell fa-2x"></i> <b class="caret"></b></a>
@@ -107,6 +89,26 @@
               </ul>
           </li>
               <!-- end Notification -->
+
+                <!-- Linguas -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-language fa-2x"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=1">Português</a></h5>
+                        </li>
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=2">English</a></h5>
+                        </li>
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=3">Español</a></h5>
+                        </li>
+                        <li>
+                            <h5 class="media-heading" style="color: #888;"><a href="redefineIdioma?id=4">Italiano</a></h5>
+                        </li>
+                    </ul>
+                </li>
+                <!-- end Linguas -->
 
                 <!-- User options -->
                 <li class="dropdown">
@@ -148,16 +150,19 @@
                 </br>
                 </br>
                     <li>
-                        <a href="/"><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>@usuarioLogado.getNome()</a>
+                        <a href=@usuarioLogado.getEnderecoPerfil()><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>@usuarioLogado.getNome()</a>
                     </li>
                     <li>
-                        <a href="/"><i class="fa fa-fw fa-home fa-3x"></i></br>Home</a>
+                        <a href="/"><i class="fa fa-fw fa-home fa-4x"></i></br><strong>@Messages("global.home")</strong></a>
                     </li>
                     <li>
-                        <a href="solicitacoes"><i class="fa fa-fw fa-paper-plane fa-3x"></i> </br>@Messages("global.solicitacoes")</a>
+                        <a href="solicitacoes"><i class="fa fa-fw fa-paper-plane fa-3x"></i></br><strong>@Messages("global.solicitacoes")</br><div style="color: #985f0d">@if(usuarioLogado.getSolicitacoes().size() > 0){ (@usuarioLogado.getSolicitacoes().size()) }</div></strong></a>
                     </li>
                     <li>
-                        <a href="horarios"><i class="fa fa-calendar fa-3x"></i></br> Horários</a>
+                        <a href="pendentes"><i class="fa fa-clock-o fa-3x"></i></br><strong>@Messages("global.pendentes")</br><div style="color: #985f0d">@if(usuarioLogado.getCaronasPendentes().size() > 0){ (@usuarioLogado.getCaronasPendentes().size()) }</div></strong></a>
+                    </li>
+                    <li>
+                        <a href="horarios"><i class="fa fa-calendar fa-3x"></i></br><strong>@Messages("global.horarios")</strong></a>
                     </li>
                 </ul>
             </div>
@@ -199,7 +204,7 @@
                   											<tr>
                   												<th><div><img src="assets/images/users/default.jpg" id="show-option" title="@carona.getMotorista().getNome()" class="img-circle" style="border: 2px solid #FFF;" height="50" width="50"></i></div></th>
                   												<th><i class="fa fa-car fa-1x "></i> @carona.getTipo()</th>
-                  												<th><div><img src="assets/SBAdminTemplate/img/vagasBranco.png" align="left" height="20" width="20"></i>@carona.getVagasDisponiveis()</div></th>
+                  												<th><div><img src="assets/SBAdminTemplate/img/vagasBranco.png" align="left" height="20" width="20"></i>@if(carona.getVagasDisponiveis == 0) { @Messages("global.cheia")} else{ @carona.getVagasDisponiveis() }</div></th>
                   												<th><i class="fa fa-clock-o fa-1x"></i> @carona.getHorario.getHora()</th>
                       										</tr>
                   									    </tbody>
@@ -213,7 +218,7 @@
                                   <table class="table">
                                       <tbody>
                                         <tr>
-                                          @for(passageiro <- carona.getPassageiros()){
+                                         @for(passageiro <- carona.getPassageiros()){
                                               <th><div><img src="assets/images/users/default.jpg" id="show-option" title="@passageiro.getNome()" class="img-circle" style="border: 2px solid #82b1ff" height="40" width="40"></i></div></th>
                                             }
                                         </tr>

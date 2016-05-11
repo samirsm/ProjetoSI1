@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/pedropfo/workspace/ProjetoSI1/conf/routes
-// @DATE:Mon May 09 22:27:57 BRT 2016
+// @DATE:Wed May 11 02:05:06 BRT 2016
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:30
+  // @LINE:35
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:30
+    // @LINE:35
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -43,7 +43,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:14
+    // @LINE:10
     def efetuaLogout: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AutenticacaoController.efetuaLogout",
       """
@@ -79,7 +79,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:11
+  // @LINE:12
   class ReverseCaronasController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -87,7 +87,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:26
     def aceitaPedido: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CaronasController.aceitaPedido",
       """
@@ -97,7 +97,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:27
     def recusaPedido: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CaronasController.recusaPedido",
       """
@@ -107,7 +107,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
+    // @LINE:23
     def exibeDetalhes: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CaronasController.exibeDetalhes",
       """
@@ -117,7 +117,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:24
     def buscarCaronas: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CaronasController.buscarCaronas",
       """
@@ -127,7 +127,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:25
     def solicitaCarona: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CaronasController.solicitaCarona",
       """
@@ -137,7 +137,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:11
+    // @LINE:12
     def cadastraNovaCarona: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CaronasController.cadastraNovaCarona",
       """
@@ -147,9 +147,19 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:16
+    def exibeCaronasPendentes: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CaronasController.exibeCaronasPendentes",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "pendentes"})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:18
+  // @LINE:15
   class ReverseNotificacoesController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -157,7 +167,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:24
+    // @LINE:30
     def leNotificacao: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.NotificacoesController.leNotificacao",
       """
@@ -167,7 +177,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:15
     def exibeSolicitacoes: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.NotificacoesController.exibeSolicitacoes",
       """
@@ -177,7 +187,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:23
+    // @LINE:29
     def leTodasNotificacoes: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.NotificacoesController.leTodasNotificacoes",
       """
@@ -197,7 +207,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:8
+    // @LINE:14
     def editaHorarios: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.editaHorarios",
       """
@@ -207,7 +217,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:27
+    // @LINE:32
     def redefineIdioma: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.redefineIdioma",
       """
@@ -227,9 +237,19 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:13
+    def exibePerfilUsuario: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.exibePerfilUsuario",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "perfil" + _qS([(""" + implicitly[QueryStringBindable[Long]].javascriptUnbind + """)("id", id0)])})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:10
+  // @LINE:8
   class ReverseHorariosController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -237,7 +257,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
+    // @LINE:21
     def cadastraNovoEndereco: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HorariosController.cadastraNovoEndereco",
       """
@@ -247,7 +267,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:12
+    // @LINE:18
     def cadastraHorarios: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HorariosController.cadastraHorarios",
       """
@@ -257,7 +277,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:22
+    // @LINE:20
     def excluiHorarioIda: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HorariosController.excluiHorarioIda",
       """
@@ -267,7 +287,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:10
+    // @LINE:8
     def cadastra: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HorariosController.cadastra",
       """
@@ -277,7 +297,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:19
     def excluiHorarioVolta: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HorariosController.excluiHorarioVolta",
       """

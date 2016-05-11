@@ -12,7 +12,7 @@
   <div id="wrapper">
         <div id="page-wrapper">
 
-            <div class="container-fluid" style="background-color: #696969;">
+            <div class="container-fluid" >
 				<div class="row-xs-12">
                 <!-- Page Heading -->
                 <!-- /.row -->
@@ -36,10 +36,17 @@
                 <p style="font-size: 18px;"><b>@Messages("agendamento.hora") </b>@carona.getHorario().getHora()</p>
                 <p style="font-size: 18px;"><b>@Messages("global.vagas"): </b>@carona.getVagasDisponiveis()</p>
 
-                <td colspan="3" style="font-family: 'Calibri Light'">&nbsp;</td>
-                <td align="rigth"><a href="/" class="btn btn-warning btn-l" style="float: center; font-size: 22px;												font-family: 'Calibri Light';"><b>@Messages("agendamento.voltar")</a> </td><td></td>
-                <td align="rigth"><a href="solicitaCarona?id=@carona.getId()" class="btn btn-warning btn'l" style="float: center; font-size: 22px; font-family: 'Calibri Light';"><b>@Messages("agendamento.solicitar")</a>
-                <p>&nbsp;</p></td>
+
+                <div class="row-sm-12">
+        						<div class="col-sm-6">
+                      <td align="rigth"><a href="/" class="btn btn-warning btn-l" style="float: center; font-size: 18px;"><b>@Messages("agendamento.voltar")</a> </td><td></td>
+                    </div>
+
+        						<div class="col-sm-6">
+                      <td align="rigth"><a href="solicitaCarona?id=@carona.getId()" class="btn btn-warning btn'l" style="float: center; font-size: 18px;"><b>@Messages("agendamento.solicitar")</a>
+                    </div>
+        			</div>
+            </br>
                 </div>
                 <!-- /.row -->
 

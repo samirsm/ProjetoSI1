@@ -1,9 +1,9 @@
-@(usuarioLogado: Usuario, caronas: List[Carona], solicitacoes: List[Notificacao], notificacoes: List[Notificacao])
+@(usuarioLogado: Usuario, solicitacoes: List[Notificacao])
 
-@main(usuarioLogado: Usuario, caronas, notificacoes, "Vumbora"){
+@main(usuarioLogado, usuarioLogado.getCaronas(), usuarioLogado.getNotificacoesNaoLidas(), "Solicitações de Carona"){
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 
@@ -55,8 +55,7 @@
 			<div class="row-xs-12">
             <!-- Page Heading -->
             <!-- /.row -->
-
-
+                <div style="font-size: x-large; text-align: center; font: bold; color: #F33">@Messages("solicitacoes.solicitacoes_cabecalho")</div>
             <!-- /.row -->
             </br>
 @for(solicitacao <- solicitacoes){
