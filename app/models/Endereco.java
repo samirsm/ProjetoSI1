@@ -1,13 +1,18 @@
 package models;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 
 import play.data.validation.Constraints;
 
-@Entity
+@Embeddable
 public class Endereco {
+
+	@Column
 	private String bairro;
-	@Constraints.Required(message = "Insira uma rua válida.")
+
+	@Column
 	private String rua;
 	
 	public String getBairro() {
@@ -22,7 +27,9 @@ public class Endereco {
 	public void setRua(String rua) {
 		this.rua = rua;
 	}
-	
+
+	public Endereco(){}
+
 	public Endereco(String rua, String bairro){
 		this.rua = rua;
 		this.bairro = bairro;

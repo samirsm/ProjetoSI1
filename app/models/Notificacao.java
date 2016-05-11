@@ -1,23 +1,33 @@
 package models;
  
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 import com.avaje.ebean.Model;
 import tratamentoStrings.Strings;
 import models.Carona;
- 
-@Entity
+
+@Entity(name = "notificacao")
 public class Notificacao extends Model{
-   
+
+
+    @OneToOne
     private Usuario usuarioOrigem;
+
+    @OneToOne
     private Carona carona;
+
     private String mensagem;
+
+    @Enumerated(EnumType.ORDINAL)
     private TipoNotificacao tipo;
+
     private boolean status;
  
     @Id
+    @GeneratedValue
     private Long id;
- 
+
+    public Notificacao(){};
     public Notificacao(Usuario usuarioOrigem, Carona carona, TipoNotificacao tipo){
         this.carona = carona;
         this.usuarioOrigem = usuarioOrigem;

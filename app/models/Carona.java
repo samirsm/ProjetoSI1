@@ -3,27 +3,35 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import com.avaje.ebean.Model;
 
 import exceptions.NumeroDeVagasInsuficienteException;
 import tratamentoStrings.Strings;
 
-@Entity
+@Entity(name = "carona")
 public class Carona extends Model {
 	
 	@Id
+	@GeneratedValue
 	private Long id;
-	
+
 	private int vagasDisponiveis;
+
+	@OneToOne
 	private Usuario motorista;
+	@OneToMany(cascade = CascadeType.PERSIST)
 	private List<Usuario> passageiros;
+	@OneToMany(cascade = CascadeType.PERSIST)
 	private List<Usuario> solicitantes;
+	@OneToOne
 	private Horario horario;
+	@Enumerated(EnumType.ORDINAL)
 	private TipoCarona tipo;
 
+
+	public Carona(){}
 	public Carona(Usuario motorista, Horario horario, TipoCarona tipo, int numeroDeVagas) {
 		this.motorista = motorista;
 		this.horario = horario;

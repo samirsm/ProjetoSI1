@@ -5,7 +5,7 @@
 
 	<persistence-unit name="h2PersistenceUnit"
 		transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<non-jta-data-source>DefaultDS</non-jta-data-source>
 		<properties>
 			<property name="hibernate.connection.url" value="jdbc:h2:mem:play" />
@@ -17,10 +17,16 @@
 	</persistence-unit>
 	<persistence-unit name="postgrePersistenceUnit"
 		transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<non-jta-data-source>DefaultDS</non-jta-data-source>
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/vumbora" />
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.user" value="postgres" />
+			<property name="javax.persistence.jdbc.password" value="postgres" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL82Dialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.format_sql" value="true" />
 		</properties>

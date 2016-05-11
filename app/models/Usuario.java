@@ -1,8 +1,8 @@
 package models;
 
 import javax.persistence.*;
-import com.avaje.ebean.Model;
 
+import com.avaje.ebean.Model;
 import exceptions.BairroJaCadastradoException;
 import exceptions.HorarioJaCadastradoException;
 import exceptions.NumeroDeVagasExcedenteException;
@@ -10,27 +10,56 @@ import exceptions.NumeroDeVagasExcedenteException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity(name = "usuario")
+//@Table(name = "usuario")
 public class Usuario extends Model {
 
-	private Dados dadosPessoais;
-	private Endereco enderecoAlternativo;
-	private Endereco endereco;
-	private final Integer numeroVagas;
-	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
-	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
-	private List<Notificacao> solicitacoesDeCarona = new ArrayList<Notificacao>();
-	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
-	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
-	private List<Carona> caronasPassageiro = new ArrayList<>();
-	private List<Carona> caronasMotorista = new ArrayList<>();
-	private List<Horario> horariosIda = new ArrayList<>();
-	private List<Horario> horariosVolta = new ArrayList<>();
-	private boolean horariosCadastrados;
-	private String idioma = "pt";
+	public static Finder<Long, Usuario> find = new Finder<Long,Usuario>(Usuario.class);
 
 	@Id
+	@GeneratedValue
 	private Long id;
 
+	@Embedded
+	private Dados dadosPessoais;
+
+	@Embedded
+	private Endereco enderecoAlternativo;
+
+	@Embedded
+	private Endereco endereco;
+
+	// removi o final deste atributo pois o JPA nao aceita :/
+	@Column
+	private Integer numeroVagas;
+
+	@OneToMany
+	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
+	@OneToMany
+	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
+	@OneToMany
+	private List<Notificacao> solicitacoesDeCarona = new ArrayList<Notificacao>();
+	@OneToMany
+	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
+	@OneToMany
+	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
+	@OneToMany
+	private List<Carona> caronasPassageiro = new ArrayList<>();
+	@OneToMany
+	private List<Carona> caronasMotorista = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.PERSIST)
+	private List<Horario> horariosIda = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.PERSIST)
+	private List<Horario> horariosVolta = new ArrayList<>();
+
+	@Column
+	private boolean horariosCadastrados;
+
+	@Column
+	private String idioma = "pt";
+
+
+	public Usuario(){};
 	public Usuario(Dados dados, Endereco endereco, Integer numeroVagas) {
 		this.numeroVagas = numeroVagas;
 		this.dadosPessoais = dados;
@@ -237,8 +266,6 @@ public class Usuario extends Model {
 			throw new BairroJaCadastradoException();
 		} else
 			setEnderecoAlternativo(enderecoNovo);
-
-
 	}
 
 	public String getIdioma() {

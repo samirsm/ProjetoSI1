@@ -1,318 +1,135 @@
-2016-05-06 00:07:24,274 [INFO] from play.core.server.NettyServer in pool-26-thread-2 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
-2016-05-06 00:07:29,165 [INFO] from application in ForkJoinPool-2-worker-1 - Creating Pool for datasource 'default'
-2016-05-06 00:07:29,256 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-2-worker-1 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:07:29,257 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-2-worker-1 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:07:29,668 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in ForkJoinPool-2-worker-1 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:07:29,764 [WARN] from com.avaje.ebeaninternal.server.core.DefaultServer in ForkJoinPool-2-worker-1 - JMX beans for Ebean server [default] already registered. Will try unregister/registerEbean:server=default2,key=AutoFetch
-2016-05-06 00:07:30,138 [WARN] from application in ForkJoinPool-2-worker-1 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:07:30,631 [INFO] from play.api.Play in ForkJoinPool-2-worker-1 - Application started (Dev)
-2016-05-06 00:08:04,345 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2016-05-06 00:08:04,474 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2016-05-06 00:08:04,476 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:08:04,476 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:08:04,548 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-4 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:08:04,610 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:08:04,696 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-05-06 00:08:50,478 [INFO] from application in application-akka.actor.default-dispatcher-11 - Shutting down connection pool.
-2016-05-06 00:08:50,599 [INFO] from application in application-akka.actor.default-dispatcher-11 - Creating Pool for datasource 'default'
-2016-05-06 00:08:50,601 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-11 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:08:50,604 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-11 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:08:50,656 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-11 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:08:50,714 [WARN] from application in application-akka.actor.default-dispatcher-11 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:08:50,776 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-11 - Application started (Dev)
-2016-05-06 00:10:58,129 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2016-05-06 00:10:58,255 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
-2016-05-06 00:10:58,256 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-6 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:10:58,257 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:10:58,315 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-6 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:10:58,375 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:10:58,437 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-05-06 00:11:46,893 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-10 - [Fri May 06 00:11:46 BRT 2016] O sistema registrou um erro: Os dados inseridos são inválidos.||
-2016-05-06 00:12:01,102 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Fri May 06 00:12:01 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Colinas do Sol ||
-2016-05-06 00:12:01,102 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Fri May 06 00:12:01 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Colinas do Sol ||4||
-2016-05-06 00:12:01,104 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-8 - [Fri May 06 00:12:01 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Colinas do Sol ||4||
-2016-05-06 00:12:05,791 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Fri May 06 00:12:05 BRT 2016] O usuário efetuou login: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
-2016-05-06 00:12:05,791 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Fri May 06 00:12:05 BRT 2016] O usuário está sendo autenticado pelo sistema: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
-2016-05-06 00:12:05,792 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-6 - [Fri May 06 00:12:05 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
-2016-05-06 00:12:13,115 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-14 - [Fri May 06 00:12:13 BRT 2016] O usuário adicionou um horário à lista de horários: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||VOLTA||Terça||12||
-2016-05-06 00:18:09,361 [INFO] from application in application-akka.actor.default-dispatcher-15 - Shutting down connection pool.
-2016-05-06 00:18:09,472 [INFO] from application in application-akka.actor.default-dispatcher-15 - Creating Pool for datasource 'default'
-2016-05-06 00:18:09,474 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-15 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:18:09,477 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-15 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:18:09,536 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-15 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:18:09,593 [WARN] from application in application-akka.actor.default-dispatcher-15 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:18:09,647 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-15 - Application started (Dev)
-2016-05-06 00:19:42,093 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2016-05-06 00:19:42,220 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
-2016-05-06 00:19:42,222 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-6 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:19:42,223 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:19:42,280 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-6 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:19:42,338 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:19:42,394 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-05-06 00:20:08,669 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
-2016-05-06 00:20:08,799 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
-2016-05-06 00:20:08,801 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-9 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:20:08,801 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:20:08,856 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-9 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:20:08,919 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:20:08,983 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
-2016-05-06 00:20:51,310 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2016-05-06 00:20:51,423 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2016-05-06 00:20:51,425 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:20:51,426 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:20:51,488 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-4 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:20:51,543 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:20:51,587 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-05-06 00:21:04,242 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2016-05-06 00:21:04,355 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2016-05-06 00:21:04,357 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-2 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:21:04,361 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:21:04,435 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-2 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:21:04,490 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:21:04,543 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-05-06 00:21:15,788 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2016-05-06 00:21:15,897 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2016-05-06 00:21:15,899 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:21:15,900 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:21:16,007 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-5 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:21:16,061 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:21:16,122 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-05-06 00:21:31,861 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
-2016-05-06 00:21:31,943 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
-2016-05-06 00:21:31,944 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-9 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:21:31,945 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:21:32,000 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-9 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:21:32,055 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:21:32,103 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
-2016-05-06 00:26:52,709 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2016-05-06 00:26:52,811 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2016-05-06 00:26:52,814 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-2 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:26:52,814 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:26:52,878 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-2 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:26:52,924 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:26:52,974 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-05-06 00:27:55,627 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2016-05-06 00:27:55,703 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2016-05-06 00:27:55,704 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-2 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:27:55,705 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:27:55,770 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-2 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:27:55,823 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:27:55,862 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-05-06 00:28:16,019 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2016-05-06 00:28:16,089 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2016-05-06 00:28:16,091 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:28:16,091 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:28:16,135 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-5 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:28:16,179 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:28:16,227 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-05-06 00:29:00,062 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2016-05-06 00:29:00,150 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2016-05-06 00:29:00,153 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:29:00,154 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:29:00,199 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-4 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:29:00,243 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:29:00,283 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-05-06 00:29:17,557 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
-2016-05-06 00:29:17,693 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
-2016-05-06 00:29:17,694 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-9 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:29:17,695 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:29:17,753 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-9 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:29:17,809 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:29:17,858 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
-2016-05-06 00:29:28,833 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
-2016-05-06 00:29:28,899 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
-2016-05-06 00:29:28,901 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-8 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:29:28,901 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:29:28,948 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-8 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:29:28,989 [WARN] from application in application-akka.actor.default-dispatcher-8 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:29:29,027 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
-2016-05-06 00:29:39,041 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
-2016-05-06 00:29:39,113 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
-2016-05-06 00:29:39,115 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-3 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:29:39,116 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:29:39,161 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-3 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:29:39,202 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:29:39,238 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
-2016-05-06 00:30:16,493 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
-2016-05-06 00:30:16,569 [INFO] from application in application-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
-2016-05-06 00:30:16,571 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-3 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:30:16,571 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:30:16,612 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-3 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:30:16,659 [WARN] from application in application-akka.actor.default-dispatcher-3 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:30:16,711 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-3 - Application started (Dev)
-2016-05-06 00:30:28,485 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
-2016-05-06 00:30:28,557 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
-2016-05-06 00:30:28,558 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-8 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:30:28,559 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:30:28,620 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-8 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:30:28,665 [WARN] from application in application-akka.actor.default-dispatcher-8 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:30:28,712 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
-2016-05-06 00:32:21,567 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2016-05-06 00:32:21,633 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2016-05-06 00:32:21,634 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:32:21,635 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:32:21,688 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-4 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:32:21,731 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:32:21,782 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-05-06 00:35:12,009 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2016-05-06 00:35:12,096 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2016-05-06 00:35:12,098 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:35:12,098 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:35:12,139 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-5 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:35:12,184 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:35:12,229 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-05-06 00:36:06,421 [ERROR] from application in netty-event-loop-12 - 
+2016-05-11 20:34:46,999 [INFO] from play.core.server.NettyServer in pool-6-thread-1 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-05-11 20:35:00,024 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-11 20:35:00,426 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-11 20:35:00,429 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-11 20:35:01,712 [ERROR] from application in netty-event-loop-4 - 
 
-! @70287d6h2 - Internal server error, for (GET) [/] ->
+! @703oi70of - Internal server error, for (GET) [/] ->
  
-play.sbt.PlayExceptions$CompilationException: Compilation error[type mismatch;
- found   : (Symbol, Int)
- required: Seq[(String, String)]]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
+play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:77)
+	at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:99)
+	at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:150)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:96)
+	at com.google.inject.Guice.createInjector(Guice.java:84)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:181)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:123)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:158)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:155)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:155)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:126)
+	at scala.Option.map(Option.scala:146)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:126)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:124)
+	at scala.util.Success.flatMap(Try.scala:231)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:124)
 	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-06 00:36:39,993 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
-2016-05-06 00:36:40,067 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
-2016-05-06 00:36:40,068 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-9 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:36:40,069 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:36:40,124 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-9 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:36:40,165 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:36:40,208 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
-2016-05-06 00:37:05,473 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2016-05-06 00:37:05,548 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
-2016-05-06 00:37:05,549 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-6 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:37:05,550 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:37:05,598 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-6 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:37:05,643 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:37:05,688 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-05-06 00:42:45,296 [ERROR] from application in netty-event-loop-2 - 
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2016-05-11 20:35:01,712 [ERROR] from application in netty-event-loop-3 - 
 
-! @702889oik - Internal server error, for (GET) [/] ->
+! @703oi70of - Internal server error, for (GET) [/] ->
  
-play.sbt.PlayExceptions$CompilationException: Compilation error[value downto is not a member of Integer]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
+play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$play$api$db$evolutions$ApplicationEvolutions$$runEvolutions$1.apply$mcV$sp(ApplicationEvolutions.scala:77)
+	at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:99)
+	at play.api.db.evolutions.ApplicationEvolutions.play$api$db$evolutions$ApplicationEvolutions$$runEvolutions(ApplicationEvolutions.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions$$anonfun$start$1.apply(ApplicationEvolutions.scala:42)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:150)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:53)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:53)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:44)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:96)
+	at com.google.inject.Guice.createInjector(Guice.java:84)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:181)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:123)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:158)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:155)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:155)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:126)
+	at scala.Option.map(Option.scala:146)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:126)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:124)
+	at scala.util.Success.flatMap(Try.scala:231)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:124)
 	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
 	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-06 00:43:01,009 [ERROR] from application in netty-event-loop-2 - 
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+2016-05-11 20:35:08,191 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-05-11 20:35:08,193 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-05-11 20:35:08,194 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:h2:mem:play
+2016-05-11 20:35:08,415 [WARN] from application in ForkJoinPool-1-worker-1 - application.langs is deprecated, use play.i18n.langs instead
+2016-05-11 20:35:09,053 [INFO] from play.api.Play in ForkJoinPool-1-worker-1 - Application started (Dev)
+2016-05-11 20:35:27,531 [ERROR] from application in application-akka.actor.default-dispatcher-8 - 
 
-! @70288alp3 - Internal server error, for (GET) [/] ->
+! @703oi8d71 - Internal server error, for (POST) [/cadastroRealizado] ->
  
-play.sbt.PlayExceptions$CompilationException: Compilation error[')' expected but integer literal found.]
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-06 00:43:27,083 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2016-05-06 00:43:27,155 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2016-05-06 00:43:27,157 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-2 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:43:27,161 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:43:27,222 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-2 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:43:27,273 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:43:27,315 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-05-06 00:44:31,190 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2016-05-06 00:44:31,278 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2016-05-06 00:44:31,280 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:44:31,281 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:44:31,326 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-4 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:44:31,373 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:44:31,407 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-05-06 00:44:53,777 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Fri May 06 00:44:53 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: ana@yahoo.com ||Rua: Av. Cap Joao Alves de Lira Bairro: Colinas do Sol ||
-2016-05-06 00:44:53,777 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Fri May 06 00:44:53 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: ana@yahoo.com ||Rua: Av. Cap Joao Alves de Lira Bairro: Colinas do Sol ||6||
-2016-05-06 00:44:53,778 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-3 - [Fri May 06 00:44:53 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110482 Email: ana@yahoo.com ||Rua: Av. Cap Joao Alves de Lira Bairro: Colinas do Sol ||6||
-2016-05-06 00:44:59,191 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Fri May 06 00:44:59 BRT 2016] O usuário efetuou login: Kaio[Matricula: 114110482 Email: ana@yahoo.com ]||
-2016-05-06 00:44:59,191 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Fri May 06 00:44:59 BRT 2016] O usuário está sendo autenticado pelo sistema: Kaio[Matricula: 114110482 Email: ana@yahoo.com ]||
-2016-05-06 00:44:59,191 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Fri May 06 00:44:59 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Kaio[Matricula: 114110482 Email: ana@yahoo.com ]||
-2016-05-06 00:45:01,835 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-10 - [Fri May 06 00:45:01 BRT 2016] O usuário adicionou um horário à lista de horários: Kaio[Matricula: 114110482 Email: ana@yahoo.com ]||IDA||Segunda||8||
-2016-05-06 00:45:04,541 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-13 - [Fri May 06 00:45:04 BRT 2016] O usuário cadastrou seus horários de ida/volta: [Dia: Segunda Hora: 8]||[]||
-2016-05-06 00:46:39,751 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
-2016-05-06 00:46:39,829 [INFO] from application in application-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
-2016-05-06 00:46:39,831 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-7 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:46:39,831 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:46:39,874 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-7 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:46:39,917 [WARN] from application in application-akka.actor.default-dispatcher-7 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:46:39,962 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
-2016-05-06 00:46:39,986 [ERROR] from application in application-akka.actor.default-dispatcher-3 - 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ProvisionException: Unable to provision, see the following errors:
 
-! @70288n7n9 - Internal server error, for (GET) [/logout] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
+1) Error injecting constructor, java.lang.NoSuchMethodError: javax.persistence.OneToOne.orphanRemoval()Z
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.<init>(DefaultJPAApi.java:39)
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.class(DefaultJPAApi.java:34)
+  while locating play.db.jpa.DefaultJPAApi$JPAApiProvider
+  while locating play.db.jpa.JPAApi
+    for parameter 0 at play.db.jpa.TransactionalAction.<init>(TransactionalAction.java:20)
+  while locating play.db.jpa.TransactionalAction
+
+1 error]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:269)
 	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:195)
 	at play.api.GlobalSettings$class.onError(GlobalSettings.scala:160)
@@ -326,9 +143,11 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPoint
 	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
 	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40)
 	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248)
-	at scala.concurrent.impl.Promise$DefaultPromise.link(Promise.scala:304)
-	at scala.concurrent.impl.Promise$DefaultPromise.linkRootOf(Promise.scala:289)
-	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:253)
+	at scala.concurrent.Promise$class.complete(Promise.scala:55)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153)
+	at scala.concurrent.Promise$class.failure(Promise.scala:104)
+	at scala.concurrent.impl.Promise$DefaultPromise.failure(Promise.scala:153)
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:255)
 	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249)
 	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32)
 	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
@@ -343,25 +162,27 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPoint
 	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.NullPointerException: null
-	at controllers.AutenticacaoController.efetuaLogout(AutenticacaoController.java:94)
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$8$$anonfun$apply$8.apply(Routes.scala:405)
-	at router.Routes$$anonfun$routes$1$$anonfun$applyOrElse$8$$anonfun$apply$8.apply(Routes.scala:405)
-	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:157)
-	at play.core.routing.HandlerInvokerFactory$$anon$4.resultCall(HandlerInvoker.scala:156)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$14$$anon$3$$anon$1.invocation(HandlerInvoker.scala:136)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:73)
-	at play.http.HttpRequestHandler$1.call(HttpRequestHandler.java:54)
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
-	at play.core.j.JavaAction$$anonfun$7.apply(JavaAction.scala:108)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
-	at play.api.libs.iteratee.Execution$trampoline$.execute(Execution.scala:70)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
-	at scala.concurrent.impl.Future$.apply(Future.scala:31)
-	at scala.concurrent.Future$.apply(Future.scala:492)
-	at play.core.j.JavaAction.apply(JavaAction.scala:108)
+Caused by: com.google.inject.ProvisionException: Unable to provision, see the following errors:
+
+1) Error injecting constructor, java.lang.NoSuchMethodError: javax.persistence.OneToOne.orphanRemoval()Z
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.<init>(DefaultJPAApi.java:39)
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.class(DefaultJPAApi.java:34)
+  while locating play.db.jpa.DefaultJPAApi$JPAApiProvider
+  while locating play.db.jpa.JPAApi
+    for parameter 0 at play.db.jpa.TransactionalAction.<init>(TransactionalAction.java:20)
+  while locating play.db.jpa.TransactionalAction
+
+1 error
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1025)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1051)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:405)
+	at play.core.j.DefaultJavaHandlerComponents.getAction(JavaAction.scala:142)
+	at play.core.j.JavaAction$$anonfun$6.apply(JavaAction.scala:91)
+	at play.core.j.JavaAction$$anonfun$6.apply(JavaAction.scala:89)
+	at scala.collection.IndexedSeqOptimized$class.foldl(IndexedSeqOptimized.scala:57)
+	at scala.collection.IndexedSeqOptimized$class.foldLeft(IndexedSeqOptimized.scala:66)
+	at scala.collection.mutable.ArraySeq.foldLeft(ArraySeq.scala:46)
+	at play.core.j.JavaAction.apply(JavaAction.scala:89)
 	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
 	at play.api.mvc.Action$$anonfun$apply$2$$anonfun$apply$5$$anonfun$apply$6.apply(Action.scala:112)
 	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
@@ -372,241 +193,41 @@ Caused by: java.lang.NullPointerException: null
 	at play.api.mvc.Action$$anonfun$apply$2.apply(Action.scala:103)
 	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251)
 	... 14 common frames omitted
-2016-05-06 00:48:18,088 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2016-05-06 00:48:18,169 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
-2016-05-06 00:48:18,171 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-6 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:48:18,171 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:48:18,225 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-6 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:48:18,268 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:48:18,310 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-05-06 00:51:28,990 [ERROR] from application in netty-event-loop-8 - 
-
-! @70289djam - Internal server error, for (GET) [/] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[Expected ')' but found 'EOF']
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-06 00:53:42,365 [ERROR] from application in netty-event-loop-9 - 
-
-! @70289l8ii - Internal server error, for (GET) [/] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[Expected ')' but found 'EOF']
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-06 00:54:03,334 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2016-05-06 00:54:03,404 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2016-05-06 00:54:03,405 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:54:03,406 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:54:03,457 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-4 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:54:03,517 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:54:03,548 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-05-06 00:54:50,758 [ERROR] from application in netty-event-loop-9 - 
-
-! @70289p5n4 - Internal server error, for (GET) [/] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[Expected ')' but found 'EOF']
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-06 00:56:09,087 [ERROR] from application in netty-event-loop-9 - 
-
-! @7028a3hjm - Internal server error, for (GET) [/] ->
- 
-play.sbt.PlayExceptions$CompilationException: Compilation error[Expected ')' but found 'EOF']
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
-	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
-	at scala.Option.map(Option.scala:145)
-	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
-	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
-	at scala.util.Either$LeftProjection.map(Either.scala:377)
-	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$2.apply(PlayRun.scala:61)
-	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:338)
-	at play.runsupport.Reloader$$anon$3.run(Reloader.scala:43)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:39)
-	at play.runsupport.Reloader.reload(Reloader.scala:336)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:118)
-	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
-	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:39)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:405)
-	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-2016-05-06 00:56:29,375 [INFO] from application in application-akka.actor.default-dispatcher-4 - Shutting down connection pool.
-2016-05-06 00:56:29,447 [INFO] from application in application-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
-2016-05-06 00:56:29,449 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-4 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:56:29,450 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:56:29,502 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-4 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:56:29,547 [WARN] from application in application-akka.actor.default-dispatcher-4 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:56:29,581 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-4 - Application started (Dev)
-2016-05-06 00:58:37,987 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
-2016-05-06 00:58:38,066 [INFO] from application in application-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
-2016-05-06 00:58:38,068 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-8 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:58:38,070 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:58:38,117 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-8 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:58:38,162 [WARN] from application in application-akka.actor.default-dispatcher-8 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:58:38,195 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-8 - Application started (Dev)
-2016-05-06 00:59:11,360 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
-2016-05-06 00:59:11,423 [INFO] from application in application-akka.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
-2016-05-06 00:59:11,424 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-9 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 00:59:11,425 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-9 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 00:59:11,475 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-9 - Bean [models.Endereco] has no unique id set
-2016-05-06 00:59:11,518 [WARN] from application in application-akka.actor.default-dispatcher-9 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 00:59:11,552 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-9 - Application started (Dev)
-2016-05-06 01:00:36,858 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2016-05-06 01:00:36,927 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2016-05-06 01:00:36,929 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-2 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 01:00:36,929 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 01:00:36,980 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-2 - Bean [models.Endereco] has no unique id set
-2016-05-06 01:00:37,021 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 01:00:37,060 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-05-06 01:01:29,605 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2016-05-06 01:01:29,683 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2016-05-06 01:01:29,684 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 01:01:29,685 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 01:01:29,724 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-5 - Bean [models.Endereco] has no unique id set
-2016-05-06 01:01:29,772 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 01:01:29,817 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-05-06 01:01:54,791 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2016-05-06 01:01:54,882 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2016-05-06 01:01:54,884 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 01:01:54,884 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 01:01:54,929 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-5 - Bean [models.Endereco] has no unique id set
-2016-05-06 01:01:55,004 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 01:01:55,061 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-05-06 01:03:08,237 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2016-05-06 01:03:08,326 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2016-05-06 01:03:08,328 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-2 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 01:03:08,328 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 01:03:08,388 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-2 - Bean [models.Endereco] has no unique id set
-2016-05-06 01:03:08,434 [WARN] from application in application-akka.actor.default-dispatcher-2 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 01:03:08,469 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
-2016-05-06 01:05:17,495 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
-2016-05-06 01:05:17,571 [INFO] from application in application-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
-2016-05-06 01:05:17,573 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-7 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 01:05:17,574 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 01:05:17,636 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-7 - Bean [models.Endereco] has no unique id set
-2016-05-06 01:05:17,675 [WARN] from application in application-akka.actor.default-dispatcher-7 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 01:05:17,714 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
-2016-05-06 01:06:06,606 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2016-05-06 01:06:06,680 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
-2016-05-06 01:06:06,681 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-6 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 01:06:06,682 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 01:06:06,726 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-6 - Bean [models.Endereco] has no unique id set
-2016-05-06 01:06:06,765 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 01:06:06,797 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-05-06 01:06:58,934 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2016-05-06 01:06:59,007 [INFO] from application in application-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
-2016-05-06 01:06:59,009 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-6 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 01:06:59,009 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 01:06:59,047 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-6 - Bean [models.Endereco] has no unique id set
-2016-05-06 01:06:59,088 [WARN] from application in application-akka.actor.default-dispatcher-6 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 01:06:59,121 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-6 - Application started (Dev)
-2016-05-06 01:08:36,516 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
-2016-05-06 01:08:36,593 [INFO] from application in application-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2016-05-06 01:08:36,595 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-5 - datasource [default] bound to JNDI as DefaultDS
-2016-05-06 01:08:36,596 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:h2:mem:play
-2016-05-06 01:08:36,640 [WARN] from com.avaje.ebeaninternal.server.deploy.BeanDescriptorManager in application-akka.actor.default-dispatcher-5 - Bean [models.Endereco] has no unique id set
-2016-05-06 01:08:36,688 [WARN] from application in application-akka.actor.default-dispatcher-5 - application.langs is deprecated, use play.i18n.langs instead
-2016-05-06 01:08:36,728 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-5 - Application started (Dev)
-2016-05-06 01:09:25,975 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Fri May 06 01:09:25 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||
-2016-05-06 01:09:25,976 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Fri May 06 01:09:25 BRT 2016] O sistema registrou um erro: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||4||
-2016-05-06 01:09:25,977 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-5 - [Fri May 06 01:09:25 BRT 2016] Um novo usuário se cadastrou no sistema: Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ||Rua: Av. Cap Joao Alves de Lira Bairro: Acácio Figueiredo ||4||
-2016-05-06 01:09:30,581 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Fri May 06 01:09:30 BRT 2016] O usuário efetuou login: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
-2016-05-06 01:09:30,581 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Fri May 06 01:09:30 BRT 2016] O usuário está sendo autenticado pelo sistema: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
-2016-05-06 01:09:30,582 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-2 - [Fri May 06 01:09:30 BRT 2016] O sistema está verificando o primeiro acesso do usuário: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
-2016-05-06 01:09:32,672 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Fri May 06 01:09:32 BRT 2016] O usuário cadastrou seus horários de ida/volta: []||[]||
-2016-05-06 01:09:35,204 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Fri May 06 01:09:35 BRT 2016] O usuário adicionou uma carona ao sistema: Dia: Segunda Hora: 8||IDA||1||
-2016-05-06 01:09:35,204 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Fri May 06 01:09:35 BRT 2016] O sistema registrou um erro: []||
-2016-05-06 01:09:35,204 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Fri May 06 01:09:35 BRT 2016] O usuário efetuou uma busca por todas as caronas disponíveis.
-2016-05-06 01:09:41,472 [INFO] from play.api.mvc.Controller in application-akka.actor.default-dispatcher-12 - [Fri May 06 01:09:41 BRT 2016] O usuário efetuou logout: Pedro Paulo Freire[Matricula: 114110482 Email: pedro.oliveira@ccc.ufcg.edu.br ]||
+Caused by: java.lang.NoSuchMethodError: javax.persistence.OneToOne.orphanRemoval()Z
+	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:1789)
+	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:906)
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:733)
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:245)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:222)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:265)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:848)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:876)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:58)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:83)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:60)
+	at play.db.jpa.DefaultJPAApi.lambda$start$1(DefaultJPAApi.java:60)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at play.db.jpa.DefaultJPAApi.start(DefaultJPAApi.java:59)
+	at play.db.jpa.DefaultJPAApi$JPAApiProvider.<init>(DefaultJPAApi.java:46)
+	at play.db.jpa.DefaultJPAApi$JPAApiProvider$$FastClassByGuice$$dcd4cdbd.newInstance(<generated>)
+	at com.google.inject.internal.cglib.reflect.$FastConstructor.newInstance(FastConstructor.java:40)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:61)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:105)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:61)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1016)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1012)
+	... 32 common frames omitted
+2016-05-11 20:35:36,474 [INFO] from application in pool-6-thread-1 - Shutting down connection pool.
