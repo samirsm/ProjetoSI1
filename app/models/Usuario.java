@@ -39,6 +39,20 @@ public class Usuario extends Model {
 		this.dadosPessoais = dados;
 		this.setEndereco(endereco);
 		this.setEnderecoAlternativo(endereco);
+		setId();
+	}
+
+	public Long getId() {
+		return id;
+	}
+	private void setId(){
+		double idTemp = Integer.parseInt(dadosPessoais.getMatricula()) * Math.random() * 13;
+		idTemp %= 1;
+		idTemp *= 100000;
+		id = (long) idTemp;
+	}
+	public String getEnderecoPerfil(){
+		return "perfil?id=" + this.getId();
 	}
 
 

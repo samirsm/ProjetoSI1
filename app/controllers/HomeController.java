@@ -19,6 +19,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 import sistemas.SistemaCarona;
 import sistemas.SistemaDeBairros;
+import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
@@ -68,6 +69,12 @@ public class HomeController extends Controller {
 	public Result editaHorarios(){
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
       return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+
+	}
+
+	public Result exibePerfilUsuario(Long id){
+		Usuario usuarioPerfil = SistemaUsuarioCRUD.getInstance().getUsuarioPorId(id);
+		return ok(telaPerfilUsuario.render(usuarioLogado, usuarioPerfil));
 
 	}
 	

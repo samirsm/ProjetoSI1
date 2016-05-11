@@ -91,6 +91,15 @@ public final class SistemaUsuarioCRUD {
 		}
 		return false;
 	}
+
+	public Usuario getUsuarioPorId(Long id){
+		for (int i = 0; i < usuariosAtivados.size(); i++){
+			if(usuariosAtivados.get(i).getId().equals(id))
+				return usuariosAtivados.get(i);
+		}
+		return null;
+	}
+
 	public void cadastraNovoEndereco(Usuario usuario,String rua, String bairro) throws BairroJaCadastradoException{
       usuario.addEnderecoAlternativo(new Endereco(rua, bairro));
   }

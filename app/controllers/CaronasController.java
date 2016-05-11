@@ -116,7 +116,7 @@ public class CaronasController extends Controller {
         
         loggerCaronas.registraAcao(Acao.EXIBE_DETALHES, carona.toString());
         
-        return ok(telaAgendamentosCaronaPassageiro.render(usuarioLogado, caronasUsuarioLogado, notificacoesUsuarioLogado, carona));
+        return ok(telaConfirmarPedidoCarona.render(usuarioLogado, carona));
     }
     
     @Security.Authenticated(Secured.class)
@@ -139,6 +139,6 @@ public class CaronasController extends Controller {
         List<Carona> caronas = user.getCaronas();
         List<Carona> pendentes = user.getCaronasPendentes();
         List<Notificacao> notificacoes = user.getNotificacoesNaoLidas();
-        return ok(telaCaronasPendentes.render(user, caronas, pendentes, notificacoes));
+        return ok(telaCaronasPendentes.render(user, pendentes));
     }
 }

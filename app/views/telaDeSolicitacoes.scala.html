@@ -1,9 +1,9 @@
-@(usuarioLogado: Usuario, caronas: List[Carona], solicitacoes: List[Notificacao], notificacoes: List[Notificacao])
+@(usuarioLogado: Usuario, solicitacoes: List[Notificacao])
 
-@main(usuarioLogado: Usuario, caronas, notificacoes, "Vumbora"){
+@main(usuarioLogado, usuarioLogado.getCaronas(), usuarioLogado.getNotificacoesNaoLidas(), "Solicitações de Carona"){
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 

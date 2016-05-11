@@ -10,6 +10,7 @@ POST    /login			         	controllers.AutenticacaoController.efetuaLogin()
 GET     /logout                     controllers.AutenticacaoController.efetuaLogout
 
 POST    /home						controllers.CaronasController.cadastraNovaCarona
+GET     /perfil                     controllers.HomeController.exibePerfilUsuario(id: Long)
 GET     /horarios                   controllers.HomeController.editaHorarios()
 GET     /solicitacoes				controllers.NotificacoesController.exibeSolicitacoes()
 GET     /pendentes                  controllers.CaronasController.exibeCaronasPendentes()

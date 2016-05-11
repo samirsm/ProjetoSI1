@@ -21,20 +21,20 @@ import play.data._
 import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 
-class telaDeSolicitacoes extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template4[Usuario,List[Carona],List[Notificacao],List[Notificacao],play.twirl.api.HtmlFormat.Appendable] {
+class telaDeSolicitacoes extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template2[Usuario,List[Notificacao],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(usuarioLogado: Usuario, caronas: List[Carona], solicitacoes: List[Notificacao], notificacoes: List[Notificacao]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(usuarioLogado: Usuario, solicitacoes: List[Notificacao]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.115*/("""
+Seq[Any](format.raw/*1.59*/("""
 
-"""),_display_(/*3.2*/main(usuarioLogado: Usuario, caronas, notificacoes, "Vumbora")/*3.64*/{_display_(Seq[Any](format.raw/*3.65*/("""
+"""),_display_(/*3.2*/main(usuarioLogado, usuarioLogado.getCaronas(), usuarioLogado.getNotificacoesNaoLidas(), "Solicitações de Carona")/*3.116*/{_display_(Seq[Any](format.raw/*3.117*/("""
 
 """),format.raw/*5.1*/("""<!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 
@@ -148,9 +148,9 @@ Seq[Any](format.raw/*1.115*/("""
     }
   }
 
-  def render(usuarioLogado:Usuario,caronas:List[Carona],solicitacoes:List[Notificacao],notificacoes:List[Notificacao]): play.twirl.api.HtmlFormat.Appendable = apply(usuarioLogado,caronas,solicitacoes,notificacoes)
+  def render(usuarioLogado:Usuario,solicitacoes:List[Notificacao]): play.twirl.api.HtmlFormat.Appendable = apply(usuarioLogado,solicitacoes)
 
-  def f:((Usuario,List[Carona],List[Notificacao],List[Notificacao]) => play.twirl.api.HtmlFormat.Appendable) = (usuarioLogado,caronas,solicitacoes,notificacoes) => apply(usuarioLogado,caronas,solicitacoes,notificacoes)
+  def f:((Usuario,List[Notificacao]) => play.twirl.api.HtmlFormat.Appendable) = (usuarioLogado,solicitacoes) => apply(usuarioLogado,solicitacoes)
 
   def ref: this.type = this
 
@@ -163,10 +163,10 @@ Seq[Any](format.raw/*1.115*/("""
 object telaDeSolicitacoes extends telaDeSolicitacoes_Scope0.telaDeSolicitacoes
               /*
                   -- GENERATED --
-                  DATE: Tue May 10 21:29:27 BRT 2016
+                  DATE: Wed May 11 02:14:58 BRT 2016
                   SOURCE: /home/pedropfo/workspace/ProjetoSI1/app/views/telaDeSolicitacoes.scala.html
-                  HASH: b33de97d802d8f949a12da56ca33d7ff0ed6a09b
-                  MATRIX: 821->1|1030->114|1058->117|1128->179|1166->180|1194->182|2414->1374|2443->1375|2477->1382|2608->1486|2636->1487|2669->1493|2702->1498|2731->1499|2762->1503|2805->1519|2833->1520|2861->1521|3177->1810|3246->1857|3325->1910|3373->1942|3412->1943|3451->1954|3833->2309|3853->2320|3904->2349|3967->2384|4140->2530|4160->2541|4195->2555|4306->2639|4326->2650|4381->2683|4490->2765|4510->2776|4566->2810|4785->3002|4805->3013|4861->3047|4969->3128|4989->3139|5046->3174|5414->3515|5434->3526|5463->3534|5532->3575|5584->3605|5681->3675|5701->3686|5730->3694|5797->3733|5851->3765|6167->4050|6214->4069|6250->4095|6290->4096|6340->4117|6394->4143|6448->4175|6509->4204|6559->4225
+                  HASH: 164f13fe3f1632e30d817e5a9fbe75868a22eaef
+                  MATRIX: 790->1|942->58|970->61|1093->175|1132->176|1160->178|2380->1370|2409->1371|2443->1378|2574->1482|2602->1483|2635->1489|2668->1494|2697->1495|2728->1499|2771->1515|2799->1516|2827->1517|3143->1806|3212->1853|3291->1906|3339->1938|3378->1939|3417->1950|3799->2305|3819->2316|3870->2345|3933->2380|4106->2526|4126->2537|4161->2551|4272->2635|4292->2646|4347->2679|4456->2761|4476->2772|4532->2806|4751->2998|4771->3009|4827->3043|4935->3124|4955->3135|5012->3170|5380->3511|5400->3522|5429->3530|5498->3571|5550->3601|5647->3671|5667->3682|5696->3690|5763->3729|5817->3761|6133->4046|6180->4065|6216->4091|6256->4092|6306->4113|6360->4139|6414->4171|6475->4200|6525->4221
                   LINES: 27->1|32->1|34->3|34->3|34->3|36->5|71->40|71->40|72->41|74->43|74->43|75->44|75->44|75->44|76->45|77->46|77->46|78->47|89->58|89->58|92->61|92->61|92->61|93->62|99->68|99->68|99->68|100->69|102->71|102->71|102->71|103->72|103->72|103->72|104->73|104->73|104->73|108->77|108->77|108->77|109->78|109->78|109->78|119->88|119->88|119->88|119->88|119->88|121->90|121->90|121->90|121->90|121->90|131->100|133->102|133->102|133->102|134->103|134->103|134->103|135->104|136->105
                   -- GENERATED --
               */

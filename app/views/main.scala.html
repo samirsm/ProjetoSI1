@@ -1,7 +1,7 @@
 @(usuarioLogado: Usuario, caronasOfertadas: List[Carona], notificacoes: List[Notificacao], title: String)(content: Html)
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 
@@ -150,7 +150,7 @@
                 </br>
                 </br>
                     <li>
-                        <a href="/"><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>@usuarioLogado.getNome()</a>
+                        <a href=@usuarioLogado.getEnderecoPerfil()><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>@usuarioLogado.getNome()</a>
                     </li>
                     <li>
                         <a href="/"><i class="fa fa-fw fa-home fa-4x"></i></br><strong>@Messages("global.home")</strong></a>

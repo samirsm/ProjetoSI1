@@ -33,7 +33,7 @@ public class NotificacoesController extends Controller{
           if(notificacoes.get(i).getTipo() == TipoNotificacao.PEDIDO)
               solicitacoes.add(notificacoes.get(i));
         }
-        return ok(telaDeSolicitacoes.render(user, caronas, solicitacoes, notificacoes));
+        return ok(telaDeSolicitacoes.render(user, solicitacoes));
     }
 
     @Security.Authenticated(Secured.class)

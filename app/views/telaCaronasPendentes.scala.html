@@ -1,6 +1,6 @@
-@(usuarioLogado: Usuario, caronas: List[Carona], pendentes: List[Carona], notificacoes: List[Notificacao])
+@(usuarioLogado: Usuario, pendentes: List[Carona])
 
-@main(usuarioLogado: Usuario, caronas, notificacoes, "Vumbora"){
+@main(usuarioLogado, usuarioLogado.getCaronas(), usuarioLogado.getNotificacoesNaoLidas(), "Pedidos de Carona Pendentes"){
 
 <!DOCTYPE html>
 <html lang="pt">
