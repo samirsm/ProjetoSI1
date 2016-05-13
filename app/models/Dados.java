@@ -26,7 +26,6 @@ public class Dados extends Model{
 	
 	public Dados(String matricula, String email, String senha) throws DadosInvalidosException {
 		checaExcecoes(matricula, email, senha);
-		
 		this.matricula = matricula;
 		this.email = email;
 		this.senha = senha;
@@ -38,6 +37,10 @@ public class Dados extends Model{
 	
 	public Dados(String nome, String matricula, String email, String senha, String numeroDeTelefone) throws DadosInvalidosException{
 		checaExcecoes(nome, matricula, email, senha, numeroDeTelefone);
+		checaTelefoneValido(numeroDeTelefone);
+		checaEmail(email);
+		checaMatricula(matricula);
+		
 		this.nome = nome;
 		this.matricula = matricula;
 		this.email = email;
@@ -83,6 +86,35 @@ public class Dados extends Model{
 			if (dadosPessoais[i] == null || dadosPessoais[i].isEmpty())
 				throw new DadosInvalidosException();
 		}
+	}
+	
+	private void checaTelefoneValido(String telefone) throws DadosInvalidosException{
+		try {
+			Integer.parseInt(telefone);
+		}catch(Exception e){
+			throw new DadosInvalidosException();
+		}
+	}
+	
+	private void checaEmail(String email) throws DadosInvalidosException{
+		int contArroba = 0;
+		for(int i = 0; i < email.length(); i++){
+			if(email.charAt(i) == '@')
+				contArroba ++;
+			if(contArroba > 1)
+				throw new DadosInvalidosException();
+		}
+	}
+	
+	private void checaMatricula(String matricula) throws DadosInvalidosException{
+		try {
+			Integer.parseInt(matricula);
+		}catch(Exception e){
+			throw new DadosInvalidosException();
+		}
+		
+		if (matricula.length() != 9)
+			throw new DadosInvalidosException();
 	}
 	
 	public String validate () {

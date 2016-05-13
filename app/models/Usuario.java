@@ -1,9 +1,11 @@
 package models;
 
 import javax.persistence.*;
+
 import com.avaje.ebean.Model;
 
 import exceptions.BairroJaCadastradoException;
+import exceptions.DadosInvalidosException;
 import exceptions.HorarioJaCadastradoException;
 import sistemas.mensagens.Idioma;
 
@@ -34,7 +36,11 @@ public class Usuario extends Model {
 	@Id
 	private Long id;
 
-	public Usuario(Dados dados, Endereco endereco, Integer numeroVagas) {
+	public Usuario(Dados dados, Endereco endereco, Integer numeroVagas) throws DadosInvalidosException {
+		if(endereco == null)
+			throw new DadosInvalidosException("O endereco enviado eh invalido.");
+		if(numeroVagas == null)
+			throw new DadosInvalidosException("O numero de vagas enviado eh invalido.");
 		this.numeroVagas = numeroVagas;
 		this.dadosPessoais = dados;
 		this.setEndereco(endereco);
