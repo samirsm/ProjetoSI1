@@ -30,7 +30,7 @@ public final class SistemaUsuarioCRUD {
 	}
 	
 	// Cadastro com foto de usuario default
-	public Usuario cadastraUsuario(Dados dadosPessoais, Endereco endereco, Integer numeroVagas) throws UsuarioJaExistenteException {
+	public Usuario cadastraUsuario(Dados dadosPessoais, Endereco endereco, Integer numeroVagas) throws UsuarioJaExistenteException, DadosInvalidosException {
 		Usuario novoUsuario = new Usuario(dadosPessoais, endereco, numeroVagas);
 		novoUsuario.setIdioma(SistemaUsuarioLogin.getInstance().getIdioma());
 		if (!isUsuarioExistente(novoUsuario))

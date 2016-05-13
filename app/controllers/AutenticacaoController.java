@@ -101,7 +101,7 @@ public class AutenticacaoController extends Controller {
 		
 		try{
 			SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
-		} catch (UsuarioJaExistenteException e){
+		} catch (UsuarioJaExistenteException | DadosInvalidosException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			return badRequest(e.getMessage());
 		}
@@ -118,7 +118,6 @@ public class AutenticacaoController extends Controller {
 		return redirect(routes.HomeController.index());
 	}
 	
-	// TODO Consertar.
 	private Usuario autenticaUsuario() throws DadosInvalidosException, LoginInvalidoException{
 		DynamicForm requestData = formFactory.form().bindFromRequest();
 		String login = requestData.get("matricula");
