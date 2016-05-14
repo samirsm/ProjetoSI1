@@ -1,13 +1,9 @@
 package sistemas;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
-import models.Carona;
-import models.Notificacao;
-import models.TipoNotificacao;
-import models.Usuario;
+import models.*;
 
 public class SistemaNotificacao {
 
@@ -23,97 +19,18 @@ public class SistemaNotificacao {
     }
 
 
-    public void geraNotificacaoRejeicao(Usuario passageiro, Carona carona) {
-        notificaPassageiro(passageiro, carona, TipoNotificacao.REJEICAO);
-    }
-
-    public void geraNotificacaoAceitacao(Usuario passageiro, Carona carona) {
-        notificaPassageiro(passageiro, carona, TipoNotificacao.ACEITACAO);
-
-    }
-
-
-
-    public void geraNotificacaoPedido(Carona carona, Usuario passageiro) {
-        notificaMotorista(passageiro, carona, TipoNotificacao.PEDIDO);
-    }
-
-    private void notificaMotorista (Usuario passageiro, Carona carona, TipoNotificacao tipo){
-        Notificacao notificacao = new Notificacao(passageiro, carona, tipo);
-        carona.getMotorista().recebeNotificacao(notificacao);
-
-    }
-
-    private void notificaPassageiro(Usuario passageiro, Carona carona, TipoNotificacao tipo) {
-        Notificacao notificacao = new Notificacao(carona.getMotorista(), carona, tipo);
-        passageiro.recebeNotificacao(notificacao);
-    }
-
-
-    private int buscarIndiceCaronaPorId(Long id) {
-        for (int i = 0; i < notificacoes.size(); i++){
-            if (notificacoes.get(i).getId().equals(id)){
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    public Notificacao buscarCaronaPorId(Long id){
-        int i = buscarIndiceCaronaPorId(id);
-        return notificacoes.get(i);
-    }
-
     public List<Notificacao> getNotificacoes() {
         return notificacoes;
     }
 
+    // Notificar
 
-    //PP CLASS
-
-    public void geraNotificacaoRejeicao(Notificacao pedido) {
-        notificaPassageiro(pedido.getCarona(), TipoNotificacao.REJEICAO, pedido.getUsuarioOrigem());
+    public void notificaUsuario(Notificacao notificacao, Usuario usuarioNotificado) {
+        usuarioNotificado.recebeNotificacao(notificacao);
     }
 
-    public void geraNotificacaoAceitacao(Notificacao pedido) {
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 
-        notificaPassageiro(pedido.getCarona(), TipoNotificacao.ACEITACAO, pedido.getUsuarioOrigem());
-
-    }
-
-    public void geraNotificacaoCancelamento(Carona carona) {
-        List<Usuario> passageiros= carona.getPassageiros();
-        for (Usuario passageiro: passageiros){
-            notificaPassageiro(carona, TipoNotificacao.CANCELAMENTO, passageiro);
-        }
-    }
-
-    public void geraNotificacaoPedido(Carona carona) {
-        notificaMotorista(carona, TipoNotificacao.PEDIDO);
-        solicitaCarona(carona);
-    }
-
-    private void notificaMotorista (Carona carona, TipoNotificacao tipo){
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-
-        Notificacao notificacao = new Notificacao(usuarioLogado, carona, tipo);
-        carona.getMotorista().recebeNotificacao(notificacao);
-
-    }
-
-    private void solicitaCarona(Carona carona){
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        Notificacao solicitacao = new Notificacao(usuarioLogado, carona, TipoNotificacao.PEDIDO);
-        carona.adicionaSolicitante(usuarioLogado);
-        carona.getMotorista().recebeSolicitacao(solicitacao);
-    }
-
-    private void notificaPassageiro(Carona carona, TipoNotificacao tipo, Usuario passageiro) {
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        Notificacao notificacao = new Notificacao(usuarioLogado, carona, tipo);
-        passageiro.recebeNotificacao(notificacao);
-    }
+    //Buscar no sistema
 
     public Notificacao buscarNotificacaoPorId(Long id){
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
@@ -132,9 +49,18 @@ public class SistemaNotificacao {
         return -1;
     }
 
+
+    ///Leitura de notificacoes e gets de Lidas/NaoLidas
+
     public void leNotificacao(Notificacao notificacaoNaoLida){
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
         usuarioLogado.leNotificacao(notificacaoNaoLida);
+    }
+
+    public void leTodasNotificacoes(){
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        usuarioLogado.leTodasNotificacoes();
+        notificacoes = new ArrayList<>();
     }
 
     public List<Notificacao> getNotificacoesLidas() {
@@ -148,10 +74,6 @@ public class SistemaNotificacao {
         return usuarioLogado.getNotificacoesNaoLidas();
     }
 
-    public void leTodasNotificacoes(){
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        usuarioLogado.leTodasNotificacoes();
-        notificacoes = new ArrayList<>();
-    }
+
 
 }

@@ -25,9 +25,18 @@ create table notificacao (
   constraint pk_notificacao primary key (id))
 ;
 
+create table solicitacao (
+  id                        bigint not null,
+  mensagem                  varchar(255),
+  status                    boolean,
+  constraint pk_solicitacao primary key (id))
+;
+
 create sequence carona_seq;
 
 create sequence notificacao_seq;
+
+create sequence solicitacao_seq;
 
 
 
@@ -42,9 +51,13 @@ drop table if exists endereco;
 
 drop table if exists notificacao;
 
+drop table if exists solicitacao;
+
 SET REFERENTIAL_INTEGRITY TRUE;
 
 drop sequence if exists carona_seq;
 
 drop sequence if exists notificacao_seq;
+
+drop sequence if exists solicitacao_seq;
 

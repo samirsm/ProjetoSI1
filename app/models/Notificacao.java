@@ -41,10 +41,6 @@ public class Notificacao extends Model{
         return usuarioOrigem;
     }
  
-    public String getMensagem() {
-        return mensagem;
-    }
- 
     public Carona getCarona() {
         return carona;
     }
@@ -56,7 +52,11 @@ public class Notificacao extends Model{
     private void geraMensagem(TipoNotificacao tipo) {
         mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
     }
- 
+
+    public String getMensagem() {
+        return mensagem;
+    }
+
     private void setId(){
         double idTemp = Integer.parseInt(usuarioOrigem.getDadosUsuario().getMatricula()) * Math.random() * 11;
         idTemp %= 1;

@@ -23,7 +23,7 @@ public class Usuario extends Model {
 	private List<Carona> caronasPendentes = new ArrayList<>();
     private Idioma idioma = Idioma.PORTUGUES;
 
-	private List<Notificacao> solicitacoes = new ArrayList<Notificacao>();
+	private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
 
     private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
@@ -59,7 +59,7 @@ public class Usuario extends Model {
 	}
 
 
-	///// Notificações /////
+	///// Notificações/////
 	public boolean recebeNotificacao(Notificacao notificacao) {
 		return notificacoesNaoLidas.add(notificacao);
 	}
@@ -83,21 +83,19 @@ public class Usuario extends Model {
 		notificacoesNaoLidas = new ArrayList<Notificacao>();
 	}
 
-	public boolean recebeSolicitacao(Notificacao solicitacao){
+
+	///// Solicitações/////
+
+	public boolean recebeSolicitacao(Solicitacao solicitacao){
 		return solicitacoes.add(solicitacao);
 	}
 
-	public void removeSolicitacao(Notificacao solicitacao) {
+	public void removeSolicitacao(Solicitacao solicitacao) {
 		solicitacoes.remove(solicitacao);
 	}
 
-	public List<Notificacao> getSolicitacoes() {
-		List<Notificacao> solicitacoes = new ArrayList<>();
-		for(int i = 0; i< notificacoesNaoLidas.size(); i++){
-			if(notificacoesNaoLidas.get(i).getTipo() == TipoNotificacao.PEDIDO)
-				solicitacoes.add(notificacoesNaoLidas.get(i));
-		}
-		return solicitacoes;
+	public List<Solicitacao> getSolicitacoes() {
+		return this.solicitacoes;
 	}
 
 	///// FIM Notificacoes /////

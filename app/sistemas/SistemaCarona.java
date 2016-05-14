@@ -95,7 +95,7 @@ public class SistemaCarona extends Model {
     	int pos = buscarIndiceCaronaPorId(id);
     	if (pos == -1)
     		return null;
-    	sistemaNotificacoes.geraNotificacaoCancelamento(listaCaronasSolicitadas.get(pos));
+    	//sistemaNotificacoes.geraNotificacaoCancelamento(listaCaronasSolicitadas.get(pos));
     	return caronasUsuarioLogado.remove(pos);
 	}
     
