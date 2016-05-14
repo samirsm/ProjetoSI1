@@ -358,3 +358,4 @@ run
 clean
 compile
 run
+clean
