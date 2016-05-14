@@ -18,14 +18,14 @@ public class Usuario extends Model {
 	private Endereco enderecoAlternativo;
 	private Endereco endereco;
 	private final Integer numeroVagas;
-    private List<Carona> caronas = new ArrayList<>();
+	private List<Carona> caronas = new ArrayList<>();
 
 	private List<Carona> caronasPendentes = new ArrayList<>();
-    private Idioma idioma = Idioma.PORTUGUES;
+	private Idioma idioma = Idioma.PORTUGUES;
 
 	private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
 
-    private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
+	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
 
 	private List<Horario> horariosIda = new ArrayList<>();
@@ -225,34 +225,34 @@ public class Usuario extends Model {
 		return false;
 
 	}
-	
+
 	public boolean removeHorarioVolta(String dia, int hora){
 		Horario horario = new Horario(dia,hora);
-	    return removeHorarioVolta(horario);
+		return removeHorarioVolta(horario);
 	}
-	
+
 	public boolean removeHorarioVolta(Horario horario){
-      if(horariosVolta.contains(horario)){
-        return horariosVolta.remove(horario);
-      } else{
-        return false;
-      }
- }
+		if(horariosVolta.contains(horario)){
+			return horariosVolta.remove(horario);
+		} else{
+			return false;
+		}
+	}
 
 	public boolean removeHorarioIda(String dia, int hora){
 		Horario horario = new Horario(dia,hora);
-     	return removeHorarioIda(horario);
- }
- 
- 	public boolean removeHorarioIda(Horario horario){
-   if(horariosIda.contains(horario)){
-     return horariosIda.remove(horario);
-   } else{
-     return false;
-   }
-}
-	
-	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException{	 
+		return removeHorarioIda(horario);
+	}
+
+	public boolean removeHorarioIda(Horario horario){
+		if(horariosIda.contains(horario)){
+			return horariosIda.remove(horario);
+		} else{
+			return false;
+		}
+	}
+
+	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException{
 		if(isHorarioLivre(horario))
 			return horariosIda.add(horario);
 		return false;
