@@ -52,7 +52,7 @@ Seq[Any](format.raw/*1.16*/("""
 object exceptions extends exceptions_Scope0.exceptions
               /*
                   -- GENERATED --
-                  DATE: Wed May 11 20:34:06 BRT 2016
+                  DATE: Sat May 14 01:40:02 BRT 2016
                   SOURCE: /home/hugo/Documentos/Projeto-Vumbora/ProjetoSI1/app/views/exceptions.scala.html
                   HASH: 1754b32bb15f1928f508efa42b36df5ea3cc8204
                   MATRIX: 755->1|864->15|892->18|915->22

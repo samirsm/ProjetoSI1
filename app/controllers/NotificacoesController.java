@@ -41,7 +41,7 @@ public class NotificacoesController extends Controller{
 
     public play.mvc.Result aceitaPedido(Long idPedido){
         Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idPedido);
-        Usuario motorista = pedido.getCarona().getMotorista();
+        Usuario motorista = pedido.getCarona().getUsuario();
         motorista.removeSolicitacao(pedido);
         notificaAceitacao(idPedido);
         return ok();

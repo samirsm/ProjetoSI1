@@ -1,12 +1,13 @@
 package models;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 
 import com.avaje.ebean.Model;
 import exceptions.BairroJaCadastradoException;
 import exceptions.HorarioJaCadastradoException;
 import exceptions.NumeroDeVagasExcedenteException;
-
+import org.mindrot.jbcrypt.BCrypt;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,19 +15,19 @@ import java.util.List;
 //@Table(name = "usuario")
 public class Usuario extends Model {
 
-	public static Finder<Long, Usuario> find = new Finder<Long,Usuario>(Usuario.class);
+	public static Finder<Long, Usuario> find = new Finder<>(Usuario.class);
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long Id;
 
 	@Embedded
 	private Dados dadosPessoais;
 
-	@Embedded
+	@OneToOne
 	private Endereco enderecoAlternativo;
 
-	@Embedded
+	@OneToOne
 	private Endereco endereco;
 
 	// removi o final deste atributo pois o JPA nao aceita :/
@@ -43,7 +44,7 @@ public class Usuario extends Model {
 	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
 	@OneToMany
 	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
-	@OneToMany
+	@ManyToMany(mappedBy = "passageiros")
 	private List<Carona> caronasPassageiro = new ArrayList<>();
 	@OneToMany
 	private List<Carona> caronasMotorista = new ArrayList<>();
@@ -275,4 +276,20 @@ public class Usuario extends Model {
 	public void setIdioma(String idi){
 		idioma = idi;
 	}
+
+	public static Usuario authenticate(String login, String password) {
+		Usuario usuario = find.where().eq("email", login).findUnique();
+		if (usuario == null) {
+			usuario = find.where().eq("matricula", login).findUnique();
+			if (usuario == null){
+				return null;
+			}
+		}
+		if (password.equals(usuario.getDadosUsuario().getSenha())) {
+			return usuario;
+		} else {
+			return null;
+		}
+	}
+
 }

@@ -4,7 +4,7 @@
 		module="projetosi1-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20160511202729"
+		publication="20160514003013"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

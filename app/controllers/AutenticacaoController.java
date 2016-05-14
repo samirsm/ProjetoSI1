@@ -2,6 +2,7 @@ package controllers;
 
 import javax.inject.Inject;
 
+import com.avaje.ebean.Ebean;
 import exceptions.DadosInvalidosException;
 import exceptions.LoginInvalidoException;
 import exceptions.UsuarioCadastradoException;
@@ -10,7 +11,7 @@ import models.Endereco;
 import models.Usuario;
 import play.data.DynamicForm;
 import play.data.FormFactory;
-import play.db.jpa.Transactional;
+import play.db.ebean.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
 import sistemas.SistemaUsuarioCRUD;
@@ -18,13 +19,11 @@ import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import views.html.*;
-import models.dao.GenericDAO;
 
 public class AutenticacaoController extends Controller {
 	private FormFactory formFactory;
 	private LoggerSistema loggerAutenticacao;
-	private static final GenericDAO DAO = new GenericDAO();
-	
+
 	@Inject
 	public AutenticacaoController (FormFactory formFactory){
 		this.formFactory = formFactory;
@@ -85,8 +84,7 @@ public class AutenticacaoController extends Controller {
 		
 		try{
 			Usuario user = SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
-			DAO.persist(user);
-			System.out.println("persistiu!!!");
+			user.save();
 		} catch (UsuarioCadastradoException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			return badRequest(e.getMessage());
@@ -124,4 +122,5 @@ public class AutenticacaoController extends Controller {
 		loggerAutenticacao.registraAcao(Acao.VERIFICA_PRIMEIRO_ACESSO, usuario.toString());
 		return redirect(routes.HomeController.index());
 	}
+
 }

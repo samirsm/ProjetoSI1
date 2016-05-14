@@ -20,6 +20,3 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-play-ebean" % "3.0.0")
 // basis using disablePlugins(PlayEnhancer) in your build.sbt
 //addSbtPlugin("com.typesafe.sbt" % "sbt-play-enhancer" % "1.1.0")
 
-// Play Ebean support, to enable, uncomment this line, and enable in your build.sbt using
-// enablePlugins(PlayEbean).
-// addSbtPlugin("com.typesafe.sbt" % "sbt-play-ebean" % "1.0.0")

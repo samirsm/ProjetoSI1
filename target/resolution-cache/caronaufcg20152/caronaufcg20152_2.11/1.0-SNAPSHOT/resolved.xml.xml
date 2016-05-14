@@ -4,7 +4,7 @@
 		module="caronaufcg20152_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20160511203404"
+		publication="20160514014000"
 	>
 		<description>
 		caronaUFCG20152
@@ -46,7 +46,7 @@
 		<dependency org="com.typesafe.play" name="play-cache_2.11" rev="2.5.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-java-ws_2.11" rev="2.5.1" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-jdbc-evolutions_2.11" rev="2.5.1" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-java-jpa_2.11" rev="2.5.1" conf="compile->default(compile)"/>
+		<dependency org="org.mindrot" name="jbcrypt" rev="0.3m" conf="compile->default(compile)"/>
 		<dependency org="commons-io" name="commons-io" rev="2.4" conf="compile->default(compile)"/>
 		<dependency org="org.apache.directory.api" name="api-all" rev="1.0.0-M14" conf="compile->default(compile)"/>
 		<dependency org="postgresql" name="postgresql" rev="9.1-901-1.jdbc4" conf="compile->default(compile)"/>

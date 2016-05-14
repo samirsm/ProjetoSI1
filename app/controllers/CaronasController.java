@@ -62,10 +62,10 @@ public class CaronasController extends Controller {
       Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(id);
 
       try {
-          SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getUsuarioOrigem());
-          loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
+          SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getUsuario());
+          loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getUsuario().toString(), pedido.getUsuario().toString());
           SistemaNotificacao.getInstance().geraNotificacaoAceitacao(pedido);
-          loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
+          loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getUsuario().toString(), pedido.getUsuario().toString());
 
           SistemaUsuarioLogin.getInstance().getUsuarioLogado().leNotificacao(pedido);
           return redirect(routes.NotificacoesController.exibeSolicitacoes());
@@ -77,9 +77,9 @@ public class CaronasController extends Controller {
     
     public Result recusaPedido(Long id){
       Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(id);
-      loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
+      loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getUsuario().toString(), pedido.getUsuario().toString());
       SistemaNotificacao.getInstance().geraNotificacaoRejeicao(pedido);
-      loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getUsuarioOrigem().toString());
+      loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getUsuario().toString(), pedido.getUsuario().toString());
 
       SistemaUsuarioLogin.getInstance().getUsuarioLogado().leNotificacao(pedido);
       return redirect(routes.NotificacoesController.exibeSolicitacoes());

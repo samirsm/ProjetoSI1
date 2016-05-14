@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.scala-lang#scala-library;2.11.7 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.11.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@6cc4b8bc[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@f679140[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.7[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.11.7 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m	[2.11.7] org.scala-lang#scala-library;2.11.7[0m
@@ -1707,84 +1707,14 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java-jpa_2.11;2.5.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-java-jpa_2.11;2.5.1 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java-jpa_2.11;2.5.1[0m
-[0m[[0mdebug[0m] [0m	found com.typesafe.play#play-java-jpa_2.11;2.5.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java-jdbc_2.11;2.5.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-java-jdbc_2.11;2.5.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java-jdbc_2.11;2.5.1[0m
-[0m[[0mdebug[0m] [0m	found com.typesafe.play#play-java-jdbc_2.11;2.5.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.typesafe.play#play-jdbc_2.11;2.5.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-jdbc_2.11;2.5.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-jdbc_2.11;2.5.1[0m
-[0m[[0mdebug[0m] [0m	found com.typesafe.play#play-jdbc_2.11;2.5.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->master(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final[0m
-[0m[[0mdebug[0m] [0m	found org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->default(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.mindrot#jbcrypt;0.3m ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.mindrot#jbcrypt;0.3m {compile=[default(compile)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.mindrot#jbcrypt;0.3m[0m
+[0m[[0mdebug[0m] [0m	found org.mindrot#jbcrypt;0.3m in sbt-chain[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving commons-io#commons-io;2.4 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: commons-io#commons-io;2.4 {compile=[default(compile)]}[0m
@@ -1928,7 +1858,13 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;5.1.0.Final->org.jboss.logging#jboss-logging;3.3.0.Final [compile->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;5.1.0.Final->org.jboss.logging#jboss-logging;3.3.0.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;5.1.0.Final->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->master(compile)][0m
+[0m[[0minfo[0m] [0mResolving org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final ...[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final {compile=[compile(*), master(compile)], runtime=[runtime(*)]}[0m
+[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final[0m
+[0m[[0mdebug[0m] [0m	found org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;5.1.0.Final->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->compile(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;5.1.0.Final->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->runtime(*)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;5.1.0.Final->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;5.1.0.Final->org.javassist#javassist;3.20.0-GA [compile->master(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;5.1.0.Final->org.javassist#javassist;3.20.0-GA [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.hibernate#hibernate-core;5.1.0.Final->antlr#antlr;2.7.7 [compile->master(compile)][0m
@@ -3103,62 +3039,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->compile][0m
@@ -4376,62 +4260,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->compile][0m
@@ -6169,62 +6001,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->compile][0m
@@ -7444,62 +7224,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->compile][0m
@@ -8719,62 +8447,10 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->master(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->com.typesafe.play#play-java-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->org.scala-lang#scala-library;2.11.7 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.typesafe.play#play-jdbc-api_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.jolbox#bonecp;0.8.0.RELEASE [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.zaxxer#HikariCP;2.4.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.googlecode.usc#jdbcdslog;1.0.6.2 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->com.h2database#h2;1.4.191 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.11;2.5.1->tyrex#tyrex;1.0.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.11;2.5.1->com.typesafe.play#play-java_2.11;2.5.1 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->runtime(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jpa_2.11;2.5.1->org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->com.typesafe.play#play-java-jpa_2.11;2.5.1 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->org.mindrot#jbcrypt;0.3m [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT->commons-io#commons-io;2.4 [compile->compile][0m
@@ -9948,7 +9624,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-cache_2.11;2.5.1!play-cache_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-ws_2.11;2.5.1!play-java-ws_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc-evolutions_2.11;2.5.1!play-jdbc-evolutions_2.11.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jpa_2.11;2.5.1!play-java-jpa_2.11.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.mindrot#jbcrypt;0.3m!jbcrypt.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-io#commons-io;2.4!commons-io.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.directory.api#api-all;1.0.0-M14!api-all.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] postgresql#postgresql;9.1-901-1.jdbc4!postgresql.jar[0m
@@ -9956,8 +9632,10 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hibernate#hibernate-entitymanager;5.1.0.Final!hibernate-entitymanager.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-lang3;3.4!commons-lang3.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.1!scala-xml_2.11.jar(bundle)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.11;2.5.0!play-java-jdbc_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.avaje.ebeanorm#avaje-ebeanorm;6.18.1!avaje-ebeanorm.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.avaje.ebeanorm#avaje-ebeanorm-agent;4.9.1!avaje-ebeanorm-agent.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.11;2.5.0!play-jdbc_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.jolbox#bonecp;0.8.0.RELEASE!bonecp.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.zaxxer#HikariCP;2.4.3!HikariCP.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.googlecode.usc#jdbcdslog;1.0.6.2!jdbcdslog.jar[0m
@@ -10040,9 +9718,6 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.httpcomponents#httpclient;4.0.1!httpclient.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-logging#commons-logging;1.1.1!commons-logging.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc-api_2.11;2.5.1!play-jdbc-api_2.11.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.11;2.5.1!play-java-jdbc_2.11.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final!hibernate-jpa-2.1-api.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.11;2.5.1!play-jdbc_2.11.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] xpp3#xpp3;1.1.4c!xpp3.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] dom4j#dom4j;1.6.1!dom4j.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-pool#commons-pool;1.6!commons-pool.jar[0m
@@ -10051,6 +9726,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] commons-collections#commons-collections;3.2.1!commons-collections.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] antlr#antlr;2.7.7!antlr.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.jboss.logging#jboss-logging;3.3.0.Final!jboss-logging.jar[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.hibernate.javax.persistence#hibernate-jpa-2.1-api;1.0.0.Final!hibernate-jpa-2.1-api.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.geronimo.specs#geronimo-jta_1.1_spec;1.1.1!geronimo-jta_1.1_spec.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.jboss#jandex;2.0.0.Final!jandex.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.fasterxml#classmate;1.3.0!classmate.jar(bundle)[0m
@@ -10108,7 +9784,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.11.7!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.4!scala-xml_2.11.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.12.1!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4242ms :: artifacts dl 74ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 4453ms :: artifacts dl 84ms[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT compile produced in /home/hugo/Documentos/Projeto-Vumbora/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT runtime produced in /home/hugo/Documentos/Projeto-Vumbora/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT test produced in /home/hugo/Documentos/Projeto-Vumbora/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-test.xml[0m
@@ -10122,5 +9798,5 @@
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT docs produced in /home/hugo/Documentos/Projeto-Vumbora/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT pom produced in /home/hugo/Documentos/Projeto-Vumbora/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for caronaufcg20152#caronaufcg20152_2.11;1.0-SNAPSHOT scala-tool produced in /home/hugo/Documentos/Projeto-Vumbora/ProjetoSI1/target/resolution-cache/reports/caronaufcg20152-caronaufcg20152_2.11-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (4242ms resolve - 74ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (4453ms resolve - 84ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

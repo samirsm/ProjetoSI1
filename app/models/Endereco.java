@@ -1,13 +1,15 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 import play.data.validation.Constraints;
 
-@Embeddable
+@Entity
 public class Endereco {
+
+	@Id
+	@GeneratedValue
+	private long Id;
 
 	@Column
 	private String bairro;
