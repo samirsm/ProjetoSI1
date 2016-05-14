@@ -62,7 +62,8 @@ public class HorariosController extends Controller {
     	  SistemaUsuarioCRUD.getInstance().cadastraHorario(usuarioLogado, tipo, dia, hora);
     	  loggerHorarios.registraAcao(Acao.ADICIONOU_HORARIO,usuarioLogado.toString(), tipo.toString(), dia, hora.toString());
       } catch (HorarioJaCadastradoException e){
-    	  return badRequest(e.getMessage());
+        flash("erro", e.getMessage());
+        return redirect(routes.HomeController.editaHorarios());
       }
       
       return redirect(routes.HomeController.editaHorarios());
@@ -79,11 +80,12 @@ public class HorariosController extends Controller {
           SistemaUsuarioCRUD.getInstance().cadastraNovoEndereco(usuarioLogado,rua, bairro);
           loggerHorarios.registraAcao(Acao.CADASTROU_NOVO_ENDERECO,usuarioLogado.toString(),rua, bairro);
       } catch (BairroJaCadastradoException e){
-          return badRequest(e.getMessage());
+        flash("erro", e.getMessage());
+        return redirect(routes.HomeController.editaHorarios());
       }
-      
+      flash("success", "Endereco cadastrado com sucesso!");
       return redirect(routes.HomeController.editaHorarios());
-	}
+  	}
 	
 	public Result excluiHorarioVolta(String dia, Integer hora){
 	  Horario horario = new Horario(dia, hora);

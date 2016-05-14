@@ -54,7 +54,8 @@ public class AutenticacaoController extends Controller {
 				throw new LoginInvalidoException();
 		} catch (DadosInvalidosException | LoginInvalidoException e) {
 			loggerAutenticacao.registraAcao(Acao.INFO, e.getMessage());
-			return badRequest(e.getMessage());
+			flash("erro", e.getMessage());
+            return redirect(routes.HomeController.index());
 		}
 
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
@@ -84,8 +85,9 @@ public class AutenticacaoController extends Controller {
 			endereco = new Endereco(rua, bairro);
 		}catch(Exception e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
-			return badRequest(new DadosInvalidosException().getMessage());
-		}
+			flash("erro", e.getMessage());
+            return redirect(routes.HomeController.index());		
+        }
 		
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString());
 		
@@ -103,12 +105,15 @@ public class AutenticacaoController extends Controller {
 			SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
 		} catch (UsuarioJaExistenteException | DadosInvalidosException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
-			return badRequest(e.getMessage());
-		}
+			flash("erro", e.getMessage());
+            return redirect(routes.HomeController.index());
+            }
 		
 		loggerAutenticacao.registraAcao(Acao.USUARIO_CADASTRADO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
-		return redirect(routes.HomeController.index());
-	}
+	
+		flash("success", "Usuario cadastrado com sucesso!");
+        return redirect(routes.HomeController.index());	
+       }
 	
 	public Result efetuaLogout(){
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado().toString());

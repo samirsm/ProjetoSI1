@@ -26,7 +26,6 @@
     <link href="assets/SBAdminTemplate/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript">
 
-
            function publicarCaronaBox(){
              if(@usuarioLogado.getNumeroVagas() > 0){
                document.getElementById('publicarCaronaBox').innerHTML = document.getElementById('publicarCarona').innerHTML;
@@ -78,7 +77,8 @@
 		<div class="nav navbar-nav top-information">
 			<!-- Main jumbotron for a primary marketing message or call to action -->
      <div id="publicarBuscar" style=" width: 96%; height: 100px; border: 2px solid #888; border-radius: 20px; vertical-align: center; background: rgb(000, 00, 00); background: rgba(000, 00, 00, 0.5); color: white; color: white;">
-			<div class="row">
+
+    <div class="row">
 
 					<div class="col-sm-2">
             @helper.form(action = routes.CaronasController.buscarCaronas()){
@@ -100,7 +100,24 @@
 
 	    	</div>
         <div id="publicarCaronaBox" class="jumbotron" style=" width: 96%; border: 2px solid #888; border-radius: 20px; vertical-align: center; background: rgb(000, 00, 00);background: rgba(000, 00, 00, 0.5); color: white; ">
-  	    </div>
+
+          @if(flash.containsKey("erro")) {
+            <div class="alert alert-warning" id="warning-alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Erro!</strong> @flash.get("erro")
+            </div>
+          }
+          @if(flash.containsKey("success")) {
+            <div class="alert alert-success"   >
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Sucesso!</strong> @flash.get("success")
+            </div>
+          }
+        </div>
 
 
         <div id="publicarCarona" class="jumbotron" style="display: none">

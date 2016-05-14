@@ -124,6 +124,25 @@
 				@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("tela_login.login"), '_showConstraints -> false)
 				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"), '_showConstraints -> false)
 				<input type="submit" value="Login" class="btn btn-default btn-xl"></input>
+			</br>
+			</br>
+				@if(flash.containsKey("erro")) {
+ 					<div class="alert alert-warning" id="warning-alert">
+	  					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    				<span aria-hidden="true">&times;</span>
+  				</button>
+  				<strong>Erro!</strong> @flash.get("erro")
+					</div>
+ 				}
+				@if(flash.containsKey("success")) {
+					<div class="alert alert-success"   >
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<strong>Sucesso!</strong> @flash.get("success")
+					</div>
+				}
+
 			}
 				<a class="btn" onclick="cadastro()">@Messages("tela_login.nao_cadastrado")</a>
 			</div>
@@ -148,6 +167,7 @@
 				<div>@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq(Messages("tela_login.sem_carro"),"1","2","3","4","5","6","7","8")), '_label -> Messages("tela_login.vagas"))</div>
 
 				<input type="submit" value=@Messages("tela_login.cadastrar") class="btn btn-default btn-xl"></input>
+
 			</br>
 				<a class="btn" onclick="login()">@Messages("tela_login.sou_cadastrado")</a>
 				</div>

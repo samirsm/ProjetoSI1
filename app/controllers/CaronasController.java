@@ -51,11 +51,11 @@ public class CaronasController extends Controller {
             SistemaCarona.getInstance().getListaPesquisaAtualizada();
             loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS);
         } catch (CaronaJaCadastradaException e){
-            loggerCaronas.registraAcao(Acao.ERRO, e.getMessage());
-            return badRequest(e.getMessage());
+          flash("erro", e.getMessage());
+          return redirect(routes.HomeController.index());
       }
-        
-        return redirect(routes.HomeController.index());
+        flash("success", "Carona cadastrada com sucesso!");
+        return redirect(routes.HomeController.index()); 
     }
     
     @Security.Authenticated(Secured.class)
@@ -72,6 +72,7 @@ public class CaronasController extends Controller {
         pedido.getCarona().getMotorista().removeSolicitacao(pedido);
         user.leNotificacao(pedido);
         pedido.getUsuarioOrigem().removeCaronaPendente(pedido.getCarona());
+        flash("success", "Solicitação enviada para " + pedido.getUsuarioOrigem().getNome());
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
       }
     
@@ -87,6 +88,7 @@ public class CaronasController extends Controller {
         pedido.getCarona().getMotorista().removeSolicitacao(pedido);
         user.leNotificacao(pedido);
         pedido.getUsuarioOrigem().removeCaronaPendente(pedido.getCarona());
+        flash("success", "Solicitação enviada para " + pedido.getUsuarioOrigem().getNome());
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
 
     }
@@ -97,8 +99,8 @@ public class CaronasController extends Controller {
         SistemaNotificacao.getInstance().geraNotificacaoPedido(carona);
         buscarCaronas();
         SistemaUsuarioLogin.getInstance().getUsuarioLogado().adicionaCaronaPendente(carona);
-        return redirect(routes.HomeController.index());
-    }
+        flash("success", "Solicitação enviada para " + carona.getMotorista().getNome());
+        return redirect(routes.HomeController.index());    }
     
     @Security.Authenticated(Secured.class)
     public Result buscarCaronas(){
@@ -122,7 +124,6 @@ public class CaronasController extends Controller {
     @Security.Authenticated(Secured.class)
     public void cancelaCarona(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
-        
         SistemaNotificacao.getInstance().geraNotificacaoCancelamento(carona);
         loggerCaronas.registraAcao(Acao.CANCELOU_CARONA, carona.toString());
     }
