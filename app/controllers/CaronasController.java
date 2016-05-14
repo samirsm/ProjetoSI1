@@ -71,15 +71,6 @@ public class CaronasController extends Controller {
         usuarioLogado.leNotificacao(pedido.getNotificacaoAssociada()); //apaga a notificacao automaticamente
         pedido.getSolicitante().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
 
-<<<<<<< HEAD
-=======
-        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        user.removeSolicitacao(pedido);
-        pedido.getCarona().getMotorista().removeSolicitacao(pedido);
-        user.leNotificacao(pedido);
-        pedido.getUsuarioOrigem().removeCaronaPendente(pedido.getCarona());
-        flash("success", "Solicitação enviada para " + pedido.getUsuarioOrigem().getNome());
->>>>>>> master
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
       }
     
@@ -97,15 +88,7 @@ public class CaronasController extends Controller {
         Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
         user.removeSolicitacao(pedido);
         pedido.getCarona().getMotorista().removeSolicitacao(pedido);
-<<<<<<< HEAD
-        user.leNotificacao(pedido.getNotificacaoAssociada());
-        pedido.getSolicitante().removeCaronaPendente(pedido.getCarona());
 
-=======
-        user.leNotificacao(pedido);
-        pedido.getUsuarioOrigem().removeCaronaPendente(pedido.getCarona());
-        flash("success", "Solicitação enviada para " + pedido.getUsuarioOrigem().getNome());
->>>>>>> master
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
 
     }
@@ -113,7 +96,7 @@ public class CaronasController extends Controller {
     @Security.Authenticated(Secured.class)
     public Result solicitaCarona(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
-<<<<<<< HEAD
+
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
         Solicitacao solicitacao = new Solicitacao(usuarioLogado, carona);
         Notificacao notificacao = new Notificacao(usuarioLogado, carona, TipoNotificacao.PEDIDO);
@@ -127,13 +110,7 @@ public class CaronasController extends Controller {
 
         return redirect(routes.HomeController.index());
     }
-=======
-        SistemaNotificacao.getInstance().geraNotificacaoPedido(carona);
-        buscarCaronas();
-        SistemaUsuarioLogin.getInstance().getUsuarioLogado().adicionaCaronaPendente(carona);
-        flash("success", "Solicitação enviada para " + carona.getMotorista().getNome());
-        return redirect(routes.HomeController.index());    }
->>>>>>> master
+
     
     @Security.Authenticated(Secured.class)
     public Result buscarCaronas(){
@@ -153,17 +130,14 @@ public class CaronasController extends Controller {
         
         return ok(telaConfirmarPedidoCarona.render(usuarioLogado, carona));
     }
-<<<<<<< HEAD
-
-=======
     
     @Security.Authenticated(Secured.class)
     public void cancelaCarona(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
-        SistemaNotificacao.getInstance().geraNotificacaoCancelamento(carona);
+        //SistemaNotificacao.getInstance().geraNotificacaoCancelamento(carona);
         loggerCaronas.registraAcao(Acao.CANCELOU_CARONA, carona.toString());
     }
->>>>>>> master
+
 
     @Security.Authenticated(Secured.class)
     private TipoCarona getTipo(String tipo){
