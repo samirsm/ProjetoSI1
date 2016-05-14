@@ -8,10 +8,10 @@ public class MensagensSistema {
 			" aceptó tu pedido de aventón.",
 			" ha accetato la tua richiesta de passeggio."};
 
-	public static final String[] REJEICAO = {" não aceitou o seu pedido de carona.",
-			" has not accepted your carpool request.",
-			" no aceptó tu pedido de aventón.",
-			" non ha accetato la tua richiesta de passeggio."};
+	public static final String[] REJEICAO = {" rejeitou o seu pedido de carona.",
+			" rejected your carpool request.",
+			" rechazó tu pedido de aventón.",
+			" ha rifutato la tua richiesta de passeggio."};
 
 
 	public static final String[] CANCELAMENTO = {" cancelou uma carona na qual você estava cadastrado",
