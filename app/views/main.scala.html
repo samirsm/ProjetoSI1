@@ -27,6 +27,14 @@
 
 </head>
 
+<script type="text/javascript">
+  window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+    $(this).remove();
+  });
+}, 2000);
+</script>
+
 <style type="text/css">
     	    	body{
     	    		background-image: url("assets/CreativeTemplate/img/fundoCarro.png");
