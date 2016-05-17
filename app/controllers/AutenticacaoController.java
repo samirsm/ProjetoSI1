@@ -63,6 +63,7 @@ public class AutenticacaoController extends Controller {
 		try{
 			dadosPessoais = new Dados(nome, matricula, email, senha, numeroDeTelefone);
 			endereco = new Endereco(rua, bairro);
+			endereco.save();
 		}catch(Exception e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			return badRequest(new DadosInvalidosException().getMessage());
@@ -84,6 +85,7 @@ public class AutenticacaoController extends Controller {
 		
 		try{
 			Usuario user = SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
+
 			user.save();
 		} catch (UsuarioCadastradoException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());

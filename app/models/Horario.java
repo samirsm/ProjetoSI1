@@ -1,10 +1,12 @@
 package models;
 
 
+import com.avaje.ebean.Model;
+
 import javax.persistence.*;
 
 @Entity
-public class Horario {
+public class Horario extends Model {
 
 	@Id
 	@GeneratedValue

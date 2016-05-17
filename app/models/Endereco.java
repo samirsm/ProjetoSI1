@@ -2,10 +2,12 @@ package models;
 
 import javax.persistence.*;
 
+import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
+import play.db.ebean.ModelsConfigLoader;
 
 @Entity
-public class Endereco {
+public class Endereco extends Model {
 
 	@Id
 	@GeneratedValue
