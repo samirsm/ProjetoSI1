@@ -20,6 +20,8 @@ import play.mvc.Result;
 import sistemas.SistemaCarona;
 import sistemas.SistemaDeBairros;
 import sistemas.SistemaUsuarioLogin;
+import sistemas.logger.LoggerSistema;
+import sistemas.logger.registrosAcoes.Acao;
 import views.html.*;
 
 public class HomeController extends Controller {
@@ -68,10 +70,12 @@ public class HomeController extends Controller {
 		if (usuarioLogado == null)
 			return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
 		else if(!usuarioLogado.isHorariosCadastrados()){
+			new LoggerSistema().registraAcao(Acao.ERRO,usuarioLogado.toString());
 			List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
 			return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 		}
 		else{
+			new LoggerSistema().registraAcao(Acao.ERRO,usuarioLogado.toString());
 			List<Carona> caronas = SistemaCarona.getInstance().getListaPesquisa();
 		
 			return ok(viewUsuario.render(usuarioLogado, formularioCarona, caronas, bairros, usuarioLogado.getNotificacoesNaoLidas()));

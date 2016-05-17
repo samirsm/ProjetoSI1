@@ -1,13 +1,22 @@
 package models;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
+import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
+import play.db.ebean.ModelsConfigLoader;
 
 @Entity
-public class Endereco {
+public class Endereco extends Model {
+
+	@Id
+	@GeneratedValue
+	private long Id;
+
+	@Column
 	private String bairro;
-	@Constraints.Required(message = "Insira uma rua válida.")
+
+	@Column
 	private String rua;
 	
 	public String getBairro() {
@@ -22,7 +31,9 @@ public class Endereco {
 	public void setRua(String rua) {
 		this.rua = rua;
 	}
-	
+
+	public Endereco(){}
+
 	public Endereco(String rua, String bairro){
 		this.rua = rua;
 		this.bairro = bairro;

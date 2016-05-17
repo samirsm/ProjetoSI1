@@ -2,6 +2,7 @@ package controllers;
 
 import javax.inject.Inject;
 
+import com.avaje.ebean.Ebean;
 import exceptions.DadosInvalidosException;
 import exceptions.LoginInvalidoException;
 import exceptions.UsuarioCadastradoException;
@@ -10,6 +11,7 @@ import models.Endereco;
 import models.Usuario;
 import play.data.DynamicForm;
 import play.data.FormFactory;
+import play.db.ebean.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
 import sistemas.SistemaUsuarioCRUD;
@@ -21,7 +23,7 @@ import views.html.*;
 public class AutenticacaoController extends Controller {
 	private FormFactory formFactory;
 	private LoggerSistema loggerAutenticacao;
-	
+
 	@Inject
 	public AutenticacaoController (FormFactory formFactory){
 		this.formFactory = formFactory;
@@ -30,7 +32,7 @@ public class AutenticacaoController extends Controller {
 
 	public Result efetuaLogin(){
 		Usuario usuarioLogado = null;
-		
+
 		try {
 			usuarioLogado = autenticaUsuario();
 			if (usuarioLogado == null) 
@@ -43,7 +45,7 @@ public class AutenticacaoController extends Controller {
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
 		return verificaPrimeiroAcessoUsuario(usuarioLogado);
 	}
-	
+	@Transactional
 	public Result cadastraUsuario() {
 		DynamicForm requestData = formFactory.form().bindFromRequest();
 		
@@ -61,10 +63,12 @@ public class AutenticacaoController extends Controller {
 		try{
 			dadosPessoais = new Dados(nome, matricula, email, senha, numeroDeTelefone);
 			endereco = new Endereco(rua, bairro);
+			endereco.save();
 		}catch(Exception e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			return badRequest(new DadosInvalidosException().getMessage());
 		}
+
 		
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString());
 		
@@ -80,13 +84,17 @@ public class AutenticacaoController extends Controller {
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
 		
 		try{
-			SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
+			Usuario user = SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
+
+			user.save();
 		} catch (UsuarioCadastradoException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			return badRequest(e.getMessage());
 		}
 		
 		loggerAutenticacao.registraAcao(Acao.USUARIO_CADASTRADO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
+
+
 		return redirect(routes.HomeController.index());
 	}
 	
@@ -116,4 +124,5 @@ public class AutenticacaoController extends Controller {
 		loggerAutenticacao.registraAcao(Acao.VERIFICA_PRIMEIRO_ACESSO, usuario.toString());
 		return redirect(routes.HomeController.index());
 	}
+
 }

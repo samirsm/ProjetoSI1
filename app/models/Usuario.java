@@ -1,36 +1,66 @@
 package models;
 
 import javax.persistence.*;
-import com.avaje.ebean.Model;
+import javax.validation.Valid;
 
+import com.avaje.ebean.Model;
 import exceptions.BairroJaCadastradoException;
 import exceptions.HorarioJaCadastradoException;
 import exceptions.NumeroDeVagasExcedenteException;
-
+import org.mindrot.jbcrypt.BCrypt;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity(name = "usuario")
+//@Table(name = "usuario")
 public class Usuario extends Model {
 
-	private Dados dadosPessoais;
-	private Endereco enderecoAlternativo;
-	private Endereco endereco;
-	private final Integer numeroVagas;
-	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
-	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
-	private List<Notificacao> solicitacoesDeCarona = new ArrayList<Notificacao>();
-	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
-	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
-	private List<Carona> caronasPassageiro = new ArrayList<>();
-	private List<Carona> caronasMotorista = new ArrayList<>();
-	private List<Horario> horariosIda = new ArrayList<>();
-	private List<Horario> horariosVolta = new ArrayList<>();
-	private boolean horariosCadastrados;
-	private String idioma = "pt";
+	public static Finder<Long, Usuario> find = new Finder<>(Usuario.class);
 
 	@Id
-	private Long id;
+	@GeneratedValue
+	private Long Id;
 
+	@Embedded
+	private Dados dadosPessoais;
+
+	@OneToOne
+	private Endereco enderecoAlternativo;
+
+	@OneToOne
+	private Endereco endereco;
+
+	// removi o final deste atributo pois o JPA nao aceita :/
+	@Column
+	private Integer numeroVagas;
+
+	@OneToMany
+	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
+	@OneToMany
+	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
+	@OneToMany
+	private List<Notificacao> solicitacoesDeCarona = new ArrayList<Notificacao>();
+	@OneToMany
+	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
+	@OneToMany
+	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
+	@ManyToMany(mappedBy = "passageiros")
+	private List<Carona> caronasPassageiro = new ArrayList<>();
+	@OneToMany
+	private List<Carona> caronasMotorista = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.PERSIST)
+	private List<Horario> horariosIda = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.PERSIST)
+	private List<Horario> horariosVolta = new ArrayList<>();
+
+	@Column
+	private boolean horariosCadastrados;
+
+	@Column
+	private String idioma = "pt";
+
+
+	public Usuario(){};
 	public Usuario(Dados dados, Endereco endereco, Integer numeroVagas) {
 		this.numeroVagas = numeroVagas;
 		this.dadosPessoais = dados;
@@ -237,8 +267,6 @@ public class Usuario extends Model {
 			throw new BairroJaCadastradoException();
 		} else
 			setEnderecoAlternativo(enderecoNovo);
-
-
 	}
 
 	public String getIdioma() {
@@ -248,4 +276,20 @@ public class Usuario extends Model {
 	public void setIdioma(String idi){
 		idioma = idi;
 	}
+
+	public static Usuario authenticate(String login, String password) {
+		Usuario usuario = find.where().eq("email", login).findUnique();
+		if (usuario == null) {
+			usuario = find.where().eq("matricula", login).findUnique();
+			if (usuario == null){
+				return null;
+			}
+		}
+		if (password.equals(usuario.getDadosUsuario().getSenha())) {
+			return usuario;
+		} else {
+			return null;
+		}
+	}
+
 }

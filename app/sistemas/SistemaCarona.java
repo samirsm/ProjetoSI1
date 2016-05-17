@@ -23,7 +23,7 @@ import sistemas.tiposBuscas.BuscaPorBairro;
 import sistemas.tiposBuscas.BuscaPorHorario;
 import sistemas.tiposBuscas.TipoBusca;
 
-@Entity
+
 public class SistemaCarona extends Model {
 	private static final SistemaCarona INSTANCIA = new SistemaCarona();
 	private List<Carona> caronasSistema;

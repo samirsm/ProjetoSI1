@@ -39,12 +39,12 @@ public class SistemaNotificacao {
 	
 	private void notificaMotorista (Usuario passageiro, Carona carona, TipoNotificacao tipo){
 		Notificacao notificacao = new Notificacao(passageiro, carona, tipo);
-		carona.getMotorista().addNotificacaoMotorista(notificacao);
+		carona.getUsuario().addNotificacaoMotorista(notificacao);
 
 	}
 	
 	private void notificaPassageiro(Usuario passageiro, Carona carona, TipoNotificacao tipo) {
-		Notificacao notificacao = new Notificacao(carona.getMotorista(), carona, tipo);
+		Notificacao notificacao = new Notificacao(carona.getUsuario(), carona, tipo);
 		passageiro.addNotificacaoPassageiro(notificacao);
 	}
 
@@ -72,14 +72,14 @@ public class SistemaNotificacao {
 	
 	public void geraNotificacaoRejeicao(Notificacao pedido) {
 
-      notificaPassageiro(pedido.getCarona(), TipoNotificacao.REJEICAO, pedido.getUsuarioOrigem());
+      notificaPassageiro(pedido.getCarona(), TipoNotificacao.REJEICAO, pedido.getUsuario());
   }   
   
   public void geraNotificacaoAceitacao(Notificacao pedido) {
       Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 
       usuarioLogado.removeSolicitacao(pedido);
-      notificaPassageiro(pedido.getCarona(), TipoNotificacao.ACEITACAO, pedido.getUsuarioOrigem());
+      notificaPassageiro(pedido.getCarona(), TipoNotificacao.ACEITACAO, pedido.getUsuario());
 
   }
 
@@ -99,14 +99,14 @@ public class SistemaNotificacao {
       Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 
       Notificacao notificacao = new Notificacao(usuarioLogado, carona, tipo);
-      carona.getMotorista().notifica(notificacao);
+      carona.getUsuario().notifica(notificacao);
 
   }
 
   private void solicitaCarona(Carona carona){
       Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
       Notificacao solicitacao = new Notificacao(usuarioLogado, carona, TipoNotificacao.PEDIDO);
-      carona.getMotorista().recebeSolicitacao(solicitacao);
+      carona.getUsuario().recebeSolicitacao(solicitacao);
       carona.adicionaSolicitante(usuarioLogado);
   }
   

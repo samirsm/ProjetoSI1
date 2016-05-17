@@ -1,26 +1,36 @@
 package models;
  
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 import com.avaje.ebean.Model;
 import tratamentoStrings.Strings;
-import models.Carona;
- 
-@Entity
+
+@Entity(name = "notificacao")
 public class Notificacao extends Model{
-   
-    private Usuario usuarioOrigem;
-    private Carona carona;
-    private String mensagem;
-    private TipoNotificacao tipo;
-    private boolean status;
- 
+
     @Id
+    @GeneratedValue
     private Long id;
- 
+
+    @OneToOne
+    private Usuario usuario;
+
+    @OneToOne
+    private Carona carona;
+
+    @Column
+    private String mensagem;
+
+    @Enumerated(EnumType.ORDINAL)
+    private TipoNotificacao tipo;
+
+    @Column
+    private boolean status;
+
+    public Notificacao(){};
     public Notificacao(Usuario usuarioOrigem, Carona carona, TipoNotificacao tipo){
         this.carona = carona;
-        this.usuarioOrigem = usuarioOrigem;
+        this.usuario = usuarioOrigem;
         this.tipo = tipo;
         geraMensagem(tipo);
         this.status = false;
@@ -38,8 +48,8 @@ public class Notificacao extends Model{
         return id;
     }
  
-    public Usuario getUsuarioOrigem() {
-        return usuarioOrigem;
+    public Usuario getUsuario() {
+        return usuario;
     }
  
     public String getMensagem() {
@@ -55,12 +65,12 @@ public class Notificacao extends Model{
     }
  
     private void geraMensagem(TipoNotificacao tipo) {
-        mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR + "Detalhes da carona: " +
+        mensagem = usuario.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR + "Detalhes da carona: " +
     carona.toString();
     }
  
     private void setId(){
-        double idTemp = Integer.parseInt(usuarioOrigem.getDadosUsuario().getMatricula()) * Math.random() * 11;
+        double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
         idTemp %= 1;
         idTemp *= 100000;
         id = (long) idTemp;
