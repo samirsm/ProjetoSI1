@@ -90,7 +90,7 @@ public class Dados extends Model{
 	
 	private void checaTelefoneValido(String telefone) throws DadosInvalidosException{
 		try {
-			Integer.parseInt(telefone);
+			Long.parseLong(telefone);
 		}catch(Exception e){
 			throw new DadosInvalidosException();
 		}
@@ -100,7 +100,7 @@ public class Dados extends Model{
 		int contArroba = 0;
 		for(int i = 0; i < email.length(); i++){
 			if(email.charAt(i) == '@')
-				contArroba ++;
+				contArroba++;
 			if(contArroba > 1)
 				throw new DadosInvalidosException();
 		}
@@ -113,7 +113,7 @@ public class Dados extends Model{
 			throw new DadosInvalidosException();
 		}
 		
-		if (matricula.length() != 9)
+		if (matricula.length() < 9)
 			throw new DadosInvalidosException();
 	}
 	
