@@ -13,7 +13,6 @@ public class SistemaUsuarioLogin {
 	private static String tokenAuth;
 	private static String userTime;
 	private Idioma idioma = Idioma.PORTUGUES;
-	private Idioma idi;
 
 	private SistemaUsuarioLogin(){
 	}
