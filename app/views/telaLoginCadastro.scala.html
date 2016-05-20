@@ -121,8 +121,8 @@
 
 		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("tela_login.login"), '_showConstraints -> false)
-				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"), '_showConstraints -> false)
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("tela_login.login"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.login"))
+				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.senha_login"))
 				<input type="submit" value="Login" class="btn btn-default btn-xl"></input>
 			</br>
 			</br>
@@ -152,15 +152,15 @@
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
 				<div class="row-sm-12">
 						<div class="col-sm-6">
-							<div>@helper.inputText(formularioAutenticacao("nome"), '_label ->  Messages("global.nome"), '_showConstraints -> false)</div>
-							<div>@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("global.matricula"), '_showConstraints -> false)</div>
-							<div>@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> Messages("global.telefone"), '_showConstraints -> false)</div>
+							<div>@helper.inputText(formularioAutenticacao("nome"), '_label ->  Messages("global.nome"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.nome"))</div>
+							<div>@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("global.matricula"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.matricula"))</div>
+							<div>@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> Messages("global.telefone"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.telefone"))</div>
 						</div>
 
 						<div class="col-sm-6">
-							<div>@helper.inputText(formularioAutenticacao("email"), '_label -> "Email", '_showConstraints -> false)</div>
-							<div>@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"), '_showConstraints -> false)</div>
-							<div>@helper.inputText(formularioEndereco("rua"), '_label -> Messages("global.rua"), '_showConstraints -> false)</div>
+							<div>@helper.inputText(formularioAutenticacao("email"), '_label -> "Email", '_showConstraints -> false, 'placeHolder -> Messages("placeholder.email"))</div>
+							<div>@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.senha_cadastro"))</div>
+							<div>@helper.inputText(formularioEndereco("rua"), '_label -> Messages("global.rua"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.rua"))</div>
 						</div>
 			</div>
 				<div>@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> Messages("global.bairro"))</div>

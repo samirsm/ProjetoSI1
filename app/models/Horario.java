@@ -1,23 +1,36 @@
 package models;
 
+import sistemas.SistemaUsuarioLogin;
+import sistemas.mensagens.*;
+
 public class Horario {
-	private String dia;
+	private int dia;
 	private int hora;
+	private String[][] dias = {MensagensSistema.SEGUNDA, MensagensSistema.TERCA, MensagensSistema.QUARTA, MensagensSistema.QUINTA, MensagensSistema.SEXTA};
 
 	public Horario() { 
 	
 	}
 	public Horario(String dia, int hora) {
-		this.dia = dia;
+		setDia(dia);
 		this.hora = hora;
 	}
 
 	public String getDia() {
-		return dia;
+        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+		return dias[dia - 2][idioma.ordinal()];
 	}
 
+    public int getNumeroDia(){
+        return this.dia;
+    }
+
 	public void setDia(String dia) {
-		this.dia = dia;
+        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+        for(int i =0; i < 5; i++) {
+            if (dia.equals(dias[i][idioma.ordinal()]))
+                this.dia = i + 2;
+        }
 	}
 
 	public int getHora() {
@@ -30,7 +43,7 @@ public class Horario {
 	
 	@Override
 	public String toString() {
-		return "Dia: " + dia + " Hora: " + hora;
+		return "Dia: " + getDia() + " Hora: " + hora;
 	}
 	
 	@Override
@@ -39,7 +52,7 @@ public class Horario {
 			return false;
 		Horario outroHorario = (Horario) obj;
 		
-		return outroHorario.getDia().equals(dia) && (outroHorario.getHora() == hora);
+		return (outroHorario.getNumeroDia() == dia) && (outroHorario.getHora() == hora);
 	}
 
 }

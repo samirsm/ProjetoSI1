@@ -25,6 +25,14 @@ public class Notificacao extends Model{
         this.status = false;
         setId();
     }
+
+    public Notificacao(Usuario usuarioOrigem, TipoNotificacao tipo){
+        this.usuarioOrigem = usuarioOrigem;
+        this.tipo = tipo;
+        geraMensagem(tipo);
+        this.status = false;
+        setId();
+    }
  
     public void setStatus(boolean status) {
         this.status = status;
@@ -50,7 +58,10 @@ public class Notificacao extends Model{
     }
  
     private void geraMensagem(TipoNotificacao tipo) {
-        mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
+        if(tipo == TipoNotificacao.IDIOMA)
+            mensagem = tipo.getMessage() + Strings.LINE_SEPARATOR;
+        else
+            mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
     }
 
     public String getMensagem() {

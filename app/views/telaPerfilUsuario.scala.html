@@ -52,15 +52,87 @@
   <div id="wrapper">
   <div id="page-wrapper">
     <div class="container-fluid">
-			<div class="row-xs-12">
+
             <!-- Page Heading -->
             <!-- /.row -->
-                <div style="font-size: x-large">@usuarioPerfil.getNome()</div>
+
+                <td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="120" width="120"></i><div style="font-size: x-large; font: bold"> @usuarioPerfil.getNome()</div></td>
+
+                <div><h2 class="page-header" style="color: #FFF; font-size: 18px"></h2></div>
+                <div class="col-xl-9 text-left">
+                        <div class="row-xl-3 text-left">
+                            <div><i class="fa fa-phone"></i> @Messages("global.telefone"): @usuarioPerfil.getNumeroDeTelefone()</div></br>
+                            <div><i class="fa fa-at"></i> @Messages("global.email"): @usuarioPerfil.getEmail()</div></br>
+                        </div>
+                        <div class="row-xl-3 text-left">
+                            <div><i class="fa fa-car"></i> @Messages("global.vagas"): @usuarioPerfil.getNumeroVagas()</div></br>
+                            <div><i class="fa fa-map-marker"></i> @Messages("global.rua") 1: @usuarioPerfil.getEndereco()</div></br>
+                        </div>
+                        <div class="row-xl-3 text-left">
+                            <div><i class="fa fa-location-arrow"></i> @Messages("global.rua") 2:@usuarioPerfil.getEnderecoAlternativo()</div></br>
+                        </div>
+                </div>
+
+            <div>
+                <h1 class="page-header" style="color: #FFF; font-size: 18px">
+                    <img src="assets/CreativeTemplate/img/agendamentos.png" height="40" width="40"></i>&nbsp @Messages("horarios.cadastrados")
+                </h1>
+            </div>
+
+
+                    <div class="row-xs-12">
+                        <div class="col-xs-6">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th><i class="fa fa-calendar"></i> @Messages("horarios.ida")</th>
+                                    <th>       </th>
+                                    <th><i class="fa fa-clock-o"></i></th>
+                                    <th>       </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @for(horario <- usuarioLogado.getHorariosIda()){
+                                <tr>
+                                    <th>@horario.getDia()</th>
+                                    <th>       </th>
+                                    <th>@horario.getHora()</th>
+                                    <th>  </th>
+                                </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-xs-6">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th><i class="fa fa-calendar"></i> @Messages("horarios.volta")</th>
+                                    <th>       </th>
+                                    <th><i class="fa fa-clock-o"></i></th>
+                                    <th>       </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @for(horarioVolta <- usuarioLogado.getHorariosVolta()){
+                                <tr>
+                                    <th>@horarioVolta.getDia()</th>
+                                    <th>       </th>
+                                    <th>@horarioVolta.getHora()</th>
+                                    <th>  </th>
+                                </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
             <!-- /.row -->
             </br>
 
                     <!-- /.row -->
-      </div>
+
       <!-- /#page-wrapper -->
 
   </div>

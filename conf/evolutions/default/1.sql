@@ -21,7 +21,7 @@ create table notificacao (
   mensagem                  varchar(255),
   tipo                      integer,
   status                    boolean,
-  constraint ck_notificacao_tipo check (tipo in (0,1,2,3)),
+  constraint ck_notificacao_tipo check (tipo in (0,1,2,3,4)),
   constraint pk_notificacao primary key (id))
 ;
 

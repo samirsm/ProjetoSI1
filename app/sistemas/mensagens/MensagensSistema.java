@@ -2,6 +2,35 @@ package sistemas.mensagens;
 
 public class MensagensSistema {
 
+	//Dias da semana
+	public static final String[] SEGUNDA = {"Segunda",
+											"Monday",
+											"Lunes",
+											"Lunedì"};
+
+	public static final String[] TERCA = {"Terça",
+											"Tuesday",
+											"Martes",
+											"Martedì"};
+
+	public static final String[] QUARTA = {"Quarta",
+											"Wednesday",
+											"Miercoles",
+											"Mercoledì"};
+
+
+	public static final String[] QUINTA = {"Quinta",
+											"Thursday",
+											"Jueves",
+											"Giovedì"};
+
+
+	public static final String[] SEXTA = {"Sexta",
+											"Friday",
+											"Viernes",
+											"Venerdì"};
+	//
+
 	//Mensagens de Tipos de Notificacao
 	public static final String[] ACEITACAO = {" aceitou o seu pedido de carona.",
 			" accepted your carpool request.",
@@ -23,6 +52,11 @@ public class MensagensSistema {
 			" asks for a seat in your carpool.",
 			" solicita un asiento en tu aventón.",
 			" chiede un seggliolino nel tuo passeggio"};
+
+	public static final String[] IDIOMA = {"Idioma alterado! Agora você está navegando em português.",
+			"Language's changed! Now you're browsing in English.",
+			"Idioma cambiado! Ahora navegas en español.",
+			"La lingua è stata cambiata! Adesso navighi in italiano."};
 	//
 
 	//Mensagens de Tipo de Carona

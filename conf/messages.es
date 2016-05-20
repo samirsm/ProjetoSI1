@@ -45,6 +45,15 @@ tela_login.cadastrar=Registrar
 tela_login.nao_cadastrado=No eres registrado? Regístrate! :)
 tela_login.sou_cadastrado=Ya eres registrado? Haz el login
 
+# PlaceHolders da TelaLoginCadastro
+placeholder.login=Entra con E-mail o RDM
+placeholder.senha_login=Digita tu contraseña
+placeholder.nome=Nombre y apellido
+placeholder.matricula=Cadastro in UFCG
+placeholder.senha_cadastro=4 a 16 caracteres
+placeholder.telefone=Digita solo números
+placeholder.email=ejemplo@site.com
+placeholder.rua=Av. Ejemplo, 000
 
 # horarios (Tela de cadastro de horários)
 horarios.cadastre=Elige tus horarios
@@ -61,6 +70,7 @@ horarios.cadastrados=Horarios registrados
 horarios.ida= Horarios de ida
 horarios.volta= Horarios de retorno
 horarios.concluir=Concluir
+horarios.excluir=Borrar
 
 # view_usuario
 view_usuario.buscar=Buscar aventón

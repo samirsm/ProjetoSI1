@@ -6,12 +6,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
-import models.Carona;
-import models.Dados;
-import models.Endereco;
-import models.Horario;
-import models.Notificacao;
-import models.Usuario;
+import models.*;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -62,6 +57,11 @@ public class HomeController extends Controller {
 		SistemaUsuarioLogin.getInstance().setIdioma(idioma);
 		if(usuarioLogado != null){
 			usuarioLogado.setIdioma(idioma);
+            for(Notificacao not : usuarioLogado.getNotificacoesNaoLidas()){
+                if(not.getTipo() == TipoNotificacao.IDIOMA)
+                    usuarioLogado.leNotificacao(not);
+            }
+            usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
 		}
 		return exibePagina();
 	}
