@@ -69,7 +69,7 @@
 
               <!-- Notification -->
           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell fa-2x"></i> <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">@if(notificacoes.size() == 0){<i class="fa fa-bell fa-2x"></i>}else{<img src="assets/SBAdminTemplate/img/bellAlert.png" align="center" height="30"></i>} <b class="caret"></b></a>
               <ul class="dropdown-menu message-dropdown">
 
                   @for(notificacao <- notificacoes){
