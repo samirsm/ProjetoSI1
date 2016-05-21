@@ -1,9 +1,8 @@
+@index(Messages("global.titulo")){
 
 <!DOCTYPE html>
-<html lang="en">
-<title>Ajuda</title>
+<html>
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +36,7 @@
             @helper.form(action = routes.AutenticacaoController.ajuda()){
 
             }
-            <h1>Sessão de ajuda do Vumbora</h1>
+            <h1>Messages("ajuda.cabecalho")</h1>
         </div>   
 
       <div id="wrapper">
@@ -46,31 +45,29 @@
             <div class="container-fluid">
 
 				      <div class="row-xs-12" align ="left">
-				          <p>O Vumbora foi criado para facilitar a vida dos estudantes e funcionários da UFCG. Além de promover a boa prática de formar amizades.
-                  Nele você vai poder oferecer e solicitar caronas dada a sua localização e horário. Não é prático?</p>
+				          <p>@Messages("ajuda.texto1")</p>
                   
                   </br>
-                  <p>F.A.Q:</p>
+                  <p>@Messages("ajuda.texto2")</p>
                   </br>
-                  1) Como me cadastrar? </br>
-                  <i>Para se cadastrar no Vumbora é fácil. Acesse o site e clique em "Cadastre-se" logo abaixo do botão de login.</i></br>
-                  2) Por que dar tantas informações? </br>
-                  <i>Precisamos de suas informações para assim definir a melhor carona e/ou passageiro para você. </i> </br>
-                  3) Como fazer login? </br>
-                  <i>Depois de se cadastrar, na tela de login, coloque no primeiro campo sua matrícula ou e-mail e no outro campo sua senha.</i></br>
-                  4) Onde colocar meus horários? </br>
-                  <i>Assim que você se cadastrar sua tela será a de cadastrar seus horários de ida e vinda para oferecer e/ou buscar carona. Mas você pode
-                  editar a qualquer momento clicando em "Horários" na barra lateral esquerda. </i> </br>
-                  5) Como solicitar uma carona? </br>
-                  <i>Com o horário cadastrado acima do feed clique em "Buscar Carona" e ache a carona que mais se encaixa com seus horários.</i></br>
-                  6) Como oferecer uma carona? </br>
-                  <i>Com o horário cadastrado acima do feed clique em "Oferecer Carona" e defina os horários preferidos para publicar sua carona.</i></br>
-                  7) Como aceitar uma carona? </br>
-                  <i>Se um motorista lhe oferecer uma carona então esta aparecerá nas notificações e clicando você pode decidir aceitar a carona ou não.</i></br>
-                  8) Onde posso mudar o idioma? </br>
-                  <i>Na barra superior no canto direito o segundo botão lhe dá a possibilidade de escolher qual será a linguaguem que você prefere utilizar.</i></br>
-                  9) Onde ver as caronas que tenho? </br>
-                  <i>Na barra lateral direita você tem acesso à todas caronas cadastradas.</i></br>
+                  1) @Messages("ajuda.pergunta1") </br>
+                  <i>@Messages("ajuda.resposta1") </i></br>
+                  2) @Messages("ajuda.pergunta2") </br>
+                  <i>@Messages("ajuda.resposta2") </i> </br>
+                  3) @Messages("ajuda.pergunta3") </br>
+                  <i>@Messages("ajuda.resposta3") </i></br>
+                  4) @Messages("ajuda.pergunta4") </br>
+                  <i>@Messages("ajuda.resposta4") </i> </br>
+                  5) @Messages("ajuda.pergunta5") </br>
+                  <i>@Messages("ajuda.resposta5") </i></br>
+                  6) @Messages("ajuda.pergunta6") </br>
+                  <i>@Messages("ajuda.resposta6") </i></br>
+                  7) @Messages("ajuda.pergunta7") </br>
+                  <i>@Messages("ajuda.resposta7") </i></br>
+                  8) @Messages("ajuda.pergunta8") </br>
+                  <i>@Messages("ajuda.resposta8") </i></br>
+                  9) @Messages("ajuda.pergunta9") </br>
+                  <i>@Messages("ajuda.resposta9") </i></br>
                   
 
         		  </div>
@@ -81,6 +78,7 @@
     <!-- /#wrapper -->
     </div>
 </body>
-</html>
 
+</html>
+}
 

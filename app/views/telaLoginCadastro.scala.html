@@ -88,6 +88,8 @@
        	login();
        }
 
+
+
        window.onload = start;
     </script>
 	<link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
@@ -172,7 +174,14 @@
 				<a class="btn" onclick="login()">@Messages("tela_login.sou_cadastrado")</a>
 				</div>
 				}
+			
+			@helper.form(action = routes.AutenticacaoController.ajuda()){
+				<div class="col-sm-6">
+				<input class="btn" type="submit" value=@Messages("ajuda") class="btn btn-default btn-xl"></input>
+				</div>
+				}
 			</div>
+
 		</div>
 
 	<div style="position: fixed; bottom: 1%; right: 35%;  vertical-align: bottom; margin-left: 80px; text-align: center; color: lightgray; font-size: medium" >
