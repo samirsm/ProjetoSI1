@@ -1,83 +1,90 @@
 package models;
 
 import javax.persistence.*;
-import javax.validation.Valid;
-
 import com.avaje.ebean.Model;
 import exceptions.BairroJaCadastradoException;
+import exceptions.DadosInvalidosException;
 import exceptions.HorarioJaCadastradoException;
-import exceptions.NumeroDeVagasExcedenteException;
-import org.mindrot.jbcrypt.BCrypt;
+import sistemas.logger.LoggerSistema;
+import sistemas.logger.registrosAcoes.Acao;
+import sistemas.mensagens.Idioma;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "usuario")
-//@Table(name = "usuario")
+@Entity
 public class Usuario extends Model {
-
-	public static Finder<Long, Usuario> find = new Finder<>(Usuario.class);
-
 	@Id
 	@GeneratedValue
-	private Long Id;
-
+	private Long id;
 	@Embedded
 	private Dados dadosPessoais;
-
 	@OneToOne
 	private Endereco enderecoAlternativo;
-
 	@OneToOne
 	private Endereco endereco;
-
-	// removi o final deste atributo pois o JPA nao aceita :/
 	@Column
 	private Integer numeroVagas;
-
+	@OneToMany
+	private List<Carona> caronas = new ArrayList<Carona>();
+	@OneToMany
+	private List<Carona> caronasPendentes = new ArrayList<>();
+	@Enumerated(EnumType.STRING)
+	private Idioma idioma = Idioma.PORTUGUES;
+	@OneToMany
+	private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
 	@OneToMany
 	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
 	@OneToMany
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
-	@OneToMany
-	private List<Notificacao> solicitacoesDeCarona = new ArrayList<Notificacao>();
-	@OneToMany
-	private List<Notificacao> notificacoesPassageiro = new ArrayList<Notificacao>();
-	@OneToMany
-	private List<Notificacao> notificacoesMotorista = new ArrayList<Notificacao>();
-	@ManyToMany(mappedBy = "passageiros")
-	private List<Carona> caronasPassageiro = new ArrayList<>();
-	@OneToMany
-	private List<Carona> caronasMotorista = new ArrayList<>();
-	@OneToMany(cascade = CascadeType.PERSIST)
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Horario> horariosIda = new ArrayList<>();
-	@OneToMany(cascade = CascadeType.PERSIST)
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Horario> horariosVolta = new ArrayList<>();
-
 	@Column
 	private boolean horariosCadastrados;
 
-	@Column
-	private String idioma = "pt";
+	public static Finder<Long, Usuario> find = new Finder<>(Usuario.class);
 
-
-	public Usuario(){};
-	public Usuario(Dados dados, Endereco endereco, Integer numeroVagas) {
+	public Usuario(){}
+	public Usuario(Dados dados, Endereco endereco, Integer numeroVagas) throws DadosInvalidosException {
+		if(endereco == null)
+			throw new DadosInvalidosException("O endereco enviado eh invalido.");
+		if(numeroVagas == null)
+			throw new DadosInvalidosException("O numero de vagas enviado eh invalido.");
 		this.numeroVagas = numeroVagas;
 		this.dadosPessoais = dados;
 		this.setEndereco(endereco);
 		this.setEnderecoAlternativo(endereco);
+		this.notificacoesNaoLidas = new ArrayList<>();
+		//setId();
 	}
 
-	public boolean notifica(Notificacao notificacao) {
+	public Long getId() {
+		return id;
+	}
+
+	public String getEnderecoPerfil(){
+		return "perfil?id=" + this.getId();
+	}
+
+	public static Usuario authenticate(String matricula, String email, String password) {
+		Usuario usuario = find.where().eq("email", email).findUnique();
+		if (usuario == null) {
+			usuario = find.where().eq("matricula", matricula).findUnique();
+			if (usuario == null){
+				 return null;
+			}
+		}
+		if (password.equals(usuario.getDadosUsuario().getSenha())) {
+			return usuario;
+		} else {
+			return null;
+		}
+	}
+
+	///// Notificações/////
+	public boolean recebeNotificacao(Notificacao notificacao) {
 		return notificacoesNaoLidas.add(notificacao);
-	}
-
-	public boolean recebeSolicitacao(Notificacao notificacao) {
-		return solicitacoesDeCarona.add(notificacao);
-	}
-
-	public boolean removeSolicitacao(Notificacao notificacao) {
-		return solicitacoesDeCarona.remove(notificacao);
 	}
 
 	public void leNotificacao(Notificacao naoLida) {
@@ -94,36 +101,68 @@ public class Usuario extends Model {
 		return notificacoesNaoLidas;
 	}
 
-	public List<Notificacao> getSolicitacoesDeCarona() {
-		return solicitacoesDeCarona;
+	public void leTodasNotificacoes(){
+
+		notificacoesNaoLidas = new ArrayList<Notificacao>();
 	}
 
-	public boolean addNotificacaoPassageiro(Notificacao notificacao) {
-		return notificacoesPassageiro.add(notificacao);
+
+	///// Solicitações/////
+
+	public boolean recebeSolicitacao(Solicitacao solicitacao){
+		return solicitacoes.add(solicitacao);
 	}
 
-	public boolean addNotificacaoMotorista(Notificacao notificacao) {
-		return notificacoesMotorista.add(notificacao);
+	public void removeSolicitacao(Solicitacao solicitacao) {
+		solicitacoes.remove(solicitacao);
 	}
 
-	public List<Notificacao> getNotificacaoMotorista() {
-		return notificacoesMotorista;
+	public List<Solicitacao> getSolicitacoes() {
+		return this.solicitacoes;
 	}
 
-	public List<Notificacao> getNotificacaoPassageiro() {
-		return notificacoesPassageiro;
+	///// FIM Notificacoes /////
+
+
+
+	///// caronas ///
+
+	public List<Carona> getCaronas() {
+		return caronas;
 	}
 
-	public List<Horario> getHorariosIda() {
-		return horariosIda;
+	public void adicionaCarona(Carona carona) {
+		caronas.add(carona);
 	}
 
-	public List<Horario> getHorariosVolta() {
-		return horariosVolta;
+	private boolean isPossivelDarCarona(Carona carona) {
+		return numeroVagas >= carona.getVagasDisponiveis();
 	}
+
+	public List<Carona> getCaronasPendentes() {
+		return caronasPendentes;
+	}
+
+	public boolean adicionaCaronaPendente(Carona carona){
+		return caronasPendentes.add(carona);
+	}
+
+	public boolean removeCaronaPendente(Carona carona){
+		return caronasPendentes.remove(carona);
+	}
+
+	///// FIM caronas //////
+
+
+
+	///// GETS e SETS de infos /////
 
 	public String getNome() {
 		return dadosPessoais.getNome();
+	}
+
+	public Dados getDadosUsuario() {
+		return dadosPessoais;
 	}
 
 	public void setNome(String nome) {
@@ -146,48 +185,6 @@ public class Usuario extends Model {
 		dadosPessoais.setEmail(email);
 	}
 
-	public List<Carona> getCaronasPassageiro() {
-		return caronasPassageiro;
-	}
-
-	public List<Carona> getCaronasMotorista() {
-		return caronasMotorista;
-	}
-
-	public void adicionaCaronaPassageiro(Carona carona) {
-		caronasPassageiro.add(carona);
-	}
-
-	public void adicionaCaronaMotorista(Carona carona) throws NumeroDeVagasExcedenteException {
-		verificacaoVagasDisponiveis(carona);
-		caronasMotorista.add(carona);
-	}
-
-	private void verificacaoVagasDisponiveis(Carona carona) throws NumeroDeVagasExcedenteException {
-		if (!isPossivelDarCarona(carona))
-			throw new NumeroDeVagasExcedenteException();
-	}
-
-	private boolean isPossivelDarCarona(Carona carona) {
-		return numeroVagas >= carona.getVagasDisponiveis();
-	}
-
-	public boolean isHorariosCadastrados() {
-		return horariosCadastrados;
-	}
-
-	public void cadastrouHorarios() {
-		setHorariosCadastrados(true);
-	}
-
-	private void setHorariosCadastrados(boolean cadastrouHorarios) {
-		horariosCadastrados = cadastrouHorarios;
-	}
-
-	public Dados getDadosUsuario() {
-		return dadosPessoais;
-	}
-
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -204,8 +201,44 @@ public class Usuario extends Model {
 		this.enderecoAlternativo = endereco;
 	}
 
+	public void addEnderecoAlternativo(Endereco enderecoNovo) throws BairroJaCadastradoException {
+		if (enderecoNovo.getBairro().equals(endereco.getBairro())) {
+			throw new BairroJaCadastradoException();
+		} else
+			setEnderecoAlternativo(enderecoNovo);
+
+
+	}
+
 	public Integer getNumeroVagas() {
 		return numeroVagas;
+	}
+
+	///// FIM GETS e SETS de infos /////
+
+
+
+
+	/////  Horarios /////
+
+	public List<Horario> getHorariosIda() {
+		return horariosIda;
+	}
+
+	public List<Horario> getHorariosVolta() {
+		return horariosVolta;
+	}
+
+	public boolean isHorariosCadastrados() {
+		return horariosCadastrados;
+	}
+
+	public void cadastrouHorarios() {
+		setHorariosCadastrados(true);
+	}
+
+	private void setHorariosCadastrados(boolean cadastrouHorarios) {
+		horariosCadastrados = cadastrouHorarios;
 	}
 
 	public boolean adicionarHorarioIda(String dia, int hora) throws HorarioJaCadastradoException {
@@ -216,6 +249,38 @@ public class Usuario extends Model {
 
 	}
 
+	public boolean removeHorarioVolta(String dia, int hora){
+		Horario horario = new Horario(dia,hora);
+		return removeHorarioVolta(horario);
+	}
+
+	public boolean removeHorarioVolta(Horario horario){
+		if(horariosVolta.contains(horario)){
+			return horariosVolta.remove(horario);
+		} else{
+			return false;
+		}
+	}
+
+	public boolean removeHorarioIda(String dia, int hora){
+		Horario horario = new Horario(dia,hora);
+		return removeHorarioIda(horario);
+	}
+
+	public boolean removeHorarioIda(Horario horario){
+		if(horariosIda.contains(horario)){
+			return horariosIda.remove(horario);
+		} else{
+			return false;
+		}
+	}
+
+	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException{
+		if(isHorarioLivre(horario))
+			return horariosIda.add(horario);
+		return false;
+	}
+
 	public boolean adicionarHorarioVolta(String dia, int hora) throws HorarioJaCadastradoException {
 		Horario novoHorario = new Horario(dia, hora);
 		if (isHorarioLivre(novoHorario))
@@ -223,27 +288,10 @@ public class Usuario extends Model {
 		return false;
 	}
 
-	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException {
-		if (isHorarioLivre(horario))
-			return horariosIda.add(horario);
-		return false;
-	}
-
 	public boolean adicionarHorarioVolta(Horario horario) throws HorarioJaCadastradoException {
 		if (isHorarioLivre(horario))
 			return horariosVolta.add(horario);
 		return false;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (!(obj instanceof Usuario))
-			return false;
-
-		Usuario outroUsuario = (Usuario) obj;
-
-		return outroUsuario.getDadosUsuario().equals(dadosPessoais);
-
 	}
 
 	private boolean isHorarioLivre(Horario novoHorario) throws HorarioJaCadastradoException {
@@ -258,38 +306,38 @@ public class Usuario extends Model {
 		return true;
 	}
 
+	/// FIM Horarios /////
+
+
+
+	///// Idioma /////
+
+	public Idioma getIdioma() {
+		return idioma;
+	}
+
+	public void setIdioma(Idioma id){
+		idioma = id;
+	}
+
+	/// FIM Idioma /////
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Usuario))
+			return false;
+
+		Usuario outroUsuario = (Usuario) obj;
+
+		return outroUsuario.getDadosUsuario().equals(dadosPessoais);
+
+	}
+
 	public String toString() {
 		return getNome() + "[" + dadosPessoais.toString() + "]";
 	}
 
-	public void addEnderecoAlternativo(Endereco enderecoNovo) throws BairroJaCadastradoException {
-		if (enderecoNovo.getBairro().equals(endereco.getBairro())) {
-			throw new BairroJaCadastradoException();
-		} else
-			setEnderecoAlternativo(enderecoNovo);
-	}
-
-	public String getIdioma() {
-		return idioma;
-	}
-
-	public void setIdioma(String idi){
-		idioma = idi;
-	}
-
-	public static Usuario authenticate(String login, String password) {
-		Usuario usuario = find.where().eq("email", login).findUnique();
-		if (usuario == null) {
-			usuario = find.where().eq("matricula", login).findUnique();
-			if (usuario == null){
-				return null;
-			}
-		}
-		if (password.equals(usuario.getDadosUsuario().getSenha())) {
-			return usuario;
-		} else {
-			return null;
-		}
-	}
 
 }

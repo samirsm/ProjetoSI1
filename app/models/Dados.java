@@ -5,15 +5,11 @@ import com.avaje.ebean.Model;
 import exceptions.DadosInvalidosException;
 import play.data.validation.Constraints;
 
-import javax.inject.Inject;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-
 @Embeddable
 public class Dados extends Model{
-
-
 	@Constraints.Required(message = "Insira um nome válido.")
 	@Column
 	private String nome;
@@ -24,32 +20,36 @@ public class Dados extends Model{
 	
 	@Constraints.Required(message = "Insira um email válido.")
 	@Column
+	@Constraints.Email
 	private String email;
 	
 	@Constraints.Required(message = "Insira uma senha válida.")
+	@Constraints.MinLength(6)
+	@Constraints.MaxLength(28)
 	@Column
 	private String senha;
 	
 	@Constraints.Required(message = "Insira um número de telefone válido.")
 	@Column
 	private String numeroDeTelefone;
-
-
+	
 	public Dados(String matricula, String email, String senha) throws DadosInvalidosException {
 		checaExcecoes(matricula, email, senha);
-		
 		this.matricula = matricula;
 		this.email = email;
 		this.senha = senha;
 	}
 	
 	// Construtor default
-	@Inject
 	public Dados () {
 	}
 	
 	public Dados(String nome, String matricula, String email, String senha, String numeroDeTelefone) throws DadosInvalidosException{
 		checaExcecoes(nome, matricula, email, senha, numeroDeTelefone);
+		checaTelefoneValido(numeroDeTelefone);
+		checaEmail(email);
+		checaMatricula(matricula);
+		
 		this.nome = nome;
 		this.matricula = matricula;
 		this.email = email;
@@ -95,6 +95,35 @@ public class Dados extends Model{
 			if (dadosPessoais[i] == null || dadosPessoais[i].isEmpty())
 				throw new DadosInvalidosException();
 		}
+	}
+	
+	private void checaTelefoneValido(String telefone) throws DadosInvalidosException{
+		try {
+			Long.parseLong(telefone);
+		}catch(Exception e){
+			throw new DadosInvalidosException();
+		}
+	}
+	
+	private void checaEmail(String email) throws DadosInvalidosException{
+		int contArroba = 0;
+		for(int i = 0; i < email.length(); i++){
+			if(email.charAt(i) == '@')
+				contArroba++;
+			if(contArroba > 1)
+				throw new DadosInvalidosException();
+		}
+	}
+	
+	private void checaMatricula(String matricula) throws DadosInvalidosException{
+		try {
+			Integer.parseInt(matricula);
+		}catch(Exception e){
+			throw new DadosInvalidosException();
+		}
+		
+		if (matricula.length() < 9)
+			throw new DadosInvalidosException();
 	}
 	
 	public String validate () {

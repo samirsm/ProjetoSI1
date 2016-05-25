@@ -1,0 +1,107 @@
+@(usuarioLogado: Usuario, caronas: List[Carona], pendentes: List[Carona], notificacoes: List[Notificacao])
+
+@main(usuarioLogado: Usuario, caronas, notificacoes, "Vumbora"){
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Vumbora</title>
+
+<link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
+
+<!-- Bootstrap Core CSS' -->
+<link href="assets/SBAdminTemplate/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="assets/SBAdminTemplate/css/sb-admin.css" rel="stylesheet">
+
+<!-- Morris Charts CSS -->
+<link href="assets/SBAdminTemplate/css/plugins/morris.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="assets/SBAdminTemplate/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<style type="text/css">
+    	body{
+    		background-image: url("assets/CreativeTemplate/img/fundoCarro.png");
+    		background-size: cover;
+    	}
+    	input{
+			color: black;
+		}
+</style>
+
+</head>
+
+<body>
+  <div id="wrapper">
+  <div id="page-wrapper">
+    <div class="container-fluid">
+			<div class="row-xs-12">
+            <!-- Page Heading -->
+            <!-- /.row -->
+                <div style="font-size: x-large; text-align: center; font: bold; color: #F33">@Messages("solicitacoes.pendente_cabecalho")</div>
+            <!-- /.row -->
+            </br>
+@for(pendente <- pendentes){
+
+          <div class="col">
+                  <div class="col-lg-12">
+                      <div class="panel panel-blue-volta">
+                          <div class="panel-heading">
+                              <div class="row">
+                                  <div class="col-xs-3">
+                                      <i class="fa fa-user fa-5x"></i></br> @pendente.getMotorista().getNome()
+                                  </div>
+                                  <div class="col-xs-9 text-left">
+                                      <div class="fa fa-commenting-o">@pendente.getTipo()</div>
+                                      <div><i class="fa fa-map-marker"></i> @pendente.getMotorista().getEndereco()</div>
+                                      <div><i class="fa fa-calendar"></i> @pendente.getHorario().getDia()</div>
+
+                                  </div>
+                                  <div class="col-xs-9 text-right">
+                                      <div><i class="fa fa-calendar"></i> @pendente.getHorario().getDia()</div>
+                                      <div><i class="fa fa-clock-o"></i> @pendente.getHorario().getHora()</div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div>
+                              <div class="panel-footer">
+                                  <div class="clearfix"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- /.row -->
+}
+
+                @if(pendentes.isEmpty()){
+                    <div text-align="center">@Messages("solicitacoes.sem_pendentes")</div></br>
+                }
+                    <!-- /.row -->
+      </div>
+      <!-- /#page-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+</body>
+
+</html>
+}

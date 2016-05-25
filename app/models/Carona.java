@@ -2,27 +2,21 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.inject.Inject;
 import javax.persistence.*;
-
 import com.avaje.ebean.Model;
+import sistemas.mensagens.Strings;
 
-import exceptions.NumeroDeVagasInsuficienteException;
-import tratamentoStrings.Strings;
-
-@Entity(name = "carona")
+@Entity
 public class Carona extends Model {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
-
+	@Column
 	private int vagasDisponiveis;
-
-
 	@ManyToOne
-	private Usuario usuario;
-
+	private Usuario motorista;
 	@ManyToMany
 	@JoinTable(name = "passageiros")
 	private List<Usuario> passageiros;
@@ -34,10 +28,10 @@ public class Carona extends Model {
 	@Enumerated(EnumType.ORDINAL)
 	private TipoCarona tipo;
 
-
+	@Inject
 	public Carona(){}
 	public Carona(Usuario motorista, Horario horario, TipoCarona tipo, int numeroDeVagas) {
-		this.usuario = motorista;
+		this.motorista = motorista;
 		this.horario = horario;
 		this.tipo = tipo;
 		this.vagasDisponiveis = numeroDeVagas;
@@ -50,12 +44,8 @@ public class Carona extends Model {
 		return vagasDisponiveis <= 0;
 	}
 	
-	public void adicionaPassageiro(Usuario passageiro) throws NumeroDeVagasInsuficienteException {
-		if (isFull()) {
-			throw new NumeroDeVagasInsuficienteException();
-		}
-		
-		if (!hasPassageiro(passageiro)) {
+	public void adicionaPassageiro(Usuario passageiro){
+		if (!hasPassageiro(passageiro) && !isFull()) {
 			vagasDisponiveis--;
 			passageiros.add(passageiro);
 		}
@@ -84,8 +74,8 @@ public class Carona extends Model {
 	public int getVagasDisponiveis() {
 		return vagasDisponiveis;
 	}
-	public Usuario getUsuario() {
-		return usuario;
+	public Usuario getMotorista() {
+		return motorista;
 	}
 	public List<Usuario> getPassageiros() {
 		return passageiros;
@@ -98,7 +88,7 @@ public class Carona extends Model {
 	}
 	
 	public String getBairro () {
-		return usuario.getEndereco().getBairro();
+		return motorista.getEndereco().getBairro();
 	}
 	
 	@Override
@@ -107,20 +97,20 @@ public class Carona extends Model {
 			return false;
 		Carona outraCarona = (Carona) objeto;
 		
-		return usuario.equals(outraCarona.getUsuario())
+		return motorista.equals(outraCarona.getMotorista())
 				&& tipo.equals(outraCarona.getTipo()) &&
 				horario.equals(outraCarona.getHorario());
 	}
 	
 	@Override
 	public String toString() {
-		return "Motorista: " + usuario + Strings.LINE_SEPARATOR
+		return "Motorista: " + motorista + Strings.LINE_SEPARATOR
 				+ " Horario: " + horario.toString();
 
 	}
 
 	private void setId(){
-		double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
+		double idTemp = Integer.parseInt(motorista.getDadosUsuario().getMatricula()) * Math.random() * 11;
 		idTemp %= 1;
 		idTemp *= 100000;
 		id = (long) idTemp;

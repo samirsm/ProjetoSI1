@@ -1,15 +1,23 @@
 package controllers;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import exceptions.BairroJaCadastradoException;
 import exceptions.HorarioJaCadastradoException;
+import models.Horario;
+import models.Notificacao;
 import models.TipoCarona;
 import models.Usuario;
+import play.data.Form;
+
 import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
+import sistemas.SistemaDeBairros;
+import play.mvc.Security;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
@@ -20,13 +28,19 @@ public class HorariosController extends Controller {
 	
   private FormFactory formFactory;
   private LoggerSistema loggerHorarios;
+  private Form<Horario> formularioHorario;
+  private List<String> bairros;
+
   
 	@Inject
 	public HorariosController(FormFactory formFactory) {
 		this.formFactory = formFactory;
 		loggerHorarios = new LoggerSistema();
-	}
+	    bairros = SistemaDeBairros.getInstance().getBairrosCadastrados();
+	    formularioHorario = this.formFactory.form(Horario.class);
 
+	}
+	
 	public Result cadastraHorarios(){
        SistemaUsuarioLogin.getInstance().cadastrouHorarios();
        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
@@ -46,12 +60,13 @@ public class HorariosController extends Controller {
     	  SistemaUsuarioCRUD.getInstance().cadastraHorario(usuarioLogado, tipo, dia, hora);
     	  loggerHorarios.registraAcao(Acao.ADICIONOU_HORARIO,usuarioLogado.toString(), tipo.toString(), dia, hora.toString());
       } catch (HorarioJaCadastradoException e){
-    	  return badRequest(e.getMessage());
+        flash("erro", e.getMessage());
+        return redirect(routes.HomeController.editaHorarios());
       }
       
-      return redirect(routes.HomeController.index());
+      return redirect(routes.HomeController.editaHorarios());
       
-  }
+      }
 	
 	public Result cadastraNovoEndereco() {
       Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
@@ -62,11 +77,29 @@ public class HorariosController extends Controller {
           SistemaUsuarioCRUD.getInstance().cadastraNovoEndereco(usuarioLogado,rua, bairro);
           loggerHorarios.registraAcao(Acao.CADASTROU_NOVO_ENDERECO,usuarioLogado.toString(),rua, bairro);
       } catch (BairroJaCadastradoException e){
-          return badRequest(e.getMessage());
+        flash("erro", e.getMessage());
+        return redirect(routes.HomeController.editaHorarios());
       }
-      
-      return redirect(routes.HomeController.index());
+      flash("success", "Endereco cadastrado com sucesso!");
+      return redirect(routes.HomeController.editaHorarios());
+  	}
+	
+	public Result excluiHorarioVolta(String dia, Integer hora){
+	  Horario horario = new Horario(dia, hora);
+      Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+      List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
+      usuarioLogado.removeHorarioVolta(horario);
+      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 	}
+	
+	public Result excluiHorarioIda(String dia, Integer hora){
+      Horario horario = new Horario(dia, hora);
+      Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+      List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
+      usuarioLogado.removeHorarioIda(horario);
+      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+    }
+	
 
 	private TipoCarona getTipo(String tipo){
 	      if (tipo.equals("ida")) return TipoCarona.IDA;

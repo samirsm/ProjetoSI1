@@ -3,12 +3,16 @@
 #
 
 # globais
+global.titulo=Vumbora! - Carpool System
 global.home=Home
 global.solicitacoes=Requests
+global.pendentes=Pending
+global.horarios=Schedule
 global.caronas=Rides
 global.ajustes=Settings
 global.minhas_caronas=My carpools
 global.sem_caronas=You have no registered carpools.
+global.cheia=Full
 global.ida=Going
 global.volta=Returning
 global.nome=Name
@@ -19,16 +23,19 @@ global.senha=Password
 global.rua=Street
 global.bairro=Neighborhood
 global.vagas=Car seats available
-global.exibir_todas=See all
+global.passageiros=Passengers
+global.notificacoes_lidas=Mark all as read
+global.sem_notificacoes=No unread notifications
 global.sair=Logout account
-global.idioma=Language set:
+global.idioma=Language set
+global.sem_passageiros=There isn't any passenger registered in this carpool yet.
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Search or offer carpools safely and easily
 tela_login.subtitulo=Going and returning carpools to UFCG
 tela_login.listagem1=Real time notifications
 tela_login.listagem2=Drivers and passenger recommendations
-tela_login.listagem3=Registered trustful users
+tela_login.listagem3=Trustful users only registered
 tela_login.sucesso_cadastro=Registration sucessful!
 tela_login.sucesso_login=Login sucessful!
 tela_login.login=Email/RDM
@@ -37,6 +44,16 @@ tela_login.vagas=Number of passenger seats in the car
 tela_login.cadastrar=Register
 tela_login.nao_cadastrado=Not yet registered? Sign up now! :)
 tela_login.sou_cadastrado=Already registered? Sign in here
+
+# PlaceHolders da TelaLoginCadastro
+placeholder.login=Log in using E-mail or RDM
+placeholder.senha_login=Enter your password
+placeholder.nome=Name and surname
+placeholder.matricula=Registration in UFCG
+placeholder.senha_cadastro=4 to 16 characters
+placeholder.telefone=Enter numbers only
+placeholder.email=example@site.com
+placeholder.rua=Av. Example, 000
 
 # cadastro_horarios (Tela de cadastro de hor�rios)
 horarios.cadastre=Register your schedules
@@ -53,6 +70,7 @@ horarios.cadastrados=Registered schedules
 horarios.ida= Going schedules
 horarios.volta= Returning schedules
 horarios.concluir=Done
+horarios.excluir=Delete
 
 # view_usuario
 view_usuario.buscar=Search carpool
@@ -66,7 +84,7 @@ view_usuario.publique=Publish
 view_usuario.busque=Search
 view_usuario.recentes=Recent publications
 view_usuario.pedir=Ask
-view_usuario.sem_caronas=There are no available carpools at this moment :(
+view_usuario.sem_caronas=There are no available carpools for your neighbourhood at this moment :(
 
 # agendamento
 agendamento.marcar=Schedule a carpool with
@@ -80,4 +98,14 @@ agendamento.solicitar=Ask for this Carpool
 solicitacoes.nenhuma=You have no requests at this time.
 solicitacoes.negar=Deny
 solicitacoes.aceitar=Accept
+solicitacoes.solicitacoes_cabecalho=Carpool requests waiting for your approval
+solicitacoes.pendente_cabecalho=Carpools waiting for driver/'s avaliation
+solicitacoes.sem_pendentes=No pending carpools.
 
+
+# dias da semana
+dias.segunda=Monday
+dias.terca=Tuesday
+dias.quarta=Wednesday
+dias.quinta=Thursday
+dias.sexta=Friday

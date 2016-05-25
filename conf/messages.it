@@ -3,12 +3,16 @@
 #
 
 # globais
+global.titulo=Vumbora! - Sistema di Passeggi
 global.home=Home
 global.solicitacoes=Richieste
+global.pendentes=In Attesa
+global.horarios=Orari
 global.caronas=Passaggi
 global.ajustes=Ajustes
-global.minhas_caronas=I miei passaggi
-global.sem_caronas=Non avete passaggi registrati.
+global.minhas_caronas=I miei passeggi
+global.sem_caronas=Non avete passeggi registrati.
+global.cheia=Pieno
 global.ida=Andata
 global.volta=Ritorno
 global.nome=Nome
@@ -18,9 +22,12 @@ global.senha=Password
 global.rua=Via
 global.bairro=Quartiere
 global.vagas=Seggiolini disponibili
-global.exibir_todas=Vedere tutte
-global.sair=Scollegare questo account
-global.idioma=Lingua atuale:
+global.passageiros=Passeggeri
+global.notificacoes_lidas=Segna tutte come già lette
+global.sem_notificacoes=Non ci sono notifiche non lette
+global.sair=Uscire di questo account
+global.idioma=Lingua atuale
+global.sem_passageiros=Non ci sono ancora passeggeri in questo passeggio.
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Cerca oppure offri passeggi con sicurezza e facilità
@@ -37,6 +44,15 @@ tela_login.cadastrar=Registro
 tela_login.nao_cadastrado=Non sei registrato? Registrati adesso! :)
 tela_login.sou_cadastrado=Già sei registrato? Accedi qui
 
+# PlaceHolders da TelaLoginCadastro
+placeholder.login=Accedi con il E-mail o RDM
+placeholder.senha_login=Digita il tuo password
+placeholder.nome=Nome  cognome
+placeholder.matricula=Cadastro nella UFCG
+placeholder.senha_cadastro=4 a 16 caratteri
+placeholder.telefone=Digita soltanto numeri
+placeholder.email=esempio@site.com
+placeholder.rua=Via Esempio, 000
 
 # horarios (Tela de cadastro de horários)
 horarios.cadastre=Registra i tuoi orari
@@ -53,6 +69,7 @@ horarios.cadastrados=Orari registrati
 horarios.ida= Orari di andata
 horarios.volta= Orari di ritorno
 horarios.concluir=Concludere
+horarios.excluir=Cancella
 
 # view_usuario
 view_usuario.buscar=Cercare passeggio
@@ -66,7 +83,7 @@ view_usuario.publique=Pubblicare
 view_usuario.busque=Cercare
 view_usuario.recentes=Pubblicazioni recenti
 view_usuario.pedir=Chiedere
-view_usuario.sem_caronas=Non ci sono passeggi disponibile adesso :(
+view_usuario.sem_caronas=Non ci sono passeggi per il tuo quartiere disponibile adesso :(
 
 # agendamento
 agendamento.marcar=Programmare un passeggio con
@@ -80,3 +97,14 @@ agendamento.solicitar=Solicitare passegio
 solicitacoes.nenhuma=Non avete nessuna solicitazione adesso.
 solicitacoes.negar=Negare
 solicitacoes.aceitar=Accetare
+solicitacoes.solicitacoes_cabecalho=Richieste di passeggio in attesa della tua approvazione
+solicitacoes.pendente_cabecalho=Passeggi in attesa della avaliazione del guidante
+solicitacoes.sem_pendentes=Nessun passeggio in attesa.
+
+
+# dias da semana
+dias.segunda=Lunedì
+dias.terca=Martedì
+dias.quarta=Mercoledì
+dias.quinta=Giovedì
+dias.sexta=Venerdì

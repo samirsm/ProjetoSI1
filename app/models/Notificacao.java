@@ -1,36 +1,38 @@
 package models;
  
 import javax.persistence.*;
-
 import com.avaje.ebean.Model;
-import tratamentoStrings.Strings;
+import sistemas.mensagens.Strings;
 
-@Entity(name = "notificacao")
+@Entity
 public class Notificacao extends Model{
-
     @Id
     @GeneratedValue
     private Long id;
-
     @OneToOne
-    private Usuario usuario;
-
+    private Usuario usuarioOrigem;
     @OneToOne
     private Carona carona;
-
     @Column
     private String mensagem;
-
     @Enumerated(EnumType.ORDINAL)
     private TipoNotificacao tipo;
-
     @Column
     private boolean status;
 
-    public Notificacao(){};
+    public Notificacao(){}
+
     public Notificacao(Usuario usuarioOrigem, Carona carona, TipoNotificacao tipo){
         this.carona = carona;
-        this.usuario = usuarioOrigem;
+        this.usuarioOrigem = usuarioOrigem;
+        this.tipo = tipo;
+        geraMensagem(tipo);
+        this.status = false;
+        setId();
+    }
+
+    public Notificacao(Usuario usuarioOrigem, TipoNotificacao tipo){
+        this.usuarioOrigem = usuarioOrigem;
         this.tipo = tipo;
         geraMensagem(tipo);
         this.status = false;
@@ -48,12 +50,8 @@ public class Notificacao extends Model{
         return id;
     }
  
-    public Usuario getUsuario() {
-        return usuario;
-    }
- 
-    public String getMensagem() {
-        return mensagem;
+    public Usuario getUsuarioOrigem() {
+        return usuarioOrigem;
     }
  
     public Carona getCarona() {
@@ -65,15 +63,26 @@ public class Notificacao extends Model{
     }
  
     private void geraMensagem(TipoNotificacao tipo) {
-        mensagem = usuario.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR + "Detalhes da carona: " +
-    carona.toString();
+        if(tipo == TipoNotificacao.IDIOMA)
+            mensagem = tipo.getMessage() + Strings.LINE_SEPARATOR;
+        else
+            mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
     }
- 
+
+    public String getMensagem() {
+        return mensagem;
+    }
+
     private void setId(){
-        double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
+        double idTemp = Integer.parseInt(usuarioOrigem.getDadosUsuario().getMatricula()) * Math.random() * 11;
         idTemp %= 1;
         idTemp *= 100000;
         id = (long) idTemp;
  
+    }
+
+    public String getReferencia(){
+        if(tipo == TipoNotificacao.PEDIDO) return "solicitacoes";
+        else return "leNotificacao?id=" + this.getId();
     }
 }

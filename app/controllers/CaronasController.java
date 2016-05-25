@@ -4,14 +4,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import exceptions.CaronaJaCadastradoException;
-import exceptions.NumeroDeVagasExcedenteException;
-import exceptions.NumeroDeVagasInsuficienteException;
-import models.Carona;
-import models.Horario;
-import models.Notificacao;
-import models.TipoCarona;
-import models.Usuario;
+import exceptions.CaronaJaCadastradaException;
+import models.*;
 import play.data.DynamicForm;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -21,6 +15,7 @@ import sistemas.SistemaNotificacao;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
+import play.mvc.Security;
 import views.html.*;
 
 public class CaronasController extends Controller {
@@ -32,7 +27,7 @@ public class CaronasController extends Controller {
         this.formFactory = formFactory;
         loggerCaronas = new LoggerSistema();
     }
-
+    
     public Result cadastraNovaCarona(){
         DynamicForm requestData = formFactory.form().bindFromRequest();
         
@@ -49,65 +44,70 @@ public class CaronasController extends Controller {
             loggerCaronas.registraAcao(Acao.CADASTROU_CARONA, horario.toString(), tipo.toString(), vagasDisponiveisCarona.toString());
             SistemaCarona.getInstance().getListaPesquisaAtualizada();
             loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS);
-        } catch (NumeroDeVagasExcedenteException | CaronaJaCadastradoException e){
-            loggerCaronas.registraAcao(Acao.ERRO, e.getMessage());
-            return badRequest(e.getMessage());
+        } catch (CaronaJaCadastradaException e){
+          flash("erro", e.getMessage());
+          return redirect(routes.HomeController.index());
       }
-        
-        return redirect(routes.HomeController.index());
+        flash("success", "Carona cadastrada com sucesso!");
+        return redirect(routes.HomeController.index()); 
     }
     
-    public Result confirmaAgendamento(Long id){
+    public Result aceitaPedido(Long id){
+        Solicitacao pedido = buscarSolicitacaoPorId(id);
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Notificacao notificacao = new Notificacao(usuarioLogado, pedido.getCarona(), TipoNotificacao.ACEITACAO);
 
-      Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(id);
+        SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getSolicitante()); //adiciona o passageiro à carona
+        loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
 
-      try {
-          SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getUsuario());
-          loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getUsuario().toString(), pedido.getUsuario().toString());
-          SistemaNotificacao.getInstance().geraNotificacaoAceitacao(pedido);
-          loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getUsuario().toString(), pedido.getUsuario().toString());
+        SistemaNotificacao.getInstance().notificaUsuario(notificacao, pedido.getSolicitante()); //notifica o passageiro que seu pedido foi aceito
+        loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
 
-          SistemaUsuarioLogin.getInstance().getUsuarioLogado().leNotificacao(pedido);
-          return redirect(routes.NotificacoesController.exibeSolicitacoes());
-      } catch (NumeroDeVagasInsuficienteException e) {
-        loggerCaronas.registraAcao(Acao.ERRO, e.getMessage());
-        return badRequest(e.getMessage());    
-        }
+        usuarioLogado.removeSolicitacao(pedido); //remove a solicitacao, pois ja foi aceita
+        pedido.getCarona().getMotorista().removeSolicitacao(pedido); //so pra garantir :P
+        usuarioLogado.leNotificacao(pedido.getNotificacaoAssociada()); //apaga a notificacao automaticamente
+        pedido.getSolicitante().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
+
+        return redirect(routes.NotificacoesController.exibeSolicitacoes());
       }
     
     public Result recusaPedido(Long id){
-      Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(id);
-      loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getUsuario().toString(), pedido.getUsuario().toString());
-      SistemaNotificacao.getInstance().geraNotificacaoRejeicao(pedido);
-      loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getUsuario().toString(), pedido.getUsuario().toString());
+        Solicitacao pedido = buscarSolicitacaoPorId(id);
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Notificacao notificacao = new Notificacao(usuarioLogado, pedido.getCarona(), TipoNotificacao.REJEICAO);
 
-      SistemaUsuarioLogin.getInstance().getUsuarioLogado().leNotificacao(pedido);
-      return redirect(routes.NotificacoesController.exibeSolicitacoes());
+        loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
+
+        SistemaNotificacao.getInstance().notificaUsuario(notificacao, pedido.getSolicitante());
+        loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
+
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        user.removeSolicitacao(pedido);
+        pedido.getCarona().getMotorista().removeSolicitacao(pedido);
+
+        return redirect(routes.NotificacoesController.exibeSolicitacoes());
 
     }
       
-      public Result solicitaAgendamento(Long id){
+    public Result solicitaCarona(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
-        SistemaNotificacao.getInstance().geraNotificacaoPedido(carona);
-        buscarCaronas();
+
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Solicitacao solicitacao = new Solicitacao(usuarioLogado, carona);
+        Notificacao notificacao = new Notificacao(usuarioLogado, carona, TipoNotificacao.PEDIDO);
+        solicitacao.setNotificacaoAssociada(notificacao); // associa a notificacao deste pedido a ele para que saiba qual notificacao apagar depois
+
+        usuarioLogado.adicionaCaronaPendente(carona); // a carona do pedido torna-se pendente ao usuario
+        carona.adicionaSolicitante(usuarioLogado); // o usuario logado agora é um dos que solicitam esta carona
+        carona.getMotorista().recebeSolicitacao(solicitacao); // o motorista recebe a solicitacao
+        SistemaNotificacao.getInstance().notificaUsuario(notificacao, carona.getMotorista()); // o motorista da carona é notificado desse pedido
+        buscarCaronas(); // atualizar a lista de caronas, agora sem esta, que ja foi pedida
+
         return redirect(routes.HomeController.index());
     }
+
     
     public Result buscarCaronas(){
-        //Futura atualização que oferecerá diversos tipos de busca
-        /*
-        DynamicForm requestData = formFactory.form().bindFromRequest();
-        
-        
-        String hora = requestData.get("hora");
-        String dia = requestData.get("diaDaSemanaBusca");
-        String bairro = requestData.get("bairro");
-        TipoCarona tipo = getTipo(requestData.get("tipo"));
-        
-        Horario horario = new Horario(dia, Integer.parseInt(hora));
-        
-        */
-        
         List<Carona> caronas = SistemaCarona.getInstance().buscarCaronasDefault();
         loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS, caronas.toString());
         return redirect(routes.HomeController.index());
@@ -116,23 +116,46 @@ public class CaronasController extends Controller {
     public Result exibeDetalhes(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronasMotorista();
+        List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
         List<Notificacao> notificacoesUsuarioLogado = SistemaNotificacao.getInstance().getNotificacoesNaoLidas();
         
         loggerCaronas.registraAcao(Acao.EXIBE_DETALHES, carona.toString());
         
-        return ok(telaAgendamentosCaronaPassageiro.render(usuarioLogado, caronasUsuarioLogado, notificacoesUsuarioLogado, carona));
+        return ok(telaConfirmarPedidoCarona.render(usuarioLogado, carona));
     }
     
     public void cancelaCarona(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
-        
-        SistemaNotificacao.getInstance().geraNotificacaoCancelamento(carona);
+        //SistemaNotificacao.getInstance().geraNotificacaoCancelamento(carona);
         loggerCaronas.registraAcao(Acao.CANCELOU_CARONA, carona.toString());
     }
+
 
     private TipoCarona getTipo(String tipo){
         if ("ida".equals(tipo)) return TipoCarona.IDA;
         else return TipoCarona.VOLTA;
+    }
+
+    public Result exibeCaronasPendentes() {
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        List<Carona> pendentes = user.getCaronasPendentes();
+        return ok(telaCaronasPendentes.render(user, pendentes));
+    }
+
+    public Solicitacao buscarSolicitacaoPorId(Long id){
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+
+        int i = buscarIndiceSolicitacaoPorId(id);
+        return usuarioLogado.getSolicitacoes().get(i);
+    }
+    private int buscarIndiceSolicitacaoPorId(Long id) {
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+
+        for (int i = 0; i < usuarioLogado.getSolicitacoes().size(); i++){
+            if (usuarioLogado.getSolicitacoes().get(i).getId().equals(id)){
+                return i;
+            }
+        }
+        return -1;
     }
 }

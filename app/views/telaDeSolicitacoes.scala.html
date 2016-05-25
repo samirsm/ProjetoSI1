@@ -1,9 +1,9 @@
-@(usuarioLogado: Usuario, caronas: List[Carona], solicitacoes: List[Notificacao], notificacoes: List[Notificacao])
+@(usuarioLogado: Usuario, solicitacoes: List[Solicitacao])
 
-@main(usuarioLogado: Usuario, caronas, notificacoes, "Vumbora"){
+@main(usuarioLogado, usuarioLogado.getCaronas(), usuarioLogado.getNotificacoesNaoLidas(), "Solicitações de Carona"){
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 
@@ -55,8 +55,7 @@
 			<div class="row-xs-12">
             <!-- Page Heading -->
             <!-- /.row -->
-
-
+                <div style="font-size: x-large; text-align: center; font: bold; color: #F33">@Messages("solicitacoes.solicitacoes_cabecalho")</div>
             <!-- /.row -->
             </br>
 @for(solicitacao <- solicitacoes){
@@ -66,11 +65,11 @@
                           <div class="panel-heading">
                               <div class="row">
                                   <div class="col-xs-3">
-                                      <i class="fa fa-user fa-5x"></i></br> @solicitacao.getUsuario().getNome()
+                                      <a href=@solicitacao.getSolicitante().getEnderecoPerfil()><img src="assets/images/users/default.jpg" id="show-option" title="@solicitacao.getSolicitante().getNome()" class="img-circle" style="border: 2px solid #82b1ff" height="70" width="70"></i></a></br> @solicitacao.getSolicitante().getNome()
                                   </div>
                                   <div class="col-xs-9 text-left">
                                       <div class="fa fa-commenting-o"> @solicitacao.getMensagem()</div>
-                                      <div><i class="fa fa-map-marker"></i> @solicitacao.getUsuario().getEndereco()</div>
+                                      <div><i class="fa fa-map-marker"></i> @solicitacao.getSolicitante.getEndereco()</div>
                                       <div><i class="fa fa-calendar"></i> @solicitacao.getCarona().getHorario().getDia()</div>
 
                                   </div>
@@ -106,8 +105,19 @@
                     <!-- /.row -->
       </div>
       <!-- /#page-wrapper -->
+      @if(flash.containsKey("success")) {
+        <div class="alert alert-success"   >
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Sucesso!</strong> @flash.get("success")
+        </div>
+      }
+    </div>
 
   </div>
+</div>
+</div>
   <!-- /#wrapper -->
 
 </body>

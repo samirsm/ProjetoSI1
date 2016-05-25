@@ -1,0 +1,10 @@
+New log file opened at Fri May 13 19:48:32 GMT-03:00 2016 by 11540@Baby
+Taking next connection to: 65471
+New client attempting to connect on port: 65472-65471
+  Address = /192.168.0.123:65471
+This client on port 65472 has uuid 039a38b2-7d3c-4d2e-9e06-8298b2ba96ca configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-039a38b2-7d3c-4d2e-9e06-8298b2ba96ca
+Taking next connection to: 65471
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 65471

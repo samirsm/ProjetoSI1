@@ -3,12 +3,16 @@
 #
 
 # globais
+global.titulo=Vumbora! - Sistema de Caronas
 global.home=Home
 global.solicitacoes=Solicitações
+global.pendentes=Pendentes
+global.horarios=Horários
 global.caronas=Caronas
 global.ajustes=Ajustes
 global.minhas_caronas=Minhas caronas
 global.sem_caronas=Você não possui nenhuma carona cadastrada.
+global.cheia=Cheia
 global.ida=Ida
 global.volta=Volta
 global.nome=Nome
@@ -18,9 +22,12 @@ global.senha=Senha
 global.rua=Rua
 global.bairro=Bairro
 global.vagas=Vagas disponíveis
-global.exibir_todas=Ver todas
+global.passageiros=Passageiros
+global.notificacoes_lidas=Marcar todas como lidas
+global.sem_notificacoes=Não há notificacoes não lidas
 global.sair=Sair desta conta
-global.idioma=Idioma atual:
+global.idioma=Idioma atual
+global.sem_passageiros=Ainda não há passageiros cadastrados nessa carona.
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Busque ou ofereça caronas com segurança e facilidade
@@ -35,8 +42,17 @@ tela_login.sem_carro=Não possuo carro.
 tela_login.vagas=Número de vagas de passageiro no carro
 tela_login.cadastrar=Cadastrar
 tela_login.nao_cadastrado=Não é cadastrado? Cadastre-se! :)
-tela_login.sou_cadastrado=Já é cadastardo? Efetue seu login
+tela_login.sou_cadastrado=Já é cadastrado? Efetue seu login
 
+# PlaceHolders da TelaLoginCadastro
+placeholder.login=Logue com E-mail ou RDM
+placeholder.senha_login=Digite sua senha
+placeholder.nome=Nome e sobrenome
+placeholder.matricula=Registro na UFCG
+placeholder.senha_cadastro=4 a 16 caracteres
+placeholder.telefone=Digite apenas números
+placeholder.email=exemplo@site.com
+placeholder.rua=Av. Exemplo, 000
 
 # horarios (Tela de cadastro de horários)
 horarios.cadastre=Cadastre seus horários
@@ -53,6 +69,7 @@ horarios.cadastrados=Horários cadastrados
 horarios.ida= Horários de ida
 horarios.volta= Horários de volta
 horarios.concluir=Concluir
+horarios.excluir=Excluir
 
 # view_usuario
 view_usuario.buscar=Buscar carona
@@ -66,7 +83,7 @@ view_usuario.publique=Publicar
 view_usuario.busque=Buscar
 view_usuario.recentes=Publicacões recentes
 view_usuario.pedir=Pedir
-view_usuario.sem_caronas=Não há caronas disponíveis no momento :(
+view_usuario.sem_caronas=Não há caronas para seu bairro disponíveis no momento :(
 
 # agendamento
 agendamento.marcar=Marcar uma carona com
@@ -80,3 +97,13 @@ agendamento.solicitar=Solicitar Carona
 solicitacoes.nenhuma=Você não possui nenhuma solicitação no momento.
 solicitacoes.negar=Negar
 solicitacoes.aceitar=Vumbora
+solicitacoes.solicitacoes_cabecalho=Solicitações de carona aguardando a sua aprovação
+solicitacoes.pendente_cabecalho=Caronas aguardando avaliação do motorista
+solicitacoes.sem_pendentes=Nenhuma carona pendente.
+
+# dias da semana
+dias.segunda=Segunda
+dias.terca=Terça
+dias.quarta=Quarta
+dias.quinta=Quinta
+dias.sexta=Sexta

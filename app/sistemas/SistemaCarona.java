@@ -7,11 +7,7 @@ import javax.persistence.Entity;
 
 import com.avaje.ebean.Model;
 
-import exceptions.CaronaJaCadastradoException;
-import exceptions.HorarioJaCadastradoException;
-import exceptions.NumeroDeVagasExcedenteException;
-import exceptions.NumeroDeVagasInsuficienteException;
-import exceptions.UsuarioCadastradoException;
+import exceptions.CaronaJaCadastradaException;
 import models.Carona;
 import models.Horario;
 import models.TipoCarona;
@@ -19,12 +15,9 @@ import models.Usuario;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import sistemas.tiposBuscas.BuscaDefault;
-import sistemas.tiposBuscas.BuscaPorBairro;
-import sistemas.tiposBuscas.BuscaPorHorario;
 import sistemas.tiposBuscas.TipoBusca;
 
-
-public class SistemaCarona extends Model {
+public class SistemaCarona{
 	private static final SistemaCarona INSTANCIA = new SistemaCarona();
 	private List<Carona> caronasSistema;
 	private List<Carona> listaCaronasSolicitadas;
@@ -77,19 +70,18 @@ public class SistemaCarona extends Model {
     	return caronasSistema;
     }
     
-    private void adicionaCarona(Carona carona) throws CaronaJaCadastradoException{
-    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronasMotorista();
+    private void adicionaCarona(Carona carona) throws CaronaJaCadastradaException {
+    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
     	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
     	      caronasSistema.add(carona);
     	      caronasUsuarioLogado.add(carona);
     	}else
-    	  throw new CaronaJaCadastradoException();
+    	  throw new CaronaJaCadastradaException();
 	}
     
    
 
-    private boolean temCaronaNoMesmoHorario(Carona carona,
-        List<Carona> caronasUsuarioLogado) {
+    private boolean temCaronaNoMesmoHorario(Carona carona, List<Carona> caronasUsuarioLogado) {
         for (Carona carona2 : caronasUsuarioLogado) {
           if(carona.getHorario().equals(carona2.getHorario()))
             return true;
@@ -98,15 +90,15 @@ public class SistemaCarona extends Model {
     }
 
     public Carona removeCarona(Long id) {
-    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronasMotorista();
+    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
     	int pos = buscarIndiceCaronaPorId(id);
     	if (pos == -1)
     		return null;
-    	sistemaNotificacoes.geraNotificacaoCancelamento(listaCaronasSolicitadas.get(pos));
+    	//sistemaNotificacoes.geraNotificacaoCancelamento(listaCaronasSolicitadas.get(pos));
     	return caronasUsuarioLogado.remove(pos);
 	}
     
-    public Carona criaCarona(Usuario motorista, Horario horario, TipoCarona tipo, int numeroDeVagas) throws NumeroDeVagasExcedenteException, CaronaJaCadastradoException{
+    public Carona criaCarona(Usuario motorista, Horario horario, TipoCarona tipo, int numeroDeVagas) throws CaronaJaCadastradaException {
 		Carona carona = new Carona(motorista, horario, tipo, numeroDeVagas);
 		adicionaCarona(carona);
 		return carona;
@@ -131,8 +123,8 @@ public class SistemaCarona extends Model {
     	return caronasSistema.get(i);
     }
     
-    public void adicionarPassageiros(Carona carona, Usuario passageiro) throws NumeroDeVagasInsuficienteException {
+    public void adicionarPassageiros(Carona carona, Usuario passageiro) {
 			carona.adicionaPassageiro(passageiro);
-			passageiro.adicionaCaronaPassageiro(carona);
+			passageiro.adicionaCarona(carona);
 	}
 }

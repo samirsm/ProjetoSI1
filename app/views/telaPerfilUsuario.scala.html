@@ -1,0 +1,144 @@
+@(usuarioLogado: Usuario, usuarioPerfil: Usuario)
+
+@main(usuarioLogado, usuarioLogado.getCaronas(), usuarioLogado.getNotificacoesNaoLidas(), "Vumbora"){
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Vumbora</title>
+
+<link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
+
+<!-- Bootstrap Core CSS' -->
+<link href="assets/SBAdminTemplate/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="assets/SBAdminTemplate/css/sb-admin.css" rel="stylesheet">
+
+<!-- Morris Charts CSS -->
+<link href="assets/SBAdminTemplate/css/plugins/morris.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="assets/SBAdminTemplate/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<style type="text/css">
+    	body{
+    		background-image: url("assets/CreativeTemplate/img/fundoCarro.png");
+    		background-size: cover;
+    	}
+    	input{
+			color: black;
+		}
+</style>
+
+</head>
+
+<body>
+  <div id="wrapper">
+  <div id="page-wrapper">
+    <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <!-- /.row -->
+
+                <td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="120" width="120"></i><div style="font-size: x-large; font: bold"> @usuarioPerfil.getNome()</div></td>
+
+                <div><h2 class="page-header" style="color: #FFF; font-size: 18px"></h2></div>
+                <div class="col-xl-9 text-left">
+                        <div class="row-xl-3 text-left">
+                            <div><i class="fa fa-phone"></i> @Messages("global.telefone"): @usuarioPerfil.getNumeroDeTelefone()</div></br>
+                            <div><i class="fa fa-at"></i> @Messages("global.email"): @usuarioPerfil.getEmail()</div></br>
+                        </div>
+                        <div class="row-xl-3 text-left">
+                            <div><i class="fa fa-car"></i> @Messages("global.vagas"): @usuarioPerfil.getNumeroVagas()</div></br>
+                            <div><i class="fa fa-map-marker"></i> @Messages("global.rua") 1: @usuarioPerfil.getEndereco()</div></br>
+                        </div>
+                        <div class="row-xl-3 text-left">
+                            <div><i class="fa fa-location-arrow"></i> @Messages("global.rua") 2:@usuarioPerfil.getEnderecoAlternativo()</div></br>
+                        </div>
+                </div>
+
+            <div>
+                <h1 class="page-header" style="color: #FFF; font-size: 18px">
+                    <img src="assets/CreativeTemplate/img/agendamentos.png" height="40" width="40"></i>&nbsp @Messages("horarios.cadastrados")
+                </h1>
+            </div>
+
+
+                    <div class="row-xs-12">
+                        <div class="col-xs-6">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th><i class="fa fa-calendar"></i> @Messages("horarios.ida")</th>
+                                    <th>       </th>
+                                    <th><i class="fa fa-clock-o"></i></th>
+                                    <th>       </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @for(horario <- usuarioLogado.getHorariosIda()){
+                                <tr>
+                                    <th>@horario.getDia()</th>
+                                    <th>       </th>
+                                    <th>@horario.getHora()</th>
+                                    <th>  </th>
+                                </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-xs-6">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th><i class="fa fa-calendar"></i> @Messages("horarios.volta")</th>
+                                    <th>       </th>
+                                    <th><i class="fa fa-clock-o"></i></th>
+                                    <th>       </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @for(horarioVolta <- usuarioLogado.getHorariosVolta()){
+                                <tr>
+                                    <th>@horarioVolta.getDia()</th>
+                                    <th>       </th>
+                                    <th>@horarioVolta.getHora()</th>
+                                    <th>  </th>
+                                </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+            <!-- /.row -->
+            </br>
+
+                    <!-- /.row -->
+
+      <!-- /#page-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+</body>
+
+</html>
+}

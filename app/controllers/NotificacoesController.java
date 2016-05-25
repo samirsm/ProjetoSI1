@@ -1,15 +1,13 @@
 package controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import models.Carona;
-import models.Notificacao;
-import models.TipoNotificacao;
-import models.Usuario;
+import models.*;
 import play.mvc.Controller;
+import play.mvc.Result;
+import play.mvc.Security;
 import sistemas.SistemaNotificacao;
 import sistemas.SistemaUsuarioLogin;
 import views.html.*;
@@ -20,48 +18,23 @@ public class NotificacoesController extends Controller{
     private NotificacoesController() {
     }
 
-    
-    public play.mvc.Result exibeSolicitacoes() {
+    public Result exibeSolicitacoes() {
         Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        List<Carona> caronas = user.getCaronasMotorista();
-        List<Notificacao> solicitacoes = new ArrayList<>();
-        List<Notificacao> notificacoes = user.getNotificacoesNaoLidas();
-        for(int i = 0; i< notificacoes.size(); i++){
-          if(notificacoes.get(i).getTipo() == TipoNotificacao.PEDIDO)
-              solicitacoes.add(notificacoes.get(i));
-        }
-        return ok(telaDeSolicitacoes.render(user, caronas, solicitacoes, notificacoes));
+        List<Solicitacao> solicitacoes = user.getSolicitacoes();
+
+        return ok(telaDeSolicitacoes.render(user, solicitacoes));
     }
 
 
-    public play.mvc.Result notificaPedido(Carona carona){
-        SistemaNotificacao.getInstance().geraNotificacaoPedido(carona);
-        return ok("Seu pedido foi enviado");
+    public Result leNotificacao(Long idNotificacao){
+        Notificacao notificacao = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idNotificacao);
+        SistemaNotificacao.getInstance().leNotificacao(notificacao);
+        return redirect(routes.HomeController.index());
     }
 
-    public play.mvc.Result aceitaPedido(Long idPedido){
-        Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idPedido);
-        Usuario motorista = pedido.getCarona().getUsuario();
-        motorista.removeSolicitacao(pedido);
-        notificaAceitacao(idPedido);
-        return ok();
-    }
-    
-    public play.mvc.Result notificaAceitacao(Long idPedido){
-        Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idPedido);
-        SistemaNotificacao.getInstance().geraNotificacaoAceitacao(pedido);
-        return ok("Seu pedido de carona foi aceito");
-    }
-    
-    public play.mvc.Result notificaCancelamento(Carona carona){
-        SistemaNotificacao.getInstance().geraNotificacaoCancelamento(carona);
-        return ok("A carona à qual você pertencia foi cancelada");
-    }
-
-    public play.mvc.Result notificaRejeicao(Long idPedido){
-        Notificacao pedido = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idPedido);
-        SistemaNotificacao.getInstance().geraNotificacaoRejeicao(pedido);
-        return ok("Seu pedido de carona foi rejeitado");
+    public Result leTodasNotificacoes(){
+        SistemaNotificacao.getInstance().leTodasNotificacoes();
+        return redirect(routes.HomeController.index());
     }
 
 

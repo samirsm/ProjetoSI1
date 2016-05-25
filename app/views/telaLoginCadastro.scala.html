@@ -1,6 +1,6 @@
 @(formularioAutenticacao: Form[Dados], formularioEndereco: Form[Endereco], bairros: List[String])
 
-@index("Sistema de Caronas: Vumbora"){
+@index(Messages("global.titulo")){
 
 <!DOCTYPE html>
 <html>
@@ -39,7 +39,9 @@
 	    <style type="text/css">
 	    	body{
 	    		background-image: url("assets/CreativeTemplate/img/fundoCarro.png");
-	    		background-size: cover;
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-attachment: fixed;
 	    	}
 	    	input{
 				color: black;
@@ -119,43 +121,53 @@
 
 		@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("tela_login.login"))
-				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"))
+				@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("tela_login.login"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.login"))
+				@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.senha_login"))
 				<input type="submit" value="Login" class="btn btn-default btn-xl"></input>
+			</br>
+			</br>
+				@if(flash.containsKey("erro")) {
+ 					<div class="alert alert-warning" id="warning-alert">
+	  					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    				<span aria-hidden="true">&times;</span>
+  				</button>
+  				<strong>Erro!</strong> @flash.get("erro")
+					</div>
+ 				}
+				@if(flash.containsKey("success")) {
+					<div class="alert alert-success"   >
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<strong>Sucesso!</strong> @flash.get("success")
+					</div>
+				}
+
 			}
 				<a class="btn" onclick="cadastro()">@Messages("tela_login.nao_cadastrado")</a>
 			</div>
 </div>
-		<div id="divCadastro" style="display: none; margin-top: 0px">
+		<div id="divCadastro" style="display: none; margin-top: 0px; margin: 0px auto;" >
 				@helper.form(action = routes.AutenticacaoController.cadastraUsuario()) {
 				<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
-				<table border="0" style="text-align: center; color: white; vertical-align: center; margin-left: 10px; cellspacing="10">
+				<div class="row-sm-12">
+						<div class="col-sm-6">
+							<div>@helper.inputText(formularioAutenticacao("nome"), '_label ->  Messages("global.nome"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.nome"))</div>
+							<div>@helper.inputText(formularioAutenticacao("matricula"), '_label -> Messages("global.matricula"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.matricula"))</div>
+							<div>@helper.inputText(formularioAutenticacao("numeroDeTelefone"), '_label -> Messages("global.telefone"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.telefone"))</div>
+						</div>
 
-
-					<tr>
-						<td>@helper.inputText(formularioAutenticacao("nome"), 'size -> 17, '_label ->  Messages("global.nome"))</td>
-						<td>@helper.inputText(formularioAutenticacao("matricula"), 'size -> 17, '_label -> Messages("global.matricula"))</td>
-					</tr>
-
-					<tr>
-						<td>@helper.inputText(formularioAutenticacao("numeroDeTelefone"), 'size -> 17, '_label -> Messages("global.telefone"))</td>
-						<td>@helper.inputText(formularioAutenticacao("email"), 'size -> 17, '_label -> "Email")</td>
-
-					</tr>
-
-					<tr>
-						<td>@helper.inputPassword(formularioAutenticacao("senha"), 'size -> 17, '_label -> Messages("global.senha"))</td>
-						<td>@helper.inputText(formularioEndereco("rua"), 'size -> 17, '_label -> Messages("global.rua"))</td>
-					</tr>
-
-
-
-				</table>
-
-				@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> Messages("global.bairro"))
-				@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq(Messages("tela_login.sem_carro"),"1","2","3","4","5","6","7","8")), '_label -> Messages("tela_login.vagas"))
+						<div class="col-sm-6">
+							<div>@helper.inputText(formularioAutenticacao("email"), '_label -> "Email", '_showConstraints -> false, 'placeHolder -> Messages("placeholder.email"))</div>
+							<div>@helper.inputPassword(formularioAutenticacao("senha"), '_label -> Messages("global.senha"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.senha_cadastro"))</div>
+							<div>@helper.inputText(formularioEndereco("rua"), '_label -> Messages("global.rua"), '_showConstraints -> false, 'placeHolder -> Messages("placeholder.rua"))</div>
+						</div>
+			</div>
+				<div>@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> Messages("global.bairro"))</div>
+				<div>@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq(Messages("tela_login.sem_carro"),"1","2","3","4","5","6","7","8")), '_label -> Messages("tela_login.vagas"))</div>
 
 				<input type="submit" value=@Messages("tela_login.cadastrar") class="btn btn-default btn-xl"></input>
+
 			</br>
 				<a class="btn" onclick="login()">@Messages("tela_login.sou_cadastrado")</a>
 				</div>
