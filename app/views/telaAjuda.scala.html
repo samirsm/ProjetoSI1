@@ -1,0 +1,84 @@
+@index(Messages("global.titulo")){
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS' -->
+    <link href="assets/SBAdminTemplate/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/SBAdminTemplate/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="assets/SBAdminTemplate/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="assets/SBAdminTemplate/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+    </script>
+
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+			<!-- Main jumbotron for a primary marketing message or call to action -->
+        </br>
+        <div class="jumbotron" style=" border: 2px solid #888; vertical-align: center; background: rgb(000, 00, 00);background: rgba(000, 00, 00, 0.5); color: white; ">
+            @helper.form(action = routes.AutenticacaoController.ajuda()){
+
+            }
+            <h1>@Messages("ajuda.cabecalho")</h1>
+        </div>   
+
+      <div id="wrapper">
+         <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+				      <div class="row-xs-12" align ="left">
+				          <p>@Messages("ajuda.texto1")</p>
+                  
+                  </br>
+                  <p>@Messages("ajuda.texto2")</p>
+                  </br>
+                  1) @Messages("ajuda.pergunta1") </br>
+                  <i>@Messages("ajuda.resposta1") </i></br>
+                  2) @Messages("ajuda.pergunta2") </br>
+                  <i>@Messages("ajuda.resposta2") </i> </br>
+                  3) @Messages("ajuda.pergunta3") </br>
+                  <i>@Messages("ajuda.resposta3") </i></br>
+                  4) @Messages("ajuda.pergunta4") </br>
+                  <i>@Messages("ajuda.resposta4") </i> </br>
+                  5) @Messages("ajuda.pergunta5") </br>
+                  <i>@Messages("ajuda.resposta5") </i></br>
+                  6) @Messages("ajuda.pergunta6") </br>
+                  <i>@Messages("ajuda.resposta6") </i></br>
+                  7) @Messages("ajuda.pergunta7") </br>
+                  <i>@Messages("ajuda.resposta7") </i></br>
+                  8) @Messages("ajuda.pergunta8") </br>
+                  <i>@Messages("ajuda.resposta8") </i></br>
+                  9) @Messages("ajuda.pergunta9") </br>
+                  <i>@Messages("ajuda.resposta9") </i></br>
+                  
+
+        		  </div>
+        <!-- /#page-wrapper -->
+
+   			    </div>
+    	   </div>
+    <!-- /#wrapper -->
+    </div>
+</body>
+
+</html>
+}
+

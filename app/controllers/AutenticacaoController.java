@@ -123,6 +123,10 @@ public class AutenticacaoController extends Controller {
 		return redirect(routes.HomeController.index());
 	}
 	
+	public Result ajuda(){
+		return ok(telaAjuda.render());
+	}
+	
 	private Usuario autenticaUsuario() throws DadosInvalidosException, LoginInvalidoException{
 		DynamicForm requestData = formFactory.form().bindFromRequest();
 		String login = requestData.get("matricula");
