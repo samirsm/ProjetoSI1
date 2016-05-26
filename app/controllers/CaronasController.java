@@ -70,8 +70,8 @@ public class CaronasController extends Controller {
         loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
 
         usuarioLogado.removeSolicitacao(pedido); //remove a solicitacao, pois ja foi aceita
-        pedido.getCarona().getMotorista().removeSolicitacao(pedido); //so pra garantir :P
         usuarioLogado.leNotificacao(pedido.getNotificacaoAssociada()); //apaga a notificacao automaticamente
+        pedido.getCarona().getMotorista().removeSolicitacao(pedido); //so pra garantir :P
         pedido.getSolicitante().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
 
         Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma();
@@ -91,10 +91,12 @@ public class CaronasController extends Controller {
         SistemaNotificacao.getInstance().notificaUsuario(notificacao, pedido.getSolicitante());
         loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
 
-        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        user.removeSolicitacao(pedido);
+
+        usuarioLogado.removeSolicitacao(pedido);
         usuarioLogado.leNotificacao(pedido.getNotificacaoAssociada()); //apaga a notificacao automaticamente
         pedido.getCarona().getMotorista().removeSolicitacao(pedido);
+        pedido.getSolicitante().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
+
 
         Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma();
         flash("avaliado", MensagensSistema.RECUSA_PEDIDO[idioma.ordinal()]);

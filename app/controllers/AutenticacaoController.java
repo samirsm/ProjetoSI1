@@ -98,7 +98,7 @@ public class AutenticacaoController extends Controller {
 		try{
 			numeroVagas = Integer.parseInt(requestData.get("numeroVagas"));
 		} catch (Exception e){
-			numeroVagas = new Integer(-1);
+			numeroVagas = new Integer(0);
 		}
 
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());

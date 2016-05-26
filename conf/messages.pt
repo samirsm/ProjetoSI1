@@ -16,6 +16,7 @@ global.cheia=Cheia
 global.ida=Ida
 global.volta=Volta
 global.nome=Nome
+global.email=E-mail
 global.matricula=Matrícula
 global.telefone=Telefone
 global.senha=Senha
@@ -34,9 +35,9 @@ global.sucesso=Sucesso!
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Busque ou ofereça caronas com segurança e facilidade
 tela_login.subtitulo=Caronas de ida e volta para a UFCG
-tela_login.listagem1=Notificações em tempo real
-tela_login.listagem2=Recomendações de caronistas e passageiros
-tela_login.listagem3=Usuários cadastrados de confiança
+tela_login.listagem1=Encontre as caronas adequadas a você em um clique
+tela_login.listagem2=Visualize caronas pendentes, oferecidas e aceitas
+tela_login.listagem3=Suporte multilinguístico
 tela_login.sucesso_cadastro=Cadastro efetuado com sucesso!
 tela_login.sucesso_login=Login efetuado com sucesso!
 tela_login.login=Email/Matrícula
@@ -105,7 +106,7 @@ solicitacoes.solicitacoes_cabecalho=Solicitações de carona aguardando a sua ap
 solicitacoes.pendente_cabecalho=Caronas aguardando avaliação do motorista
 solicitacoes.sem_pendentes=Nenhuma carona pendente.
 solicitacoes.avaliado=Pedido avaliado.
-solicitacoes.pendentes=Pendente
+solicitacoes.pendente=Pendente
 
 
 # dias da semana

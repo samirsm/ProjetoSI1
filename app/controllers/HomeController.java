@@ -47,7 +47,6 @@ public class HomeController extends Controller {
 
 		ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma().getId());
 		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-		leNotificacaoAjuda();
 		return exibePagina();
 	}
 
@@ -94,7 +93,6 @@ public class HomeController extends Controller {
 	}
 
 	public Result ajuda(){
-		//leNotificacaoAjuda();
 		return ok(telaAjuda.render());
 	}
 
