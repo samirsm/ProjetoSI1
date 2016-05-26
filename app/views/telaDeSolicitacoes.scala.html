@@ -55,47 +55,55 @@
 			<div class="row-xs-12">
             <!-- Page Heading -->
             <!-- /.row -->
-                <div style="font-size: x-large; text-align: center; font: bold; color: #F33">@Messages("solicitacoes.solicitacoes_cabecalho")</div>
+                <div style="font-size: x-large; text-align: center; font: bold; color: #fff">@Messages("solicitacoes.solicitacoes_cabecalho")</div>
             <!-- /.row -->
             </br>
 @for(solicitacao <- solicitacoes){
-          <div class="col">
-                  <div class="col-lg-12">
-                      <div class="panel panel-blue-volta">
-                          <div class="panel-heading">
-                              <div class="row">
-                                  <div class="col-xs-3">
-                                      <a href=@solicitacao.getSolicitante().getEnderecoPerfil()><img src="assets/images/users/default.jpg" id="show-option" title="@solicitacao.getSolicitante().getNome()" class="img-circle" style="border: 2px solid #82b1ff" height="70" width="70"></i></a></br> @solicitacao.getSolicitante().getNome()
-                                  </div>
-                                  <div class="col-xs-9 text-left">
-                                      <div class="fa fa-commenting-o"> @solicitacao.getMensagem()</div>
-                                      <div><i class="fa fa-map-marker"></i> @solicitacao.getSolicitante.getEndereco()</div>
-                                      <div><i class="fa fa-calendar"></i> @solicitacao.getCarona().getHorario().getDia()</div>
-
-                                  </div>
-                                  <div class="col-xs-9 text-right">
-                                      <div><i class="fa fa-calendar"></i> @solicitacao.getCarona().getHorario().getDia()</div>
-                                      <div><i class="fa fa-clock-o"></i> @solicitacao.getCarona().getHorario().getHora()</div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div>
-                              <div class="panel-footer">
-
-                                  <div style="text-align: right;">
-
-
-                                      <a href="recusaPedido?id=@solicitacao.getId()" class="btn btn-m fa fa-thumbs-o-down">@Messages("solicitacoes.negar")</a>
-
-                                      <a href="aceitaPedido?id=@solicitacao.getId()" class="btn btn-m fa fa-thumbs-o-up">@Messages("solicitacoes.aceitar")</a>
-
-                                  </div>
-                                  <div class="clearfix"></div>
-                              </div>
-                          </div>
+  <div class="col">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                      <img href=@solicitacao.getSolicitante().getEnderecoPerfil() src="assets/images/users/default.jpg" id="show-option" title="@solicitacao.getSolicitante().getPrimeiroNome()" class="img-circle" style="border: 2px solid #888;" height="65" width="65"></i></br>@solicitacao.getSolicitante().getPrimeiroNome()
+                    </div>
+                    <div class="col-xs-9">
+                      <div class="row-xs-6 text-left">
+                        <div class="fa fa-comment" style="font-size: 18px; text-align: left;"> @solicitacao.getMensagem()</div>
+                      </div>
+                      <div class="row-xs-6 text-bottom" style="margin-top: 20px;">
+                        <div class="col-xs-3" >
+                          <div><i class="fa fa-car fa-2x "></i> @solicitacao.getCarona().getTipo()</div>
+                        </div>
+                        <div class="col-xs-3">
+                          <div><i class="fa fa-clock-o fa-2x"></i> @solicitacao.getCarona().getHorario().getHora()</div>
+                        </div>
+                        <div class="col-xs-3">
+                          <div><i class="fa fa-calendar fa-2x"></i> @solicitacao.getCarona().getHorario().getDia()</div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+                <div class="panel-body">
+                  <div class="row">
+                      <div class="col-xs-8">
+                        <div style="color: #888; text-align: left;"><i class="fa fa-map-marker fa-1x" ></i> @solicitacao.getSolicitante.getEndereco()</div>
+                      </div>
+                      <div class="col-xs-4">
+                        <a href="aceitaPedido?id=@solicitacao.getId()" class="btn btn-success btn-l" style="float: right"><i class="fa fa-thumbs-o-up"></i>@Messages("solicitacoes.aceitar")</a>
+                        <a href="recusaPedido?id=@solicitacao.getId()" class="btn btn-danger btn-l" style="float: right"><i class="fa fa-thumbs-o-down"></i>@Messages("solicitacoes.negar")</a>
                       </div>
                   </div>
-              </div>
+                    <span class="pull-left"></span>
+                    <div class="clearfix"></div>
+                </div>
+        </div>
+    </div>
+
+  <!-- /.container-fluid -->
+
+  </div>
               <!-- /.row -->
 }
 

@@ -55,40 +55,58 @@
 			<div class="row-xs-12">
             <!-- Page Heading -->
             <!-- /.row -->
-                <div style="font-size: x-large; text-align: center; font: bold; color: #F33">@Messages("solicitacoes.pendente_cabecalho")</div>
+                <div style="font-size: x-large; text-align: center; font: bold; color: #fff">@Messages("solicitacoes.pendente_cabecalho")</div>
             <!-- /.row -->
             </br>
 @for(pendente <- pendentes){
 
-          <div class="col">
-                  <div class="col-lg-12">
-                      <div class="panel panel-blue-volta">
-                          <div class="panel-heading">
-                              <div class="row">
-                                  <div class="col-xs-3">
-                                      <a href=@pendente.getMotorista().getEnderecoPerfil()><img src="assets/images/users/default.jpg" id="show-option" title="@pendente.getMotorista().getNome()" class="img-circle" style="border: 2px solid #82b1ff" height="60" width="60"></i></a></br> @pendente.getMotorista().getNome()
-                                  </div>
-                                  <div class="col-xs-9 text-left">
-                                      <div class="fa fa-commenting-o">@pendente.getTipo()</div>
-                                      <div><i class="fa fa-map-marker"></i> @pendente.getMotorista().getEndereco()</div>
-                                      <div><i class="fa fa-calendar"></i> @pendente.getHorario().getDia()</div>
+  <div class="col">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <img href=@pendente.getMotorista().getEnderecoPerfil() src="assets/images/users/default.jpg" id="show-option" title="@pendente.getMotorista().getPrimeiroNome()" class="img-circle" style="border: 2px solid #888;" height="65" width="65"></i></br>@pendente.getMotorista().getPrimeiroNome()
+                    </div>
+                    <div class="col-xs-9" style="margin-top: 30px;">
+                      <div class="row text-bottom">
 
-                                  </div>
-                                  <div class="col-xs-9 text-right">
-                                      <div><i class="fa fa-calendar"></i> @pendente.getHorario().getDia()</div>
-                                      <div><i class="fa fa-clock-o"></i> @pendente.getHorario().getHora()</div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div>
-                              <div class="panel-footer">
-                                  <div class="clearfix"></div>
-                              </div>
-                          </div>
+                        <div class="col-xs-4" >
+                          <div><i class="fa fa-car fa-2x "></i> @pendente.getTipo()</div>
+                        </div>
+                        <div class="col-xs-4">
+                          <div><i class="fa fa-clock-o fa-2x"></i> @pendente.getHorario.getHora()</div>
+                        </div>
+                        <div class="col-xs-4">
+                          <div><i class="fa fa-calendar fa-2x"></i> @pendente.getHorario.getDia()</div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+                <div class="panel-body">
+                  <div class="row text-left">
+                      <div class="col-xs-9">
+                        <div style="color: #888; text-align: left;"><i class="fa fa-map-marker fa-1x" ></i> @pendente.getMotorista().getEndereco()</div>
+                      </div>
+                      <div class="col-xs-3">
+                        <a class="btn btn-info btn-l disabled" style="float: right">Pendente</a>
                       </div>
                   </div>
-              </div>
-              <!-- /.row -->
+                    <span class="pull-left"></span>
+                    <div class="clearfix"></div>
+                </div>
+        </div>
+    </div>
+
+<!-- /.container-fluid -->
+
+</div>
+
+
+
+
+
 }
 
                 @if(pendentes.isEmpty()){

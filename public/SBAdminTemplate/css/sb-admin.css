@@ -471,3 +471,8 @@ tr th:last-child {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
+
+.hidden {
+  display: none;
+  opacity: 0;
+}
