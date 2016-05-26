@@ -28,6 +28,8 @@ global.sem_notificacoes=Não há notificacoes não lidas
 global.sair=Sair desta conta
 global.idioma=Idioma atual
 global.sem_passageiros=Ainda não há passageiros cadastrados nessa carona.
+global.erro=Erro!
+global.sucesso=Sucesso!
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Busque ou ofereça caronas com segurança e facilidade
@@ -107,3 +109,28 @@ dias.terca=Terça
 dias.quarta=Quarta
 dias.quinta=Quinta
 dias.sexta=Sexta
+
+#ajuda
+ajuda = Ajuda
+ajuda.cabecalho = Sessão de ajuda do Vumbora
+ajuda.texto1 =  O Vumbora foi criado para facilitar a vida dos estudantes e funcionários da UFCG. Além de promover a boa prática de formar amizades. Nele você vai poder oferecer e solicitar caronas dados a sua localização e horários de aula. Não é prático?
+ajuda.texto2 = F.A.Q
+ajuda.pergunta1 = Como me cadastrar?
+ajuda.pergunta2 = Por que dar tantas informações?
+ajuda.pergunta3 = Como fazer login?
+ajuda.pergunta4 = Onde cadastro meus horários?
+ajuda.pergunta5 = Como solicito uma carona?
+ajuda.pergunta6 = Como ofereço uma carona?
+ajuda.pergunta7 = Como aceito uma carona?
+ajuda.pergunta8 = Onde posso mudar o idioma?
+ajuda.pergunta9 = Onde vejo as caronas que tenho?
+
+ajuda.resposta1 = Para se cadastrar no Vumbora é fácil. Acesse o site e clique em "Ainda não é cadastrado?" logo abaixo do botão de login.
+ajuda.resposta2 = Precisamos de suas informações para assim definir a carona apropriada para você.
+ajuda.resposta3 = Depois de se cadastrar, na tela de login, coloque no primeiro campo sua matrícula ou e-mail e no outro campo sua senha.
+ajuda.resposta4 = Assim que você se cadastrar, você estará na tela de cadastrar horários. Você pode editar a qualquer momento clicando em "Horários" na barra lateral esquerda.
+ajuda.resposta5 = Com o horários cadastrados, na tela Home clique em "Buscar Carona" e ache a carona que mais se encaixa com seus horários.
+ajuda.resposta6 = Com o horários cadastrados, na tela Home clique em "Oferecer Carona" e defina o dia, horário e tipo de destino para publicar sua carona.
+ajuda.resposta7 = Se um usuario lhe pedir uma carona, você será notificado e poderá aceitar ou recusar esse pedido na página de Solicitações, que pode ser acessada através do menu lateral ou clicando na notificação.
+ajuda.resposta8 = Na barra superior no canto direito o segundo botão lhe dá a possibilidade de escolher qual será a linguaguem que você prefere utilizar.
+ajuda.resposta9 = Na barra lateral direita, em qualquer tela, você tem acesso a todas caronas nas quais você está cadastrado.

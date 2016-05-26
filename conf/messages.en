@@ -28,7 +28,9 @@ global.notificacoes_lidas=Mark all as read
 global.sem_notificacoes=No unread notifications
 global.sair=Logout account
 global.idioma=Language set
-global.sem_passageiros=There isn't any passenger registered in this carpool yet.
+global.sem_passageiros=There isn''t any passenger registered in this carpool yet.
+global.erro=Error!
+global.sucesso=Success!
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Search or offer carpools safely and easily
@@ -99,7 +101,7 @@ solicitacoes.nenhuma=You have no requests at this time.
 solicitacoes.negar=Deny
 solicitacoes.aceitar=Accept
 solicitacoes.solicitacoes_cabecalho=Carpool requests waiting for your approval
-solicitacoes.pendente_cabecalho=Carpools waiting for driver/'s avaliation
+solicitacoes.pendente_cabecalho=Carpools waiting for driver''s avaliation
 solicitacoes.sem_pendentes=No pending carpools.
 
 
@@ -109,3 +111,28 @@ dias.terca=Tuesday
 dias.quarta=Wednesday
 dias.quinta=Thursday
 dias.sexta=Friday
+
+#ajuda
+ajuda = Help
+ajuda.cabecalho = Vumbora''s help section
+ajuda.texto1 =  Vumbora was created to make UFCG students and staff easier, besides promoting a good pactice of making new friendships. In this site you can offer and request carpools given your location and schedule. Isn''t it practical?
+ajuda.texto2 = F.A.Q
+ajuda.pergunta1 = How to register?
+ajuda.pergunta2 = Why to give so many information?
+ajuda.pergunta3 = How to log in?
+ajuda.pergunta4 = Where do I register my schedule?
+ajuda.pergunta5 = How to ask for a carpool?
+ajuda.pergunta6 = How to offer a carpool?
+ajuda.pergunta7 = How to accept a carpool request?
+ajuda.pergunta8 = Where can I change the language?
+ajuda.pergunta9 = Where can I see the carpools I''m in?
+
+ajuda.resposta1 = It is easy to register in Vumbora. Right after accessing the website, click on "Not yet registered?" below "Login" button.
+ajuda.resposta2 = We need your information in order to set up the best carpool matches just for you.
+ajuda.resposta3 = After registering, at login screen, enter in the first gap your RDM or the e-mail you''ve used to register and your password in the other below.
+ajuda.resposta4 = Right after registering your account you''ll be at Schedule Registering screen. You can at any time edit your schedule by accessing it from the lateral menu "Schedule.
+ajuda.resposta5 = Having your schedule done, in the Home screen click on "Search Carpool" and you'll find the carpool that best suits your schedule.
+ajuda.resposta6 = Having your schedule done, in the Home screen click on "Offer Carpool" and define the day, time and destination type to publish your carpool.
+ajuda.resposta7 = If someone is asking to participate in your carpool, you''ll be notified and you can accept or refuse the request it on Requests page, accessible by the lateral menu or clicking on that notification.
+ajuda.resposta8 = On the upper menu, at the right, the second button gives you the choice to choose the language you prefer to set.
+ajuda.resposta9 = At the right, when at any screen you can check all the carpools you''re currently in.

@@ -65,7 +65,8 @@ public class MensagensSistema {
 	public static final String[] VOLTA = {"Volta", "Returning", "Retorno", "Ritorno"};
 	//
 
-	//Mensagens de Exceptions
+
+	//Mensagens de Exceptions/Aerts
 	public static final String[] LOGIN_INVALIDO = {"O usuario ou senha estao incorretos.",
 			"User's login or password is wrong.",
 			"El usuario o la contraseña está incorrecta.",
@@ -95,6 +96,11 @@ public class MensagensSistema {
 			"The email or the RDM given are already in use.",
 			"El email o el RDM dados ya están en uso.",
 			"L'email oppure el RDM già è in uso."};
+
+	public static final String[] CADASTRO_SUCESSO = {"Usuario cadastrado com sucesso.",
+			"User registered with uccess.",
+			"Usuario registrado con éxito.",
+			"Utente registrato con successo."};
 	//
 
 }

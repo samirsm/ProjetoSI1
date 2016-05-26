@@ -31,7 +31,7 @@ public class HomeController extends Controller {
 	private Form<Horario> formularioHorario;
 	private List<String> bairros;
 	private Idioma idioma = Idioma.PORTUGUES; //Default português
-	
+
 	@Inject
 	public HomeController (FormFactory formFactory){
 		this.formFactory = formFactory;
@@ -41,13 +41,13 @@ public class HomeController extends Controller {
 		formularioHorario = this.formFactory.form(Horario.class);
 		bairros = SistemaDeBairros.getInstance().getBairrosCadastrados();
 	}
-	
+
 	// Mudar esse método para efetuar a verificação do Usuario Logado.
 	public Result index(){
 
 		ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma().getId());
 		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-		
+
 		return exibePagina();
 	}
 
@@ -57,18 +57,18 @@ public class HomeController extends Controller {
 		SistemaUsuarioLogin.getInstance().setIdioma(idioma);
 		if(usuarioLogado != null){
 			usuarioLogado.setIdioma(idioma);
-            for(Notificacao not : usuarioLogado.getNotificacoesNaoLidas()){
-                if(not.getTipo() == TipoNotificacao.IDIOMA)
-                    usuarioLogado.leNotificacao(not);
-            }
-            usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
+			for(Notificacao not : usuarioLogado.getNotificacoesNaoLidas()){
+				if(not.getTipo() == TipoNotificacao.IDIOMA)
+					usuarioLogado.leNotificacao(not);
+			}
+			usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
 		}
 		return exibePagina();
 	}
-	
+
 	public Result editaHorarios(){
-      List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
-      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+		List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
+		return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 
 	}
 
@@ -77,12 +77,12 @@ public class HomeController extends Controller {
 		return ok(telaPerfilUsuario.render(usuarioLogado, usuarioPerfil));
 
 	}
-	
+
 	private Result exibePagina(){
 		if (!SistemaUsuarioLogin.getInstance().isLogado())
 			return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
 		else if(!usuarioLogado.isHorariosCadastrados()){
-		  return editaHorarios();
+			return editaHorarios();
 		}else if(SistemaUsuarioLogin.getInstance().isLogado() && !usuarioLogado.isHorariosCadastrados()){
 			List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
 			return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
@@ -92,6 +92,7 @@ public class HomeController extends Controller {
 			return ok(viewUsuario.render(usuarioLogado, formularioCarona, caronas, bairros, usuarioLogado.getNotificacoesNaoLidas()));
 		}
 	}
+
 
 
 }
