@@ -137,6 +137,11 @@ public class Usuario extends Model {
 	public String getNome() {
 		return dadosPessoais.getNome();
 	}
+	
+	public String getPrimeiroNome(){
+	  String [] nome = this.getNome().split(" ");
+	  return nome[0];
+	}
 
 	public Dados getDadosUsuario() {
 		return dadosPessoais;

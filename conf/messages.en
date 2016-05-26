@@ -28,16 +28,18 @@ global.notificacoes_lidas=Mark all as read
 global.sem_notificacoes=No unread notifications
 global.sair=Logout account
 global.idioma=Language set
-global.sem_passageiros=There isn't any passenger registered in this carpool yet.
+global.sem_passageiros=There isn''t any passenger registered in this carpool yet.
+global.erro=Error!
+global.sucesso=Success!
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Search or offer carpools safely and easily
 tela_login.subtitulo=Going and returning carpools to UFCG
-tela_login.listagem1=Real time notifications
-tela_login.listagem2=Drivers and passenger recommendations
-tela_login.listagem3=Trustful users only registered
-tela_login.sucesso_cadastro=Registration sucessful!
-tela_login.sucesso_login=Login sucessful!
+tela_login.listagem1=Find carpool matches just for you with on click
+tela_login.listagem2=Visualize pending, offered and accepted carpools
+tela_login.listagem3=Multi-languages supported
+tela_login.sucesso_cadastro=Registration successful!
+tela_login.sucesso_login=Login successful!
 tela_login.login=Email/RDM
 tela_login.sem_carro=I do not own a car.
 tela_login.vagas=Number of passenger seats in the car
@@ -84,7 +86,9 @@ view_usuario.publique=Publish
 view_usuario.busque=Search
 view_usuario.recentes=Recent publications
 view_usuario.pedir=Ask
-view_usuario.sem_caronas=There are no available carpools for your neighbourhood at this moment :(
+view_usuario.sem_caronas=There aren''t new carpools for your neighbourhood compatible with your schedule at this moment :(
+view_usuario.sem_horarios=You must first register your schedule to search carpools.
+view_usuario.cadastre_horarios=Register it here.
 
 # agendamento
 agendamento.marcar=Schedule a carpool with
@@ -99,9 +103,10 @@ solicitacoes.nenhuma=You have no requests at this time.
 solicitacoes.negar=Deny
 solicitacoes.aceitar=Accept
 solicitacoes.solicitacoes_cabecalho=Carpool requests waiting for your approval
-solicitacoes.pendente_cabecalho=Carpools waiting for driver/'s avaliation
+solicitacoes.pendente_cabecalho=Carpools waiting for driver''s rating
 solicitacoes.sem_pendentes=No pending carpools.
-
+solicitacoes.avaliado=Request rated.
+solicitacoes.pendente=Pending
 
 # dias da semana
 dias.segunda=Monday
@@ -112,25 +117,26 @@ dias.sexta=Friday
 
 #ajuda
 ajuda = Help
-ajuda.cabecalho = Sessão de ajuda do Vumbora
-ajuda.texto1 =  O Vumbora foi criado para facilitar a vida dos estudantes e funcionários da UFCG. Além de promover a boa prática de formar amizades. Nele você vai poder oferecer e solicitar caronas dada a sua localização e horário. Não é prático?
+ajuda.voltar = Back
+ajuda.cabecalho = Vumbora''s help section
+ajuda.texto1 =  Vumbora was created to make UFCG students and staff easier, besides promoting a good practice of making new friendships. In this site you can offer and request carpools given your location and schedule. Isn''t it practical?
 ajuda.texto2 = F.A.Q
-ajuda.pergunta1 = Como me cadastrar?
-ajuda.pergunta2 = Por que dar tantas informações?
-ajuda.pergunta3 = Como fazer login?
-ajuda.pergunta4 = Onde colocar meus horários?
-ajuda.pergunta5 = Como solicitar uma carona?
-ajuda.pergunta6 = Como oferecer uma carona?
-ajuda.pergunta7 = Como aceitar uma carona?
-ajuda.pergunta8 = Onde posso mudar o idioma?
-ajuda.pergunta9 = Onde ver as caronas que tenho?
+ajuda.pergunta1 = How to register?
+ajuda.pergunta2 = Why to give so many information?
+ajuda.pergunta3 = How to log in?
+ajuda.pergunta4 = Where do I register my schedule?
+ajuda.pergunta5 = How to ask for a carpool?
+ajuda.pergunta6 = How to offer a carpool?
+ajuda.pergunta7 = How to accept a carpool request?
+ajuda.pergunta8 = Where can I change the language?
+ajuda.pergunta9 = Where can I see the carpools I''m in?
 
-ajuda.resposta1 = Para se cadastrar no Vumbora é fácil. Acesse o site e clique em "Cadastre-se" logo abaixo do botão de login.
-ajuda.resposta2 = Precisamos de suas informações para assim definir a melhor carona e/ou passageiro para você.
-ajuda.resposta3 = Depois de se cadastrar, na tela de login, coloque no primeiro campo sua matrícula ou e-mail e no outro campo sua senha.
-ajuda.resposta4 = Assim que você se cadastrar sua tela será a de cadastrar seus horários de ida e vinda para oferecer e/ou buscar carona. Mas você pode editar a qualquer momento clicando em "Horários" na barra lateral esquerda.
-ajuda.resposta5 = Com o horário cadastrado acima do feed clique em "Buscar Carona" e ache a carona que mais se encaixa com seus horários.
-ajuda.resposta6 = Com o horário cadastrado acima do feed clique em "Oferecer Carona" e defina os horários preferidos para publicar sua carona.
-ajuda.resposta7 = Se um motorista lhe oferecer uma carona então esta aparecerá nas notificações e clicando você pode decidir aceitar a carona ou não.
-ajuda.resposta8 = Na barra superior no canto direito o segundo botão lhe dá a possibilidade de escolher qual será a linguaguem que você prefere utilizar.
-ajuda.resposta9 = Na barra lateral direita você tem acesso à todas caronas cadastradas.
+ajuda.resposta1 = It is easy to register in Vumbora. Right after accessing the website, click on "Not yet registered?" below "Login" button.
+ajuda.resposta2 = We need your information in order to set up the best carpool matches just for you.
+ajuda.resposta3 = After registering, at login screen, enter in the first gap your RDM or the e-mail you''ve used to register and your password in the other below.
+ajuda.resposta4 = Right after registering your account you''ll be at Schedule Registering screen. You can at any time edit your schedule by accessing it from the lateral menu "Schedule.
+ajuda.resposta5 = Having your schedule done, in the Home screen click on "Search Carpool" and you'll find the carpool that best suits your schedule.
+ajuda.resposta6 = Having your schedule done, in the Home screen click on "Offer Carpool" and define the day, time and destination type to publish your carpool.
+ajuda.resposta7 = If someone is asking to participate in your carpool, you''ll be notified and you can accept or refuse the request it on Requests page, accessible by the lateral menu or clicking on that notification.
+ajuda.resposta8 = On the upper menu, at the right, the second button gives you the choice to choose the language you prefer to set.
+ajuda.resposta9 = At the right, when at any screen you can check all the carpools you''re currently in.

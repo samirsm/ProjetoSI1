@@ -8,12 +8,9 @@ import exceptions.DadosInvalidosException;
 import exceptions.HorarioJaCadastradoException;
 import exceptions.LoginInvalidoException;
 import exceptions.UsuarioJaExistenteException;
-import models.Dados;
-import models.Endereco;
-import models.Horario;
-import models.TipoCarona;
-import models.Usuario;
 import play.mvc.Controller;
+import models.*;
+import sistemas.mensagens.MensagensSistema;
 
 public final class SistemaUsuarioCRUD {
 	
@@ -34,6 +31,7 @@ public final class SistemaUsuarioCRUD {
 	public Usuario cadastraUsuario(Dados dadosPessoais, Endereco endereco, Integer numeroVagas) throws UsuarioJaExistenteException, DadosInvalidosException {
 		Usuario novoUsuario = new Usuario(dadosPessoais, endereco, numeroVagas);
 		novoUsuario.setIdioma(Controller.session().get("idioma"));
+		novoUsuario.recebeNotificacao(new Notificacao(novoUsuario, TipoNotificacao.BOASVINDAS));
 		if (!isUsuarioExistente(novoUsuario))
 			usuariosAtivados.add(novoUsuario);
 

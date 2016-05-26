@@ -21,6 +21,12 @@ public class Horario {
         Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
 		return dias[dia - 2][idioma.ordinal()];
 	}
+	
+	public String getDiaAbreviado() {
+      Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
+      String str =  (dias[dia - 2][idioma.ordinal()]).substring(0,3);
+      return str;
+  }
 
     public int getNumeroDia(){
         return this.dia;

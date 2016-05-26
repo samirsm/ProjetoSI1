@@ -3,7 +3,10 @@ package models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import com.avaje.ebean.Model;
+import exceptions.DadosInvalidosException;
+import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.Strings;
+import play.mvc.Controller;
 
 @Entity
 public class Notificacao extends Model{
@@ -33,6 +36,14 @@ public class Notificacao extends Model{
         this.status = false;
         setId();
     }
+
+    public Notificacao(String texto){ //Notificação genérica
+        this.usuarioOrigem = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login"));
+        this.tipo = TipoNotificacao.AVISO;
+        mensagem = texto;
+        this.status = false;
+        setId();
+    }
  
     public void setStatus(boolean status) {
         this.status = status;
@@ -58,7 +69,7 @@ public class Notificacao extends Model{
     }
  
     private void geraMensagem(TipoNotificacao tipo) {
-        if(tipo == TipoNotificacao.IDIOMA)
+        if(tipo == TipoNotificacao.IDIOMA || tipo == TipoNotificacao.BOASVINDAS || tipo == TipoNotificacao.AVISO)
             mensagem = tipo.getMessage() + Strings.LINE_SEPARATOR;
         else
             mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
@@ -78,6 +89,7 @@ public class Notificacao extends Model{
 
     public String getReferencia(){
         if(tipo == TipoNotificacao.PEDIDO) return "solicitacoes";
+        else if(tipo == TipoNotificacao.BOASVINDAS) return "ajuda";
         else return "leNotificacao?id=" + this.getId();
     }
 }

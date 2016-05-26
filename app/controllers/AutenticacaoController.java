@@ -33,40 +33,40 @@ import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
+import sistemas.mensagens.Idioma;
+import sistemas.mensagens.MensagensSistema;
 import views.html.*;
 
 public class AutenticacaoController extends Controller {
 	private FormFactory formFactory;
 	private LoggerSistema loggerAutenticacao;
-	
+
 	@Inject
 	public AutenticacaoController (FormFactory formFactory, CacheApi cache){
 		this.formFactory = formFactory;
 		loggerAutenticacao = new LoggerSistema();
 	}
-	
+
 	public Result efetuaLogin(){
 		Usuario usuarioLogado = null;
-		
+
 		try {
 			usuarioLogado = autenticaUsuario();
-			if (usuarioLogado == null) 
+			if (usuarioLogado == null)
 				throw new LoginInvalidoException();
 		} catch (DadosInvalidosException | LoginInvalidoException e) {
 			loggerAutenticacao.registraAcao(Acao.INFO, e.getMessage());
 			flash("erro", e.getMessage());
 			return redirect(routes.HomeController.login());
 		}
-
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
-		flash("sucesso", "Usuário logado com sucesso.");
 
 		return verificaPrimeiroAcessoUsuario(usuarioLogado);
 	}
-	
+
 	public Result cadastraUsuario() {
 		DynamicForm requestData = formFactory.form().bindFromRequest();
-		
+
 		String nome = requestData.get("nome");
 		String matricula = requestData.get("matricula");
 		String email = requestData.get("email");
@@ -74,10 +74,10 @@ public class AutenticacaoController extends Controller {
 		String numeroDeTelefone = requestData.get("numeroDeTelefone");
 		String rua = requestData.get("rua");
 		String bairro = requestData.get("bairro");
-		
+
 		Dados dadosPessoais;
 		Endereco endereco;
-		
+
 		try{
 			if(requestData.hasErrors())
 				throw new Exception();
@@ -88,51 +88,48 @@ public class AutenticacaoController extends Controller {
 			flash("erro", e.getMessage());
 			return redirect(routes.HomeController.login());		
         }
-		
+
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString());
-		
+
 		Integer numeroVagas;
-		
+
 		try{
 			numeroVagas = Integer.parseInt(requestData.get("numeroVagas"));
 		} catch (Exception e){
-			numeroVagas = new Integer(-1);
+			numeroVagas = new Integer(0);
 		}
-        
+
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
-		
+
 		try{
 			SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
 		} catch (UsuarioJaExistenteException | DadosInvalidosException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			flash("erro", e.getMessage());
-			return redirect(routes.HomeController.login());
-            }
-		
+
+			return redirect(routes.HomeController.index());
+		}
+
 		loggerAutenticacao.registraAcao(Acao.USUARIO_CADASTRADO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
-	
-		flash("success", "Usuario cadastrado com sucesso!");
-        return redirect(routes.HomeController.login());	
-       }
-	
-	public Result efetuaLogout(){
-		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado(session().get("login")).toString());
-		
-		session().clear();
-		SistemaUsuarioLogin.getInstance().efetuaLogout();
-		
+
+		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
+		flash("success", MensagensSistema.CADASTRO_SUCESSO[idioma.ordinal()]);
 		return redirect(routes.HomeController.index());
 	}
-	
-	public Result ajuda(){
-		return ok(telaAjuda.render());
+
+	public Result efetuaLogout(){
+		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login")).toString());
+		SistemaUsuarioLogin.getInstance().efetuaLogout();
+		session().clear();
+
+		return redirect(routes.HomeController.index());
 	}
-	
+
 	private Usuario autenticaUsuario() throws DadosInvalidosException, LoginInvalidoException{
 		DynamicForm requestData = formFactory.form().bindFromRequest();
-		String login = requestData.get("matricula");
+		String login = requestData.get("login");
 		String senha = requestData.get("senha");
-		
+
 		if (requestData.hasErrors())
 			throw new DadosInvalidosException();
 		
@@ -144,7 +141,7 @@ public class AutenticacaoController extends Controller {
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
 		return usuarioLogado;
 	}
-	
+
 	private Result verificaPrimeiroAcessoUsuario(Usuario usuario) {
 		loggerAutenticacao.registraAcao(Acao.VERIFICA_PRIMEIRO_ACESSO, usuario.toString());
 		return redirect(routes.HomeController.index());

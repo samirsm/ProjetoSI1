@@ -9,7 +9,10 @@ public enum TipoNotificacao {
 	REJEICAO(MensagensSistema.REJEICAO),
 	CANCELAMENTO(MensagensSistema.CANCELAMENTO),
 	PEDIDO(MensagensSistema.PEDIDO),
-	IDIOMA(MensagensSistema.IDIOMA);
+	IDIOMA(MensagensSistema.IDIOMA),
+	BOASVINDAS(MensagensSistema.BEM_VINDO),
+	AVISO(MensagensSistema.AVISO);
+
 
 	private String[] mensagemNotificacao;
 	

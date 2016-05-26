@@ -25,7 +25,7 @@ public enum Idioma {
 			case "it":
 				return ITALIANO;
 			default:
-				return null;
+				return ENGLISH;
 			}
 		}
 		return ENGLISH;

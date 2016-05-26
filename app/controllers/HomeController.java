@@ -29,7 +29,8 @@ public class HomeController extends Controller {
 	private Form<Carona> formularioCarona;
 	private Form<Horario> formularioHorario;
 	private List<String> bairros;
-	
+
+
 	@Inject
 	public HomeController (FormFactory formFactory){
 		this.formFactory = formFactory;
@@ -39,14 +40,15 @@ public class HomeController extends Controller {
 		formularioHorario = this.formFactory.form(Horario.class);
 		bairros = SistemaDeBairros.getInstance().getBairrosCadastrados();
 	}
-	
+
 	// Mudar esse método para efetuar a verificação do Usuario Logado.
 	
 	@Security.Authenticated(Secured.class)
 	public Result index(){
+
 		if (isLogado())
 			ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma(session("login")).getId());
-		
+
 		return exibePagina();
 	}
 	
@@ -63,15 +65,18 @@ public class HomeController extends Controller {
                     usuarioLogado.leNotificacao(not);
             }
             usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
+
 		}
 		return redirect(routes.HomeController.index());
 	}
+
 	
 	@Security.Authenticated(Secured.class)
 	public Result editaHorarios(){
 	  Usuario usuarioLogado = getUsuarioLogado();
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
       return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+
 
 	}
 
@@ -82,7 +87,7 @@ public class HomeController extends Controller {
 		return ok(telaPerfilUsuario.render(usuarioLogado, usuarioPerfil));
 
 	}
-	
+
 	private Result exibePagina(){
 		if (!isLogado())
 			return login();
@@ -97,6 +102,7 @@ public class HomeController extends Controller {
 			return ok(viewUsuario.render(getUsuarioLogado(), formularioCarona, caronas, bairros, getUsuarioLogado().getNotificacoesNaoLidas()));
 		}
 	}
+
 	
 	private boolean isLogado(){
 		return getUsuarioLogado() != null;
@@ -114,5 +120,12 @@ public class HomeController extends Controller {
 		
 		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
 	}
+
+
+	public Result ajuda(){
+		return ok(telaAjuda.render());
+	}
+
+
 
 }

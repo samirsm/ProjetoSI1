@@ -29,6 +29,7 @@ global.sem_notificacoes=No hay notificaciones no leídas
 global.sair=Salir de esta cuenta
 global.idioma=Idioma definido
 global.sem_passageiros=Aún no hay pasageros registrados en esto aventón.
+global.sucesso=Éxito!
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Busca u ofrece aventones con seguridad y facilidad
@@ -84,7 +85,9 @@ view_usuario.publique=Publicar
 view_usuario.busque=Buscar
 view_usuario.recentes=Publicaiones recentes
 view_usuario.pedir=Pedir
-view_usuario.sem_caronas=No hay aventones para tu barrio disponibles ahora :(
+view_usuario.sem_caronas=No hay nuevos aventones para tu barrio compatibles con tus horarios ahora :(
+view_usuario.sem_horarios=Deves primero registrar tus horarios para buscar aventones.
+view_usuario.cadastre_horarios=Regístralos aquí.
 
 # agendamento
 agendamento.marcar=Programar un aventón con
@@ -101,6 +104,9 @@ solicitacoes.aceitar=Vumbora
 solicitacoes.solicitacoes_cabecalho=Solicitacione de aventón aguardando tu aprobación
 solicitacoes.pendente_cabecalho=Aventones aguardando avaliación del motorista
 solicitacoes.sem_pendentes=Ningún aventón pendiente.
+solicitacoes.avaliado=Pedido avaliado.
+solicitacoes.pendente=Pendiente
+
 
 # dias da semana
 dias.segunda=Lunes
@@ -109,28 +115,28 @@ dias.quarta=Miercoles
 dias.quinta=Jueves
 dias.sexta=Viernes
 
-
 #ajuda
-ajuda = Ayuda
-ajuda.cabecalho = Sessão de ajuda do Vumbora
-ajuda.texto1 =  O Vumbora foi criado para facilitar a vida dos estudantes e funcionários da UFCG. Além de promover a boa prática de formar amizades. Nele você vai poder oferecer e solicitar caronas dada a sua localização e horário. Não é prático?
+ajuda = Help
+ajuda.voltar = Back
+ajuda.cabecalho = Vumbora''s help section
+ajuda.texto1 =  Vumbora was created to make UFCG students and staff easier, besides promoting a good practice of making new friendships. In this site you can offer and request carpools given your location and schedule. Isn''t it practical?
 ajuda.texto2 = F.A.Q
-ajuda.pergunta1 = Como me cadastrar?
-ajuda.pergunta2 = Por que dar tantas informações?
-ajuda.pergunta3 = Como fazer login?
-ajuda.pergunta4 = Onde colocar meus horários?
-ajuda.pergunta5 = Como solicitar uma carona?
-ajuda.pergunta6 = Como oferecer uma carona?
-ajuda.pergunta7 = Como aceitar uma carona?
-ajuda.pergunta8 = Onde posso mudar o idioma?
-ajuda.pergunta9 = Onde ver as caronas que tenho?
+ajuda.pergunta1 = How to register?
+ajuda.pergunta2 = Why to give so many information?
+ajuda.pergunta3 = How to log in?
+ajuda.pergunta4 = Where do I register my schedule?
+ajuda.pergunta5 = How to ask for a carpool?
+ajuda.pergunta6 = How to offer a carpool?
+ajuda.pergunta7 = How to accept a carpool request?
+ajuda.pergunta8 = Where can I change the language?
+ajuda.pergunta9 = Where can I see the carpools I''m in?
 
-ajuda.resposta1 = Para se cadastrar no Vumbora é fácil. Acesse o site e clique em "Cadastre-se" logo abaixo do botão de login.
-ajuda.resposta2 = Precisamos de suas informações para assim definir a melhor carona e/ou passageiro para você.
-ajuda.resposta3 = Depois de se cadastrar, na tela de login, coloque no primeiro campo sua matrícula ou e-mail e no outro campo sua senha.
-ajuda.resposta4 = Assim que você se cadastrar sua tela será a de cadastrar seus horários de ida e vinda para oferecer e/ou buscar carona. Mas você pode editar a qualquer momento clicando em "Horários" na barra lateral esquerda.
-ajuda.resposta5 = Com o horário cadastrado acima do feed clique em "Buscar Carona" e ache a carona que mais se encaixa com seus horários.
-ajuda.resposta6 = Com o horário cadastrado acima do feed clique em "Oferecer Carona" e defina os horários preferidos para publicar sua carona.
-ajuda.resposta7 = Se um motorista lhe oferecer uma carona então esta aparecerá nas notificações e clicando você pode decidir aceitar a carona ou não.
-ajuda.resposta8 = Na barra superior no canto direito o segundo botão lhe dá a possibilidade de escolher qual será a linguaguem que você prefere utilizar.
-ajuda.resposta9 = Na barra lateral direita você tem acesso à todas caronas cadastradas.
+ajuda.resposta1 = It is easy to register in Vumbora. Right after accessing the website, click on "Not yet registered?" below "Login" button.
+ajuda.resposta2 = We need your information in order to set up the best carpool matches just for you.
+ajuda.resposta3 = After registering, at login screen, enter in the first gap your RDM or the e-mail you''ve used to register and your password in the other below.
+ajuda.resposta4 = Right after registering your account you''ll be at Schedule Registering screen. You can at any time edit your schedule by accessing it from the lateral menu "Schedule.
+ajuda.resposta5 = Having your schedule done, in the Home screen click on "Search Carpool" and you'll find the carpool that best suits your schedule.
+ajuda.resposta6 = Having your schedule done, in the Home screen click on "Offer Carpool" and define the day, time and destination type to publish your carpool.
+ajuda.resposta7 = If someone is asking to participate in your carpool, you''ll be notified and you can accept or refuse the request it on Requests page, accessible by the lateral menu or clicking on that notification.
+ajuda.resposta8 = On the upper menu, at the right, the second button gives you the choice to choose the language you prefer to set.
+ajuda.resposta9 = At the right, when at any screen you can check all the carpools you''re currently in.

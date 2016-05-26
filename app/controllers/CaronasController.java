@@ -17,6 +17,8 @@ import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import play.mvc.Security;
+import sistemas.mensagens.Idioma;
+import sistemas.mensagens.MensagensSistema;
 import views.html.*;
 
 public class CaronasController extends Controller {
@@ -50,7 +52,8 @@ public class CaronasController extends Controller {
           flash("erro", e.getMessage());
           return redirect(routes.HomeController.index());
       }
-        flash("success", "Carona cadastrada com sucesso!");
+        Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
+        flash("success", MensagensSistema.CARONA_PUBLICADA[idioma.ordinal()]);
         return redirect(routes.HomeController.index()); 
     }
     
@@ -67,9 +70,12 @@ public class CaronasController extends Controller {
         loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
 
         usuarioLogado.removeSolicitacao(pedido); //remove a solicitacao, pois ja foi aceita
-        pedido.getCarona().getMotorista().removeSolicitacao(pedido); //so pra garantir :P
         usuarioLogado.leNotificacao(pedido.getNotificacaoAssociada()); //apaga a notificacao automaticamente
+        pedido.getCarona().getMotorista().removeSolicitacao(pedido); //so pra garantir :P
         pedido.getSolicitante().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
+
+        Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
+        flash("avaliado", pedido.getSolicitante().getPrimeiroNome() + MensagensSistema.ACEITA_PEDIDO[idioma.ordinal()]);
 
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
       }
@@ -81,14 +87,17 @@ public class CaronasController extends Controller {
         Notificacao notificacao = new Notificacao(usuarioLogado, pedido.getCarona(), TipoNotificacao.REJEICAO);
 
         loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
-
         SistemaNotificacao.getInstance().notificaUsuario(notificacao, pedido.getSolicitante());
         loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
 
-        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
-        user.removeSolicitacao(pedido);
+        usuarioLogado.removeSolicitacao(pedido);
+        usuarioLogado.leNotificacao(pedido.getNotificacaoAssociada()); //apaga a notificacao automaticamente
         pedido.getCarona().getMotorista().removeSolicitacao(pedido);
+        pedido.getSolicitante().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
 
+
+        Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
+        flash("avaliado", MensagensSistema.RECUSA_PEDIDO[idioma.ordinal()]);
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
 
     }
@@ -108,6 +117,8 @@ public class CaronasController extends Controller {
         SistemaNotificacao.getInstance().notificaUsuario(notificacao, carona.getMotorista()); // o motorista da carona é notificado desse pedido
         buscarCaronas(); // atualizar a lista de caronas, agora sem esta, que ja foi pedida
 
+        Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
+        flash("pedido", MensagensSistema.PEDIDO_EFETUADO[idioma.ordinal()]);
         return redirect(routes.HomeController.index());
     }
 
