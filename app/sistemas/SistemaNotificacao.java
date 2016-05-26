@@ -38,6 +38,7 @@ public class SistemaNotificacao {
         int i = buscarIndiceNotificacaoPorId(id);
         return usuarioLogado.getNotificacoesNaoLidas().get(i);
     }
+
     private int buscarIndiceNotificacaoPorId(Long id) {
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
 

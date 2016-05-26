@@ -58,8 +58,7 @@ public class Secured extends Security.Authenticator {
 	            return false;
 	        }
 	    }
-	    loggerSecured.registraAcao(Acao.INFO, "PASSOU");
-	    return true;
+		return true;
 	}	    
 
 }

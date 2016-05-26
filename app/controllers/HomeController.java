@@ -1,6 +1,5 @@
 package controllers;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -21,8 +20,6 @@ import sistemas.SistemaCarona;
 import sistemas.SistemaDeBairros;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
-import sistemas.logger.LoggerSistema;
-import sistemas.logger.registrosAcoes.Acao;
 import sistemas.mensagens.Idioma;
 import views.html.*;
 
@@ -51,8 +48,7 @@ public class HomeController extends Controller {
 	public Result index(){
 		ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma().getId());
 		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-		//new LoggerSistema().registraAcao(Acao.INFO, usuarioLogado.toString());
-		
+
 		return exibePagina();
 	}
 	
@@ -66,7 +62,7 @@ public class HomeController extends Controller {
                 if(not.getTipo() == TipoNotificacao.IDIOMA)
                     usuarioLogado.leNotificacao(not);
             }
-            usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
+			usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
 		}
 		return exibePagina();
 	}

@@ -86,18 +86,20 @@ public class HorariosController extends Controller {
 	
 	public Result excluiHorarioVolta(String dia, Integer hora){
 	  Horario horario = new Horario(dia, hora);
-      Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
       usuarioLogado.removeHorarioVolta(horario);
-      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+        usuarioLogado.update();
+        return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 	}
 	
 	public Result excluiHorarioIda(String dia, Integer hora){
       Horario horario = new Horario(dia, hora);
-      Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
       usuarioLogado.removeHorarioIda(horario);
-      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+        usuarioLogado.update();
+        return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
     }
 	
 

@@ -81,6 +81,7 @@ public final class SistemaUsuarioCRUD {
 	
 	public void cadastraHorario(Usuario usuario,TipoCarona tipo, String dia, int hora) throws HorarioJaCadastradoException{
 		Horario horario = new Horario(dia,hora);
+		//horario.save();
 		cadastraHorario(usuario,tipo,horario);
 	}
 	

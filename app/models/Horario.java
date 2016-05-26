@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Entity
 public class Horario extends Model{
+
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -23,6 +24,10 @@ public class Horario extends Model{
 	public Horario(String dia, int hora) {
 		setDia(dia);
 		this.hora = hora;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public String getDia() {
@@ -62,6 +67,10 @@ public class Horario extends Model{
 		Horario outroHorario = (Horario) obj;
 		
 		return (outroHorario.getNumeroDia() == dia) && (outroHorario.getHora() == hora);
+	}
+
+	public static void deletar(Long periodoId) {
+		find.byId(periodoId).delete();
 	}
 
 }

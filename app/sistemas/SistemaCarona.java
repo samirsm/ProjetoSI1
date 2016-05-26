@@ -49,7 +49,8 @@ public class SistemaCarona{
 		
 		LoggerSistema loggerAutenticacao = new LoggerSistema();
 		loggerAutenticacao.registraAcao(Acao.ERRO, horarios.toString());
-		
+		loggerAutenticacao.registraAcao(Acao.ERRO, Arrays.toString(horariosIda.toArray()));
+		loggerAutenticacao.registraAcao(Acao.ERRO, Arrays.toString(horariosVolta.toArray()));
 		listaCaronasSolicitadas = tipo.buscaCaronas(getAllCaronas(), usuarioLogado, horarios, usuarioLogado.getEndereco().getBairro(), usuarioLogado.getEnderecoAlternativo().getBairro()); 
 		
 		return listaCaronasSolicitadas;
@@ -77,11 +78,11 @@ public class SistemaCarona{
     }
     
     private void adicionaCarona(Carona carona) throws CaronaJaCadastradaException {
-//    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
-//    	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
-//    	      caronasUsuarioLogado.add(carona);
-//    	}else
-//    	  throw new CaronaJaCadastradaException();
+    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
+    	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
+    	      caronasUsuarioLogado.add(carona);
+    	}else
+    	  throw new CaronaJaCadastradaException();
 	}
     
    

@@ -55,8 +55,12 @@ public class CaronasController extends Controller {
     
     public Result aceitaPedido(Long id){
         Solicitacao pedido = buscarSolicitacaoPorId(id);
+        pedido.save();
+
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+
         Notificacao notificacao = new Notificacao(usuarioLogado, pedido.getCarona(), TipoNotificacao.ACEITACAO);
+        notificacao.save();
 
         SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getUsuario()); //adiciona o passageiro à carona
         loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuario().toString());
@@ -69,13 +73,19 @@ public class CaronasController extends Controller {
         usuarioLogado.leNotificacao(pedido.getNotificacaoAssociada()); //apaga a notificacao automaticamente
         pedido.getUsuario().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
 
+        pedido.getCarona().update();
+        pedido.getUsuario().update();
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
       }
     
     public Result recusaPedido(Long id){
         Solicitacao pedido = buscarSolicitacaoPorId(id);
+        pedido.save();
+
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+
         Notificacao notificacao = new Notificacao(usuarioLogado, pedido.getCarona(), TipoNotificacao.REJEICAO);
+        notificacao.save();
 
         loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuario().toString());
 
@@ -86,16 +96,21 @@ public class CaronasController extends Controller {
         user.removeSolicitacao(pedido);
         pedido.getCarona().getMotorista().removeSolicitacao(pedido);
 
+        user.update();
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
 
     }
       
     public Result solicitaCarona(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
-
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+
         Solicitacao solicitacao = new Solicitacao(usuarioLogado, carona);
+        solicitacao.save();
+
         Notificacao notificacao = new Notificacao(usuarioLogado, carona, TipoNotificacao.PEDIDO);
+        notificacao.save();
+
         solicitacao.setNotificacaoAssociada(notificacao); // associa a notificacao deste pedido a ele para que saiba qual notificacao apagar depois
 
         usuarioLogado.adicionaCaronaPendente(carona); // a carona do pedido torna-se pendente ao usuario
@@ -104,6 +119,8 @@ public class CaronasController extends Controller {
         SistemaNotificacao.getInstance().notificaUsuario(notificacao, carona.getMotorista()); // o motorista da carona é notificado desse pedido
         buscarCaronas(); // atualizar a lista de caronas, agora sem esta, que ja foi pedida
 
+        carona.update();
+        usuarioLogado.update();
         return redirect(routes.HomeController.index());
     }
 

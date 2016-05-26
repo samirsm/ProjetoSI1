@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.*;
+
+import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
 import exceptions.BairroJaCadastradoException;
 import exceptions.DadosInvalidosException;
@@ -24,17 +26,17 @@ public class Usuario extends Model {
 	private Endereco endereco;
 	@Column
 	private Integer numeroVagas;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Carona> caronas = new ArrayList<Carona>();
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Carona> caronasPendentes = new ArrayList<>();
 	@Enumerated(EnumType.STRING)
 	private Idioma idioma = Idioma.PORTUGUES;
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
-	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Horario> horariosIda = new ArrayList<>();
@@ -255,11 +257,15 @@ public class Usuario extends Model {
 	}
 
 	public boolean removeHorarioVolta(Horario horario){
-		if(horariosVolta.contains(horario)){
-			return horariosVolta.remove(horario);
-		} else{
-			return false;
+		for (Horario h:horariosVolta) {
+			if (h.equals(horario)) {
+				LoggerSistema log = new LoggerSistema();
+				log.registraAcao(Acao.INFO, h.toString());
+				h.delete();
+				return horariosVolta.remove(horario);
+			}
 		}
+		return false;
 	}
 
 	public boolean removeHorarioIda(String dia, int hora){
@@ -268,11 +274,15 @@ public class Usuario extends Model {
 	}
 
 	public boolean removeHorarioIda(Horario horario){
-		if(horariosIda.contains(horario)){
-			return horariosIda.remove(horario);
-		} else{
-			return false;
+		for (Horario h:horariosIda) {
+			if (h.equals(horario)) {
+				LoggerSistema log = new LoggerSistema();
+				log.registraAcao(Acao.INFO, h.toString());
+				h.delete();
+				return horariosIda.remove(horario);
+			}
 		}
+		return false;
 	}
 
 	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException{
