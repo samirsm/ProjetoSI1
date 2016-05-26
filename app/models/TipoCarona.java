@@ -1,5 +1,6 @@
 package models;
 
+import play.mvc.Controller;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.Idioma;
 import sistemas.mensagens.MensagensSistema;
@@ -15,7 +16,7 @@ public enum TipoCarona {
 
 	@Override
 	public String toString(){
-		Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+		Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
 		return textoExibicao[idioma.ordinal()];
 	}
 

@@ -29,7 +29,6 @@ public class HomeController extends Controller {
 	private Form<Carona> formularioCarona;
 	private Form<Horario> formularioHorario;
 	private List<String> bairros;
-	private Idioma idioma = Idioma.PORTUGUES; //Default português
 	
 	@Inject
 	public HomeController (FormFactory formFactory){
@@ -45,19 +44,20 @@ public class HomeController extends Controller {
 	
 	@Security.Authenticated(Secured.class)
 	public Result index(){
-		ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma().getId());
-
+		if (isLogado())
+			ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma(session("login")).getId());
+		else
+			ctx().changeLang(ctx().lang());
+		
 		return exibePagina();
 	}
 	
-	@Security.Authenticated(Secured.class)
 	public Result redefineIdioma(Integer id) {
-		Usuario usuarioLogado = getUsuarioLogado();
 		Idioma idioma= Idioma.values()[id - 1];
 		ctx().changeLang(idioma.getId());
-		SistemaUsuarioLogin.getInstance().setIdioma(idioma);
+		Usuario usuarioLogado = getUsuarioLogado();
 		if(usuarioLogado != null){
-			usuarioLogado.setIdioma(idioma);
+			SistemaUsuarioLogin.getInstance().setIdioma(session("login"), idioma);
 			usuarioLogado.getNotificacoesNaoLidas().clear();
             for(Notificacao not : usuarioLogado.getNotificacoesNaoLidas()){
                 if(not.getTipo() == TipoNotificacao.IDIOMA)

@@ -1,5 +1,6 @@
 package models;
 
+import play.mvc.Controller;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.*;
 
@@ -17,7 +18,7 @@ public enum TipoNotificacao {
 	}
 	
 	public String getMessage(){
-		Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+		Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
 		return mensagemNotificacao[idioma.ordinal()];
 	}
 	

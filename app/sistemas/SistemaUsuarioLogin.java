@@ -3,6 +3,7 @@ package sistemas;
 import exceptions.DadosInvalidosException;
 import exceptions.LoginInvalidoException;
 import models.Usuario;
+import play.mvc.Controller;
 import controllers.AutenticacaoController;
 import sistemas.mensagens.Idioma;
 
@@ -20,7 +21,7 @@ public class SistemaUsuarioLogin {
 	
 	public Usuario efetuaLogin(String login, String senha) throws DadosInvalidosException, LoginInvalidoException{
 		Usuario user = SistemaUsuarioCRUD.getInstance().consultaUsuario(login, senha);
-		if(user != null) user.setIdioma(SistemaUsuarioLogin.getInstance().getIdioma());
+		if(user != null) user.setIdioma(SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login")));
 		
 		return user;
 	}
@@ -36,12 +37,16 @@ public class SistemaUsuarioLogin {
 		}
 	}
 
-	public Idioma getIdioma() {
-		return idioma;
+	public Idioma getIdioma(String token) {
+		if (token == null || getUsuarioLogado(token) == null)
+			return idioma;
+		Usuario user = getUsuarioLogado(token);
+		return user.getIdioma();
 	}
 
-	public void setIdioma(Idioma idioma) {
-		this.idioma = idioma;
+	public void setIdioma(String token, Idioma idioma) {
+		Usuario user = getUsuarioLogado(token);
+		user.setIdioma(idioma);
 	}
 	
 	public Usuario getUsuarioLogado (String token){

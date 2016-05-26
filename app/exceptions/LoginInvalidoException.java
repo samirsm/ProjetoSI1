@@ -6,6 +6,8 @@ import sistemas.mensagens.MensagensSistema;
 
 import java.util.HashMap;
 
+import play.mvc.Controller;
+
 public class LoginInvalidoException extends Exception{
 
 	private static final long serialVersionUID = 1L;
@@ -19,7 +21,7 @@ public class LoginInvalidoException extends Exception{
 	}
 
 	private static String setup(){
-		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma();
+		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
 		return MensagensSistema.LOGIN_INVALIDO[idioma.ordinal()];
 	}
 

@@ -1,5 +1,6 @@
 package models;
 
+import play.mvc.Controller;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.*;
 
@@ -17,7 +18,7 @@ public class Horario {
 	}
 
 	public String getDia() {
-        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
 		return dias[dia - 2][idioma.ordinal()];
 	}
 
@@ -26,7 +27,7 @@ public class Horario {
     }
 
 	public void setDia(String dia) {
-        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
         for(int i =0; i < 5; i++) {
             if (dia.equals(dias[i][idioma.ordinal()]))
                 this.dia = i + 2;

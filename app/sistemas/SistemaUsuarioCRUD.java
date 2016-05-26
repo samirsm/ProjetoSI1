@@ -13,6 +13,7 @@ import models.Endereco;
 import models.Horario;
 import models.TipoCarona;
 import models.Usuario;
+import play.mvc.Controller;
 
 public final class SistemaUsuarioCRUD {
 	
@@ -32,7 +33,7 @@ public final class SistemaUsuarioCRUD {
 	// Cadastro com foto de usuario default
 	public Usuario cadastraUsuario(Dados dadosPessoais, Endereco endereco, Integer numeroVagas) throws UsuarioJaExistenteException, DadosInvalidosException {
 		Usuario novoUsuario = new Usuario(dadosPessoais, endereco, numeroVagas);
-		novoUsuario.setIdioma(SistemaUsuarioLogin.getInstance().getIdioma());
+		novoUsuario.setIdioma(SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login")));
 		if (!isUsuarioExistente(novoUsuario))
 			usuariosAtivados.add(novoUsuario);
 
@@ -106,11 +107,12 @@ public final class SistemaUsuarioCRUD {
   }
 
 	public Usuario getUsuarioPorLogin(String login){
-		for (Usuario usuario : usuariosAtivados) {
-			if(login.equals(usuario.getEmail()) || login.equals(usuario.getDadosUsuario().getMatricula()))
-				return usuario;
+		if (login != null){
+			for (Usuario usuario : usuariosAtivados) {
+				if(login.equals(usuario.getEmail()) || login.equals(usuario.getDadosUsuario().getMatricula()))
+					return usuario;
+			}
 		}
-		
 		return null;
 	}
 }

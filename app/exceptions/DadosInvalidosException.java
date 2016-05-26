@@ -6,6 +6,8 @@ import sistemas.SistemaUsuarioLogin;
 
 		import java.util.HashMap;
 
+import play.mvc.Controller;
+
 public class DadosInvalidosException extends Exception{
 
 	private static final long serialVersionUID = 1L;
@@ -19,7 +21,7 @@ public class DadosInvalidosException extends Exception{
 	}
 
 	private static String setup(){
-		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma();
+		Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
 		return MensagensSistema.DADOS_INVALIDOS[idioma.ordinal()];
 	}
 }
