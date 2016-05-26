@@ -33,7 +33,7 @@ public class CaronasController extends Controller {
     public Result cadastraNovaCarona(){
         DynamicForm requestData = formFactory.form().bindFromRequest();
         
-        Usuario motorista = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario motorista = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
         
         Integer hora = Integer.parseInt(requestData.get("hora"));
         String dia = requestData.get("diaDaSemana");
@@ -57,7 +57,7 @@ public class CaronasController extends Controller {
     @Security.Authenticated(Secured.class)
     public Result aceitaPedido(Long id){
         Solicitacao pedido = buscarSolicitacaoPorId(id);
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
         Notificacao notificacao = new Notificacao(usuarioLogado, pedido.getCarona(), TipoNotificacao.ACEITACAO);
 
         SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getSolicitante()); //adiciona o passageiro à carona
@@ -77,7 +77,7 @@ public class CaronasController extends Controller {
     @Security.Authenticated(Secured.class)
     public Result recusaPedido(Long id){
         Solicitacao pedido = buscarSolicitacaoPorId(id);
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
         Notificacao notificacao = new Notificacao(usuarioLogado, pedido.getCarona(), TipoNotificacao.REJEICAO);
 
         loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
@@ -85,7 +85,7 @@ public class CaronasController extends Controller {
         SistemaNotificacao.getInstance().notificaUsuario(notificacao, pedido.getSolicitante());
         loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
 
-        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
         user.removeSolicitacao(pedido);
         pedido.getCarona().getMotorista().removeSolicitacao(pedido);
 
@@ -97,7 +97,7 @@ public class CaronasController extends Controller {
     public Result solicitaCarona(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
 
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
         Solicitacao solicitacao = new Solicitacao(usuarioLogado, carona);
         Notificacao notificacao = new Notificacao(usuarioLogado, carona, TipoNotificacao.PEDIDO);
         solicitacao.setNotificacaoAssociada(notificacao); // associa a notificacao deste pedido a ele para que saiba qual notificacao apagar depois
@@ -122,8 +122,8 @@ public class CaronasController extends Controller {
     @Security.Authenticated(Secured.class)
     public Result exibeDetalhes(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-        List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
+        List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login")).getCaronas();
         List<Notificacao> notificacoesUsuarioLogado = SistemaNotificacao.getInstance().getNotificacoesNaoLidas();
         
         loggerCaronas.registraAcao(Acao.EXIBE_DETALHES, carona.toString());
@@ -147,21 +147,21 @@ public class CaronasController extends Controller {
 
     @Security.Authenticated(Secured.class)
     public Result exibeCaronasPendentes() {
-        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
         List<Carona> pendentes = user.getCaronasPendentes();
         return ok(telaCaronasPendentes.render(user, pendentes));
     }
 
     @Security.Authenticated(Secured.class)
     public Solicitacao buscarSolicitacaoPorId(Long id){
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
 
         int i = buscarIndiceSolicitacaoPorId(id);
         return usuarioLogado.getSolicitacoes().get(i);
     }
     @Security.Authenticated(Secured.class)
     private int buscarIndiceSolicitacaoPorId(Long id) {
-        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
 
         for (int i = 0; i < usuarioLogado.getSolicitacoes().size(); i++){
             if (usuarioLogado.getSolicitacoes().get(i).getId().equals(id)){

@@ -24,13 +24,11 @@ import views.html.*;
 
 public class HomeController extends Controller {
 	private FormFactory formFactory;
-	private Usuario usuarioLogado;
 	private Form<Dados> formularioDadosPessoaisUsuario;
 	private Form<Endereco> formularioEndereco;
 	private Form<Carona> formularioCarona;
 	private Form<Horario> formularioHorario;
 	private List<String> bairros;
-	private Idioma idioma = Idioma.PORTUGUES; //Default português
 	
 	@Inject
 	public HomeController (FormFactory formFactory){
@@ -43,55 +41,78 @@ public class HomeController extends Controller {
 	}
 	
 	// Mudar esse método para efetuar a verificação do Usuario Logado.
+	
+	@Security.Authenticated(Secured.class)
 	public Result index(){
-
-		ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma().getId());
-		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+		if (isLogado())
+			ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma(session("login")).getId());
 		
 		return exibePagina();
 	}
-
+	
 	public Result redefineIdioma(Integer id) {
-		Idioma idioma= Idioma.values()[id - 1];
+		Idioma idioma = Idioma.values()[id - 1];
+		session("idioma", idioma.getId());
 		ctx().changeLang(idioma.getId());
-		SistemaUsuarioLogin.getInstance().setIdioma(idioma);
+		Usuario usuarioLogado = getUsuarioLogado();
 		if(usuarioLogado != null){
-			usuarioLogado.setIdioma(idioma);
+			SistemaUsuarioLogin.getInstance().setIdioma(session("login"), idioma);
+			usuarioLogado.getNotificacoesNaoLidas().clear();
             for(Notificacao not : usuarioLogado.getNotificacoesNaoLidas()){
                 if(not.getTipo() == TipoNotificacao.IDIOMA)
                     usuarioLogado.leNotificacao(not);
             }
             usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
 		}
-		return exibePagina();
+		return redirect(routes.HomeController.index());
 	}
 	
+	@Security.Authenticated(Secured.class)
 	public Result editaHorarios(){
+	  Usuario usuarioLogado = getUsuarioLogado();
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
       return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 
 	}
 
+	@Security.Authenticated(Secured.class)
 	public Result exibePerfilUsuario(Long id){
+		Usuario usuarioLogado = getUsuarioLogado();
 		Usuario usuarioPerfil = SistemaUsuarioCRUD.getInstance().getUsuarioPorId(id);
 		return ok(telaPerfilUsuario.render(usuarioLogado, usuarioPerfil));
 
 	}
 	
 	private Result exibePagina(){
-		if (!SistemaUsuarioLogin.getInstance().isLogado())
-			return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
-		else if(!usuarioLogado.isHorariosCadastrados()){
+		if (!isLogado())
+			return login();
+		else if(!getUsuarioLogado().isHorariosCadastrados()){
 		  return editaHorarios();
-		}else if(SistemaUsuarioLogin.getInstance().isLogado() && !usuarioLogado.isHorariosCadastrados()){
-			List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
-			return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+		}else if(isLogado() && !getUsuarioLogado().isHorariosCadastrados()){
+			List<Notificacao> notificacaoes = getUsuarioLogado().getNotificacoesNaoLidas();
+			return ok(telaCadastroHorario.render(getUsuarioLogado(), formularioHorario, getUsuarioLogado().getHorariosIda(), getUsuarioLogado().getHorariosVolta(), bairros, notificacaoes));
 		}
 		else{
 			List<Carona> caronas = SistemaCarona.getInstance().getListaPesquisa();
-			return ok(viewUsuario.render(usuarioLogado, formularioCarona, caronas, bairros, usuarioLogado.getNotificacoesNaoLidas()));
+			return ok(viewUsuario.render(getUsuarioLogado(), formularioCarona, caronas, bairros, getUsuarioLogado().getNotificacoesNaoLidas()));
 		}
 	}
-
+	
+	private boolean isLogado(){
+		return getUsuarioLogado() != null;
+	}
+	
+	private Usuario getUsuarioLogado(){
+		return SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
+	}
+	
+	public Result login(){
+		if(session().get("idioma") == null){
+			ctx().changeLang(Idioma.PORTUGUES.getId());
+			session("idioma", Idioma.PORTUGUES.getId());
+		}
+		
+		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
+	}
 
 }

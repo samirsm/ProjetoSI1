@@ -1,5 +1,6 @@
 package exceptions;
 
+import play.mvc.Controller;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.Idioma;
 import sistemas.mensagens.MensagensSistema;
@@ -20,7 +21,7 @@ public class CaronaJaCadastradaException extends Exception {
   }
 
     private static String setup(){
-        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+    	Idioma idioma = Idioma.defineIdioma(Controller.session().get("idioma"));
         return MensagensSistema.CARONA_JA_CADASTRADA[idioma.ordinal()];
     }
 }

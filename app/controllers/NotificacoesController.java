@@ -21,7 +21,7 @@ public class NotificacoesController extends Controller{
 
     @Security.Authenticated(Secured.class)
     public Result exibeSolicitacoes() {
-        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
         List<Solicitacao> solicitacoes = user.getSolicitacoes();
 
         return ok(telaDeSolicitacoes.render(user, solicitacoes));

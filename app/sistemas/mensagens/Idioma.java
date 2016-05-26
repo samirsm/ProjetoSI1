@@ -13,5 +13,21 @@ public enum Idioma {
 		return id;
 	}
 
-
+	public static Idioma defineIdioma(String id) {
+		if (id != null) {
+			switch (id) {
+			case "pt":
+				return PORTUGUES;
+			case "es":
+				return ESPANOL;
+			case "en":
+				return ENGLISH;
+			case "it":
+				return ITALIANO;
+			default:
+				return null;
+			}
+		}
+		return ENGLISH;
+	}
 }

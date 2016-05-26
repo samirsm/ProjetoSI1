@@ -108,3 +108,29 @@ dias.terca=Martes
 dias.quarta=Miercoles
 dias.quinta=Jueves
 dias.sexta=Viernes
+
+
+#ajuda
+ajuda = Ayuda
+ajuda.cabecalho = Sessão de ajuda do Vumbora
+ajuda.texto1 =  O Vumbora foi criado para facilitar a vida dos estudantes e funcionários da UFCG. Além de promover a boa prática de formar amizades. Nele você vai poder oferecer e solicitar caronas dada a sua localização e horário. Não é prático?
+ajuda.texto2 = F.A.Q
+ajuda.pergunta1 = Como me cadastrar?
+ajuda.pergunta2 = Por que dar tantas informações?
+ajuda.pergunta3 = Como fazer login?
+ajuda.pergunta4 = Onde colocar meus horários?
+ajuda.pergunta5 = Como solicitar uma carona?
+ajuda.pergunta6 = Como oferecer uma carona?
+ajuda.pergunta7 = Como aceitar uma carona?
+ajuda.pergunta8 = Onde posso mudar o idioma?
+ajuda.pergunta9 = Onde ver as caronas que tenho?
+
+ajuda.resposta1 = Para se cadastrar no Vumbora é fácil. Acesse o site e clique em "Cadastre-se" logo abaixo do botão de login.
+ajuda.resposta2 = Precisamos de suas informações para assim definir a melhor carona e/ou passageiro para você.
+ajuda.resposta3 = Depois de se cadastrar, na tela de login, coloque no primeiro campo sua matrícula ou e-mail e no outro campo sua senha.
+ajuda.resposta4 = Assim que você se cadastrar sua tela será a de cadastrar seus horários de ida e vinda para oferecer e/ou buscar carona. Mas você pode editar a qualquer momento clicando em "Horários" na barra lateral esquerda.
+ajuda.resposta5 = Com o horário cadastrado acima do feed clique em "Buscar Carona" e ache a carona que mais se encaixa com seus horários.
+ajuda.resposta6 = Com o horário cadastrado acima do feed clique em "Oferecer Carona" e defina os horários preferidos para publicar sua carona.
+ajuda.resposta7 = Se um motorista lhe oferecer uma carona então esta aparecerá nas notificações e clicando você pode decidir aceitar a carona ou não.
+ajuda.resposta8 = Na barra superior no canto direito o segundo botão lhe dá a possibilidade de escolher qual será a linguaguem que você prefere utilizar.
+ajuda.resposta9 = Na barra lateral direita você tem acesso à todas caronas cadastradas.

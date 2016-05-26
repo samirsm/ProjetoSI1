@@ -31,20 +31,22 @@ public class Secured extends Security.Authenticator {
 	
 	@Override
 	public String getUsername(Context ctx) {
-        if(isSessionValida())
-        	return SistemaUsuarioLogin.getInstance().getTokenAuth();
-        
+        if(isSessionValida(ctx))
+        	return ctx.session().get("login");
+
         return null;
     }
 
 	@Override
     public Result onUnauthorized(Context context) {
-		return redirect(routes.HomeController.index());
+		return redirect(routes.HomeController.login());
     }
 
 	@SuppressWarnings("deprecation")
-	private boolean isSessionValida() {
-		String previousTick = SistemaUsuarioLogin.getInstance().getUserTime();
+	private boolean isSessionValida(Context ctx) {
+		String previousTick = ctx.session().get("userTime");
+		if (previousTick == null || previousTick.equals(""))
+			return false;
 	    if (previousTick != null && !previousTick.equals("")) {
 	        long previousT = Long.valueOf(previousTick);
 	        long currentT = new Date().getTime();
