@@ -11,6 +11,7 @@ import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import sistemas.mensagens.Idioma;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -26,12 +27,12 @@ public class Usuario extends Model {
 	private Endereco endereco;
 	@Column
 	private Integer numeroVagas;
+	@Enumerated(EnumType.STRING)
+	private Idioma idioma = Idioma.PORTUGUES;
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Carona> caronas = new ArrayList<Carona>();
 	@OneToMany(cascade = CascadeType.ALL)
-	private List<Carona> caronasPendentes = new ArrayList<>();
-	@Enumerated(EnumType.STRING)
-	private Idioma idioma = Idioma.PORTUGUES;
+	private List<Carona> caronasPendentes = new ArrayList<Carona>();
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
 	@OneToMany(cascade = CascadeType.ALL)
@@ -39,9 +40,8 @@ public class Usuario extends Model {
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
 	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Horario> horariosIda = new ArrayList<>();
-	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Horario> horariosVolta = new ArrayList<>();
+	private List<Horario> horarios = new ArrayList<Horario>();
+
 	@Column
 	private boolean horariosCadastrados;
 
@@ -208,8 +208,6 @@ public class Usuario extends Model {
 			throw new BairroJaCadastradoException();
 		} else
 			setEnderecoAlternativo(enderecoNovo);
-
-
 	}
 
 	public Integer getNumeroVagas() {
@@ -220,15 +218,48 @@ public class Usuario extends Model {
 
 
 
-
 	/////  Horarios /////
 
 	public List<Horario> getHorariosIda() {
-		return horariosIda;
+		List<Horario> ida = new ArrayList<>();
+		for (Horario h: horarios)
+			if (h.getTipo() == TipoCarona.IDA)
+				ida.add(h);
+		return ida;
 	}
 
 	public List<Horario> getHorariosVolta() {
-		return horariosVolta;
+		List<Horario> volta = new ArrayList<>();
+		for (Horario h: horarios)
+			if (h.getTipo() == TipoCarona.VOLTA)
+				volta.add(h);
+		return volta;
+	}
+
+	public boolean adicionarHorario(Horario novoHorario){
+		return horarios.add(novoHorario);
+	}
+
+	public boolean adicionarHorario(String dia, int hora, TipoCarona tipo) throws HorarioJaCadastradoException{
+		Horario novoHorario = new Horario(dia, hora, tipo);
+		if (isHorarioLivre(novoHorario)){
+			return adicionarHorario(novoHorario);
+		}
+		return false;
+	}
+
+	public boolean removeHorario(String dia, int hora, TipoCarona tipo){
+		Horario horario = new Horario(dia, hora, tipo);
+		return removeHorario(horario);
+	}
+
+	public boolean removeHorario(Horario horario){
+		for (Horario h: horarios) {
+			if (h.equals(horario)) {
+				return horarios.remove(h);
+			}
+		}
+		return false;
 	}
 
 	public boolean isHorariosCadastrados() {
@@ -242,74 +273,8 @@ public class Usuario extends Model {
 	private void setHorariosCadastrados(boolean cadastrouHorarios) {
 		horariosCadastrados = cadastrouHorarios;
 	}
-
-	public boolean adicionarHorarioIda(String dia, int hora) throws HorarioJaCadastradoException {
-		Horario novoHorario = new Horario(dia, hora);
-		if (isHorarioLivre(novoHorario))
-			return horariosIda.add(novoHorario);
-		return false;
-
-	}
-
-	public boolean removeHorarioVolta(String dia, int hora){
-		Horario horario = new Horario(dia,hora);
-		return removeHorarioVolta(horario);
-	}
-
-	public boolean removeHorarioVolta(Horario horario){
-		for (Horario h:horariosVolta) {
-			if (h.equals(horario)) {
-				LoggerSistema log = new LoggerSistema();
-				log.registraAcao(Acao.INFO, h.toString());
-				h.delete();
-				return horariosVolta.remove(horario);
-			}
-		}
-		return false;
-	}
-
-	public boolean removeHorarioIda(String dia, int hora){
-		Horario horario = new Horario(dia,hora);
-		return removeHorarioIda(horario);
-	}
-
-	public boolean removeHorarioIda(Horario horario){
-		for (Horario h:horariosIda) {
-			if (h.equals(horario)) {
-				LoggerSistema log = new LoggerSistema();
-				log.registraAcao(Acao.INFO, h.toString());
-				h.delete();
-				return horariosIda.remove(horario);
-			}
-		}
-		return false;
-	}
-
-	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException{
-		if(isHorarioLivre(horario))
-			return horariosIda.add(horario);
-		return false;
-	}
-
-	public boolean adicionarHorarioVolta(String dia, int hora) throws HorarioJaCadastradoException {
-		Horario novoHorario = new Horario(dia, hora);
-		if (isHorarioLivre(novoHorario))
-			return horariosIda.add(novoHorario);
-		return false;
-	}
-
-	public boolean adicionarHorarioVolta(Horario horario) throws HorarioJaCadastradoException {
-		if (isHorarioLivre(horario))
-			return horariosVolta.add(horario);
-		return false;
-	}
-
 	private boolean isHorarioLivre(Horario novoHorario) throws HorarioJaCadastradoException {
-		for (Horario horario : horariosIda) {
-			if (horario.equals(novoHorario))
-				throw new HorarioJaCadastradoException();
-		}
-		for (Horario horario : horariosVolta) {
+		for (Horario horario : horarios) {
 			if (horario.equals(novoHorario))
 				throw new HorarioJaCadastradoException();
 		}

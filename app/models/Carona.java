@@ -25,7 +25,7 @@ public class Carona extends Model {
 	private List<Usuario> solicitantes;
 	@OneToOne
 	private Horario horario;
-	@Enumerated(EnumType.ORDINAL)
+	@Enumerated(EnumType.STRING)
 	private TipoCarona tipo;
 
 	public static Finder<Long, Carona> find = new Finder<>(Carona.class);

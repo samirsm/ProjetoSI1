@@ -59,7 +59,6 @@ public final class SistemaUsuarioCRUD {
 		return usuariosAtivados.remove(indexUsuarioASerRemovido);
 	}
 	
-	
 	private int buscaIndexUsuario(String matricula, String email, String senha) throws DadosInvalidosException, LoginInvalidoException{
 		Dados matriculaSenhaUsuario = new Dados(matricula, email, senha);
 		
@@ -71,18 +70,8 @@ public final class SistemaUsuarioCRUD {
 		throw new LoginInvalidoException();
 	}
 	
-	public void cadastraHorario(Usuario usuario,TipoCarona tipo, Horario horario) throws HorarioJaCadastradoException{
-		if(tipo == TipoCarona.IDA)
-			usuario.adicionarHorarioIda(horario);
-		else
-			usuario.adicionarHorarioVolta(horario);
-		horario.save();
-	}
-	
 	public void cadastraHorario(Usuario usuario,TipoCarona tipo, String dia, int hora) throws HorarioJaCadastradoException{
-		Horario horario = new Horario(dia,hora);
-		//horario.save();
-		cadastraHorario(usuario,tipo,horario);
+		usuario.adicionarHorario(dia, hora, tipo);
 	}
 	
 	private boolean isUsuarioExistente(Usuario novoUsuario) throws UsuarioJaExistenteException {

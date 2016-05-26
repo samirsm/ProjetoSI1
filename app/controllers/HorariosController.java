@@ -44,6 +44,7 @@ public class HorariosController extends Controller {
 	public Result cadastraHorarios(){
        SistemaUsuarioLogin.getInstance().cadastrouHorarios();
        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+        usuarioLogado.save();
        loggerHorarios.registraAcao(Acao.CADASTROU_HORARIOS, usuarioLogado.getHorariosIda().toString(), usuarioLogado.getHorariosVolta().toString());
        return redirect(routes.HomeController.index());
 		
@@ -83,13 +84,12 @@ public class HorariosController extends Controller {
       flash("success", "Endereco cadastrado com sucesso!");
       return redirect(routes.HomeController.editaHorarios());
   	}
-	
+
 	public Result excluiHorarioVolta(String dia, Integer hora){
 	  Horario horario = new Horario(dia, hora);
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
-      usuarioLogado.removeHorarioVolta(horario);
-        usuarioLogado.update();
+      usuarioLogado.removeHorario(horario);
         return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 	}
 	
@@ -97,8 +97,7 @@ public class HorariosController extends Controller {
       Horario horario = new Horario(dia, hora);
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
-      usuarioLogado.removeHorarioIda(horario);
-        usuarioLogado.update();
+      usuarioLogado.removeHorario(horario);
         return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
     }
 	

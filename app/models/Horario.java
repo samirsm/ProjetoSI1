@@ -15,12 +15,20 @@ public class Horario extends Model{
 	private int dia;
 	@Column
 	private int hora;
+	@Enumerated(EnumType.STRING)
+	private TipoCarona tipo;
 	@Transient
 	private final String[][] dias = {MensagensSistema.SEGUNDA, MensagensSistema.TERCA, MensagensSistema.QUARTA, MensagensSistema.QUINTA, MensagensSistema.SEXTA};
 
 	public static Finder<Long, Horario> find = new Finder<>(Horario.class);
 
 	public Horario(){}
+	public Horario(String dia, int hora, TipoCarona tipo) {
+		setDia(dia);
+		this.hora = hora;
+		this.tipo = tipo;
+	}
+
 	public Horario(String dia, int hora) {
 		setDia(dia);
 		this.hora = hora;
@@ -57,9 +65,17 @@ public class Horario extends Model{
 	
 	@Override
 	public String toString() {
-		return "Dia: " + getDia() + " Hora: " + hora;
+		return "Dia: " + getDia() + " Hora: " + hora + "Tipo: " + tipo;
 	}
-	
+
+	public TipoCarona getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoCarona tipo) {
+		this.tipo = tipo;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if(!(obj instanceof Horario))

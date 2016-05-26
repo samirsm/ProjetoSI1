@@ -1,5 +1,6 @@
 package controllers;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -20,6 +21,8 @@ import sistemas.SistemaCarona;
 import sistemas.SistemaDeBairros;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
+import sistemas.logger.LoggerSistema;
+import sistemas.logger.registrosAcoes.Acao;
 import sistemas.mensagens.Idioma;
 import views.html.*;
 

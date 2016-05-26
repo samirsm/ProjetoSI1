@@ -8,8 +8,8 @@ create table carona (
   vagas_disponiveis         integer,
   usuario_id                bigint,
   horario_id                bigint,
-  tipo                      integer,
-  constraint ck_carona_tipo check (tipo in (0,1)),
+  tipo                      varchar(5),
+  constraint ck_carona_tipo check (tipo in ('IDA','VOLTA')),
   constraint uq_carona_horario_id unique (horario_id),
   constraint pk_carona primary key (id))
 ;
@@ -25,6 +25,8 @@ create table horario (
   id                        bigint not null,
   dia                       integer,
   hora                      integer,
+  tipo                      varchar(5),
+  constraint ck_horario_tipo check (tipo in ('IDA','VOLTA')),
   constraint pk_horario primary key (id))
 ;
 

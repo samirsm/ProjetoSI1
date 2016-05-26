@@ -19,4 +19,6 @@ public enum TipoCarona {
 		return textoExibicao[idioma.ordinal()];
 	}
 
+
+
 }
