@@ -1,12 +1,15 @@
 package sistemas;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.Entity;
 
+import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
 
+import com.avaje.ebean.config.dbplatform.LimitOffsetSqlLimiter;
 import exceptions.CaronaJaCadastradaException;
 import models.Carona;
 import models.Horario;
@@ -67,16 +70,18 @@ public class SistemaCarona{
 	}
     
     public List<Carona> getAllCaronas() {
-    	return caronasSistema;
+		caronasSistema = Ebean.createQuery(Carona.class).findList();
+		LoggerSistema log = new LoggerSistema();
+		log.registraAcao(Acao.ERRO, Arrays.toString(caronasSistema.toArray()));
+		return caronasSistema;
     }
     
     private void adicionaCarona(Carona carona) throws CaronaJaCadastradaException {
-    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
-    	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
-    	      caronasSistema.add(carona);
-    	      caronasUsuarioLogado.add(carona);
-    	}else
-    	  throw new CaronaJaCadastradaException();
+//    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
+//    	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
+//    	      caronasUsuarioLogado.add(carona);
+//    	}else
+//    	  throw new CaronaJaCadastradaException();
 	}
     
    
@@ -105,6 +110,7 @@ public class SistemaCarona{
     }
     
     private int buscarIndiceCaronaPorId(Long id) {
+
     	for (int i = 0; i < caronasSistema.size(); i++){
     		if(caronasSistema.get(i).getId().equals(id))
     			return i;

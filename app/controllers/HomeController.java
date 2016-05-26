@@ -73,12 +73,7 @@ public class HomeController extends Controller {
 	
 	public Result editaHorarios(){
 		List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
-		LoggerSistema log = new LoggerSistema();
-		//log.registraAcao(Acao.ERRO, Arrays.toString(usuarioLogado.getHorariosIda().toArray()));
-		//log.registraAcao(Acao.ERRO, Arrays.toString(usuarioLogado.getHorariosIda().toArray()));
-		//log.registraAcao(Acao.ERRO, Arrays.toString(usuarioLogado.getHorariosVolta().toArray()));
-		log.registraAcao(Acao.AUTENTICA_USUARIO, Arrays.toString(usuarioLogado.getNotificacoesNaoLidas().toArray()));
-		return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, usuarioLogado.getNotificacoesNaoLidas()));
+		return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 
 	}
 

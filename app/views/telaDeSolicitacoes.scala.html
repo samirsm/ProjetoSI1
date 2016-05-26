@@ -65,11 +65,11 @@
                           <div class="panel-heading">
                               <div class="row">
                                   <div class="col-xs-3">
-                                      <a href=@solicitacao.getSolicitante().getEnderecoPerfil()><img src="assets/images/users/default.jpg" id="show-option" title="@solicitacao.getSolicitante().getNome()" class="img-circle" style="border: 2px solid #82b1ff" height="70" width="70"></i></a></br> @solicitacao.getSolicitante().getNome()
+                                      <a href=@solicitacao.getUsuario().getEnderecoPerfil()><img src="assets/images/users/default.jpg" id="show-option" title="@solicitacao.getUsuario().getNome()" class="img-circle" style="border: 2px solid #82b1ff" height="70" width="70"></i></a></br> @solicitacao.getUsuario().getNome()
                                   </div>
                                   <div class="col-xs-9 text-left">
                                       <div class="fa fa-commenting-o"> @solicitacao.getMensagem()</div>
-                                      <div><i class="fa fa-map-marker"></i> @solicitacao.getSolicitante.getEndereco()</div>
+                                      <div><i class="fa fa-map-marker"></i> @solicitacao.getUsuario.getEndereco()</div>
                                       <div><i class="fa fa-calendar"></i> @solicitacao.getCarona().getHorario().getDia()</div>
 
                                   </div>

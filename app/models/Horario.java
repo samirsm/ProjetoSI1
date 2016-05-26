@@ -1,11 +1,12 @@
 package models;
 
+import com.avaje.ebean.Model;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.*;
 import javax.persistence.*;
 
 @Entity
-public class Horario {
+public class Horario extends Model{
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -15,6 +16,8 @@ public class Horario {
 	private int hora;
 	@Transient
 	private final String[][] dias = {MensagensSistema.SEGUNDA, MensagensSistema.TERCA, MensagensSistema.QUARTA, MensagensSistema.QUINTA, MensagensSistema.SEXTA};
+
+	public static Finder<Long, Horario> find = new Finder<>(Horario.class);
 
 	public Horario(){}
 	public Horario(String dia, int hora) {

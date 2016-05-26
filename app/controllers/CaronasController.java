@@ -15,7 +15,6 @@ import sistemas.SistemaNotificacao;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
-import play.mvc.Security;
 import views.html.*;
 
 public class CaronasController extends Controller {
@@ -37,11 +36,13 @@ public class CaronasController extends Controller {
         String dia = requestData.get("diaDaSemana");
         Integer vagasDisponiveisCarona = Integer.parseInt(requestData.get("vagasDisponiveis"));
         Horario horario = new Horario(dia, hora);
+        horario.save();
         TipoCarona tipo = getTipo(requestData.get("tipo"));
         
         try{
-            SistemaCarona.getInstance().criaCarona(motorista, horario, tipo, vagasDisponiveisCarona);
+            Carona carona = SistemaCarona.getInstance().criaCarona(motorista, horario, tipo, vagasDisponiveisCarona);
             loggerCaronas.registraAcao(Acao.CADASTROU_CARONA, horario.toString(), tipo.toString(), vagasDisponiveisCarona.toString());
+            carona.save();
             SistemaCarona.getInstance().getListaPesquisaAtualizada();
             loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS);
         } catch (CaronaJaCadastradaException e){
@@ -57,16 +58,16 @@ public class CaronasController extends Controller {
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
         Notificacao notificacao = new Notificacao(usuarioLogado, pedido.getCarona(), TipoNotificacao.ACEITACAO);
 
-        SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getSolicitante()); //adiciona o passageiro à carona
-        loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
+        SistemaCarona.getInstance().adicionarPassageiros(pedido.getCarona(), pedido.getUsuario()); //adiciona o passageiro à carona
+        loggerCaronas.registraAcao(Acao.ACEITOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuario().toString());
 
-        SistemaNotificacao.getInstance().notificaUsuario(notificacao, pedido.getSolicitante()); //notifica o passageiro que seu pedido foi aceito
-        loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
+        SistemaNotificacao.getInstance().notificaUsuario(notificacao, pedido.getUsuario()); //notifica o passageiro que seu pedido foi aceito
+        loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getUsuario().toString());
 
         usuarioLogado.removeSolicitacao(pedido); //remove a solicitacao, pois ja foi aceita
         pedido.getCarona().getMotorista().removeSolicitacao(pedido); //so pra garantir :P
         usuarioLogado.leNotificacao(pedido.getNotificacaoAssociada()); //apaga a notificacao automaticamente
-        pedido.getSolicitante().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
+        pedido.getUsuario().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
 
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
       }
@@ -76,10 +77,10 @@ public class CaronasController extends Controller {
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
         Notificacao notificacao = new Notificacao(usuarioLogado, pedido.getCarona(), TipoNotificacao.REJEICAO);
 
-        loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
+        loggerCaronas.registraAcao(Acao.RECUSOU_PEDIDO_CARONA, pedido.getCarona().getMotorista().toString(), pedido.getUsuario().toString());
 
-        SistemaNotificacao.getInstance().notificaUsuario(notificacao, pedido.getSolicitante());
-        loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getSolicitante().toString());
+        SistemaNotificacao.getInstance().notificaUsuario(notificacao, pedido.getUsuario());
+        loggerCaronas.registraAcao(Acao.GERA_NOTIFICACAO, pedido.getCarona().getMotorista().toString(), pedido.getUsuario().toString());
 
         Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
         user.removeSolicitacao(pedido);

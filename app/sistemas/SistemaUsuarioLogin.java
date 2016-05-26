@@ -42,6 +42,7 @@ public class SistemaUsuarioLogin {
 	}
 	
 	public void efetuaLogout(){
+		usuarioLogado.save();
 	    SISTEMA_CARONA.limpaListaCaronaSolicitadas();
 	    tokenAuth = null;
 		usuarioLogado = null;

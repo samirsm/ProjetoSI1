@@ -76,6 +76,7 @@ public final class SistemaUsuarioCRUD {
 			usuario.adicionarHorarioIda(horario);
 		else
 			usuario.adicionarHorarioVolta(horario);
+		horario.save();
 	}
 	
 	public void cadastraHorario(Usuario usuario,TipoCarona tipo, String dia, int hora) throws HorarioJaCadastradoException{
@@ -101,6 +102,8 @@ public final class SistemaUsuarioCRUD {
 	}
 
 	public void cadastraNovoEndereco(Usuario usuario,String rua, String bairro) throws BairroJaCadastradoException{
-      usuario.addEnderecoAlternativo(new Endereco(rua, bairro));
+		Endereco end = new Endereco(rua, bairro);
+		end.save();
+      usuario.addEnderecoAlternativo(end);
   }
 }

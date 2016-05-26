@@ -34,11 +34,11 @@ public class Usuario extends Model {
 	private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
 	@OneToMany
 	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
-	@OneToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Horario> horariosIda = new ArrayList<>();
-	@OneToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Horario> horariosVolta = new ArrayList<>();
 	@Column
 	private boolean horariosCadastrados;

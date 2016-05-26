@@ -10,7 +10,7 @@ public class Notificacao extends Model{
     @GeneratedValue
     private Long id;
     @OneToOne
-    private Usuario usuarioOrigem;
+    private Usuario usuario;
     @OneToOne
     private Carona carona;
     @Column
@@ -22,17 +22,17 @@ public class Notificacao extends Model{
 
     public Notificacao(){}
 
-    public Notificacao(Usuario usuarioOrigem, Carona carona, TipoNotificacao tipo){
+    public Notificacao(Usuario usuario, Carona carona, TipoNotificacao tipo){
         this.carona = carona;
-        this.usuarioOrigem = usuarioOrigem;
+        this.usuario = usuario;
         this.tipo = tipo;
         geraMensagem(tipo);
         this.status = false;
         setId();
     }
 
-    public Notificacao(Usuario usuarioOrigem, TipoNotificacao tipo){
-        this.usuarioOrigem = usuarioOrigem;
+    public Notificacao(Usuario usuario, TipoNotificacao tipo){
+        this.usuario = usuario;
         this.tipo = tipo;
         geraMensagem(tipo);
         this.status = false;
@@ -50,8 +50,8 @@ public class Notificacao extends Model{
         return id;
     }
  
-    public Usuario getUsuarioOrigem() {
-        return usuarioOrigem;
+    public Usuario getUsuario() {
+        return usuario;
     }
  
     public Carona getCarona() {
@@ -66,7 +66,7 @@ public class Notificacao extends Model{
         if(tipo == TipoNotificacao.IDIOMA)
             mensagem = tipo.getMessage() + Strings.LINE_SEPARATOR;
         else
-            mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
+            mensagem = usuario.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
     }
 
     public String getMensagem() {
@@ -74,7 +74,7 @@ public class Notificacao extends Model{
     }
 
     private void setId(){
-        double idTemp = Integer.parseInt(usuarioOrigem.getDadosUsuario().getMatricula()) * Math.random() * 11;
+        double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
         idTemp %= 1;
         idTemp *= 100000;
         id = (long) idTemp;
