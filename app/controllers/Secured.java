@@ -45,6 +45,8 @@ public class Secured extends Security.Authenticator {
 	@SuppressWarnings("deprecation")
 	private boolean isSessionValida(Context ctx) {
 		String previousTick = ctx.session().get("userTime");
+		if (previousTick == null || previousTick.equals(""))
+			return false;
 	    if (previousTick != null && !previousTick.equals("")) {
 	        long previousT = Long.valueOf(previousTick);
 	        long currentT = new Date().getTime();
