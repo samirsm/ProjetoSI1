@@ -20,7 +20,7 @@ public class UsuarioJaExistenteException extends Exception {
 	}
 
 	private static String setup(){
-		Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
+		Idioma idioma = Idioma.defineIdioma(Controller.session().get("idioma"));
 		return MensagensSistema.USUARIO_JA_EXISTENTE[idioma.ordinal()];
 	}
 }

@@ -296,6 +296,25 @@ public class Usuario extends Model {
 	public void setIdioma(Idioma id){
 		idioma = id;
 	}
+	
+	public void setIdioma(String id){
+		switch (id) {
+		case "pt":
+			setIdioma(Idioma.PORTUGUES);
+			break;
+		case "es":
+			setIdioma(Idioma.ESPANOL);
+			break;
+		case "en":
+			setIdioma(Idioma.ENGLISH);
+			break;
+		case "it":
+			setIdioma(Idioma.ITALIANO);
+			break;
+		default:
+			break;
+		}
+	}
 
 	/// FIM Idioma /////
 

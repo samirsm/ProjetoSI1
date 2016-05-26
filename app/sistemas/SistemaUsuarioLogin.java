@@ -39,7 +39,7 @@ public class SistemaUsuarioLogin {
 
 	public Idioma getIdioma(String token) {
 		if (token == null || getUsuarioLogado(token) == null)
-			return idioma;
+			return Idioma.defineIdioma(Controller.session().get("idioma"));
 		Usuario user = getUsuarioLogado(token);
 		return user.getIdioma();
 	}

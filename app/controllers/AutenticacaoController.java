@@ -46,7 +46,6 @@ public class AutenticacaoController extends Controller {
 	}
 	
 	public Result efetuaLogin(){
-		session().clear();
 		Usuario usuarioLogado = null;
 		
 		try {

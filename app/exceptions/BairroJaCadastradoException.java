@@ -21,7 +21,7 @@ public class BairroJaCadastradoException extends Exception {
   }
 
     private static String setup(){
-        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
+    	Idioma idioma = Idioma.defineIdioma(Controller.session().get("idioma"));
         return MensagensSistema.BAIRRO_JA_CADASTRADO[idioma.ordinal()];
     }
 

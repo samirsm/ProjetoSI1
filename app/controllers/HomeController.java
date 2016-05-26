@@ -46,14 +46,13 @@ public class HomeController extends Controller {
 	public Result index(){
 		if (isLogado())
 			ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma(session("login")).getId());
-		else
-			ctx().changeLang(ctx().lang());
 		
 		return exibePagina();
 	}
 	
 	public Result redefineIdioma(Integer id) {
-		Idioma idioma= Idioma.values()[id - 1];
+		Idioma idioma = Idioma.values()[id - 1];
+		session("idioma", idioma.getId());
 		ctx().changeLang(idioma.getId());
 		Usuario usuarioLogado = getUsuarioLogado();
 		if(usuarioLogado != null){
@@ -108,6 +107,11 @@ public class HomeController extends Controller {
 	}
 	
 	public Result login(){
+		if(session().get("idioma") == null){
+			ctx().changeLang(Idioma.PORTUGUES.getId());
+			session("idioma", Idioma.PORTUGUES.getId());
+		}
+		
 		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
 	}
 
