@@ -86,7 +86,9 @@ view_usuario.publique=Publish
 view_usuario.busque=Search
 view_usuario.recentes=Recent publications
 view_usuario.pedir=Ask
-view_usuario.sem_caronas=There are no available carpools for your neighbourhood at this moment :(
+view_usuario.sem_caronas=There aren''t new carpools for your neighbourhood compatible with your schedule at this moment :(
+view_usuario.sem_horarios=You must first register your schedule to search carpools.
+view_usuario.cadastre_horarios=Register it here.
 
 # agendamento
 agendamento.marcar=Schedule a carpool with
@@ -103,7 +105,7 @@ solicitacoes.aceitar=Accept
 solicitacoes.solicitacoes_cabecalho=Carpool requests waiting for your approval
 solicitacoes.pendente_cabecalho=Carpools waiting for driver''s avaliation
 solicitacoes.sem_pendentes=No pending carpools.
-
+solicitacoes.avaliado=Request rated.
 
 # dias da semana
 dias.segunda=Monday
@@ -114,6 +116,7 @@ dias.sexta=Friday
 
 #ajuda
 ajuda = Help
+ajuda.voltar = Back
 ajuda.cabecalho = Vumbora''s help section
 ajuda.texto1 =  Vumbora was created to make UFCG students and staff easier, besides promoting a good pactice of making new friendships. In this site you can offer and request carpools given your location and schedule. Isn''t it practical?
 ajuda.texto2 = F.A.Q

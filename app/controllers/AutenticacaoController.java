@@ -61,8 +61,7 @@ public class AutenticacaoController extends Controller {
 		}
 
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
-		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma();
-		flash("success", MensagensSistema.CADASTRO_SUCESSO[idioma.ordinal()]);
+
 
 		return verificaPrimeiroAcessoUsuario(usuarioLogado);
 	}
@@ -125,10 +124,6 @@ public class AutenticacaoController extends Controller {
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
 
 		return redirect(routes.HomeController.index());
-	}
-
-	public Result ajuda(){
-		return ok(telaAjuda.render());
 	}
 
 	private Usuario autenticaUsuario() throws DadosInvalidosException, LoginInvalidoException{

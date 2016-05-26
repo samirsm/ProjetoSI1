@@ -21,7 +21,7 @@ global.telefone=Telefono
 global.senha=Password
 global.rua=Inderizzo
 global.bairro=Quartiere
-global.vagas=Seggiolini disponibili
+global.vagas=Posti macchina disponibili
 global.passageiros=Passaggeri
 global.notificacoes_lidas=Segna tutte come già lette
 global.sem_notificacoes=Non ci sono notifiche non lette
@@ -29,7 +29,7 @@ global.sair=Uscire di questo account
 global.idioma=Lingua atuale
 global.sem_passageiros=Non ci sono ancora passaggeri in questo passaggio.
 global.erro=Errore!
-global.suceso=Successo!
+global.sucesso=Successo!
 
 # tela_login (Tela de Login e Cadastro)
 tela_login.cabecalho=Cerca o offri passaggi in sicurezza e con facilità
@@ -85,7 +85,9 @@ view_usuario.publique=Pubblicare
 view_usuario.busque=Cercare
 view_usuario.recentes=Pubblicazioni recenti
 view_usuario.pedir=Chiedere
-view_usuario.sem_caronas=Non ci sono passaggi per il tuo quartiere disponibile adesso :(
+view_usuario.sem_caronas=Non ci sono nuovi passaggi per il tuo quartiere compatibili con i tuoi orari adesso :(
+view_usuario.sem_horarios=Devi prima registrare i tuoi orari per cercare passeggi.
+view_usuario.cadastre_horarios=Registrali qui.
 
 # agendamento
 agendamento.marcar=Programmare un passaggio con
@@ -102,7 +104,7 @@ solicitacoes.aceitar=Accetare
 solicitacoes.solicitacoes_cabecalho=Richieste di passaggio in attesa della tua approvazione
 solicitacoes.pendente_cabecalho=Passaggi in attesa della avaliazione del guidante
 solicitacoes.sem_pendentes=Nessun passaggio in attesa.
-
+solicitacoes.avaliado=Richiesta valutata.
 
 # dias da semana
 dias.segunda=Lunedì
@@ -113,6 +115,7 @@ dias.sexta=Venerdì
 
 #ajuda
 ajuda = Ajuda
+ajuda.voltar = Indietro
 ajuda.cabecalho = Sessão de ajuda do Vumbora
 ajuda.texto1 =  O Vumbora foi criado para facilitar a vida dos estudantes e funcionários da UFCG. Além de promover a boa prática de formar amizades.Nele você vai poder oferecer e solicitar caronas dada a sua localização e horário. Não é prático?
 ajuda.texto2 = F.A.Q

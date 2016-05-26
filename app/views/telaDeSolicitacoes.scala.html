@@ -15,8 +15,6 @@
 
 <title>Vumbora</title>
 
-<link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
-
 <!-- Bootstrap Core CSS' -->
 <link href="assets/SBAdminTemplate/css/bootstrap.min.css" rel="stylesheet">
 
@@ -113,15 +111,16 @@
                     <!-- /.row -->
       </div>
       <!-- /#page-wrapper -->
-      @if(flash.containsKey("success")) {
-        <div class="alert alert-success"   >
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <strong>Sucesso!</strong> @flash.get("success")
-        </div>
-      }
+
     </div>
+      @if(flash.containsKey("avaliado")) {
+      <div class="alert alert-success"   >
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          <strong>@Messages("solicitacoes.avaliado")</strong> @flash.get("avaliado")
+      </div>
+      }
 
   </div>
 </div>

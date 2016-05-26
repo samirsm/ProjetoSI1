@@ -85,7 +85,9 @@ view_usuario.publique=Publicar
 view_usuario.busque=Buscar
 view_usuario.recentes=Publicacões recentes
 view_usuario.pedir=Pedir
-view_usuario.sem_caronas=Não há caronas para seu bairro disponíveis no momento :(
+view_usuario.sem_caronas=Não há novas caronas para seu bairro compatíveis com seus horários no momento :(
+view_usuario.sem_horarios=Você deve primeiro cadastrar os seus horários para buscar caronas.
+view_usuario.cadastre_horarios=Registre-os aqui.
 
 # agendamento
 agendamento.marcar=Marcar uma carona com
@@ -102,6 +104,7 @@ solicitacoes.aceitar=Vumbora
 solicitacoes.solicitacoes_cabecalho=Solicitações de carona aguardando a sua aprovação
 solicitacoes.pendente_cabecalho=Caronas aguardando avaliação do motorista
 solicitacoes.sem_pendentes=Nenhuma carona pendente.
+solicitacoes.avaliado=Pedido avaliado.
 
 # dias da semana
 dias.segunda=Segunda
@@ -112,6 +115,7 @@ dias.sexta=Sexta
 
 #ajuda
 ajuda = Ajuda
+ajuda.voltar = Voltar
 ajuda.cabecalho = Sessão de ajuda do Vumbora
 ajuda.texto1 =  O Vumbora foi criado para facilitar a vida dos estudantes e funcionários da UFCG. Além de promover a boa prática de formar amizades. Nele você vai poder oferecer e solicitar caronas dados a sua localização e horários de aula. Não é prático?
 ajuda.texto2 = F.A.Q

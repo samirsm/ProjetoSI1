@@ -85,7 +85,9 @@ view_usuario.publique=Publicar
 view_usuario.busque=Buscar
 view_usuario.recentes=Publicaiones recentes
 view_usuario.pedir=Pedir
-view_usuario.sem_caronas=No hay aventones para tu barrio disponibles ahora :(
+view_usuario.sem_caronas=No hay nuevos aventones para tu barrio compatibles con tus horarios ahora :(
+view_usuario.sem_horarios=Deves primero registrar tus horarios para buscar aventones.
+view_usuario.cadastre_horarios=Regístralos aquí.
 
 # agendamento
 agendamento.marcar=Programar un aventón con
@@ -102,6 +104,7 @@ solicitacoes.aceitar=Vumbora
 solicitacoes.solicitacoes_cabecalho=Solicitacione de aventón aguardando tu aprobación
 solicitacoes.pendente_cabecalho=Aventones aguardando avaliación del motorista
 solicitacoes.sem_pendentes=Ningún aventón pendiente.
+solicitacoes.avaliado=Pedido avaliado.
 
 # dias da semana
 dias.segunda=Lunes
@@ -112,6 +115,7 @@ dias.sexta=Viernes
 
 #ajuda
 ajuda = Ajuda
+ajuda.voltar = Volver
 ajuda.cabecalho = Sessão de ajuda do Vumbora
 ajuda.texto1 =  O Vumbora foi criado para facilitar a vida dos estudantes e funcionários da UFCG. Além de promover a boa prática de formar amizades.Nele você vai poder oferecer e solicitar caronas dada a sua localização e horário. Não é prático?
 ajuda.texto2 = F.A.Q

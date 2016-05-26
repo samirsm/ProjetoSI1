@@ -3,7 +3,7 @@
 
 # Faz a chamada do Index de Autenticacao do Usuario
 GET     /                           controllers.HomeController.index
-GET     /ajuda						controllers.AutenticacaoController.ajuda
+GET     /ajuda						controllers.HomeController.ajuda
 POST    /cadastroRealizado	        controllers.AutenticacaoController.cadastraUsuario
 POST    /index			         	controllers.AutenticacaoController.efetuaLogin
 POST    /cadastra		         	controllers.HorariosController.cadastra
