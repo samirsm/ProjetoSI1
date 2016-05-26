@@ -106,6 +106,7 @@ solicitacoes.solicitacoes_cabecalho=Carpool requests waiting for your approval
 solicitacoes.pendente_cabecalho=Carpools waiting for driver''s avaliation
 solicitacoes.sem_pendentes=No pending carpools.
 solicitacoes.avaliado=Request rated.
+solicitacoes.pendentes=Pending
 
 # dias da semana
 dias.segunda=Monday

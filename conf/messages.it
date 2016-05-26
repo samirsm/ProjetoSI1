@@ -105,6 +105,8 @@ solicitacoes.solicitacoes_cabecalho=Richieste di passaggio in attesa della tua a
 solicitacoes.pendente_cabecalho=Passaggi in attesa della avaliazione del guidante
 solicitacoes.sem_pendentes=Nessun passaggio in attesa.
 solicitacoes.avaliado=Richiesta valutata.
+solicitacoes.pendentes=In attesa
+
 
 # dias da semana
 dias.segunda=Lunedì

@@ -105,6 +105,8 @@ solicitacoes.solicitacoes_cabecalho=Solicitações de carona aguardando a sua ap
 solicitacoes.pendente_cabecalho=Caronas aguardando avaliação do motorista
 solicitacoes.sem_pendentes=Nenhuma carona pendente.
 solicitacoes.avaliado=Pedido avaliado.
+solicitacoes.pendentes=Pendente
+
 
 # dias da semana
 dias.segunda=Segunda

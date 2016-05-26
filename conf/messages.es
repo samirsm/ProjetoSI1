@@ -105,6 +105,8 @@ solicitacoes.solicitacoes_cabecalho=Solicitacione de aventón aguardando tu apro
 solicitacoes.pendente_cabecalho=Aventones aguardando avaliación del motorista
 solicitacoes.sem_pendentes=Ningún aventón pendiente.
 solicitacoes.avaliado=Pedido avaliado.
+solicitacoes.pendentes=Pendiente
+
 
 # dias da semana
 dias.segunda=Lunes

@@ -129,5 +129,11 @@ public class MensagensSistema {
 			"Solicitación rechazada. El pasajero será notificado.",
 			"Solicitazione rifutata. Il passeggero sarà nofificato."};
 	//
+	
+	//Mensagens menores
+	public static String[] RUA = {"Rua", "Street", "Calle", "Via"};
+	
+	public static String[] BAIRRO = {"Bairro", "Neighbourhood", "Barrio", "Quartiere"};
+	
 
 }
