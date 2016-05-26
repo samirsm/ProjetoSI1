@@ -50,6 +50,7 @@ public class HorariosController extends Controller {
 		
 	}
 	
+	@Security.Authenticated(Secured.class)
 	public Result cadastra() {
 	  Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
       DynamicForm requestData = formFactory.form().bindFromRequest();
@@ -86,6 +87,7 @@ public class HorariosController extends Controller {
       return redirect(routes.HomeController.editaHorarios());
   	}
 	
+	@Security.Authenticated(Secured.class)
 	public Result excluiHorarioVolta(String dia, Integer hora){
 	  Horario horario = new Horario(dia, hora);
       Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
@@ -94,6 +96,7 @@ public class HorariosController extends Controller {
       return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 	}
 	
+	@Security.Authenticated(Secured.class)
 	public Result excluiHorarioIda(String dia, Integer hora){
       Horario horario = new Horario(dia, hora);
       Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
