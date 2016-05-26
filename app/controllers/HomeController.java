@@ -43,14 +43,16 @@ public class HomeController extends Controller {
 	}
 	
 	// Mudar esse método para efetuar a verificação do Usuario Logado.
+	
+	@Security.Authenticated(Secured.class)
 	public Result index(){
-
 		ctx().changeLang(SistemaUsuarioLogin.getInstance().getIdioma().getId());
-		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+		usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
 		
 		return exibePagina();
 	}
-
+	
+	@Security.Authenticated(Secured.class)
 	public Result redefineIdioma(Integer id) {
 		Idioma idioma= Idioma.values()[id - 1];
 		ctx().changeLang(idioma.getId());
@@ -66,12 +68,14 @@ public class HomeController extends Controller {
 		return exibePagina();
 	}
 	
+	@Security.Authenticated(Secured.class)
 	public Result editaHorarios(){
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
       return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 
 	}
 
+	@Security.Authenticated(Secured.class)
 	public Result exibePerfilUsuario(Long id){
 		Usuario usuarioPerfil = SistemaUsuarioCRUD.getInstance().getUsuarioPorId(id);
 		return ok(telaPerfilUsuario.render(usuarioLogado, usuarioPerfil));
@@ -79,11 +83,11 @@ public class HomeController extends Controller {
 	}
 	
 	private Result exibePagina(){
-		if (!SistemaUsuarioLogin.getInstance().isLogado())
-			return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
+		if (!isLogado())
+			return login();
 		else if(!usuarioLogado.isHorariosCadastrados()){
 		  return editaHorarios();
-		}else if(SistemaUsuarioLogin.getInstance().isLogado() && !usuarioLogado.isHorariosCadastrados()){
+		}else if(isLogado() && !usuarioLogado.isHorariosCadastrados()){
 			List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
 			return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 		}
@@ -92,7 +96,13 @@ public class HomeController extends Controller {
 			return ok(viewUsuario.render(usuarioLogado, formularioCarona, caronas, bairros, usuarioLogado.getNotificacoesNaoLidas()));
 		}
 	}
-
-
+	
+	private boolean isLogado(){
+		return usuarioLogado != null;
+	}
+	
+	public Result login(){
+		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
+	}
 
 }

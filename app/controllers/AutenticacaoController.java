@@ -46,6 +46,7 @@ public class AutenticacaoController extends Controller {
 	}
 	
 	public Result efetuaLogin(){
+		session().clear();
 		Usuario usuarioLogado = null;
 		
 		try {
@@ -55,11 +56,11 @@ public class AutenticacaoController extends Controller {
 		} catch (DadosInvalidosException | LoginInvalidoException e) {
 			loggerAutenticacao.registraAcao(Acao.INFO, e.getMessage());
 			flash("erro", e.getMessage());
-            return redirect(routes.HomeController.index());
+			return redirect(routes.HomeController.login());
 		}
 
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
-		flash("sucesso", "Usuario cadastrado com sucesso.");
+		flash("sucesso", "Usuário logado com sucesso.");
 
 		return verificaPrimeiroAcessoUsuario(usuarioLogado);
 	}
@@ -86,7 +87,7 @@ public class AutenticacaoController extends Controller {
 		}catch(Exception e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			flash("erro", e.getMessage());
-            return redirect(routes.HomeController.index());		
+			return redirect(routes.HomeController.login());		
         }
 		
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString());
@@ -106,18 +107,19 @@ public class AutenticacaoController extends Controller {
 		} catch (UsuarioJaExistenteException | DadosInvalidosException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			flash("erro", e.getMessage());
-            return redirect(routes.HomeController.index());
+			return redirect(routes.HomeController.login());
             }
 		
 		loggerAutenticacao.registraAcao(Acao.USUARIO_CADASTRADO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
 	
 		flash("success", "Usuario cadastrado com sucesso!");
-        return redirect(routes.HomeController.index());	
+        return redirect(routes.HomeController.login());	
        }
 	
 	public Result efetuaLogout(){
-		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado().toString());
+		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado(session().get("login")).toString());
 		
+		session().clear();
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
 		
 		return redirect(routes.HomeController.index());
@@ -130,20 +132,16 @@ public class AutenticacaoController extends Controller {
 	private Usuario autenticaUsuario() throws DadosInvalidosException, LoginInvalidoException{
 		DynamicForm requestData = formFactory.form().bindFromRequest();
 		String login = requestData.get("matricula");
-		String email = login; // O usuário pode digitar um dos dois no mesmo campo
 		String senha = requestData.get("senha");
-		
 		
 		if (requestData.hasErrors())
 			throw new DadosInvalidosException();
 		
-		session().put("login", login);
-		session().put("userTime", Long.toString(new Date().getTime()));
+		session("login", login);
+		session("userTime", Long.toString(new Date().getTime()));
 		
-		SistemaUsuarioLogin.getInstance().efetuaLogin(login, email, senha);
+		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().efetuaLogin(login, senha);
 
-		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
-		
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
 		return usuarioLogado;
 	}

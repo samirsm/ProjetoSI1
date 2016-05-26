@@ -9,9 +9,6 @@ import sistemas.mensagens.Idioma;
 public class SistemaUsuarioLogin {
     private static final SistemaCarona SISTEMA_CARONA = SistemaCarona.getInstance();
     private static final SistemaUsuarioLogin INSTANCIA = new SistemaUsuarioLogin();
-	private Usuario usuarioLogado;
-	private static String tokenAuth;
-	private static String userTime;
 	private Idioma idioma = Idioma.PORTUGUES;
 
 	private SistemaUsuarioLogin(){
@@ -21,39 +18,22 @@ public class SistemaUsuarioLogin {
 		return INSTANCIA;
 	}
 	
-	public Usuario getUsuarioLogado (){
-		return usuarioLogado;
-	}
-	
-	public void efetuaLogin(String matricula, String email, String senha) throws DadosInvalidosException, LoginInvalidoException{
-		usuarioLogado = SistemaUsuarioCRUD.getInstance().consultaUsuario(matricula, email, senha);
-		tokenAuth = AutenticacaoController.session().get("login");
-		userTime = AutenticacaoController.session("userTime");
+	public Usuario efetuaLogin(String login, String senha) throws DadosInvalidosException, LoginInvalidoException{
+		Usuario user = SistemaUsuarioCRUD.getInstance().consultaUsuario(login, senha);
+		if(user != null) user.setIdioma(SistemaUsuarioLogin.getInstance().getIdioma());
 		
-		if(usuarioLogado != null) usuarioLogado.setIdioma(SistemaUsuarioLogin.getInstance().getIdioma());
-		
-	}
-	
-	public String getTokenAuth(){
-		return tokenAuth;
-	}
-	
-	public String getUserTime(){
-		return userTime;
+		return user;
 	}
 	
 	public void efetuaLogout(){
 	    SISTEMA_CARONA.limpaListaCaronaSolicitadas();
-	    tokenAuth = null;
-		usuarioLogado = null;
 	}
 	
-	public boolean isLogado(){
-	  return usuarioLogado != null;
-	
-	}
-	public void cadastrouHorarios(){
-		usuarioLogado.cadastrouHorarios();
+	public void cadastrouHorarios(String token){
+		if (token != null){
+			Usuario usuarioLogado = getUsuarioLogado(token);
+			usuarioLogado.cadastrouHorarios();
+		}
 	}
 
 	public Idioma getIdioma() {
@@ -63,6 +43,11 @@ public class SistemaUsuarioLogin {
 	public void setIdioma(Idioma idioma) {
 		this.idioma = idioma;
 	}
+	
+	public Usuario getUsuarioLogado (String token){
+			return SistemaUsuarioCRUD.getInstance().getUsuarioPorLogin(token);
+	}
+	
 
 
 }
