@@ -50,7 +50,6 @@ public class HorariosController extends Controller {
 		
 	}
 	
-	@Security.Authenticated(Secured.class)
 	public Result cadastra() {
 	  Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
       DynamicForm requestData = formFactory.form().bindFromRequest();
