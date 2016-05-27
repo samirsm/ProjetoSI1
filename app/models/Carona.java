@@ -1,5 +1,6 @@
 package models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -8,28 +9,21 @@ import com.avaje.ebean.Model;
 import sistemas.mensagens.Strings;
 
 @Entity
-public class Carona extends Model {
+public class Carona extends Model implements Serializable {
 	
-	@Id
-	@GeneratedValue
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Long id;
-	@Column
 	private int vagasDisponiveis;
-	@ManyToOne
 	private Usuario usuario;
-	@ManyToMany
-//	@JoinTable(name = "passageiros")
 	private List<Usuario> passageiros;
-	@ManyToMany
-//	@JoinTable(name = "solicitantes")
 	private List<Usuario> solicitantes;
-	@OneToOne
 	private Horario horario;
-	@Enumerated(EnumType.STRING)
 	private TipoCarona tipo;
-
-	public static Finder<Long, Carona> find = new Finder<>(Carona.class);
-
+	
 	@Inject
 	public Carona(){}
 	public Carona(Usuario motorista, Horario horario, TipoCarona tipo, int numeroDeVagas) {
@@ -39,7 +33,7 @@ public class Carona extends Model {
 		this.vagasDisponiveis = numeroDeVagas;
 		this.passageiros = new ArrayList<>();
 		this.solicitantes = new ArrayList<>();
-		setId();
+		id = (long) ((long) motorista.getDadosUsuario().getEmail().hashCode() * Math.random());
 	}
 	
 	public boolean isFull() {
@@ -110,13 +104,4 @@ public class Carona extends Model {
 				+ " Horario: " + horario.toString();
 
 	}
-
-	private void setId(){
-		double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
-		idTemp %= 1;
-		idTemp *= 100000;
-		id = (long) idTemp;
-		
-	}
-
 }

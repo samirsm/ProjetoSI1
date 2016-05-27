@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.Idioma;
 import sistemas.mensagens.MensagensSistema;
 
-public enum TipoCarona {
+public enum TipoCarona implements Serializable{
 	IDA(MensagensSistema.IDA), VOLTA(MensagensSistema.VOLTA);
 
 	private String[] textoExibicao;

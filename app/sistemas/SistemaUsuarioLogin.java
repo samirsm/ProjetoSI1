@@ -12,6 +12,7 @@ import sistemas.mensagens.Idioma;
 
 public class SistemaUsuarioLogin {
     private static final SistemaCarona SISTEMA_CARONA = SistemaCarona.getInstance();
+    private static final SistemaUsuarioCRUD SISTEMA_USUARIO = SistemaUsuarioCRUD.getInstance();
     private static final SistemaUsuarioLogin INSTANCIA = new SistemaUsuarioLogin();
 	private Usuario usuarioLogado;
 	private Idioma idioma = Idioma.PORTUGUES;
@@ -30,7 +31,8 @@ public class SistemaUsuarioLogin {
 	}
 	
 	public void efetuaLogout(){
-		getUsuarioLogado(Controller.session().get("login")).save();
+		SISTEMA_CARONA.salvaCaronas();
+		SISTEMA_USUARIO.salvaUsuarios();
 	    SISTEMA_CARONA.limpaListaCaronaSolicitadas();
 	}
 	

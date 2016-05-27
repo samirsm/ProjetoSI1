@@ -5,11 +5,18 @@ import com.avaje.ebean.Model;
 import exceptions.DadosInvalidosException;
 import play.data.validation.Constraints;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class Dados extends Model{
+public class Dados extends Model implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Constraints.Required(message = "Insira um nome válido.")
 	@Column
 	private String nome;

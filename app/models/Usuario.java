@@ -1,5 +1,6 @@
 package models;
 
+import javax.inject.Inject;
 import javax.persistence.*;
 
 
@@ -11,43 +12,33 @@ import exceptions.DadosInvalidosException;
 import exceptions.HorarioJaCadastradoException;
 import sistemas.mensagens.Idioma;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Usuario extends Model {
-	@Id
-	@GeneratedValue
+public class Usuario extends Model implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private Long id;
-	@Embedded
 	private Dados dadosPessoais;
-	@OneToOne
 	private Endereco enderecoAlternativo;
-	@OneToOne
 	private Endereco endereco;
-	@Column
 	private Integer numeroVagas;
-	@Column
 	private Integer imagemPerfil = 4;
-	@Enumerated(EnumType.STRING)
 	private Idioma idioma = Idioma.PORTUGUES;
-	@OneToMany(cascade = CascadeType.ALL)
 	private List<Carona> caronas = new ArrayList<Carona>();
-	@OneToMany(cascade = CascadeType.ALL)
 	private List<Carona> caronasPendentes = new ArrayList<Carona>();
-	@OneToMany(cascade = CascadeType.ALL)
 	private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
-	@OneToMany(cascade = CascadeType.ALL)
 	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
-	@OneToMany(cascade = CascadeType.ALL)
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
-	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Horario> horarios = new ArrayList<Horario>();
-	@Column
 	private boolean horariosCadastrados;
-
-	public static Finder<Long, Usuario> find = new Finder<>(Usuario.class);
-
+	
+	@Inject
 	public Usuario(){}
 
 	public Usuario(Dados dados, Endereco endereco, Integer numeroVagas) throws DadosInvalidosException {
@@ -59,6 +50,7 @@ public class Usuario extends Model {
 		this.dadosPessoais = dados;
 		this.setEndereco(endereco);
 		this.setEnderecoAlternativo(endereco);
+		id = (long) dados.getMatricula().hashCode();
 	}
 
 	public Long getId() {
@@ -67,22 +59,6 @@ public class Usuario extends Model {
 
 	public String getEnderecoPerfil(){
 		return "perfil?id=" + this.getId();
-	}
-
-	public static Usuario authenticate(String matricula, String email, String password) {
-		Usuario usuario = find.where().eq("email", email).findUnique();
-		if (usuario == null) {
-			usuario = find.where().eq("matricula", matricula).findUnique();
-			if (usuario == null){
-				 return null;
-			}
-		}
-		if (password.equals(usuario.getDadosUsuario().getSenha())) {
-			return usuario;
-		} else {
-			return null;
-		}
-
 	}
 
 	///// Notificações/////
@@ -136,10 +112,6 @@ public class Usuario extends Model {
 
 	public void adicionaCarona(Carona carona) {
 		caronas.add(carona);
-	}
-
-	private boolean isPossivelDarCarona(Carona carona) {
-		return numeroVagas >= carona.getVagasDisponiveis();
 	}
 
 	public List<Carona> getCaronasPendentes() {

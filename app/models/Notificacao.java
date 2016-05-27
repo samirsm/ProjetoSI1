@@ -1,5 +1,7 @@
 package models;
  
+import java.io.Serializable;
+
 import javax.persistence.*;
 import com.avaje.ebean.Model;
 import exceptions.DadosInvalidosException;
@@ -8,8 +10,12 @@ import sistemas.mensagens.Strings;
 import play.mvc.Controller;
 
 @Entity
-public class Notificacao extends Model{
-    @Id
+public class Notificacao extends Model implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue
     private Long id;
     @OneToOne

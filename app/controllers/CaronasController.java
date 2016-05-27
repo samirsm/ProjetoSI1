@@ -40,14 +40,12 @@ public class CaronasController extends Controller {
         Integer hora = Integer.parseInt(requestData.get("hora"));
         String dia = requestData.get("diaDaSemana");
         Integer vagasDisponiveisCarona = Integer.parseInt(requestData.get("vagasDisponiveis"));
-        Horario horario = new Horario(dia, hora);
-        horario.save();
         TipoCarona tipo = getTipo(requestData.get("tipo"));
+        Horario horario = new Horario(dia, hora, tipo);
         
         try{
             Carona carona = SistemaCarona.getInstance().criaCarona(motorista, horario, tipo, vagasDisponiveisCarona);
             loggerCaronas.registraAcao(Acao.CADASTROU_CARONA, horario.toString(), tipo.toString(), vagasDisponiveisCarona.toString());
-            carona.save();
             SistemaCarona.getInstance().getListaPesquisaAtualizada();
             loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS);
         } catch (CaronaJaCadastradaException e){
@@ -98,7 +96,6 @@ public class CaronasController extends Controller {
         pedido.getCarona().getMotorista().removeSolicitacao(pedido);
         pedido.getSolicitante().removeCaronaPendente(pedido.getCarona()); //a carona deixade ser pendente para o passageiro
 
-
         Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
         flash("avaliado", MensagensSistema.RECUSA_PEDIDO[idioma.ordinal()]);
 
@@ -121,8 +118,6 @@ public class CaronasController extends Controller {
         SistemaNotificacao.getInstance().notificaUsuario(notificacao, carona.getMotorista()); // o motorista da carona é notificado desse pedido
         buscarCaronas(); // atualizar a lista de caronas, agora sem esta, que ja foi pedida
 
-        carona.update();
-        usuarioLogado.update();
         Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
         flash("pedido", MensagensSistema.PEDIDO_EFETUADO[idioma.ordinal()]);
 

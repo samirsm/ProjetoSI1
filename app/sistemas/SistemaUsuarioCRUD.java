@@ -1,6 +1,8 @@
 package sistemas;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import exceptions.BairroJaCadastradoException;
@@ -8,8 +10,12 @@ import exceptions.DadosInvalidosException;
 import exceptions.HorarioJaCadastradoException;
 import exceptions.LoginInvalidoException;
 import exceptions.UsuarioJaExistenteException;
+import play.Logger;
 import play.mvc.Controller;
+import serializable.StateSaver;
 import models.*;
+import sistemas.logger.LoggerSistema;
+import sistemas.logger.registrosAcoes.Acao;
 import sistemas.mensagens.MensagensSistema;
 
 public final class SistemaUsuarioCRUD {
@@ -19,8 +25,7 @@ public final class SistemaUsuarioCRUD {
 	private List<Usuario> usuariosDesativados;
 	
 	private SistemaUsuarioCRUD(){
-		usuariosAtivados = new ArrayList<Usuario>();
-		usuariosDesativados = new ArrayList<Usuario>();
+		leUsuarios();
 	}
 
 	public static SistemaUsuarioCRUD getInstance(){
@@ -34,7 +39,8 @@ public final class SistemaUsuarioCRUD {
 		novoUsuario.recebeNotificacao(new Notificacao(novoUsuario, TipoNotificacao.BOASVINDAS));
 		if (!isUsuarioExistente(novoUsuario))
 			usuariosAtivados.add(novoUsuario);
-
+		
+		salvaUsuarios();
 		return novoUsuario;
 	}
 	
@@ -104,5 +110,38 @@ public final class SistemaUsuarioCRUD {
 			}
 		}
 		return null;
+	}
+	
+	public void salvaUsuarios(){
+		try {
+			StateSaver.save(usuariosAtivados, "usuariosAtivados");
+		} catch (IOException e) {
+			new LoggerSistema().registraAcao(Acao.ERRO, "Erro ao salvar usuarios");
+		}
+		try {
+			StateSaver.save(usuariosDesativados, "usuariosDesativados");
+		} catch (IOException e) {
+			new LoggerSistema().registraAcao(Acao.ERRO, "Erro ao salvar usuarios");
+		}
+	}
+	
+	public void leUsuarios(){
+		try {
+			usuariosAtivados = (List<Usuario>) StateSaver.read("usuariosAtivados");
+		} catch (ClassNotFoundException e1) {
+			new LoggerSistema().registraAcao(Acao.ERRO, "Erro ao ler usuarios");
+		} catch (IOException e1) {
+			usuariosAtivados = new LinkedList<Usuario>();
+		}
+		
+		
+		try {
+			usuariosDesativados = (List<Usuario>) StateSaver.read("usuariosDesativados");
+		} catch (ClassNotFoundException e) {
+			new LoggerSistema().registraAcao(Acao.ERRO, "Erro ao ler usuarios");
+		} catch (IOException e) {
+			usuariosDesativados = new LinkedList<Usuario>();
+		}
+
 	}
 }

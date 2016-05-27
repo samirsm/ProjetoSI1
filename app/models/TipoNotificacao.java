@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 import play.mvc.Controller;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.*;
 
-public enum TipoNotificacao {
+public enum TipoNotificacao implements Serializable{
 	ACEITACAO(MensagensSistema.ACEITACAO),
 	REJEICAO(MensagensSistema.REJEICAO),
 	CANCELAMENTO(MensagensSistema.CANCELAMENTO),

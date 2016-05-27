@@ -32,7 +32,6 @@ public class NotificacoesController extends Controller{
         Notificacao notificacao = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idNotificacao);
         SistemaNotificacao.getInstance().leNotificacao(notificacao);
         Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
-        user.update();
         return redirect(routes.HomeController.index());
     }
 
@@ -40,7 +39,6 @@ public class NotificacoesController extends Controller{
     public Result leTodasNotificacoes(){
         SistemaNotificacao.getInstance().leTodasNotificacoes();
         Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
-        user.update();
         return redirect(routes.HomeController.index());
     }
 

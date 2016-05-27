@@ -64,10 +64,6 @@ public class HomeController extends Controller {
 				if(not.getTipo() == TipoNotificacao.IDIOMA)
 					usuarioLogado.leNotificacao(not);
 			}
-
-			//usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
-			usuarioLogado.update();
-
 		}
 		return redirect(routes.HomeController.index());
 	}
@@ -100,7 +96,7 @@ public class HomeController extends Controller {
 			return ok(telaCadastroHorario.render(getUsuarioLogado(), formularioHorario, getUsuarioLogado().getHorariosIda(), getUsuarioLogado().getHorariosVolta(), bairros, notificacaoes));
 		}
 		else{
-			List<Carona> caronas = SistemaCarona.getInstance().getListaPesquisa();
+			List<Carona> caronas = SistemaCarona.getInstance().getListaPesquisaAtualizada();
 			return ok(viewUsuario.render(getUsuarioLogado(), formularioCarona, caronas, bairros, getUsuarioLogado().getNotificacoesNaoLidas()));
 		}
 	}

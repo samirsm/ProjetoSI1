@@ -3,12 +3,18 @@ package models;
 import com.avaje.ebean.Model;
 import sistemas.mensagens.Strings;
 
+import java.io.Serializable;
+
 import javax.inject.Inject;
 import javax.persistence.*;
 
 @Entity
-public class Solicitacao extends Model{
-    @Id
+public class Solicitacao extends Model implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @Column
     private Long id;
     @OneToOne

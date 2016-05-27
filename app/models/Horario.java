@@ -3,12 +3,19 @@ package models;
 import com.avaje.ebean.Model;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.*;
+
+import java.io.Serializable;
+
 import javax.persistence.*;
 		import play.mvc.Controller;
 
 @Entity
-public class Horario extends Model{
+public class Horario extends Model implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	private Long id;

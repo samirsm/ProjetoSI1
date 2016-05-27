@@ -85,7 +85,6 @@ public class AutenticacaoController extends Controller {
 				throw new Exception();
 			dadosPessoais = new Dados(nome, matricula, email, senha, numeroDeTelefone);
 			endereco = new Endereco(rua, bairro);
-			endereco.save();
 		}catch(Exception e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, "divisor de erro - save endereço acima");
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
@@ -110,7 +109,6 @@ public class AutenticacaoController extends Controller {
 
 		Usuario user = SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
 		user.setImagemPerfil(foto);
-		user.save();
 		} catch (UsuarioJaExistenteException | DadosInvalidosException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			flash("erro", e.getMessage());

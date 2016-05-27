@@ -1,5 +1,7 @@
 package models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +13,12 @@ import sistemas.*;
 import play.mvc.Controller;
 
 @Entity
-public class Endereco extends Model{
+public class Endereco extends Model implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
 	private long Id;

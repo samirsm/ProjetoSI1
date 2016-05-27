@@ -1,5 +1,6 @@
 package sistemas;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,6 +17,7 @@ import models.Horario;
 import models.TipoCarona;
 import models.Usuario;
 import play.mvc.Controller;
+import serializable.StateSaver;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import sistemas.tiposBuscas.BuscaDefault;
@@ -26,10 +28,9 @@ public class SistemaCarona{
 	private List<Carona> caronasSistema;
 	private List<Carona> listaCaronasSolicitadas;
 	private TipoBusca tipo;
-	private SistemaNotificacao sistemaNotificacoes = SistemaNotificacao.getInstance();
 	
 	private SistemaCarona() {
-		caronasSistema = new LinkedList<>();
+		leCaronas();
 		listaCaronasSolicitadas = new LinkedList<>();
 		tipo = new BuscaDefault();
 	}
@@ -72,23 +73,18 @@ public class SistemaCarona{
 	}
     
     public List<Carona> getAllCaronas() {
-		caronasSistema = Ebean.createQuery(Carona.class).findList();
-		LoggerSistema log = new LoggerSistema();
-		log.registraAcao(Acao.ERRO, Arrays.toString(caronasSistema.toArray()));
 		return caronasSistema;
     }
     
     private void adicionaCarona(Carona carona) throws CaronaJaCadastradaException {
-
     	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login")).getCaronas();
     	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
-    	      caronasUsuarioLogado.add(carona);
+    		caronasSistema.add(carona);
+    		caronasUsuarioLogado.add(carona);
     	}else
     	  throw new CaronaJaCadastradaException();
 	}
     
-   
-
     private boolean temCaronaNoMesmoHorario(Carona carona, List<Carona> caronasUsuarioLogado) {
         for (Carona carona2 : caronasUsuarioLogado) {
           if(carona.getHorario().equals(carona2.getHorario()))
@@ -135,5 +131,23 @@ public class SistemaCarona{
     public void adicionarPassageiros(Carona carona, Usuario passageiro) {
 			carona.adicionaPassageiro(passageiro);
 			passageiro.adicionaCarona(carona);
+	}
+    
+	public void salvaCaronas(){
+		try {
+			StateSaver.save(caronasSistema, "caronas");
+		} catch (IOException e) {
+			new LoggerSistema().registraAcao(Acao.ERRO, "Erro ao salvar caronas");
+		}
+	}
+	
+	public void leCaronas(){
+		try {
+			caronasSistema = (List<Carona>) StateSaver.read("caronas");
+		} catch (ClassNotFoundException e1) {
+			new LoggerSistema().registraAcao(Acao.ERRO, "Erro ao ler caronas");
+		} catch (IOException e1) {
+			caronasSistema = new LinkedList<Carona>();
+		}
 	}
 }
