@@ -29,7 +29,7 @@
 
                 <div style="font-size: 36px;"><p style="font-size: 34px;"><br>@Messages("agendamento.marcar") @carona.getMotorista().getNome()<br><br></p></div>
 
-                <p><img src="assets/SBAdminTemplate/img/trajeto carona ilustracao.png" width="500" height="95"  alt=""/></p>
+                <p><img src=@usuarioLogado.getEnderecoImagemPerfil() width="20%" /><img src="assets/SBAdminTemplate/img/trajeto carona ilustracao.png" width="40%" /><img src=@carona.getMotorista().getEnderecoImagemPerfil() width="20%" ></p>
 
                 <p style="font-size: 18px;"><b>@Messages("agendamento.tipo") </b>@carona.getTipo()</p>
                 <p style="font-size: 18px;"><b>@Messages("agendamento.dia") </b>@carona.getHorario().getDia()</p>

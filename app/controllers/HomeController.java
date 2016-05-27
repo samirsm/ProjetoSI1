@@ -64,7 +64,9 @@ public class HomeController extends Controller {
 				if(not.getTipo() == TipoNotificacao.IDIOMA)
 					usuarioLogado.leNotificacao(not);
 			}
+
 			//usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
+			usuarioLogado.update();
 
 		}
 		return redirect(routes.HomeController.index());

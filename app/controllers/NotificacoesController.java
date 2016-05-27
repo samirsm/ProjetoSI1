@@ -31,12 +31,16 @@ public class NotificacoesController extends Controller{
     public Result leNotificacao(Long idNotificacao){
         Notificacao notificacao = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idNotificacao);
         SistemaNotificacao.getInstance().leNotificacao(notificacao);
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
+        user.update();
         return redirect(routes.HomeController.index());
     }
 
     @Security.Authenticated(Secured.class)
     public Result leTodasNotificacoes(){
         SistemaNotificacao.getInstance().leTodasNotificacoes();
+        Usuario user = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
+        user.update();
         return redirect(routes.HomeController.index());
     }
 

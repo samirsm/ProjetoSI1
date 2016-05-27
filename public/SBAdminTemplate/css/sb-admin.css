@@ -227,10 +227,10 @@ ul.alert-dropdown {
         top: 15%;
         left: 77%;
         width: 345px;
-        height: 550px;
+        height: 80%;
         margin-left: -50px;
         border: none;
-        border-radius: 20px;
+        border-radius: 18px;
         border: 2px solid #888;
         /* IE8 and below */
     	background: rgb(000, 00, 00);

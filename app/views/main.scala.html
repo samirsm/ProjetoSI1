@@ -210,13 +210,15 @@ $(document).ready(function(){
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <h3 class="page-header" style="color: #FFF">@Messages("global.minhas_caronas")</h3>
+
+                                        @if(usuarioLogado.getCaronas().size() == 0){
                                         <ol class="breadcrumb">
-                                          @if(usuarioLogado.getCaronas().size() == 0){
                                             <li class="active">
                                                 @Messages("global.sem_caronas")<a href="ajuda" color="#0088FF"> @Messages("ajuda")</a>
                                             </li>
-                                          }
                                         </ol>
+                                        }
+
                                     </div>
                                 </div>
                         </div>
