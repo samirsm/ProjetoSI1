@@ -319,3 +319,5 @@ run
 clean
 compile
 run
+clean
+run

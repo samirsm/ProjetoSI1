@@ -75,6 +75,7 @@ public class AutenticacaoController extends Controller {
 		String numeroDeTelefone = requestData.get("numeroDeTelefone");
 		String rua = requestData.get("rua");
 		String bairro = requestData.get("bairro");
+		
 
 		Dados dadosPessoais;
 		Endereco endereco;
@@ -94,9 +95,11 @@ public class AutenticacaoController extends Controller {
 
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString());
 		Integer numeroVagas;
+		Integer foto = 4;
 
 		try{
 			numeroVagas = Integer.parseInt(requestData.get("numeroVagas"));
+			foto = Integer.parseInt(requestData.get("foto"));
 		} catch (Exception e){
 			numeroVagas = new Integer(0);
 		}
@@ -106,6 +109,7 @@ public class AutenticacaoController extends Controller {
 		try{
 
 		Usuario user = SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
+		user.setImagemPerfil(foto);
 		user.save();
 		} catch (UsuarioJaExistenteException | DadosInvalidosException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
@@ -120,7 +124,8 @@ public class AutenticacaoController extends Controller {
 		flash("success", MensagensSistema.CADASTRO_SUCESSO[idioma.ordinal()]);
 		return redirect(routes.HomeController.login());
 	}
-
+	
+	
 	public Result efetuaLogout(){
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login")).toString());
 		SistemaUsuarioLogin.getInstance().efetuaLogout();

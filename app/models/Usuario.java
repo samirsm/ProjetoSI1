@@ -225,7 +225,15 @@ public class Usuario extends Model {
 	public String getEnderecoImagemPerfil(){
 		return "assets/SBAdminTemplate/img/userDefault" + imagemPerfil +".png";
 	}
-
+	
+	public void setImagemPerfil(Integer n){
+      if(n > 6 || n < 1) 
+        imagemPerfil = 4;
+      imagemPerfil = n;
+      
+    }
+	
+	
 	///// FIM GETS e SETS de infos /////
 
 
