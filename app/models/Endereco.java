@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
+import sistemas.mensagens.*;
+import sistemas.*;
+import play.mvc.Controller;
 
 @Entity
 public class Endereco extends Model{
@@ -24,7 +27,7 @@ public class Endereco extends Model{
 		this.bairro = bairro;
 	}
 	public Endereco(){}
-	
+
 	public String getBairro() {
 		return bairro;
 	}
@@ -37,9 +40,10 @@ public class Endereco extends Model{
 	public void setRua(String rua) {
 		this.rua = rua;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Rua: " + getRua() + " Bairro: "+ getBairro() + " ";
+		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
+		return MensagensSistema.RUA[idioma.ordinal()] + ": " + getRua() + " " + MensagensSistema.BAIRRO[idioma.ordinal()] + ": " + getBairro();
 	}
 }

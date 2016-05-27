@@ -27,6 +27,7 @@ public class Solicitacao extends Model{
     public Solicitacao(Usuario usuario, Carona carona){
         this.carona = carona;
         this.usuario = usuario;
+
         geraMensagem();
         setId();
     }
@@ -41,8 +42,8 @@ public class Solicitacao extends Model{
     public Long getId() {
         return id;
     }
- 
-    public Usuario getUsuario() {
+
+    public Usuario getSolicitante() {
         return usuario;
     }
  

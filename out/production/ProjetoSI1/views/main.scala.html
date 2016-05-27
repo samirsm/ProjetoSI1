@@ -27,6 +27,14 @@
 
 </head>
 
+<script type="text/javascript">
+  window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+    $(this).remove();
+  });
+}, 2000);
+</script>
+
 <style type="text/css">
     	    	body{
     	    		background-image: url("assets/CreativeTemplate/img/fundoCarro.png");
@@ -150,12 +158,18 @@
                 </br>
                 </br>
                     <li>
-                        <a href="/"><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>@usuarioLogado.getNome()</a>
+                        <a href=@usuarioLogado.getEnderecoPerfil()><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>@usuarioLogado.getNome()</a>
                     </li>
                     <li>
                         <a href="/"><i class="fa fa-fw fa-home fa-4x"></i></br><strong>@Messages("global.home")</strong></a>
                     </li>
                     <li>
+<<<<<<< HEAD:out/production/ProjetoSI1/views/main.scala.html
+                        <a href="/"><i class="fa fa-fw fa-home fa-4x"></i></br><strong>@Messages("global.home")</strong></a>
+                    </li>
+                    <li>
+=======
+>>>>>>> master:out/production/ProjetoSI1/views/main.scala.html
                         <a href="solicitacoes"><i class="fa fa-fw fa-paper-plane fa-3x"></i></br><strong>@Messages("global.solicitacoes")</br><div style="color: #985f0d">@if(usuarioLogado.getSolicitacoes().size() > 0){ (@usuarioLogado.getSolicitacoes().size()) }</div></strong></a>
                     </li>
                     <li>

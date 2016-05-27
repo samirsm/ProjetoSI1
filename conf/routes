@@ -2,12 +2,13 @@
 # This file defines all application routes (Higher priority routes first)
 
 # Faz a chamada do Index de Autenticacao do Usuario
-GET     /                           controllers.HomeController.login
-GET     /index                      controllers.HomeController.index
+GET     /                           controllers.HomeController.index
+GET     /login                      controllers.HomeController.login
+GET     /ajuda						controllers.HomeController.ajuda
 POST    /cadastroRealizado	        controllers.AutenticacaoController.cadastraUsuario
-#POST    /index			         	controllers.AutenticacaoController.efetuaLogin
+POST    /index			         	controllers.AutenticacaoController.efetuaLogin
 POST    /cadastra		         	controllers.HorariosController.cadastra
-POST    /login			         	controllers.AutenticacaoController.efetuaLogin
+POST    /login			         	controllers.AutenticacaoController.efetuaLogin()
 GET     /logout                     controllers.AutenticacaoController.efetuaLogout
 
 POST    /home						controllers.CaronasController.cadastraNovaCarona

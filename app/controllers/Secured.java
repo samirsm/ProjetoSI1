@@ -31,9 +31,9 @@ public class Secured extends Security.Authenticator {
 	
 	@Override
 	public String getUsername(Context ctx) {
-        if(isSessionValida())
-        	return SistemaUsuarioLogin.getInstance().getTokenAuth();
-        
+        if(isSessionValida(ctx))
+        	return ctx.session().get("login");
+
         return null;
     }
 
@@ -43,8 +43,10 @@ public class Secured extends Security.Authenticator {
     }
 
 	@SuppressWarnings("deprecation")
-	private boolean isSessionValida() {
-		String previousTick = SistemaUsuarioLogin.getInstance().getUserTime();
+	private boolean isSessionValida(Context ctx) {
+		String previousTick = ctx.session().get("userTime");
+		if (previousTick == null || previousTick.equals(""))
+			return false;
 	    if (previousTick != null && !previousTick.equals("")) {
 	        long previousT = Long.valueOf(previousTick);
 	        long currentT = new Date().getTime();
@@ -58,7 +60,7 @@ public class Secured extends Security.Authenticator {
 	            return false;
 	        }
 	    }
-		return true;
+	    return true;
 	}	    
 
 }

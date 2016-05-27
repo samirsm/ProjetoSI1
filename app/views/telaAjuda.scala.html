@@ -1,0 +1,151 @@
+@()
+
+{
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- <title>Vumbora</title> Pesquisar DAO Pattern -->
+
+    <script
+            src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script
+            src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+    <script
+            src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <linkrel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="assets/CreativeTemplate/css/bootstrap.min.css" type="text/css">
+    <link href="assets/CreativeTemplate/js/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/CreativeTemplate/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="assets/CreativeTemplate/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/CreativeTemplate/css/creative.css" type="text/css">
+
+    <style type="text/css">
+        body{
+            background-image: url("assets/CreativeTemplate/img/fundoCarro.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        input{
+            color: black;
+        }
+        select{
+            color: black;
+        }
+
+        input[type=file]{
+            margin-left: 35%;
+            margin-right: 35%;
+        }
+
+    </style>
+
+
+    <script type="text/javascript">
+
+        window.onload = start;
+    </script>
+    <link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
+</head>
+<body>
+<br/>
+<img src="assets/CreativeTemplate/img/logo_vumbora.png" style="align: right; margin-right: 5px; height: 15%">
+
+<div class="container-fluid">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    </br>
+    <div class="jumbotron" style=" border: 2px solid #888; vertical-align: center; background: rgb(000, 00, 00);background: rgba(000, 00, 00, 0.5); color: white; ">
+        @helper.form(action = routes.HomeController.index()){
+        <div class="col-sm-6">
+            <input class="btn" type="submit" value=@Messages("ajuda.voltar") class="btn btn-default btn-xl"></input>
+        </div>
+        }
+        </br>
+        <div align="center"><h1>@Messages("ajuda.cabecalho")</h1></div>
+
+        <div id="wrapper">
+            <div id="page-wrapper">
+
+                <div class="container-fluid">
+
+                    <div class="row-xs-12" align ="left">
+                        </br>
+                        <p>@Messages("ajuda.texto1")</p>
+
+                        </br>
+                        <p>@Messages("ajuda.texto2")</p>
+                        </br>
+
+                        <div style="font-size: medium">
+                            1) @Messages("ajuda.pergunta1") </br>
+                            <i>@Messages("ajuda.resposta1") </i></br>
+                            2) @Messages("ajuda.pergunta2") </br>
+                            <i>@Messages("ajuda.resposta2") </i> </br>
+                            3) @Messages("ajuda.pergunta3") </br>
+                            <i>@Messages("ajuda.resposta3") </i></br>
+                            4) @Messages("ajuda.pergunta4") </br>
+                            <i>@Messages("ajuda.resposta4") </i> </br>
+                            5) @Messages("ajuda.pergunta5") </br>
+                            <i>@Messages("ajuda.resposta5") </i></br>
+                            6) @Messages("ajuda.pergunta6") </br>
+                            <i>@Messages("ajuda.resposta6") </i></br>
+                            7) @Messages("ajuda.pergunta7") </br>
+                            <i>@Messages("ajuda.resposta7") </i></br>
+                            8) @Messages("ajuda.pergunta8") </br>
+                            <i>@Messages("ajuda.resposta8") </i></br>
+                            9) @Messages("ajuda.pergunta9") </br>
+                            <i>@Messages("ajuda.resposta9") </i></br>
+                        </div>
+
+                    </div>
+                    <!-- /#page-wrapper -->
+
+                </div>
+            </div>
+            <!-- /#wrapper -->
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<!-- jQuery -->
+<script src="assets/CreativeTemplate/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="assets/CreativeTemplate/js/bootstrap.min.js"></script>
+<script src="assets/CreativeTemplate/js/bootstrap-switch/dist/js/bootstrap-switch.js"></script>
+<script src="assets/CreativeTemplate/js/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="assets/CreativeTemplate/js/jquery.easing.min.js"></script>
+<script src="assets/CreativeTemplate/js/jquery.fittext.js"></script>
+<script src="assets/CreativeTemplate/js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="assets/CreativeTemplate/js/creative.js"></script>
+</body>
+</html>
+}

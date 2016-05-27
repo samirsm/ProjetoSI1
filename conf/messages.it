@@ -3,52 +3,55 @@
 #
 
 # globais
-global.titulo=Vumbora! - Sistema di Passeggi
+global.titulo=Vumbora! - Sistema di Passaggi
 global.home=Home
 global.solicitacoes=Richieste
 global.pendentes=In Attesa
 global.horarios=Orari
 global.caronas=Passaggi
 global.ajustes=Ajustes
-global.minhas_caronas=I miei passeggi
-global.sem_caronas=Non avete passeggi registrati.
+global.minhas_caronas=I miei passaggi
+global.sem_caronas=Non avete passaggi registrati.
 global.cheia=Pieno
 global.ida=Andata
 global.volta=Ritorno
 global.nome=Nome
-global.matricula=RDM
+global.email=E-mail
+global.matricula=Matricola
 global.telefone=Telefono
 global.senha=Password
-global.rua=Via
+global.rua=Inderizzo
 global.bairro=Quartiere
-global.vagas=Seggiolini disponibili
-global.passageiros=Passeggeri
+global.vagas=Posti macchina disponibili
+global.passageiros=Passaggeri
 global.notificacoes_lidas=Segna tutte come già lette
 global.sem_notificacoes=Non ci sono notifiche non lette
 global.sair=Uscire di questo account
 global.idioma=Lingua atuale
-global.sem_passageiros=Non ci sono ancora passeggeri in questo passeggio.
+global.sem_passageiros=Non ci sono ancora passaggeri in questo passaggio.
+global.erro=Errore!
+global.sucesso=Successo!
 
 # tela_login (Tela de Login e Cadastro)
-tela_login.cabecalho=Cerca oppure offri passeggi con sicurezza e facilità
-tela_login.subtitulo=Passeggi di andata e di ritorno da UFCG
+tela_login.cabecalho=Cerca o offri passaggi in sicurezza e con facilità
+tela_login.subtitulo=Passaggi di andata e di ritorno da UFCG
 tela_login.listagem1=Notifiche immediate sulla schermata
-tela_login.listagem2=Recommendazioni di guidatori e passeggeri
-tela_login.listagem3=Utenti registrati confiabili
+tela_login.listagem2=Recommendazioni di guidatori e passaggeri
+tela_login.listagem3=Utenti registrati verificati
 tela_login.sucesso_cadastro=Registrazione eseguita con successo!
 tela_login.sucesso_login=Login eseguito con successo!
-tela_login.login=Email/RDM
+tela_login.login=Email/Matricola
 tela_login.sem_carro=Non ho la macchina.
-tela_login.vagas=Numero di seggiolini disponibili nella macchina
+tela_login.vagas=Numero di posti macchina disponibili nella macchina
 tela_login.cadastrar=Registro
 tela_login.nao_cadastrado=Non sei registrato? Registrati adesso! :)
-tela_login.sou_cadastrado=Già sei registrato? Accedi qui
+tela_login.sou_cadastrado=Già registrato? Accedi qui
 
 # PlaceHolders da TelaLoginCadastro
-placeholder.login=Accedi con il E-mail o RDM
-placeholder.senha_login=Digita il tuo password
+placeholder.login=Accedi con la E-mail o la matricola
+placeholder.senha_login=Digita la tua password
 placeholder.nome=Nome  cognome
-placeholder.matricula=Cadastro nella UFCG
+placeholder.matricula=Registro nella UFCG
 placeholder.senha_cadastro=4 a 16 caratteri
 placeholder.telefone=Digita soltanto numeri
 placeholder.email=esempio@site.com
@@ -72,10 +75,10 @@ horarios.concluir=Concludere
 horarios.excluir=Cancella
 
 # view_usuario
-view_usuario.buscar=Cercare passeggio
-view_usuario.oferecer=Offrire passeggio
-view_usuario.publicar=Pubblicare qui il tuo passeggio
-view_usuario.buscar_aqui=Cerca qui il tuo passeggio
+view_usuario.buscar=Cercare passaggio
+view_usuario.oferecer=Offrire passaggio
+view_usuario.publicar=Pubblicare qui il tuo passaggio
+view_usuario.buscar_aqui=Cerca qui il tuo passaggio
 view_usuario.hora=Scegli l'ora
 view_usuario.dia=Scegli il giorno
 view_usuario.bairro=Scegli il quartiere
@@ -83,23 +86,27 @@ view_usuario.publique=Pubblicare
 view_usuario.busque=Cercare
 view_usuario.recentes=Pubblicazioni recenti
 view_usuario.pedir=Chiedere
-view_usuario.sem_caronas=Non ci sono passeggi per il tuo quartiere disponibile adesso :(
+view_usuario.sem_caronas=Non ci sono nuovi passaggi per il tuo quartiere compatibili con i tuoi orari adesso :(
+view_usuario.sem_horarios=Devi prima registrare i tuoi orari per cercare passeggi.
+view_usuario.cadastre_horarios=Registrali qui.
 
 # agendamento
-agendamento.marcar=Programmare un passeggio con
+agendamento.marcar=Programmare un passaggio con
 agendamento.tipo=Tipo:
 agendamento.dia=Giorno:
 agendamento.hora=Ora:
-agendamento.voltar=Indietro agli Passeggi
-agendamento.solicitar=Solicitare passegio
+agendamento.voltar=Indietro agli Passaggi
+agendamento.solicitar=Solicitare passagio
 
 # solicitacoes
 solicitacoes.nenhuma=Non avete nessuna solicitazione adesso.
 solicitacoes.negar=Negare
 solicitacoes.aceitar=Accetare
-solicitacoes.solicitacoes_cabecalho=Richieste di passeggio in attesa della tua approvazione
-solicitacoes.pendente_cabecalho=Passeggi in attesa della avaliazione del guidante
-solicitacoes.sem_pendentes=Nessun passeggio in attesa.
+solicitacoes.solicitacoes_cabecalho=Richieste di passaggio in attesa della tua approvazione
+solicitacoes.pendente_cabecalho=Passaggi in attesa della avaliazione del guidante
+solicitacoes.sem_pendentes=Nessun passaggio in attesa.
+solicitacoes.avaliado=Richiesta valutata.
+solicitacoes.pendente=In attesa
 
 
 # dias da semana
@@ -108,3 +115,29 @@ dias.terca=Martedì
 dias.quarta=Mercoledì
 dias.quinta=Giovedì
 dias.sexta=Venerdì
+
+#ajuda
+ajuda = Help
+ajuda.voltar = Back
+ajuda.cabecalho = Vumbora''s help section
+ajuda.texto1 =  Vumbora was created to make UFCG students and staff easier, besides promoting a good practice of making new friendships. In this site you can offer and request carpools given your location and schedule. Isn''t it practical?
+ajuda.texto2 = F.A.Q
+ajuda.pergunta1 = How to register?
+ajuda.pergunta2 = Why to give so many information?
+ajuda.pergunta3 = How to log in?
+ajuda.pergunta4 = Where do I register my schedule?
+ajuda.pergunta5 = How to ask for a carpool?
+ajuda.pergunta6 = How to offer a carpool?
+ajuda.pergunta7 = How to accept a carpool request?
+ajuda.pergunta8 = Where can I change the language?
+ajuda.pergunta9 = Where can I see the carpools I''m in?
+
+ajuda.resposta1 = It is easy to register in Vumbora. Right after accessing the website, click on "Not yet registered?" below "Login" button.
+ajuda.resposta2 = We need your information in order to set up the best carpool matches just for you.
+ajuda.resposta3 = After registering, at login screen, enter in the first gap your RDM or the e-mail you''ve used to register and your password in the other below.
+ajuda.resposta4 = Right after registering your account you''ll be at Schedule Registering screen. You can at any time edit your schedule by accessing it from the lateral menu "Schedule.
+ajuda.resposta5 = Having your schedule done, in the Home screen click on "Search Carpool" and you'll find the carpool that best suits your schedule.
+ajuda.resposta6 = Having your schedule done, in the Home screen click on "Offer Carpool" and define the day, time and destination type to publish your carpool.
+ajuda.resposta7 = If someone is asking to participate in your carpool, you''ll be notified and you can accept or refuse the request it on Requests page, accessible by the lateral menu or clicking on that notification.
+ajuda.resposta8 = On the upper menu, at the right, the second button gives you the choice to choose the language you prefer to set.
+ajuda.resposta9 = At the right, when at any screen you can check all the carpools you''re currently in.

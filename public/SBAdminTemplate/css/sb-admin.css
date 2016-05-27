@@ -91,17 +91,47 @@ body {
     margin-top: 0;
     padding: 10px 10px 10px 10px;
     border: 1px solid rgba(0,0,0,.15);
+<<<<<<< HEAD
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+=======
+>>>>>>> master
     background-color: #fff;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 
-.top-nav>.open>.dropdown-menu>li>a {
-    white-space: normal;
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.6s;
+    -moz-transition: all 0.6s;
+    -ms-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    transition: all 0.6s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown.open .dropdown-menu {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    min-width: 250px;
+    position: absolute;
+    margin-top: 0;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid rgba(0,0,0,.15);
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+
 }
 
 ul.message-dropdown {
@@ -113,7 +143,6 @@ ul.message-dropdown {
 }
 
 li.message-preview {
-    width: 300px;
     border-bottom: 1px solid rgba(0,0,0,.15);
 }
 
@@ -470,4 +499,9 @@ tr td:last-child,
 tr th:last-child {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
 }

@@ -15,6 +15,7 @@ import models.Carona;
 import models.Horario;
 import models.TipoCarona;
 import models.Usuario;
+import play.mvc.Controller;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import sistemas.tiposBuscas.BuscaDefault;
@@ -39,7 +40,7 @@ public class SistemaCarona{
 	
 	public List<Carona> buscarCaronasDefault () {
 		setTipoBusca(new BuscaDefault());
-		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login"));
 		List<Horario> horariosIda = usuarioLogado.getHorariosIda();
 		List<Horario> horariosVolta = usuarioLogado.getHorariosVolta();
 		
@@ -78,7 +79,8 @@ public class SistemaCarona{
     }
     
     private void adicionaCarona(Carona carona) throws CaronaJaCadastradaException {
-    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
+
+    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login")).getCaronas();
     	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
     	      caronasUsuarioLogado.add(carona);
     	}else
@@ -96,7 +98,7 @@ public class SistemaCarona{
     }
 
     public Carona removeCarona(Long id) {
-    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado().getCaronas();
+    	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login")).getCaronas();
     	int pos = buscarIndiceCaronaPorId(id);
     	if (pos == -1)
     		return null;

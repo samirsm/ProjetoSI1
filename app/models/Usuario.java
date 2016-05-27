@@ -2,6 +2,8 @@ package models;
 
 import javax.persistence.*;
 
+
+import com.avaje.ebean.Model;
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
 import exceptions.BairroJaCadastradoException;
@@ -10,6 +12,7 @@ import exceptions.HorarioJaCadastradoException;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import sistemas.mensagens.Idioma;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,13 +44,13 @@ public class Usuario extends Model {
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Horario> horarios = new ArrayList<Horario>();
-
 	@Column
 	private boolean horariosCadastrados;
 
 	public static Finder<Long, Usuario> find = new Finder<>(Usuario.class);
 
 	public Usuario(){}
+
 	public Usuario(Dados dados, Endereco endereco, Integer numeroVagas) throws DadosInvalidosException {
 		if(endereco == null)
 			throw new DadosInvalidosException("O endereco enviado eh invalido.");
@@ -57,8 +60,6 @@ public class Usuario extends Model {
 		this.dadosPessoais = dados;
 		this.setEndereco(endereco);
 		this.setEnderecoAlternativo(endereco);
-		this.notificacoesNaoLidas = new ArrayList<>();
-		//setId();
 	}
 
 	public Long getId() {
@@ -82,6 +83,7 @@ public class Usuario extends Model {
 		} else {
 			return null;
 		}
+
 	}
 
 	///// Notificações/////
@@ -162,10 +164,16 @@ public class Usuario extends Model {
 	public String getNome() {
 		return dadosPessoais.getNome();
 	}
+	
+	public String getPrimeiroNome(){
+	  String [] nome = this.getNome().split(" ");
+	  return nome[0];
+	}
 
 	public Dados getDadosUsuario() {
 		return dadosPessoais;
 	}
+
 
 	public void setNome(String nome) {
 		dadosPessoais.setNome(nome);
@@ -212,6 +220,7 @@ public class Usuario extends Model {
 
 	public Integer getNumeroVagas() {
 		return numeroVagas;
+
 	}
 
 	///// FIM GETS e SETS de infos /////
@@ -294,6 +303,25 @@ public class Usuario extends Model {
 	public void setIdioma(Idioma id){
 		idioma = id;
 	}
+	
+	public void setIdioma(String id){
+		switch (id) {
+		case "pt":
+			setIdioma(Idioma.PORTUGUES);
+			break;
+		case "es":
+			setIdioma(Idioma.ESPANOL);
+			break;
+		case "en":
+			setIdioma(Idioma.ENGLISH);
+			break;
+		case "it":
+			setIdioma(Idioma.ITALIANO);
+			break;
+		default:
+			break;
+		}
+	}
 
 	/// FIM Idioma /////
 
@@ -313,6 +341,5 @@ public class Usuario extends Model {
 	public String toString() {
 		return getNome() + "[" + dadosPessoais.toString() + "]";
 	}
-
 
 }

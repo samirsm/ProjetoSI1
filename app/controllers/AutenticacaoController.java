@@ -34,42 +34,40 @@ import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
+import sistemas.mensagens.Idioma;
+import sistemas.mensagens.MensagensSistema;
 import views.html.*;
 
 public class AutenticacaoController extends Controller {
 	private FormFactory formFactory;
 	private LoggerSistema loggerAutenticacao;
-	
+
 	@Inject
-	public AutenticacaoController (FormFactory formFactory){
+	public AutenticacaoController (FormFactory formFactory, CacheApi cache){
 		this.formFactory = formFactory;
 		loggerAutenticacao = new LoggerSistema();
 	}
 	
 	public Result efetuaLogin(){
 		Usuario usuarioLogado = null;
-		
+
 		try {
 			usuarioLogado = autenticaUsuario();
-			loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
-
-			if (usuarioLogado == null) 
+			if (usuarioLogado == null)
 				throw new LoginInvalidoException();
 		} catch (DadosInvalidosException | LoginInvalidoException e) {
 			loggerAutenticacao.registraAcao(Acao.INFO, e.getMessage());
 			flash("erro", e.getMessage());
-            return redirect(routes.HomeController.index());
+			return redirect(routes.HomeController.login());
 		}
-
 		loggerAutenticacao.registraAcao(Acao.AUTENTICA_USUARIO, usuarioLogado.toString());
-		flash("sucesso", "Usuario cadastrado com sucesso.");
 
 		return verificaPrimeiroAcessoUsuario(usuarioLogado);
 	}
 
 	public Result cadastraUsuario() {
 		DynamicForm requestData = formFactory.form().bindFromRequest();
-		
+
 		String nome = requestData.get("nome");
 		String matricula = requestData.get("matricula");
 		String email = requestData.get("email");
@@ -77,10 +75,10 @@ public class AutenticacaoController extends Controller {
 		String numeroDeTelefone = requestData.get("numeroDeTelefone");
 		String rua = requestData.get("rua");
 		String bairro = requestData.get("bairro");
-		
+
 		Dados dadosPessoais;
 		Endereco endereco;
-		
+
 		try{
 			if(requestData.hasErrors())
 				throw new Exception();
@@ -88,59 +86,64 @@ public class AutenticacaoController extends Controller {
 			endereco = new Endereco(rua, bairro);
 			endereco.save();
 		}catch(Exception e){
+			loggerAutenticacao.registraAcao(Acao.ERRO, "divisor de erro - save endereço acima");
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			flash("erro", e.getMessage());
-            return redirect(routes.HomeController.index());		
+			return redirect(routes.HomeController.login());		
         }
-		
+
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString());
-		
 		Integer numeroVagas;
-		
+
 		try{
 			numeroVagas = Integer.parseInt(requestData.get("numeroVagas"));
 		} catch (Exception e){
-			numeroVagas = new Integer(-1);
+			numeroVagas = new Integer(0);
 		}
-        
+
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
-		
+
 		try{
-			Usuario user = SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
-			user.save();
-			loggerAutenticacao.registraAcao(Acao.USUARIO_CADASTRADO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
-			flash("success", "Usuario cadastrado com sucesso!");
+
+		Usuario user = SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
+		user.save();
 		} catch (UsuarioJaExistenteException | DadosInvalidosException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			flash("erro", e.getMessage());
-		}finally {
-			return redirect(routes.HomeController.index());
-			}
 
-       }
-	
+			return redirect(routes.HomeController.login());
+		}
+
+		loggerAutenticacao.registraAcao(Acao.USUARIO_CADASTRADO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
+
+		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
+		flash("success", MensagensSistema.CADASTRO_SUCESSO[idioma.ordinal()]);
+		return redirect(routes.HomeController.login());
+	}
+
 	public Result efetuaLogout(){
-		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado().toString());
+		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login")).toString());
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
+
+		session().clear();
+
 		return redirect(routes.HomeController.index());
 	}
 
 	private Usuario autenticaUsuario() throws DadosInvalidosException, LoginInvalidoException{
 		DynamicForm requestData = formFactory.form().bindFromRequest();
-		String login = requestData.get("matricula");
-		String email = login; // O usuário pode digitar um dos dois no mesmo campo
+		String login = requestData.get("login");
 		String senha = requestData.get("senha");
-		
-		
+
 		if (requestData.hasErrors())
 			throw new DadosInvalidosException();
 		
 		session("login", login);
 		session("userTime", Long.toString(new Date().getTime()));
 		
-		SistemaUsuarioLogin.getInstance().efetuaLogin(login, email, senha);
+		SistemaUsuarioLogin.getInstance().efetuaLogin(login, senha);
 
-		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado();
+		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
 		return usuarioLogado;
 	}

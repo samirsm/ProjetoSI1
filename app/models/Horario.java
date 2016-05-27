@@ -4,6 +4,7 @@ import com.avaje.ebean.Model;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.*;
 import javax.persistence.*;
+		import play.mvc.Controller;
 
 @Entity
 public class Horario extends Model{
@@ -19,7 +20,6 @@ public class Horario extends Model{
 	private TipoCarona tipo;
 	@Transient
 	private final String[][] dias = {MensagensSistema.SEGUNDA, MensagensSistema.TERCA, MensagensSistema.QUARTA, MensagensSistema.QUINTA, MensagensSistema.SEXTA};
-
 	public static Finder<Long, Horario> find = new Finder<>(Horario.class);
 
 	public Horario(){}
@@ -39,16 +39,22 @@ public class Horario extends Model{
 	}
 
 	public String getDia() {
-        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
 		return dias[dia - 2][idioma.ordinal()];
 	}
+	
+	public String getDiaAbreviado() {
+      Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
+      String str =  (dias[dia - 2][idioma.ordinal()]).substring(0,3);
+      return str;
+  }
 
     public int getNumeroDia(){
         return this.dia;
     }
 
 	public void setDia(String dia) {
-        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
+        Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
         for(int i =0; i < 5; i++) {
             if (dia.equals(dias[i][idioma.ordinal()]))
                 this.dia = i + 2;
