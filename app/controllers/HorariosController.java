@@ -23,6 +23,8 @@ import sistemas.SistemaUsuarioLogin;
 import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import views.html.*;
+import sistemas.mensagens.*;
+import javax.persistence.OptimisticLockException;
 
 public class HorariosController extends Controller {
 	
@@ -40,11 +42,16 @@ public class HorariosController extends Controller {
 	    formularioHorario = this.formFactory.form(Horario.class);
 
 	}
-	
-	@Security.Authenticated(Secured.class)
+
+    @Security.Authenticated(Secured.class)
 	public Result cadastraHorarios(){
        SistemaUsuarioLogin.getInstance().cadastrouHorarios(session("login"));
        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
+        try{
+            usuarioLogado.save();
+        }catch(OptimisticLockException e){
+            usuarioLogado.update();
+        }
        loggerHorarios.registraAcao(Acao.CADASTROU_HORARIOS, usuarioLogado.getHorariosIda().toString(), usuarioLogado.getHorariosVolta().toString());
        return redirect(routes.HomeController.index());
 		
@@ -83,37 +90,33 @@ public class HorariosController extends Controller {
         flash("erro", e.getMessage());
         return redirect(routes.HomeController.editaHorarios());
       }
-      flash("success", "Endereco cadastrado com sucesso!");
+        Idioma idioma = usuarioLogado.getIdioma();
+      flash("success", MensagensSistema.ENDERECO_CADASTRADO[idioma.ordinal()]);
       return redirect(routes.HomeController.editaHorarios());
   	}
-	
-	@Security.Authenticated(Secured.class)
+
+    @Security.Authenticated(Secured.class)
 	public Result excluiHorarioVolta(String dia, Integer hora){
 	  Horario horario = new Horario(dia, hora);
-      Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
-      usuarioLogado.removeHorarioVolta(horario);
-      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+      usuarioLogado.removeHorario(horario);
+        return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 	}
-	
-	@Security.Authenticated(Secured.class)
+
+    @Security.Authenticated(Secured.class)
 	public Result excluiHorarioIda(String dia, Integer hora){
       Horario horario = new Horario(dia, hora);
-      Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
+        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
       List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
-      usuarioLogado.removeHorarioIda(horario);
-      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+      usuarioLogado.removeHorario(horario);
+        return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
     }
-	
 
+    @Security.Authenticated(Secured.class)
 	private TipoCarona getTipo(String tipo){
 	      if (tipo.equals("ida")) return TipoCarona.IDA;
 	      else return TipoCarona.VOLTA;
 	  }
-	
-	
-	
-	
-	
-	
+
 }

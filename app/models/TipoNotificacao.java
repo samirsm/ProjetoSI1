@@ -13,7 +13,6 @@ public enum TipoNotificacao {
 	BOASVINDAS(MensagensSistema.BEM_VINDO),
 	AVISO(MensagensSistema.AVISO);
 
-
 	private String[] mensagemNotificacao;
 	
 	private TipoNotificacao (String[] mensagem){

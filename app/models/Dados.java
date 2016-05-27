@@ -5,23 +5,32 @@ import com.avaje.ebean.Model;
 import exceptions.DadosInvalidosException;
 import play.data.validation.Constraints;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Dados extends Model{
 	@Constraints.Required(message = "Insira um nome válido.")
+	@Column
 	private String nome;
 	
 	@Constraints.Required(message = "Insira uma matrícula válida.")
+	@Column
 	private String matricula;
 	
 	@Constraints.Required(message = "Insira um email válido.")
+	@Column
 	@Constraints.Email
 	private String email;
 	
 	@Constraints.Required(message = "Insira uma senha válida.")
 	@Constraints.MinLength(6)
 	@Constraints.MaxLength(28)
+	@Column
 	private String senha;
 	
 	@Constraints.Required(message = "Insira um número de telefone válido.")
+	@Column
 	private String numeroDeTelefone;
 	
 	public Dados(String matricula, String email, String senha) throws DadosInvalidosException {

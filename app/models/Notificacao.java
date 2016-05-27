@@ -1,7 +1,6 @@
 package models;
  
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import com.avaje.ebean.Model;
 import exceptions.DadosInvalidosException;
 import sistemas.SistemaUsuarioLogin;
@@ -10,19 +9,25 @@ import play.mvc.Controller;
 
 @Entity
 public class Notificacao extends Model{
-   
-    private Usuario usuarioOrigem;
-    private Carona carona;
-    private String mensagem;
-    private TipoNotificacao tipo;
-    private boolean status;
- 
     @Id
+    @GeneratedValue
     private Long id;
- 
-    public Notificacao(Usuario usuarioOrigem, Carona carona, TipoNotificacao tipo){
+    @OneToOne
+    private Usuario usuario;
+    @OneToOne
+    private Carona carona;
+    @Column
+    private String mensagem;
+    @Enumerated(EnumType.ORDINAL)
+    private TipoNotificacao tipo;
+    @Column
+    private boolean status;
+
+    public Notificacao(){}
+
+    public Notificacao(Usuario usuario, Carona carona, TipoNotificacao tipo){
         this.carona = carona;
-        this.usuarioOrigem = usuarioOrigem;
+        this.usuario = usuario;
         this.tipo = tipo;
         geraMensagem(tipo);
         this.status = false;
@@ -30,15 +35,16 @@ public class Notificacao extends Model{
     }
 
     public Notificacao(Usuario usuarioOrigem, TipoNotificacao tipo){
-        this.usuarioOrigem = usuarioOrigem;
+        this.usuario = usuarioOrigem;
         this.tipo = tipo;
         geraMensagem(tipo);
         this.status = false;
         setId();
     }
 
+
     public Notificacao(String texto){ //Notificação genérica
-        this.usuarioOrigem = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login"));
+        this.usuario = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login"));
         this.tipo = TipoNotificacao.AVISO;
         mensagem = texto;
         this.status = false;
@@ -56,8 +62,9 @@ public class Notificacao extends Model{
         return id;
     }
  
+
     public Usuario getUsuarioOrigem() {
-        return usuarioOrigem;
+        return usuario;
     }
  
     public Carona getCarona() {
@@ -72,7 +79,7 @@ public class Notificacao extends Model{
         if(tipo == TipoNotificacao.IDIOMA || tipo == TipoNotificacao.BOASVINDAS || tipo == TipoNotificacao.AVISO)
             mensagem = tipo.getMessage() + Strings.LINE_SEPARATOR;
         else
-            mensagem = usuarioOrigem.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
+            mensagem = usuario.getNome() + tipo.getMessage() + Strings.LINE_SEPARATOR;
     }
 
     public String getMensagem() {
@@ -80,7 +87,7 @@ public class Notificacao extends Model{
     }
 
     private void setId(){
-        double idTemp = Integer.parseInt(usuarioOrigem.getDadosUsuario().getMatricula()) * Math.random() * 11;
+        double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
         idTemp %= 1;
         idTemp *= 100000;
         id = (long) idTemp;

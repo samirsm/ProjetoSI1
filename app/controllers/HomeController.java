@@ -42,7 +42,7 @@ public class HomeController extends Controller {
 	}
 
 	// Mudar esse método para efetuar a verificação do Usuario Logado.
-	
+
 	@Security.Authenticated(Secured.class)
 	public Result index(){
 
@@ -51,7 +51,7 @@ public class HomeController extends Controller {
 
 		return exibePagina();
 	}
-	
+
 	public Result redefineIdioma(Integer id) {
 		Idioma idioma = Idioma.values()[id - 1];
 		session("idioma", idioma.getId());
@@ -60,22 +60,22 @@ public class HomeController extends Controller {
 		if(usuarioLogado != null){
 			SistemaUsuarioLogin.getInstance().setIdioma(session("login"), idioma);
 			usuarioLogado.getNotificacoesNaoLidas().clear();
-            for(Notificacao not : usuarioLogado.getNotificacoesNaoLidas()){
-                if(not.getTipo() == TipoNotificacao.IDIOMA)
-                    usuarioLogado.leNotificacao(not);
-            }
-            usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
+			for(Notificacao not : usuarioLogado.getNotificacoesNaoLidas()){
+				if(not.getTipo() == TipoNotificacao.IDIOMA)
+					usuarioLogado.leNotificacao(not);
+			}
+			//usuarioLogado.recebeNotificacao(new Notificacao(usuarioLogado, TipoNotificacao.IDIOMA));
 
 		}
 		return redirect(routes.HomeController.index());
 	}
 
-	
+
 	@Security.Authenticated(Secured.class)
 	public Result editaHorarios(){
-	  Usuario usuarioLogado = getUsuarioLogado();
-      List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
-      return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
+		Usuario usuarioLogado = getUsuarioLogado();
+		List<Notificacao> notificacaoes = usuarioLogado.getNotificacoesNaoLidas();
+		return ok(telaCadastroHorario.render(usuarioLogado, formularioHorario, usuarioLogado.getHorariosIda(), usuarioLogado.getHorariosVolta(), bairros, notificacaoes));
 
 
 	}
@@ -92,7 +92,7 @@ public class HomeController extends Controller {
 		if (!isLogado())
 			return login();
 		else if(!getUsuarioLogado().isHorariosCadastrados()){
-		  return editaHorarios();
+			return editaHorarios();
 		}else if(isLogado() && !getUsuarioLogado().isHorariosCadastrados()){
 			List<Notificacao> notificacaoes = getUsuarioLogado().getNotificacoesNaoLidas();
 			return ok(telaCadastroHorario.render(getUsuarioLogado(), formularioHorario, getUsuarioLogado().getHorariosIda(), getUsuarioLogado().getHorariosVolta(), bairros, notificacaoes));
@@ -103,21 +103,21 @@ public class HomeController extends Controller {
 		}
 	}
 
-	
+
 	private boolean isLogado(){
 		return getUsuarioLogado() != null;
 	}
-	
+
 	private Usuario getUsuarioLogado(){
 		return SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
 	}
-	
+
 	public Result login(){
 		if(session().get("idioma") == null){
 			ctx().changeLang(Idioma.PORTUGUES.getId());
 			session("idioma", Idioma.PORTUGUES.getId());
 		}
-		
+
 		return ok(telaLoginCadastro.render(formularioDadosPessoaisUsuario, formularioEndereco, bairros));
 	}
 

@@ -2,29 +2,38 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
+import javax.inject.Inject;
+import javax.persistence.*;
 import com.avaje.ebean.Model;
-
 import sistemas.mensagens.Strings;
 
 @Entity
 public class Carona extends Model {
 	
 	@Id
+	@GeneratedValue
 	private Long id;
-	
+	@Column
 	private int vagasDisponiveis;
-	private Usuario motorista;
+	@ManyToOne
+	private Usuario usuario;
+	@ManyToMany
+//	@JoinTable(name = "passageiros")
 	private List<Usuario> passageiros;
+	@ManyToMany
+//	@JoinTable(name = "solicitantes")
 	private List<Usuario> solicitantes;
+	@OneToOne
 	private Horario horario;
+	@Enumerated(EnumType.STRING)
 	private TipoCarona tipo;
 
+	public static Finder<Long, Carona> find = new Finder<>(Carona.class);
+
+	@Inject
+	public Carona(){}
 	public Carona(Usuario motorista, Horario horario, TipoCarona tipo, int numeroDeVagas) {
-		this.motorista = motorista;
+		this.usuario = motorista;
 		this.horario = horario;
 		this.tipo = tipo;
 		this.vagasDisponiveis = numeroDeVagas;
@@ -68,7 +77,7 @@ public class Carona extends Model {
 		return vagasDisponiveis;
 	}
 	public Usuario getMotorista() {
-		return motorista;
+		return usuario;
 	}
 	public List<Usuario> getPassageiros() {
 		return passageiros;
@@ -81,7 +90,7 @@ public class Carona extends Model {
 	}
 	
 	public String getBairro () {
-		return motorista.getEndereco().getBairro();
+		return usuario.getEndereco().getBairro();
 	}
 	
 	@Override
@@ -90,20 +99,20 @@ public class Carona extends Model {
 			return false;
 		Carona outraCarona = (Carona) objeto;
 		
-		return motorista.equals(outraCarona.getMotorista())
+		return usuario.equals(outraCarona.getMotorista())
 				&& tipo.equals(outraCarona.getTipo()) &&
 				horario.equals(outraCarona.getHorario());
 	}
 	
 	@Override
 	public String toString() {
-		return "Motorista: " + motorista + Strings.LINE_SEPARATOR
+		return "Motorista: " + usuario + Strings.LINE_SEPARATOR
 				+ " Horario: " + horario.toString();
 
 	}
 
 	private void setId(){
-		double idTemp = Integer.parseInt(motorista.getDadosUsuario().getMatricula()) * Math.random() * 11;
+		double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
 		idTemp %= 1;
 		idTemp *= 100000;
 		id = (long) idTemp;

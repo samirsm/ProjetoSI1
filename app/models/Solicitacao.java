@@ -3,24 +3,31 @@ package models;
 import com.avaje.ebean.Model;
 import sistemas.mensagens.Strings;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.inject.Inject;
+import javax.persistence.*;
 
 @Entity
 public class Solicitacao extends Model{
-
-    private Usuario solicitante;
+    @Id
+    @Column
+    private Long id;
+    @OneToOne
+    private Usuario usuario;
+    @OneToOne
     private Carona carona;
+    @Column
     private String mensagem;
+    @Column
     private boolean status;
+    @OneToOne(cascade = CascadeType.ALL)
     private Notificacao notificacaoAssociada;
 
-    @Id
-    private Long id;
-
-    public Solicitacao(Usuario solicitante, Carona carona){
+    @Inject
+    public Solicitacao(){}
+    public Solicitacao(Usuario usuario, Carona carona){
         this.carona = carona;
-        this.solicitante = solicitante;
+        this.usuario = usuario;
+
         geraMensagem();
         setId();
     }
@@ -35,9 +42,9 @@ public class Solicitacao extends Model{
     public Long getId() {
         return id;
     }
- 
+
     public Usuario getSolicitante() {
-        return solicitante;
+        return usuario;
     }
  
     public Carona getCarona() {
@@ -45,7 +52,7 @@ public class Solicitacao extends Model{
     }
 
     private void setId(){
-        double idTemp = Integer.parseInt(solicitante.getDadosUsuario().getMatricula()) * Math.random() * 11;
+        double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
         idTemp %= 1;
         idTemp *= 100000;
         id = (long) idTemp;
@@ -61,7 +68,7 @@ public class Solicitacao extends Model{
     }
 
     private void geraMensagem() {
-        mensagem = solicitante.getNome() + TipoNotificacao.PEDIDO.getMessage() + Strings.LINE_SEPARATOR;
+        mensagem = usuario.getNome() + TipoNotificacao.PEDIDO.getMessage() + Strings.LINE_SEPARATOR;
     }
 
     public String getMensagem() {

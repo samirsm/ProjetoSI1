@@ -2,39 +2,54 @@ package models;
 
 import javax.persistence.*;
 
-import com.avaje.ebean.Model;
 
+import com.avaje.ebean.Model;
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.Model;
 import exceptions.BairroJaCadastradoException;
 import exceptions.DadosInvalidosException;
 import exceptions.HorarioJaCadastradoException;
+import sistemas.logger.LoggerSistema;
+import sistemas.logger.registrosAcoes.Acao;
 import sistemas.mensagens.Idioma;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+@Entity
 public class Usuario extends Model {
-
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Embedded
 	private Dados dadosPessoais;
+	@OneToOne
 	private Endereco enderecoAlternativo;
+	@OneToOne
 	private Endereco endereco;
-	private final Integer numeroVagas;
-	private List<Carona> caronas = new ArrayList<>();
-
-	private List<Carona> caronasPendentes = new ArrayList<>();
+	@Column
+	private Integer numeroVagas;
+	@Enumerated(EnumType.STRING)
 	private Idioma idioma = Idioma.PORTUGUES;
-
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Carona> caronas = new ArrayList<Carona>();
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Carona> caronasPendentes = new ArrayList<Carona>();
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
-
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
-
-	private List<Horario> horariosIda = new ArrayList<>();
-	private List<Horario> horariosVolta = new ArrayList<>();
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Horario> horarios = new ArrayList<Horario>();
+	@Column
 	private boolean horariosCadastrados;
 
+	public static Finder<Long, Usuario> find = new Finder<>(Usuario.class);
 
-	@Id
-	private Long id;
+	public Usuario(){}
 
 	public Usuario(Dados dados, Endereco endereco, Integer numeroVagas) throws DadosInvalidosException {
 		if(endereco == null)
@@ -45,19 +60,31 @@ public class Usuario extends Model {
 		this.dadosPessoais = dados;
 		this.setEndereco(endereco);
 		this.setEnderecoAlternativo(endereco);
-		setId();
 	}
 
 	public Long getId() {
 		return id;
 	}
-	private void setId(){
-		id = (long) dadosPessoais.getMatricula().hashCode();
-	}
+
 	public String getEnderecoPerfil(){
 		return "perfil?id=" + this.getId();
 	}
 
+	public static Usuario authenticate(String matricula, String email, String password) {
+		Usuario usuario = find.where().eq("email", email).findUnique();
+		if (usuario == null) {
+			usuario = find.where().eq("matricula", matricula).findUnique();
+			if (usuario == null){
+				 return null;
+			}
+		}
+		if (password.equals(usuario.getDadosUsuario().getSenha())) {
+			return usuario;
+		} else {
+			return null;
+		}
+
+	}
 
 	///// Notificações/////
 	public boolean recebeNotificacao(Notificacao notificacao) {
@@ -147,6 +174,7 @@ public class Usuario extends Model {
 		return dadosPessoais;
 	}
 
+
 	public void setNome(String nome) {
 		dadosPessoais.setNome(nome);
 	}
@@ -188,27 +216,59 @@ public class Usuario extends Model {
 			throw new BairroJaCadastradoException();
 		} else
 			setEnderecoAlternativo(enderecoNovo);
-
-
 	}
 
 	public Integer getNumeroVagas() {
 		return numeroVagas;
+
 	}
 
 	///// FIM GETS e SETS de infos /////
 
 
 
-
 	/////  Horarios /////
 
 	public List<Horario> getHorariosIda() {
-		return horariosIda;
+		List<Horario> ida = new ArrayList<>();
+		for (Horario h: horarios)
+			if (h.getTipo() == TipoCarona.IDA)
+				ida.add(h);
+		return ida;
 	}
 
 	public List<Horario> getHorariosVolta() {
-		return horariosVolta;
+		List<Horario> volta = new ArrayList<>();
+		for (Horario h: horarios)
+			if (h.getTipo() == TipoCarona.VOLTA)
+				volta.add(h);
+		return volta;
+	}
+
+	public boolean adicionarHorario(Horario novoHorario){
+		return horarios.add(novoHorario);
+	}
+
+	public boolean adicionarHorario(String dia, int hora, TipoCarona tipo) throws HorarioJaCadastradoException{
+		Horario novoHorario = new Horario(dia, hora, tipo);
+		if (isHorarioLivre(novoHorario)){
+			return adicionarHorario(novoHorario);
+		}
+		return false;
+	}
+
+	public boolean removeHorario(String dia, int hora, TipoCarona tipo){
+		Horario horario = new Horario(dia, hora, tipo);
+		return removeHorario(horario);
+	}
+
+	public boolean removeHorario(Horario horario){
+		for (Horario h: horarios) {
+			if (h.equals(horario)) {
+				return horarios.remove(h);
+			}
+		}
+		return false;
 	}
 
 	public boolean isHorariosCadastrados() {
@@ -222,66 +282,8 @@ public class Usuario extends Model {
 	private void setHorariosCadastrados(boolean cadastrouHorarios) {
 		horariosCadastrados = cadastrouHorarios;
 	}
-
-	public boolean adicionarHorarioIda(String dia, int hora) throws HorarioJaCadastradoException {
-		Horario novoHorario = new Horario(dia, hora);
-		if (isHorarioLivre(novoHorario))
-			return horariosIda.add(novoHorario);
-		return false;
-
-	}
-
-	public boolean removeHorarioVolta(String dia, int hora){
-		Horario horario = new Horario(dia,hora);
-		return removeHorarioVolta(horario);
-	}
-
-	public boolean removeHorarioVolta(Horario horario){
-		if(horariosVolta.contains(horario)){
-			return horariosVolta.remove(horario);
-		} else{
-			return false;
-		}
-	}
-
-	public boolean removeHorarioIda(String dia, int hora){
-		Horario horario = new Horario(dia,hora);
-		return removeHorarioIda(horario);
-	}
-
-	public boolean removeHorarioIda(Horario horario){
-		if(horariosIda.contains(horario)){
-			return horariosIda.remove(horario);
-		} else{
-			return false;
-		}
-	}
-
-	public boolean adicionarHorarioIda(Horario horario) throws HorarioJaCadastradoException{
-		if(isHorarioLivre(horario))
-			return horariosIda.add(horario);
-		return false;
-	}
-
-	public boolean adicionarHorarioVolta(String dia, int hora) throws HorarioJaCadastradoException {
-		Horario novoHorario = new Horario(dia, hora);
-		if (isHorarioLivre(novoHorario))
-			return horariosIda.add(novoHorario);
-		return false;
-	}
-
-	public boolean adicionarHorarioVolta(Horario horario) throws HorarioJaCadastradoException {
-		if (isHorarioLivre(horario))
-			return horariosVolta.add(horario);
-		return false;
-	}
-
 	private boolean isHorarioLivre(Horario novoHorario) throws HorarioJaCadastradoException {
-		for (Horario horario : horariosIda) {
-			if (horario.equals(novoHorario))
-				throw new HorarioJaCadastradoException();
-		}
-		for (Horario horario : horariosVolta) {
+		for (Horario horario : horarios) {
 			if (horario.equals(novoHorario))
 				throw new HorarioJaCadastradoException();
 		}
@@ -339,6 +341,5 @@ public class Usuario extends Model {
 	public String toString() {
 		return getNome() + "[" + dadosPessoais.toString() + "]";
 	}
-
 
 }

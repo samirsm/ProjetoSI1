@@ -1,6 +1,5 @@
 package exceptions;
 
-import play.mvc.Controller;
 import sistemas.SistemaUsuarioLogin;
 import sistemas.mensagens.Idioma;
 import sistemas.mensagens.MensagensSistema;
@@ -18,7 +17,7 @@ public class HorarioJaCadastradoException extends Exception {
 	}
 
 	private static String setup(){
-		Idioma idioma = Idioma.defineIdioma(Controller.session().get("idioma"));
+		Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma();
 		return MensagensSistema.HORARIO_JA_CADASTRADO[idioma.ordinal()];
 	}
 }

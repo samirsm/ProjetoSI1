@@ -1,6 +1,5 @@
 package controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -27,8 +26,8 @@ public class NotificacoesController extends Controller{
         return ok(telaDeSolicitacoes.render(user, solicitacoes));
     }
 
-
     @Security.Authenticated(Secured.class)
+
     public Result leNotificacao(Long idNotificacao){
         Notificacao notificacao = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idNotificacao);
         SistemaNotificacao.getInstance().leNotificacao(notificacao);

@@ -91,6 +91,13 @@ body {
     margin-top: 0;
     padding: 10px 10px 10px 10px;
     border: 1px solid rgba(0,0,0,.15);
+<<<<<<< HEAD
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+=======
+>>>>>>> master
     background-color: #fff;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);

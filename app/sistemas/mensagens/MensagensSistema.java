@@ -124,10 +124,15 @@ public class MensagensSistema {
 			"Solicitación rechazada. El pasajero será notificado.",
 			"Solicitazione rifutata. Il passeggero sarà nofificato."};
 
-	public static final String[] PEDIDO_EFETUADO = {"Carona solcitada com sucesso. O motorista será notificado.",
-			"Request refused. The passenger will be notified.",
-			"Solicitación rechazada. El pasajero será notificado.",
-			"Solicitazione rifutata. Il passeggero sarà nofificato."};
+	public static final String[] PEDIDO_EFETUADO = {"Carona solicitada com sucesso. O motorista será notificado.",
+			"Carpool request successful. The driver will be notified.",
+			"Aventón solicitado con suceso. El motorista será notificado.",
+			"Passaggio richiesto con successo. Il guidante sarà nofificato."};
+
+	public static final String[] ENDERECO_CADASTRADO = {"Novo endereço cadastrado com sucesso.",
+			"New address successfully registered.",
+			"Nueva dirección registrada con suceso.",
+			"Nuovo inderizzo registrato con successo."};
 	//
 	
 	//Mensagens menores

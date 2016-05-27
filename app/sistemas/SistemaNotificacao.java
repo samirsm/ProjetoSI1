@@ -35,10 +35,10 @@ public class SistemaNotificacao {
 
     public Notificacao buscarNotificacaoPorId(Long id){
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login"));
-
         int i = buscarIndiceNotificacaoPorId(id);
         return usuarioLogado.getNotificacoesNaoLidas().get(i);
     }
+
     private int buscarIndiceNotificacaoPorId(Long id) {
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login"));
 
@@ -71,7 +71,6 @@ public class SistemaNotificacao {
 
     public List<Notificacao> getNotificacoesNaoLidas() {
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login"));
-
         return usuarioLogado.getNotificacoesNaoLidas();
     }
 

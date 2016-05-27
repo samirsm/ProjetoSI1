@@ -11,6 +11,7 @@ import models.Usuario;
 import play.cache.CacheApi;
 import play.data.DynamicForm;
 import play.data.FormFactory;
+import play.db.ebean.Transactional;
 import play.libs.oauth.OAuth;
 import play.libs.oauth.OAuth.ConsumerKey;
 import play.libs.oauth.OAuth.ServiceInfo;
@@ -46,7 +47,7 @@ public class AutenticacaoController extends Controller {
 		this.formFactory = formFactory;
 		loggerAutenticacao = new LoggerSistema();
 	}
-
+	
 	public Result efetuaLogin(){
 		Usuario usuarioLogado = null;
 
@@ -83,14 +84,15 @@ public class AutenticacaoController extends Controller {
 				throw new Exception();
 			dadosPessoais = new Dados(nome, matricula, email, senha, numeroDeTelefone);
 			endereco = new Endereco(rua, bairro);
+			endereco.save();
 		}catch(Exception e){
+			loggerAutenticacao.registraAcao(Acao.ERRO, "divisor de erro - save endereço acima");
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			flash("erro", e.getMessage());
 			return redirect(routes.HomeController.login());		
         }
 
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString());
-
 		Integer numeroVagas;
 
 		try{
@@ -102,24 +104,27 @@ public class AutenticacaoController extends Controller {
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
 
 		try{
-			SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
+
+		Usuario user = SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
+		user.save();
 		} catch (UsuarioJaExistenteException | DadosInvalidosException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			flash("erro", e.getMessage());
 
-			return redirect(routes.HomeController.index());
+			return redirect(routes.HomeController.login());
 		}
 
 		loggerAutenticacao.registraAcao(Acao.USUARIO_CADASTRADO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
 
 		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
 		flash("success", MensagensSistema.CADASTRO_SUCESSO[idioma.ordinal()]);
-		return redirect(routes.HomeController.index());
+		return redirect(routes.HomeController.login());
 	}
 
 	public Result efetuaLogout(){
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login")).toString());
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
+
 		session().clear();
 
 		return redirect(routes.HomeController.index());
@@ -136,12 +141,13 @@ public class AutenticacaoController extends Controller {
 		session("login", login);
 		session("userTime", Long.toString(new Date().getTime()));
 		
-		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().efetuaLogin(login, senha);
+		SistemaUsuarioLogin.getInstance().efetuaLogin(login, senha);
 
+		Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
 		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGIN, usuarioLogado.toString());
 		return usuarioLogado;
 	}
-
+	
 	private Result verificaPrimeiroAcessoUsuario(Usuario usuario) {
 		loggerAutenticacao.registraAcao(Acao.VERIFICA_PRIMEIRO_ACESSO, usuario.toString());
 		return redirect(routes.HomeController.index());

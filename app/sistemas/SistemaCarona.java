@@ -1,12 +1,15 @@
 package sistemas;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.Entity;
 
+import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Model;
 
+import com.avaje.ebean.config.dbplatform.LimitOffsetSqlLimiter;
 import exceptions.CaronaJaCadastradaException;
 import models.Carona;
 import models.Horario;
@@ -18,8 +21,7 @@ import sistemas.logger.registrosAcoes.Acao;
 import sistemas.tiposBuscas.BuscaDefault;
 import sistemas.tiposBuscas.TipoBusca;
 
-@Entity
-public class SistemaCarona extends Model {
+public class SistemaCarona{
 	private static final SistemaCarona INSTANCIA = new SistemaCarona();
 	private List<Carona> caronasSistema;
 	private List<Carona> listaCaronasSolicitadas;
@@ -48,7 +50,8 @@ public class SistemaCarona extends Model {
 		
 		LoggerSistema loggerAutenticacao = new LoggerSistema();
 		loggerAutenticacao.registraAcao(Acao.ERRO, horarios.toString());
-		
+		loggerAutenticacao.registraAcao(Acao.ERRO, Arrays.toString(horariosIda.toArray()));
+		loggerAutenticacao.registraAcao(Acao.ERRO, Arrays.toString(horariosVolta.toArray()));
 		listaCaronasSolicitadas = tipo.buscaCaronas(getAllCaronas(), usuarioLogado, horarios, usuarioLogado.getEndereco().getBairro(), usuarioLogado.getEnderecoAlternativo().getBairro()); 
 		
 		return listaCaronasSolicitadas;
@@ -69,13 +72,16 @@ public class SistemaCarona extends Model {
 	}
     
     public List<Carona> getAllCaronas() {
-    	return caronasSistema;
+		caronasSistema = Ebean.createQuery(Carona.class).findList();
+		LoggerSistema log = new LoggerSistema();
+		log.registraAcao(Acao.ERRO, Arrays.toString(caronasSistema.toArray()));
+		return caronasSistema;
     }
     
     private void adicionaCarona(Carona carona) throws CaronaJaCadastradaException {
+
     	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login")).getCaronas();
     	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
-    	      caronasSistema.add(carona);
     	      caronasUsuarioLogado.add(carona);
     	}else
     	  throw new CaronaJaCadastradaException();
@@ -107,6 +113,7 @@ public class SistemaCarona extends Model {
     }
     
     private int buscarIndiceCaronaPorId(Long id) {
+
     	for (int i = 0; i < caronasSistema.size(); i++){
     		if(caronasSistema.get(i).getId().equals(id))
     			return i;
