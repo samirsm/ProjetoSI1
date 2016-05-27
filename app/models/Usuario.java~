@@ -232,7 +232,7 @@ public class Usuario extends Model {
 
 	/////  Horarios /////
 
-	public List<Horario> getHorarios() {
+	public List<Horario> getHorariosIda() {
 		return horarios;
 	}
 

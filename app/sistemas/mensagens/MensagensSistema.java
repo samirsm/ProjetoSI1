@@ -58,10 +58,10 @@ public class MensagensSistema {
 			"Idioma cambiado! Ahora navegas en español.",
 			"La lingua è stata cambiata! Adesso navighi in italiano."};
 
-	public static final String[] BEM_VINDO = {"Bem-vindo ao Vumbora! Possui dúvidas?" + Strings.LINE_SEPARATOR + "Clique aqui para dar uma olhada em nossas FAQ.",
-			"Welcome to Vumbora! Have some doubts?" + Strings.LINE_SEPARATOR + "Click here to check out FAQ section.",
-			"Bienvenido a Vumbora! Tienes dudas?" + Strings.LINE_SEPARATOR + "Clica aquí e dales una mirada en nuestras FAQ.",
-			"Benvenido al Vumbora! Hai dei dubbi?" + Strings.LINE_SEPARATOR + "Clica qui per guardare le nostre FAQ."};
+	public static final String[] BEM_VINDO = {"Bem-vindo ao Vumbora! Publique ou busque já sua carona!",
+			"Welcome to Vumbora! Publish or search your carpool just now!",
+			"Bienvenido a Vumbora! Publica o procura tu aventón ahora!",
+			"Benvenido al Vumbora! Pubblica o cerca il tuo passeggio adesso!"};
 
 	public static final String[] AVISO ={"","","",""};
 	//

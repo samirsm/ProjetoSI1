@@ -51,7 +51,7 @@
         }
 
         function start(){
-
+            return routes.CaronasController.buscarCaronas()
         }
 
         function estouComSorte(){
@@ -105,7 +105,7 @@
                     @if(usuarioLogado.getNumeroVagas() > 0){
                     <button onclick="publicarCaronaBox()"id="botaoPublicar"class="btn btn-warning btn-xl" style="margin-top: 30px; margin-right: 150px;">@Messages("view_usuario.oferecer")</button>
                     } else {
-                    <button onclick="publicarCaronaBox()" class="btn btn-warning btn-xl disabled" style="margin-top: 30px; margin-right: 150px;">@Messages("view_usuario.oferecer")</button>
+                    <button onclick="publicarCaronaBox()" class="btn btn-warning btn-xl disabled" title="Para publicar caronas você deve possuir um veículo" style="margin-top: 30px; margin-right: 150px;">@Messages("view_usuario.oferecer")</button>
                     }
                 </div>
 
@@ -262,22 +262,37 @@
 
                 <!-- /.row -->
 
-                @if((usuarioLogado.getHorariosIda().size() + usuarioLogado.getHorariosVolta().size()) == 0){
+                @if((usuarioLogado.getHorarios().size()) == 0){
                 </br>
                     <div class="panel-heading">
                         @Messages("view_usuario.sem_horarios") <a href="horarios">@Messages("view_usuario.cadastre_horarios")</a>
+                        </br></br>
+                        <img src="assets/SBAdminTemplate/img/semHorarios.png" align="center" height="100px"></i>
                     </div>
                 </br>
                 }
 
-                @if((usuarioLogado.getHorariosIda().size() + usuarioLogado.getHorariosVolta().size()) > 0 && caronasOfertadas.size() == 0){
+                @if(usuarioLogado.getHorarios.size() > 0 && caronasOfertadas.size() == 0){
                 </br>
                     <div class="panel-heading">
                         @Messages("view_usuario.sem_caronas")
+                        </br></br>
+                        <img src="assets/SBAdminTemplate/img/semCaronas.png" align="center" height="100px"></i>
+
                     </div>
                 </br>
                 }
 
+                @if(caronasOfertadas.size() > 0){
+                </br>
+                <div class="panel-heading" style="font-size: large">
+                    @caronasOfertadas.size() @Messages("view_usuario.encontradas")
+                    </br>
+                    <img src="assets/SBAdminTemplate/img/buscarCaronas.png" align="center" height="200px"></i>
+
+                </div>
+                </br>
+                }
 
 
 
@@ -299,7 +314,7 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="65" width="65"></i></br>@carona.getMotorista().getPrimeiroNome()
+                                        <img src=@carona.getMotorista().getEnderecoImagemPerfil() class="img-circle" style="border: 2px solid #888;" height="65" width="65"></i></br>@carona.getMotorista().getPrimeiroNome()
                                     </div>
                                     <div class="col-xs-9" style="margin-top: 30px;">
                                         <div class="row text-bottom">

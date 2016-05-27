@@ -96,7 +96,6 @@ public class Notificacao extends Model{
 
     public String getReferencia(){
         if(tipo == TipoNotificacao.PEDIDO) return "solicitacoes";
-        else if(tipo == TipoNotificacao.BOASVINDAS) return "ajuda";
         else return "leNotificacao?id=" + this.getId();
     }
 }

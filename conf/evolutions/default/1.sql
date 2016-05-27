@@ -66,6 +66,7 @@ create table usuario (
   endereco_alternativo_id   bigint,
   endereco_id               bigint,
   numero_vagas              integer,
+  imagem_perfil             integer,
   idioma                    varchar(9),
   horarios_cadastrados      boolean,
   constraint ck_usuario_idioma check (idioma in ('PORTUGUES','ENGLISH','ESPANOL','ITALIANO')),

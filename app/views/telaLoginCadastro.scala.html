@@ -88,7 +88,9 @@
 			login();
 		}
 
-
+		function selectImagem(imagem) {
+			imagem.borderColor = "#888";
+		}
 
 		window.onload = start;
 	</script>
@@ -96,12 +98,11 @@
 	<link rel="icon" type="img/ico" href="assets/SBAdminTemplate/img/favicon.ico">
 </head>
 <body>
-<br/>
-<img src="assets/CreativeTemplate/img/logo_curso.png" style="margin-left: 20px;">
 
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-5" align="left" style="margin-left: 20px;">
+			<img src="assets/CreativeTemplate/img/logo_curso.png" style="margin-left: 20px; margin-top: 5%">
 			<h1 class="text-faded">
 					<span style="color: #F33"><br/>
        		      <span style="color: #F63">@Messages("tela_login.cabecalho")</span><span style="color: rgba(255,102,51,0.7)"><span style="color: rgba(255,51,51,0.7)"> </span></span></h1>
@@ -117,10 +118,10 @@
 			<div class="container-fluid">
 			</div>
 		</div>
-		<div id="loginCadastroBox" class="col-lg-4" style="border: 1px solid #888; border-radius: 20px; width: 500px; vertical-align: center; background: #000; filter:alpha(opacity=80); opacity: 0.8;  margin-left: 15%; text-align: center; color: white;">
+		<div id="loginCadastroBox" class="col-lg-4" style="border: 1px solid #888; border-radius: 20px; width: 500px; vertical-align: center; background: #000; filter:alpha(opacity=80); opacity: 0.8;  margin-left: 15%; text-align: center; color: white; margin-top: 2%">
 		</div>
 
-		<div id="divLogin" style="display: none; margin-top: 5%;" >
+		<div id="divLogin" style="display: none; padding-top: 15%;" >
 
 			@helper.form(action = routes.AutenticacaoController.efetuaLogin()) {
 			<img src="assets/CreativeTemplate/img/logo_vumbora.png" width="300">
@@ -168,7 +169,16 @@
 		<div>@helper.select(formularioEndereco("bairro"), helper.options(bairros), '_label -> Messages("global.bairro"))</div>
 		<div>@helper.select(formularioAutenticacao("numeroVagas"), helper.options(Seq(Messages("tela_login.sem_carro"),"1","2","3","4","5","6","7","8")), '_label -> Messages("tela_login.vagas"))</div>
 
-		<input type="submit" value=@Messages("tela_login.cadastrar") class="btn btn-default btn-xl"></input>
+		<div>@Messages("tela_login.imagem"):</div>
+		<div> <img src="assets/SBAdminTemplate/img/userDefault1.png" class="img-circle" style="border: 4px solid #FFF; width: 15%" onclick="selectImagem(self())"></i>
+			<img src="assets/SBAdminTemplate/img/userDefault2.png" class="img-circle" style="border: 4px solid #FFF; width: 15%;" ></i>
+			<img src="assets/SBAdminTemplate/img/userDefault3.png" class="img-circle" style="border: 4px solid #FFF; width: 15%;" ></i>
+			<img src="assets/SBAdminTemplate/img/userDefault4.png" class="img-circle" style="border: 4px solid #FFF; width: 15%;" ></i>
+			<img src="assets/SBAdminTemplate/img/userDefault5.png" class="img-circle" style="border: 4px solid #FFF; width: 15%;" ></i>
+			<img src="assets/SBAdminTemplate/img/userDefault6.png" class="img-circle" style="border: 4px solid #FFF; width: 15%;" ></i>
+		</div>
+
+		<div style="padding-top: 5%"><input type="submit" value=@Messages("tela_login.cadastrar") class="btn btn-default btn-xl"></input></div>
 
 		</br>
 		<a class="btn" onclick="login()">@Messages("tela_login.sou_cadastrado")</a>

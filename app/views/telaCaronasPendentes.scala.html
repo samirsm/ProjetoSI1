@@ -64,7 +64,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                        <img href=@pendente.getMotorista().getEnderecoPerfil() src="assets/images/users/default.jpg" id="show-option" title="@pendente.getMotorista().getPrimeiroNome()" class="img-circle" style="border: 2px solid #888;" height="65" width="65"></i></br>@pendente.getMotorista().getPrimeiroNome()
+                        <img href=@pendente.getMotorista().getEnderecoPerfil() src=@pendente.getMotorista().getEnderecoImagemPerfil() id="show-option" title="@pendente.getMotorista().getPrimeiroNome()" class="img-circle" style="border: 2px solid #888;" height="65" width="65"></i></br>@pendente.getMotorista().getPrimeiroNome()
                     </div>
                     <div class="col-xs-9" style="margin-top: 30px;">
                       <div class="row text-bottom">
@@ -108,7 +108,11 @@
 }
 
                 @if(pendentes.isEmpty()){
-                    <div text-align="center">@Messages("solicitacoes.sem_pendentes")</div></br>
+                    <div text-align="center">
+                        <img src="assets/SBAdminTemplate/img/semPendentes.png" align="center" height="100px"></i>
+                        </br></br>
+                        @Messages("solicitacoes.sem_pendentes")
+                    </div></br>
                 }
                     <!-- /.row -->
       </div>

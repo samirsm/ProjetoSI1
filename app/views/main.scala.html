@@ -86,7 +86,7 @@ $(document).ready(function(){
 
               <!-- Notification -->
           <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">@if(notificacoes.size() == 0){<i class="fa fa-bell fa-2x"></i>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">@if(notificacoes.size() == 0){<img src="assets/SBAdminTemplate/img/bell.png" align="center" height="30"></i>
                   }else{<img src="assets/SBAdminTemplate/img/bellAlert.png" align="center" height="30"></i>} <b class="caret"></b></a>
               <ul class="dropdown-menu message-dropdown">
 
@@ -179,7 +179,7 @@ $(document).ready(function(){
                 </br>
                 </br>
                     <li>
-                        <a href=@usuarioLogado.getEnderecoPerfil()><td width="20%"><img src="assets/images/users/default.jpg" class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>@usuarioLogado.getPrimeiroNome()</a>
+                        <a href=@usuarioLogado.getEnderecoPerfil()><td width="20%"><img src=@usuarioLogado.getEnderecoImagemPerfil() class="img-circle" style="border: 2px solid #888;" height="50" width="50"></i></td></br>@usuarioLogado.getPrimeiroNome()</a>
                     </li>
                     <li>
                         <a href="/"><i class="fa fa-fw fa-home fa-4x"></i></br><strong>@Messages("global.home")</strong></a>
@@ -213,7 +213,7 @@ $(document).ready(function(){
                                         <ol class="breadcrumb">
                                           @if(usuarioLogado.getCaronas().size() == 0){
                                             <li class="active">
-                                                @Messages("global.sem_caronas")
+                                                @Messages("global.sem_caronas")<a href="ajuda" color="#0088FF"> @Messages("ajuda")</a>
                                             </li>
                                           }
                                         </ol>
@@ -231,7 +231,7 @@ $(document).ready(function(){
                                 		<table class="table">
                   									    <tbody>
                   											<tr>
-                  												<th><div><a href=@carona.getMotorista().getEnderecoPerfil()><img src="assets/images/users/default.jpg" id="show-option" title="@carona.getMotorista().getPrimeiroNome()" class="img-circle" style="border: 2px solid #FFF;" height="50" width="50"></i></a></div></th>
+                  												<th><div><a href=@carona.getMotorista().getEnderecoPerfil()><img src=@carona.getMotorista().getEnderecoImagemPerfil() id="show-option" title="@carona.getMotorista().getPrimeiroNome()" class="img-circle" style="border: 2px solid #FFF;" height="50" width="50"></i></a></div></th>
                   												<th><i class="fa fa-car fa-1x "></i> @carona.getTipo()</th>
                   												<th><div title=@Messages("global.vagas")><img src="assets/SBAdminTemplate/img/vagasBranco.png" align="left" height="20" width="20"></i>@if(carona.getVagasDisponiveis == 0) { @Messages("global.cheia")} else{ @carona.getVagasDisponiveis() }</div></th>
                                           <th><i class="fa fa-calendar fa-1x"></i> @carona.getHorario.getDiaAbreviado()</th>
@@ -249,7 +249,7 @@ $(document).ready(function(){
                                       <tbody>
                                         <tr>
                                          @for(passageiro <- carona.getPassageiros()){
-                                              <th><div><a href=@passageiro.getEnderecoPerfil()><img src="assets/images/users/default.jpg" id="show-option" title="@passageiro.getPrimeiroNome()" class="img-circle" style="border: 2px solid #82b1ff" height="40" width="40"></i></a></div></th>
+                                              <th><div><a href=@passageiro.getEnderecoPerfil()><img src=@passageiro.getEnderecoImagemPerfil() id="show-option" title="@passageiro.getPrimeiroNome()" class="img-circle" style="border: 2px solid #82b1ff" height="40" width="40"></i></a></div></th>
                                             }
                                         </tr>
                                       </tbody>

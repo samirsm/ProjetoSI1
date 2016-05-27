@@ -63,7 +63,7 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-xs-3">
-                      <img href=@solicitacao.getSolicitante().getEnderecoPerfil() src="assets/images/users/default.jpg" id="show-option" title="@solicitacao.getSolicitante().getPrimeiroNome()" class="img-circle" style="border: 2px solid #888;" height="65" width="65"></i></br>@solicitacao.getSolicitante().getPrimeiroNome()
+                      <img href=@solicitacao.getSolicitante().getEnderecoPerfil() src=@solicitacao.getSolicitante().getEnderecoImagemPerfil() id="show-option" title="@solicitacao.getSolicitante().getPrimeiroNome()" class="img-circle" style="border: 2px solid #888;" height="65" width="65"></i></br>@solicitacao.getSolicitante().getPrimeiroNome()
                     </div>
                     <div class="col-xs-9">
                       <div class="row-xs-6 text-left">
@@ -106,7 +106,11 @@
 }
 
                 @if(solicitacoes.isEmpty()){
-                    <div text-align="center">@Messages("solicitacoes.nenhuma")</div></br>
+                    <div text-align="center">
+                        <img src="assets/SBAdminTemplate/img/semSolicitacoes.png" align="center" height="100px"></i>
+                        </br></br>
+                        @Messages("solicitacoes.nenhuma")
+                    </div></br>
                 }
                     <!-- /.row -->
       </div>
