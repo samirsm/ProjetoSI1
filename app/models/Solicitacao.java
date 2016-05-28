@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 public class Solicitacao extends Model{
     @Id
-    @Column
+    @GeneratedValue
     private Long id;
     @OneToOne
     private Usuario usuario;
@@ -24,18 +24,19 @@ public class Solicitacao extends Model{
 
     @Inject
     public Solicitacao(){}
-    public Solicitacao(Usuario usuario, Carona carona){
+    public Solicitacao(Usuario usuario, Carona carona, TipoNotificacao tipo){
         this.carona = carona;
         this.usuario = usuario;
-
         geraMensagem();
-        setId();
+        Notificacao notificacao = new  Notificacao(usuario, carona, tipo);
+        setNotificacaoAssociada(notificacao);
     }
- 
+
+
     public void setStatus(boolean status) {
         this.status = status;
     }
- 
+
     public boolean getStatus(){
         return status;
     }
@@ -46,17 +47,9 @@ public class Solicitacao extends Model{
     public Usuario getSolicitante() {
         return usuario;
     }
- 
+
     public Carona getCarona() {
         return carona;
-    }
-
-    private void setId(){
-        double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
-        idTemp %= 1;
-        idTemp *= 100000;
-        id = (long) idTemp;
- 
     }
 
     public Notificacao getNotificacaoAssociada() {

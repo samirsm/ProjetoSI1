@@ -1,9 +1,7 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
 import sistemas.mensagens.*;
@@ -15,7 +13,7 @@ public class Endereco extends Model{
 
 	@Id
 	@GeneratedValue
-	private long Id;
+	private long id;
 	@Column
 	private String bairro;
 	@Constraints.Required(message = "Insira uma rua válida.")
@@ -46,4 +44,6 @@ public class Endereco extends Model{
 		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(Controller.session().get("login"));
 		return MensagensSistema.RUA[idioma.ordinal()] + ": " + getRua() + " " + MensagensSistema.BAIRRO[idioma.ordinal()] + ": " + getBairro();
 	}
+
+	public Long getId(){ return id; }
 }

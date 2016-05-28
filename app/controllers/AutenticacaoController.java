@@ -84,7 +84,6 @@ public class AutenticacaoController extends Controller {
 				throw new Exception();
 			dadosPessoais = new Dados(nome, matricula, email, senha, numeroDeTelefone);
 			endereco = new Endereco(rua, bairro);
-			endereco.save();
 		}catch(Exception e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, "divisor de erro - save endereço acima");
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
@@ -104,27 +103,23 @@ public class AutenticacaoController extends Controller {
 		loggerAutenticacao.registraAcao(Acao.ERRO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
 
 		try{
-
-		Usuario user = SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
-		user.save();
+			SistemaUsuarioCRUD.getInstance().cadastraUsuario(dadosPessoais, endereco, numeroVagas);
 		} catch (UsuarioJaExistenteException | DadosInvalidosException e){
 			loggerAutenticacao.registraAcao(Acao.ERRO, e.getMessage());
 			flash("erro", e.getMessage());
-
 			return redirect(routes.HomeController.login());
 		}
 
 		loggerAutenticacao.registraAcao(Acao.USUARIO_CADASTRADO, dadosPessoais.toString(), endereco.toString(), numeroVagas.toString());
 
-		Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
+		Idioma idioma = SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
 		flash("success", MensagensSistema.CADASTRO_SUCESSO[idioma.ordinal()]);
+
 		return redirect(routes.HomeController.login());
 	}
 
 	public Result efetuaLogout(){
-		loggerAutenticacao.registraAcao(Acao.EFETUA_LOGOUT, SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login")).toString());
 		SistemaUsuarioLogin.getInstance().efetuaLogout();
-
 		session().clear();
 
 		return redirect(routes.HomeController.index());

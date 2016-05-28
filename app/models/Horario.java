@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Horario extends Model{
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column
 	private int dia;

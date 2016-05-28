@@ -1,8 +1,6 @@
 package controllers;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -16,8 +14,6 @@ import sistemas.SistemaCarona;
 import sistemas.SistemaDeBairros;
 import sistemas.SistemaUsuarioCRUD;
 import sistemas.SistemaUsuarioLogin;
-import sistemas.logger.LoggerSistema;
-import sistemas.logger.registrosAcoes.Acao;
 import play.mvc.Http.Context;
 import sistemas.mensagens.Idioma;
 import views.html.*;

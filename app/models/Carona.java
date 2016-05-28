@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import javax.persistence.*;
+import java.sql.Timestamp;
 import com.avaje.ebean.Model;
 import sistemas.mensagens.Strings;
 
@@ -15,18 +16,18 @@ public class Carona extends Model {
 	private Long id;
 	@Column
 	private int vagasDisponiveis;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Usuario usuario;
-	@ManyToMany
-//	@JoinTable(name = "passageiros")
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Usuario> passageiros;
-	@ManyToMany
-//	@JoinTable(name = "solicitantes")
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Usuario> solicitantes;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Horario horario;
 	@Enumerated(EnumType.STRING)
 	private TipoCarona tipo;
+	@Version
+	public Timestamp lastUpdate;
 
 	public static Finder<Long, Carona> find = new Finder<>(Carona.class);
 
@@ -39,7 +40,6 @@ public class Carona extends Model {
 		this.vagasDisponiveis = numeroDeVagas;
 		this.passageiros = new ArrayList<>();
 		this.solicitantes = new ArrayList<>();
-		setId();
 	}
 	
 	public boolean isFull() {
@@ -109,14 +109,6 @@ public class Carona extends Model {
 		return "Motorista: " + usuario + Strings.LINE_SEPARATOR
 				+ " Horario: " + horario.toString();
 
-	}
-
-	private void setId(){
-		double idTemp = Integer.parseInt(usuario.getDadosUsuario().getMatricula()) * Math.random() * 11;
-		idTemp %= 1;
-		idTemp *= 100000;
-		id = (long) idTemp;
-		
 	}
 
 }

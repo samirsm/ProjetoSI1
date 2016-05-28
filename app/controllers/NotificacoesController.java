@@ -27,7 +27,6 @@ public class NotificacoesController extends Controller{
     }
 
     @Security.Authenticated(Secured.class)
-
     public Result leNotificacao(Long idNotificacao){
         Notificacao notificacao = SistemaNotificacao.getInstance().buscarNotificacaoPorId(idNotificacao);
         SistemaNotificacao.getInstance().leNotificacao(notificacao);

@@ -82,8 +82,11 @@ public class SistemaCarona{
 
     	List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login")).getCaronas();
     	if(!caronasSistema.contains(carona) && !temCaronaNoMesmoHorario(carona,caronasUsuarioLogado)){
-    	      caronasUsuarioLogado.add(carona);
-    	}else
+			//caronasUsuarioLogado.add(carona);
+			SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login")).adicionaCarona(carona);
+			carona.save();
+			SistemaUsuarioLogin.getInstance().getUsuarioLogado(Controller.session().get("login")).save();
+		}else
     	  throw new CaronaJaCadastradaException();
 	}
     
@@ -102,7 +105,6 @@ public class SistemaCarona{
     	int pos = buscarIndiceCaronaPorId(id);
     	if (pos == -1)
     		return null;
-    	//sistemaNotificacoes.geraNotificacaoCancelamento(listaCaronasSolicitadas.get(pos));
     	return caronasUsuarioLogado.remove(pos);
 	}
     

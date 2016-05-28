@@ -8,6 +8,7 @@ import exceptions.DadosInvalidosException;
 import exceptions.HorarioJaCadastradoException;
 import exceptions.LoginInvalidoException;
 import exceptions.UsuarioJaExistenteException;
+import play.db.ebean.Transactional;
 import play.mvc.Controller;
 import models.*;
 import sistemas.mensagens.MensagensSistema;
@@ -34,7 +35,7 @@ public final class SistemaUsuarioCRUD {
 		novoUsuario.recebeNotificacao(new Notificacao(novoUsuario, TipoNotificacao.BOASVINDAS));
 		if (!isUsuarioExistente(novoUsuario))
 			usuariosAtivados.add(novoUsuario);
-
+		novoUsuario.save();
 		return novoUsuario;
 	}
 	
@@ -69,7 +70,7 @@ public final class SistemaUsuarioCRUD {
 		throw new LoginInvalidoException();
 	}
 	
-	public void cadastraHorario(Usuario usuario,TipoCarona tipo, String dia, int hora) throws HorarioJaCadastradoException{
+	public void cadastraHorario(Usuario usuario, TipoCarona tipo, String dia, int hora) throws HorarioJaCadastradoException{
 		usuario.adicionarHorario(dia, hora, tipo);
 	}
 	
@@ -92,8 +93,7 @@ public final class SistemaUsuarioCRUD {
 
 	public void cadastraNovoEndereco(Usuario usuario,String rua, String bairro) throws BairroJaCadastradoException{
 		Endereco end = new Endereco(rua, bairro);
-		end.save();
-      usuario.addEnderecoAlternativo(end);
+		usuario.addEnderecoAlternativo(end);
   }
 
 	public Usuario getUsuarioPorLogin(String login){

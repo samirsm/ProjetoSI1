@@ -47,11 +47,6 @@ public class HorariosController extends Controller {
 	public Result cadastraHorarios(){
        SistemaUsuarioLogin.getInstance().cadastrouHorarios(session("login"));
        Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
-        try{
-            usuarioLogado.save();
-        }catch(OptimisticLockException e){
-            usuarioLogado.update();
-        }
        loggerHorarios.registraAcao(Acao.CADASTROU_HORARIOS, usuarioLogado.getHorariosIda().toString(), usuarioLogado.getHorariosVolta().toString());
        return redirect(routes.HomeController.index());
 		

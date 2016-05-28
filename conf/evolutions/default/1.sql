@@ -9,6 +9,7 @@ create table carona (
   usuario_id                bigint,
   horario_id                bigint,
   tipo                      varchar(5),
+  last_update               timestamp not null,
   constraint ck_carona_tipo check (tipo in ('IDA','VOLTA')),
   constraint uq_carona_horario_id unique (horario_id),
   constraint pk_carona primary key (id))
@@ -22,7 +23,7 @@ create table endereco (
 ;
 
 create table horario (
-  id                        bigint not null,
+  id                        bigint auto_increment not null,
   dia                       integer,
   hora                      integer,
   tipo                      varchar(5),
@@ -65,9 +66,10 @@ create table usuario (
   numero_de_telefone        varchar(255),
   endereco_alternativo_id   bigint,
   endereco_id               bigint,
-  numero_vagas              integer,
   idioma                    varchar(9),
   horarios_cadastrados      boolean,
+  numero_vagas              integer,
+  last_update               timestamp not null,
   constraint ck_usuario_idioma check (idioma in ('PORTUGUES','ENGLISH','ESPANOL','ITALIANO')),
   constraint uq_usuario_endereco_alternativo_ unique (endereco_alternativo_id),
   constraint uq_usuario_endereco_id unique (endereco_id),
@@ -81,6 +83,12 @@ create table carona_usuario (
   constraint pk_carona_usuario primary key (carona_id, usuario_id))
 ;
 
+create table usuario_notificacao (
+  usuario_id                     bigint not null,
+  notificacao_id                 bigint not null,
+  constraint pk_usuario_notificacao primary key (usuario_id, notificacao_id))
+;
+
 create table usuario_horario (
   usuario_id                     bigint not null,
   horario_id                     bigint not null,
@@ -89,8 +97,6 @@ create table usuario_horario (
 create sequence carona_seq;
 
 create sequence endereco_seq;
-
-create sequence horario_seq;
 
 create sequence notificacao_seq;
 
@@ -123,6 +129,10 @@ alter table carona_usuario add constraint fk_carona_usuario_carona_01 foreign ke
 
 alter table carona_usuario add constraint fk_carona_usuario_usuario_02 foreign key (usuario_id) references usuario (id) on delete restrict on update restrict;
 
+alter table usuario_notificacao add constraint fk_usuario_notificacao_usuari_01 foreign key (usuario_id) references usuario (id) on delete restrict on update restrict;
+
+alter table usuario_notificacao add constraint fk_usuario_notificacao_notifi_02 foreign key (notificacao_id) references notificacao (id) on delete restrict on update restrict;
+
 alter table usuario_horario add constraint fk_usuario_horario_usuario_01 foreign key (usuario_id) references usuario (id) on delete restrict on update restrict;
 
 alter table usuario_horario add constraint fk_usuario_horario_horario_02 foreign key (horario_id) references horario (id) on delete restrict on update restrict;
@@ -145,6 +155,8 @@ drop table if exists solicitacao;
 
 drop table if exists usuario;
 
+drop table if exists usuario_notificacao;
+
 drop table if exists usuario_horario;
 
 SET REFERENTIAL_INTEGRITY TRUE;
@@ -152,8 +164,6 @@ SET REFERENTIAL_INTEGRITY TRUE;
 drop sequence if exists carona_seq;
 
 drop sequence if exists endereco_seq;
-
-drop sequence if exists horario_seq;
 
 drop sequence if exists notificacao_seq;
 

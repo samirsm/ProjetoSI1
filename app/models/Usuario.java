@@ -13,6 +13,7 @@ import sistemas.logger.LoggerSistema;
 import sistemas.logger.registrosAcoes.Acao;
 import sistemas.mensagens.Idioma;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,12 +25,10 @@ public class Usuario extends Model {
 	private Long id;
 	@Embedded
 	private Dados dadosPessoais;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Endereco enderecoAlternativo;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Endereco endereco;
-	@Column
-	private Integer numeroVagas;
 	@Enumerated(EnumType.STRING)
 	private Idioma idioma = Idioma.PORTUGUES;
 	@OneToMany(cascade = CascadeType.ALL)
@@ -40,12 +39,16 @@ public class Usuario extends Model {
 	private List<Solicitacao> solicitacoes = new ArrayList<Solicitacao>();
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Notificacao> notificacoesLidas = new ArrayList<Notificacao>();
-	@OneToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Notificacao> notificacoesNaoLidas = new ArrayList<Notificacao>();
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Horario> horarios = new ArrayList<Horario>();
 	@Column
 	private boolean horariosCadastrados;
+	@Column
+	private Integer numeroVagas;
+	@Version
+	public Timestamp lastUpdate;
 
 	public static Finder<Long, Usuario> find = new Finder<>(Usuario.class);
 

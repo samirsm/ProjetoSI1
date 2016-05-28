@@ -24,7 +24,7 @@ import views.html.*;
 public class CaronasController extends Controller {
     private FormFactory formFactory;
     private LoggerSistema loggerCaronas;
-    
+
     @Inject
     public CaronasController(FormFactory formFactory) {
         this.formFactory = formFactory;
@@ -34,16 +34,16 @@ public class CaronasController extends Controller {
     @Security.Authenticated(Secured.class)
     public Result cadastraNovaCarona(){
         DynamicForm requestData = formFactory.form().bindFromRequest();
-        
+
         Usuario motorista = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
-        
+
         Integer hora = Integer.parseInt(requestData.get("hora"));
         String dia = requestData.get("diaDaSemana");
         Integer vagasDisponiveisCarona = Integer.parseInt(requestData.get("vagasDisponiveis"));
         Horario horario = new Horario(dia, hora);
         horario.save();
         TipoCarona tipo = getTipo(requestData.get("tipo"));
-        
+
         try{
             Carona carona = SistemaCarona.getInstance().criaCarona(motorista, horario, tipo, vagasDisponiveisCarona);
             loggerCaronas.registraAcao(Acao.CADASTROU_CARONA, horario.toString(), tipo.toString(), vagasDisponiveisCarona.toString());
@@ -51,15 +51,15 @@ public class CaronasController extends Controller {
             SistemaCarona.getInstance().getListaPesquisaAtualizada();
             loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS);
         } catch (CaronaJaCadastradaException e){
-          flash("erro", e.getMessage());
-          return redirect(routes.HomeController.index());
-      }
+            flash("erro", e.getMessage());
+            return redirect(routes.HomeController.index());
+        }
 
         Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
         flash("success", MensagensSistema.CARONA_PUBLICADA[idioma.ordinal()]);
-        return redirect(routes.HomeController.index()); 
+        return redirect(routes.HomeController.index());
     }
-    
+
     @Security.Authenticated(Secured.class)
     public Result aceitaPedido(Long id){
         Solicitacao pedido = buscarSolicitacaoPorId(id);
@@ -81,8 +81,8 @@ public class CaronasController extends Controller {
         flash("avaliado", pedido.getSolicitante().getPrimeiroNome() + MensagensSistema.ACEITA_PEDIDO[idioma.ordinal()]);
 
         return redirect(routes.NotificacoesController.exibeSolicitacoes());
-      }
-    
+    }
+
     @Security.Authenticated(Secured.class)
     public Result recusaPedido(Long id){
         Solicitacao pedido = buscarSolicitacaoPorId(id);
@@ -111,32 +111,30 @@ public class CaronasController extends Controller {
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
 
         Usuario usuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login"));
-        Solicitacao solicitacao = new Solicitacao(usuarioLogado, carona);
-        Notificacao notificacao = new Notificacao(usuarioLogado, carona, TipoNotificacao.PEDIDO);
-        solicitacao.setNotificacaoAssociada(notificacao); // associa a notificacao deste pedido a ele para que saiba qual notificacao apagar depois
+        Solicitacao solicitacao = new Solicitacao(usuarioLogado, carona, TipoNotificacao.PEDIDO);
 
         usuarioLogado.adicionaCaronaPendente(carona); // a carona do pedido torna-se pendente ao usuario
         carona.adicionaSolicitante(usuarioLogado); // o usuario logado agora é um dos que solicitam esta carona
         carona.getMotorista().recebeSolicitacao(solicitacao); // o motorista recebe a solicitacao
-        SistemaNotificacao.getInstance().notificaUsuario(notificacao, carona.getMotorista()); // o motorista da carona é notificado desse pedido
+        SistemaNotificacao.getInstance().notificaUsuario(solicitacao.getNotificacaoAssociada(), carona.getMotorista()); // o motorista da carona é notificado desse pedido
         buscarCaronas(); // atualizar a lista de caronas, agora sem esta, que ja foi pedida
 
-        carona.update();
-        usuarioLogado.update();
+        usuarioLogado.save();
+        carona.getMotorista().save();
         Idioma idioma =SistemaUsuarioLogin.getInstance().getIdioma(session("login"));
         flash("pedido", MensagensSistema.PEDIDO_EFETUADO[idioma.ordinal()]);
 
         return redirect(routes.HomeController.index());
     }
 
-    
+
     @Security.Authenticated(Secured.class)
     public Result buscarCaronas(){
         List<Carona> caronas = SistemaCarona.getInstance().buscarCaronasDefault();
         loggerCaronas.registraAcao(Acao.EFETUA_BUSCA_POR_CARONAS, caronas.toString());
         return redirect(routes.HomeController.index());
     }
-    
+
     @Security.Authenticated(Secured.class)
     public Result exibeDetalhes(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
@@ -144,10 +142,10 @@ public class CaronasController extends Controller {
         List<Carona> caronasUsuarioLogado = SistemaUsuarioLogin.getInstance().getUsuarioLogado(session("login")).getCaronas();
         List<Notificacao> notificacoesUsuarioLogado = SistemaNotificacao.getInstance().getNotificacoesNaoLidas();
         loggerCaronas.registraAcao(Acao.EXIBE_DETALHES, carona.toString());
-        
+
         return ok(telaConfirmarPedidoCarona.render(usuarioLogado, carona));
     }
-    
+
     @Security.Authenticated(Secured.class)
     public void cancelaCarona(Long id){
         Carona carona = SistemaCarona.getInstance().buscarCaronaPorId(id);
